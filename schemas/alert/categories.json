@@ -1,0 +1,25 @@
+{
+    "group": "alert",
+    "categories": {
+        "network_attack": {
+            "label": "Network Attack",
+            "description": "Monitors and alerts on malicious activities targeting network infrastructure, including intrusion attempts, DDoS attacks, and unauthorized access."
+        },
+        "malware": {
+            "label": "Malware",
+            "description": "An alert indicating the detection of malicious software designed to disrupt, damage, or gain unauthorized access to a computer system."
+        },
+        "anomalous_behavior": {
+            "label": "Anomalous Behavior",
+            "description": "This alert type monitors and reports unusual or suspicious activities that deviate from established baseline behaviors, potentially indicating security threats or compromised systems."
+        },
+        "data_security": {
+            "label": "Data Security",
+            "description": "Monitors and alerts on potential data breaches, unauthorized access, or leakage of sensitive information."
+        },
+        "vulnerability_configuration_risk": {
+            "label": "Vulnerability Configuration Risk",
+            "description": "Alert indicating potential security risks due to misconfigured or vulnerable system settings that could be exploited by attackers."
+        }
+    }
+}

@@ -1,0 +1,523 @@
+{
+  "group": "incident",
+  "category": "security_incident",
+  "title": "security_incident",
+  "label": "Security Incident",
+  "description": "Records unauthorized access, data breaches, or other malicious activities compromising system integrity.",
+  "definitions": {
+    "incidentId": {
+      "label": "Incident ID",
+      "requirement": "REQUIRED",
+      "description": "A globally unique identifier for security events, typically generated using non-repeating algorithms such as UUID or timestamp sequences.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "incidentName": {
+      "label": "Incident Name",
+      "requirement": "REQUIRED",
+      "description": "Brief descriptive name for identifying security events",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "incidentLevel": {
+      "label": "Incident Level",
+      "requirement": "REQUIRED",
+      "description": "Severity level of the security incident, used to assess the impact scope and urgency of the event.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "Critical": {
+          "label": "Critical",
+          "description": "Security incidents causing significant business impact require immediate response."
+        },
+        "High": {
+          "label": "High",
+          "description": "Security incidents that have a significant impact on business operations require priority handling."
+        },
+        "Medium": {
+          "label": "Medium",
+          "description": "Security incidents that have a certain impact on business operations need to be handled according to the plan."
+        },
+        "Low": {
+          "label": "Low",
+          "description": "Low-impact security incidents that can be processed according to standard procedures."
+        }
+      }
+    },
+    "incidentStatus": {
+      "label": "Incident Status",
+      "requirement": "REQUIRED",
+      "description": "Indicates the current processing status of the security event within the response lifecycle.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "Analysising": {
+          "label": "Analyzing",
+          "description": "Event currently under analysis"
+        },
+        "Error": {
+          "label": "Error",
+          "description": "Event of automated playbook execution flow termination due to errors during the analysis process"
+        },
+        "Ignore": {
+          "label": "Ignore",
+          "description": "Events that have been analyzed and determined to require no action."
+        },
+        "Pending": {
+          "label": "Pending",
+          "description": "Events requiring remediation after analysis"
+        },
+        "Disposed": {
+          "label": "Disposed",
+          "description": "The incident that has been completed and closed for disposition."
+        }
+      }
+    },
+    "incidentType": {
+      "label": "Incident Type",
+      "requirement": "REQUIRED",
+      "description": "Identify the primary attack classification and technical category of the security incident.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "/Malware/ComputerVirus": {
+          "label": "Malware Computer Virus Event",
+          "description": "Computer virus incident: creating, disseminating, or exploiting malicious programs to affect computer usage, impair computer functionality, destroy or steal data."
+        },
+        "/Malware/Worm": {
+          "label": "Malware Worm Event",
+          "description": "Network worm incident: Exploiting network vulnerabilities to deliberately create or automatically replicate and propagate network worms through the network."
+        },
+        "/Malware/Trojan": {
+          "label": "Malware Trojan",
+          "description": "Trojan horse incident: The creation, dissemination, or exploitation of malicious programs with remote control capabilities to illegally steal or intercept data."
+        },
+        "/Malware/Botnet": {
+          "label": "Malware Botnet Event",
+          "description": "Botnet event: Formation of a botnet using bot tools."
+        },
+        "/Malware/MaliciousCodeEmbedded": {
+          "label": "Malware Malicious Code Embedded",
+          "description": "Malicious code embedded webpage incident: When accessing a compromised webpage embedded with malicious code, the code installs malware on the computer systems of visitors to that webpage."
+        },
+        "/Malware/MaliciousCodeHostingSite": {
+          "label": "Malware Hosting Site",
+          "description": "Malicious code hosting site incident: Luring target users to download malicious code from a hosting site that stores malicious code."
+        },
+        "/Malware/Ransomware": {
+          "label": "Malware Ransomware Event",
+          "description": "Ransomware incident: Hijacks users' access rights to systems or data through encryption or blocking user operations, thereby demanding ransom payments from users."
+        },
+        "/Malware/Miner": {
+          "label": "Malware Miner Event",
+          "description": "Cryptocurrency mining malware incident: A type of cyberattack aimed at obtaining digital cryptocurrencies by compromising and controlling others' computers to implant mining malware programs for performing large-scale computations."
+        },
+        "/Malware/BlendedAttack": {
+          "label": "Malware Blended Attack",
+          "description": "Hybrid attack program event: Utilizes multiple methods to propagate and exploit various malicious programs. For example, a computer virus infiltrates a computer system and subsequently installs a Trojan horse program within the system."
+        },
+        "/Malware/Others": {
+          "label": "Malware Others",
+          "description": "Other malware incidents: Malware events that do not fall into the above subcategories."
+        },
+        "/NetAttack/Scan": {
+          "label": "Network Scan Event",
+          "description": "Network scanning detection event: Using network scanning software to obtain information about network configuration, ports, services, and existing vulnerabilities."
+        },
+        "/NetAttack/Phishing": {
+          "label": "Network Attack Phishing",
+          "description": "Phishing incident: The use of fraudulent network techniques to deceive users into disclosing sensitive data or personal information."
+        },
+        "/NetAttack/VulnExploit": {
+          "label": "Network Attack Vulnerability Exploit",
+          "description": "Exploitation event: Conducting network attacks by identifying and exploiting vulnerabilities such as network configuration flaws, communication protocol weaknesses, or application defects."
+        },
+        "/NetAttack/BackdoorExploit": {
+          "label": "Net Attack Backdoor Exploit",
+          "description": "Backdoor exploitation incident: Malicious utilization of interfaces, functional modules, programs, etc. left unverified during the design process of software or hardware systems to illegally obtain network administrative privileges."
+        },
+        "/NetAttack/BackdoorImplantation": {
+          "label": "Network Attack Backdoor Implantation",
+          "description": "Backdoor implantation incident: Illegally creating a backdoor in the network to persistently gain administrative privileges."
+        },
+        "/NetAttack/Credential": {
+          "label": "Network Attack Credential",
+          "description": "Credential attack incident: Password cracking. Involves parsing login passwords or credentials."
+        },
+        "/NetAttack/SignalInterference": {
+          "label": "Network Attack Signal Interference",
+          "description": "Signal interference incident: The use of technical means to obstruct the normal propagation of wired or wireless signals within a network."
+        },
+        "/NetAttack/DOS": {
+          "label": "/Netattack/Dos",
+          "description": "Denial of Service (DoS) incident: Affecting or disrupting network availability by abnormal consumption of network resources (such as CPU, memory, disk space, or network bandwidth), for example: DDoS attacks, etc."
+        },
+        "/NetAttack/WebTempering": {
+          "label": "Web Page Tampering Event",
+          "description": "Web page defacement incident: Maliciously damaging or altering web page content to impact website reputation or compromise the availability of web pages and websites."
+        },
+        "/NetAttack/DomainHijack": {
+          "label": "Network Attack Domain Hijack",
+          "description": "Domain hijacking incident: A deliberate or malicious act of redirecting users to unintended specified IP addresses (websites) through DNS attacks or spoofing."
+        },
+        "/NetAttack/DomainRedirect": {
+          "label": "Domain Redirect Attack",
+          "description": "Domain hijacking incident: Pointing one's own domain name to an IP address that does not belong to them, causing all attacks targeting that domain to be redirected to the specified IP address."
+        },
+        "/NetAttack/DNSPoisoning": {
+          "label": "DNS Poisoning Event",
+          "description": "DNS poisoning incident: Using deliberately crafted or inadvertently generated DNS packets to redirect domain names to incorrect IP addresses."
+        },
+        "/NetAttack/WLANHijack": {
+          "label": "WLAN Hijack Event",
+          "description": "WLAN hijacking incident: Illegally obtaining control permissions of a wireless local area network through methods such as password cracking and firmware replacement."
+        },
+        "/NetAttack/TrafficHijack": {
+          "label": "Network Attack Traffic Hijack",
+          "description": "Traffic hijacking incident: Causing user traffic loss by maliciously inducing or illegally forcing users to access specific network resources."
+        },
+        "/NetAttack/BGPHijack": {
+          "label": "BGP Hijack Attack Event",
+          "description": "BGP hijacking attack incident: Malicious manipulation of network routing paths through BGP."
+        },
+        "/NetAttack/BroadcastFraud": {
+          "label": "Broadcast Fraud Event",
+          "description": "Broadcast spoofing incident: Disrupting normal network packet transmission or stealing sensitive information from network users through broadcast spoofing techniques."
+        },
+        "/NetAttack/CompromisedHost": {
+          "label": "Net Attack Compromised Host",
+          "description": "Compromised host incident: After gaining control of a host, attackers can use it as a springboard to further attack other hosts within the organization's internal network."
+        },
+        "/NetAttack/SupplyChain": {
+          "label": "Supply Chain Attack Event",
+          "description": "Supply chain attack incident: Distributing malware by exploiting vulnerabilities in supply chain management to infect legitimate applications."
+        },
+        "/NetAttack/APT": {
+          "label": "APT Event",
+          "description": "APT (Advanced Persistent Threat) incident: A sustained and effective attack campaign targeting specific entities. This type of attack is highly covert and targeted, typically employing various means such as infected media, supply chain compromises, and social engineering to carry out sophisticated, persistent, and effective threats and attacks."
+        },
+        "/NetAttack/Others": {
+          "label": "Other Network Attack Events",
+          "description": "Other network attack events: Network attack events that do not fall into the above subcategories."
+        },
+        "/DataSec/DataTampering": {
+          "label": "Data Security Data Tampering Event",
+          "description": "Data tampering incident: unauthorized access or modification of data;"
+        },
+        "/DataSec/DataFake": {
+          "label": "Data Falsification Event",
+          "description": "Data spoofing incident: Unauthorized or illegal use and forgery of data."
+        },
+        "/DataSec/DataLeakage": {
+          "label": "Data Security Data Leakage Event",
+          "description": "Data breach incident: Unintentional or malicious exposure of data or sensitive personal information to unauthorized parties through technical means."
+        },
+        "/DataSec/SocialEngineering": {
+          "label": "Data Security Social Engineering Event",
+          "description": "Social engineering incident: Inducing individuals to disclose data or perform actions through non-technical means (e.g., psychology, persuasion techniques, etc.)."
+        },
+        "/DataSec/DataTheft": {
+          "label": "Data Security Data Theft Event",
+          "description": "Data theft incident: Unauthorized acquisition of data through technical means (e.g., eavesdropping, espionage, etc.)."
+        },
+        "/DataSec/DataIntercept": {
+          "label": "Data Interception Event",
+          "description": "Data interception event: Illegally capturing data before it reaches the intended recipient."
+        },
+        "/DataSec/PositionDetection": {
+          "label": "Data Security Position Detection Event",
+          "description": "Location detection event: unauthorized detection of systems, personal geolocation information, or storage locations of sensitive data."
+        },
+        "/DataSec/DataPoisoning": {
+          "label": "Data Poisoning Event",
+          "description": "The probability distribution of training data may cause the model to produce classification or clustering errors under certain specific conditions."
+        },
+        "/DataSec/DataAbuse": {
+          "label": "Data Security Data Abuse Event",
+          "description": "Data abuse incident: unintentional or malicious misuse of data"
+        },
+        "/DataSec/PrivacyInvasion": {
+          "label": "Privacy Invasion Event",
+          "description": "Privacy breach incident: Unintentional or malicious infringement of sensitive personal information present in the network."
+        },
+        "/DataSec/DataLoss": {
+          "label": "Data Loss Event",
+          "description": "Data loss incident: Loss of data caused by factors such as misoperation, deliberate human actions, or software/hardware defects."
+        },
+        "/DataSec/Others": {
+          "label": "Data Security Other Events",
+          "description": "Other data security incidents: Data security incidents not falling into the above subcategories."
+        },
+        "/InformationSec/Reactionary": {
+          "label": "Information Security Reactionary",
+          "description": "Counter-revolutionary propaganda incidents: The use of online platforms to disseminate illegal information that incites subversion of state power, overthrow of the socialist system, instigation of secession, undermining of national unity, and other activities that endanger national security, honor, and interests."
+        },
+        "/InformationSec/Violent": {
+          "label": "Information Security Violent Content",
+          "description": "Terrorism propaganda incident: Using the internet to propagate terrorism and extremism, inciting ethnic hatred and discrimination, causing social panic and unrest."
+        },
+        "/InformationSec/Porn": {
+          "label": "Information Security Pornography Incident",
+          "description": "Pornography dissemination incident: Using the internet to spread obscene and pornographic information that violates social ethics and morals."
+        },
+        "/InformationSec/FalseInformation": {
+          "label": "Information Security False Information",
+          "description": "Disinformation dissemination incident: Fabricating and spreading false information online to disrupt economic and social order, resulting in negative impacts."
+        },
+        "/InformationSec/RightsInfringement": {
+          "label": "Information Security Rights Infringement Event",
+          "description": "Rights infringement incident: The use of network-transmitted information to infringe upon the legitimate rights and interests of social organizations or citizens."
+        },
+        "/InformationSec/InformationSpamming": {
+          "label": "Information Security Spamming Event",
+          "description": "Spamming incident: The act of disseminating unsolicited information via networks without the recipient's consent, such as spam emails, etc."
+        },
+        "/InformationSec/NetworkFraud": {
+          "label": "Information Security Network Fraud Event",
+          "description": "Cyber fraud incident: The malicious use of technical or non-technical means to defraud specific or non-specific targets via the internet for the purpose of illegally obtaining information or money."
+        },
+        "/InformationSec/Others": {
+          "label": "Information Security Other Events",
+          "description": "Other information content security incidents: Information content security incidents not covered by the above subcategories."
+        },
+        "/DevOps/TechnicalFailure": {
+          "label": "DevOps Technical Failure Event",
+          "description": "Technical failure event: System failures caused by inherent defects in network hardware/software, design flaws, or changes in operating environments, such as hardware failures, software failures, overload conditions, etc."
+        },
+        "/DevOps/InfrastructureFailure": {
+          "label": "DevOps Infrastructure Failure",
+          "description": "Supporting facility failure incident: Malfunction of auxiliary facilities supporting network operations. Examples include power supply failures, lighting system failures, temperature and humidity control system failures, etc."
+        },
+        "/DevOps/PhysicalDamage": {
+          "label": "DevOps Physical Damage Event",
+          "description": "Physical damage incident: Deliberate or accidental physical actions causing damage to the network environment or network equipment. Examples include fire, water leakage, static electricity, equipment destruction or loss, etc."
+        },
+        "/DevOps/Radiation": {
+          "label": "DevOps Radiation Interference Event",
+          "description": "Radiation interference incident: Interference caused by radiation affecting normal network operations. Examples include electromagnetic radiation, electromagnetic pulses, electronic interference, voltage fluctuations, thermal radiation, etc."
+        },
+        "/DevOps/Others": {
+          "label": "DevOps Other Events",
+          "description": "Other device facility failure events: Device facility failure events that do not fall into the above subcategories."
+        },
+        "/ViolateOp/PrivilegeAbuse": {
+          "label": "Privilege Abuse Event",
+          "description": "Privilege abuse incident: Attackers exploit excessive functionality exposure or lax permission restrictions on the network server to conduct attacks through direct or indirect privilege invocation."
+        },
+        "/ViolateOp/PrivilegeEscalation": {
+          "label": "Privilege Escalation Event",
+          "description": "Permission forgery incident: Creating false permissions for deception purposes."
+        },
+        "/ViolateOp/BehaviorDenial": {
+          "label": "Violation Operation Behavior Denial Event",
+          "description": "Repudiation event: The user denies their malicious actions."
+        },
+        "/ViolateOp/Deliberate": {
+          "label": "Deliberate Violation Operation",
+          "description": "Intentional violation incident: deliberately performing illegal operations;"
+        },
+        "/ViolateOp/Misoperation": {
+          "label": "Misoperation Event",
+          "description": "Misoperation event: unintentionally performing incorrect actions."
+        },
+        "/ViolateOp/PersonnelAvailability": {
+          "label": "Violate Operation Personnel Availability",
+          "description": "Personnel availability disruption incident: Human resources are compromised, resulting in personnel absence or unavailability."
+        },
+        "/ViolateOp/UnauthResource": {
+          "label": "Unauthorized Resource Access Event",
+          "description": "Unauthorized resource usage incident: unauthorized access to resources."
+        },
+        "/ViolateOp/Copyright": {
+          "label": "Copyright Violation Event",
+          "description": "Copyright violation incident: Installation and use of commercial software or other copyrighted materials in violation of copyright requirements."
+        },
+        "/ViolateOp/Others": {
+          "label": "Violation Operation Others",
+          "description": "Other violation events: Violation events that do not fall into the above subcategories."
+        },
+        "/SafetyHazard/NetVuln": {
+          "label": "Network Vulnerability Event",
+          "description": "Network vulnerability incident: Security risks arising from insufficient consideration of security during the development and design process of operating systems, applications, or security protocols."
+        },
+        "/SafetyHazard/NetConfigFlaw": {
+          "label": "Safety Hazard Network Configuration Flaw",
+          "description": "Network configuration compliance defect event: Security vulnerabilities or risks caused by improper or default security configurations of software/hardware that fail to meet cybersecurity requirements."
+        },
+        "/SafetyHazard/Others": {
+          "label": "Safety Hazard Others",
+          "description": "Other security risk events: Security risk incidents not categorized under the above subclasses."
+        },
+        "/AbnormalBehavior/Access": {
+          "label": "Abnormal Behavior Access Event",
+          "description": "Access exception event: Service interruption caused by changes in the network software/hardware operating environment."
+        },
+        "/AbnormalBehavior/Traffic": {
+          "label": "Abnormal Behavior Traffic Event",
+          "description": "Traffic anomaly event: Network traffic behavior pattern deviates from the normal baseline."
+        },
+        "/AbnormalBehavior/Others": {
+          "label": "Abnormal Behavior Others",
+          "description": "Other anomalous behavior events: anomalous behavior events that do not fall into the above subcategories."
+        },
+        "/Majeure/NaturalDisaster": {
+          "label": "Natural Disaster Event",
+          "description": "Natural disaster events: Extreme natural phenomena that cause damage to information and information systems, such as earthquakes, volcanoes, floods, storms, lightning, tsunamis, landslides, etc."
+        },
+        "/Majeure/IncidentDisaster": {
+          "label": "Major Incident Disaster",
+          "description": "Disaster incident: An accident with catastrophic consequences resulting in damage to information and information systems, such as public facility and equipment accidents, environmental pollution incidents, etc."
+        },
+        "/Majeure/PublicHealth": {
+          "label": "Public Health Event",
+          "description": "Public health incidents: Infectious disease outbreaks and similar events that cause damage to information and information systems."
+        },
+        "/Majeure/SocialSec": {
+          "label": "Social Security Event",
+          "description": "Social security incident: Emergent mass incidents that endanger the state and society, resulting in damage to information and information systems. Examples include terrorist attacks, etc."
+        },
+        "/Majeure/Others": {
+          "label": "Force Majeure Events",
+          "description": "Other force majeure events: Force majeure events not included in the above subcategories."
+        },
+        "/Others/Others": {
+          "label": "Other Events",
+          "description": "Other events refer to cybersecurity incidents that are not classified into the above categories."
+        }
+      }
+    },
+    "latestActivityTime": {
+      "label": "Latest Activity Time",
+      "requirement": "RECOMMENDED",
+      "description": "The timestamp of the last activity or alert trigger in the security event record.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "createTime": {
+      "label": "Creation Time",
+      "requirement": "OPTIONAL",
+      "description": "The initial creation time of a system object, file, or resource.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "closeTime": {
+      "label": "Close Time",
+      "requirement": "OPTIONAL",
+      "description": "The timestamp when the incident was resolved and officially closed.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "closeReason": {
+      "label": "Close Reason",
+      "requirement": "RECOMMENDED",
+      "description": "Record the specific reason for closing the security incident and its resolution status.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "closeUser": {
+      "label": "Close User",
+      "requirement": "OPTIONAL",
+      "description": "Identifies the user or system entity that performed the event closure operation.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "participants": {
+      "label": "Participants",
+      "requirement": "OPTIONAL",
+      "description": "A list of all personnel involved in security incident response and handling.",
+      "type": "array",
+      "valid_type": "string_t"
+    },
+    "alertDevices": {
+      "label": "Alert Devices",
+      "requirement": "RECOMMENDED",
+      "description": "A collection of security device and sensor information that generates alarm records.",
+      "type": "array",
+      "valid_type": "string_t"
+    },
+    "isInternetAttack": {
+      "label": "Is Internet Attack",
+      "requirement": "RECOMMENDED",
+      "description": "Identify whether the attack source originates from an external network on the internet.",
+      "type": "boolean",
+      "valid_type": "boolean_t"
+    },
+    "durationTime": {
+      "label": "Duration Time",
+      "requirement": "OPTIONAL",
+      "description": "The complete duration of the recorded event or operation from start to finish, unit: seconds",
+      "type": "long",
+      "valid_type": "long_t"
+    },
+    "incidentDataSource": {
+      "label": "Incident Data Source",
+      "requirement": "OPTIONAL",
+      "description": "Identify the original source system and detection mechanism of security event data.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "alertNames": {
+      "label": "Alert Name List",
+      "requirement": "OPTIONAL",
+      "description": "A collection of all associated alert rule names throughout the security event lifecycle.",
+      "type": "array",
+      "valid_type": "string_t"
+    },
+    "alertIds": {
+      "label": "Alert ID List",
+      "requirement": "RECOMMENDED",
+      "description": "A collection of unique identifiers for all alerts associated with the security incident.",
+      "type": "array",
+      "valid_type": "string_t"
+    },
+    "alertTypes": {
+      "label": "Alert Type List",
+      "requirement": "RECOMMENDED",
+      "description": "A collection of all alert classification types associated with the recorded security event.",
+      "type": "array",
+      "valid_type": "string_t"
+    },
+    "alertCount": {
+      "label": "Alert Count",
+      "requirement": "OPTIONAL",
+      "description": "Total number of alerts associated with the security event statistics",
+      "type": "integer",
+      "valid_type": "integer_t"
+    },
+    "attacker": {
+      "label": "Attacker",
+      "requirement": "RECOMMENDED",
+      "description": "A collection of all unique source IP addresses used in the attack activity.",
+      "type": "array",
+      "valid_type": "ip_t"
+    },
+    "victim": {
+      "label": "Victim IP Address Set",
+      "requirement": "RECOMMENDED",
+      "description": "A collection of all unique target IP addresses affected by the attack.",
+      "type": "array",
+      "valid_type": "ip_t"
+    },
+    "srcAddrList": {
+      "label": "Source IP Address List",
+      "requirement": "RECOMMENDED",
+      "description": "A collection of all unique source IP addresses recorded in security events.",
+      "type": "array",
+      "valid_type": "ip_t"
+    },
+    "destAddrList": {
+      "label": "Destination IP Address List",
+      "requirement": "RECOMMENDED",
+      "description": "A collection of all unique destination IP addresses recorded in the security event.",
+      "type": "array",
+      "valid_type": "ip_t"
+    },
+    "assignee": {
+      "label": "Assignee",
+      "requirement": "OPTIONAL",
+      "description": "Identify the primary responsible party for security incident investigation and response.",
+      "type": "string",
+      "valid_type": "string_t"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "alert": {
+    "label": "Alert",
+    "description": "Standardized notifications for potential security incidents or anomalies requiring attention."
+  },
+  "asset": {
+    "label": "Asset Management",
+    "description": "Defines the categorization and attributes of hardware, software, and digital resources within a network."
+  },
+  "device_detection": {
+    "label": "Device Detection",
+    "description": "Identifies and categorizes devices connected to a network for security monitoring and threat detection."
+  },
+  "incident": {
+    "label": "Incident",
+    "description": "Records and details of security breaches or cyber attacks, including detection, response, and resolution."
+  },
+  "log": {
+    "label": "Log Data",
+    "description": "Records of events and activities for monitoring, analysis, and forensic investigation in cybersecurity."
+  }
+}

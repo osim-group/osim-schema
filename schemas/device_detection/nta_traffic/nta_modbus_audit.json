@@ -1,0 +1,1076 @@
+{
+  "group": "device_detection",
+  "category": "nta_traffic",
+  "title": "modbus_audit",
+  "label": "Modbus Audit",
+  "description": "Monitors and audits MODBUS protocol traffic for anomalous or unauthorized activities within network traffic.",
+  "definitions": {
+    "interfaceName": {
+      "label": "Interface Name",
+      "requirement": "OPTIONAL",
+      "description": "Identifies the name of the physical or logical interface device through which network traffic passes.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "requestBody": {
+      "label": "HTTP Request Body",
+      "requirement": "RECOMMENDED",
+      "description": "The data content transmitted by the HTTP network request client when sending requests to the server, typically including request parameters, form data, or JSON payload.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "responseCode": {
+      "label": "Response Code",
+      "requirement": "OPTIONAL",
+      "description": "The status code returned by the server after a network request, indicating the processing result of the request.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "machineCode": {
+      "label": "Machine Code",
+      "requirement": "REQUIRED",
+      "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "productVendorName": {
+      "label": "Product Vendor Name",
+      "requirement": "REQUIRED",
+      "description": "Official name of the security product vendor.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "deviceSendProductName": {
+      "label": "Device Product Name",
+      "requirement": "REQUIRED",
+      "description": "Official standard name of the software or hardware product that generated the log",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "deviceName": {
+      "label": "Device Name",
+      "requirement": "REQUIRED",
+      "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "deviceAssetSubTypeId": {
+      "label": "Device Asset Subtype ID",
+      "requirement": "REQUIRED",
+      "description": "Unique numeric identifier for the device type subcategory.",
+      "type": "enum",
+      "valid_type": "integer_t",
+      "enum": {
+        "1": {
+          "label": "Operating System",
+          "description": "Microsoft Windows operating system"
+        },
+        "2": {
+          "label": "Nix",
+          "description": "Unix-like operating systems, including Linux and BSD variants"
+        },
+        "3": {
+          "label": "Router",
+          "description": "Network routing device used for forwarding data packets between networks."
+        },
+        "4": {
+          "label": "Switch",
+          "description": "Network switching device, used to connect devices within a local area network and forward data frames."
+        },
+        "5": {
+          "label": "VPN",
+          "description": "Virtual Private Network (VPN) device, providing secure remote access and site-to-site connectivity."
+        },
+        "6": {
+          "label": "Load Balancing",
+          "description": "Load balancing device, used for distributing network traffic to improve performance and reliability."
+        },
+        "7": {
+          "label": "Firewall",
+          "description": "A network security device used to control inbound and outbound network traffic based on security rules."
+        },
+        "8": {
+          "label": "Network Gate",
+          "description": "Network isolation device used for secure data exchange between networks with different security levels."
+        },
+        "9": {
+          "label": "Intrusion Detection System",
+          "description": "Intrusion Detection System (IDS), used to monitor network or system activities for detecting malicious behaviors."
+        },
+        "10": {
+          "label": "Intrusion Prevention System",
+          "description": "The Intrusion Prevention System (IPS) actively blocks malicious traffic upon detecting threats."
+        },
+        "11": {
+          "label": "Unified Threat Management",
+          "description": "Unified Threat Management (UTM) device, integrating multiple security functions such as firewall, antivirus, and intrusion prevention."
+        },
+        "12": {
+          "label": "Next Generation Firewall",
+          "description": "Next-generation firewall, providing application layer inspection, deep packet inspection, and advanced threat protection."
+        },
+        "13": {
+          "label": "Web Application Firewall",
+          "description": "Web Application Firewall, specifically designed to protect web applications from attacks such as SQL injection and XSS."
+        },
+        "14": {
+          "label": "Traffic Monitoring Device",
+          "description": "Network traffic monitoring device, used for real-time analysis and monitoring of network traffic patterns."
+        },
+        "15": {
+          "label": "15",
+          "description": "Web page tamper-proof system, designed to protect website content from unauthorized modifications."
+        },
+        "16": {
+          "label": "DDoS Mitigation System",
+          "description": "Anti-Distributed Denial of Service (DDoS) protection system, mitigating DDoS attacks to safeguard service availability."
+        },
+        "17": {
+          "label": "Antivirus System",
+          "description": "Antivirus system, which detects and removes malware, viruses, and trojans."
+        },
+        "18": {
+          "label": "Counterintelligence System",
+          "description": "Anti-spyware system designed to prevent spyware from stealing sensitive information and monitoring user activities."
+        },
+        "19": {
+          "label": "Data Leakage Prevention System",
+          "description": "Data Leakage Prevention (DLP) system, designed to monitor and prevent sensitive data from being leaked through various channels."
+        },
+        "20": {
+          "label": "Email Audit System",
+          "description": "Email auditing system, monitoring and auditing email content to comply with security policies and regulatory requirements."
+        },
+        "21": {
+          "label": "Identity Management System",
+          "description": "Identity and Access Management system, managing user authentication, authorization, and permissions."
+        },
+        "22": {
+          "label": "Traffic Scrubbing System",
+          "description": "Traffic scrubbing system, filtering malicious traffic to protect network resources and ensure business continuity."
+        },
+        "23": {
+          "label": "Database Audit System",
+          "description": "Database auditing system that monitors and records database access, operations, and permission changes."
+        },
+        "24": {
+          "label": "Web Audit System",
+          "description": "Web auditing system, auditing access, operations, and security events of web applications."
+        },
+        "25": {
+          "label": "Operational Audit System",
+          "description": "Operation and maintenance auditing system, which monitors and records system operation and maintenance activities to prevent unauthorized access."
+        },
+        "26": {
+          "label": "Internet Behavior Audit System",
+          "description": "Internet behavior auditing system, which monitors and audits employees' network usage to ensure compliance with security policies."
+        },
+        "27": {
+          "label": "Unified Audit Gateway",
+          "description": "Unified Audit Gateway, which centrally collects, normalizes, and analyzes various types of audit logs."
+        },
+        "28": {
+          "label": "Log Audit System",
+          "description": "The log auditing system collects, stores, analyzes, and alerts on system security logs."
+        },
+        "29": {
+          "label": "Security Management System",
+          "description": "Security management system that integrates security management functions such as policy management, risk management, and incident response."
+        },
+        "30": {
+          "label": "Honeypot System",
+          "description": "Honeypot system, designed to deceive attackers for the purpose of collecting attack information and analyzing attack techniques."
+        },
+        "31": {
+          "label": "Application Scanner",
+          "description": "Application vulnerability scanner, designed to detect security vulnerabilities in web applications and mobile applications."
+        },
+        "32": {
+          "label": "Network Scanner",
+          "description": "Network vulnerability scanner, which scans network devices, services, and ports to identify security vulnerabilities."
+        },
+        "33": {
+          "label": "Host Scanner",
+          "description": "Host vulnerability scanner, scanning for operating system and application vulnerabilities as well as configuration issues."
+        },
+        "34": {
+          "label": "Web Server",
+          "description": "Web server software, such as IIS, Apache, Nginx, etc., used for hosting websites and applications."
+        },
+        "35": {
+          "label": "35",
+          "description": "数据库服务器软件，如MySQL、Oracle、SQL Server等，存储和管理数据"
+        },
+        "36": {
+          "label": "36",
+          "description": "Mail server software, such as Exchange, Postfix, etc., handles the sending and receiving of emails."
+        },
+        "37": {
+          "label": "Storage Server",
+          "description": "Storage server, providing data storage, backup, and sharing services."
+        },
+        "38": {
+          "label": "FTP Server",
+          "description": "FTP server, providing File Transfer Protocol services, supporting file upload and download."
+        },
+        "39": {
+          "label": "Application Server",
+          "description": "Application server, which runs enterprise applications and business logic, such as Java EE and .NET applications."
+        },
+        "43": {
+          "label": "Windows Audit Agent",
+          "description": "Windows System Audit Agent, collects Windows event logs and system activities."
+        },
+        "44": {
+          "label": "Nix Audit Agent",
+          "description": "Unix-like system audit agent that collects Linux/Unix system logs and audit data"
+        },
+        "45": {
+          "label": "WMI Audit Agent",
+          "description": "Windows Management Instrumentation (WMI) auditing agent, which collects system information and events through WMI."
+        },
+        "51": {
+          "label": "Collector",
+          "description": "Log collector, which gathers and forwards log data from various data sources."
+        },
+        "52": {
+          "label": "Communication Server",
+          "description": "Communication server, responsible for network communication, message delivery, and protocol conversion."
+        },
+        "53": {
+          "label": "Correlation Engine",
+          "description": "Security event correlation engine, which analyzes log data to detect complex security incidents."
+        },
+        "55": {
+          "label": "Other",
+          "description": "Other unclassified device types"
+        },
+        "56": {
+          "label": "Endpoint Detection and Response System",
+          "description": "Endpoint Detection and Response (EDR) system, which monitors host activities, detects threats, and responds to security incidents."
+        },
+        "57": {
+          "label": "Virtualization Device",
+          "description": "Virtualization platform devices, such as VMware ESXi and Hyper-V, which run virtual machines."
+        },
+        "58": {
+          "label": "Network Printer",
+          "description": "Network-connected printer device supporting network printing functionality."
+        },
+        "59": {
+          "label": "APT",
+          "description": "Advanced Persistent Threat (APT) detection system, designed for monitoring and protecting against APT attacks."
+        },
+        "60": {
+          "label": "DNS Server",
+          "description": "Domain Name System server, providing domain name resolution services and DNS security protection."
+        },
+        "61": {
+          "label": "API Risk Monitoring System",
+          "description": "API risk monitoring system, which monitors security risks and usage anomalies of API interfaces."
+        },
+        "62": {
+          "label": "API Security Gateway",
+          "description": "API security gateway that protects API interfaces from attacks, providing authentication, authorization, and rate limiting."
+        },
+        "63": {
+          "label": "Vulnerability Scanning System",
+          "description": "Vulnerability scanning system that comprehensively scans for system, network, and application vulnerabilities."
+        },
+        "65": {
+          "label": "UES",
+          "description": "Unified Endpoint Security System, integrating endpoint protection, detection, and response capabilities."
+        }
+      }
+    },
+    "deviceAddress": {
+      "label": "Device IP Address",
+      "requirement": "REQUIRED",
+      "description": "IP address of the log production device",
+      "type": "string",
+      "valid_type": "ip_t"
+    },
+    "deviceVersion": {
+      "label": "Device Version",
+      "requirement": "OPTIONAL",
+      "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "eventId": {
+      "label": "Event ID",
+      "requirement": "REQUIRED",
+      "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "name": {
+      "label": "Summary Name",
+      "requirement": "REQUIRED",
+      "description": "Summary name of the log or alert",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "message": {
+      "label": "Message Description",
+      "requirement": "OPTIONAL",
+      "description": "Detailed description information of the log or alert",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "startTime": {
+      "label": "Start Time",
+      "requirement": "REQUIRED",
+      "description": "The precise timestamp when the event activity began.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "endTime": {
+      "label": "End Time",
+      "requirement": "REQUIRED",
+      "description": "The precise timestamp marking the end of an event activity.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "deviceReceiptTime": {
+      "label": "Device Receipt Time",
+      "requirement": "OPTIONAL",
+      "description": "The precise timestamp when the device locally receives and generates a log event.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "collectorReceiptTime": {
+      "label": "Collector Receipt Time",
+      "requirement": "REQUIRED",
+      "description": "The exact timestamp when the log collection system receives the log event.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "severity": {
+      "label": "Severity Level",
+      "requirement": "REQUIRED",
+      "description": "Indicates the severity level of the security threat for logs or alerts.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "0": {
+          "label": "informational",
+          "description": "Informational event with no immediate security risk"
+        },
+        "3": {
+          "label": "low",
+          "description": "Low-severity security threat. Indicates a potential vulnerability or suspicious activity with minimal impact"
+        },
+        "5": {
+          "label": "medium",
+          "description": "Medium-severity security threat. Represents a confirmed security event with moderate impact"
+        },
+        "7": {
+          "label": "high",
+          "description": "High-severity security threat. Signifies a serious security incident with significant impact"
+        },
+        "10": {
+          "label": "critical",
+          "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
+        }
+      }
+    },
+    "catOutcome": {
+      "label": "Category Outcome",
+      "requirement": "RECOMMENDED",
+      "description": "Indicates the final result status of an event operation or attack.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "OK": {
+          "label": "Success",
+          "description": "It is reasonable to infer that the event has been successfully executed."
+        },
+        "FAIL": {
+          "label": "Failure",
+          "description": "It is reasonable to infer that the event has failed."
+        },
+        "Attempt": {
+          "label": "Attempt",
+          "description": "The event has occurred, but its success or failure cannot be determined."
+        }
+      }
+    },
+    "logType": {
+      "label": "Log Type",
+      "requirement": "REQUIRED",
+      "description": "Identifies the functional or object entity classification of the log event.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "alert": {
+          "label": "Alert",
+          "description": "Security alert event logs, including threat detection, anomalous behavior, and security risk alerts."
+        },
+        "traffic": {
+          "label": "Network Traffic",
+          "description": "Network traffic and communication session logs, recording network connections, data transmissions, and protocol communications."
+        },
+        "process": {
+          "label": "Process",
+          "description": "Process lifecycle management logs, recording operations such as process creation, termination, and injection."
+        },
+        "command": {
+          "label": "Command Execution",
+          "description": "Command line and script execution logs, recording system commands, PowerShell and Shell command executions."
+        },
+        "file": {
+          "label": "File",
+          "description": "File system operation logs, recording operations such as file creation, modification, deletion, and access."
+        },
+        "account": {
+          "label": "Account",
+          "description": "User account management logs, recording user login, logout, permission changes, and account management operations."
+        },
+        "config": {
+          "label": "Configuration",
+          "description": "System configuration change log, recording security policy, system settings, and configuration modification operations."
+        },
+        "status": {
+          "label": "System Status",
+          "description": "System operational status logs, recording system startup, shutdown, reboot, and operational status changes."
+        },
+        "system_operation": {
+          "label": "System Operation Log",
+          "description": "System-level administrative operation logs, recording system maintenance, management, and control operations."
+        },
+        "system_resource": {
+          "label": "System Resource",
+          "description": "System resource usage logs, recording CPU, memory, disk, and network resource utilization."
+        },
+        "domain": {
+          "label": "Domain",
+          "description": "Domain name resolution and query logs, recording DNS queries, domain name resolution, and network positioning operations."
+        },
+        "registry": {
+          "label": "Registry Operation Log",
+          "description": "Windows registry operation logs, recording the creation, modification, and deletion of registry keys and values."
+        },
+        "app": {
+          "label": "Application",
+          "description": "Application runtime logs, recording application startup, operation, errors, and business operations."
+        },
+        "service": {
+          "label": "Service",
+          "description": "System service management logs, recording the creation, startup, shutdown, and configuration changes of Windows/Linux services."
+        },
+        "task": {
+          "label": "Task",
+          "description": "Scheduled tasks and job logs, recording the creation, execution, modification, and deletion operations of scheduled tasks."
+        },
+        "thread": {
+          "label": "Thread Operation Log",
+          "description": "Thread management logs, recording operations such as thread creation, termination, suspension, and priority changes."
+        },
+        "module": {
+          "label": "Module",
+          "description": "Program module management logs, recording the loading, unloading, and memory mapping of modules such as DLLs and SOs."
+        },
+        "driver": {
+          "label": "Driver Operation Log",
+          "description": "Device driver logs, recording the loading, unloading, and operational status of kernel drivers."
+        },
+        "pipe": {
+          "label": "Pipe Operation Log",
+          "description": "Inter-process communication logs, recording named pipe creation, connection, and data transfer operations."
+        },
+        "wmi": {
+          "label": "WMI Operation Class Log",
+          "description": "Windows Management Instrumentation operation logs, recording WMI queries, event subscriptions, and code execution."
+        },
+        "winrm": {
+          "label": "Windows Remote Management",
+          "description": "Windows Remote Management logs, recording remote PowerShell command execution and system administration operations."
+        },
+        "others": {
+          "label": "Other Log Types",
+          "description": "Unclassified other log types, containing log events that cannot be categorized into the above classifications."
+        }
+      }
+    },
+    "opType": {
+      "label": "Operation Type",
+      "requirement": "OPTIONAL",
+      "description": "Identifies the specific type of operation performed in the event.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "read": {
+          "label": "Read",
+          "description": "Data read operations, including file reading, registry querying, memory reading, etc."
+        },
+        "write": {
+          "label": "Write",
+          "description": "Data write operations, including file writes, registry modifications, configuration changes, etc."
+        },
+        "create": {
+          "label": "Create",
+          "description": "New object creation operations, including file creation, process creation, user account creation, etc."
+        },
+        "delete": {
+          "label": "Delete",
+          "description": "Object deletion operations, including file deletion, registry key deletion, user account deletion, etc."
+        },
+        "modify": {
+          "label": "Modify",
+          "description": "Modify object attributes operation, including file attribute modification, permission changes, configuration adjustments, etc."
+        },
+        "login": {
+          "label": "Login",
+          "description": "Successful authentication operations, including system login, application login, remote access login, etc."
+        },
+        "logout": {
+          "label": "Logout",
+          "description": "Session termination operations, including user logout, session timeout, and forced logout."
+        },
+        "execute": {
+          "label": "Execute",
+          "description": "Program execution operations, including process initiation, command execution, script running, etc."
+        },
+        "start": {
+          "label": "Start",
+          "description": "Service startup operations, including system service initiation, scheduled task triggering, daemon process startup, etc."
+        },
+        "stop": {
+          "label": "Stop",
+          "description": "Service stop operations, including system service termination, process killing, and task completion."
+        },
+        "access": {
+          "label": "Access",
+          "description": "Resource access operations, including process access, memory access, shared resource access, etc."
+        },
+        "connect": {
+          "label": "Connection",
+          "description": "Network connection operations, including network connection establishment, session creation, remote connections, etc."
+        },
+        "load": {
+          "label": "Load",
+          "description": "Module loading operations, including driver loading, DLL loading, plugin loading, etc."
+        },
+        "send": {
+          "label": "Send",
+          "description": "Data transmission operations, including network data transmission, email sending, message sending, etc."
+        },
+        "receive": {
+          "label": "Receive",
+          "description": "Data reception operations, including network data reception, email reception, message reception, etc."
+        },
+        "combine": {
+          "label": "Combination Operation",
+          "description": "Composite operation type, indicating the combined execution of multiple operations."
+        },
+        "others": {
+          "label": "Other Operations",
+          "description": "Unclassified other operation types"
+        },
+        "query": {
+          "label": "Query",
+          "description": "Data query operations, including database queries, directory queries, information retrieval, etc."
+        },
+        "rename": {
+          "label": "Rename",
+          "description": "Object renaming operations, including file renaming, account renaming, service renaming, etc."
+        },
+        "listen": {
+          "label": "Listen",
+          "description": "Network monitoring operations, including port monitoring, session monitoring, event monitoring, etc."
+        },
+        "setValue": {
+          "label": "Set Value",
+          "description": "Key-value setting operations, including registry key settings, configuration parameter settings, environment variable settings, etc."
+        },
+        "addedGroup": {
+          "label": "Added Group",
+          "description": "Group member addition operations, including adding users to groups, computers joining domains, etc."
+        },
+        "removedGroup": {
+          "label": "Removed Group",
+          "description": "Group member removal operations, including user removal from groups and computer disjoining from domains."
+        },
+        "changePassword": {
+          "label": "Change Password",
+          "description": "Password modification operations, including user password changes, service account password updates, etc."
+        },
+        "resetPassword": {
+          "label": "Reset Password",
+          "description": "Password reset operations, including administrator-initiated password resets for users, password recovery, etc."
+        },
+        "disable": {
+          "label": "Disable",
+          "description": "Object disable operations, including user account deactivation, service deactivation, policy deactivation, etc."
+        },
+        "enable": {
+          "label": "Enable",
+          "description": "Object activation operations, including user account activation, service activation, policy activation, etc."
+        },
+        "lock": {
+          "label": "Lock",
+          "description": "Object locking operations, including user account locking, session locking, resource locking, etc."
+        },
+        "unlock": {
+          "label": "Unlock",
+          "description": "Object unlock operations, including user account unlocking, session unlocking, resource unlocking, etc."
+        }
+      }
+    },
+    "srcAddress": {
+      "label": "Source IP Address",
+      "requirement": "RECOMMENDED",
+      "description": "The IP address corresponding to the initiator of the network connection.",
+      "type": "string",
+      "valid_type": "ip_t"
+    },
+    "destAddress": {
+      "label": "Destination IP Address",
+      "requirement": "RECOMMENDED",
+      "description": "The target IP address for identifying network communication connections.",
+      "type": "string",
+      "valid_type": "ip_t"
+    },
+    "srcPort": {
+      "label": "Source Port",
+      "requirement": "OPTIONAL",
+      "description": "Source service port number identifying the network communication connection.",
+      "type": "integer",
+      "valid_type": "integer_t"
+    },
+    "destPort": {
+      "label": "Destination Port",
+      "requirement": "OPTIONAL",
+      "description": "The network port number of the communication target, used to identify specific services or applications.",
+      "type": "integer",
+      "valid_type": "integer_t"
+    },
+    "srcMacAddress": {
+      "label": "Source MAC Address",
+      "requirement": "OPTIONAL",
+      "description": "Media Access Control (MAC) address of the network data frame sender",
+      "type": "string",
+      "valid_type": "mac_t"
+    },
+    "destMacAddress": {
+      "label": "Destination MAC Address",
+      "requirement": "OPTIONAL",
+      "description": "Media Access Control (MAC) address of the network data frame recipient",
+      "type": "string",
+      "valid_type": "mac_t"
+    },
+    "srcGeoCountry": {
+      "label": "Source Geographic Country",
+      "requirement": "OPTIONAL",
+      "description": "Country of origin for the network event",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "srcGeoRegion": {
+      "label": "Source Geographic Region",
+      "requirement": "OPTIONAL",
+      "description": "Name of the provincial administrative region where the network request originated",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "srcGeoCity": {
+      "label": "Source Geographic City",
+      "requirement": "OPTIONAL",
+      "description": "The name of the city-level administrative region where the network request originated.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "srcGeoAddress": {
+      "label": "Source Geographic Address",
+      "requirement": "OPTIONAL",
+      "description": "Detailed address description of the network request source",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "srcGeoLatitude": {
+      "label": "Source Geographic Latitude",
+      "requirement": "OPTIONAL",
+      "description": "Geographic latitude coordinate of the network request source",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "srcGeoLongitude": {
+      "label": "Source Geographic Longitude",
+      "requirement": "OPTIONAL",
+      "description": "Geographic longitude coordinate of the network request source",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "destGeoCountry": {
+      "label": "Destination Geographic Country",
+      "requirement": "OPTIONAL",
+      "description": "Country name of the network request destination",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "destGeoRegion": {
+      "label": "Destination Geographic Region",
+      "requirement": "OPTIONAL",
+      "description": "The name of the provincial-level administrative region where the network request destination is located.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "destGeoCity": {
+      "label": "Destination Geographic City",
+      "requirement": "OPTIONAL",
+      "description": "City-level administrative region name of the network request destination",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "destGeoAddress": {
+      "label": "Destination Geographic Address",
+      "requirement": "OPTIONAL",
+      "description": "Detailed address description of the network request destination",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "destGeoLatitude": {
+      "label": "Destination Geographic Latitude",
+      "requirement": "OPTIONAL",
+      "description": "Geographic latitude coordinate of the network request destination",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "destGeoLongitude": {
+      "label": "Destination Geographic Longitude",
+      "requirement": "OPTIONAL",
+      "description": "Geographic longitude coordinate of the network request destination",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "transProtocol": {
+      "label": "Transport Protocol",
+      "requirement": "OPTIONAL",
+      "description": "Protocol types used at the transport layer of the OSI model.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "TCP": {
+          "label": "TCP",
+          "description": "Connection-oriented reliable transport protocol that provides sequential packet transmission, error detection, and retransmission mechanisms."
+        },
+        "UDP": {
+          "label": "UDP",
+          "description": "A connectionless, unreliable transport protocol that provides low-latency data transmission, suitable for real-time applications."
+        }
+      }
+    },
+    "appProtocol": {
+      "label": "Application Protocol",
+      "requirement": "RECOMMENDED",
+      "description": "Protocol types used at the application layer of the OSI model.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "http": {
+          "label": "HTTP",
+          "description": "HTTP (Hypertext Transfer Protocol)"
+        },
+        "https": {
+          "label": "HTTPS",
+          "description": "The unique identifier of the log source device (device ID), used for cascading purposes. Permitted characters include uppercase letters, lowercase letters, and digits."
+        },
+        "dns": {
+          "label": "DNS",
+          "description": "Domain Name System (DNS), a hierarchical and decentralized naming system used to resolve domain names to IP addresses and other resource records."
+        },
+        "ssh": {
+          "label": "SSH",
+          "description": "Secure Shell (SSH), a cryptographic network protocol for operating network services securely over an unsecured network."
+        },
+        "telnet": {
+          "label": "Telnet",
+          "description": "Telnet"
+        },
+        "telnets": {
+          "label": "Telnet",
+          "description": "Telnet"
+        },
+        "rsync": {
+          "label": "Rsync",
+          "description": "A utility for efficiently transferring and synchronizing files across systems, commonly used for incremental backups and mirroring."
+        },
+        "tftp": {
+          "label": "TFTP",
+          "description": "TFTP (Trivial File Transfer Protocol)"
+        },
+        "ftp": {
+          "label": "FTP",
+          "description": "File Transfer Protocol (FTP)"
+        },
+        "sftp": {
+          "label": "SFTP",
+          "description": "SFTP (SSH File Transfer Protocol), a secure file transfer protocol that provides file access, transfer, and management over a secure channel."
+        },
+        "smb": {
+          "label": "SMB",
+          "description": "Server Message Block (SMB), a network protocol for shared access to files, printers, and serial ports between nodes on a network."
+        },
+        "ntp": {
+          "label": "NTP",
+          "description": "Network Time Protocol (NTP)"
+        },
+        "mysql": {
+          "label": "MySQL",
+          "description": "MySQL"
+        },
+        "ms-sql-s": {
+          "label": "MS SQL Server",
+          "description": "Microsoft SQL Server (MS-SQL-S)"
+        },
+        "ms-sql-m": {
+          "label": "MS SQL M",
+          "description": "Microsoft SQL Server (MSSQL) is a relational database management system developed by Microsoft. As a database server, it is a software product whose primary function is to store and retrieve data as requested by other software applications."
+        },
+        "oracle": {
+          "label": "Oracle",
+          "description": "Oracle"
+        },
+        "nfs": {
+          "label": "NFS",
+          "description": "Network File System (NFS), a distributed file system protocol that allows a user on a client computer to access files over a network in a manner similar to how local storage is accessed."
+        },
+        "pop2": {
+          "label": "POP2",
+          "description": "POP2 (Post Office Protocol version 2), an early version of the email retrieval protocol."
+        },
+        "pop3": {
+          "label": "POP3",
+          "description": "POP3 (Post Office Protocol version 3), a standard protocol used for retrieving emails from a remote server to a local client."
+        },
+        "pop3s": {
+          "label": "POP3S",
+          "description": "POP3S (Post Office Protocol 3 Secure), a secure version of POP3 that uses SSL/TLS encryption for secure email retrieval."
+        },
+        "smtp": {
+          "label": "SMTP",
+          "description": "Simple Mail Transfer Protocol (SMTP)"
+        },
+        "imap": {
+          "label": "IMAP",
+          "description": "Internet Message Access Protocol (IMAP), a standard protocol for email retrieval from a mail server."
+        },
+        "imaps": {
+          "label": "IMAPS",
+          "description": "Internet Message Access Protocol over SSL/TLS (IMAPS), a secure protocol for accessing email messages on a mail server."
+        },
+        "chargen": {
+          "label": "Character Generator Protocol",
+          "description": "Character Generator (chargen), a network protocol service used for testing and debugging purposes by generating a continuous stream of ASCII characters."
+        },
+        "qotd": {
+          "label": "Quote of the Day",
+          "description": "Quote of the Day (QOTD)"
+        },
+        "x11": {
+          "label": "X11",
+          "description": "X11"
+        },
+        "uucp": {
+          "label": "UUCP",
+          "description": "Unix-to-Unix Copy Protocol (UUCP), a suite of computer programs and protocols allowing remote execution of commands and transfer of files between Unix systems."
+        },
+        "rcp": {
+          "label": "RCP",
+          "description": "Remote Copy Protocol (RCP)"
+        },
+        "postgres": {
+          "label": "PostgreSQL",
+          "description": "PostgreSQL"
+        },
+        "bootps": {
+          "label": "BOOTPS",
+          "description": "BOOTP server (Bootstrap Protocol server), a network protocol used by a network client to obtain an IP address from a configuration server."
+        },
+        "bootpc": {
+          "label": "BOOTP Client",
+          "description": "BOOTP client, a protocol used for obtaining IP address and other network configuration information."
+        },
+        "squid": {
+          "label": "Squid",
+          "description": "Squid"
+        },
+        "ftps": {
+          "label": "FTPS",
+          "description": "FTPS (File Transfer Protocol Secure), an extension of FTP that adds support for cryptographic protocols to enhance security during file transfers."
+        },
+        "ircs": {
+          "label": "IRCS",
+          "description": "Internet Relay Chat Secure (IRCS), a secure version of the Internet Relay Chat protocol that provides encrypted communication."
+        },
+        "echo": {
+          "label": "Echo",
+          "description": "echo"
+        },
+        "sunrpc": {
+          "label": "SunRPC",
+          "description": "SunRPC (Sun Remote Procedure Call), a protocol for performing remote procedure calls in networked systems."
+        },
+        "auth": {
+          "label": "Authentication",
+          "description": "Authentication"
+        },
+        "tacacs": {
+          "label": "TACACS",
+          "description": "Terminal Access Controller Access-Control System (TACACS), a remote authentication protocol used to communicate with an authentication server for network access control."
+        },
+        "nntp": {
+          "label": "NNTP",
+          "description": "Network News Transfer Protocol (NNTP), a protocol used for distributing, querying, retrieving, and posting news articles on Usenet."
+        },
+        "radius": {
+          "label": "RADIUS",
+          "description": "Remote Authentication Dial-In User Service (RADIUS), a networking protocol that provides centralized authentication, authorization, and accounting management for users who connect and use a network service."
+        },
+        "netbios-ns": {
+          "label": "NetBIOS Name Service",
+          "description": "NetBIOS Name Service (NetBIOS-NS), a protocol used for name resolution in NetBIOS over TCP/IP networks."
+        },
+        "netbios-dgm": {
+          "label": "NetBIOS Datagram",
+          "description": "NetBIOS Datagram Service (NetBIOS-DGM), a network protocol used for connectionless communication in NetBIOS networks."
+        },
+        "netbios-ssn": {
+          "label": "NetBIOS Session Service",
+          "description": "NetBIOS Session Service (netbios-ssn), a protocol used for session communication in NetBIOS over TCP/IP (NBT) implementations."
+        },
+        "wins": {
+          "label": "WINS",
+          "description": "Windows Internet Name Service (WINS), a legacy Microsoft NetBIOS name resolution service for network name registration and resolution."
+        },
+        "snmp": {
+          "label": "SNMP",
+          "description": "Simple Network Management Protocol (SNMP)"
+        },
+        "snmptrap": {
+          "label": "SNMP Trap",
+          "description": "SNMP trap"
+        },
+        "bgp": {
+          "label": "BGP",
+          "description": "Border Gateway Protocol (BGP)"
+        },
+        "irc": {
+          "label": "IRC",
+          "description": "Internet Relay Chat (IRC), a protocol for real-time text messaging between users in chat rooms or private conversations."
+        },
+        "ldap": {
+          "label": "LDAP",
+          "description": "LDAP (Lightweight Directory Access Protocol)"
+        },
+        "ldaps": {
+          "label": "LDAPS",
+          "description": "LDAPS (Lightweight Directory Access Protocol Secure) is the secure version of LDAP that uses SSL/TLS encryption for secure communication."
+        },
+        "timbuktu": {
+          "label": "Timbuktu",
+          "description": "Timbuktu"
+        },
+        "nnsp": {
+          "label": "NNSP",
+          "description": "Network security platform"
+        },
+        "daytime": {
+          "label": "Daytime",
+          "description": "daytime"
+        },
+        "ircd": {
+          "label": "IRCD",
+          "description": "Internet Relay Chat daemon (ircd), a server application that implements the IRC protocol for real-time text messaging."
+        },
+        "isakmp": {
+          "label": "ISAKMP",
+          "description": "Internet Security Association and Key Management Protocol (ISAKMP)"
+        },
+        "printer": {
+          "label": "Printer",
+          "description": "printer"
+        },
+        "dhcpv6-client": {
+          "label": "DHCPv6 Client",
+          "description": "DHCPv6 client"
+        },
+        "dhcpv6-server": {
+          "label": "DHCPv6 Server",
+          "description": "DHCPv6 server"
+        },
+        "rtsp": {
+          "label": "RTSP",
+          "description": "RTSP (Real Time Streaming Protocol)"
+        },
+        "nntps": {
+          "label": "NNTP over SSL",
+          "description": "NNTP (Network News Transfer Protocol), a protocol used for distributing, querying, retrieving, and posting news articles on Usenet."
+        },
+        "discard": {
+          "label": "Discard",
+          "description": "Discard"
+        },
+        "ipx": {
+          "label": "IPX",
+          "description": "IPX (Internetwork Packet Exchange), a network layer protocol used in Novell NetWare environments for packet routing and addressing."
+        },
+        "finger": {
+          "label": "Finger",
+          "description": "A unique identifier used in digital security, often referring to a cryptographic hash or system-generated identifier for authentication or tracking purposes."
+        },
+        "rdp": {
+          "label": "RDP",
+          "description": "Remote Desktop Protocol (RDP), a proprietary protocol developed by Microsoft that provides a user with a graphical interface to connect to another computer over a network connection."
+        }
+      }
+    },
+    "dvcAction": {
+      "label": "Device Action",
+      "requirement": "OPTIONAL",
+      "description": "Records the automated response actions taken by security devices against detected threats or anomalous behaviors.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "direction": {
+      "label": "Data Flow Direction",
+      "requirement": "RECOMMENDED",
+      "description": "Network flow direction classification based on source and destination IP addresses.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "11": {
+          "label": "External Access",
+          "description": "Source IP is an external IP, destination IP is an external IP, data direction: external-to-external access"
+        },
+        "10": {
+          "label": "External To Internal Access",
+          "description": "Source IP is an external IP, destination IP is an internal IP, data direction: external to internal access"
+        },
+        "01": {
+          "label": "Internal To External Access",
+          "description": "Source IP is an internal IP, destination IP is an external IP, data direction: internal to external access"
+        },
+        "00": {
+          "label": "Internal Access Internal",
+          "description": "Source IP is internal, destination IP is internal, data direction: internal to internal access"
+        }
+      }
+    },
+    "eventCount": {
+      "label": "Event Count",
+      "requirement": "RECOMMENDED",
+      "description": "Count the occurrences of the same type or related events.",
+      "type": "long",
+      "valid_type": "long_t"
+    },
+    "dataSourceAddress": {
+      "label": "Data Source Address",
+      "requirement": "RECOMMENDED",
+      "description": "Device address of the data source",
+      "type": "string",
+      "valid_type": "ip_t"
+    }
+  }
+}

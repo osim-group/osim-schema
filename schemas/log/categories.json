@@ -1,0 +1,25 @@
+{
+    "group": "log",
+    "categories": {
+        "authentication_and_access": {
+            "label": "Authentication And Access",
+            "description": "This log type captures authentication attempts, access control events, and user identity verification activities within the network infrastructure."
+        },
+        "data_security_audit": {
+            "label": "Data Security Audit",
+            "description": "Logs capturing detailed records of data access, modifications, and security-related activities for compliance and forensic analysis."
+        },
+        "network_session_audit": {
+            "label": "Network Session Audit",
+            "description": "Network session audit logs capture detailed records of communication sessions between devices, including timestamps, source/destination IPs, ports, and protocol information for security analysis."
+        },
+        "host_behavior_audit": {
+            "label": "Host Behavior Audit",
+            "description": "This log type records detailed audit trails of host activities, including user commands, process executions, and system modifications for security monitoring and forensic analysis."
+        },
+        "operation_monitoring_audit": {
+            "label": "Operation Monitoring Audit",
+            "description": "This log type captures detailed audit trails of operational monitoring activities, including system performance metrics, configuration changes, and administrative access events for compliance and security analysis."
+        }
+    }
+}

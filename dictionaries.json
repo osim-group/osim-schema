@@ -1,0 +1,23 @@
+{
+	"field_name1": {
+		"label": "",
+		"requirement": "required",
+		"description": "xxx",
+		"type": "string",
+		"valid_type": ""
+	},
+	"field_name2": {
+		"label": "",
+		"requirement": "required",
+		"description": "xxx",
+		"type": "enum",
+		"valid_type": "integer",
+		"enum": {
+			"1": {
+				"label": "",
+				"type": "integer",
+				"description": ""
+			}
+		}
+	}
+}

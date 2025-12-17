@@ -1,0 +1,987 @@
+{
+  "group": "asset",
+  "category": "business_asset",
+  "title": "mini_program",
+  "label": "Mini Program",
+  "description": "Monitors and records security-related activities and configurations of mini-programs within the business asset ecosystem.",
+  "definitions": {
+    "appletName": {
+      "label": "Applet Name",
+      "requirement": "RECOMMENDED",
+      "description": "Used to identify the name of the mini-program product.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "appletId": {
+      "label": "Applet ID",
+      "requirement": "OPTIONAL",
+      "description": "A string identifier used to uniquely identify a mini program.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "developer": {
+      "label": "Developer Name",
+      "requirement": "RECOMMENDED",
+      "description": "Identifies the development entity name of mobile applications, software products, or system components.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "icon": {
+      "label": "Icon",
+      "requirement": "OPTIONAL",
+      "description": "Graphical representation of an object, using visual symbols to refer to specific entities or functions.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "requestDomain": {
+      "label": "Request Domain",
+      "requirement": "OPTIONAL",
+      "description": "The fully qualified domain name (FQDN) identifying the target of the network request.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetId": {
+      "label": "Asset ID",
+      "requirement": "REQUIRED",
+      "description": "Globally unique identifier of the asset in the system",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "relateId": {
+      "label": "Related ID",
+      "requirement": "OPTIONAL",
+      "description": "Unique identifier used for correlating related security events or asset information.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetName": {
+      "label": "Asset Name",
+      "requirement": "REQUIRED",
+      "description": "Human-readable name associated with the asset",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetCategory": {
+      "label": "Asset Category",
+      "requirement": "REQUIRED",
+      "description": "Asset classification from an asset management perspective.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "database": {
+          "label": "Database",
+          "description": "Structured data storage systems, such as relational databases like MySQL and Oracle, or non-relational databases like MongoDB."
+        },
+        "data_table": {
+          "label": "Data Table",
+          "description": "The core storage unit in a database, used for storing collections of data records with the same structure."
+        },
+        "data_field": {
+          "label": "Data Field",
+          "description": "The smallest data unit in a data table or data structure, used to store attribute values of specific types."
+        },
+        "account": {
+          "label": "Account",
+          "description": "Digital identity credentials used to access systems, applications, or services, including user accounts, service accounts, etc."
+        },
+        "api": {
+          "label": "API",
+          "description": "Application Programming Interface (API), providing a standardized way for software components to interact and exchange data."
+        },
+        "file": {
+          "label": "File",
+          "description": "A collection of data stored in the file system, which may include documents, executable programs, configuration files, or multimedia content."
+        },
+        "website": {
+          "label": "Website",
+          "description": "A collection of web pages and applications accessible via HTTP/HTTPS protocols, representing common external services and attack surfaces."
+        },
+        "mobile_app": {
+          "label": "Mobile Application",
+          "description": "Mobile device application, typically referring to client-side software running on mobile operating systems such as iOS or Android."
+        },
+        "official_account": {
+          "label": "Official Account",
+          "description": "Official accounts operated on social media platforms such as WeChat, used for publishing information, providing services, and interacting with users."
+        },
+        "mini_program": {
+          "label": "Mini Program",
+          "description": "Lightweight applications that can be used within super apps (such as WeChat, Alipay) without the need for download or installation."
+        },
+        "terminal": {
+          "label": "Terminal",
+          "description": "Endpoints of computing devices directly operated by users, including personal computers, ATMs, information terminals, etc."
+        },
+        "device": {
+          "label": "Device",
+          "description": "Generalized hardware devices, including physical entities such as network devices, IoT devices, office equipment, etc."
+        },
+        "server": {
+          "label": "Server",
+          "description": "Physical computing equipment deployed in on-premises data centers, used to provide network services or run enterprise applications."
+        },
+        "virtual_machine": {
+          "label": "Virtual Machine",
+          "description": "A complete, independent computer system environment simulated on a physical server through virtualization technology."
+        },
+        "container": {
+          "label": "Container",
+          "description": "Operating system-level virtualization technology used for packaging, distributing, and running applications along with their dependencies."
+        },
+        "system_software": {
+          "label": "System Software",
+          "description": "Software that provides fundamental services for computer operations, such as operating systems, database management systems, middleware, etc."
+        },
+        "application_software": {
+          "label": "Application Software",
+          "description": "Software designed for specific purposes or to address particular problems, such as office software, ERP, and CRM systems."
+        },
+        "domain": {
+          "label": "Domain Name",
+          "description": "An address identifier on the internet, used to locate websites and services, serving as a critical entry point for network assets."
+        },
+        "ip_address": {
+          "label": "IP Address",
+          "description": "Internet Protocol address, used to uniquely identify and locate a device or interface in a network."
+        },
+        "port": {
+          "label": "Port",
+          "description": "A logical endpoint in network communication, used in conjunction with an IP address to distinguish between different services on the same device."
+        },
+        "certificate": {
+          "label": "Certificate",
+          "description": "Digital certificate, an electronic credential used for identity authentication, data encryption, and secure communication."
+        },
+        "cloud_server": {
+          "label": "Cloud Server",
+          "description": "Elastic computing instances provided by cloud service providers (such as AWS EC2, Alibaba Cloud ECS) and managed as a service."
+        },
+        "cloud_storage": {
+          "label": "Cloud Storage",
+          "description": "Object, block, or file storage services provided by cloud service providers, such as AWS S3 and Alibaba Cloud OSS."
+        },
+        "other": {
+          "label": "Other",
+          "description": "Other types of assets not included in the above categories."
+        }
+      }
+    },
+    "unitId": {
+      "label": "Unit ID",
+      "requirement": "OPTIONAL",
+      "description": "Unique identifier of the asset's owning organization (unit ID)",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "unitName": {
+      "label": "Unit Name",
+      "requirement": "OPTIONAL",
+      "description": "The name of the organization to which the asset belongs.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "unitType": {
+      "label": "Unit Type",
+      "requirement": "OPTIONAL",
+      "description": "Industry and nature classification of the organizational entity to which the asset belongs, used for asset ownership management, security policy formulation, and compliance auditing.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "party_committee": {
+          "label": "Party Committee",
+          "description": "The working bodies of the Communist Party of China committees at all levels are political leadership organs."
+        },
+        "large_state_owned_enterprise": {
+          "label": "Large State Owned Enterprise",
+          "description": "Large state-owned sole proprietorship or holding enterprises supervised by the State-owned Assets Supervision and Administration Commission of the State Council or local governments."
+        },
+        "company": {
+          "label": "Company",
+          "description": "Legal entities or unincorporated organizations engaged in commercial activities for profit-making purposes, including private enterprises, foreign-invested enterprises, etc."
+        },
+        "public_institution": {
+          "label": "Public Institution",
+          "description": "A social service organization established by national administrative authorities, engaged in activities such as education, science and technology, culture, and health, possessing legal person status."
+        },
+        "individual": {
+          "label": "Individual",
+          "description": "An individual acting as an asset owner or user, not affiliated with any organization."
+        },
+        "government": {
+          "label": "Government",
+          "description": "Administrative agencies at all levels of the state, including ministries and commissions under the State Council, local governments, and their constituent departments, exercise administrative management functions."
+        },
+        "private_non_enterprise": {
+          "label": "Private Non Enterprise",
+          "description": "Social organizations established by enterprises, institutions, social groups, other social forces, or individual citizens using non-state-owned assets, engaged in non-profit social service activities."
+        },
+        "social_organization": {
+          "label": "Social Organization",
+          "description": "A non-profit social organization voluntarily formed by Chinese citizens to achieve the common goals of its members and carry out activities in accordance with its charter, which must be registered with the civil affairs department."
+        },
+        "law_firm": {
+          "label": "Law Firm",
+          "description": "Legally established institutions that provide legal services to clients, primarily including law firms."
+        },
+        "mass_organization": {
+          "label": "Mass Organization",
+          "description": "A general term for people's organizations and mass organizations, which are specific social group organizations under the leadership of the Communist Party of China, such as trade unions, the Communist Youth League, and the Women's Federation."
+        },
+        "foundation": {
+          "label": "Foundation",
+          "description": "A non-profit legal entity established with assets donated by natural persons, legal persons, or other organizations for the purpose of engaging in public welfare activities."
+        },
+        "religious_group": {
+          "label": "Religious Group",
+          "description": "A voluntary association formed by religious citizens in accordance with the law, aimed at uniting religious citizens and conducting religious activities."
+        },
+        "defense_agency": {
+          "label": "Defense Agency",
+          "description": "Agencies responsible for national defense and armed forces development, such as departments and subordinate units of the Central Military Commission."
+        },
+        "forensic_institution": {
+          "label": "Forensic Institution",
+          "description": "A legal entity or other organization that has obtained the 'Judicial Appraisal License' after review and registration by judicial administrative authorities, and provides judicial appraisal services in litigation activities."
+        },
+        "medical_institution": {
+          "label": "Medical Institution",
+          "description": "Legally established institutions engaged in disease diagnosis and treatment activities, including hospitals, clinics, and health centers."
+        },
+        "overseas_institution": {
+          "label": "Overseas Institution",
+          "description": "Legally registered or established institutional entities outside Mainland China (including Hong Kong, Macau, Taiwan, and foreign countries)."
+        },
+        "foreign_cultural_center": {
+          "label": "Foreign Cultural Center",
+          "description": "Non-profit organizations established by foreign governments within China, aimed at promoting cultural exchange and cooperation between the two countries."
+        },
+        "notary_organization": {
+          "label": "Notary Organization",
+          "description": "A notarization institution legally established, non-profit oriented, independently exercising notarial functions and assuming civil liabilities in accordance with the law."
+        },
+        "impartial_organization": {
+          "label": "Impartial Organization",
+          "description": "Generally refers to third-party organizations engaged in independent, objective evaluation, certification, arbitration, and similar activities."
+        },
+        "collective_economy": {
+          "label": "Collective Economy",
+          "description": "A form of public ownership economy where the means of production are jointly owned by a portion of the laborers, such as rural collective economic organizations and urban collective enterprises."
+        },
+        "commission_bureau": {
+          "label": "Commission Bureau",
+          "description": "A collective term for committees, offices, and bureaus in local governments, which are administrative departments responsible for specific executive management functions."
+        },
+        "district_county": {
+          "label": "District County",
+          "description": "A general term for municipal districts or counties as primary administrative divisions and administrative levels, possessing complete governmental functions."
+        },
+        "other": {
+          "label": "Other",
+          "description": "Other types of organizations not belonging to the above categories."
+        }
+      }
+    },
+    "supervisoryUnitName": {
+      "label": "Supervisory Unit Name",
+      "requirement": "OPTIONAL",
+      "description": "The name of the organization with regulatory authority over the asset.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "industry": {
+      "label": "Industry Classification",
+      "requirement": "OPTIONAL",
+      "description": "The national economic industry classification to which the asset belongs, used to identify the business nature, regulatory environment, and security requirements of the asset's field, with reference to China's 'National Economic Industry Classification' standard.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "education": {
+          "label": "Education",
+          "description": "The industry engaged in various levels and types of education, training, and related support services."
+        },
+        "government": {
+          "label": "Government",
+          "description": "State authorities at all levels, administrative organs, judicial organs, and other institutions that perform public management and service functions."
+        },
+        "medical": {
+          "label": "Medical",
+          "description": "Industry engaged in disease diagnosis, treatment, prevention, rehabilitation, and public health services."
+        },
+        "postal": {
+          "label": "Postal Code",
+          "description": "The industry engaged in mail delivery services such as letters and parcels, as well as postal finance, express delivery, and logistics services."
+        },
+        "finance": {
+          "label": "Finance",
+          "description": "The general term for industries engaged in capital financing, credit activities, and related financial services, including banking, securities, insurance, etc."
+        },
+        "transportation": {
+          "label": "Transportation",
+          "description": "Industries engaged in passenger and cargo transportation, warehousing, and transportation support services."
+        },
+        "energy": {
+          "label": "Energy",
+          "description": "Industries engaged in the extraction, production, and supply of energy resources such as coal, petroleum, natural gas, electricity, and new energy."
+        },
+        "broadcasting": {
+          "label": "Broadcasting",
+          "description": "Industry engaged in the production, broadcasting, transmission of radio and television programs, as well as related online audiovisual services."
+        },
+        "telecommunications": {
+          "label": "Telecommunications",
+          "description": "The industry engaged in the operation of fixed and mobile communication networks, as well as internet access and information transmission services."
+        },
+        "water_conservancy": {
+          "label": "Water Conservancy",
+          "description": "The industry engaged in the construction and management of water conservancy projects such as flood control, irrigation, water supply, hydropower generation, and soil and water conservation."
+        },
+        "commercial_internet": {
+          "label": "Commercial Internet",
+          "description": "Refers to for-profit enterprises that provide internet information services to the general public."
+        },
+        "railway": {
+          "label": "Railway",
+          "description": "Industry engaged in the operation, construction, and management of national railways, local railways, and urban rail transit systems."
+        },
+        "banking": {
+          "label": "Banking",
+          "description": "Financial intermediary engaged in deposit-taking, loan issuance, settlement services, and other related operations."
+        },
+        "customs": {
+          "label": "Customs",
+          "description": "A national administrative authority responsible for supervising, taxing, and combating smuggling of inbound and outbound goods, articles, and means of transport."
+        },
+        "taxation": {
+          "label": "Taxation",
+          "description": "The state administrative authority responsible for tax collection, management, and inspection."
+        },
+        "civil_aviation": {
+          "label": "Civil Aviation",
+          "description": "Industries engaged in civil aviation transportation, airport services, air traffic control, and aviation support."
+        },
+        "electric_power": {
+          "label": "Electric Power Sector",
+          "description": "The industry engaged in electricity production (generation), transmission (transmission and distribution), and supply."
+        },
+        "securities": {
+          "label": "Securities Industry",
+          "description": "Financial industry engaged in securities issuance, trading, investment consulting, asset management, and other related businesses."
+        },
+        "insurance": {
+          "label": "Insurance",
+          "description": "A financial industry engaged in various insurance business operations, which pools funds through contractual arrangements and provides risk protection."
+        },
+        "defense_technology": {
+          "label": "Defense Technology",
+          "description": "Engaged in scientific research, production, and related supporting services for weaponry and equipment, serving as a strategic industry for national defense construction."
+        },
+        "public_security": {
+          "label": "Public Security",
+          "description": "Administrative authorities responsible for maintaining national security and social order, as well as combating criminal activities."
+        },
+        "social_security": {
+          "label": "Social Security",
+          "description": "An administrative authority responsible for human resource management, employment services, labor relations coordination, and social insurance administration."
+        },
+        "public_finance": {
+          "label": "Public Finance",
+          "description": "Administrative authority responsible for macroeconomic management including government revenue and expenditure, fiscal and taxation policies, and state-owned assets management."
+        },
+        "audit": {
+          "label": "Audit",
+          "description": "An administrative authority that independently supervises the authenticity, legality, and effectiveness of fiscal and financial revenues and expenditures of government agencies and enterprises/institutions in accordance with the law."
+        },
+        "commerce_trade": {
+          "label": "Commerce Trade",
+          "description": "Industry engaged in wholesale, retail, import and export trade of goods and related services."
+        },
+        "land_resources": {
+          "label": "Land Resources",
+          "description": "Administrative authority responsible for the planning, management, protection, and rational utilization of natural resources such as land, minerals, and oceans."
+        },
+        "statistics": {
+          "label": "Statistics",
+          "description": "The administrative authority responsible for organizing and implementing statistical surveys, analysis, and publication of national economic and social development data."
+        },
+        "culture": {
+          "label": "Culture",
+          "description": "Engaged in cultural undertakings and industries such as news publishing, radio, film and television, cultural arts, and cultural heritage preservation."
+        },
+        "agriculture": {
+          "label": "Agriculture",
+          "description": "Industries engaged in agricultural production and related services, including crop farming, forestry, animal husbandry, and fisheries."
+        },
+        "diplomacy": {
+          "label": "Diplomacy",
+          "description": "The administrative body responsible for handling the nation's foreign relations, safeguarding national sovereignty and interests, and conducting international exchanges and cooperation."
+        },
+        "development_reform": {
+          "label": "Development Reform",
+          "description": "A macro-control department responsible for formulating and implementing national economic and social development strategies and plans, as well as advancing economic system reforms."
+        },
+        "science_technology": {
+          "label": "Science Technology",
+          "description": "Engaged in the fields of scientific research, technological development, achievement transformation, and high-tech industrialization."
+        },
+        "publicity": {
+          "label": "Publicity",
+          "description": "Functional areas responsible for ideology, press and publication, ideological and moral construction, and spiritual civilization development."
+        },
+        "quality_supervision": {
+          "label": "Quality Supervision",
+          "description": "Administrative authority responsible for product quality, metrology, standardization, certification, accreditation, and supervision of import-export inspection and quarantine."
+        },
+        "construction": {
+          "label": "Construction",
+          "description": "Industries engaged in engineering activities such as housing construction, civil engineering, building installation, and decoration."
+        },
+        "judiciary": {
+          "label": "Judiciary",
+          "description": "Administrative authority responsible for judicial administration, including prison management, lawyer notarization, legal aid, and legal awareness campaigns."
+        },
+        "social_insurance": {
+          "label": "Social Insurance",
+          "description": "An agency responsible for the administration and management of social insurance programs, including pension insurance, medical insurance, unemployment insurance, work-related injury insurance, and maternity insurance."
+        },
+        "public_utilities": {
+          "label": "Public Utilities",
+          "description": "Industries that provide basic and public welfare services to society, such as tap water, gas, heating, and public transportation."
+        },
+        "environmental_protection": {
+          "label": "Environmental Protection",
+          "description": "Administrative authority responsible for environmental pollution prevention and control, ecological protection, environmental monitoring and law enforcement, as well as other environmental protection management functions."
+        },
+        "information_services": {
+          "label": "Information Services",
+          "description": "An industry engaged in information technology consulting, software development, data processing, system integration, and internet platform services."
+        },
+        "industry_commerce": {
+          "label": "Industry Commerce",
+          "description": "Administrative authority responsible for market entity registration, market supervision, anti-monopoly, consumer rights protection, and other market regulation and supervision functions."
+        },
+        "other": {
+          "label": "Other",
+          "description": "Other industries or fields not included in the above categories."
+        }
+      }
+    },
+    "assetCriticality": {
+      "label": "Asset Criticality",
+      "requirement": "RECOMMENDED",
+      "description": "Asset importance level (e.g., normal, important, core, confidential, other).",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "common": {
+          "label": "Common Asset",
+          "description": "General asset"
+        },
+        "important": {
+          "label": "Critical Asset",
+          "description": "Critical asset"
+        },
+        "core": {
+          "label": "Core Asset",
+          "description": "Core assets"
+        },
+        "classified": {
+          "label": "Classified Asset",
+          "description": "Classified assets"
+        },
+        "other": {
+          "label": "Other Asset",
+          "description": "Other assets"
+        }
+      }
+    },
+    "assetAlias": {
+      "label": "Asset Alias",
+      "requirement": "OPTIONAL",
+      "description": "Asset alias for easier viewing and identification.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetSource": {
+      "label": "Asset Source",
+      "requirement": "OPTIONAL",
+      "description": "Source of the asset (e.g., IP address of the discovered device or name of the personnel who manually entered it).",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetTag": {
+      "label": "Asset Tag",
+      "requirement": "OPTIONAL",
+      "description": "Service identification label assigned to assets after port scanning.",
+      "type": "array",
+      "valid_type": "string_t"
+    },
+    "orgId": {
+      "label": "Organization ID",
+      "requirement": "OPTIONAL",
+      "description": "The organizational structure identifier to which the asset belongs.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "orgName": {
+      "label": "Organization Name",
+      "requirement": "OPTIONAL",
+      "description": "The name of the organizational structure to which the asset belongs.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "netId": {
+      "label": "Security Domain ID",
+      "requirement": "OPTIONAL",
+      "description": "Unique identifier of the asset's security domain (primarily used to resolve security domain conflicts)",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "securityZone": {
+      "label": "Security Zone",
+      "requirement": "OPTIONAL",
+      "description": "A logically or physically segmented network zone divided for security purposes.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetUser": {
+      "label": "Asset User",
+      "requirement": "RECOMMENDED",
+      "description": "Name of the personnel using the asset",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetUserPhone": {
+      "label": "Asset User Phone Number",
+      "requirement": "RECOMMENDED",
+      "description": "Contact mobile number of the asset user (for security communication purposes)",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetUserMail": {
+      "label": "Asset User Contact Email",
+      "requirement": "OPTIONAL",
+      "description": "Contact email of the asset user (for security communication purposes)",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetOwnerName": {
+      "label": "Asset Owner Name",
+      "requirement": "RECOMMENDED",
+      "description": "Name of the asset owner",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetOwnerPhone": {
+      "label": "Asset Owner Contact Information",
+      "requirement": "RECOMMENDED",
+      "description": "Contact information of the asset owner",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetOwnerMail": {
+      "label": "Asset Owner Email",
+      "requirement": "OPTIONAL",
+      "description": "Email address of the asset owner",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetDepartmentName": {
+      "label": "Asset Department Name",
+      "requirement": "OPTIONAL",
+      "description": "The name of the department or unit responsible for asset management.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "departmentHeadName": {
+      "label": "Department Head Name",
+      "requirement": "OPTIONAL",
+      "description": "Name of the department head",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "departmentHeadPhone": {
+      "label": "Department Head Phone Number",
+      "requirement": "OPTIONAL",
+      "description": "Mobile phone number of the department head",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "departmentHeadMail": {
+      "label": "Department Head Email",
+      "requirement": "OPTIONAL",
+      "description": "Email address of the department head",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetDescription": {
+      "label": "Asset Description",
+      "requirement": "OPTIONAL",
+      "description": "Detailed description of the asset, including type, purpose, department affiliation, and user information.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "createTime": {
+      "label": "Creation Time",
+      "requirement": "OPTIONAL",
+      "description": "The initial creation time of a system object, file, or resource.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "updateTime": {
+      "label": "Update Time",
+      "requirement": "OPTIONAL",
+      "description": "Timestamp of the last update for the data information.",
+      "type": "string",
+      "valid_type": "datetime_string_t"
+    },
+    "assetGroup": {
+      "label": "Asset Group",
+      "requirement": "OPTIONAL",
+      "description": "The organizational group or department to which the asset belongs.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoLongitude": {
+      "label": "Asset Geographic Longitude",
+      "requirement": "OPTIONAL",
+      "description": "Longitude coordinate of the asset location (decimal, WGS84 standard).",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoLatitude": {
+      "label": "Asset Geographic Latitude",
+      "requirement": "OPTIONAL",
+      "description": "Latitude coordinate of the asset location (in decimal degrees, WGS84 standard).",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoCountry": {
+      "label": "Asset Geographic Country",
+      "requirement": "OPTIONAL",
+      "description": "The country name where the asset is currently located.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoProvince": {
+      "label": "Asset Geographic Province",
+      "requirement": "OPTIONAL",
+      "description": "The name of the province where the asset is currently located.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoProvinceCode": {
+      "label": "Asset Geographic Province Code",
+      "requirement": "OPTIONAL",
+      "description": "Administrative division code of the province where the asset is located",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoCityCode": {
+      "label": "Asset Geographic City Code",
+      "requirement": "OPTIONAL",
+      "description": "Administrative division code of the city where the asset is located.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoCountyCode": {
+      "label": "Asset Geographic County Code",
+      "requirement": "OPTIONAL",
+      "description": "Administrative division code of the county/district where the asset is located",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoCity": {
+      "label": "Asset Geo City",
+      "requirement": "OPTIONAL",
+      "description": "The name of the city where the asset is currently located.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoCounty": {
+      "label": "Asset Geographic County",
+      "requirement": "OPTIONAL",
+      "description": "The current county/district location of the asset",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoRegion": {
+      "label": "Asset Geographic Region",
+      "requirement": "OPTIONAL",
+      "description": "The physical geographic location region where the asset is actually located.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetGeoAddress": {
+      "label": "Asset Geographic Address",
+      "requirement": "OPTIONAL",
+      "description": "Detailed physical address of the asset's location.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetRegion": {
+      "label": "Asset Region",
+      "requirement": "OPTIONAL",
+      "description": "Logical deployment location of the asset (e.g., DMZ zone, internal network).",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetProtectStatus": {
+      "label": "Asset Protection Status",
+      "requirement": "OPTIONAL",
+      "description": "Operational status of asset security protection mechanisms/services",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "under_protection": {
+          "label": "Under Protection",
+          "description": "The security protection services for the asset (such as firewalls, endpoint protection, intrusion detection, etc.) are operating normally and effectively."
+        },
+        "unprotected": {
+          "label": "Unprotected",
+          "description": "The asset is either not enabled or has not deployed any active security protection measures."
+        },
+        "unknown": {
+          "label": "Unknown",
+          "description": "The protection status of the asset could not be detected or obtained, resulting in an unclear security posture."
+        }
+      }
+    },
+    "assetConfidentiality": {
+      "label": "Asset Confidentiality",
+      "requirement": "OPTIONAL",
+      "description": "The confidentiality level of an asset, indicating the potential impact of unauthorized disclosure.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "veryHigh": {
+          "label": "Very High",
+          "description": "非常高"
+        },
+        "high": {
+          "label": "High",
+          "description": "High"
+        },
+        "medium": {
+          "label": "Medium",
+          "description": "中"
+        },
+        "low": {
+          "label": "Low",
+          "description": "Low"
+        },
+        "ignorable": {
+          "label": "Ignorable",
+          "description": "Can be ignored"
+        }
+      }
+    },
+    "assetIntegrity": {
+      "label": "Asset Integrity",
+      "requirement": "OPTIONAL",
+      "description": "Asset integrity level, indicating the potential impact of unauthorized tampering.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "veryHigh": {
+          "label": "Very High",
+          "description": "Very high"
+        },
+        "high": {
+          "label": "High",
+          "description": "High"
+        },
+        "medium": {
+          "label": "Medium",
+          "description": "China"
+        },
+        "low": {
+          "label": "Low",
+          "description": "Low"
+        },
+        "ignorable": {
+          "label": "Ignorable",
+          "description": "Can be ignored"
+        }
+      }
+    },
+    "assetUsability": {
+      "label": "Asset Usability",
+      "requirement": "OPTIONAL",
+      "description": "The extent to which an asset can operate as expected and provide services.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "veryHigh": {
+          "label": "Very High",
+          "description": "非常高"
+        },
+        "high": {
+          "label": "High",
+          "description": "High"
+        },
+        "medium": {
+          "label": "Medium",
+          "description": "China"
+        },
+        "low": {
+          "label": "Low",
+          "description": "Low"
+        },
+        "ignorable": {
+          "label": "Ignorable",
+          "description": "Can be ignored"
+        }
+      }
+    },
+    "isCriticalProtection": {
+      "label": "Critical Infrastructure Protection Status",
+      "requirement": "OPTIONAL",
+      "description": "Indicates whether the asset is classified as critical infrastructure requiring special protection measures.",
+      "type": "boolean",
+      "valid_type": "boolean_t"
+    },
+    "protectionLevel": {
+      "label": "Protection Level",
+      "requirement": "OPTIONAL",
+      "description": "Asset classification level determined according to the Critical Information Infrastructure Protection grading system.",
+      "type": "enum",
+      "valid_type": "integer_t",
+      "enum": {
+        "0": {
+          "label": "Non Classified System",
+          "description": "Non-classified protection system"
+        },
+        "1": {
+          "label": "Level 1 (Basic Protection Level)",
+          "description": "Level 1 (Self-Protection Level)"
+        },
+        "2": {
+          "label": "Level 2 (Guided Protection Level)",
+          "description": "Level 2 (Guided Protection Level)"
+        },
+        "3": {
+          "label": "Level 3 (Supervised Protection Level)",
+          "description": "Level 3 (Supervisory Protection Level)"
+        },
+        "4": {
+          "label": "Level 4 (Mandatory Protection Level)",
+          "description": "Level 4 (Mandatory Protection Level)"
+        },
+        "5": {
+          "label": "Level 5 (Controlled Protection Level)",
+          "description": "Level 5 (Special Control Protection Level)"
+        }
+      }
+    },
+    "isDomestic": {
+      "label": "Is Domestic",
+      "requirement": "OPTIONAL",
+      "description": "Indicates whether the asset is domestically produced or procured within the country.",
+      "type": "boolean",
+      "valid_type": "boolean_t"
+    },
+    "isCriticalInfra": {
+      "label": "Is Critical Infrastructure",
+      "requirement": "OPTIONAL",
+      "description": "Indicates whether the asset belongs to critical infrastructure as defined by national standards.",
+      "type": "boolean",
+      "valid_type": "boolean_t"
+    },
+    "isClassified": {
+      "label": "Is Classified",
+      "requirement": "OPTIONAL",
+      "description": "Indicates whether the asset contains or processes classified information.",
+      "type": "boolean",
+      "valid_type": "boolean_t"
+    },
+    "cabinetPosition": {
+      "label": "Cabinet Position",
+      "requirement": "OPTIONAL",
+      "description": "Physical location identifier of the cabinet where the asset is located.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "unitRole": {
+      "label": "Unit Role",
+      "requirement": "OPTIONAL",
+      "description": "Functional role classification of the asset's owning unit.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "regulatory_unit": {
+          "label": "Regulatory Unit",
+          "description": "Superior or supervisory authority within the management system that assumes primary regulatory, guidance, or approval responsibilities."
+        },
+        "collaborative_unit": {
+          "label": "Collaborative Unit",
+          "description": "Relevant units that closely collaborate with the supervisory authority in specific transactions or projects, undertaking responsibilities for coordinated execution or joint management."
+        },
+        "key_unit": {
+          "label": "Key Unit",
+          "description": "Core units that require prioritized management and protection due to factors such as business criticality, system importance, or elevated security risks."
+        },
+        "general_unit": {
+          "label": "General Unit",
+          "description": "General entities within the management system that comply with routine management requirements and assume standard security responsibilities and obligations."
+        }
+      }
+    },
+    "unitAffiliation": {
+      "label": "Unit Affiliation",
+      "requirement": "OPTIONAL",
+      "description": "Classification of the direct regulatory relationship to which the asset belongs.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "central_government": {
+          "label": "Central Government",
+          "description": "Institutions directly managed and led by the Central Committee of the Communist Party of China, the State Council, or their constituent departments."
+        },
+        "provincial": {
+          "label": "Provincial",
+          "description": "Institutions directly managed and led by the provincial, autonomous region, or municipal governments or Party committees."
+        },
+        "municipal": {
+          "label": "Municipal",
+          "description": "An institution directly managed and led by the municipal (prefecture-level) government or Party committee of a districted city."
+        },
+        "district_county": {
+          "label": "District County",
+          "description": "An institution directly managed and led by municipal districts, county-level cities, or county governments."
+        },
+        "other": {
+          "label": "Other",
+          "description": "Other affiliations not explicitly categorized under the aforementioned levels."
+        }
+      }
+    },
+    "otherInfo": {
+      "label": "Other Information",
+      "requirement": "OPTIONAL",
+      "description": "Additional information related to assets or events.",
+      "type": "string",
+      "valid_type": "string_t"
+    },
+    "assetAddress": {
+      "label": "Asset IP Address",
+      "requirement": "RECOMMENDED",
+      "description": "IP address recorded in the asset management system",
+      "type": "string",
+      "valid_type": "ip_t"
+    },
+    "assetMacAddress": {
+      "label": "Asset MAC Address",
+      "requirement": "OPTIONAL",
+      "description": "Media Access Control (MAC) address of the asset, in lowercase colon-separated format (e.g., 00:1a:2b:3c:4d:5e).",
+      "type": "string",
+      "valid_type": "mac_t"
+    },
+    "ipVersion": {
+      "label": "IP Version",
+      "requirement": "RECOMMENDED",
+      "description": "Version identifier of the Internet Protocol (IP)",
+      "type": "string",
+      "valid_type": "string_t"
+    }
+  }
+}

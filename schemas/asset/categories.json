@@ -1,0 +1,33 @@
+{
+    "group": "asset",
+    "categories": {
+        "data_asset": {
+            "label": "Data Asset",
+            "description": "A data asset refers to any structured or unstructured data that holds value to an organization, including sensitive information, intellectual property, or operational data that requires protection."
+        },
+        "business_asset": {
+            "label": "Business Asset",
+            "description": "A business asset represents critical IT resources, systems, or services that support organizational operations and require protection against cyber threats."
+        },
+        "physical_asset": {
+            "label": "Physical Asset",
+            "description": "Physical assets refer to tangible hardware devices and infrastructure components within an IT environment that require security monitoring and protection."
+        },
+        "virtual_asset": {
+            "label": "Virtual Asset",
+            "description": "Virtual assets refer to digital resources such as cryptocurrencies, NFTs, or virtual infrastructure that require security monitoring and protection against cyber threats."
+        },
+        "software_asset": {
+            "label": "Software Asset",
+            "description": "Software asset refers to any software application or system that is installed, used, or managed within an organization's IT infrastructure, including details such as version, license, and vulnerabilities."
+        },
+        "network_asset": {
+            "label": "Network Asset",
+            "description": "Network asset refers to any device, system, or resource connected to a network that needs to be monitored and secured, including servers, workstations, and IoT devices."
+        },
+        "cloud_asset": {
+            "label": "Cloud Asset",
+            "description": "A cloud asset represents any virtualized resource or service hosted in a cloud environment, including virtual machines, storage, and applications."
+        }
+    }
+}
