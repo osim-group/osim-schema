@@ -4,34 +4,49 @@
   "title": "account_behavior",
   "label": "Account Behavior",
   "description": "Records and monitors user account activities and behaviors on the host system for security auditing purposes.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
   "definitions": {
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
       "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
       "description": "Official name of the security product vendor.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
       "description": "Official standard name of the software or hardware product that generated the log",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
       "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
@@ -260,63 +275,90 @@
           "label": "UES",
           "description": "Unified Endpoint Security System, integrating endpoint protection, detection, and response capabilities."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
       "description": "IP address of the log production device",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
       "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
       "description": "Summary name of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
       "description": "Detailed description information of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the event activity began.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp marking the end of an event activity.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the device locally receives and generates a log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
       "description": "The exact timestamp when the log collection system receives the log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "severity": {
       "label": "Severity Level",
@@ -345,7 +387,10 @@
           "label": "critical",
           "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "catOutcome": {
       "label": "Category Outcome",
@@ -366,7 +411,10 @@
           "label": "Attempt",
           "description": "The event has occurred, but its success or failure cannot be determined."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "logType": {
       "label": "Log Type",
@@ -463,7 +511,10 @@
           "label": "Other Log Types",
           "description": "Unclassified other log types, containing log events that cannot be categorized into the above classifications."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "opType": {
       "label": "Operation Type",
@@ -588,196 +639,300 @@
           "label": "Unlock",
           "description": "Object unlock operations, including user account unlocking, session unlocking, resource unlocking, etc."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
       "description": "Count the occurrences of the same type or related events.",
       "type": "long",
-      "valid_type": "long_t"
+      "valid_type": "long_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
       "description": "Device address of the data source",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcUserName": {
       "label": "Source User Name",
       "requirement": "RECOMMENDED",
       "description": "The principal user identity name that initiates network connections, system access, or security events.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcNtDomain": {
       "label": "Source NT Domain",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The Windows NT domain name to which the source device belongs.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcLoginId": {
       "label": "Source Login ID",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "User login identifier used to initiate operations or requests in network communications.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcUserId": {
       "label": "Source User ID",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "Unique ID of the user who initiated the operation or request in network communication.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destNtDomain": {
       "label": "Destination NT Domain",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The Windows NT domain name to which the destination device belongs.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destUserId": {
       "label": "Destination User ID",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "Unique identifier of the target user for security operations",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "privilegeList": {
       "label": "Privilege List",
       "requirement": "OPTIONAL",
       "description": "The set of permissions owned by the system or file, used to describe access control privileges.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "samAccountName": {
       "label": "SAM Account Name",
       "requirement": "OPTIONAL",
       "description": "User login name in the Security Account Manager (SAM)",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "displayName": {
       "label": "Display Name",
       "requirement": "OPTIONAL",
       "description": "Alias for user-friendly display",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "userPrincipalName": {
       "label": "User Principal Name",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "User Principal Name (UPN) of the service for client authentication.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "homeDir": {
       "label": "Home Directory",
       "requirement": "OPTIONAL",
       "description": "The complete path of the user's personal file storage home directory, supporting both local paths and network UNC path formats.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "homePath": {
       "label": "Home Path",
       "requirement": "OPTIONAL",
       "description": "Local path pointing to the user's home directory or environment variable resolution path.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "scriptPath": {
       "label": "Script Path",
       "requirement": "OPTIONAL",
       "description": "The full path of the executed script file in the file system.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "confPath": {
       "label": "Configuration File Path",
       "requirement": "OPTIONAL",
       "description": "Configuration file storage path for applications or system services",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "userWorkstations": {
       "label": "User Workstations",
       "requirement": "OPTIONAL",
       "description": "A comma-separated list of NetBIOS or DNS names of computers from which the user can log in.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "timePasswordLastSet": {
       "label": "Time Password Last Set",
       "requirement": "OPTIONAL",
       "description": "Records the timestamp of the user's last password modification.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "expirationTime": {
       "label": "Expiration Time",
       "requirement": "OPTIONAL",
       "description": "The expiration date of the domain name registration.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "primaryGroupId": {
       "label": "Primary Group ID",
       "requirement": "OPTIONAL",
       "description": "Unique identifier of the user's primary group",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "delegationList": {
       "label": "Delegation List",
       "requirement": "OPTIONAL",
       "description": "A list of objects to which a user or service principal is permitted to delegate their permissions or delegated authorizations.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "oldUacValue": {
       "label": "Old UAC Value",
       "requirement": "OPTIONAL",
       "description": "The User Account Control (UAC) value of the user account before modification.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "newUacValue": {
       "label": "New UAC Value",
       "requirement": "OPTIONAL",
       "description": "User account after modification of User Account Control (UAC) value",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "userAccountControl": {
       "label": "User Account Control",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "Windows Active Directory user account control attribute is a bitmask used to represent various account settings.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "userParameters": {
       "label": "User Parameters",
       "requirement": "OPTIONAL",
       "description": "Custom configuration parameters for Active Directory user accounts",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "sidHistory": {
       "label": "SID History",
       "requirement": "OPTIONAL",
       "description": "The SID history attribute of an Active Directory object",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "userLoginHours": {
       "label": "User Login Hours",
       "requirement": "OPTIONAL",
       "description": "The login time limit of the user account. It defines the time range that users can log in to the system",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
+    },
+    "hostAddress": {
+      "label": "Host IP Address",
+      "requirement": "RECOMMENDED",
+      "description": "The network IP address of the host",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
+    },
+    "deviceVersion": {
+      "label": "Device Version",
+      "requirement": "OPTIONAL",
+      "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
+      "type": "string",
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     }
   }
 }

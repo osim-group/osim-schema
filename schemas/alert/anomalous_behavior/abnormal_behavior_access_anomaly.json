@@ -4,6 +4,10 @@
   "title": "access_anomaly",
   "label": "Access Anomaly",
   "description": "This alert records instances of anomalous access behavior, indicating potential unauthorized or suspicious activities within the network.",
+  "dataSource": [
+    "Network Detection and Response",
+    "Zero Trust"
+  ],
   "definitions": {
     "responseCode": {
       "label": "Response Code",
@@ -14,7 +18,7 @@
     },
     "userAgent": {
       "label": "User Agent",
-      "requirement": "OPTIONAL",
+      "requirement": "RECOMMENDED",
       "description": "Information identifying the client (user agent) making the request. Contains anonymized details including the client's operating system, browser, and device type.",
       "type": "string",
       "valid_type": "string_t"
@@ -31,21 +35,30 @@
       "requirement": "RECOMMENDED",
       "description": "The portion of the HTTP request URL starting from the root '/' to the end of the query string.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "requestUrl": {
       "label": "Request URL",
       "requirement": "RECOMMENDED",
       "description": "The complete URL address of the target resource for the network request.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "destHostName": {
       "label": "Destination Host Name",
       "requirement": "RECOMMENDED",
       "description": "The hostname of the target device in network connections or threat attacks. This could be a NetBIOS name, DNS hostname, or locally configured machine name.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "httpReferer": {
       "label": "HTTP Referer URL",
@@ -54,40 +67,49 @@
       "type": "string",
       "valid_type": "string_t"
     },
-    "hostAddress": {
-      "label": "Host IP Address",
-      "requirement": "RECOMMENDED",
-      "description": "The network IP address of the host",
-      "type": "string",
-      "valid_type": "ip_t"
-    },
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
       "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
       "description": "Official name of the security product vendor.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
       "description": "Official standard name of the software or hardware product that generated the log",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
       "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
@@ -316,63 +338,99 @@
           "label": "UES",
           "description": "Unified Endpoint Security System, integrating endpoint protection, detection, and response capabilities."
         }
-      }
+      },
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
       "description": "IP address of the log production device",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
       "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
       "description": "Summary name of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
       "description": "Detailed description information of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the event activity began.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp marking the end of an event activity.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "OPTIONAL",
       "description": "The precise timestamp when the device locally receives and generates a log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
       "description": "The exact timestamp when the log collection system receives the log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "severity": {
       "label": "Severity Level",
@@ -401,7 +459,11 @@
           "label": "critical",
           "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
         }
-      }
+      },
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "catOutcome": {
       "label": "Category Outcome",
@@ -422,7 +484,11 @@
           "label": "Attempt",
           "description": "The event has occurred, but its success or failure cannot be determined."
         }
-      }
+      },
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "logType": {
       "label": "Log Type",
@@ -519,7 +585,11 @@
           "label": "Other Log Types",
           "description": "Unclassified other log types, containing log events that cannot be categorized into the above classifications."
         }
-      }
+      },
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "opType": {
       "label": "Operation Type",
@@ -644,137 +714,212 @@
           "label": "Unlock",
           "description": "Object unlock operations, including user account unlocking, session unlocking, resource unlocking, etc."
         }
-      }
+      },
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "XFF": {
       "label": "X-Forwarded-For Header",
       "requirement": "OPTIONAL",
       "description": "HTTP request header field used to identify the original client IP address when connecting to the web server through an HTTP proxy or load balancer.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response"
+      ]
     },
     "srcPort": {
       "label": "Source Port",
-      "requirement": "OPTIONAL",
+      "requirement": "RECOMMENDED",
       "description": "Source service port number identifying the network communication connection.",
       "type": "integer",
-      "valid_type": "integer_t"
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destPort": {
       "label": "Destination Port",
-      "requirement": "OPTIONAL",
+      "requirement": "RECOMMENDED",
       "description": "The network port number of the communication target, used to identify specific services or applications.",
       "type": "integer",
-      "valid_type": "integer_t"
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "srcMacAddress": {
       "label": "Source MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame sender",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destMacAddress": {
       "label": "Destination MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame recipient",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "srcGeoCountry": {
       "label": "Source Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country of origin for the network event",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "srcGeoRegion": {
       "label": "Source Geographic Region",
       "requirement": "OPTIONAL",
       "description": "Name of the provincial administrative region where the network request originated",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "srcGeoCity": {
       "label": "Source Geographic City",
       "requirement": "OPTIONAL",
       "description": "The name of the city-level administrative region where the network request originated.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "srcGeoAddress": {
       "label": "Source Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "srcGeoLatitude": {
       "label": "Source Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "srcGeoLongitude": {
       "label": "Source Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destGeoCountry": {
       "label": "Destination Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destGeoRegion": {
       "label": "Destination Geographic Region",
       "requirement": "OPTIONAL",
       "description": "The name of the provincial-level administrative region where the network request destination is located.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destGeoCity": {
       "label": "Destination Geographic City",
       "requirement": "OPTIONAL",
       "description": "City-level administrative region name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destGeoAddress": {
       "label": "Destination Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destGeoLatitude": {
       "label": "Destination Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destGeoLongitude": {
       "label": "Destination Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
       "description": "Device address of the data source",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "transProtocol": {
       "label": "Transport Protocol",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "Protocol types used at the transport layer of the OSI model.",
       "type": "enum",
       "valid_type": "string_t",
@@ -787,7 +932,11 @@
           "label": "UDP",
           "description": "A connectionless, unreliable transport protocol that provides low-latency data transmission, suitable for real-time applications."
         }
-      }
+      },
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "appProtocol": {
       "label": "Application Protocol",
@@ -1052,7 +1201,11 @@
           "label": "RDP",
           "description": "Remote Desktop Protocol (RDP), a proprietary protocol developed by Microsoft that provides a user with a graphical interface to connect to another computer over a network connection."
         }
-      }
+      },
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "dvcAction": {
       "label": "Device Action",
@@ -1084,67 +1237,98 @@
           "label": "Internal Access Internal",
           "description": "Source IP is internal, destination IP is internal, data direction: internal to internal access"
         }
-      }
+      },
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "deviceVersion": {
       "label": "Device Version",
       "requirement": "OPTIONAL",
       "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "srcAddress": {
       "label": "Source IP Address",
       "requirement": "RECOMMENDED",
       "description": "The IP address corresponding to the initiator of the network connection.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "destAddress": {
       "label": "Destination IP Address",
       "requirement": "RECOMMENDED",
       "description": "The target IP address for identifying network communication connections.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
     "subTechniqueId": {
       "label": "Sub Technique ID",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The unique identifier of the specific attack sub-technique corresponding to the attack behavior in the MITRE ATT&CK framework.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "techniqueName": {
       "label": "Technique Name",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The name of the specific attack technique in the MITRE ATT&CK framework corresponding to the attack behavior.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "techniqueId": {
       "label": "Technique ID",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The unique identifier of the specific attack technique in the MITRE ATT&CK framework corresponding to the attack behavior.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "tacticName": {
       "label": "Tactic Name",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The corresponding tactic phase name of the attack behavior in the MITRE ATT&CK framework",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "tacticId": {
       "label": "Tactic ID",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "Unique identifier of the corresponding tactic phase in the MITRE ATT&CK framework for the attack behavior.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "killChain": {
       "label": "Kill Chain",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "Describes the phase of the attack behavior within the attack lifecycle.",
       "type": "enum",
       "valid_type": "string_t",
@@ -1181,11 +1365,14 @@
           "label": "KC Others",
           "description": "Non-attack behaviors, such as misconfigurations, device failures, etc."
         }
-      }
+      },
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "confidence": {
       "label": "Confidence Level",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "An evaluation metric indicating the level of confidence in the accuracy of threat detection, attribution, or analysis results.",
       "type": "enum",
       "valid_type": "string_t",
@@ -1202,14 +1389,20 @@
           "label": "High Confidence",
           "description": "The false positive rate of the alert information is extremely low, with high credibility."
         }
-      }
+      },
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "ruleId": {
       "label": "Rule ID",
       "requirement": "OPTIONAL",
       "description": "Unique identifier of the detection rule that triggered the alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "ruleType": {
       "label": "Rule Type",
@@ -1890,63 +2083,131 @@
           "label": "Suspected Endpoint Command And Control",
           "description": "Command and Control (C2) refers to the behavior where attackers remotely issue instructions and manage compromised devices, typically used to coordinate malicious activities such as data theft, network attacks, or malware propagation."
         }
-      }
+      },
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "ruleName": {
       "label": "Rule Name",
       "requirement": "OPTIONAL",
       "description": "A brief summary name describing the purpose and technical background of the detection rule.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "attackerAddress": {
       "label": "Attacker IP Address",
       "requirement": "OPTIONAL",
       "description": "The source IP address of the attacker initiating the threat attack.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "victimAddress": {
       "label": "Victim IP Address",
       "requirement": "OPTIONAL",
       "description": "IP address that has been subjected to threat attacks or affected by risks",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "subTechniqueName": {
       "label": "Sub Technique Name",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The name of the specific attack sub-technique corresponding to the attack behavior in the MITRE ATT&CK framework.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "suggestion": {
       "label": "Remediation Recommendation",
       "requirement": "OPTIONAL",
       "description": "Standardized response and remediation guidance provided for threat attacks.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "victimPort": {
       "label": "Victim Port",
       "requirement": "OPTIONAL",
       "description": "The port number of the victim's network service that is subjected to threat attacks or risk impacts.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "attackerPort": {
       "label": "Attacker Port",
       "requirement": "OPTIONAL",
       "description": "The network port number used by the attacker when initiating the attack.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     },
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
       "description": "Count the occurrences of the same type or related events.",
       "type": "long",
-      "valid_type": "long_t"
+      "valid_type": "long_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
+    },
+    "appName": {
+      "label": "Application Name",
+      "requirement": "OPTIONAL",
+      "description": "Name of the accessed or referenced application",
+      "type": "string",
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
+    },
+    "serviceName": {
+      "label": "Service Name",
+      "requirement": "OPTIONAL",
+      "description": "Name of the system service or business service",
+      "type": "string",
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
+    },
+    "srcUserName": {
+      "label": "Source User Name",
+      "requirement": "OPTIONAL",
+      "description": "The principal user identity name that initiates network connections, system access, or security events.",
+      "type": "string",
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
+    },
+    "userName": {
+      "label": "User Name",
+      "requirement": "OPTIONAL",
+      "description": "The user's real name",
+      "type": "string",
+      "valid_type": "string_t",
+      "dataSource": [
+        "Zero Trust"
+      ]
     }
   }
 }

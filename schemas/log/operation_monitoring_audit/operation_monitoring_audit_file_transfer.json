@@ -4,62 +4,89 @@
   "title": "file_transfer",
   "label": "File Transfer",
   "description": "Logs and monitors file transfer activities, including uploads, downloads, and data exchanges, for security auditing and compliance purposes.",
+  "dataSource": [
+    "Bastion Host"
+  ],
   "definitions": {
     "srcAddress": {
       "label": "Source IP Address",
       "requirement": "RECOMMENDED",
       "description": "The IP address corresponding to the initiator of the network connection.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destAddress": {
       "label": "Destination IP Address",
       "requirement": "RECOMMENDED",
       "description": "The target IP address for identifying network communication connections.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcUserName": {
       "label": "Source User Name",
       "requirement": "RECOMMENDED",
       "description": "The principal user identity name that initiates network connections, system access, or security events.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destUserName": {
       "label": "Destination User Name",
       "requirement": "RECOMMENDED",
       "description": "Target principal user identity name for network connections, system access, or security events.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
       "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
       "description": "Official name of the security product vendor.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
       "description": "Official standard name of the software or hardware product that generated the log",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
       "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
@@ -288,70 +315,100 @@
           "label": "UES",
           "description": "Unified Endpoint Security System, integrating endpoint protection, detection, and response capabilities."
         }
-      }
+      },
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
       "description": "IP address of the log production device",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "deviceVersion": {
       "label": "Device Version",
       "requirement": "OPTIONAL",
       "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
       "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
       "description": "Summary name of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
       "description": "Detailed description information of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the event activity began.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp marking the end of an event activity.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "OPTIONAL",
       "description": "The precise timestamp when the device locally receives and generates a log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
       "description": "The exact timestamp when the log collection system receives the log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "severity": {
       "label": "Severity Level",
@@ -380,7 +437,10 @@
           "label": "critical",
           "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
         }
-      }
+      },
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "catOutcome": {
       "label": "Category Outcome",
@@ -401,7 +461,10 @@
           "label": "Attempt",
           "description": "The event has occurred, but its success or failure cannot be determined."
         }
-      }
+      },
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "logType": {
       "label": "Log Type",
@@ -498,7 +561,10 @@
           "label": "Other Log Types",
           "description": "Unclassified other log types, containing log events that cannot be categorized into the above classifications."
         }
-      }
+      },
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "opType": {
       "label": "Operation Type",
@@ -623,119 +689,170 @@
           "label": "Unlock",
           "description": "Object unlock operations, including user account unlocking, session unlocking, resource unlocking, etc."
         }
-      }
+      },
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcPort": {
       "label": "Source Port",
       "requirement": "OPTIONAL",
       "description": "Source service port number identifying the network communication connection.",
       "type": "integer",
-      "valid_type": "integer_t"
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destPort": {
       "label": "Destination Port",
       "requirement": "OPTIONAL",
       "description": "The network port number of the communication target, used to identify specific services or applications.",
       "type": "integer",
-      "valid_type": "integer_t"
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcMacAddress": {
       "label": "Source MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame sender",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destMacAddress": {
       "label": "Destination MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame recipient",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcGeoCountry": {
       "label": "Source Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country of origin for the network event",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcGeoRegion": {
       "label": "Source Geographic Region",
       "requirement": "OPTIONAL",
       "description": "Name of the provincial administrative region where the network request originated",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcGeoCity": {
       "label": "Source Geographic City",
       "requirement": "OPTIONAL",
       "description": "The name of the city-level administrative region where the network request originated.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcGeoAddress": {
       "label": "Source Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcGeoLatitude": {
       "label": "Source Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcGeoLongitude": {
       "label": "Source Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destGeoCountry": {
       "label": "Destination Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destGeoRegion": {
       "label": "Destination Geographic Region",
       "requirement": "OPTIONAL",
       "description": "The name of the provincial-level administrative region where the network request destination is located.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destGeoCity": {
       "label": "Destination Geographic City",
       "requirement": "OPTIONAL",
       "description": "City-level administrative region name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destGeoAddress": {
       "label": "Destination Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destGeoLatitude": {
       "label": "Destination Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destGeoLongitude": {
       "label": "Destination Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "transProtocol": {
       "label": "Transport Protocol",
@@ -752,7 +869,10 @@
           "label": "UDP",
           "description": "A connectionless, unreliable transport protocol that provides low-latency data transmission, suitable for real-time applications."
         }
-      }
+      },
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "appProtocol": {
       "label": "Application Protocol",
@@ -1017,7 +1137,10 @@
           "label": "RDP",
           "description": "Remote Desktop Protocol (RDP), a proprietary protocol developed by Microsoft that provides a user with a graphical interface to connect to another computer over a network connection."
         }
-      }
+      },
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "direction": {
       "label": "Data Flow Direction",
@@ -1042,77 +1165,120 @@
           "label": "Internal Access Internal",
           "description": "Source IP is internal, destination IP is internal, data direction: internal to internal access"
         }
-      }
+      },
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "userName": {
       "label": "User Name",
       "requirement": "RECOMMENDED",
       "description": "The user's real name",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
       "description": "Device address of the data source",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
       "description": "Count the occurrences of the same type or related events.",
       "type": "long",
-      "valid_type": "long_t"
+      "valid_type": "long_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "srcUserId": {
       "label": "Source User ID",
       "requirement": "OPTIONAL",
       "description": "Unique ID of the user who initiated the operation or request in network communication.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "destUserId": {
       "label": "Destination User ID",
       "requirement": "OPTIONAL",
       "description": "Unique identifier of the target user for security operations",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "fileName": {
       "label": "File Name",
       "requirement": "RECOMMENDED",
       "description": "The base name of the file, excluding path information.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "fileSize": {
       "label": "File Size",
       "requirement": "OPTIONAL",
       "description": "The byte size of the file content.",
       "type": "long",
-      "valid_type": "long_t"
+      "valid_type": "long_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
-    "fileMd5": {
+    "md5": {
       "label": "File MD5 Hash",
       "requirement": "RECOMMENDED",
       "description": "File content hash value calculated using the MD5 algorithm.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "filePath": {
       "label": "File Path",
       "requirement": "RECOMMENDED",
       "description": "The storage directory path of the file in the file system.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     },
     "newFilename": {
       "label": "New Filename",
       "requirement": "OPTIONAL",
       "description": "The file name after renaming operation (including full path information)",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
+    },
+    "destHostName": {
+      "label": "Destination Host Name",
+      "requirement": "OPTIONAL",
+      "description": "The hostname of the target device in network connections or threat attacks. This could be a NetBIOS name, DNS hostname, or locally configured machine name.",
+      "type": "string",
+      "valid_type": "string_t",
+      "dataSource": [
+        "Bastion Host"
+      ]
     }
   }
 }

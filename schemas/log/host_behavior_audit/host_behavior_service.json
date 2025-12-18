@@ -4,34 +4,49 @@
   "title": "service_behavior",
   "label": "Service Behavior",
   "description": "Logs capturing service-related activities and behaviors on a host, including service starts, stops, and configuration changes.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
   "definitions": {
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
       "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
       "description": "Official name of the security product vendor.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
       "description": "Official standard name of the software or hardware product that generated the log",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
       "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
@@ -260,63 +275,90 @@
           "label": "UES",
           "description": "Unified Endpoint Security System, integrating endpoint protection, detection, and response capabilities."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
       "description": "IP address of the log production device",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
       "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
       "description": "Summary name of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
       "description": "Detailed description information of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the event activity began.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp marking the end of an event activity.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the device locally receives and generates a log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
       "description": "The exact timestamp when the log collection system receives the log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "severity": {
       "label": "Severity Level",
@@ -345,7 +387,10 @@
           "label": "critical",
           "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "catOutcome": {
       "label": "Category Outcome",
@@ -366,7 +411,10 @@
           "label": "Attempt",
           "description": "The event has occurred, but its success or failure cannot be determined."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "logType": {
       "label": "Log Type",
@@ -463,7 +511,10 @@
           "label": "Other Log Types",
           "description": "Unclassified other log types, containing log events that cannot be categorized into the above classifications."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "opType": {
       "label": "Operation Type",
@@ -588,84 +639,140 @@
           "label": "Unlock",
           "description": "Object unlock operations, including user account unlocking, session unlocking, resource unlocking, etc."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
       "description": "Count the occurrences of the same type or related events.",
       "type": "long",
-      "valid_type": "long_t"
+      "valid_type": "long_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
       "description": "Device address of the data source",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "serviceName": {
       "label": "Service Name",
       "requirement": "RECOMMENDED",
       "description": "Name of the system service or business service",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "serviceType": {
       "label": "Service Type",
       "requirement": "OPTIONAL",
       "description": "Used to identify the type of application service exposed via network ports or running within the operating system on the endpoint side.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "serviceImage": {
       "label": "Service Image Path",
       "requirement": "RECOMMENDED",
       "description": "The full path and parameters of the process file where the service resides.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "startType": {
       "label": "Start Type",
       "requirement": "OPTIONAL",
       "description": "Startup type of the service or program (e.g., Automatic, Manual, Disabled).",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "accountName": {
       "label": "Account Name",
       "requirement": "OPTIONAL",
       "description": "Unique identifier of the user account in the system",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "oldStartType": {
       "label": "Original Startup Type",
       "requirement": "OPTIONAL",
       "description": "Original startup mode before modification (e.g., on-demand startup, disabled)",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "newStartType": {
       "label": "New Start Type",
       "requirement": "OPTIONAL",
       "description": "New startup method after service configuration modification",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "displayName": {
       "label": "Display Name",
       "requirement": "OPTIONAL",
       "description": "Alias for user-friendly display",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "status": {
       "label": "Status",
       "requirement": "OPTIONAL",
       "description": "Indicates the current execution status of an operation, request, or system component.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
+    },
+    "hostAddress": {
+      "label": "Host IP Address",
+      "requirement": "RECOMMENDED",
+      "description": "The network IP address of the host",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
+    },
+    "deviceVersion": {
+      "label": "Device Version",
+      "requirement": "OPTIONAL",
+      "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
+      "type": "string",
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     }
   }
 }

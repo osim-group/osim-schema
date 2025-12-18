@@ -1,72 +1,52 @@
 {
-  "group": "device_detection",
-  "category": "firewall",
-  "title": "url_filtering",
-  "label": "URL Filtering",
-  "description": "Monitors and logs URL filtering activities performed by the firewall to control access to web resources based on predefined policies.",
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "network_address_translation",
+  "label": "Network Address Translation",
+  "description": "Records details of IP address and port translation sessions between private and public networks, including mapping creation and teardown events.",
+  "dataSource": [
+    "Firewall"
+  ],
   "definitions": {
-    "srcAddress": {
-      "label": "Source IP Address",
-      "requirement": "RECOMMENDED",
-      "description": "The IP address corresponding to the initiator of the network connection.",
-      "type": "string",
-      "valid_type": "ip_t"
-    },
-    "srcPort": {
-      "label": "Source Port",
-      "requirement": "RECOMMENDED",
-      "description": "Source service port number identifying the network communication connection.",
-      "type": "integer",
-      "valid_type": "integer_t"
-    },
-    "destAddress": {
-      "label": "Destination IP Address",
-      "requirement": "RECOMMENDED",
-      "description": "The target IP address for identifying network communication connections.",
-      "type": "string",
-      "valid_type": "ip_t"
-    },
-    "destPort": {
-      "label": "Destination Port",
-      "requirement": "RECOMMENDED",
-      "description": "The network port number of the communication target, used to identify specific services or applications.",
-      "type": "integer",
-      "valid_type": "integer_t"
-    },
-    "dvcAction": {
-      "label": "Device Action",
-      "requirement": "OPTIONAL",
-      "description": "Records the automated response actions taken by security devices against detected threats or anomalous behaviors.",
-      "type": "string",
-      "valid_type": "string_t"
-    },
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
       "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
       "description": "Official name of the security product vendor.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
       "description": "Official standard name of the software or hardware product that generated the log",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
       "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
@@ -295,74 +275,94 @@
           "label": "UES",
           "description": "Unified Endpoint Security System, integrating endpoint protection, detection, and response capabilities."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
       "description": "IP address of the log production device",
       "type": "string",
-      "valid_type": "ip_t"
-    },
-    "deviceVersion": {
-      "label": "Device Version",
-      "requirement": "OPTIONAL",
-      "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
-      "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
       "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
       "description": "Summary name of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
       "description": "Detailed description information of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the event activity began.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp marking the end of an event activity.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
-      "requirement": "OPTIONAL",
+      "requirement": "REQUIRED",
       "description": "The precise timestamp when the device locally receives and generates a log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
       "description": "The exact timestamp when the log collection system receives the log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "severity": {
       "label": "Severity Level",
-      "requirement": "REQUIRED",
+      "requirement": "RECOMMENDED",
       "description": "Indicates the severity level of the security threat for logs or alerts.",
       "type": "enum",
       "valid_type": "string_t",
@@ -387,7 +387,10 @@
           "label": "critical",
           "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
         }
-      }
+      },
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "catOutcome": {
       "label": "Category Outcome",
@@ -408,11 +411,14 @@
           "label": "Attempt",
           "description": "The event has occurred, but its success or failure cannot be determined."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "logType": {
       "label": "Log Type",
-      "requirement": "REQUIRED",
+      "requirement": "RECOMMENDED",
       "description": "Identifies the functional or object entity classification of the log event.",
       "type": "enum",
       "valid_type": "string_t",
@@ -505,11 +511,14 @@
           "label": "Other Log Types",
           "description": "Unclassified other log types, containing log events that cannot be categorized into the above classifications."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "opType": {
       "label": "Operation Type",
-      "requirement": "OPTIONAL",
+      "requirement": "RECOMMENDED",
       "description": "Identifies the specific type of operation performed in the event.",
       "type": "enum",
       "valid_type": "string_t",
@@ -630,109 +639,242 @@
           "label": "Unlock",
           "description": "Object unlock operations, including user account unlocking, session unlocking, resource unlocking, etc."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "eventCount": {
+      "label": "Event Count",
+      "requirement": "OPTIONAL",
+      "description": "Count the occurrences of the same type or related events.",
+      "type": "long",
+      "valid_type": "long_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "dataSourceAddress": {
+      "label": "Data Source Address",
+      "requirement": "RECOMMENDED",
+      "description": "Device address of the data source",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "srcPort": {
+      "label": "Source Port",
+      "requirement": "RECOMMENDED",
+      "description": "Source service port number identifying the network communication connection.",
+      "type": "integer",
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "destPort": {
+      "label": "Destination Port",
+      "requirement": "RECOMMENDED",
+      "description": "The network port number of the communication target, used to identify specific services or applications.",
+      "type": "integer",
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "srcMacAddress": {
       "label": "Source MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame sender",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "destMacAddress": {
       "label": "Destination MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame recipient",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "srcGeoCountry": {
       "label": "Source Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country of origin for the network event",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "srcGeoRegion": {
       "label": "Source Geographic Region",
       "requirement": "OPTIONAL",
       "description": "Name of the provincial administrative region where the network request originated",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "srcGeoCity": {
       "label": "Source Geographic City",
       "requirement": "OPTIONAL",
       "description": "The name of the city-level administrative region where the network request originated.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "srcGeoAddress": {
       "label": "Source Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "srcGeoLatitude": {
       "label": "Source Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "srcGeoLongitude": {
       "label": "Source Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "destGeoCountry": {
       "label": "Destination Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "destGeoRegion": {
       "label": "Destination Geographic Region",
       "requirement": "OPTIONAL",
       "description": "The name of the provincial-level administrative region where the network request destination is located.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "destGeoCity": {
       "label": "Destination Geographic City",
       "requirement": "OPTIONAL",
       "description": "City-level administrative region name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "destGeoAddress": {
       "label": "Destination Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "destGeoLatitude": {
       "label": "Destination Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "destGeoLongitude": {
       "label": "Destination Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "srcAddress": {
+      "label": "Source IP Address",
+      "requirement": "RECOMMENDED",
+      "description": "The IP address corresponding to the initiator of the network connection.",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "destAddress": {
+      "label": "Destination IP Address",
+      "requirement": "RECOMMENDED",
+      "description": "The target IP address for identifying network communication connections.",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "direction": {
+      "label": "Data Flow Direction",
+      "requirement": "RECOMMENDED",
+      "description": "Network flow direction classification based on source and destination IP addresses.",
+      "type": "enum",
+      "valid_type": "string_t",
+      "enum": {
+        "11": {
+          "label": "External Access",
+          "description": "Source IP is an external IP, destination IP is an external IP, data direction: external-to-external access"
+        },
+        "10": {
+          "label": "External To Internal Access",
+          "description": "Source IP is an external IP, destination IP is an internal IP, data direction: external to internal access"
+        },
+        "01": {
+          "label": "Internal To External Access",
+          "description": "Source IP is an internal IP, destination IP is an external IP, data direction: internal to external access"
+        },
+        "00": {
+          "label": "Internal Access Internal",
+          "description": "Source IP is internal, destination IP is internal, data direction: internal to internal access"
+        }
+      },
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "transProtocol": {
       "label": "Transport Protocol",
-      "requirement": "OPTIONAL",
+      "requirement": "RECOMMENDED",
       "description": "Protocol types used at the transport layer of the OSI model.",
       "type": "enum",
       "valid_type": "string_t",
@@ -745,11 +887,14 @@
           "label": "UDP",
           "description": "A connectionless, unreliable transport protocol that provides low-latency data transmission, suitable for real-time applications."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "appProtocol": {
       "label": "Application Protocol",
-      "requirement": "OPTIONAL",
+      "requirement": "RECOMMENDED",
       "description": "Protocol types used at the application layer of the OSI model.",
       "type": "enum",
       "valid_type": "string_t",
@@ -1010,81 +1155,60 @@
           "label": "RDP",
           "description": "Remote Desktop Protocol (RDP), a proprietary protocol developed by Microsoft that provides a user with a graphical interface to connect to another computer over a network connection."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall"
+      ]
     },
-    "direction": {
-      "label": "Data Flow Direction",
+    "srcTransAddress": {
+      "label": "Source Translated Address",
       "requirement": "RECOMMENDED",
-      "description": "Network flow direction classification based on source and destination IP addresses.",
-      "type": "enum",
+      "description": "Records the mapped source IP address after Network Address Translation (NAT).",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "srcTransPort": {
+      "label": "Source Translated Port",
+      "requirement": "RECOMMENDED",
+      "description": "Records the mapped source port number after Network Address Translation (NAT).",
+      "type": "integer",
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "destTransAddress": {
+      "label": "Destination Translated Address",
+      "requirement": "OPTIONAL",
+      "description": "Records the destination IP address after Network Address Translation (NAT) mapping.",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "destTransPort": {
+      "label": "Destination Translated Port",
+      "requirement": "OPTIONAL",
+      "description": "Records the destination port number after Network Address Translation (NAT) mapping.",
+      "type": "integer",
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Firewall"
+      ]
+    },
+    "deviceVersion": {
+      "label": "Device Version",
+      "requirement": "RECOMMENDED",
+      "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
+      "type": "string",
       "valid_type": "string_t",
-      "enum": {
-        "11": {
-          "label": "External Access",
-          "description": "Source IP is an external IP, destination IP is an external IP, data direction: external-to-external access"
-        },
-        "10": {
-          "label": "External To Internal Access",
-          "description": "Source IP is an external IP, destination IP is an internal IP, data direction: external to internal access"
-        },
-        "01": {
-          "label": "Internal To External Access",
-          "description": "Source IP is an internal IP, destination IP is an external IP, data direction: internal to external access"
-        },
-        "00": {
-          "label": "Internal Access Internal",
-          "description": "Source IP is internal, destination IP is internal, data direction: internal to internal access"
-        }
-      }
-    },
-    "destHostName": {
-      "label": "Destination Host Name",
-      "requirement": "RECOMMENDED",
-      "description": "The hostname of the target device in network connections or threat attacks. This could be a NetBIOS name, DNS hostname, or locally configured machine name.",
-      "type": "string",
-      "valid_type": "string_t"
-    },
-    "requestUrlQuery": {
-      "label": "Request URI Query",
-      "requirement": "RECOMMENDED",
-      "description": "The portion of the HTTP request URL starting from the root '/' to the end of the query string.",
-      "type": "string",
-      "valid_type": "string_t"
-    },
-    "requestUrl": {
-      "label": "Request URL",
-      "requirement": "RECOMMENDED",
-      "description": "The complete URL address of the target resource for the network request.",
-      "type": "string",
-      "valid_type": "string_t"
-    },
-    "userAgent": {
-      "label": "User Agent",
-      "requirement": "OPTIONAL",
-      "description": "Information identifying the client (user agent) making the request. Contains anonymized details including the client's operating system, browser, and device type.",
-      "type": "string",
-      "valid_type": "string_t"
-    },
-    "httpReferer": {
-      "label": "HTTP Referer URL",
-      "requirement": "OPTIONAL",
-      "description": "The source page URL of the HTTP request",
-      "type": "string",
-      "valid_type": "string_t"
-    },
-    "eventCount": {
-      "label": "Event Count",
-      "requirement": "RECOMMENDED",
-      "description": "Count the occurrences of the same type or related events.",
-      "type": "long",
-      "valid_type": "long_t"
-    },
-    "dataSourceAddress": {
-      "label": "Data Source Address",
-      "requirement": "RECOMMENDED",
-      "description": "Device address of the data source",
-      "type": "string",
-      "valid_type": "ip_t"
+      "dataSource": [
+        "Firewall"
+      ]
     }
   }
 }

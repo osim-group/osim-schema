@@ -1,5 +1,5 @@
 {
-    "group": "incident",
+    "group": "事件",
     "categories": {
         "security_incident": {
             "label": "Security Incident",

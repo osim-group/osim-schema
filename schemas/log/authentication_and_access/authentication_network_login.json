@@ -4,97 +4,164 @@
   "title": "network_login_authentication",
   "label": "Network Login Authentication",
   "description": "Records network login attempts and authentication events, including success, failure, and related access control activities.",
+  "tag": [
+    "Brute Force"
+  ],
+  "dataSource": [
+    "Firewall",
+    "Network Detection and Response",
+    "VPN System",
+    "Zero Trust"
+  ],
   "definitions": {
     "srcUserName": {
       "label": "Source User Name",
       "requirement": "RECOMMENDED",
       "description": "The principal user identity name that initiates network connections, system access, or security events.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "passwd": {
       "label": "Password",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "A set of secret characters used by the user to verify identity or access permissions.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "destHostName": {
       "label": "Destination Host Name",
       "requirement": "OPTIONAL",
       "description": "The hostname of the target device in network connections or threat attacks. This could be a NetBIOS name, DNS hostname, or locally configured machine name.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "VPN System"
+      ]
     },
     "requestMethod": {
       "label": "Request Method",
       "requirement": "OPTIONAL",
       "description": "The request type used by the network client when sending requests to the server, such as standard methods like GET, POST, etc., uniformly represented in uppercase letters.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "httpVersion": {
       "label": "HTTP Version",
       "requirement": "OPTIONAL",
       "description": "Protocol version identifier used in HTTP requests or responses.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "requestUrlQuery": {
       "label": "Request URI Query",
       "requirement": "OPTIONAL",
       "description": "The portion of the HTTP request URL starting from the root '/' to the end of the query string.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "VPN System"
+      ]
     },
     "requestUrl": {
       "label": "Request URL",
       "requirement": "OPTIONAL",
       "description": "The complete URL address of the target resource for the network request.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "VPN System"
+      ]
     },
     "userAgent": {
       "label": "User Agent",
       "requirement": "OPTIONAL",
       "description": "Information identifying the client (user agent) making the request. Contains anonymized details including the client's operating system, browser, and device type.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "VPN System"
+      ]
     },
     "responseCode": {
       "label": "Response Code",
       "requirement": "OPTIONAL",
       "description": "The status code returned by the server after a network request, indicating the processing result of the request.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
       "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
       "description": "Official name of the security product vendor.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
       "description": "Official standard name of the software or hardware product that generated the log",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
       "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
@@ -323,63 +390,117 @@
           "label": "UES",
           "description": "Unified Endpoint Security System, integrating endpoint protection, detection, and response capabilities."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
       "description": "IP address of the log production device",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
       "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
       "description": "Summary name of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
       "description": "Detailed description information of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the event activity began.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp marking the end of an event activity.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "OPTIONAL",
       "description": "The precise timestamp when the device locally receives and generates a log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
       "description": "The exact timestamp when the log collection system receives the log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "severity": {
       "label": "Severity Level",
@@ -408,7 +529,13 @@
           "label": "critical",
           "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
         }
-      }
+      },
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "catOutcome": {
       "label": "Category Outcome",
@@ -429,7 +556,13 @@
           "label": "Attempt",
           "description": "The event has occurred, but its success or failure cannot be determined."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "logType": {
       "label": "Log Type",
@@ -526,7 +659,13 @@
           "label": "Other Log Types",
           "description": "Unclassified other log types, containing log events that cannot be categorized into the above classifications."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "opType": {
       "label": "Operation Type",
@@ -651,137 +790,247 @@
           "label": "Unlock",
           "description": "Object unlock operations, including user account unlocking, session unlocking, resource unlocking, etc."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "XFF": {
       "label": "X-Forwarded-For Header",
       "requirement": "OPTIONAL",
       "description": "HTTP request header field used to identify the original client IP address when connecting to the web server through an HTTP proxy or load balancer.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall"
+      ]
     },
     "srcPort": {
       "label": "Source Port",
-      "requirement": "OPTIONAL",
+      "requirement": "RECOMMENDED",
       "description": "Source service port number identifying the network communication connection.",
       "type": "integer",
-      "valid_type": "integer_t"
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destPort": {
       "label": "Destination Port",
-      "requirement": "OPTIONAL",
+      "requirement": "RECOMMENDED",
       "description": "The network port number of the communication target, used to identify specific services or applications.",
       "type": "integer",
-      "valid_type": "integer_t"
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "srcMacAddress": {
       "label": "Source MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame sender",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destMacAddress": {
       "label": "Destination MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame recipient",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "srcGeoCountry": {
       "label": "Source Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country of origin for the network event",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "srcGeoRegion": {
       "label": "Source Geographic Region",
       "requirement": "OPTIONAL",
       "description": "Name of the provincial administrative region where the network request originated",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "srcGeoCity": {
       "label": "Source Geographic City",
       "requirement": "OPTIONAL",
       "description": "The name of the city-level administrative region where the network request originated.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "srcGeoAddress": {
       "label": "Source Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "srcGeoLatitude": {
       "label": "Source Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "srcGeoLongitude": {
       "label": "Source Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destGeoCountry": {
       "label": "Destination Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destGeoRegion": {
       "label": "Destination Geographic Region",
       "requirement": "OPTIONAL",
       "description": "The name of the provincial-level administrative region where the network request destination is located.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destGeoCity": {
       "label": "Destination Geographic City",
       "requirement": "OPTIONAL",
       "description": "City-level administrative region name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destGeoAddress": {
       "label": "Destination Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destGeoLatitude": {
       "label": "Destination Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destGeoLongitude": {
       "label": "Destination Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
       "description": "Device address of the data source",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System"
+      ]
     },
     "transProtocol": {
       "label": "Transport Protocol",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "Protocol types used at the transport layer of the OSI model.",
       "type": "enum",
       "valid_type": "string_t",
@@ -794,7 +1043,13 @@
           "label": "UDP",
           "description": "A connectionless, unreliable transport protocol that provides low-latency data transmission, suitable for real-time applications."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "appProtocol": {
       "label": "Application Protocol",
@@ -1059,7 +1314,13 @@
           "label": "RDP",
           "description": "Remote Desktop Protocol (RDP), a proprietary protocol developed by Microsoft that provides a user with a graphical interface to connect to another computer over a network connection."
         }
-      }
+      },
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "direction": {
       "label": "Data Flow Direction",
@@ -1084,56 +1345,86 @@
           "label": "Internal Access Internal",
           "description": "Source IP is internal, destination IP is internal, data direction: internal to internal access"
         }
-      }
+      },
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "deviceVersion": {
       "label": "Device Version",
       "requirement": "OPTIONAL",
       "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "srcAddress": {
       "label": "Source IP Address",
       "requirement": "RECOMMENDED",
       "description": "The IP address corresponding to the initiator of the network connection.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "destAddress": {
       "label": "Destination IP Address",
       "requirement": "RECOMMENDED",
       "description": "The target IP address for identifying network communication connections.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
       "description": "Count the occurrences of the same type or related events.",
       "type": "long",
-      "valid_type": "long_t"
+      "valid_type": "long_t",
+      "dataSource": [
+        "Firewall",
+        "Network Detection and Response",
+        "VPN System",
+        "Zero Trust"
+      ]
     },
     "relateAddress": {
       "label": "Related IP Address",
       "requirement": "OPTIONAL",
       "description": "Auxiliary IP address information associated with the primary operator user, used to record network address information in layer 3 association scenarios. For example, in database audit scenarios involving web-database separation, this field can be used to associate the network address when a user logs into the web server.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Network Detection and Response",
+        "Zero Trust"
+      ]
     },
-    "relateUserName": {
-      "label": "Related User Name",
+    "userName": {
+      "label": "User Name",
       "requirement": "OPTIONAL",
-      "description": "Auxiliary username information associated with the primary operator's username.",
+      "description": "The user's real name",
       "type": "string",
-      "valid_type": "string_t"
-    },
-    "relateInfo": {
-      "label": "Related Information",
-      "requirement": "OPTIONAL",
-      "description": "Descriptive information associated with the primary operator's username.",
-      "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "VPN System"
+      ]
     }
   }
 }

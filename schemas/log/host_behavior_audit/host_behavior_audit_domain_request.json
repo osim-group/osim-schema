@@ -4,132 +4,192 @@
   "title": "domain_request",
   "label": "Domain Request",
   "description": "Records DNS queries and domain resolution attempts made by the host, monitoring potential malicious or anomalous domain access patterns.",
+  "tag": [
+    "Ransomware"
+  ],
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
   "definitions": {
     "image": {
       "label": "Process Image Path",
       "requirement": "RECOMMENDED",
       "description": "The full path of the process executable file in the file system.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "parentImage": {
       "label": "Parent Process Image Path",
       "requirement": "OPTIONAL",
       "description": "The full path of the parent process executable in the file system.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "commandLine": {
       "label": "Command Line",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The complete command-line string passed when starting the process.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "parentCommandLine": {
       "label": "Parent Command Line",
       "requirement": "OPTIONAL",
       "description": "The complete command-line string passed when the parent process was launched.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "processId": {
       "label": "Process ID",
       "requirement": "RECOMMENDED",
       "description": "A unique numeric identifier assigned to a process by the operating system.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "processUserName": {
       "label": "Process User Name",
       "requirement": "RECOMMENDED",
       "description": "Operating system user account of the executing process",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "processMd5": {
       "label": "Process MD5 Hash",
       "requirement": "RECOMMENDED",
       "description": "MD5 hash value of the process executable file",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "processName": {
       "label": "Process Name",
       "requirement": "RECOMMENDED",
       "description": "The base name of the process executable file, excluding path information.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "parentProcessName": {
       "label": "Parent Process Name",
       "requirement": "OPTIONAL",
       "description": "The executable file name of the parent process that created the current process.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "parentProcessId": {
       "label": "Parent Process ID",
       "requirement": "OPTIONAL",
       "description": "A unique numeric identifier assigned by the operating system to the parent process.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "parentProcessUserName": {
       "label": "Parent Process User Name",
       "requirement": "OPTIONAL",
       "description": "The name of the operating system user account that executed the parent process.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "parentProcessMd5": {
       "label": "Parent Process MD5 Hash",
       "requirement": "OPTIONAL",
       "description": "MD5 hash value of the parent process executable file",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "processStartTime": {
       "label": "Process Start Time",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The exact time when the operating system successfully created a process instance.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "parentProcessStartTime": {
       "label": "Parent Process Start Time",
       "requirement": "OPTIONAL",
       "description": "The precise timestamp of when the parent process instance was created.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "processGuid": {
       "label": "Process GUID",
       "requirement": "OPTIONAL",
       "description": "Globally unique identifier of the process instance",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "parentProcessGuid": {
       "label": "Parent Process GUID",
       "requirement": "OPTIONAL",
       "description": "Globally unique identifier of the parent process instance",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "hostName": {
       "label": "Host Name",
       "requirement": "OPTIONAL",
       "description": "The identifier name of computing devices (servers, workstations, network devices, etc.) in the network. Typically refers to their NetBIOS name (within Windows LAN) or DNS hostname (fully qualified or short name).",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "hostAddress": {
       "label": "Host IP Address",
       "requirement": "RECOMMENDED",
       "description": "The network IP address of the host",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "transProtocol": {
       "label": "Transport Protocol",
@@ -146,56 +206,80 @@
           "label": "UDP",
           "description": "A connectionless, unreliable transport protocol that provides low-latency data transmission, suitable for real-time applications."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "requestDomain": {
       "label": "Request Domain",
       "requirement": "RECOMMENDED",
       "description": "The fully qualified domain name (FQDN) identifying the target of the network request.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "responseAddress": {
       "label": "Response IP Address",
       "requirement": "RECOMMENDED",
       "description": "The IP address information returned in the DNS query response.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "queryStatus": {
       "label": "Query Status",
       "requirement": "RECOMMENDED",
       "description": "Response status of a DNS protocol query request, where 0 in the DNS query status indicates a successful DNS query.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
       "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
       "description": "Official name of the security product vendor.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
       "description": "Official standard name of the software or hardware product that generated the log",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
       "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
@@ -424,70 +508,100 @@
           "label": "UES",
           "description": "Unified Endpoint Security System, integrating endpoint protection, detection, and response capabilities."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
       "description": "IP address of the log production device",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceVersion": {
       "label": "Device Version",
       "requirement": "OPTIONAL",
       "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
       "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
       "description": "Summary name of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
       "description": "Detailed description information of the log or alert",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp when the event activity began.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
       "description": "The precise timestamp marking the end of an event activity.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "OPTIONAL",
       "description": "The precise timestamp when the device locally receives and generates a log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
       "description": "The exact timestamp when the log collection system receives the log event.",
       "type": "string",
-      "valid_type": "datetime_string_t"
+      "valid_type": "datetime_string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "severity": {
       "label": "Severity Level",
@@ -516,7 +630,10 @@
           "label": "critical",
           "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "catOutcome": {
       "label": "Category Outcome",
@@ -537,7 +654,10 @@
           "label": "Attempt",
           "description": "The event has occurred, but its success or failure cannot be determined."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "logType": {
       "label": "Log Type",
@@ -634,7 +754,10 @@
           "label": "Other Log Types",
           "description": "Unclassified other log types, containing log events that cannot be categorized into the above classifications."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "opType": {
       "label": "Operation Type",
@@ -759,133 +882,190 @@
           "label": "Unlock",
           "description": "Object unlock operations, including user account unlocking, session unlocking, resource unlocking, etc."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcAddress": {
       "label": "Source IP Address",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The IP address corresponding to the initiator of the network connection.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destAddress": {
       "label": "Destination IP Address",
-      "requirement": "RECOMMENDED",
+      "requirement": "OPTIONAL",
       "description": "The target IP address for identifying network communication connections.",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcPort": {
       "label": "Source Port",
       "requirement": "OPTIONAL",
       "description": "Source service port number identifying the network communication connection.",
       "type": "integer",
-      "valid_type": "integer_t"
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destPort": {
       "label": "Destination Port",
       "requirement": "OPTIONAL",
       "description": "The network port number of the communication target, used to identify specific services or applications.",
       "type": "integer",
-      "valid_type": "integer_t"
+      "valid_type": "integer_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcMacAddress": {
       "label": "Source MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame sender",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destMacAddress": {
       "label": "Destination MAC Address",
       "requirement": "OPTIONAL",
       "description": "Media Access Control (MAC) address of the network data frame recipient",
       "type": "string",
-      "valid_type": "mac_t"
+      "valid_type": "mac_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoCountry": {
       "label": "Source Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country of origin for the network event",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoRegion": {
       "label": "Source Geographic Region",
       "requirement": "OPTIONAL",
       "description": "Name of the provincial administrative region where the network request originated",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoCity": {
       "label": "Source Geographic City",
       "requirement": "OPTIONAL",
       "description": "The name of the city-level administrative region where the network request originated.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoAddress": {
       "label": "Source Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoLatitude": {
       "label": "Source Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoLongitude": {
       "label": "Source Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destGeoCountry": {
       "label": "Destination Geographic Country",
       "requirement": "OPTIONAL",
       "description": "Country name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destGeoRegion": {
       "label": "Destination Geographic Region",
       "requirement": "OPTIONAL",
       "description": "The name of the provincial-level administrative region where the network request destination is located.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destGeoCity": {
       "label": "Destination Geographic City",
       "requirement": "OPTIONAL",
       "description": "City-level administrative region name of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destGeoAddress": {
       "label": "Destination Geographic Address",
       "requirement": "OPTIONAL",
       "description": "Detailed address description of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destGeoLatitude": {
       "label": "Destination Geographic Latitude",
       "requirement": "OPTIONAL",
       "description": "Geographic latitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "destGeoLongitude": {
       "label": "Destination Geographic Longitude",
       "requirement": "OPTIONAL",
       "description": "Geographic longitude coordinate of the network request destination",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "appProtocol": {
       "label": "Application Protocol",
@@ -1150,7 +1330,10 @@
           "label": "RDP",
           "description": "Remote Desktop Protocol (RDP), a proprietary protocol developed by Microsoft that provides a user with a graphical interface to connect to another computer over a network connection."
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "direction": {
       "label": "Data Flow Direction",
@@ -1175,49 +1358,70 @@
           "label": "Internal Access Internal",
           "description": "Source IP is internal, destination IP is internal, data direction: internal to internal access"
         }
-      }
+      },
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoRegionCode": {
       "label": "Source Geographic Region Code",
       "requirement": "OPTIONAL",
       "description": "Geographic region code of the network request source",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoCountryCode": {
       "label": "Source Geographic Country Code",
       "requirement": "OPTIONAL",
       "description": "Country geographic code of the network request source.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoCityCode": {
       "label": "Source Geographic City Code",
       "requirement": "OPTIONAL",
       "description": "Geographic code of the city where the network request originated",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "srcGeoCountyCode": {
       "label": "Source Geographic County Code",
       "requirement": "OPTIONAL",
       "description": "County/district-level administrative division code indicating the source of network traffic or events, compliant with the national administrative division coding standard.",
       "type": "string",
-      "valid_type": "string_t"
+      "valid_type": "string_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
       "description": "Device address of the data source",
       "type": "string",
-      "valid_type": "ip_t"
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     },
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
       "description": "Count the occurrences of the same type or related events.",
       "type": "long",
-      "valid_type": "long_t"
+      "valid_type": "long_t",
+      "dataSource": [
+        "Endpoint Detection And Response System"
+      ]
     }
   }
 }

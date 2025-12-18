@@ -26,7 +26,6 @@ OSIM项目希望通过建立行业公认的数据标准，解决这些痛点，�
 
 项目目前涵盖以下安全数据类型的 schema 定义：
 
-- 设备检测（Device Detection）
 - 日志信息（Log）
 - 告警信息（Alert）
 - 资产信息（Asset）
@@ -38,7 +37,6 @@ OSIM项目希望通过建立行业公认的数据标准，解决这些痛点，�
 osim-schema/
 ├── schemas/                     # Schema 定义文件
 │   ├── asset/           
-│   ├── device_detection/
 │   ├── log/
 │   ├── alert/
 │   └── incident/

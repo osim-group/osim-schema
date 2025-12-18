@@ -1,5 +1,5 @@
 {
-    "group": "log",
+    "group": "日志",
     "categories": {
         "authentication_and_access": {
             "label": "Authentication And Access",
