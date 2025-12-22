@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-Open Security Information Model (OSIM) 是一个开源的安全数据标准化项目，旨在定义和规范安全数据的种类、字段格式、数据样例等 schema 信息。通过建立统一的数据标准，推动中国安全行业的数据开放与互联互通，实现跨厂商、跨产品的安全数据无缝对接。
+开放安全信息模式（OSIM）是一个专为 AI 设计的开放式安全模型，用于解决网络安全领域长期存在的核心难题——安全数据碎片化。如今的安全运营依赖大量来自不同厂商和工具的日志、告警、事件与遥测数据，但这些数据在结构、格式和语义上高度不统一，给检测、调查和分析带来巨大挑战。OSIM 的目标是通过构建统一的语义层，使人类、系统与 AI 能够在多源数据之间进行一致性的理解和推理。
 
 ## 项目背景
 
@@ -43,9 +43,6 @@ osim-schema/
 ├── faqs/
 │   └── faq.md
 ├── examples/                   # 数据样例
-├── tools/                      # 相关工具
-│   ├── validators/             # Schema 验证工具
-│   └── converters/             # 格式转换工具
 ├── CHANGELOG.md             	# 更改日志
 ├── CONTRIBUTING.md             # 贡献指南
 ├── CODE_OF_CONDUCT.md          # 行为准则
@@ -56,9 +53,9 @@ osim-schema/
 └── LICENSE                     # 开源协议
 ```
 
-## 使用指南
+## 使用场景
 
-- 安全工具：SIEM、SOAR、EDR和其他安全平台	# 链接到官网使用指南具体页面
+- 数据解析	# 链接到官网使用指南具体页面
 - ...
 
 ## 如何贡献
@@ -87,22 +84,17 @@ osim-schema/
 
 ## 联系我们
 
-- 项目主页: [GitHub Repository URL]
-- 问题反馈: [GitHub Issues]
-- 讨论区: [GitHub Discussions]
-- 邮件列表: [Mailing List Address]
+- 项目主页：[GitHub Repository URL](https://github.com/osim-group/osim-schema)
+- 问题反馈: [GitHub Issues](https://github.com/osim-group/osim-schema/issues)
+- 讨论区: [GitHub Discussions](https://github.com/osim-group/osim-schema/discussions)
 
 ## 致谢
 
 感谢所有为这个项目做出贡献的开发者、安全专家和组织！
-
-## 相关项目
-
-- [其他相关开源项目]
-- [推荐工具和库]
 
 ---
 
 **让我们一起推动中国安全行业的数据标准化和开放共享！**
 
 欢迎 Star ⭐ 和 Fork 本项目，参与建设中国安全开源生态！
+

@@ -97,14 +97,7 @@
 
 ## 致谢
 
-本行为准则改编自 [Contributor Covenant][homepage] 2.1 版，可查阅 [https://www.contributor-covenant.org/zh-cn/version/2/1/code_of_conduct.html][v2.1]。
-
-## 联系方式
-
-如有关于本行为准则的问题或建议，请通过以下方式联系：
-- 电子邮件: [conduct@yourproject.org]
-- GitHub Issues: [链接到专门的行为准则讨论 Issue]
-- 私信: 联系项目核心维护者
+本行为准则改编自 [Contributor Covenant](https://www.contributor-covenant.org/) 2.1 版，可查阅 [https://www.contributor-covenant.org/zh-cn/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/zh-cn/version/2/1/code_of_conduct/)。
 
 ---
 
