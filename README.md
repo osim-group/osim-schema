@@ -41,7 +41,7 @@ osim-schema/
 │   ├── alert/
 │   └── incident/
 ├── faqs/
-│   └── faq.md
+│   └── README.md
 ├── examples/                   # 数据样例
 ├── CHANGELOG.md             	# 更改日志
 ├── CONTRIBUTING.md             # 贡献指南
