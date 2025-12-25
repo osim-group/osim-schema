@@ -5566,7 +5566,7 @@
         }
       }
     },
-    "assetCriticality": {
+    "assetImportance": {
       "label": "重要程度",
       "description": "资产的重要程度等级（如普通、重要、核心、涉密、其它）。",
       "enum": {
