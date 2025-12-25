@@ -1,0 +1,123 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "ftp_audit",
+  "label": "FTP Audit",
+  "description": "Logs FTP session activities including authentication, file transfers, and command executions for security auditing.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "fileName": {
+      "example": "malware_delivery.html"
+    },
+    "requestMethod": {
+      "example": "GET"
+    },
+    "requestParameters": {
+      "example": "USER anonymous\nPASS guest@example.com\nRETR malware_delivery.html"
+    },
+    "responseMsg": {
+      "example": "226 Transfer complete."
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "DC-01-FTP-SRV-2023"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco Secure FTP Server"
+    },
+    "deviceName": {
+      "example": "ftp-server-dc-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "deviceVersion": {
+      "example": "Cisco IOS 15.2(4)M10"
+    },
+    "eventId": {
+      "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    "name": {
+      "example": "FTP Session Audit: File Transfer Completed"
+    },
+    "message": {
+      "example": "anonymous"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "send"
+    },
+    "srcAddress": {
+      "example": "192.168.1.25"
+    },
+    "destAddress": {
+      "example": "192.168.1.10"
+    },
+    "srcMacAddress": {
+      "example": "00:1A:2B:3C:4D:5E"
+    },
+    "destMacAddress": {
+      "example": "00:50:56:A1:B2:C3"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Francisco"
+    },
+    "destGeoAddress": {
+      "example": "456 Market Street, San Francisco, CA 94107"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "ftp"
+    },
+    "direction": {
+      "example": "00"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    }
+  }
+}

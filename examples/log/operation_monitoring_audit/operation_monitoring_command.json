@@ -1,0 +1,132 @@
+{
+  "group": "log",
+  "category": "operation_monitoring_audit",
+  "title": "command_operation",
+  "label": "Command Operation",
+  "description": "Logs and monitors command execution activities for security auditing and compliance purposes.",
+  "dataSource": [
+    "Bastion Host"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "destUserName": {
+      "example": "user"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:17"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:22"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:18"
+    },
+    "userName": {
+      "example": "John Smith"
+    },
+    "srcUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-1013"
+    },
+    "destUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-1001"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "10.0.0.50"
+    },
+    "appProtocol": {
+      "example": "ssh"
+    },
+    "machineCode": {
+      "example": "DESKTOP-ABC123"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Windows Server 2019"
+    },
+    "deviceName": {
+      "example": "WS2019-SRV01"
+    },
+    "deviceAddress": {
+      "example": "10.0.0.1"
+    },
+    "deviceVersion": {
+      "example": "Windows Server 2019 Standard 10.0.17763.4010"
+    },
+    "eventId": {
+      "example": "e3b0c442-98fc-1c14-9afb-8b17b2a4e1a2"
+    },
+    "name": {
+      "example": "Command execution audit: ssh session from admin@192.168.1.100 to user@10.0.0.50"
+    },
+    "message": {
+      "example": "admin"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:20"
+    },
+    "severity": {
+      "example": "informational"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "command"
+    },
+    "opType": {
+      "example": "execute"
+    },
+    "srcMacAddress": {
+      "example": "00:0C:29:7E:1A:5B"
+    },
+    "destMacAddress": {
+      "example": "00:50:56:6B:8C:FF"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "456 Oak Street, San Jose, CA 95113, United States"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "dataSourceAddress": {
+      "example": "10.0.0.1"
+    },
+    "cmdContent": {
+      "example": "sudo useradd -m -s /bin/bash newuser"
+    },
+    "destHostName": {
+      "example": "DESKTOP-DEF456"
+    }
+  }
+}

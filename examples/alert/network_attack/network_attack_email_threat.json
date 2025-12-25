@@ -1,0 +1,187 @@
+{
+  "group": "alert",
+  "category": "network_attack",
+  "title": "email_threat",
+  "label": "Email Threat",
+  "description": "Monitors and alerts on email-based network attacks, including phishing, malware distribution, and other malicious email activities.",
+  "dataSource": [
+    "Anti Spam Gateway",
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "destUserName": {
+      "example": "user"
+    },
+    "ccUserName": {
+      "example": "admin@example.com;user@example.com"
+    },
+    "bccUserName": {
+      "example": "admin@example.com;user@example.com;audit@example.com"
+    },
+    "startTime": {
+      "example": "2023-10-26 09:15:33"
+    },
+    "endTime": {
+      "example": "2023-10-26 09:15:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 09:15:35"
+    },
+    "serviceType": {
+      "example": "SMTP"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "192.168.1.200"
+    },
+    "mailSubject": {
+      "example": "Urgent: Verify Your Account Immediately to Avoid Suspension"
+    },
+    "mailType": {
+      "example": "html"
+    },
+    "mailContent": {
+      "example": "Dear User,\n\nThis is an urgent notification from your bank's security department. We have detected unusual login attempts on your account from an unrecognized device. To protect your account from unauthorized access and potential suspension, you must verify your identity immediately.\n\nPlease click on the following link to proceed with the verification process:\nhttps://secure-login.bank-verify.example.com/confirm?session=abc123def456\n\nThis link will direct you to our secure verification portal. You will be asked to confirm your account number, online banking password, and the One-Time Password (OTP) sent to your registered mobile number.\n\nFailure to complete this verification within the next 24 hours will result in the temporary suspension of your online banking access for security reasons.\n\nIf you did not attempt to log in recently, please contact our fraud prevention team immediately at 1-800-555-0199.\n\nThank you for your prompt attention to this critical security matter.\n\nSincerely,\nSecurity Operations Center\nGlobal Trust Bank"
+    },
+    "fileList": {
+      "example": "invoice_scan.pdf;malware.exe;phishing_link.html"
+    },
+    "machineCode": {
+      "example": "MACHINE001"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems, Inc."
+    },
+    "deviceSendProductName": {
+      "example": "Cisco Email Security Appliance"
+    },
+    "deviceName": {
+      "example": "mail-server-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "Email Threat Alert: Phishing Attempt Detected"
+    },
+    "message": {
+      "example": "Urgent: Verify Your Account Immediately to Avoid Suspension"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 09:15:37"
+    },
+    "catOutcome": {
+      "example": "FAIL"
+    },
+    "logType": {
+      "example": "alert"
+    },
+    "opType": {
+      "example": "send"
+    },
+    "XFF": {
+      "example": "203.0.113.45, 198.51.100.22"
+    },
+    "srcMacAddress": {
+      "example": "00:0a:95:9d:68:16"
+    },
+    "destMacAddress": {
+      "example": "00:1b:44:11:3a:e7"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043, United States"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "smtp"
+    },
+    "dvcAction": {
+      "example": "blocked"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "15.2(4)M6"
+    },
+    "subTechniqueId": {
+      "example": "T1566.002"
+    },
+    "techniqueName": {
+      "example": "Phishing"
+    },
+    "techniqueId": {
+      "example": "T1566"
+    },
+    "tacticName": {
+      "example": "Initial Access"
+    },
+    "tacticId": {
+      "example": "TA0001"
+    },
+    "killChain": {
+      "example": "KC_Delivery"
+    },
+    "confidence": {
+      "example": "High"
+    },
+    "ruleId": {
+      "example": "email_phish_rule_20231026_001"
+    },
+    "ruleType": {
+      "example": "/Phishing/EmailPhishing"
+    },
+    "ruleName": {
+      "example": "Suspicious Phishing Email with Malicious Attachments Detected"
+    },
+    "attackerAddress": {
+      "example": "203.0.113.45"
+    },
+    "victimAddress": {
+      "example": "192.168.1.200"
+    },
+    "subTechniqueName": {
+      "example": "Spearphishing Link"
+    },
+    "suggestion": {
+      "example": "Block email and quarantine message for analysis. Notify recipients of potential phishing attempt and advise them to delete the email without clicking links or opening attachments. Update email filtering rules to block similar sender patterns and URLs. Conduct user awareness training on identifying phishing emails."
+    },
+    "payload": {
+      "example": "https://secure-login.bank-verify.example.com/confirm?session=abc123def456"
+    }
+  }
+}

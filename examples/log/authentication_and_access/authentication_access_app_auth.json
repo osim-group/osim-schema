@@ -1,0 +1,142 @@
+{
+  "group": "log",
+  "category": "authentication_and_access",
+  "title": "application_access_authentication",
+  "label": "Application Access Authentication",
+  "description": "Logs recording application-level authentication events, including user login attempts, session management, and access control validations.",
+  "dataSource": [
+    "VPN System",
+    "Zero Trust"
+  ],
+  "tag": [
+    "Brute Force"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "srcUserName": {
+      "example": "administrator"
+    },
+    "userName": {
+      "example": "John Smith"
+    },
+    "destUserName": {
+      "example": "jdoe"
+    },
+    "machineCode": {
+      "example": "MACHINE-001-ALPHA"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Windows Security"
+    },
+    "deviceName": {
+      "example": "DESKTOP-001-ALPHA"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "A123B456-C789-D012-E345-F67890123456"
+    },
+    "name": {
+      "example": "Successful login for user John Smith from device DESKTOP-001-ALPHA"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:3B:73:A5"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "456 Silicon Valley Blvd, San Jose, CA 95134, United States"
+    },
+    "srcAddress": {
+      "example": "192.168.1.150"
+    },
+    "destAddress": {
+      "example": "10.0.0.50"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "ldap"
+    },
+    "relateAddress": {
+      "example": "10.0.0.100"
+    },
+    "requestUrlQuery": {
+      "example": "/login?username=jdoe&redirect=/dashboard&sessionId=ABC123XYZ"
+    },
+    "requestUrl": {
+      "example": "/login"
+    },
+    "appName": {
+      "example": "Active Directory"
+    },
+    "serviceName": {
+      "example": "LDAP Service"
+    },
+    "destHostName": {
+      "example": "ldap.example.com"
+    },
+    "objectName": {
+      "example": "LDAP User Object"
+    },
+    "objectType": {
+      "example": "user"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    },
+    "requestMethod": {
+      "example": "POST"
+    },
+    "requestContentType": {
+      "example": "application/json; charset=utf-8"
+    },
+    "responseBody": {
+      "example": "success"
+    },
+    "responseContentType": {
+      "example": "application/json; charset=utf-8"
+    },
+    "deviceVersion": {
+      "example": "Windows 10 Pro 10.0.19045 Build 19045"
+    }
+  }
+}

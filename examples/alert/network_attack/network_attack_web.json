@@ -1,0 +1,227 @@
+{
+  "group": "alert",
+  "category": "network_attack",
+  "title": "web_attack",
+  "label": "Web Attack",
+  "description": "Monitors and alerts on malicious activities targeting web applications, such as SQL injection, XSS, or command injection attempts.",
+  "dataSource": [
+    "Honeypot System",
+    "Network Detection and Response",
+    "Web Application Firewall"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "fileName": {
+      "example": "malware_delivery.html"
+    },
+    "destHostName": {
+      "example": "web-server-01.example.com"
+    },
+    "passwd": {
+      "example": "MySecureP@ssw0rd2023"
+    },
+    "requestMethod": {
+      "example": "POST"
+    },
+    "requestUrlQuery": {
+      "example": "OR"
+    },
+    "requestUrl": {
+      "example": "/upload/malware_delivery.html"
+    },
+    "requestHeader": {
+      "example": "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36\nContent-Type: application/x-www-form-urlencoded\nReferer: https://attacker-site.example/phishing.html\nAccept-Language: en-US,en;q=0.9\nCookie: sessionid=abc123def456; csrftoken=xyz789\nContent-Length: 1024\nX-Forwarded-For: 192.168.1.100"
+    },
+    "requestBody": {
+      "example": "admin"
+    },
+    "requestCookies": {
+      "example": "sessionid=abc123def456; csrftoken=xyz789"
+    },
+    "httpReferer": {
+      "example": "https://attacker-site.example/phishing.html"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+    },
+    "requestContentType": {
+      "example": "application/x-www-form-urlencoded"
+    },
+    "responseHeader": {
+      "example": "HTTP/1.1 403 Forbidden\nContent-Type: text/html; charset=utf-8\nContent-Length: 512\nConnection: close\nServer: Apache/2.4.41 (Ubuntu)\nX-Content-Type-Options: nosniff\nX-Frame-Options: DENY\nCache-Control: no-cache, no-store, must-revalidate\nPragma: no-cache\nExpires: 0\nSet-Cookie: security_block=blocked; Path=/; HttpOnly; SameSite=Strict\nDate: Thu, 26 Oct 2023 14:32:18 GMT"
+    },
+    "responseBody": {
+      "example": "<!DOCTYPE html>\n<html>\n<head><title>403 Forbidden</title></head>\n<body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<p>Additionally, a 403 Forbidden error was encountered while trying to use an ErrorDocument to handle the request.</p>\n<hr>\n<address>Apache/2.4.41 (Ubuntu) Server at web-server-01.example.com Port 443</address>\n</body>\n</html>"
+    },
+    "responseContentType": {
+      "example": "text/html; charset=utf-8"
+    },
+    "vulName": {
+      "example": "CVE-2023-12345: SQL Injection Vulnerability in /upload/malware_delivery.html"
+    },
+    "vulOrg": {
+      "example": "Apache Software Foundation"
+    },
+    "vulCode": {
+      "example": "CVE-2023-12345"
+    },
+    "vulDescription": {
+      "example": "s upload handler allows an attacker to inject arbitrary SQL commands via the"
+    },
+    "vulDetector": {
+      "example": "Acunetix Security Research Team"
+    },
+    "cve": {
+      "example": "CVE-2023-12345"
+    },
+    "machineCode": {
+      "example": "WAF-APP-SRV-01-7A3B9C"
+    },
+    "productVendorName": {
+      "example": "Palo Alto Networks"
+    },
+    "deviceSendProductName": {
+      "example": "Palo Alto Networks Next-Generation Firewall"
+    },
+    "deviceName": {
+      "example": "WAF-APP-SRV-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "Potential SQL Injection Attempt Detected on /upload/malware_delivery.html"
+    },
+    "message": {
+      "example": "Potential SQL Injection Attempt Detected: User with IP 192.168.1.100 attempted to inject SQL command OR via POST request to https://web-server-01.example.com/upload/malware_delivery.html. The request contained suspicious parameter in body (admin) and originated from referrer https://attacker-site.example/phishing.html. The attack was blocked by the WAF (WAF-APP-SRV-01) with a 403 Forbidden response, protecting against CVE-2023-12345."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:22"
+    },
+    "catOutcome": {
+      "example": "Attempt"
+    },
+    "logType": {
+      "example": "alert"
+    },
+    "opType": {
+      "example": "access"
+    },
+    "XFF": {
+      "example": "192.168.1.100"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:8B:5F:1D"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "950 El Camino Real, Santa Clara, CA 95050, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "950 El Camino Real, Santa Clara, CA 95050, United States"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "dvcAction": {
+      "example": "blocked"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "PAN-OS 10.2.0"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "192.168.1.10"
+    },
+    "subTechniqueId": {
+      "example": "T1190"
+    },
+    "techniqueName": {
+      "example": "Exploit Public-Facing Application"
+    },
+    "techniqueId": {
+      "example": "T1190"
+    },
+    "tacticName": {
+      "example": "Initial Access"
+    },
+    "tacticId": {
+      "example": "TA0001"
+    },
+    "killChain": {
+      "example": "KC_Exploitation"
+    },
+    "confidence": {
+      "example": "High"
+    },
+    "ruleId": {
+      "example": "WAF-SQLi-ALERT-2023-10-26-12345"
+    },
+    "ruleType": {
+      "example": "/WebAttack/SQLInjection"
+    },
+    "ruleName": {
+      "example": "WAF-SQLi-ALERT-2023-10-26-12345: Blocked SQL Injection Attempt via POST to /upload/malware_delivery.html"
+    },
+    "attackerAddress": {
+      "example": "192.168.1.100"
+    },
+    "victimAddress": {
+      "example": "192.168.1.10"
+    },
+    "subTechniqueName": {
+      "example": "Exploit Public-Facing Application via Web Shell"
+    },
+    "suggestion": {
+      "example": "Block the source IP 192.168.1.100 at the firewall. Inspect the web server logs for /upload/malware_delivery.html for other suspicious activity. Review and patch the application against CVE-2023-12345. Consider implementing stricter input validation and Web Application Firewall (WAF) rules for SQL injection patterns."
+    },
+    "payload": {
+      "example": "OR 1=1; DROP TABLE users; --"
+    },
+    "httpVersion": {
+      "example": "HTTP/1.1"
+    }
+  }
+}

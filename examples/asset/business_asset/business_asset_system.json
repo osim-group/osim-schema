@@ -1,0 +1,177 @@
+{
+  "group": "asset",
+  "category": "business_asset",
+  "title": "business_system",
+  "label": "Business System",
+  "description": "A business asset system represents critical IT infrastructure or applications that support core organizational operations and processes.",
+  "definitions": {
+    "busSystemName": {
+      "example": "CRM_System_v2"
+    },
+    "busSystemVersion": {
+      "example": "2.0.1"
+    },
+    "busSystemId": {
+      "example": "BS_CRM_v2_001"
+    },
+    "softwareList": {
+      "example": "CRM_System_v2 includes: Microsoft Office 365, Adobe Acrobat Reader DC, Java Runtime Environment 8, Chrome 102.0.5005.115, Salesforce CRM integration plugin, antivirus_enterprise_2023"
+    },
+    "assetId": {
+      "example": "AS_CRM_v2_001_001"
+    },
+    "relateId": {
+      "example": "BS_CRM_v2_001_AS_CRM_v2_001_001"
+    },
+    "assetName": {
+      "example": "CRM_System_v2_Server_01"
+    },
+    "assetCategory": {
+      "example": "server"
+    },
+    "unitId": {
+      "example": "U_CRM_Department_001"
+    },
+    "unitName": {
+      "example": "Sales Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "European Union Data Protection Board"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "CRM_System_v2_Server_01_Alias"
+    },
+    "assetSource": {
+      "example": "10.0.1.15"
+    },
+    "assetTag": {
+      "example": "CRM_System_v2_Server_01_Tag_01, CRM_System_v2_Server_01_Tag_02, http_server, tcp_443, tcp_80"
+    },
+    "orgId": {
+      "example": "ORG_CRM_Sales_001"
+    },
+    "orgName": {
+      "example": "Global Financial Solutions Inc."
+    },
+    "netId": {
+      "example": "SEC_DOM_CRM_v2_001"
+    },
+    "securityZone": {
+      "example": "DMZ_Zone_01"
+    },
+    "assetUser": {
+      "example": "John.Doe"
+    },
+    "assetUserPhone": {
+      "example": "+44 7911 123456"
+    },
+    "assetUserMail": {
+      "example": "john.doe@globalfinancialsolutions.com"
+    },
+    "assetOwnerName": {
+      "example": "John Doe"
+    },
+    "assetOwnerPhone": {
+      "example": "+44 7911 123457"
+    },
+    "assetOwnerMail": {
+      "example": "john.doe@globalfinancialsolutions.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Asset Management Department"
+    },
+    "departmentHeadName": {
+      "example": "Michael Chen"
+    },
+    "departmentHeadPhone": {
+      "example": "+44 7911 123458"
+    },
+    "departmentHeadMail": {
+      "example": "michael.chen@globalfinancialsolutions.com"
+    },
+    "assetDescription": {
+      "example": "CRM_System_v2_Server_01 is a production server running the version 2.0.1 of the CRM business system, owned by the Sales Department of Global Financial Solutions Inc. This server, hosted in the DMZ_Zone_01 security zone, is a core financial services asset managed by the IT Asset Management Department. Its primary purpose is to host customer relationship management software, including the Salesforce CRM integration plugin, to support the sales operations. The designated user and owner is John Doe from the Sales Department."
+    },
+    "createTime": {
+      "example": "2023-10-15 09:30:00"
+    },
+    "updateTime": {
+      "example": "2024-03-10 16:45:00"
+    },
+    "assetGroup": {
+      "example": "Sales Department IT Asset Group"
+    },
+    "assetGeoCountry": {
+      "example": "United Kingdom"
+    },
+    "assetGeoProvince": {
+      "example": "Greater London"
+    },
+    "assetGeoProvinceCode": {
+      "example": "LON"
+    },
+    "assetGeoCityCode": {
+      "example": "LND"
+    },
+    "assetGeoCountyCode": {
+      "example": "GB-LND"
+    },
+    "assetGeoCity": {
+      "example": "London"
+    },
+    "assetGeoCounty": {
+      "example": "London Borough of Camden"
+    },
+    "assetGeoRegion": {
+      "example": "London"
+    },
+    "assetGeoAddress": {
+      "example": "1 Kingsway, London WC2B 6XF, United Kingdom"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "CAB-DataCenter-LON-01-Rack-42-U-15"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "The asset is scheduled for a security compliance audit on 2024-06-15. All associated software components, including Salesforce CRM integration plugin, must be updated to the latest patched versions prior to the audit date. The server is configured with a dedicated service account for the CRM application and logs are forwarded to the central SIEM (Splunk) instance SEC-DC-LON-01."
+    },
+    "assetAddress": {
+      "example": "10.0.1.15"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

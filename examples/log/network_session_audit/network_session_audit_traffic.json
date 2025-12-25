@@ -1,0 +1,132 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "traffic_session_audit",
+  "label": "Traffic Session Audit",
+  "description": "Records and audits network traffic sessions, including details of source, destination, protocols, and data volumes for security analysis.",
+  "dataSource": [
+    "Bastion Host",
+    "Network Detection and Response",
+    "Zero Trust"
+  ],
+  "tag": [
+    "DDOS",
+    "Data Leakage"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "srcUserName": {
+      "example": "administrator"
+    },
+    "userName": {
+      "example": "John Smith"
+    },
+    "destUserName": {
+      "example": "jdoe"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "HOST-WIN10-PRO-001"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco ASA"
+    },
+    "deviceName": {
+      "example": "FW-CISCO-ASA-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.1"
+    },
+    "deviceVersion": {
+      "example": "IOS 9.1(4)"
+    },
+    "eventId": {
+      "example": "a0eebc99-9c0d-4ef8-bb6d-6bb9bd380a11"
+    },
+    "name": {
+      "example": "Traffic Session Audit: Web Access from 192.168.1.100 to 93.184.216.34"
+    },
+    "message": {
+      "example": "Session initiated from source IP 192.168.1.100 (user: administrator) to destination IP 93.184.216.34 on port 443 (HTTPS) via interface eth0. Session lasted 30 seconds, with 1.5 MB sent and 4.2 MB received. Session terminated normally by FIN packet exchange."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "connect"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "93.184.216.34"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:50:56:C0:00:08"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "950 S Winchester Blvd, San Jose, CA 95128"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "Massachusetts"
+    },
+    "destGeoCity": {
+      "example": "Boston"
+    },
+    "destGeoAddress": {
+      "example": "75 State Street, Boston, MA 02109"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.1"
+    },
+    "destHostName": {
+      "example": "example.com"
+    },
+    "srcTransAddress": {
+      "example": "10.0.0.100"
+    }
+  }
+}

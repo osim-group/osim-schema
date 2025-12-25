@@ -1,0 +1,174 @@
+{
+  "group": "asset",
+  "category": "data_asset",
+  "title": "data_field",
+  "label": "Data Field",
+  "description": "A specific attribute or element within a data asset that contains structured information, often used for analysis or processing in security contexts.",
+  "definitions": {
+    "dbName": {
+      "example": "customer_database"
+    },
+    "tableName": {
+      "example": "customer_data_table"
+    },
+    "columnName": {
+      "example": "customer_name"
+    },
+    "defaultValue": {
+      "example": "NULL"
+    },
+    "columnType": {
+      "example": "VARCHAR"
+    },
+    "assetId": {
+      "example": "db_customer_data_table_asset_001"
+    },
+    "relateId": {
+      "example": "db_customer_data_table_column_customer_name_001"
+    },
+    "assetName": {
+      "example": "customer_database_asset_001"
+    },
+    "assetCategory": {
+      "example": "data_field"
+    },
+    "unitId": {
+      "example": "unit_org_001"
+    },
+    "unitName": {
+      "example": "Sales_Organization_Unit_001"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Regulatory_Compliance_Department_001"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "classified"
+    },
+    "assetAlias": {
+      "example": "customer_name_field_alias"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "orgId": {
+      "example": "org_finance_001"
+    },
+    "orgName": {
+      "example": "Finance_Organization_001"
+    },
+    "netId": {
+      "example": "net_finance_security_domain_001"
+    },
+    "securityZone": {
+      "example": "dmz_zone"
+    },
+    "assetUser": {
+      "example": "john.doe"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetUserMail": {
+      "example": "john.doe@finance-organization-001.com"
+    },
+    "assetOwnerName": {
+      "example": "John Doe"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "john.doe@finance-organization-001.com"
+    },
+    "assetDepartmentName": {
+      "example": "Data_Management_Department_001"
+    },
+    "departmentHeadName": {
+      "example": "Jane Smith"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-555-4321"
+    },
+    "departmentHeadMail": {
+      "example": "jane.smith@finance-organization-001.com"
+    },
+    "assetDescription": {
+      "example": "Customer name data field within the customer_data_table of the customer_database, used for storing customer names in the Sales_Organization_Unit_001. This field is of type VARCHAR, managed by the Data_Management_Department_001 under the Finance_Organization_001 in the finance industry. Owned and used by John Doe (john.doe) for customer identification and reporting purposes. Located in the dmz_zone security zone, sourced from 192.168.1.100, and has a criticality level of classified."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-10-22 14:35:18"
+    },
+    "assetGroup": {
+      "example": "Data_Management_Asset_Group_001"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "San Francisco"
+    },
+    "assetGeoCity": {
+      "example": "San Francisco"
+    },
+    "assetGeoCounty": {
+      "example": "San Francisco County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "DC-DataCenter-Aisle3-Rack17-Slot5"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Data field customer_name contains personally identifiable information (PII) subject to GDPR and CCPA compliance requirements. Encryption status: AES-256 at rest. Access is logged via system audit trail AUD-2023-10-22-001. Data retention policy: 7 years post-customer relationship termination. Last data quality validation passed on 2023-10-21. Associated with data classification tag CLS-PII-001."
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

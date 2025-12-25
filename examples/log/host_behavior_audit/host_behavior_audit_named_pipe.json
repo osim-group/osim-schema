@@ -1,0 +1,108 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "named_pipe",
+  "label": "Named Pipe",
+  "description": "Records activities related to named pipe operations on the host, including creation, access, and deletion events.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "processUserName": {
+      "example": "SYSTEM"
+    },
+    "parentProcessUserName": {
+      "example": "SYSTEM"
+    },
+    "processStartTime": {
+      "example": "2023-10-26 14:32:15"
+    },
+    "parentProcessStartTime": {
+      "example": "2023-10-26 14:32:10"
+    },
+    "image": {
+      "example": "C:\\Windows\\System32\\cmd.exe"
+    },
+    "parentImage": {
+      "example": "C:\\Windows\\System32\\services.exe"
+    },
+    "processName": {
+      "example": "cmd.exe"
+    },
+    "parentProcessName": {
+      "example": "services.exe"
+    },
+    "machineCode": {
+      "example": "HOST-WIN-AD-SRV01-7F3A9B"
+    },
+    "productVendorName": {
+      "example": "Microsoft Corporation"
+    },
+    "deviceSendProductName": {
+      "example": "Windows Security"
+    },
+    "deviceName": {
+      "example": "HOST-WIN-AD-SRV01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "6a3b8c2d-4e5f-7a9b-c1d2-e3f4a5b6c7d8"
+    },
+    "name": {
+      "example": "Named Pipe Activity Detected: cmd.exe created pipe \\Device\\NamedPipe\\Winsock2\\CatalogChangeListener-3b8-0"
+    },
+    "message": {
+      "example": "Named pipe \\Device\\NamedPipe\\Winsock2\\CatalogChangeListener-3b8-0 was created by process cmd.exe (PID: 4567, started by services.exe) on host HOST-WIN-AD-SRV01 (192.168.1.100) for network catalog change notifications."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "pipe"
+    },
+    "opType": {
+      "example": "create"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    },
+    "processMd5": {
+      "example": "f8e6c7d9b4a2e5f1c3a7b9d8e2f4c6a0"
+    },
+    "parentProcessMd5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "processGuid": {
+      "example": "{7A3B8C2D-4E5F-7A9B-C1D2-E3F4A5B6C7D8}"
+    },
+    "parentProcessGuid": {
+      "example": "{3C4D5E6F-1A2B-3C4D-5E6F-7A8B9C0D1E2F}"
+    },
+    "commandLine": {
+      "example": "C:\\Windows\\System32\\cmd.exe /c echo CatalogChangeListener > \\Device\\NamedPipe\\Winsock2\\CatalogChangeListener-3b8-0"
+    },
+    "pipeName": {
+      "example": "\\Device\\NamedPipe\\Winsock2\\CatalogChangeListener-3b8-0"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "Windows Server 2022 10.0.20348.1129"
+    }
+  }
+}

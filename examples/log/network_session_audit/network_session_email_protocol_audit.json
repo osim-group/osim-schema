@@ -1,0 +1,142 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "email_protocol_audit",
+  "label": "Email Protocol Audit",
+  "description": "Records and audits network sessions involving email protocols such as SMTP, IMAP, and POP3 for security analysis and compliance monitoring.",
+  "dataSource": [
+    "Firewall",
+    "Network Detection and Response"
+  ],
+  "tag": [
+    "Phishing"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "destUserName": {
+      "example": "user"
+    },
+    "ccUserName": {
+      "example": "admin@example.com;user@example.com"
+    },
+    "startTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "endTime": {
+      "example": "2023-08-15 12:22:30"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 12:22:31"
+    },
+    "bccUserName": {
+      "example": "admin@example.com;user@example.com;bcc@example.com"
+    },
+    "fileList": {
+      "example": "attachment1.pdf;invoice.xlsx;image.png"
+    },
+    "mailSubject": {
+      "example": "Urgent: Invoice Payment Required"
+    },
+    "mailContent": {
+      "example": "Dear Team, \n\nThis email contains the invoice for the recent project. Please review the attached invoice.pdf and image.png files and process the payment by the end of this week. \n\nThe total amount due is $12,500.00. If you have any questions, please reply to this email or contact the accounting department directly. \n\nThank you, \nThe Accounting Department"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "WKS-7B83-A5F9-2C1E"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco Secure Email Gateway"
+    },
+    "deviceName": {
+      "example": "email-gateway-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.254"
+    },
+    "deviceVersion": {
+      "example": "12.2(55)SE10"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "SMTP Email Session Audit - Invoice Payment Required"
+    },
+    "message": {
+      "example": "Urgent: Invoice Payment Required"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 12:22:32"
+    },
+    "severity": {
+      "example": "medium"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "send"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "203.0.113.45"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:50:56:AF:1B:2C"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "456 Oak Street, San Jose, CA 95131, United States"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "smtp"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.254"
+    },
+    "mailType": {
+      "example": "multipart"
+    }
+  }
+}

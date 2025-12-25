@@ -1,0 +1,186 @@
+{
+  "group": "asset",
+  "category": "virtual_asset",
+  "title": "virtual_machine",
+  "label": "Virtual Machine",
+  "description": "A virtual machine asset that emulates a physical computer system, providing an isolated environment for running applications and services.",
+  "definitions": {
+    "vmName": {
+      "example": "web-server-vm-01"
+    },
+    "hypervisor": {
+      "example": "VMware ESXi"
+    },
+    "osName": {
+      "example": "Ubuntu 20.04.6 LTS"
+    },
+    "cpuModel": {
+      "example": "Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz"
+    },
+    "memorySize": {
+      "example": "16 GB"
+    },
+    "nicModel": {
+      "example": "Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection"
+    },
+    "diskModel": {
+      "example": "VMware Virtual Disk SCSI Disk Device"
+    },
+    "storageInfo": {
+      "example": "storageType: SSD, capacity: 500 GB, partitions: [C:\\, D:\\], usedSpace: 320 GB, freeSpace: 180 GB, healthStatus: Good"
+    },
+    "networkInfo": {
+      "example": "ipAddress: 192.168.1.105, subnetMask: 255.255.255.0, defaultGateway: 192.168.1.1, dnsServers: [8.8.8.8, 8.8.4.4], macAddress: 00:0C:29:7A:3B:E1, vlanId: 100, nicSpeed: 10000 Mbps, duplexMode: Full, ipv6Address: fe80::20c:29ff:fe7a:3be1/64, dhcpEnabled: false"
+    },
+    "assetId": {
+      "example": "vm-7a3be1-2023-08-15"
+    },
+    "relateId": {
+      "example": "vm-7a3be1-2023-08-15"
+    },
+    "assetName": {
+      "example": "web-server-vm-01"
+    },
+    "assetCategory": {
+      "example": "virtual_machine"
+    },
+    "unitId": {
+      "example": "unit-192.168.1.0"
+    },
+    "unitName": {
+      "example": "Engineering Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Finance Department Regulatory Oversight Division"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "web-server-prod-01"
+    },
+    "assetSource": {
+      "example": "192.168.1.105"
+    },
+    "assetTag": {
+      "example": "[web-server, finance-vm, prod-01]"
+    },
+    "orgId": {
+      "example": "fin-eng-001"
+    },
+    "orgName": {
+      "example": "Engineering Department"
+    },
+    "netId": {
+      "example": "sec-domain-7a3be1"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "james.wilson"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetUserMail": {
+      "example": "james.wilson@company.com"
+    },
+    "assetOwnerName": {
+      "example": "IT Department"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "it.department@company.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Infrastructure Management Division"
+    },
+    "departmentHeadName": {
+      "example": "Michael Johnson"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-876-5432"
+    },
+    "departmentHeadMail": {
+      "example": "michael.johnson@company.com"
+    },
+    "assetDescription": {
+      "example": "Web server virtual machine for the Engineering Department, running Ubuntu 20.04.6 LTS on VMware ESXi, used by james.wilson to host production financial application services. Located in the DMZ security zone with IP 192.168.1.105."
+    },
+    "createTime": {
+      "example": "2023-08-15 09:30:00"
+    },
+    "updateTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "assetGroup": {
+      "example": "Engineering Department"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "US"
+    },
+    "assetGeoCountyCode": {
+      "example": "US"
+    },
+    "assetGeoCity": {
+      "example": "San Francisco"
+    },
+    "assetGeoCounty": {
+      "example": "San Francisco County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "cabinetPosition": {
+      "example": "Rack-A-07"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "municipal"
+    },
+    "otherInfo": {
+      "example": "hostedApplications: Apache HTTP Server 2.4.41, MySQL 8.0.33, financial-app-backend v1.5.2; backupSchedule: daily at 02:00 UTC; lastBackupTime: 2023-08-14 02:00:00; backupStatus: successful; snapshotPolicy: weekly full snapshot, daily incremental; lastSnapshotTime: 2023-08-15 00:00:00; monitoringAgent: Zabbix Agent 5.0; securityAgent: CrowdStrike Falcon Sensor 6.45; patchLevel: up-to-date as of 2023-08-14; vulnerabilityScanResult: last scan 2023-08-10, 2 medium, 5 low; complianceStatus: PCI-DSS compliant; notes: Scheduled for OS upgrade to Ubuntu 22.04 LTS in Q4 2023."
+    },
+    "assetAddress": {
+      "example": "192.168.1.105"
+    },
+    "assetMacAddress": {
+      "example": "00:0c:29:7a:3b:e1"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

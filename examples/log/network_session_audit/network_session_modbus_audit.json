@@ -1,0 +1,117 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "modbus_audit",
+  "label": "Modbus Audit",
+  "description": "Records and audits MODBUS protocol network sessions for industrial control system security monitoring.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "requestBody": {
+      "example": "3"
+    },
+    "responseCode": {
+      "example": "0x00"
+    },
+    "machineCode": {
+      "example": "ICS-MODBUS-GW-001"
+    },
+    "productVendorName": {
+      "example": "Siemens Industrial Security"
+    },
+    "deviceSendProductName": {
+      "example": "Siemens SIMATIC S7-1500"
+    },
+    "deviceName": {
+      "example": "PLC-Gateway-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "Siemens SIMATIC S7-1500 V2.9.2"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "MODBUS Protocol Session Audit - Read Holding Registers"
+    },
+    "message": {
+      "example": "MODBUS session from PLC-Gateway-01 (192.168.1.100) to remote device initiated at 2023-10-26 14:32:18. Read Holding Registers request with function code 3 sent via interface eth0. Session ended at 2023-10-26 14:32:48 with response code 0x00 (No Error). Event logged by Siemens SIMATIC S7-1500 V2.9.2 (ICS-MODBUS-GW-001)."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:22"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "read"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "192.168.1.150"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:5F:8B:12"
+    },
+    "srcGeoCountry": {
+      "example": "Germany"
+    },
+    "srcGeoRegion": {
+      "example": "Bavaria"
+    },
+    "srcGeoCity": {
+      "example": "Munich"
+    },
+    "srcGeoAddress": {
+      "example": "Siemens AG, Werner-von-Siemens-Straße 1, 80333 Munich, Bavaria, Germany"
+    },
+    "destGeoCountry": {
+      "example": "Germany"
+    },
+    "destGeoRegion": {
+      "example": "Bavaria"
+    },
+    "destGeoCity": {
+      "example": "Munich"
+    },
+    "destGeoAddress": {
+      "example": "Siemens AG, Otto-Hahn-Ring 6, 81739 Munich, Bavaria, Germany"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "modbus"
+    },
+    "direction": {
+      "example": "00"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "group": "asset",
+  "category": "software_asset",
+  "title": "middleware",
+  "label": "Middleware",
+  "description": "Middleware assets refer to software components that facilitate communication and data management between disparate applications or services.",
+  "definitions": {
+    "middlewareName": {
+      "example": "Apache Tomcat"
+    },
+    "middlewareVersion": {
+      "example": "9.0.0"
+    },
+    "deviceSerialNumber": {
+      "example": "CNU12345-XYZ"
+    },
+    "hostAddress": {
+      "example": "192.168.1.105"
+    },
+    "hostName": {
+      "example": "tomcat-server-01"
+    },
+    "assetId": {
+      "example": "asset-9a8b7c6d-5e4f-3a2b-1c0d-ef9876543210"
+    },
+    "relateId": {
+      "example": "MID-asset-9a8b7c6d-5e4f-3a2b-1c0d-ef9876543210"
+    },
+    "assetName": {
+      "example": "Tomcat Server - Production Instance 01"
+    },
+    "assetCategory": {
+      "example": "system_software"
+    },
+    "unitId": {
+      "example": "IT-DEPT-789"
+    },
+    "unitName": {
+      "example": "IT Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Cybersecurity and Infrastructure Security Agency"
+    },
+    "industry": {
+      "example": "commercial_internet"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "tomcat-prod-01"
+    },
+    "assetSource": {
+      "example": "nmap_scan_192.168.1.0/24"
+    },
+    "orgId": {
+      "example": "ORG-IT-001"
+    },
+    "orgName": {
+      "example": "IT Infrastructure Division"
+    },
+    "netId": {
+      "example": "sec-domain-asset-9a8b7c6d-5e4f-3a2b-1c0d-ef9876543210"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "admin"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetUserMail": {
+      "example": "admin@example.com"
+    },
+    "assetOwnerName": {
+      "example": "Application Services Team"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "appservices-team@example.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Infrastructure Operations"
+    },
+    "departmentHeadName": {
+      "example": "Michael Johnson"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-234-5678"
+    },
+    "departmentHeadMail": {
+      "example": "michael.johnson@example.com"
+    },
+    "assetDescription": {
+      "example": "Apache Tomcat 9.0.0 Java web application server running on host tomcat-server-01 (192.168.1.105) in the DMZ. Primary asset for hosting internal and external web applications. Managed by the Application Services Team under the IT Infrastructure Operations department. Used by the admin user for application deployment and management. Critical core system software asset identified via network scan."
+    },
+    "createTime": {
+      "example": "2023-10-26 08:15:00"
+    },
+    "updateTime": {
+      "example": "2023-10-26 14:30:00"
+    },
+    "assetGroup": {
+      "example": "IT Infrastructure Operations"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-LA"
+    },
+    "assetGeoCity": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCounty": {
+      "example": "Los Angeles County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "1234 Main Street, Los Angeles, CA 90001, United States"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "DataCenter-A-Rack-03"
+    },
+    "unitRole": {
+      "example": "general_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Deployed on Red Hat Enterprise Linux 8.5. Configured with SSL/TLS enabled. JVM version: OpenJDK 11.0.15. Primary application: internal HR portal."
+    },
+    "assetAddress": {
+      "example": "192.168.1.105"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

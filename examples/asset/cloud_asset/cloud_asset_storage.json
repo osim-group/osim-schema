@@ -1,0 +1,183 @@
+{
+  "group": "asset",
+  "category": "cloud_asset",
+  "title": "cloud_storage",
+  "label": "Cloud Storage",
+  "description": "Records metadata and configuration details of cloud storage assets, including access controls and encryption settings.",
+  "definitions": {
+    "cloudStorageType": {
+      "example": "objectStorage"
+    },
+    "accessControlPolicy": {
+      "example": "2012-10-17"
+    },
+    "storageInfo": {
+      "example": "Standard"
+    },
+    "dataRetentionPolicy": {
+      "example": "Retention period: 30 days; Disposal method: automatic deletion after expiration"
+    },
+    "backupPolicy": {
+      "example": "Backup policy: Daily incremental backup; Full backup every Sunday; Retention: 90 days; Recovery point objective (RPO): 24 hours; Recovery time objective (RTO): 4 hours."
+    },
+    "assetId": {
+      "example": "storage-123456789012-bucket-abcdef123456"
+    },
+    "relateId": {
+      "example": "storage-123456789012-bucket-abcdef123456-audit-20230815122100"
+    },
+    "assetName": {
+      "example": "customer-data-backup-bucket"
+    },
+    "assetCategory": {
+      "example": "cloud_storage"
+    },
+    "unitId": {
+      "example": "unit-987654321098"
+    },
+    "unitName": {
+      "example": "Finance Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Financial Conduct Authority"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "classified"
+    },
+    "assetAlias": {
+      "example": "customer-data-backup-bucket-prod"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "orgId": {
+      "example": "org-123456789012"
+    },
+    "orgName": {
+      "example": "Finance Department"
+    },
+    "netId": {
+      "example": "security-domain-123456789012-abcdef123456"
+    },
+    "securityZone": {
+      "example": "public"
+    },
+    "assetUser": {
+      "example": "alice.johnson"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetUserMail": {
+      "example": "alice.johnson@example.com"
+    },
+    "assetOwnerName": {
+      "example": "Alice Johnson"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "alice.johnson@example.com"
+    },
+    "assetDepartmentName": {
+      "example": "Cloud Infrastructure Team"
+    },
+    "departmentHeadName": {
+      "example": "David Chen"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-555-4321"
+    },
+    "departmentHeadMail": {
+      "example": "david.chen@example.com"
+    },
+    "assetDescription": {
+      "example": "Amazon S3 bucket for storing encrypted customer financial backup data, managed by the Finance Department's Cloud Infrastructure Team. Primary user: Alice Johnson. Used for daily incremental and weekly full backups with 30-day retention."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "assetGroup": {
+      "example": "Cloud Infrastructure Team"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "US-CA"
+    },
+    "assetGeoCityCode": {
+      "example": "US-LA"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-LA-001"
+    },
+    "assetGeoCity": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCounty": {
+      "example": "Los Angeles County"
+    },
+    "assetGeoRegion": {
+      "example": "us-west-2"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, Los Angeles, CA 90001, United States"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "A-12-Rack-3"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Bucket encryption: AES-256; Versioning: Enabled; Lifecycle rules: Transition to Glacier after 90 days; Event notifications: Enabled for all object creation events; Logging: Enabled to central-audit-logs bucket; Requester pays: Disabled; Tags: Environment=Production, Department=Finance, Compliance=PCI-DSS; Public access: Blocked; Object lock: Not configured; Transfer acceleration: Disabled; CORS: Not configured; Replication: Not configured."
+    },
+    "assetAddress": {
+      "example": "10.0.1.25"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "idc": {
+      "example": "Amazon Web Services"
+    },
+    "isp": {
+      "example": "Amazon Web Services"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

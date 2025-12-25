@@ -8,7 +8,7 @@
     "requestUrl": {
       "label": "Request URL",
       "requirement": "RECOMMENDED",
-      "description": "The complete URL address of the target resource for the network request.",
+      "description": "The portion of the HTTP request URL starting from the root '/' to the end of the path, without the query string.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -506,8 +506,8 @@
         }
       }
     },
-    "assetCriticality": {
-      "label": "Asset Criticality",
+    "assetImportance": {
+      "label": "Asset Importance",
       "requirement": "RECOMMENDED",
       "description": "Asset importance level (e.g., normal, important, core, confidential, other).",
       "type": "enum",

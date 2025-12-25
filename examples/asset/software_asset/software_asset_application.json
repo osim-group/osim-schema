@@ -1,0 +1,213 @@
+{
+  "group": "asset",
+  "category": "software_asset",
+  "title": "application_software",
+  "label": "Application Software",
+  "description": "Records details of application software assets, including version, vendor, and installation details for security and compliance tracking.",
+  "definitions": {
+    "softwareName": {
+      "example": "Windows Defender"
+    },
+    "softwareVersion": {
+      "example": "4.18.24060.0"
+    },
+    "softwareSerialNumber": {
+      "example": "WD-4.18.24060.0-SN1234567890"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "busSystemId": {
+      "example": "BSSYS-WINDEF-001"
+    },
+    "company": {
+      "example": "Microsoft Corporation"
+    },
+    "licenseType": {
+      "example": "Proprietary"
+    },
+    "systemRequirement": {
+      "example": "Windows 10 or later, 4 GB RAM, 2 GB available disk space, Internet connection"
+    },
+    "licenseKey": {
+      "example": "WD-4.18.24060.0-LK-9876543210"
+    },
+    "installPath": {
+      "example": "C:\\Program Files\\Windows Defender"
+    },
+    "installedComponents": {
+      "example": "Antivirus Engine, Real-time Protection, Firewall, Web Protection, Email Protection, Network Inspection System, Exploit Guard, Controlled Folder Access, Tamper Protection, SmartScreen Filter, Device Guard, Application Guard, Cloud Protection, Threat & Vulnerability Management, Windows Security Center Integration"
+    },
+    "dependencies": {
+      "example": "Microsoft Windows Security Update KB5005565, .NET Framework 4.8, Windows Malicious Software Removal Tool, Microsoft Security Intelligence Update Package, Microsoft Defender Antivirus Platform Update, Microsoft Defender Antivirus Security Intelligence Update, Windows Update Agent, Microsoft Update Health Tools, Windows Management Framework, Windows Installer, Windows Script Host, Microsoft Visual C++ Redistributable, Windows Defender Service, Windows Security Service, Windows Event Log, Windows Registry, Windows File Protection, Windows Defender Firewall, Windows Network Stack, Windows Cryptographic Services"
+    },
+    "confPath": {
+      "example": "C:\\Program Files\\Windows Defender\\Configuration\\MsMpEng.cfg"
+    },
+    "executablePath": {
+      "example": "C:\\Program Files\\Windows Defender\\MsMpEng.exe"
+    },
+    "runUser": {
+      "example": "NT AUTHORITY\\SYSTEM"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "hostName": {
+      "example": "WIN-PROD-SRV-001"
+    },
+    "assetId": {
+      "example": "ASSET-WINDEF-WIN-PROD-SRV-001-001"
+    },
+    "relateId": {
+      "example": "SW-ASSET-WINDEF-WIN-PROD-SRV-001-001"
+    },
+    "assetName": {
+      "example": "Windows Defender Antivirus on WIN-PROD-SRV-001"
+    },
+    "assetCategory": {
+      "example": "application_software"
+    },
+    "unitId": {
+      "example": "UNIT-MICROSOFT-CORP-001"
+    },
+    "unitName": {
+      "example": "Microsoft Corporation IT Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "U.S. Food and Drug Administration"
+    },
+    "industry": {
+      "example": "government"
+    },
+    "assetCriticality": {
+      "example": "classified"
+    },
+    "assetAlias": {
+      "example": "Windows Defender Antivirus - WIN-PROD-SRV-001"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "assetTag": {
+      "example": "AV-SCAN-WINDOWS-DEFENDER-WIN-PROD-SRV-001, VULN-SCAN-WINDOWS-DEFENDER-WIN-PROD-SRV-001, COMPLIANCE-SCAN-WINDOWS-DEFENDER-WIN-PROD-SRV-001"
+    },
+    "orgId": {
+      "example": "ORG-MICROSOFT-CORP-001"
+    },
+    "orgName": {
+      "example": "Microsoft Corporation IT Department"
+    },
+    "netId": {
+      "example": "SEC-DOM-MICROSOFT-GOV-001"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "John Doe"
+    },
+    "assetUserPhone": {
+      "example": "+1-425-555-0100"
+    },
+    "assetUserMail": {
+      "example": "johndoe@microsoft.com"
+    },
+    "assetOwnerName": {
+      "example": "Microsoft Corporation IT Department"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-425-555-0123"
+    },
+    "assetOwnerMail": {
+      "example": "itsecurity@microsoft.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Asset Management Department"
+    },
+    "departmentHeadName": {
+      "example": "Michael Chen"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-425-555-0180"
+    },
+    "departmentHeadMail": {
+      "example": "michael.chen@microsoft.com"
+    },
+    "assetDescription": {
+      "example": "Microsoft Windows Defender Antivirus software deployed on production server WIN-PROD-SRV-001 (IP: 192.168.1.100) for real-time threat protection and endpoint security. Managed by the IT Asset Management Department under Microsoft Corporation. Primary user is John Doe from the IT department. Critical classified asset for compliance with U.S. Food and Drug Administration regulations, operating in the DMZ security zone."
+    },
+    "createTime": {
+      "example": "2024-01-15 09:30:00"
+    },
+    "updateTime": {
+      "example": "2024-03-20 14:45:00"
+    },
+    "assetGroup": {
+      "example": "IT Asset Management Department"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "Washington"
+    },
+    "assetGeoProvinceCode": {
+      "example": "WA"
+    },
+    "assetGeoCityCode": {
+      "example": "Redmond"
+    },
+    "assetGeoCity": {
+      "example": "Redmond"
+    },
+    "assetGeoCounty": {
+      "example": "King County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "One Microsoft Way, Redmond, WA 98052, United States"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Rack A-12"
+    },
+    "unitRole": {
+      "example": "regulatory_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Last scan time: 2024-03-20 14:30:00, Last update time: 2024-03-20 14:45:00, Real-time protection status: enabled, Cloud-delivered protection status: enabled, Automatic sample submission status: enabled, Tamper protection status: enabled, Controlled folder access status: disabled, Network protection status: enabled, Potentially Unwanted Application blocking status: enabled, Latest security intelligence version: 1.411.183.0, Last full scan result: no threats found, Last quick scan result: no threats found, Engine version: 1.1.24060.0, Platform version: 4.18.24060.0, Compliance status: compliant with FDA CFR Title 21 Part 11, Next scheduled scan: 2024-03-21 02:00:00."
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "00:0c:29:8b:3f:7a"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

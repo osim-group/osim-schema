@@ -1,0 +1,177 @@
+{
+  "group": "asset",
+  "category": "business_asset",
+  "title": "web_site",
+  "label": "Web Site",
+  "description": "A web-based business asset that represents an organization's online presence, including websites and web applications.",
+  "definitions": {
+    "icon": {
+      "example": "https://example.com/favicon.ico"
+    },
+    "webFramework": {
+      "example": "Django"
+    },
+    "webTitle": {
+      "example": "Example Web Page Title"
+    },
+    "isv": {
+      "example": "ExampleCorp"
+    },
+    "icp": {
+      "example": "京ICP备12345678号"
+    },
+    "pubSecFilingNumber": {
+      "example": "京公网安备11010502034567号"
+    },
+    "url": {
+      "example": "https://www.example.com"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    },
+    "cdnVendor": {
+      "example": "Cloudflare"
+    },
+    "assetId": {
+      "example": "asset-12345678-90ab-cdef-1234-567890abcdef"
+    },
+    "relateId": {
+      "example": "relate-12345678-90ab-cdef-1234-567890abcdef"
+    },
+    "assetName": {
+      "example": "ExampleCorp Official Website"
+    },
+    "assetCategory": {
+      "example": "website"
+    },
+    "unitId": {
+      "example": "unit-12345678-90ab-cdef-1234-567890abcdef"
+    },
+    "unitName": {
+      "example": "ExampleCorp"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "国家互联网信息办公室"
+    },
+    "industry": {
+      "example": "commercial_internet"
+    },
+    "assetCriticality": {
+      "example": "important"
+    },
+    "assetAlias": {
+      "example": "ExampleCorp Official Website Alias"
+    },
+    "assetSource": {
+      "example": "nmap_scan_2023-08-15"
+    },
+    "orgId": {
+      "example": "org-12345678-90ab-cdef-1234-567890abcdef"
+    },
+    "orgName": {
+      "example": "ExampleCorp"
+    },
+    "netId": {
+      "example": "net-12345678-90ab-cdef-1234-567890abcdef"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "John Smith"
+    },
+    "assetUserPhone": {
+      "example": "+1 (555) 123-4567"
+    },
+    "assetUserMail": {
+      "example": "j.smith@examplecorp.com"
+    },
+    "assetOwnerName": {
+      "example": "IT Department"
+    },
+    "assetOwnerPhone": {
+      "example": "+1 (555) 987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "it.department@examplecorp.com"
+    },
+    "assetDepartmentName": {
+      "example": "Digital Infrastructure Team"
+    },
+    "departmentHeadName": {
+      "example": "Alex Johnson"
+    },
+    "departmentHeadPhone": {
+      "example": "+1 (555) 246-8135"
+    },
+    "departmentHeadMail": {
+      "example": "alex.johnson@examplecorp.com"
+    },
+    "assetDescription": {
+      "example": "ExampleCorp's official corporate website and primary customer-facing web application, developed using Django framework, managed by the Digital Infrastructure Team under the IT Department, and used by John Smith for marketing and customer engagement."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-08-16 09:45:30"
+    },
+    "assetGroup": {
+      "example": "Digital Infrastructure Team"
+    },
+    "assetGeoCountry": {
+      "example": "中国"
+    },
+    "assetGeoProvince": {
+      "example": "北京市"
+    },
+    "assetGeoCity": {
+      "example": "北京市"
+    },
+    "assetGeoCounty": {
+      "example": "海淀区"
+    },
+    "assetGeoRegion": {
+      "example": "海淀区"
+    },
+    "assetGeoAddress": {
+      "example": "北京市海淀区上地十街10号百度大厦"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "A-12"
+    },
+    "unitRole": {
+      "example": "general_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Django 4.2, Python 3.11, Nginx 1.24, PostgreSQL 15"
+    },
+    "assetAddress": {
+      "example": "192.0.2.10"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "registry_operation",
+  "label": "Registry Operation",
+  "description": "Records and monitors modifications, accesses, and deletions of registry keys and values on a host system.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "definitions": {
+    "processUserName": {
+      "example": "root"
+    },
+    "image": {
+      "example": "/usr/bin/nginx"
+    },
+    "startTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "endTime": {
+      "example": "2023-08-15 12:21:05"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "processName": {
+      "example": "nginx"
+    },
+    "processGuid": {
+      "example": "a8e5f3b2-7c9d-4a1b-8c23-d4e5f6a7b8c9"
+    },
+    "targetObject": {
+      "example": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\nginx"
+    },
+    "processMd5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "regNewName": {
+      "example": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\nginx\\Start"
+    },
+    "objectType": {
+      "example": "RegistryKey"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "machineCode": {
+      "example": "DEVICE-0012345678ABCDEF"
+    },
+    "productVendorName": {
+      "example": "Microsoft Corporation"
+    },
+    "deviceSendProductName": {
+      "example": "Microsoft Windows"
+    },
+    "deviceName": {
+      "example": "webserver-01.example.com"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "Registry key operation detected for nginx service"
+    },
+    "message": {
+      "example": "Registry key operation detected on host webserver-01.example.com (192.168.1.100). Process nginx (PID: 1234, MD5: d41d8cd98f00b204e9800998ecf8427e, Path: /usr/bin/nginx) run by user root modified registry key HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\nginx\\Start. The operation occurred between 2023-08-15 12:21:00 and 2023-08-15 12:21:05. Event ID: 550e8400-e29b-41d4-a716-446655440000."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 12:21:01"
+    },
+    "severity": {
+      "example": "medium"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "registry"
+    },
+    "opType": {
+      "example": "modify"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "10.0.19041.1"
+    }
+  }
+}

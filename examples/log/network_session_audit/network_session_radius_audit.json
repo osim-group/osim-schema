@@ -1,0 +1,126 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "radius_audit",
+  "label": "Radius Audit",
+  "description": "Records RADIUS protocol authentication and accounting events for network access control and session monitoring.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:10"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:25"
+    },
+    "passwd": {
+      "example": "password123"
+    },
+    "serviceType": {
+      "example": "RADIUS"
+    },
+    "responseMsg": {
+      "example": "Authentication successful for user admin."
+    },
+    "machineCode": {
+      "example": "DC-01-AD-RADIUS-001"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco ISE"
+    },
+    "deviceName": {
+      "example": "RADIUS-SERVER-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.10.10"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "RADIUS Authentication Event: admin login from 192.168.10.10"
+    },
+    "message": {
+      "example": "RADIUS authentication request from user admin at IP 192.168.10.10 received by Cisco ISE server RADIUS-SERVER-01. Authentication type: PAP. Session duration 35 seconds. Result: Authentication successful."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:30"
+    },
+    "severity": {
+      "example": "informational"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "account"
+    },
+    "opType": {
+      "example": "login"
+    },
+    "XFF": {
+      "example": "192.168.1.100, 203.0.113.5"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:8B:73:1A"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "170 West Tasman Drive, San Jose, CA 95134, United States"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.10.10"
+    },
+    "transProtocol": {
+      "example": "UDP"
+    },
+    "appProtocol": {
+      "example": "radius"
+    },
+    "deviceVersion": {
+      "example": "Cisco ISE 3.2.0.548"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "192.168.10.10"
+    },
+    "interfaceName": {
+      "example": "GigabitEthernet0/1"
+    }
+  }
+}

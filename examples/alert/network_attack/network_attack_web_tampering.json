@@ -1,0 +1,211 @@
+{
+  "group": "alert",
+  "category": "network_attack",
+  "title": "web_tampering",
+  "label": "Web Tampering",
+  "description": "Monitors and alerts on unauthorized modifications or defacements of web pages, indicating potential web server compromise or injection attacks.",
+  "dataSource": [
+    "Network Detection and Response",
+    "Web Application Firewall"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "webTamperType": {
+      "example": "jsScriptHijacking"
+    },
+    "payload": {
+      "example": "http://malicious-site.com/steal-cookie?c="
+    },
+    "destHostName": {
+      "example": "web-server-01.example.com"
+    },
+    "requestUrlQuery": {
+      "example": "/index.php?id=1%27%20OR%201%3D1%20--%20&action=view&user=admin"
+    },
+    "requestUrl": {
+      "example": "/index.php"
+    },
+    "machineCode": {
+      "example": "WEB-SRV-01-7A3F9B"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco Web Security Appliance"
+    },
+    "deviceName": {
+      "example": "Cisco-Web-Security-Appliance-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "Web Tampering Alert: Unauthorized JS Script Injection Detected on web-server-01.example.com"
+    },
+    "message": {
+      "example": "Web tampering detected: Unauthorized JavaScript script hijacking injection on host web-server-01.example.com. The malicious payload http://malicious-site.com/steal-cookie?c= was injected into the request URL https://web-server-01.example.com/index.php?id=1%27%20OR%201%3D1%20--%20&action=view&user=admin. This indicates a potential web server compromise or injection attack targeting the application."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:22"
+    },
+    "severity": {
+      "example": "high"
+    },
+    "catOutcome": {
+      "example": "FAIL"
+    },
+    "logType": {
+      "example": "alert"
+    },
+    "opType": {
+      "example": "modify"
+    },
+    "XFF": {
+      "example": "203.0.113.45, 198.51.100.12"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:8F:3B:1A"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Jose, CA 95113, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "456 Oak Avenue, San Jose, CA 95125, United States"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "dvcAction": {
+      "example": "blocked"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "Cisco WSA 12.5.2-001"
+    },
+    "srcAddress": {
+      "example": "203.0.113.45"
+    },
+    "destAddress": {
+      "example": "93.184.216.34"
+    },
+    "subTechniqueId": {
+      "example": "T1491.001"
+    },
+    "techniqueName": {
+      "example": "Defacement"
+    },
+    "techniqueId": {
+      "example": "T1491"
+    },
+    "tacticName": {
+      "example": "Defacement"
+    },
+    "tacticId": {
+      "example": "TA0006"
+    },
+    "killChain": {
+      "example": "KC_Exploitation"
+    },
+    "confidence": {
+      "example": "High"
+    },
+    "ruleId": {
+      "example": "WEB-TAMPER-ALERT-20231026-001"
+    },
+    "ruleType": {
+      "example": "/WebAttack/WebTempering"
+    },
+    "ruleName": {
+      "example": "Web_Tampering_Alert_Unauthorized_JS_Script_Injection_Detected"
+    },
+    "attackerAddress": {
+      "example": "203.0.113.45"
+    },
+    "victimAddress": {
+      "example": "93.184.216.34"
+    },
+    "subTechniqueName": {
+      "example": "Defacement: Internal Defacement"
+    },
+    "suggestion": {
+      "example": "Immediately isolate the affected web server (web-server-01.example.com) from the network. Scan the server for malware, backdoors, and unauthorized modifications, focusing on the index.php file and related web directories. Review and patch the web application framework and any involved components (e.g., PHP) to address the SQL injection and script injection vulnerabilities. Reset all application and system credentials. Restore the affected web page from a known clean backup. Implement a Web Application Firewall (WAF) rule to block requests containing the malicious payload pattern. Monitor for any further suspicious activity originating from source IP 203.0.113.45."
+    },
+    "originalPageUrl": {
+      "example": "https://web-server-01.example.com/index.php"
+    },
+    "tamperedPageUrl": {
+      "example": "http://malicious-site.com/steal-cookie?c="
+    },
+    "requestHeader": {
+      "example": "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\nAccept-Encoding: gzip, deflate\nAccept-Language: en-US,en;q=0.9\nCache-Control: max-age=0\nConnection: keep-alive\nHost: web-server-01.example.com\nReferer: https://www.google.com/\nUpgrade-Insecure-Requests: 1\nX-Forwarded-For: 203.0.113.45, 198.51.100.12\nCookie: sessionid=abc123def456; user_pref=darkmode; csrftoken=xyz789"
+    },
+    "requestBody": {
+      "example": "admin"
+    },
+    "requestCookies": {
+      "example": "sessionid=abc123def456; user_pref=darkmode; csrftoken=xyz789"
+    },
+    "requestMethod": {
+      "example": "POST"
+    },
+    "requestContentType": {
+      "example": "application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    "responseBody": {
+      "example": "http://malicious-site.com/steal-cookie?c="
+    },
+    "responseHeader": {
+      "example": "self"
+    },
+    "responseContentType": {
+      "example": "text/html; charset=UTF-8"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    },
+    "httpReferer": {
+      "example": "https://www.google.com/"
+    }
+  }
+}

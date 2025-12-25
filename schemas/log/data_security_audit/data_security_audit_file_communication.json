@@ -1290,7 +1290,7 @@
     "requestUrl": {
       "label": "Request URL",
       "requirement": "OPTIONAL",
-      "description": "The complete URL address of the target resource for the network request.",
+      "description": "The portion of the HTTP request URL starting from the root '/' to the end of the path, without the query string.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [

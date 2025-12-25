@@ -1,0 +1,124 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "process_operation",
+  "label": "Process Operation",
+  "description": "Records detailed audit logs of process-related activities on a host, including creation, termination, and modification events.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "tag": [
+    "Ransomware",
+    "Webshell"
+  ],
+  "definitions": {
+    "image": {
+      "example": "C:\\Windows\\System32\\svchost.exe"
+    },
+    "parentImage": {
+      "example": "C:\\Windows\\System32\\services.exe"
+    },
+    "processUserName": {
+      "example": "SYSTEM"
+    },
+    "parentProcessUserName": {
+      "example": "SYSTEM"
+    },
+    "parentProcessStartTime": {
+      "example": "2023-08-15 12:20:45"
+    },
+    "processStartTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "startTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "endTime": {
+      "example": "2023-08-15 12:21:15"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 12:21:15"
+    },
+    "processName": {
+      "example": "svchost.exe"
+    },
+    "parentProcessName": {
+      "example": "services.exe"
+    },
+    "originalFileName": {
+      "example": "svchost.exe"
+    },
+    "processMd5": {
+      "example": "5d6b4a9c8c8c8c8c8c8c8c8c8c8c8c8c"
+    },
+    "parentProcessMd5": {
+      "example": "5d6b4a9c8c8c8c8c8c8c8c8c8c8c8c8c"
+    },
+    "processChain": {
+      "example": "System -> services.exe (pid: 564) -> svchost.exe (pid: 1234)"
+    },
+    "processGuid": {
+      "example": "{5E8C4A1B-1234-5678-9ABC-DEF012345678}"
+    },
+    "parentProcessGuid": {
+      "example": "{3A4B5C6D-7890-1234-5678-9ABCDEF01234}"
+    },
+    "commandLine": {
+      "example": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted"
+    },
+    "parentCommandLine": {
+      "example": "C:\\Windows\\System32\\services.exe"
+    },
+    "integrityLevel": {
+      "example": "System"
+    },
+    "hostName": {
+      "example": "WIN-AD-SERVER01"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "machineCode": {
+      "example": "WIN-AD-SERVER01-7A3B9F2C"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Microsoft Windows"
+    },
+    "deviceName": {
+      "example": "WIN-AD-SERVER01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "Windows 10 Enterprise 10.0.19044.3803"
+    },
+    "eventId": {
+      "example": "123e4567-e89b-12d3-a456-426614174000"
+    },
+    "name": {
+      "example": "Process Creation: svchost.exe (pid: 1234) by services.exe on WIN-AD-SERVER01"
+    },
+    "message": {
+      "example": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 12:21:16"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "process"
+    },
+    "opType": {
+      "example": "create"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    }
+  }
+}

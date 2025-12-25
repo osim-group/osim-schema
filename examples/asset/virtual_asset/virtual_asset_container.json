@@ -1,0 +1,198 @@
+{
+  "group": "asset",
+  "category": "virtual_asset",
+  "title": "container",
+  "label": "Container",
+  "description": "A virtualized environment that encapsulates applications and their dependencies, enabling isolated and portable execution.",
+  "definitions": {
+    "imageName": {
+      "example": "nginx:1.21.6-alpine"
+    },
+    "containerName": {
+      "example": "nginx-container"
+    },
+    "status": {
+      "example": "Running"
+    },
+    "networkInfo": {
+      "example": "192.168.1.100"
+    },
+    "env": {
+      "example": "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\nNGINX_VERSION=1.21.6\nHOSTNAME=nginx-container"
+    },
+    "volumeMounts": {
+      "example": "/usr/share/nginx/html:/usr/share/nginx/html:ro, /var/log/nginx:/var/log/nginx"
+    },
+    "namespace": {
+      "example": "default"
+    },
+    "cpuLimit": {
+      "example": "500m"
+    },
+    "memorySize": {
+      "example": "512Mi"
+    },
+    "storageLimit": {
+      "example": "2Gi"
+    },
+    "runUser": {
+      "example": "nginx"
+    },
+    "podName": {
+      "example": "nginx-pod-7b9c6f5d8f"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "hostName": {
+      "example": "nginx-container"
+    },
+    "assetId": {
+      "example": "container-nginx-7b9c6f5d8f"
+    },
+    "relateId": {
+      "example": "container-nginx-7b9c6f5d8f"
+    },
+    "assetName": {
+      "example": "nginx-web-server"
+    },
+    "assetCategory": {
+      "example": "container"
+    },
+    "unitId": {
+      "example": "unit-12345-nginx"
+    },
+    "unitName": {
+      "example": "Engineering-Team"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Docker Inc."
+    },
+    "industry": {
+      "example": "commercial_internet"
+    },
+    "assetCriticality": {
+      "example": "common"
+    },
+    "assetAlias": {
+      "example": "nginx-web-server-prod"
+    },
+    "assetSource": {
+      "example": "docker-host-192.168.1.100"
+    },
+    "assetTag": {
+      "example": "web-80,https-443,nginx-app"
+    },
+    "orgId": {
+      "example": "org-eng-docker-12345"
+    },
+    "orgName": {
+      "example": "Engineering-Team"
+    },
+    "netId": {
+      "example": "net-sec-domain-nginx-7b9c6f5d8f"
+    },
+    "securityZone": {
+      "example": "dmz"
+    },
+    "assetUser": {
+      "example": "admin"
+    },
+    "assetUserPhone": {
+      "example": "+8613812345678"
+    },
+    "assetUserMail": {
+      "example": "admin@engineering-team.com"
+    },
+    "assetOwnerName": {
+      "example": "admin"
+    },
+    "assetOwnerPhone": {
+      "example": "+8613812345679"
+    },
+    "assetOwnerMail": {
+      "example": "admin@engineering-team.com"
+    },
+    "assetDepartmentName": {
+      "example": "Engineering-Team"
+    },
+    "departmentHeadName": {
+      "example": "John Smith"
+    },
+    "departmentHeadPhone": {
+      "example": "+8613812345600"
+    },
+    "departmentHeadMail": {
+      "example": "john.smith@engineering-team.com"
+    },
+    "assetDescription": {
+      "example": "Nginx web server container running version 1.21.6-alpine on host 192.168.1.100, managed by the Engineering-Team, used for serving web content in the DMZ."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-08-15 14:30:00"
+    },
+    "assetGroup": {
+      "example": "Engineering-Team"
+    },
+    "assetGeoCountry": {
+      "example": "China"
+    },
+    "assetGeoProvince": {
+      "example": "Beijing"
+    },
+    "assetGeoCity": {
+      "example": "Beijing"
+    },
+    "assetGeoCounty": {
+      "example": "Haidian"
+    },
+    "assetGeoRegion": {
+      "example": "Beijing"
+    },
+    "assetGeoAddress": {
+      "example": "Room 101, Building 3, No. 10 Zhongguancun South Street, Haidian District"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "medium"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Rack-05-U42"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "other"
+    },
+    "otherInfo": {
+      "example": "Container ID: 7b9c6f5d8fabc123def456, Image ID: sha256:abcd1234, Restart Count: 3, Created At: 2023-08-15 12:20:55, Ports: 80/tcp, 443/tcp, Labels: app=nginx,env=prod,team=engineering"
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "02:42:64:8e:4a:1d"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

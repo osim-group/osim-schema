@@ -1,0 +1,123 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "telnet_audit",
+  "label": "Telnet Audit",
+  "description": "Audit logs capturing TELNET session activities, including authentication attempts, command executions, and session termination events.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:10"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:25"
+    },
+    "requestMethod": {
+      "example": "GET"
+    },
+    "requestParameters": {
+      "example": "username=admin&command=ls -la"
+    },
+    "responseMsg": {
+      "example": "admin"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "PC00123"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco IOS"
+    },
+    "deviceName": {
+      "example": "Router-01-ASR-1000"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.1"
+    },
+    "deviceVersion": {
+      "example": "Cisco IOS XE 17.9.1"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "TELNET Session Audit: Authentication and Command Execution for admin"
+    },
+    "message": {
+      "example": "ls -la"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:26"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "login"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "10.0.0.1"
+    },
+    "srcMacAddress": {
+      "example": "00:0C:29:8F:5A:1B"
+    },
+    "destMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "1 Infinite Loop, Cupertino, CA 95014"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "telnet"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.1"
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "group": "asset",
+  "category": "business_asset",
+  "title": "app",
+  "label": "App",
+  "description": "An application asset within the business infrastructure, monitored for security vulnerabilities and compliance.",
+  "definitions": {
+    "fileName": {
+      "example": "chrome.exe"
+    },
+    "softwareName": {
+      "example": "Google Chrome"
+    },
+    "softwareVersion": {
+      "example": "120.0.6099.224"
+    },
+    "requestDomain": {
+      "example": "www.google.com"
+    },
+    "copyright": {
+      "example": "Copyright 2023 Google LLC. All rights reserved."
+    },
+    "developer": {
+      "example": "Google LLC"
+    },
+    "compatibility": {
+      "example": "Windows 10 or later, Windows Server 2016 or later"
+    },
+    "icon": {
+      "example": "chrome_icon.png"
+    },
+    "osType": {
+      "example": "Windows"
+    },
+    "assetId": {
+      "example": "app_asset_google_chrome_001"
+    },
+    "relateId": {
+      "example": "app_asset_google_chrome_001_correlation_20240815"
+    },
+    "assetName": {
+      "example": "Google Chrome"
+    },
+    "assetCategory": {
+      "example": "application_software"
+    },
+    "unitId": {
+      "example": "unit_google_llc_001"
+    },
+    "unitName": {
+      "example": "Google LLC"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Cybersecurity and Infrastructure Security Agency"
+    },
+    "industry": {
+      "example": "commercial_internet"
+    },
+    "assetCriticality": {
+      "example": "important"
+    },
+    "assetAlias": {
+      "example": "Google Chrome Application"
+    },
+    "assetSource": {
+      "example": "10.0.1.15"
+    },
+    "orgId": {
+      "example": "IT_DEPT_003"
+    },
+    "orgName": {
+      "example": "IT Department"
+    },
+    "netId": {
+      "example": "sec_domain_google_commercial_001"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "Alice Johnson"
+    },
+    "assetUserPhone": {
+      "example": "+1 (555) 123-4567"
+    },
+    "assetUserMail": {
+      "example": "alice.johnson@google.com"
+    },
+    "assetOwnerMail": {
+      "example": "security@google.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Asset Management Division"
+    },
+    "departmentHeadName": {
+      "example": "Sundar Pichai"
+    },
+    "departmentHeadPhone": {
+      "example": "+1 (555) 987-6543"
+    },
+    "departmentHeadMail": {
+      "example": "sundar.pichai@google.com"
+    },
+    "assetDescription": {
+      "example": "Google Chrome application used by the IT Asset Management Division for web browsing and internet access. Primary user is Alice Johnson from the IT Department. Deployed on Windows operating systems within the commercial internet industry."
+    },
+    "createTime": {
+      "example": "2023-10-15 09:30:22"
+    },
+    "updateTime": {
+      "example": "2024-03-20 14:45:18"
+    },
+    "assetGroup": {
+      "example": "IT Asset Management Division"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "US-CA"
+    },
+    "assetGeoCityCode": {
+      "example": "US-94107"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-06075"
+    },
+    "assetGeoCity": {
+      "example": "San Francisco"
+    },
+    "assetGeoCounty": {
+      "example": "Santa Clara"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "medium"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Cabinet A-15"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "other"
+    },
+    "otherInfo": {
+      "example": "Last updated by IT Department on 2024-03-20. Application requires TLS 1.2 or higher for secure connections. Managed via enterprise deployment tools from 10.0.1.15. Associated user: Alice Johnson."
+    },
+    "assetAddress": {
+      "example": "10.0.1.15"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

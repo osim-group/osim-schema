@@ -1,0 +1,157 @@
+{
+  "group": "alert",
+  "category": "anomalous_behavior",
+  "title": "traffic_anomaly",
+  "label": "Traffic Anomaly",
+  "description": "Monitors and alerts on unusual network traffic patterns that deviate from established baselines, indicating potential security threats or anomalies.",
+  "dataSource": [
+    "Firewall",
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "machineCode": {
+      "example": "DESKTOP-7A8B9F3C"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco ASA"
+    },
+    "deviceName": {
+      "example": "FW-CORP-ASA-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.254"
+    },
+    "eventId": {
+      "example": "e4c3a7b8-9f2c-4d1a-bb5d-8e7f9a1b2c3d"
+    },
+    "name": {
+      "example": "Traffic Anomaly Detected on FW-CORP-ASA-01"
+    },
+    "message": {
+      "example": "Detected anomalous network traffic pattern on firewall FW-CORP-ASA-01 (192.168.1.254). Source host DESKTOP-7A8B9F3C initiated a high volume of outbound connections to multiple external IPs over a 30-second period, exceeding the established baseline by 450%. The traffic pattern suggests potential scanning or data exfiltration activity. Event ID: e4c3a7b8-9f2c-4d1a-bb5d-8e7f9a1b2c3d."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:22"
+    },
+    "catOutcome": {
+      "example": "Attempt"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "connect"
+    },
+    "XFF": {
+      "example": "203.0.113.45, 198.51.100.22"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:5F:8B:13"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94107, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "Los Angeles"
+    },
+    "destGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043, United States"
+    },
+    "dataSourceAddress": {
+      "example": "10.0.5.100"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "ssh"
+    },
+    "dvcAction": {
+      "example": "blocked"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "9.16(2)"
+    },
+    "srcAddress": {
+      "example": "192.168.1.105"
+    },
+    "destAddress": {
+      "example": "203.0.113.78"
+    },
+    "subTechniqueId": {
+      "example": "T1048.003"
+    },
+    "techniqueName": {
+      "example": "Exfiltration Over Alternative Protocol"
+    },
+    "techniqueId": {
+      "example": "T1048"
+    },
+    "tacticName": {
+      "example": "Discovery"
+    },
+    "tacticId": {
+      "example": "TA0007"
+    },
+    "killChain": {
+      "example": "KC_Reconnaissance"
+    },
+    "confidence": {
+      "example": "Medium"
+    },
+    "ruleId": {
+      "example": "CISCO-ASA-TRAFFIC-ANOMALY-001"
+    },
+    "ruleType": {
+      "example": "/SuspTraffic/TrafficAnomaly"
+    },
+    "ruleName": {
+      "example": "ASA-Outbound-Traffic-Spike-Detected"
+    },
+    "attackerAddress": {
+      "example": "192.168.1.105"
+    },
+    "victimAddress": {
+      "example": "192.168.1.105"
+    },
+    "subTechniqueName": {
+      "example": "Exfiltration Over Unencrypted Non-C2 Protocol"
+    },
+    "suggestion": {
+      "example": "1. Isolate the source host (DESKTOP-7A8B9F3C / 192.168.1.105) from the network immediately.\n2. Investigate the host for malware, unauthorized tools, or misconfigurations that could cause the anomalous outbound SSH traffic (appProtocol: ssh).\n3. Review firewall logs (deviceName: FW-CORP-ASA-01) for the specific session (eventId: e4c3a7b8-9f2c-4d1a-bb5d-8e7f9a1b2c3d) to confirm the traffic was blocked (dvcAction: blocked) and identify all contacted external destinations (destAddress: 203.0.113.78).\n4. Perform a forensic analysis on DESKTOP-7A8B9F3C to determine if data exfiltration (subTechniqueName: Exfiltration Over Alternative Protocol) occurred.\n5. Update firewall baseline rules (ruleName: ASA-Outbound-Traffic-Spike-Detected) to prevent recurrence of this specific anomalous pattern.\n6. Consider implementing stricter egress filtering and monitoring for SSH connections to external IPs."
+    }
+  }
+}

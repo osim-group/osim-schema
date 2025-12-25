@@ -1,0 +1,126 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "ldap_audit",
+  "label": "Ldap Audit",
+  "description": "Records LDAP protocol activities including authentication, authorization, and directory access for security auditing.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:10"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:25"
+    },
+    "ldapOpCode": {
+      "example": "bindRequest"
+    },
+    "ldapOpType": {
+      "example": "Bind"
+    },
+    "errorMessage": {
+      "example": "Invalid credentials for user admin"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "WIN-SERVER-2023-AD01"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Active Directory Domain Services"
+    },
+    "deviceName": {
+      "example": "WIN-SERVER-2023-AD01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "deviceVersion": {
+      "example": "Windows Server 2022 10.0.20348.1129"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "LDAP Bind Request Failure for admin on WIN-SERVER-2023-AD01"
+    },
+    "message": {
+      "example": "LDAP bind request failed for user admin from device WIN-SERVER-2023-AD01 (192.168.1.10) due to invalid credentials. Operation type: Bind."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:26"
+    },
+    "severity": {
+      "example": "medium"
+    },
+    "catOutcome": {
+      "example": "FAIL"
+    },
+    "logType": {
+      "example": "account"
+    },
+    "opType": {
+      "example": "login"
+    },
+    "srcAddress": {
+      "example": "192.168.1.25"
+    },
+    "destAddress": {
+      "example": "192.168.1.10"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:8A:1F:B3"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Francisco"
+    },
+    "destGeoAddress": {
+      "example": "One Microsoft Way, Redmond, WA 98052"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "ldap"
+    },
+    "direction": {
+      "example": "00"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "group": "asset",
+  "category": "cloud_asset",
+  "title": "cloud_server",
+  "label": "Cloud Server",
+  "description": "Monitors and records metadata and configuration details of Elastic Compute Service (ECS) instances within cloud environments.",
+  "definitions": {
+    "cloudInstanceType": {
+      "example": "computeOptimized"
+    },
+    "vpcId": {
+      "example": "vpc-0a12b345c678d910e"
+    },
+    "subnetId": {
+      "example": "subnet-1234567890abcdef0"
+    },
+    "securityGroupIds": {
+      "example": "sg-0123456789abcdef0,sg-1234567890abcdef1,sg-234567890abcdef12"
+    },
+    "osName": {
+      "example": "Ubuntu 20.04 LTS"
+    },
+    "networkInfo": {
+      "example": "[{'macAddress': '00:11:22:33:44:55', 'networkInterfaceId': 'eni-0a12b345c678d910e', 'primaryIpAddress': '192.168.1.100', 'publicIpAddress': '203.0.113.10', 'status': 'InUse', 'vSwitchId': 'vsw-0a12b345c678d910e'}]"
+    },
+    "cpuModel": {
+      "example": "Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz"
+    },
+    "memorySize": {
+      "example": "16 GB"
+    },
+    "diskModel": {
+      "example": "ST5000DM000-1FK178"
+    },
+    "assetId": {
+      "example": "i-0a12b345c678d910e"
+    },
+    "relateId": {
+      "example": "i-0a12b345c678d910e"
+    },
+    "assetName": {
+      "example": "production-web-server-01"
+    },
+    "assetCategory": {
+      "example": "cloud_server"
+    },
+    "unitName": {
+      "example": "Engineering"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Engineering Compliance Department"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "production-web-server-01-alias"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "assetTag": {
+      "example": "web-service,http-server,production-tier"
+    },
+    "orgId": {
+      "example": "org-1234567890abcdefg"
+    },
+    "orgName": {
+      "example": "Engineering Department"
+    },
+    "netId": {
+      "example": "net-0a12b345c678d910e"
+    },
+    "securityZone": {
+      "example": "dmz"
+    },
+    "assetUser": {
+      "example": "john.smith"
+    },
+    "assetUserPhone": {
+      "example": "+1 (555) 123-4567"
+    },
+    "assetUserMail": {
+      "example": "john.smith@example.com"
+    },
+    "assetOwnerName": {
+      "example": "Engineering Department"
+    },
+    "assetOwnerPhone": {
+      "example": "+1 (555) 987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "engineering.department@example.com"
+    },
+    "assetDepartmentName": {
+      "example": "Infrastructure Operations"
+    },
+    "departmentHeadName": {
+      "example": "Dr. James Wilson"
+    },
+    "departmentHeadPhone": {
+      "example": "+1 (555) 876-5432"
+    },
+    "departmentHeadMail": {
+      "example": "james.wilson@example.com"
+    },
+    "assetDescription": {
+      "example": "production-web-server-01"
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2024-01-20 14:30:15"
+    },
+    "assetGroup": {
+      "example": "Infrastructure Operations"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "San Francisco"
+    },
+    "assetGeoCity": {
+      "example": "San Francisco"
+    },
+    "assetGeoCounty": {
+      "example": "San Francisco County"
+    },
+    "assetGeoRegion": {
+      "example": "California"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105"
+    },
+    "assetRegion": {
+      "example": "dmz"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Rack-12-Bay-3"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "provincial"
+    },
+    "otherInfo": {
+      "example": "[{'key': 'environment', 'value': 'production'}, {'key': 'project', 'value': 'website-migration-2024'}]"
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "00:11:22:33:44:55"
+    },
+    "idc": {
+      "example": "Alibaba Cloud"
+    },
+    "isp": {
+      "example": "China Telecom"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

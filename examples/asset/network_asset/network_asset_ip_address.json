@@ -1,0 +1,156 @@
+{
+  "group": "asset",
+  "category": "network_asset",
+  "title": "ip_address",
+  "label": "IP Address",
+  "description": "A network asset representing an IP address, which is a unique identifier assigned to devices on a network for communication purposes.",
+  "definitions": {
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "isp": {
+      "example": "中国电信"
+    },
+    "subnetMask": {
+      "example": "255.255.255.0"
+    },
+    "gateway": {
+      "example": "192.168.1.1"
+    },
+    "assetId": {
+      "example": "AS-20230815-192.168.1.100"
+    },
+    "relateId": {
+      "example": "IP-AS-20230815-192.168.1.100"
+    },
+    "assetName": {
+      "example": "PC-研发部-192.168.1.100"
+    },
+    "assetCategory": {
+      "example": "ip_address"
+    },
+    "unitId": {
+      "example": "UNIT-20230815-001"
+    },
+    "unitName": {
+      "example": "研发部"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "国家互联网信息办公室"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "common"
+    },
+    "assetAlias": {
+      "example": "研发部-PC-192.168.1.100"
+    },
+    "assetSource": {
+      "example": "nmap_scan_20230815"
+    },
+    "orgId": {
+      "example": "ORG-20230815-001"
+    },
+    "orgName": {
+      "example": "研发部"
+    },
+    "netId": {
+      "example": "SD-20230815-001"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "张三"
+    },
+    "assetUserMail": {
+      "example": "zhangsan@company.com"
+    },
+    "assetOwnerName": {
+      "example": "研发部"
+    },
+    "assetOwnerPhone": {
+      "example": "+86 13800138000"
+    },
+    "assetOwnerMail": {
+      "example": "lihua@company.com"
+    },
+    "assetDepartmentName": {
+      "example": "信息技术部"
+    },
+    "departmentHeadName": {
+      "example": "李华"
+    },
+    "departmentHeadPhone": {
+      "example": "+86 13900139000"
+    },
+    "departmentHeadMail": {
+      "example": "lihua@company.com"
+    },
+    "assetDescription": {
+      "example": "研发部办公用计算机，IP地址192.168.1.100，用户张三，归属信息技术部，用于日常办公和研发测试。"
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "assetGroup": {
+      "example": "研发部"
+    },
+    "assetGeoCountry": {
+      "example": "中国"
+    },
+    "assetGeoProvince": {
+      "example": "北京市"
+    },
+    "assetGeoCity": {
+      "example": "北京市"
+    },
+    "assetGeoCounty": {
+      "example": "海淀区"
+    },
+    "assetGeoRegion": {
+      "example": "海淀区"
+    },
+    "assetGeoAddress": {
+      "example": "北京市海淀区中关村大街1号"
+    },
+    "assetRegion": {
+      "example": "内部网络"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "medium"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "A区-3排-12柜"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "provincial"
+    },
+    "otherInfo": {
+      "example": "NAT网关IP，防火墙策略放行，已安装EDR客户端v3.2.1，最后扫描时间2023-08-15，开放端口：80, 443, 22, 3389。"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    }
+  }
+}

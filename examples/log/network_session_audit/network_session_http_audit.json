@@ -1,0 +1,174 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "http_audit",
+  "label": "Http Audit",
+  "description": "Records and monitors HTTP session activities, including requests, responses, and headers for security auditing purposes.",
+  "dataSource": [
+    "API Risk Monitoring System",
+    "Firewall",
+    "Network DLP System",
+    "Network Detection and Response",
+    "Web Application Firewall"
+  ],
+  "tag": [
+    "Brute Force",
+    "Web Attack",
+    "Webshell"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "srcUserName": {
+      "example": "administrator"
+    },
+    "fileName": {
+      "example": "index.html"
+    },
+    "srcTransAddress": {
+      "example": "192.168.10.15"
+    },
+    "destHostName": {
+      "example": "webserver01.corp.example.com"
+    },
+    "requestMethod": {
+      "example": "GET"
+    },
+    "requestUrlQuery": {
+      "example": "/index.php?page=login&user=administrator&token=abc123def456"
+    },
+    "requestUrl": {
+      "example": "/index.php"
+    },
+    "requestHeader": {
+      "example": "Host: webserver01.corp.example.com\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7\nAccept-Encoding: gzip, deflate, br\nAccept-Language: en-US,en;q=0.9\nConnection: keep-alive\nCache-Control: max-age=0\nUpgrade-Insecure-Requests: 1\nReferer: https://intranet.corp.example.com/\nCookie: sessionId=ABC123DEF456; csrfToken=xyz789abc"
+    },
+    "requestBody": {
+      "example": "page=login&user=administrator&password=Secret123!&csrfToken=xyz789abc"
+    },
+    "requestCookies": {
+      "example": "sessionId=ABC123DEF456; csrfToken=xyz789abc"
+    },
+    "httpReferer": {
+      "example": "https://intranet.corp.example.com/"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+    },
+    "requestContentType": {
+      "example": "application/x-www-form-urlencoded"
+    },
+    "XFF": {
+      "example": "203.0.113.45, 198.51.100.22"
+    },
+    "responseHeader": {
+      "example": "HTTP/1.1 200 OK\nDate: Thu, 26 Oct 2023 14:32:48 GMT\nServer: Apache/2.4.56 (Debian)\nContent-Type: text/html; charset=UTF-8\nContent-Length: 1256\nConnection: keep-alive\nSet-Cookie: sessionId=ABC123DEF456; Path=/; Secure; HttpOnly\nCache-Control: no-cache, no-store, must-revalidate\nX-Frame-Options: SAMEORIGIN\nX-Content-Type-Options: nosniff\nStrict-Transport-Security: max-age=31536000; includeSubDomains"
+    },
+    "responseBody": {
+      "example": "en"
+    },
+    "responseContentType": {
+      "example": "text/html; charset=UTF-8"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "WS001-APACHE-01"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems, Inc."
+    },
+    "deviceSendProductName": {
+      "example": "Apache HTTP Server"
+    },
+    "deviceName": {
+      "example": "proxy-server-01.corp.example.com"
+    },
+    "deviceAddress": {
+      "example": "10.0.5.100"
+    },
+    "deviceVersion": {
+      "example": "Apache/2.4.56 (Debian)"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "HTTP Session Audit: GET request to /index.php on webserver01.corp.example.com"
+    },
+    "message": {
+      "example": "administrator"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:22"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "access"
+    },
+    "srcAddress": {
+      "example": "192.168.10.15"
+    },
+    "destAddress": {
+      "example": "203.0.113.45"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:50:56:A0:3C:89"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, California, United States, 94105"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "123 Main Street, San Jose, California, United States, 95112"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "dataSourceAddress": {
+      "example": "10.0.5.100"
+    },
+    "httpVersion": {
+      "example": "HTTP/1.1"
+    }
+  }
+}

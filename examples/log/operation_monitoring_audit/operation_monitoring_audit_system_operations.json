@@ -1,0 +1,114 @@
+{
+  "group": "log",
+  "category": "operation_monitoring_audit",
+  "title": "system_operations",
+  "label": "System Operations",
+  "description": "Logs system administrative and operational activities for monitoring and auditing purposes.",
+  "dataSource": [
+    "Bastion Host"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:10"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:25"
+    },
+    "userName": {
+      "example": "John Doe"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "appProtocol": {
+      "example": "ssh"
+    },
+    "machineCode": {
+      "example": "DESKTOP-7F8A3B2"
+    },
+    "productVendorName": {
+      "example": "CrowdStrike"
+    },
+    "deviceSendProductName": {
+      "example": "CrowdStrike Falcon Sensor"
+    },
+    "deviceName": {
+      "example": "DC-SVR-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "deviceVersion": {
+      "example": "Windows Server 2022 Standard 10.0.20348.1129"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "User SSH Login to DC-SVR-01"
+    },
+    "message": {
+      "example": "User John Doe (admin) successfully initiated an SSH session from source IP 192.168.1.100 to device DC-SVR-01 (192.168.1.10) between 2023-08-15 14:32:10 and 2023-08-15 14:32:45. Event logged by CrowdStrike Falcon Sensor."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:28"
+    },
+    "severity": {
+      "example": "informational"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "system_operation"
+    },
+    "opType": {
+      "example": "login"
+    },
+    "srcMacAddress": {
+      "example": "00:0C:29:8F:3A:1B"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Francisco"
+    },
+    "destGeoAddress": {
+      "example": "456 Market Street, San Francisco, CA 94103"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    },
+    "destHostName": {
+      "example": "DC-SVR-01"
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "group": "alert",
+  "category": "network_attack",
+  "title": "denial_of_service",
+  "label": "Denial of Service",
+  "description": "Monitors and alerts on network traffic patterns indicative of Denial of Service (DoS) attacks, which aim to disrupt service availability by overwhelming target systems with excessive requests.",
+  "dataSource": [
+    "Anti DDoS System",
+    "Firewall",
+    "Web Application Firewall"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "srcAddress": {
+      "example": "203.0.113.45"
+    },
+    "destAddress": {
+      "example": "192.168.1.100"
+    },
+    "requestUrl": {
+      "example": "/api/v1/data"
+    },
+    "requestMethod": {
+      "example": "GET"
+    },
+    "XFF": {
+      "example": "203.0.113.45, 198.51.100.22"
+    },
+    "machineCode": {
+      "example": "WIN-SERVER-2023-001"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco Firepower Threat Defense"
+    },
+    "deviceName": {
+      "example": "firewall-dmz-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.1"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "DoS Attack Detected: SYN Flood from 203.0.113.45 targeting 192.168.1.100"
+    },
+    "message": {
+      "example": "Potential SYN flood attack detected from source IP 203.0.113.45 to destination 192.168.1.100. A high volume of TCP SYN packets (over 5000 per second) was observed within a 30-second window targeting port 80 on host WIN-SERVER-2023-001 via URL http://192.168.1.100/api/v1/data. Traffic pattern matches known DoS attack signatures. Mitigation actions initiated by device firewall-dmz-01."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "severity": {
+      "example": "high"
+    },
+    "catOutcome": {
+      "example": "Attempt"
+    },
+    "logType": {
+      "example": "alert"
+    },
+    "opType": {
+      "example": "send"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:5A:8F:3C"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "1601 Page Avenue, San Jose, CA 95131"
+    },
+    "dataSourceAddress": {
+      "example": "203.0.113.45"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "http"
+    },
+    "dvcAction": {
+      "example": "blocked"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "7.3.1"
+    },
+    "subTechniqueId": {
+      "example": "T1498.001"
+    },
+    "techniqueName": {
+      "example": "Network Denial of Service"
+    },
+    "techniqueId": {
+      "example": "T1498"
+    },
+    "tacticName": {
+      "example": "Impact"
+    },
+    "tacticId": {
+      "example": "TA0010"
+    },
+    "killChain": {
+      "example": "KC_Delivery"
+    },
+    "confidence": {
+      "example": "High"
+    },
+    "ruleId": {
+      "example": "FTD-DoS-SYN-Flood-20231026-143218"
+    },
+    "ruleType": {
+      "example": "/Exploit/DOS"
+    },
+    "ruleName": {
+      "example": "FTD-DoS-SYN-Flood-Detection"
+    },
+    "attackerAddress": {
+      "example": "203.0.113.45"
+    },
+    "victimAddress": {
+      "example": "192.168.1.100"
+    },
+    "subTechniqueName": {
+      "example": "SYN Flood"
+    },
+    "suggestion": {
+      "example": "Block source IP 203.0.113.45 at the network perimeter via ACL or firewall rule. Implement rate limiting for TCP SYN packets to destination 192.168.1.100 on port 80. Validate and potentially isolate host WIN-SERVER-2023-001 for inspection. Consider enabling SYN cookies or scaling resources. Review and update DoS protection policies on device firewall-dmz-01."
+    },
+    "requestUrlQuery": {
+      "example": "/api/v1/data?param1=value1&param2=value2"
+    },
+    "destHostName": {
+      "example": "WIN-SERVER-2023-001"
+    }
+  }
+}

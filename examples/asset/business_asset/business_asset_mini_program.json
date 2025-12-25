@@ -1,0 +1,159 @@
+{
+  "group": "asset",
+  "category": "business_asset",
+  "title": "mini_program",
+  "label": "Mini Program",
+  "description": "Monitors and records security-related activities and configurations of mini-programs within the business asset ecosystem.",
+  "definitions": {
+    "appletName": {
+      "example": "微信小程序助手"
+    },
+    "appletId": {
+      "example": "wx_helper_123456"
+    },
+    "developer": {
+      "example": "腾讯"
+    },
+    "icon": {
+      "example": "https://example.com/icons/wx_helper_123456.png"
+    },
+    "requestDomain": {
+      "example": "wx_helper.qq.com"
+    },
+    "assetId": {
+      "example": "wx_helper_123456_asset"
+    },
+    "unitId": {
+      "example": "wx_helper_123456_unit"
+    },
+    "unitName": {
+      "example": "腾讯"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "腾讯"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "common"
+    },
+    "assetAlias": {
+      "example": "微信小程序助手"
+    },
+    "assetSource": {
+      "example": "腾讯"
+    },
+    "assetTag": {
+      "example": "wx_helper_123456_port_80,wx_helper_123456_port_443,wx_helper_123456_port_8080"
+    },
+    "orgId": {
+      "example": "wx_helper_123456_org"
+    },
+    "orgName": {
+      "example": "腾讯"
+    },
+    "netId": {
+      "example": "wx_helper_123456_net"
+    },
+    "securityZone": {
+      "example": "腾讯内部安全区"
+    },
+    "assetUser": {
+      "example": "张三"
+    },
+    "assetUserMail": {
+      "example": "zhangsan@tencent.com"
+    },
+    "assetOwnerName": {
+      "example": "腾讯"
+    },
+    "assetOwnerPhone": {
+      "example": "+86 13800138000"
+    },
+    "assetOwnerMail": {
+      "example": "admin@tencent.com"
+    },
+    "assetDepartmentName": {
+      "example": "腾讯"
+    },
+    "departmentHeadName": {
+      "example": "张伟"
+    },
+    "departmentHeadPhone": {
+      "example": "+86 13912345678"
+    },
+    "departmentHeadMail": {
+      "example": "zhangwei@tencent.com"
+    },
+    "assetDescription": {
+      "example": "微信小程序助手是一款由腾讯公司金融部门开发的小程序，主要用于提供金融工具服务，归属于腾讯公司，由张三负责日常使用和维护。"
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-10-25 14:30:00"
+    },
+    "assetGroup": {
+      "example": "腾讯金融科技部"
+    },
+    "assetGeoCountry": {
+      "example": "中国"
+    },
+    "assetGeoProvince": {
+      "example": "广东省"
+    },
+    "assetGeoCity": {
+      "example": "深圳市"
+    },
+    "assetGeoCounty": {
+      "example": "南山区"
+    },
+    "assetGeoRegion": {
+      "example": "南山区"
+    },
+    "assetGeoAddress": {
+      "example": "深圳市南山区高新科技园腾讯大厦B座"
+    },
+    "assetRegion": {
+      "example": "腾讯内部网络"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "medium"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "腾讯数据中心A栋B区机柜12-03"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "other"
+    },
+    "otherInfo": {
+      "example": "当前版本：v1.2.3；小程序采用TLS 1.3加密通信，每日备份至腾讯云对象存储，访问日志保留180天，符合金融行业三级等保要求。"
+    },
+    "assetAddress": {
+      "example": "10.0.1.101"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

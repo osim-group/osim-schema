@@ -1,0 +1,227 @@
+{
+  "group": "alert",
+  "category": "network_attack",
+  "title": "phishing",
+  "label": "Phishing",
+  "description": "Records network traffic patterns indicative of phishing attempts, including deceptive emails or fraudulent websites designed to steal sensitive information.",
+  "dataSource": [
+    "Anti Spam Gateway",
+    "Network Detection and Response",
+    "Web Application Firewall"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "srcUserName": {
+      "example": "administrator"
+    },
+    "destUserName": {
+      "example": "administrator"
+    },
+    "ccUserName": {
+      "example": "admin@example.com;support@example.com"
+    },
+    "bccUserName": {
+      "example": "secretuser@example.com;hiddenrecipient@example.com"
+    },
+    "phishingType": {
+      "example": "emailPhishing"
+    },
+    "requestDomain": {
+      "example": "login-secure.bank-example.com"
+    },
+    "phishingEmail": {
+      "example": "attacker.phishing@malicious-example.net"
+    },
+    "machineCode": {
+      "example": "DESKTOP-ABC123"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco Secure Email Gateway"
+    },
+    "deviceName": {
+      "example": "firewall-sg-5500x-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.1"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "Phishing Attempt Detected on login-secure.bank-example.com"
+    },
+    "message": {
+      "example": "Detected phishing email from attacker.phishing@malicious-example.net attempting to impersonate the legitimate domain login-secure.bank-example.com. The email, flagged by Cisco Secure Email Gateway, contained a fraudulent login link targeting internal users including administrator."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "severity": {
+      "example": "high"
+    },
+    "catOutcome": {
+      "example": "Attempt"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "send"
+    },
+    "XFF": {
+      "example": "203.0.113.45, 198.51.100.33"
+    },
+    "srcMacAddress": {
+      "example": "00:1A:2B:3C:4D:5E"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:8F:7A:1B"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "Los Angeles"
+    },
+    "srcGeoAddress": {
+      "example": "1600 Pennsylvania Avenue NW, Washington, DC 20500"
+    },
+    "destGeoCountry": {
+      "example": "Russia"
+    },
+    "destGeoRegion": {
+      "example": "Moscow Oblast"
+    },
+    "destGeoCity": {
+      "example": "Moscow"
+    },
+    "destGeoAddress": {
+      "example": "Moscow, Moscow Oblast, Russia"
+    },
+    "dataSourceAddress": {
+      "example": "10.0.1.10"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "dvcAction": {
+      "example": "blocked"
+    },
+    "deviceVersion": {
+      "example": "15.2(3)T4"
+    },
+    "srcAddress": {
+      "example": "192.168.10.50"
+    },
+    "destAddress": {
+      "example": "93.184.216.34"
+    },
+    "subTechniqueId": {
+      "example": "T1566.001"
+    },
+    "techniqueName": {
+      "example": "Spearphishing Attachment"
+    },
+    "techniqueId": {
+      "example": "T1566"
+    },
+    "tacticName": {
+      "example": "Credential Access"
+    },
+    "tacticId": {
+      "example": "TA0006"
+    },
+    "killChain": {
+      "example": "KC_Delivery"
+    },
+    "confidence": {
+      "example": "High"
+    },
+    "ruleId": {
+      "example": "PHISH-2023-10-26-0001"
+    },
+    "ruleType": {
+      "example": "/Phishing/EmailPhishing"
+    },
+    "ruleName": {
+      "example": "Phishing Email Impersonating login-secure.bank-example.com Detected"
+    },
+    "attackerAddress": {
+      "example": "93.184.216.34"
+    },
+    "victimAddress": {
+      "example": "192.168.10.50"
+    },
+    "subTechniqueName": {
+      "example": "Spearphishing Link"
+    },
+    "suggestion": {
+      "example": "Block the source IP 93.184.216.34 at the network perimeter. Quarantine the phishing email and delete it from all mailboxes. Notify the recipient administrator and conduct user awareness training on identifying phishing attempts. Update email gateway rules to block future emails from attacker.phishing@malicious-example.net and the domain malicious-example.net. Reset credentials for the affected user administrator and monitor for suspicious account activity."
+    },
+    "requestHeader": {
+      "example": "Host: login-secure.bank-example.com\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7\nAccept-Encoding: gzip, deflate, br\nAccept-Language: en-US,en;q=0.9\nCache-Control: max-age=0\nConnection: keep-alive\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 125\nReferer: https://login-secure.bank-example.com/login\nX-Forwarded-For: 203.0.113.45, 198.51.100.33\nCookie: session_id=abc123def456ghi789; csrf_token=xyz789uvw456"
+    },
+    "requestBody": {
+      "example": "username=administrator&password=SecureP@ssw0rd123&remember_me=true&csrf_token=xyz789uvw456"
+    },
+    "requestCookies": {
+      "example": "session_id=abc123def456ghi789; csrf_token=xyz789uvw456"
+    },
+    "requestUrlQuery": {
+      "example": "/login?username=administrator&redirect_to=https%3A%2F%2Fmalicious-example.net%2Fcapture"
+    },
+    "requestUrl": {
+      "example": "/login"
+    },
+    "requestMethod": {
+      "example": "POST"
+    },
+    "requestContentType": {
+      "example": "application/x-www-form-urlencoded"
+    },
+    "responseHeader": {
+      "example": "HTTP/1.1 200 OK\nDate: Thu, 26 Oct 2023 14:32:48 GMT\nServer: Apache/2.4.41 (Ubuntu)\nSet-Cookie: PHPSESSID=hacked789session; path=/; HttpOnly\nLocation: https://malicious-example.net/capture\nContent-Type: text/html; charset=UTF-8\nContent-Length: 256\nConnection: close\nX-Powered-By: PHP/7.4.3\nX-Content-Type-Options: nosniff\nCache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0\nPragma: no-cache"
+    },
+    "responseContentType": {
+      "example": "text/html; charset=UTF-8"
+    },
+    "responseBody": {
+      "example": "en"
+    },
+    "destHostName": {
+      "example": "login-secure.bank-example.com"
+    },
+    "mailType": {
+      "example": "html"
+    },
+    "mailContent": {
+      "example": "Dear Administrator,\n\nYour login session for login-secure.bank-example.com has expired due to a recent security update. To ensure the safety of your account, please verify your identity immediately by clicking the link below.\n\nClick here to verify your account now: https://login-secure.bank-example.com/login?username=administrator&redirect_to=https%3A%2F%2Fmalicious-example.net%2Fcapture\n\nThis is a mandatory security check. Failure to verify within the next 24 hours may result in temporary suspension of your account access.\n\nIf you did not request this verification, please contact our support team immediately at support@bank-example.com (Note: This is a legitimate support address).\n\nSincerely,\nSecurity Team\nBank Example Corporation\n\nThis email was sent by the official security system of login-secure.bank-example.com."
+    },
+    "mailSubject": {
+      "example": "Urgent: Your Account Verification Required for login-secure.bank-example.com"
+    },
+    "payload": {
+      "example": "username=administrator&password=SecureP@ssw0rd123&remember_me=true&csrf_token=xyz789uvw456&redirect_to=https%3A%2F%2Fmalicious-example.net%2Fcapture"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "dns_audit",
+  "label": "DNS Audit",
+  "description": "Records DNS query and response activities for auditing and monitoring network session integrity.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "dnsType": {
+      "example": "query"
+    },
+    "queryType": {
+      "example": "A"
+    },
+    "requestDomain": {
+      "example": "www.google.com"
+    },
+    "responseCode": {
+      "example": "NOERROR"
+    },
+    "responseAddress": {
+      "example": "192.168.1.1"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "DESKTOP-7A8B9F3"
+    },
+    "productVendorName": {
+      "example": "Cisco"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco Umbrella"
+    },
+    "deviceName": {
+      "example": "corp-dns-proxy-01"
+    },
+    "deviceAddress": {
+      "example": "10.10.10.10"
+    },
+    "deviceVersion": {
+      "example": "18.04.6"
+    },
+    "eventId": {
+      "example": "d5f7e2b1-8c9d-4a3b-9e1c-3f6a8b7c9d2a"
+    },
+    "name": {
+      "example": "DNS Audit: Query for www.google.com resolved to 192.168.1.1"
+    },
+    "message": {
+      "example": "DNS query for domain www.google.com (type A) from device DESKTOP-7A8B9F3 via interface eth0 was resolved to 192.168.1.1 with status NOERROR. The query was processed by DNS proxy corp-dns-proxy-01 (10.10.10.10) running Cisco Umbrella."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "query"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "192.168.1.1"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:5F:3B:12"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Jose, CA 95113, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "Mountain View"
+    },
+    "destGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043, United States"
+    },
+    "transProtocol": {
+      "example": "UDP"
+    },
+    "appProtocol": {
+      "example": "dns"
+    },
+    "dataSourceAddress": {
+      "example": "10.10.10.10"
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "group": "alert",
+  "category": "anomalous_behavior",
+  "title": "host_behavior_abnormality",
+  "label": "Host Behavior Anomaly",
+  "description": "Monitors and alerts on unusual or suspicious activities detected on a host, indicating potential security threats or policy violations.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "definitions": {
+    "processUserName": {
+      "example": "root"
+    },
+    "image": {
+      "example": "/usr/bin/nginx"
+    },
+    "parentProcessUserName": {
+      "example": "root"
+    },
+    "parentImage": {
+      "example": "/usr/bin/bash"
+    },
+    "destImage": {
+      "example": "/usr/bin/ncat"
+    },
+    "imageLoaded": {
+      "example": "/usr/lib/x86_64-linux-gnu/nginx/modules/ngx_http_geoip_module.so"
+    },
+    "startTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "endTime": {
+      "example": "2023-08-15 12:21:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 12:21:01"
+    },
+    "processStartTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "parentProcessStartTime": {
+      "example": "2023-08-15 12:20:55"
+    },
+    "targetFilename": {
+      "example": "/usr/bin/nginx"
+    },
+    "filePath": {
+      "example": "/usr/share/nginx/html/index.html"
+    },
+    "processName": {
+      "example": "nginx"
+    },
+    "parentProcessName": {
+      "example": "bash"
+    },
+    "fileName": {
+      "example": "nginx"
+    },
+    "originalFileName": {
+      "example": "nginx"
+    },
+    "processMd5": {
+      "example": "e5d7a1b3c9d8e7f5a2b4c6d8e9f0a1b2"
+    },
+    "processGuid": {
+      "example": "{6A8F1C40-2D3F-4B9C-8E7A-5B6C9D0E1F2A}"
+    },
+    "parentProcessGuid": {
+      "example": "{6A8F1C40-2D3F-4B9C-8E7A-5B6C9D0E1F2B}"
+    },
+    "parentProcessMd5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "processChain": {
+      "example": "systemd(1) -> login(1234) -> bash(5678) -> nginx(9012)"
+    },
+    "commandLine": {
+      "example": "nginx -g daemon off;"
+    },
+    "parentCommandLine": {
+      "example": "nginx -g daemon off;"
+    },
+    "md5": {
+      "example": "e5d7a1b3c9d8e7f5a2b4c6d8e9f0a1b2"
+    },
+    "grantedAccess": {
+      "example": "rwxr-xr-x"
+    },
+    "startAddress": {
+      "example": "0x00007f8e3a45b000"
+    },
+    "startFunction": {
+      "example": "main"
+    },
+    "startModule": {
+      "example": "nginx"
+    },
+    "pipeName": {
+      "example": "\\\\.\\pipe\\wkssvc"
+    },
+    "callTrace": {
+      "example": "/lib/x86_64-linux-gnu/libc.so.6!__libc_start_main+0x80;nginx!main+0x1a5;nginx!ngx_worker_process_cycle+0x3f;nginx!ngx_spawn_process+0x12c;"
+    },
+    "machineCode": {
+      "example": "LAPTOP-7B8C9D2E"
+    },
+    "productVendorName": {
+      "example": "CrowdStrike"
+    },
+    "deviceSendProductName": {
+      "example": "CrowdStrike Falcon Agent"
+    },
+    "deviceName": {
+      "example": "webserver-prod-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "e5d7a1b3-c9d8-4e7f-aa2b-4c6d8e9f0a1b"
+    },
+    "name": {
+      "example": "host_behavior_abnormality_nginx_unusual_activity"
+    },
+    "message": {
+      "example": "Process nginx (PID: 9012, MD5: e5d7a1b3c9d8e7f5a2b4c6d8e9f0a1b2) spawned from bash (PID: 5678) exhibited anomalous behavior by loading a non-standard module /usr/lib/x86_64-linux-gnu/nginx/modules/ngx_http_geoip_module.so and attempting to establish a pipe connection to \\\\.\\pipe\\wkssvc shortly after process start at 2023-08-15 12:21:00 on host webserver-prod-01 (192.168.1.100)."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 12:21:02"
+    },
+    "catOutcome": {
+      "example": "FAIL"
+    },
+    "logType": {
+      "example": "process"
+    },
+    "opType": {
+      "example": "execute"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:AB:CD:EF"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "destGeoCountry": {
+      "example": "Germany"
+    },
+    "destGeoRegion": {
+      "example": "Bavaria"
+    },
+    "destGeoCity": {
+      "example": "Munich"
+    },
+    "destGeoAddress": {
+      "example": "Marienplatz 8, 80331 Munich, Bavaria, Germany"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "http"
+    },
+    "dvcAction": {
+      "example": "Process terminated"
+    },
+    "direction": {
+      "example": "00"
+    },
+    "deviceVersion": {
+      "example": "Linux 5.15.0-91-generic"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "10.0.0.50"
+    },
+    "subTechniqueId": {
+      "example": "T1543.003"
+    },
+    "techniqueName": {
+      "example": "Create or Modify System Process: Windows Service"
+    },
+    "techniqueId": {
+      "example": "T1055"
+    },
+    "tacticName": {
+      "example": "Lateral Movement"
+    },
+    "tacticId": {
+      "example": "TA0008"
+    },
+    "killChain": {
+      "example": "KC_LateralMov"
+    },
+    "confidence": {
+      "example": "Medium"
+    },
+    "ruleId": {
+      "example": "ABUS-20230815-001"
+    },
+    "ruleType": {
+      "example": "/SuspEndpoint/SuspProcess"
+    },
+    "ruleName": {
+      "example": "Unusual Nginx Process Spawn with Suspicious Module Load and Pipe Activity"
+    },
+    "attackerAddress": {
+      "example": "203.0.113.5"
+    },
+    "victimAddress": {
+      "example": "192.168.1.100"
+    },
+    "subTechniqueName": {
+      "example": "T1543.003: Create or Modify System Process: Windows Service"
+    },
+    "suggestion": {
+      "example": "Terminate the nginx process (PID: 9012) immediately. Block the suspicious module /usr/lib/x86_64-linux-gnu/nginx/modules/ngx_http_geoip_module.so from loading. Investigate the parent bash process (PID: 5678) for compromise. Isolate the host webserver-prod-01 (192.168.1.100) from the network. Review firewall rules to block connections to/from 10.0.0.50 and 203.0.113.5. Perform a full memory and disk forensic analysis."
+    },
+    "targetObject": {
+      "example": "/usr/share/nginx/html/index.html"
+    },
+    "regNewName": {
+      "example": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\MaliciousService"
+    },
+    "objectType": {
+      "example": "process"
+    },
+    "requestDomain": {
+      "example": "www.example.com"
+    },
+    "responseAddress": {
+      "example": "8.8.8.8"
+    },
+    "fileType": {
+      "example": "Executable"
+    },
+    "filePermissions": {
+      "example": "rwxr-xr-x"
+    },
+    "fileCreateTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "fileOwner": {
+      "example": "root"
+    },
+    "fileGroup": {
+      "example": "www-data"
+    },
+    "signature": {
+      "example": "CN=nginx, OU=Web Server, O=Example Corp, L=San Francisco, ST=California, C=US; SHA256: a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890"
+    },
+    "signatureStatus": {
+      "example": "Unsigned"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "hostName": {
+      "example": "webserver-prod-01"
+    },
+    "integrityLevel": {
+      "example": "Medium"
+    }
+  }
+}

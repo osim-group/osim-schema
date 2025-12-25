@@ -1,0 +1,186 @@
+{
+  "group": "asset",
+  "category": "data_asset",
+  "title": "database",
+  "label": "Database",
+  "description": "A data asset representing a structured collection of data stored in a database system, typically managed by a database management system (DBMS).",
+  "definitions": {
+    "dbType": {
+      "example": "MySQL"
+    },
+    "dbName": {
+      "example": "customer_db"
+    },
+    "dbVersion": {
+      "example": "8.0.33"
+    },
+    "confPath": {
+      "example": "/usr/local/mysql/my.cnf"
+    },
+    "dataPath": {
+      "example": "/var/lib/mysql/customer_db"
+    },
+    "errPath": {
+      "example": "/var/log/mysql/error.log"
+    },
+    "executablePath": {
+      "example": "/usr/bin/mysqld"
+    },
+    "logPath": {
+      "example": "/var/log/mysql/mysql.log"
+    },
+    "pluginPath": {
+      "example": "/usr/lib/mysql/plugin/"
+    },
+    "assetId": {
+      "example": "db-mysql-customer-8.0.33-001"
+    },
+    "relateId": {
+      "example": "db-mysql-customer-8.0.33-001-rel-001"
+    },
+    "assetName": {
+      "example": "Customer Database Server"
+    },
+    "assetCategory": {
+      "example": "database"
+    },
+    "unitId": {
+      "example": "unit-org-001"
+    },
+    "unitName": {
+      "example": "Finance Department Database Unit"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Data Protection Authority"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "Customer MySQL DB"
+    },
+    "assetSource": {
+      "example": "10.0.5.12"
+    },
+    "orgId": {
+      "example": "org-finance-db-001"
+    },
+    "orgName": {
+      "example": "Finance Department"
+    },
+    "netId": {
+      "example": "sec-domain-db-mysql-customer-001"
+    },
+    "securityZone": {
+      "example": "DMZ Database Zone"
+    },
+    "assetUser": {
+      "example": "john.doe"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetUserMail": {
+      "example": "john.doe@company.com"
+    },
+    "assetOwnerName": {
+      "example": "Data Engineering Team"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "data.engineering@company.com"
+    },
+    "assetDepartmentName": {
+      "example": "Data Engineering Team"
+    },
+    "departmentHeadName": {
+      "example": "Jane Smith"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-234-5678"
+    },
+    "departmentHeadMail": {
+      "example": "jane.smith@company.com"
+    },
+    "assetDescription": {
+      "example": "Customer Database Server - MySQL 8.0.33 instance hosting customer financial data for the Finance Department, managed by the Data Engineering Team under Jane Smith. Primary user is John Doe."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-10-20 14:30:15"
+    },
+    "assetGroup": {
+      "example": "Finance Department Database Group"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "San Francisco"
+    },
+    "assetGeoCity": {
+      "example": "San Francisco"
+    },
+    "assetGeoCounty": {
+      "example": "San Francisco County"
+    },
+    "assetGeoRegion": {
+      "example": "California"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Data Center A, Row 3, Cabinet 7, Slot 2"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "provincial"
+    },
+    "otherInfo": {
+      "example": "Contains sensitive customer financial data including transaction records and personal information. Backup schedule: daily incremental, weekly full. Compliance: GDPR, PCI DSS. Maintenance window: Sundays 02:00-04:00 UTC. Last security audit: 2023-09-15."
+    },
+    "assetAddress": {
+      "example": "10.0.5.12"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

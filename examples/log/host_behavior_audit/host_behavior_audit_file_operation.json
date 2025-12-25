@@ -1,0 +1,147 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "file_operation",
+  "label": "File Operation",
+  "description": "Records file operations such as creation, modification, deletion, and access activities on the host for security auditing purposes.",
+  "dataSource": [
+    "Antivirus",
+    "Endpoint DLP System",
+    "Endpoint Detection And Response System"
+  ],
+  "tag": [
+    "Ransomware",
+    "Webshell"
+  ],
+  "definitions": {
+    "image": {
+      "example": "C:\\Windows\\System32\\svchost.exe"
+    },
+    "parentImage": {
+      "example": "C:\\Windows\\System32\\services.exe"
+    },
+    "processUserName": {
+      "example": "SYSTEM"
+    },
+    "parentProcessUserName": {
+      "example": "SYSTEM"
+    },
+    "processStartTime": {
+      "example": "2023-08-15 14:30:22"
+    },
+    "parentProcessStartTime": {
+      "example": "2023-08-15 14:30:20"
+    },
+    "targetFilename": {
+      "example": "C:\\Windows\\System32\\svchost.exe"
+    },
+    "filePath": {
+      "example": "C:\\Windows\\System32\\svchost.exe"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:30:22"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:30:25"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:30:26"
+    },
+    "processName": {
+      "example": "svchost.exe"
+    },
+    "parentProcessName": {
+      "example": "services.exe"
+    },
+    "fileName": {
+      "example": "svchost.exe"
+    },
+    "originalFileName": {
+      "example": "svchost.exe"
+    },
+    "processMd5": {
+      "example": "5a7e6b8f88525fde171a9d9b8e4e1a3d"
+    },
+    "parentProcessMd5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "processGuid": {
+      "example": "{4E5C5A1E-1234-5678-9ABC-DEF012345678}"
+    },
+    "parentProcessGuid": {
+      "example": "{4E5C5A1E-1234-5678-9ABC-DEF012345679}"
+    },
+    "fileType": {
+      "example": "Executable"
+    },
+    "md5": {
+      "example": "5a7e6b8f88525fde171a9d9b8e4e1a3d"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "hostName": {
+      "example": "WIN-AD-SERVER01"
+    },
+    "machineCode": {
+      "example": "WIN-AD-SERVER01-7A3B9F2C"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Windows"
+    },
+    "deviceName": {
+      "example": "WIN-AD-SERVER01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "Windows Server 2022 Standard 10.0.20348.1129"
+    },
+    "eventId": {
+      "example": "{4E5C5A1E-1234-5678-9ABC-DEF012345680}"
+    },
+    "name": {
+      "example": "File operation alert: svchost.exe created svchost.exe on WIN-AD-SERVER01"
+    },
+    "message": {
+      "example": "File operation alert: svchost.exe (PID: 1234, MD5: 5a7e6b8f88525fde171a9d9b8e4e1a3d, User: SYSTEM) created executable file svchost.exe at C:\\Windows\\System32\\svchost.exe on host WIN-AD-SERVER01 (192.168.1.100). Parent process: services.exe. Event time: 2023-08-15 14:30:22."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:30:27"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "file"
+    },
+    "opType": {
+      "example": "create"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    },
+    "filePermissions": {
+      "example": "rw-r--r--"
+    },
+    "fileCreateTime": {
+      "example": "2023-08-15 14:30:22"
+    },
+    "fileOwner": {
+      "example": "SYSTEM"
+    },
+    "fileGroup": {
+      "example": "Administrators"
+    },
+    "fileGuid": {
+      "example": "{4E5C5A1E-1234-5678-9ABC-DEF012345681}"
+    },
+    "sha256": {
+      "example": "b1d8b7e6a97c1e19d5c5c6a4e3b7a8d9f2c4e5a6b7c8d9e0f1a2b3c4d5e6f7a8b9"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "group": "asset",
+  "category": "software_asset",
+  "title": "component",
+  "label": "Component",
+  "description": "A software component that is part of a larger software asset, typically monitored for vulnerabilities or compliance.",
+  "definitions": {
+    "componentName": {
+      "example": "file_system_scanner"
+    },
+    "componentVersion": {
+      "example": "2.3.1"
+    },
+    "publisher": {
+      "example": "Microsoft Corporation"
+    },
+    "language": {
+      "example": "Python"
+    },
+    "hostAddress": {
+      "example": "10.0.0.15"
+    },
+    "hostName": {
+      "example": "DESKTOP-ABC123"
+    },
+    "assetId": {
+      "example": "ASSET-2023-SW-78901"
+    },
+    "relateId": {
+      "example": "COMP-2023-78901-SCANNER"
+    },
+    "assetName": {
+      "example": "Windows Defender File Scanner"
+    },
+    "assetCategory": {
+      "example": "application_software"
+    },
+    "unitId": {
+      "example": "UNIT-2023-SW-78901"
+    },
+    "unitName": {
+      "example": "IT Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "U.S. Cybersecurity and Infrastructure Security Agency"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "important"
+    },
+    "assetAlias": {
+      "example": "file_scanner"
+    },
+    "assetSource": {
+      "example": "Active Directory Sync"
+    },
+    "orgId": {
+      "example": "IT-DEPT-78901"
+    },
+    "orgName": {
+      "example": "IT Department"
+    },
+    "netId": {
+      "example": "SEC-DOM-IT-78901"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "Alice.Johnson"
+    },
+    "assetUserPhone": {
+      "example": "+1 (555) 555-0123"
+    },
+    "assetUserMail": {
+      "example": "alice.johnson@example.com"
+    },
+    "assetOwnerName": {
+      "example": "IT Department"
+    },
+    "assetOwnerPhone": {
+      "example": "+1 (555) 555-6789"
+    },
+    "assetOwnerMail": {
+      "example": "it.department@example.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Department"
+    },
+    "departmentHeadName": {
+      "example": "Robert Chen"
+    },
+    "departmentHeadPhone": {
+      "example": "+1 (555) 555-9876"
+    },
+    "departmentHeadMail": {
+      "example": "robert.chen@example.com"
+    },
+    "assetDescription": {
+      "example": "Microsoft Windows Defender File Scanner component (file_system_scanner v2.3.1) deployed on host DESKTOP-ABC123 (10.0.0.15) in the IT Department's DMZ zone for endpoint threat detection. Primary user: Alice Johnson. Managed by IT Department. Criticality: Important."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-10-27 14:35:00"
+    },
+    "assetGroup": {
+      "example": "IT Department"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "Washington"
+    },
+    "assetGeoProvinceCode": {
+      "example": "US-WA"
+    },
+    "assetGeoCityCode": {
+      "example": "Seattle"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-KI"
+    },
+    "assetGeoCity": {
+      "example": "Seattle"
+    },
+    "assetGeoCounty": {
+      "example": "King County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, Seattle, WA 98101, United States"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "DataCenter-Aisle-3-Rack-15-U-22"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Installed via Microsoft Installer (MSI) on 2023-08-15. Auto-updates enabled. Last vulnerability scan: 2023-10-25. Component ID in CMDB: CMDB-SW-78901-SCANNER."
+    },
+    "assetAddress": {
+      "example": "10.0.0.15"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

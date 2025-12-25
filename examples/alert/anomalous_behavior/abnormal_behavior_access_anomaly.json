@@ -1,0 +1,187 @@
+{
+  "group": "alert",
+  "category": "anomalous_behavior",
+  "title": "access_anomaly",
+  "label": "Access Anomaly",
+  "description": "This alert records instances of anomalous access behavior, indicating potential unauthorized or suspicious activities within the network.",
+  "dataSource": [
+    "Network Detection and Response",
+    "Zero Trust"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "srcUserName": {
+      "example": "administrator"
+    },
+    "userName": {
+      "example": "John Smith"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+    },
+    "requestMethod": {
+      "example": "POST"
+    },
+    "requestUrlQuery": {
+      "example": "/admin/api/v1/users/export?format=csv&filter=all&includeSensitive=true"
+    },
+    "requestUrl": {
+      "example": "/admin/api/v1/users/export"
+    },
+    "destHostName": {
+      "example": "internal.corp.com"
+    },
+    "httpReferer": {
+      "example": "https://internal.corp.com/admin/dashboard"
+    },
+    "machineCode": {
+      "example": "WIN-SERVER-2023-001"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Windows Server 2022"
+    },
+    "deviceName": {
+      "example": "WIN-SERVER-2023-001"
+    },
+    "deviceAddress": {
+      "example": "192.168.10.25"
+    },
+    "eventId": {
+      "example": "f1c3d5a8-9b2e-4f7a-9c1d-0a3b8c7d6e5f"
+    },
+    "name": {
+      "example": "Suspicious User Data Export Request Detected"
+    },
+    "message": {
+      "example": "John Smith"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:22"
+    },
+    "catOutcome": {
+      "example": "Attempt"
+    },
+    "logType": {
+      "example": "alert"
+    },
+    "opType": {
+      "example": "access"
+    },
+    "XFF": {
+      "example": "203.0.113.5, 198.51.100.23"
+    },
+    "srcMacAddress": {
+      "example": "00:15:5D:01:23:45"
+    },
+    "destMacAddress": {
+      "example": "00:15:5D:9A:BC:DE"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Jose, CA 95131, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "170 West Tasman Drive, San Jose, CA 95134, United States"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.10.25"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "dvcAction": {
+      "example": "Blocked"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "10.0.20348.2348"
+    },
+    "srcAddress": {
+      "example": "192.168.10.25"
+    },
+    "destAddress": {
+      "example": "203.0.113.5"
+    },
+    "subTechniqueId": {
+      "example": "T1548.002"
+    },
+    "techniqueName": {
+      "example": "Abuse Elevation Control Mechanism"
+    },
+    "techniqueId": {
+      "example": "T1548"
+    },
+    "tacticName": {
+      "example": "Privilege Escalation"
+    },
+    "tacticId": {
+      "example": "TA0006"
+    },
+    "killChain": {
+      "example": "KC_InternalRecon"
+    },
+    "confidence": {
+      "example": "High"
+    },
+    "ruleId": {
+      "example": "ABN-2023-1001"
+    },
+    "ruleType": {
+      "example": "/SuspTraffic/AccessAnomaly"
+    },
+    "ruleName": {
+      "example": "Anomalous Bulk User Data Export via Admin API"
+    },
+    "attackerAddress": {
+      "example": "203.0.113.5"
+    },
+    "victimAddress": {
+      "example": "192.168.10.25"
+    },
+    "subTechniqueName": {
+      "example": "Bypass User Account Control"
+    },
+    "suggestion": {
+      "example": "John Smith"
+    },
+    "appName": {
+      "example": "HR Management System Admin Panel"
+    },
+    "serviceName": {
+      "example": "HR Management System Admin API"
+    }
+  }
+}

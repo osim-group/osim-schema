@@ -1,0 +1,51 @@
+{
+  "group": "incident",
+  "category": "security_incident",
+  "title": "security_incident",
+  "label": "Security Incident",
+  "description": "Records unauthorized access, data breaches, or other malicious activities compromising system integrity.",
+  "definitions": {
+    "incidentId": {
+      "example": "b3f8d9c7-1a2e-4f5a-9c0d-3e7f6a5b2c1d"
+    },
+    "incidentName": {
+      "example": "Unauthorized SSH Login Attempt Detected on Server-192"
+    },
+    "incidentLevel": {
+      "example": "High"
+    },
+    "incidentStatus": {
+      "example": "Analysising"
+    },
+    "incidentType": {
+      "example": "/NetAttack/Credential"
+    },
+    "latestActivityTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "createTime": {
+      "example": "2023-08-15 10:05:00"
+    },
+    "closeTime": {
+      "example": "2023-08-15 14:30:00"
+    },
+    "closeReason": {
+      "example": "False positive, alert resolved after investigation."
+    },
+    "closeUser": {
+      "example": "admin"
+    },
+    "participants": {
+      "example": "John Doe, Jane Smith, Michael Johnson, Sarah Williams"
+    },
+    "incidentDataSource": {
+      "example": "EDR Platform - CrowdStrike Falcon Detection Engine"
+    },
+    "victim": {
+      "example": "10.0.0.15, 10.0.0.20, 10.0.0.25"
+    },
+    "assignee": {
+      "example": "SOC Team Lead - John Doe"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "scheduled_task_operation",
+  "label": "Scheduled Task Operation",
+  "description": "Records audit events related to the creation, modification, or deletion of scheduled tasks on a host system.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "srcUserName": {
+      "example": "administrator"
+    },
+    "srcUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-500"
+    },
+    "machineCode": {
+      "example": "WIN-7SDF8G2K3A1"
+    },
+    "productVendorName": {
+      "example": "Microsoft Corporation"
+    },
+    "deviceSendProductName": {
+      "example": "Windows Task Scheduler"
+    },
+    "deviceName": {
+      "example": "WIN-7SDF8G2K3A1"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.105"
+    },
+    "eventId": {
+      "example": "3e9a1b7c-5f2d-4a8c-b8e3-d7c6f9a1b2c3"
+    },
+    "name": {
+      "example": "Scheduled Task Creation Detected on WIN-7SDF8G2K3A1"
+    },
+    "message": {
+      "example": "Adobe Acrobat Update Task"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.105"
+    },
+    "srcNtDomain": {
+      "example": "CORP"
+    },
+    "srcLoginId": {
+      "example": "CORP\\administrator"
+    },
+    "taskName": {
+      "example": "Adobe Acrobat Update Task"
+    },
+    "taskContent": {
+      "example": "Adobe Acrobat Update Task created for automatic updates of Adobe Acrobat Reader DC."
+    },
+    "hostAddress": {
+      "example": "192.168.1.105"
+    },
+    "deviceVersion": {
+      "example": "Windows 10.0.19045.4170"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "ssh_audit",
+  "label": "SSH Audit",
+  "description": "Records and monitors SSH session activities, including authentication attempts, command execution, and session termination for security auditing purposes.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "tag": [
+    "Brute Force"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "sshClientVersion": {
+      "example": "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6"
+    },
+    "sshServerVersion": {
+      "example": "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.9"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "DESKTOP-7A3B9F2"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "OpenSSH"
+    },
+    "deviceName": {
+      "example": "ssh-server-ubuntu-prod-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "OpenSSH 8.2p1 Ubuntu-4ubuntu0.9"
+    },
+    "eventId": {
+      "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    "name": {
+      "example": "SSH Session Audit - Successful Login from 192.168.1.150"
+    },
+    "message": {
+      "example": "jdoe"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "login"
+    },
+    "srcAddress": {
+      "example": "192.168.1.150"
+    },
+    "destAddress": {
+      "example": "192.168.1.100"
+    },
+    "srcMacAddress": {
+      "example": "00:50:56:12:34:56"
+    },
+    "destMacAddress": {
+      "example": "00:50:56:ab:cd:ef"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94107, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "170 West Tasman Drive, San Jose, CA 95134, United States"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "ssh"
+    },
+    "direction": {
+      "example": "00"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    }
+  }
+}

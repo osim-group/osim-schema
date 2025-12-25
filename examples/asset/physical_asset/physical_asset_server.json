@@ -1,0 +1,204 @@
+{
+  "group": "asset",
+  "category": "physical_asset",
+  "title": "server",
+  "label": "Server",
+  "description": "A physical server asset that hosts applications, services, or data within a network infrastructure.",
+  "definitions": {
+    "maintainStartTime": {
+      "example": "2023-10-15 09:00:00"
+    },
+    "maintainEndTime": {
+      "example": "2023-10-15 17:00:00"
+    },
+    "hostName": {
+      "example": "DESKTOP-ABC123"
+    },
+    "osType": {
+      "example": "Windows"
+    },
+    "osVersion": {
+      "example": "Windows 10 Pro 22H2"
+    },
+    "osName": {
+      "example": "Windows 10 Pro 22H2"
+    },
+    "kernelVersion": {
+      "example": "5.15.0-105-generic"
+    },
+    "mainboard": {
+      "example": "ASUS ROG STRIX Z790-E GAMING WIFI"
+    },
+    "cpuModel": {
+      "example": "Intel(R) Core(TM) i9-13900K"
+    },
+    "memorySize": {
+      "example": "32 GB"
+    },
+    "diskModel": {
+      "example": "Samsung SSD 970 EVO Plus 2TB"
+    },
+    "gpuModel": {
+      "example": "NVIDIA GeForce RTX 4090"
+    },
+    "nicModel": {
+      "example": "Intel(R) Ethernet Connection I219-V"
+    },
+    "deviceVendor": {
+      "example": "Cisco Systems"
+    },
+    "deviceModel": {
+      "example": "Cisco Catalyst 9300-48T"
+    },
+    "deviceVersion": {
+      "example": "Cisco IOS XE 17.12.01"
+    },
+    "managementAddress": {
+      "example": "192.168.1.254"
+    },
+    "machineType": {
+      "example": "workstation"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetId": {
+      "example": "ASSET-WIN-ABC123-001"
+    },
+    "relateId": {
+      "example": "ASSET-WIN-ABC123-001-REL-20231015"
+    },
+    "assetName": {
+      "example": "DESKTOP-ABC123"
+    },
+    "assetCategory": {
+      "example": "device"
+    },
+    "unitId": {
+      "example": "UNIT-ORG-001"
+    },
+    "unitName": {
+      "example": "IT Department Workstations"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Federal Communications Commission"
+    },
+    "industry": {
+      "example": "government"
+    },
+    "assetCriticality": {
+      "example": "important"
+    },
+    "assetAlias": {
+      "example": "DESKTOP-ABC123-WS-IT"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetUserMail": {
+      "example": "admin.it@example.gov"
+    },
+    "assetOwnerName": {
+      "example": "John Smith"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "john.smith@example.gov"
+    },
+    "assetDepartmentName": {
+      "example": "IT Infrastructure Management"
+    },
+    "departmentHeadName": {
+      "example": "Jane Doe"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-876-5432"
+    },
+    "departmentHeadMail": {
+      "example": "jane.doe@example.gov"
+    },
+    "assetDescription": {
+      "example": "Windows 10 Pro workstation for IT Infrastructure Management department, hostname DESKTOP-ABC123, used by John Smith for administrative tasks and managed by Jane Doe."
+    },
+    "createTime": {
+      "example": "2022-06-15 08:30:00"
+    },
+    "updateTime": {
+      "example": "2023-10-15 18:30:00"
+    },
+    "assetGroup": {
+      "example": "IT Infrastructure Management"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "District of Columbia"
+    },
+    "assetGeoProvinceCode": {
+      "example": "US-DC"
+    },
+    "assetGeoCityCode": {
+      "example": "Washington"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-DC-001"
+    },
+    "assetGeoCity": {
+      "example": "Washington"
+    },
+    "assetGeoCounty": {
+      "example": "District of Columbia"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street NW, Washington, DC 20001, United States"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "DataCenter-A-Rack-42-U-15"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Rack-mounted in DataCenter-A, assigned to IT Infrastructure Management, primary administrative workstation for John Smith, connected to management network via 192.168.1.254, running critical infrastructure monitoring services, last patched 2023-10-10, warranty valid until 2025-06-15."
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "deviceSerialNumber": {
+      "example": "CN1234567890ABC"
+    }
+  }
+}

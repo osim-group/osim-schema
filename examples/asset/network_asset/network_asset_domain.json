@@ -1,0 +1,183 @@
+{
+  "group": "asset",
+  "category": "network_asset",
+  "title": "domain",
+  "label": "Domain",
+  "description": "A network asset representing a domain name, which is a critical component for identifying and accessing network resources.",
+  "definitions": {
+    "requestDomain": {
+      "example": "www.example.com"
+    },
+    "registrationTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "expirationTime": {
+      "example": "2024-08-15 12:21:00"
+    },
+    "registrar": {
+      "example": "GoDaddy"
+    },
+    "registrarEmail": {
+      "example": "registrar@example.com"
+    },
+    "icp": {
+      "example": "京ICP备2023012345号"
+    },
+    "pubSecFilingNumber": {
+      "example": "京公网安备11010802023456号"
+    },
+    "company": {
+      "example": "Example Corp."
+    },
+    "whois": {
+      "example": "Domain Name: EXAMPLE.COM\nRegistry Domain ID: D1234567-EXAMPLE\nRegistrar WHOIS Server: whois.godaddy.com\nRegistrar URL: http://www.godaddy.com\nUpdated Date: 2023-09-01T10:30:00Z\nCreation Date: 2023-08-15T12:21:00Z\nRegistrar Registration Expiration Date: 2024-08-15T12:21:00Z\nRegistrar: GoDaddy.com, LLC\nRegistrar IANA ID: 146\nRegistrar Abuse Contact Email: abuse@godaddy.com\nRegistrar Abuse Contact Phone: +1.4806242505\nDomain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited\nRegistry Registrant ID: CR123456789\nRegistrant Name: EXAMPLE CORP\nRegistrant Organization: Example Corp.\nRegistrant Street: 123 Example Street\nRegistrant City: Beijing\nRegistrant State/Province: Beijing\nRegistrant Postal Code: 100000\nRegistrant Country: CN\nRegistrant Phone: +86.1088888888\nRegistrant Email: admin@example.com\nRegistry Admin ID: CA123456789\nAdmin Name: EXAMPLE CORP ADMIN\nAdmin Organization: Example Corp.\nAdmin Street: 123 Example Street\nAdmin City: Beijing\nAdmin State/Province: Beijing\nAdmin Postal Code: 100000\nAdmin Country: CN\nAdmin Phone: +86.1088888888\nAdmin Email: admin@example.com\nRegistry Tech ID: CT123456789\nTech Name: EXAMPLE CORP TECH\nTech Organization: Example Corp.\nTech Street: 123 Example Street\nTech City: Beijing\nTech State/Province: Beijing\nTech Postal Code: 100000\nTech Country: CN\nTech Phone: +86.1088888888\nTech Email: tech@example.com\nName Server: NS1.EXAMPLE.COM\nName Server: NS2.EXAMPLE.COM\nDNSSEC: unsigned\nURL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/\n>>> Last update of WHOIS database: 2023-10-27T08:45:00Z <<"
+    },
+    "assetId": {
+      "example": "DOMAIN-ASSET-20230815-001"
+    },
+    "relateId": {
+      "example": "DOMAIN-ASSET-20230815-001-REL"
+    },
+    "assetName": {
+      "example": "example.com"
+    },
+    "assetCategory": {
+      "example": "domain"
+    },
+    "unitId": {
+      "example": "UNIT-20230815-001"
+    },
+    "unitName": {
+      "example": "Example Corp. IT Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Ministry of Industry and Information Technology"
+    },
+    "industry": {
+      "example": "commercial_internet"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "example.com-production-web"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "assetTag": {
+      "example": "[WEB-SERVER, CORP-DOMAIN, EXTERNAL-FACING]"
+    },
+    "orgId": {
+      "example": "ORG-20230815-001"
+    },
+    "orgName": {
+      "example": "Example Corp."
+    },
+    "netId": {
+      "example": "SEC-DOMAIN-20230815-001"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "admin@example.com"
+    },
+    "assetUserPhone": {
+      "example": "+86.1088888888"
+    },
+    "assetUserMail": {
+      "example": "admin@example.com"
+    },
+    "assetOwnerName": {
+      "example": "Example Corp."
+    },
+    "assetOwnerPhone": {
+      "example": "+86.1088888888"
+    },
+    "assetOwnerMail": {
+      "example": "admin@example.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Infrastructure Department"
+    },
+    "departmentHeadName": {
+      "example": "Zhang Wei"
+    },
+    "departmentHeadPhone": {
+      "example": "+86.13912345678"
+    },
+    "departmentHeadMail": {
+      "example": "zhang.wei@example.com"
+    },
+    "assetDescription": {
+      "example": "Primary corporate domain for Example Corp., used for external-facing web services and email hosting. Managed by the IT Infrastructure Department under Zhang Wei. Registered to admin@example.com. Critical internet-facing asset requiring high availability."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-10-27 08:45:00"
+    },
+    "assetGroup": {
+      "example": "IT Infrastructure Department"
+    },
+    "assetGeoCountry": {
+      "example": "China"
+    },
+    "assetGeoProvince": {
+      "example": "Beijing"
+    },
+    "assetGeoCity": {
+      "example": "Beijing"
+    },
+    "assetGeoCounty": {
+      "example": "Haidian District"
+    },
+    "assetGeoRegion": {
+      "example": "Beijing"
+    },
+    "assetGeoAddress": {
+      "example": "123 Example Street, Haidian District, Beijing, Beijing, 100000, China"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Rack-12-Bay-7"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Hosts production web servers at 192.168.1.100 and 192.168.1.101; primary MX record points to mail.example.com; associated SSL certificate issued by DigiCert; monitored by external security service provider."
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

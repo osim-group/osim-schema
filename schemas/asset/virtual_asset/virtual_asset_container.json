@@ -535,8 +535,8 @@
         }
       }
     },
-    "assetCriticality": {
-      "label": "Asset Criticality",
+    "assetImportance": {
+      "label": "Asset Importance",
       "requirement": "RECOMMENDED",
       "description": "Asset importance level (e.g., normal, important, core, confidential, other).",
       "type": "enum",

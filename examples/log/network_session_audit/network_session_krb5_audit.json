@@ -1,0 +1,123 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "krb5_audit",
+  "label": "KRB5 Audit",
+  "description": "Records authentication and authorization events within network sessions using the Kerberos 5 (KRB5) protocol, including ticket requests and validations.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "kerberosMsgType": {
+      "example": "AS_REQ"
+    },
+    "timesFrom": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "timesTill": {
+      "example": "2023-10-26 15:32:20"
+    },
+    "ticketHash": {
+      "example": "0a1b2c3d4e5f6789abcdef0123456789"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    },
+    "machineCode": {
+      "example": "HOST-AD-SRV-01"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Windows Server 2022"
+    },
+    "deviceName": {
+      "example": "AD-SRV-01-WIN2022"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "deviceVersion": {
+      "example": "Windows Server 2022 10.0.20348.2113"
+    },
+    "eventId": {
+      "example": "8a4b3c2d-1e2f-3a4b-5c6d-7e8f9a0b1c2d"
+    },
+    "name": {
+      "example": "KRB5 Authentication Request from AD-SRV-01-WIN2022"
+    },
+    "message": {
+      "example": "User svc_sql@EXAMPLE.COM requested a Kerberos Authentication Service (AS) ticket from KDC krb5.example.com at 192.168.1.10 for service HTTP/webserver.example.com. Request ID: 8a4b3c2d-1e2f-3a4b-5c6d-7e8f9a0b1c2d. Pre-authentication succeeded. Ticket valid from 2023-10-26 14:32:20 to 2023-10-26 15:32:20. Cipher used: aes256-cts-hmac-sha1-96. Client address: 192.168.1.150."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "account"
+    },
+    "opType": {
+      "example": "access"
+    },
+    "srcAddress": {
+      "example": "192.168.1.150"
+    },
+    "destAddress": {
+      "example": "192.168.1.10"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:1A:2B:33:4C:5D"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "950 El Camino Real, San Jose, California, United States, 95126"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "950 El Camino Real, San Jose, California, United States, 95126"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "kerberos"
+    },
+    "direction": {
+      "example": "00"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "group": "asset",
+  "category": "network_asset",
+  "title": "port",
+  "label": "Port",
+  "description": "Network asset port records the open ports and associated services on a network device, used for monitoring potential vulnerabilities and unauthorized access points.",
+  "definitions": {
+    "transProtocol": {
+      "example": "UDP"
+    },
+    "serviceName": {
+      "example": "SSDP"
+    },
+    "serviceType": {
+      "example": "SSDP"
+    },
+    "softwareName": {
+      "example": "Simple Service Discovery Protocol"
+    },
+    "company": {
+      "example": "Microsoft Corporation"
+    },
+    "portStatus": {
+      "example": "open"
+    },
+    "hostAddress": {
+      "example": "239.255.255.250"
+    },
+    "hostName": {
+      "example": "DESKTOP-ABC123"
+    },
+    "assetId": {
+      "example": "ASSET-2023-08-15-001"
+    },
+    "relateId": {
+      "example": "NETWORK-ASSET-PORT-2023-08-15-001-239.255.255.250-1900"
+    },
+    "assetName": {
+      "example": "DESKTOP-ABC123-SSDP"
+    },
+    "assetCategory": {
+      "example": "port"
+    },
+    "unitId": {
+      "example": "UNIT-2023-08-15-001"
+    },
+    "unitName": {
+      "example": "IT Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Federal Communications Commission"
+    },
+    "industry": {
+      "example": "government"
+    },
+    "assetCriticality": {
+      "example": "important"
+    },
+    "assetAlias": {
+      "example": "DESKTOP-ABC123-SSDP-Port"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "assetTag": {
+      "example": "[SSDP-UDP-1900]"
+    },
+    "orgId": {
+      "example": "ORG-2023-08-15-001"
+    },
+    "orgName": {
+      "example": "IT Department"
+    },
+    "netId": {
+      "example": "SEC-DOMAIN-2023-08-15-001"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "John Doe"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetUserMail": {
+      "example": "john.doe@example.com"
+    },
+    "assetOwnerName": {
+      "example": "John Doe"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "john.doe@example.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Department"
+    },
+    "departmentHeadName": {
+      "example": "Jane Smith"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-234-5678"
+    },
+    "departmentHeadMail": {
+      "example": "jane.smith@example.com"
+    },
+    "assetDescription": {
+      "example": "Desktop computer running SSDP service on UDP port 1900 for network device discovery, managed by John Doe in the IT Department under Jane Smith's supervision, categorized as an important asset in the DMZ security zone."
+    },
+    "createTime": {
+      "example": "2023-08-15 09:15:30"
+    },
+    "updateTime": {
+      "example": "2023-08-15 14:30:45"
+    },
+    "assetGroup": {
+      "example": "IT Infrastructure Group"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-LA"
+    },
+    "assetGeoCity": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCounty": {
+      "example": "Los Angeles County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, Los Angeles, CA 90001, United States"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "medium"
+    },
+    "assetUsability": {
+      "example": "medium"
+    },
+    "cabinetPosition": {
+      "example": "Rack-12-Slot-3"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "SSDP service discovered on UDP port 1900 for device discovery in the DMZ zone. This port is associated with the Simple Service Discovery Protocol, commonly used by network devices for UPnP communication. Asset is managed by John Doe in the IT Department and is categorized as important. Regular vulnerability scans are scheduled."
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    }
+  }
+}

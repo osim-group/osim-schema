@@ -1,0 +1,129 @@
+{
+  "group": "log",
+  "category": "operation_monitoring_audit",
+  "title": "image_text",
+  "label": "Image Text",
+  "description": "Logs capturing OCR (Optical Character Recognition) operations and text extraction activities from images for audit and monitoring purposes.",
+  "dataSource": [
+    "Bastion Host"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:10"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:25"
+    },
+    "destUserName": {
+      "example": "system"
+    },
+    "srcUserId": {
+      "example": "admin_001"
+    },
+    "destUserId": {
+      "example": "system_001"
+    },
+    "userName": {
+      "example": "John Smith"
+    },
+    "srcAddress": {
+      "example": "192.168.1.105"
+    },
+    "destAddress": {
+      "example": "192.168.1.10"
+    },
+    "machineCode": {
+      "example": "OCRDV-20230815-105"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Microsoft OCR Engine"
+    },
+    "deviceName": {
+      "example": "OCR-Server-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "deviceVersion": {
+      "example": "Windows 10.0.19044.2846"
+    },
+    "eventId": {
+      "example": "f3e45678-90ab-4cde-f123-4567890abcde"
+    },
+    "name": {
+      "example": "OCR image text extraction operation completed"
+    },
+    "message": {
+      "example": "OCR image text extraction operation completed for user John Smith from IP 192.168.1.105 to OCR server 192.168.1.10. Processed image via Microsoft OCR Engine, extracted 247 characters of text. Operation ID: OCRDV-20230815-105."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:30"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "system_operation"
+    },
+    "opType": {
+      "example": "read"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:8B:3F:1A"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "170 West Tasman Drive, San Jose, CA 95134, United States"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "direction": {
+      "example": "00"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    },
+    "cmdContent": {
+      "example": "C:\\Users\\John Smith\\Documents\\image_scan.png"
+    },
+    "destHostName": {
+      "example": "OCR-Server-01"
+    }
+  }
+}

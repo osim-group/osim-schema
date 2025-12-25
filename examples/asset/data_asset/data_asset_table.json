@@ -1,0 +1,171 @@
+{
+  "group": "asset",
+  "category": "data_asset",
+  "title": "data_table",
+  "label": "Data Table",
+  "description": "A structured data asset representing a table with rows and columns, typically used for storing and organizing information in a database.",
+  "definitions": {
+    "dbName": {
+      "example": "customer_database"
+    },
+    "tableName": {
+      "example": "customer_data_table"
+    },
+    "dataSize": {
+      "example": "1024 KB"
+    },
+    "assetId": {
+      "example": "cust_data_asset_001"
+    },
+    "relateId": {
+      "example": "cust_data_rel_001"
+    },
+    "assetName": {
+      "example": "customer_data_asset"
+    },
+    "assetCategory": {
+      "example": "data_table"
+    },
+    "unitId": {
+      "example": "cust_unit_001"
+    },
+    "unitName": {
+      "example": "Customer Unit"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Data Protection Authority"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "classified"
+    },
+    "assetAlias": {
+      "example": "cust_data_table_alias"
+    },
+    "assetSource": {
+      "example": "data_protection_authority"
+    },
+    "orgId": {
+      "example": "cust_org_001"
+    },
+    "orgName": {
+      "example": "Customer Organization"
+    },
+    "netId": {
+      "example": "cust_domain_001"
+    },
+    "securityZone": {
+      "example": "data_protection_zone_finance"
+    },
+    "assetUser": {
+      "example": "john_doe"
+    },
+    "assetUserPhone": {
+      "example": "+1 555 123 4567"
+    },
+    "assetUserMail": {
+      "example": "john.doe@customer-organization.com"
+    },
+    "assetOwnerName": {
+      "example": "Customer Data Management Team"
+    },
+    "assetOwnerPhone": {
+      "example": "+1 555 987 6543"
+    },
+    "assetOwnerMail": {
+      "example": "customer.data.management@customer-organization.com"
+    },
+    "assetDepartmentName": {
+      "example": "Data Management Department"
+    },
+    "departmentHeadName": {
+      "example": "Michael Anderson"
+    },
+    "departmentHeadPhone": {
+      "example": "+1 555 234 5678"
+    },
+    "departmentHeadMail": {
+      "example": "michael.anderson@customer-organization.com"
+    },
+    "assetDescription": {
+      "example": "A structured data table in the customer_database, named customer_data_table, used by the Data Management Department in the finance industry for storing customer personal and financial information. Owned by the Customer Data Management Team and accessed by user john_doe."
+    },
+    "createTime": {
+      "example": "2023-10-15 09:30:00"
+    },
+    "updateTime": {
+      "example": "2023-10-15 10:45:00"
+    },
+    "assetGroup": {
+      "example": "Data Management Department"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "US-CA"
+    },
+    "assetGeoCityCode": {
+      "example": "US-LA"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-LA-06037"
+    },
+    "assetGeoCity": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCounty": {
+      "example": "Los Angeles County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, Los Angeles, California 90012, United States"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Data Center A - Cabinet 42"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "provincial"
+    },
+    "otherInfo": {
+      "example": "Contains customer personal information (PII) including names, addresses, social security numbers, and financial transaction records. Subject to GDPR and CCPA compliance regulations. Backup scheduled daily at 02:00 UTC."
+    },
+    "assetAddress": {
+      "example": "10.0.5.20"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

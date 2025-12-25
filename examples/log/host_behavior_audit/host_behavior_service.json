@@ -1,0 +1,93 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "service_behavior",
+  "label": "Service Behavior",
+  "description": "Logs capturing service-related activities and behaviors on a host, including service starts, stops, and configuration changes.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "serviceImage": {
+      "example": "C:\\Windows\\System32\\svchost.exe -k netsvcs"
+    },
+    "machineCode": {
+      "example": "DHSVR01"
+    },
+    "productVendorName": {
+      "example": "CrowdStrike"
+    },
+    "deviceSendProductName": {
+      "example": "CrowdStrike Falcon Agent"
+    },
+    "deviceName": {
+      "example": "DHSVR01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "c6a8b4e5-7d3c-4a1d-b2f1-9e8a3c7d5f2b"
+    },
+    "name": {
+      "example": "Service Start: svchost.exe (netsvcs) on DHSVR01"
+    },
+    "message": {
+      "example": "Service svchost.exe (netsvcs) was started successfully on host DHSVR01 (192.168.1.100) by the CrowdStrike Falcon Agent. The service process C:\\Windows\\System32\\svchost.exe -k netsvcs executed from 2023-10-26 14:32:18 to 2023-10-26 14:32:48. Event ID: c6a8b4e5-7d3c-4a1d-b2f1-9e8a3c7d5f2b."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "service"
+    },
+    "opType": {
+      "example": "start"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    },
+    "serviceName": {
+      "example": "Windows Update"
+    },
+    "serviceType": {
+      "example": "svchost.exe"
+    },
+    "startType": {
+      "example": "Automatic"
+    },
+    "accountName": {
+      "example": "NT AUTHORITY\\SYSTEM"
+    },
+    "oldStartType": {
+      "example": "Automatic"
+    },
+    "newStartType": {
+      "example": "Manual"
+    },
+    "displayName": {
+      "example": "svchost.exe (netsvcs) - Windows Update"
+    },
+    "status": {
+      "example": "success"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "10.0.19041.1415"
+    }
+  }
+}

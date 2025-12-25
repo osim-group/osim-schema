@@ -1,0 +1,138 @@
+{
+  "group": "log",
+  "category": "operation_monitoring_audit",
+  "title": "file_transfer",
+  "label": "File Transfer",
+  "description": "Logs and monitors file transfer activities, including uploads, downloads, and data exchanges, for security auditing and compliance purposes.",
+  "dataSource": [
+    "Bastion Host"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "destUserName": {
+      "example": "user"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:17"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:22"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:18"
+    },
+    "userName": {
+      "example": "John Smith"
+    },
+    "srcUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-1013"
+    },
+    "destUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-1001"
+    },
+    "filePath": {
+      "example": "C:\\Users\\John Smith\\Documents\\report.pdf"
+    },
+    "fileName": {
+      "example": "report.pdf"
+    },
+    "newFilename": {
+      "example": "C:\\Users\\John Smith\\Documents\\report_v2.pdf"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "192.168.1.50"
+    },
+    "machineCode": {
+      "example": "DEV-2023-SRV-001"
+    },
+    "productVendorName": {
+      "example": "CrowdStrike"
+    },
+    "deviceSendProductName": {
+      "example": "CrowdStrike Falcon"
+    },
+    "deviceName": {
+      "example": "SRV-AD-FILESHARE-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.50"
+    },
+    "deviceVersion": {
+      "example": "Windows Server 2022 Standard 10.0.20348.1129"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "File transfer audit - report.pdf uploaded by admin to 192.168.1.50"
+    },
+    "message": {
+      "example": "User admin (S-1-5-21-3623811015-3361044348-30300820-1013) from source IP 192.168.1.100 uploaded file report.pdf from path C:\\Users\\John Smith\\Documents\\report.pdf to destination IP 192.168.1.50 (DEV-2023-SRV-001/SRV-AD-FILESHARE-01) for user user (S-1-5-21-3623811015-3361044348-30300820-1001). The file was renamed to report_v2.pdf on the destination. Operation completed successfully."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:20"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "file"
+    },
+    "opType": {
+      "example": "write"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:5A:3F:8C"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "123 Main Street, San Jose, CA 95112"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "ftp"
+    },
+    "direction": {
+      "example": "00"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.50"
+    },
+    "md5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "destHostName": {
+      "example": "SRV-AD-FILESHARE-01"
+    }
+  }
+}

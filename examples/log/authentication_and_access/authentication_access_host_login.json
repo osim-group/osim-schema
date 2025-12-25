@@ -1,0 +1,126 @@
+{
+  "group": "log",
+  "category": "authentication_and_access",
+  "title": "host_login_authentication",
+  "label": "Host Login Authentication",
+  "description": "Records authentication attempts and access events for host logins, including successful and failed login attempts.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "tag": [
+    "Brute Force"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "image": {
+      "example": "C:\\Windows\\System32\\winlogon.exe"
+    },
+    "destUserName": {
+      "example": "administrator"
+    },
+    "destUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-500"
+    },
+    "srcUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-1001"
+    },
+    "srcUserName": {
+      "example": "Alice.Johnson"
+    },
+    "machineCode": {
+      "example": "WIN-7A8B9C1D2E3F"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Windows"
+    },
+    "deviceName": {
+      "example": "WIN-7A8B9C1D2E3F"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "0f8e7b9a-1c4d-4e5f-a3b2-9d8c7e6f5a4b"
+    },
+    "name": {
+      "example": "Successful authentication for user administrator on WIN-7A8B9C1D2E3F"
+    },
+    "message": {
+      "example": "Successful authentication for user administrator on host WIN-7A8B9C1D2E3F from source user Alice.Johnson via winlogon.exe."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "account"
+    },
+    "opType": {
+      "example": "login"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    },
+    "srcAddress": {
+      "example": "192.168.1.150"
+    },
+    "destAddress": {
+      "example": "192.168.1.100"
+    },
+    "loginId": {
+      "example": "0x7ff8e3a12d90"
+    },
+    "srcHostName": {
+      "example": "ALICE-PC"
+    },
+    "destNtDomain": {
+      "example": "CORP"
+    },
+    "destLoginId": {
+      "example": "admin123"
+    },
+    "failReason": {
+      "example": "Invalid credentials provided for user administrator on host WIN-7A8B9C1D2E3F from source user Alice.Johnson via winlogon.exe. Authentication failed due to incorrect password after 3 attempts."
+    },
+    "srcNtDomain": {
+      "example": "CORP"
+    },
+    "srcLoginId": {
+      "example": "Alice.Johnson"
+    },
+    "loginGuid": {
+      "example": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d"
+    },
+    "destLoginGuid": {
+      "example": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d"
+    },
+    "destInfo": {
+      "example": "WIN-7A8B9C1D2E3F (CORP\\administrator) via winlogon.exe"
+    },
+    "destServiceName": {
+      "example": "Winlogon"
+    },
+    "appProtocol": {
+      "example": "ssh"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "Windows 10 Pro 10.0.19045 Build 19045"
+    }
+  }
+}

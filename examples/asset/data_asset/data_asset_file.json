@@ -1,0 +1,171 @@
+{
+  "group": "asset",
+  "category": "data_asset",
+  "title": "file",
+  "label": "File",
+  "description": "A data asset file represents a digital document or resource stored within an information system, subject to security controls and access management.",
+  "definitions": {
+    "fileName": {
+      "example": "chrome.exe"
+    },
+    "fileType": {
+      "example": "Executable"
+    },
+    "privilegeList": {
+      "example": "SeChangeNotifyPrivilege, SeBackupPrivilege, SeRestorePrivilege"
+    },
+    "assetId": {
+      "example": "ASSET-2024-0001-FILE-CHROME-EXE"
+    },
+    "relateId": {
+      "example": "FILE-ASSET-2024-0001-CHROME-EXE"
+    },
+    "assetName": {
+      "example": "chrome.exe asset"
+    },
+    "assetCategory": {
+      "example": "file"
+    },
+    "unitId": {
+      "example": "UNIT-2024-0001"
+    },
+    "unitName": {
+      "example": "Marketing Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Financial Conduct Authority"
+    },
+    "industry": {
+      "example": "commercial_internet"
+    },
+    "assetCriticality": {
+      "example": "important"
+    },
+    "assetAlias": {
+      "example": "Chrome Browser Asset"
+    },
+    "assetSource": {
+      "example": "192.168.1.105"
+    },
+    "orgId": {
+      "example": "ORG-2024-0001"
+    },
+    "orgName": {
+      "example": "Marketing Department"
+    },
+    "netId": {
+      "example": "SEC-DOMAIN-2024-0001"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "Alice Johnson"
+    },
+    "assetUserPhone": {
+      "example": "+1 234 567 8901"
+    },
+    "assetUserMail": {
+      "example": "alice.johnson@example.com"
+    },
+    "assetOwnerName": {
+      "example": "Marketing Department"
+    },
+    "assetOwnerPhone": {
+      "example": "+1 234 567 8900"
+    },
+    "assetOwnerMail": {
+      "example": "marketing.dept@example.com"
+    },
+    "assetDepartmentName": {
+      "example": "Information Technology Department"
+    },
+    "departmentHeadName": {
+      "example": "David Smith"
+    },
+    "departmentHeadPhone": {
+      "example": "+1 234 567 8902"
+    },
+    "departmentHeadMail": {
+      "example": "david.smith@example.com"
+    },
+    "assetDescription": {
+      "example": "Google Chrome browser executable file used by the Marketing Department for commercial internet activities, managed by the Information Technology Department under David Smith, with primary user Alice Johnson."
+    },
+    "createTime": {
+      "example": "2024-08-15 14:30:22"
+    },
+    "updateTime": {
+      "example": "2024-08-15 15:45:18"
+    },
+    "assetGroup": {
+      "example": "Marketing Department IT Assets"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "US-CA"
+    },
+    "assetGeoCityCode": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-LA"
+    },
+    "assetGeoCity": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCounty": {
+      "example": "Los Angeles County"
+    },
+    "assetGeoRegion": {
+      "example": "California"
+    },
+    "assetGeoAddress": {
+      "example": "1234 Main Street, Los Angeles, CA 90001, United States"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "medium"
+    },
+    "assetUsability": {
+      "example": "medium"
+    },
+    "cabinetPosition": {
+      "example": "Aisle 3, Rack 7, Position 15"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "provincial"
+    },
+    "otherInfo": {
+      "example": "This file is located on the primary user's workstation (192.168.1.105) within the DMZ security zone, designated as an important asset for commercial internet operations. It is subject to active security controls and monitoring by the Information Technology Department."
+    },
+    "assetAddress": {
+      "example": "192.168.1.105"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

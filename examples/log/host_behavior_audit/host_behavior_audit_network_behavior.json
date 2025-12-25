@@ -1,0 +1,169 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "network_behavior",
+  "label": "Network Behavior",
+  "description": "Records and monitors network-related activities and behaviors performed by a host, including connections, data transfers, and protocol usage.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "tag": [
+    "Ransomware",
+    "Webshell"
+  ],
+  "definitions": {
+    "image": {
+      "example": "C:\\Windows\\System32\\svchost.exe"
+    },
+    "parentImage": {
+      "example": "C:\\Windows\\System32\\services.exe"
+    },
+    "processUserName": {
+      "example": "SYSTEM"
+    },
+    "parentProcessUserName": {
+      "example": "SYSTEM"
+    },
+    "processStartTime": {
+      "example": "2023-08-15 14:30:22"
+    },
+    "parentProcessStartTime": {
+      "example": "2023-08-15 14:30:20"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:31:05"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:31:07"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:31:08"
+    },
+    "processName": {
+      "example": "svchost.exe"
+    },
+    "parentProcessName": {
+      "example": "services.exe"
+    },
+    "commandLine": {
+      "example": "svchost.exe -k NetworkService -p"
+    },
+    "parentCommandLine": {
+      "example": "C:\\Windows\\System32\\services.exe -k netsvcs"
+    },
+    "processMd5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "parentProcessMd5": {
+      "example": "d3e8f8a7c9b2f1a6e5c4b3d2a1f0e9d8"
+    },
+    "processGuid": {
+      "example": "{12345678-1234-1234-1234-1234567890AB}"
+    },
+    "parentProcessGuid": {
+      "example": "{12345678-1234-1234-1234-1234567890AC}"
+    },
+    "hostName": {
+      "example": "DESKTOP-ABC123"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "machineCode": {
+      "example": "DESKTOP-ABC123-7B2F9A1C"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Microsoft Windows"
+    },
+    "deviceName": {
+      "example": "DESKTOP-ABC123"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "Windows 10 Enterprise, 10.0.19044 Build 19044"
+    },
+    "eventId": {
+      "example": "12345678-1234-1234-1234-1234567890AD"
+    },
+    "name": {
+      "example": "Network connection initiated by svchost.exe from DESKTOP-ABC123"
+    },
+    "message": {
+      "example": "svchost.exe process (PID: 1234) initiated a network connection to remote IP 203.0.113.5 on port 443 using TCP protocol. The connection was established from local IP 192.168.1.100 on ephemeral port 54321. The parent process was services.exe. This activity was logged by the Windows Security auditing subsystem."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:31:09"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "connect"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "203.0.113.5"
+    },
+    "srcMacAddress": {
+      "example": "00:0C:29:7B:2F:9A"
+    },
+    "destMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "Los Angeles"
+    },
+    "srcGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Francisco"
+    },
+    "destGeoAddress": {
+      "example": "One Microsoft Way, Redmond, WA 98052"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "srcGeoRegionCode": {
+      "example": "US-CA"
+    },
+    "srcGeoCountryCode": {
+      "example": "US"
+    },
+    "srcGeoCountyCode": {
+      "example": "US-CA-06037"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    }
+  }
+}

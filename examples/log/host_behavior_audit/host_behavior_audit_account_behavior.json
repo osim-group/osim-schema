@@ -1,0 +1,132 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "account_behavior",
+  "label": "Account Behavior",
+  "description": "Records and monitors user account activities and behaviors on the host system for security auditing purposes.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "srcUserName": {
+      "example": "administrator"
+    },
+    "srcUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-500"
+    },
+    "destUserId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-1004"
+    },
+    "machineCode": {
+      "example": "PC-192-168-1-105-WKS-7A3B9F"
+    },
+    "productVendorName": {
+      "example": "CrowdStrike"
+    },
+    "deviceSendProductName": {
+      "example": "CrowdStrike Falcon"
+    },
+    "deviceName": {
+      "example": "WIN-PC-192-168-1-105"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.105"
+    },
+    "eventId": {
+      "example": "a0eebc99-9c3b-4e9f-88a6-6c62f92f5e7d"
+    },
+    "name": {
+      "example": "User Account Activity Detected - Administrator Account Login from 192.168.1.105"
+    },
+    "message": {
+      "example": "administrator"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:22"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "account"
+    },
+    "opType": {
+      "example": "login"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.105"
+    },
+    "srcNtDomain": {
+      "example": "CORPORATE"
+    },
+    "srcLoginId": {
+      "example": "administrator"
+    },
+    "destNtDomain": {
+      "example": "CORPORATE"
+    },
+    "privilegeList": {
+      "example": "SeBackupPrivilege, SeDebugPrivilege, SeSecurityPrivilege, SeSystemtimePrivilege, SeTakeOwnershipPrivilege"
+    },
+    "samAccountName": {
+      "example": "administrator"
+    },
+    "displayName": {
+      "example": "Administrator"
+    },
+    "userPrincipalName": {
+      "example": "administrator@corporate.local"
+    },
+    "homeDir": {
+      "example": "C:\\Users\\administrator"
+    },
+    "homePath": {
+      "example": "C:\\Users\\administrator"
+    },
+    "scriptPath": {
+      "example": "C:\\Users\\administrator\\Documents\\scripts\\login_audit.ps1"
+    },
+    "confPath": {
+      "example": "C:\\ProgramData\\CrowdStrike\\Falcon\\config\\agent.conf"
+    },
+    "userWorkstations": {
+      "example": "WIN-PC-192-168-1-105,PC-192-168-1-105-WKS-7A3B9F,PC-192-168-1-106-WKS-8B4C0G"
+    },
+    "timePasswordLastSet": {
+      "example": "2023-10-23 09:15:42"
+    },
+    "expirationTime": {
+      "example": "2025-11-30 23:59:59"
+    },
+    "primaryGroupId": {
+      "example": "S-1-5-21-3623811015-3361044348-30300820-513"
+    },
+    "delegationList": {
+      "example": "CN=Domain Controllers,OU=Domain Controllers,DC=corporate,DC=local;CN=Member Servers,OU=Servers,DC=corporate,DC=local;CN=Exchange Servers,OU=Servers,DC=corporate,DC=local"
+    },
+    "userParameters": {
+      "example": "Department=IT;Title=System Administrator;CustomAttribute1=EnabledForMFA;CustomAttribute2=RemoteAccessAllowed;CustomAttribute3=HighPrivilegeAccount"
+    },
+    "sidHistory": {
+      "example": "S-1-5-21-123456789-987654321-555555555-1105"
+    },
+    "userLoginHours": {
+      "example": "Monday-Friday 08:00-18:00"
+    },
+    "hostAddress": {
+      "example": "192.168.1.105"
+    },
+    "deviceVersion": {
+      "example": "Windows 10 Pro 22H2 19045.3693"
+    }
+  }
+}

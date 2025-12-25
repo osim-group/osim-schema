@@ -1,0 +1,174 @@
+{
+  "group": "asset",
+  "category": "network_asset",
+  "title": "certificate",
+  "label": "Certificate",
+  "description": "Network asset certificate records the digital certificates used for secure communication, including SSL/TLS certificates, their issuance details, and validity periods.",
+  "definitions": {
+    "certType": {
+      "example": "SSL"
+    },
+    "validTime": {
+      "example": "2023-01-01 00:00:00 to 2024-12-31 23:59:59"
+    },
+    "signature": {
+      "example": "SHA256-RSA"
+    },
+    "assetId": {
+      "example": "ASSET-2023-CERT-001"
+    },
+    "relateId": {
+      "example": "CERT-REL-2023-001"
+    },
+    "assetName": {
+      "example": "web-server-01.securecorp.com"
+    },
+    "assetCategory": {
+      "example": "certificate"
+    },
+    "unitId": {
+      "example": "UNIT-2023-CERT-001"
+    },
+    "unitName": {
+      "example": "SecureCorp IT Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Certificate Authority Division"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "web-server-01-cert-alias"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "assetTag": {
+      "example": "[SSL_Certificate, SecureCorp_Web_Server]"
+    },
+    "orgId": {
+      "example": "ORG-2023-CERT-001"
+    },
+    "orgName": {
+      "example": "SecureCorp Certificate Management"
+    },
+    "netId": {
+      "example": "SD-2023-CERT-001"
+    },
+    "securityZone": {
+      "example": "DMZ"
+    },
+    "assetUser": {
+      "example": "admin@securecorp.com"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetUserMail": {
+      "example": "admin@securecorp.com"
+    },
+    "assetOwnerName": {
+      "example": "SecureCorp Certificate Management"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetOwnerMail": {
+      "example": "certificate-manager@securecorp.com"
+    },
+    "assetDepartmentName": {
+      "example": "Certificate Management Department"
+    },
+    "departmentHeadName": {
+      "example": "Alice Johnson"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-234-5678"
+    },
+    "departmentHeadMail": {
+      "example": "alice.johnson@securecorp.com"
+    },
+    "assetDescription": {
+      "example": "SSL certificate for web server web-server-01.securecorp.com in the DMZ, managed by the Certificate Management Department under SecureCorp IT Department for secure HTTPS communication in the finance industry."
+    },
+    "createTime": {
+      "example": "2023-01-01 00:00:00"
+    },
+    "updateTime": {
+      "example": "2023-12-15 14:30:00"
+    },
+    "assetGroup": {
+      "example": "Certificate Management Department"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "San Francisco"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-CA-SF"
+    },
+    "assetGeoCity": {
+      "example": "San Francisco"
+    },
+    "assetGeoCounty": {
+      "example": "San Francisco County"
+    },
+    "assetGeoRegion": {
+      "example": "California"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Rack-A-03-Bay-12"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "company"
+    },
+    "otherInfo": {
+      "example": "Issued by DigiCert for securecorp.com domain; Subject Alternative Names: *.securecorp.com, securecorp.com, www.securecorp.com; Key Usage: Digital Signature, Key Encipherment; Extended Key Usage: TLS Web Server Authentication, TLS Web Client Authentication; Serial Number: 1234567890ABCDEF1234567890ABCDEF; Certificate Authority: DigiCert Global Root CA; CRL Distribution Points: http://crl.digicert.com/DigiCertGlobalRootCA.crl; OCSP Responder: http://ocsp.digicert.com; Fingerprint (SHA-256): 1A2B3C4D5E6F7A8B9C0D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B"
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

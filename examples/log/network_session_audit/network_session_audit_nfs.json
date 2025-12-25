@@ -1,0 +1,117 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "nfs_audit",
+  "label": "NFS Audit",
+  "description": "Records audit logs of NFS (Network File System) sessions, including file access and permission events.",
+  "dataSource": [
+    "Network Detection and Response"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "fileName": {
+      "example": "malware_delivery.html"
+    },
+    "machineCode": {
+      "example": "DC-01-SRV-003"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Windows Server 2019"
+    },
+    "deviceName": {
+      "example": "DC-01-SRV-003"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "eventId": {
+      "example": "e0e8b456-7f89-4a1c-9b2d-f1c3a4b5d6e7"
+    },
+    "name": {
+      "example": "NFS File Access Alert - DC-01-SRV-003"
+    },
+    "message": {
+      "example": "malware_delivery.html"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:25"
+    },
+    "catOutcome": {
+      "example": "FAIL"
+    },
+    "logType": {
+      "example": "file"
+    },
+    "opType": {
+      "example": "read"
+    },
+    "XFF": {
+      "example": "203.0.113.5, 198.51.100.23"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:AB:CD:EF"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "950 El Camino Real, Santa Clara, CA 95050"
+    },
+    "destGeoCountry": {
+      "example": "Germany"
+    },
+    "destGeoRegion": {
+      "example": "Bavaria"
+    },
+    "destGeoCity": {
+      "example": "Munich"
+    },
+    "destGeoAddress": {
+      "example": "Bavariaring 15, 80331 München, Germany"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "nfs"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "10.0.17763.316"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "192.168.1.10"
+    },
+    "interfaceName": {
+      "example": "eth0"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "group": "asset",
+  "category": "data_asset",
+  "title": "api",
+  "label": "API",
+  "description": "An API data asset represents programmable interfaces that enable secure data exchange between systems, often monitored for access patterns and vulnerabilities.",
+  "definitions": {
+    "requestUrl": {
+      "example": "/v1/users/12345/profile"
+    },
+    "requestMethod": {
+      "example": "GET"
+    },
+    "openLevel": {
+      "example": "public_disclosure"
+    },
+    "assetId": {
+      "example": "api.example.com"
+    },
+    "relateId": {
+      "example": "api.example.com-20230815122100"
+    },
+    "assetName": {
+      "example": "api.example.com User Profile API"
+    },
+    "assetCategory": {
+      "example": "api"
+    },
+    "unitId": {
+      "example": "org-unit-12345"
+    },
+    "unitName": {
+      "example": "Engineering Department API Team"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Financial Conduct Authority"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "User Profile API"
+    },
+    "assetSource": {
+      "example": "api.example.com"
+    },
+    "orgId": {
+      "example": "org-unit-12345"
+    },
+    "orgName": {
+      "example": "Example Fintech Corp"
+    },
+    "netId": {
+      "example": "sec-domain-7890123456789012345678901234567890123456789014567890"
+    },
+    "securityZone": {
+      "example": "external_api_zone"
+    },
+    "assetUser": {
+      "example": "jdoe"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-987-6543"
+    },
+    "assetUserMail": {
+      "example": "jdoe@example.com"
+    },
+    "assetOwnerName": {
+      "example": "John Doe"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "assetOwnerMail": {
+      "example": "jdoe@example.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Operations and Asset Management"
+    },
+    "departmentHeadName": {
+      "example": "Jane Smith"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-234-5678"
+    },
+    "departmentHeadMail": {
+      "example": "jsmith@example.com"
+    },
+    "assetDescription": {
+      "example": "User Profile API for external customer data access, managed by Engineering Department API Team under IT Operations and Asset Management, used by jdoe for secure profile data exchange in the finance sector."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "assetGroup": {
+      "example": "Engineering Department API Team"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "US-LAX"
+    },
+    "assetGeoCountyCode": {
+      "example": "US-LAX-001"
+    },
+    "assetGeoCity": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCounty": {
+      "example": "Los Angeles County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "12345 Main Street, Los Angeles, CA 90001, United States"
+    },
+    "assetRegion": {
+      "example": "DMZ zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "medium"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Rack-42B"
+    },
+    "unitRole": {
+      "example": "regulatory_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "API version: 1.2.3; Rate limit: 1000 requests per hour; Authentication: OAuth 2.0; Supports CORS; Last security scan passed: 2023-08-14."
+    },
+    "assetAddress": {
+      "example": "203.0.113.45"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

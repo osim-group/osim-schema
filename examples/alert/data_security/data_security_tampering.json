@@ -1,0 +1,241 @@
+{
+  "group": "alert",
+  "category": "data_security",
+  "title": "data_tampering",
+  "label": "Data Tampering",
+  "description": "Alerts indicating unauthorized modifications or alterations to data, potentially compromising data integrity and security.",
+  "dataSource": [
+    "API Risk Monitoring System",
+    "Database Audit System"
+  ],
+  "definitions": {
+    "filePath": {
+      "example": "C:\\Program Files\\ImportantApp\\config\\secure_settings.ini"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:30:22"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:30:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:30:35"
+    },
+    "relateUserName": {
+      "example": "admin_backup"
+    },
+    "srcUserName": {
+      "example": "Administrator"
+    },
+    "fileName": {
+      "example": "secure_settings.ini"
+    },
+    "destHostName": {
+      "example": "srv-backup01.contoso.local"
+    },
+    "requestUrl": {
+      "example": "/backup/secure_settings.ini"
+    },
+    "requestUrlQuery": {
+      "example": "/backup/secure_settings.ini?action=overwrite&timestamp=1692113422"
+    },
+    "payload": {
+      "example": "overwrite"
+    },
+    "machineCode": {
+      "example": "DESKTOP-7A3B9F2"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Windows Server Backup"
+    },
+    "deviceName": {
+      "example": "srv-backup01.contoso.local"
+    },
+    "deviceAddress": {
+      "example": "10.10.5.100"
+    },
+    "eventId": {
+      "example": "b4b5a7e2-3f8a-4e15-9c8d-1e2f3a4b5c6d"
+    },
+    "name": {
+      "example": "Unauthorized Data Modification - secure_settings.ini overwritten"
+    },
+    "message": {
+      "example": "overwrite"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:30:38"
+    },
+    "catOutcome": {
+      "example": "FAIL"
+    },
+    "logType": {
+      "example": "file"
+    },
+    "opType": {
+      "example": "modify"
+    },
+    "XFF": {
+      "example": "192.168.1.150, 203.0.113.5"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:5D:F7:1B"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Jose, CA 95131, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "Redmond"
+    },
+    "destGeoAddress": {
+      "example": "456 Microsoft Way, Redmond, CA 98052, United States"
+    },
+    "dataSourceAddress": {
+      "example": "10.10.5.100"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "dvcAction": {
+      "example": "blocked"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "Windows Server 2019 10.0.17763.4377"
+    },
+    "srcAddress": {
+      "example": "192.168.1.150"
+    },
+    "destAddress": {
+      "example": "10.10.5.100"
+    },
+    "subTechniqueId": {
+      "example": "T1565.002"
+    },
+    "techniqueName": {
+      "example": "Data Manipulation"
+    },
+    "techniqueId": {
+      "example": "T1565"
+    },
+    "tacticName": {
+      "example": "Impact"
+    },
+    "tacticId": {
+      "example": "TA0009"
+    },
+    "killChain": {
+      "example": "KC_Exploitation"
+    },
+    "confidence": {
+      "example": "High"
+    },
+    "ruleId": {
+      "example": "WIN-BACKUP-ALERT-1012"
+    },
+    "ruleType": {
+      "example": "/DataTampering/FileTampering"
+    },
+    "ruleName": {
+      "example": "Unauthorized Data Modification - secure_settings.ini Overwrite via Backup Service"
+    },
+    "attackerAddress": {
+      "example": "192.168.1.150"
+    },
+    "victimAddress": {
+      "example": "10.10.5.100"
+    },
+    "subTechniqueName": {
+      "example": "Data Staged"
+    },
+    "suggestion": {
+      "example": "admin_backup"
+    },
+    "sql": {
+      "example": "COMPROMISED"
+    },
+    "dbName": {
+      "example": "SecureSettingsDB"
+    },
+    "dbType": {
+      "example": "MySQL"
+    },
+    "responseBody": {
+      "example": "status"
+    },
+    "relateAddress": {
+      "example": "203.0.113.5"
+    },
+    "relateInfo": {
+      "example": "Unauthorized overwrite of secure_settings.ini configuration file from backup service admin_backup account."
+    },
+    "clientPrg": {
+      "example": "sqlplus.exe"
+    },
+    "hostName": {
+      "example": "srv-backup01"
+    },
+    "osUser": {
+      "example": "Administrator"
+    },
+    "httpReferer": {
+      "example": "https://internal.contoso.local/admin/backup_management.php"
+    },
+    "requestHeader": {
+      "example": "POST /backup/secure_settings.ini?action=overwrite&timestamp=1692113422 HTTP/1.1\nHost: srv-backup01.contoso.local\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5790.110 Safari/537.36\nAccept: */*\nAccept-Encoding: gzip, deflate, br\nAccept-Language: en-US,en;q=0.9\nConnection: keep-alive\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 8\nX-Forwarded-For: 192.168.1.150, 203.0.113.5\nReferer: https://internal.contoso.local/admin/backup_management.php\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9iYWNrdXAiLCJuYW1lIjoiQWRtaW5pc3RyYXRvciIsImlhdCI6MTY5MjExMzQyMiwiZXhwIjoxNjkyMTE3MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\nX-Client-IP: 192.168.1.150\nX-Real-IP: 203.0.113.5"
+    },
+    "requestBody": {
+      "example": "action=overwrite&timestamp=1692113422&newConfigData=%7B%22encryption%22%3A%22disabled%22%2C%22backupPath%22%3A%22%5C%5C192.168.1.200%5Cshare%5Cbackups%22%2C%22retentionDays%22%3A0%7D"
+    },
+    "requestMethod": {
+      "example": "POST"
+    },
+    "requestContentType": {
+      "example": "application/x-www-form-urlencoded"
+    },
+    "responseHeader": {
+      "example": "HTTP/1.1 200 OK\nDate: Tue, 15 Aug 2023 14:30:45 GMT\nServer: Apache/2.4.41 (Win64) OpenSSL/1.1.1k\nContent-Type: text/plain; charset=UTF-8\nContent-Length: 15\nConnection: close\nX-Powered-By: PHP/7.4.3\nX-Content-Type-Options: nosniff\nX-Frame-Options: DENY\nX-XSS-Protection: 1; mode=block\nStrict-Transport-Security: max-age=31536000; includeSubDomains\nCache-Control: no-cache, no-store, must-revalidate\nPragma: no-cache\nExpires: 0\nAccess-Control-Allow-Origin: *\nAccess-Control-Allow-Methods: POST, GET, OPTIONS\nAccess-Control-Allow-Headers: Content-Type, Authorization, X-Client-IP, X-Real-IP\nX-Request-ID: b4b5a7e2-3f8a-4e15-9c8d-1e2f3a4b5c6d\nX-Response-Time: 0.023s"
+    },
+    "responseContentType": {
+      "example": "text/plain; charset=UTF-8"
+    },
+    "md5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "fileType": {
+      "example": "Configuration"
+    },
+    "httpVersion": {
+      "example": "HTTP/1.1"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5790.110 Safari/537.36"
+    }
+  }
+}

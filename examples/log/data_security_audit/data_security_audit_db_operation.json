@@ -1,0 +1,160 @@
+{
+  "group": "log",
+  "category": "data_security_audit",
+  "title": "database_operation_audit",
+  "label": "Database Operation Audit",
+  "description": "Records and audits all database operations including queries, modifications, and access attempts for security compliance.",
+  "dataSource": [
+    "Database Audit System",
+    "Network Detection and Response"
+  ],
+  "tag": [
+    "Data Leakage"
+  ],
+  "definitions": {
+    "relateUserName": {
+      "example": "dbadmin"
+    },
+    "srcUserName": {
+      "example": "dbadmin"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:30:22"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:30:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:30:35"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:1C:B3:09:85:15"
+    },
+    "responseMsg": {
+      "example": "Query executed successfully: 2 rows affected."
+    },
+    "relateAddress": {
+      "example": "192.168.10.100"
+    },
+    "relateInfo": {
+      "example": "Role: Database Administrator; Account Status: Active; Department: IT Operations; Connection Pool: Production-DB-Pool-1"
+    },
+    "dbType": {
+      "example": "MySQL"
+    },
+    "srcTransAddress": {
+      "example": "192.168.1.50"
+    },
+    "clientPrg": {
+      "example": "MySQL Workbench"
+    },
+    "osUser": {
+      "example": "dbadmin"
+    },
+    "requestUrl": {
+      "example": "/production_schema/customers"
+    },
+    "machineCode": {
+      "example": "DBSRV-PROD-01"
+    },
+    "productVendorName": {
+      "example": "Oracle Corporation"
+    },
+    "deviceSendProductName": {
+      "example": "MySQL Database Server"
+    },
+    "deviceName": {
+      "example": "DBSRV-PROD-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.10.100"
+    },
+    "deviceVersion": {
+      "example": "MySQL 8.0.33"
+    },
+    "eventId": {
+      "example": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "name": {
+      "example": "Database SELECT query on production_schema.customers by dbadmin from 192.168.1.50"
+    },
+    "message": {
+      "example": "dbadmin"
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:30:38"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "app"
+    },
+    "opType": {
+      "example": "query"
+    },
+    "srcAddress": {
+      "example": "192.168.1.50"
+    },
+    "destAddress": {
+      "example": "192.168.10.100"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "1600 Amphitheatre Parkway, Mountain View, CA 94043"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "mysql"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "dbName": {
+      "example": "production_schema"
+    },
+    "requestUrlQuery": {
+      "example": "/production_schema/customers?action=SELECT"
+    },
+    "destHostName": {
+      "example": "dbsrv-prod-01.example.com"
+    },
+    "httpReferer": {
+      "example": "https://192.168.1.50:8443/dba_dashboard/query_interface.html"
+    },
+    "hostName": {
+      "example": "dbsrv-prod-01"
+    },
+    "sql": {
+      "example": "active"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.10.100"
+    }
+  }
+}

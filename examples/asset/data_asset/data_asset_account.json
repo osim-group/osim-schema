@@ -1,0 +1,159 @@
+{
+  "group": "asset",
+  "category": "data_asset",
+  "title": "account",
+  "label": "Account",
+  "description": "This category records account-related data assets, including user credentials and authentication details for access control.",
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "passwd": {
+      "example": "Admin@2023"
+    },
+    "accountType": {
+      "example": "administrator"
+    },
+    "status": {
+      "example": "active"
+    },
+    "assetId": {
+      "example": "ASSET-ACC-20230815-001"
+    },
+    "relateId": {
+      "example": "ACC-20230815-001-ADMIN"
+    },
+    "assetName": {
+      "example": "Admin Account - Main Administrator"
+    },
+    "assetCategory": {
+      "example": "account"
+    },
+    "unitId": {
+      "example": "UNIT-20230815-001"
+    },
+    "unitName": {
+      "example": "IT Department - Security Team"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Cybersecurity Regulatory Authority"
+    },
+    "industry": {
+      "example": "finance"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "admin-main-account"
+    },
+    "assetSource": {
+      "example": "192.168.1.100"
+    },
+    "orgId": {
+      "example": "ORG-20230815-001"
+    },
+    "orgName": {
+      "example": "Global Financial Services Inc."
+    },
+    "netId": {
+      "example": "SEC-DOM-20230815-001"
+    },
+    "securityZone": {
+      "example": "DMZ-External-001"
+    },
+    "assetUser": {
+      "example": "admin"
+    },
+    "assetOwnerMail": {
+      "example": "admin@globalfinancialservices.com"
+    },
+    "assetDepartmentName": {
+      "example": "IT Security Operations"
+    },
+    "departmentHeadName": {
+      "example": "John Smith"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-123-4567"
+    },
+    "departmentHeadMail": {
+      "example": "john.smith@globalfinancialservices.com"
+    },
+    "assetDescription": {
+      "example": "Administrator account for the IT Security Operations department, used by the main system administrator (admin) for managing core security infrastructure and access controls within the Global Financial Services Inc. finance sector."
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2023-08-15 14:30:00"
+    },
+    "assetGroup": {
+      "example": "IT Security Operations - Core Infrastructure"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "San Francisco"
+    },
+    "assetGeoCity": {
+      "example": "San Francisco"
+    },
+    "assetGeoCounty": {
+      "example": "San Francisco County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "123 Main Street, San Francisco, CA 94105, United States"
+    },
+    "assetRegion": {
+      "example": "internal network"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "DataCenter-01-Rack-12-U-24"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "central_government"
+    },
+    "otherInfo": {
+      "example": "Account credentials (username: admin, password: Admin@2023) are managed by IT Security Operations department head John Smith (john.smith@globalfinancialservices.com, +1-555-123-4567). Account is hosted on server 192.168.1.100 in cabinet DataCenter-01-Rack-12-U-24, located at 123 Main Street, San Francisco. Access is restricted to the internal network and DMZ-External-001 security zone."
+    },
+    "assetAddress": {
+      "example": "192.168.1.100"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

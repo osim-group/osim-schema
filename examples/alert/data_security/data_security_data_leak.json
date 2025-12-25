@@ -1,0 +1,177 @@
+{
+  "group": "alert",
+  "category": "data_security",
+  "title": "data_leak",
+  "label": "Data Leak",
+  "description": "Monitors and alerts on unauthorized access or exposure of sensitive data, indicating potential data breaches.",
+  "dataSource": [
+    "API Risk Monitoring System",
+    "Database Audit System",
+    "Endpoint DLP System",
+    "Network DLP System"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "destUserName": {
+      "example": "user"
+    },
+    "ccUserName": {
+      "example": "admin@example.com;user@example.com"
+    },
+    "bccUserName": {
+      "example": "admin@example.com;user@example.com;audit@example.com"
+    },
+    "filePath": {
+      "example": "C:\\Users\\admin\\Documents\\confidential_data.xlsx"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:25"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:20"
+    },
+    "relateUserName": {
+      "example": "audit_user"
+    },
+    "targetFilename": {
+      "example": "confidential_data.xlsx"
+    },
+    "fileName": {
+      "example": "confidential_data.xlsx"
+    },
+    "processName": {
+      "example": "excel.exe"
+    },
+    "requestMethod": {
+      "example": "POST"
+    },
+    "httpVersion": {
+      "example": "HTTP/1.1"
+    },
+    "httpReferer": {
+      "example": "https://internal.example.com/dashboard/file_upload.php"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+    },
+    "requestHeader": {
+      "example": "Content-Type: application/x-www-form-urlencoded; charset=utf-8\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIn0.Ks_K2N3QN7hVZQN5QYQYQ\nContent-Length: 2048\nHost: api.example.com\nConnection: keep-alive\nAccept: application/json\nAccept-Encoding: gzip, deflate\nCookie: session_id=abc123def456; csrf_token=xyz789"
+    },
+    "responseHeader": {
+      "example": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 512\nServer: nginx/1.18.0\nDate: Tue, 15 Aug 2023 14:32:25 GMT\nConnection: keep-alive\nAccess-Control-Allow-Origin: *\nAccess-Control-Allow-Credentials: true\nSet-Cookie: session_token=updated_789xyz; Path=/; HttpOnly"
+    },
+    "requestContentType": {
+      "example": "application/x-www-form-urlencoded; charset=utf-8"
+    },
+    "responseContentType": {
+      "example": "application/json"
+    },
+    "requestBody": {
+      "example": "file=confidential_data.xlsx&action=upload&destination=cloud_storage&encryption_key=supersecretkey123&overwrite=true&notify_users=admin@example.com,user@example.com&timestamp=2023-08-15T14:32:18Z"
+    },
+    "responseBody": {
+      "example": "success"
+    },
+    "loginUser": {
+      "example": "admin"
+    },
+    "mailSubject": {
+      "example": "Quarterly Financial Report and Confidential Data for Review"
+    },
+    "mailContent": {
+      "example": "confidential_data.xlsx"
+    },
+    "clientPrg": {
+      "example": "mysql-connector-java-8.0.30.jar"
+    },
+    "requestUrl": {
+      "example": "/v1/files/upload"
+    },
+    "requestUrlQuery": {
+      "example": "/files/upload?file=confidential_data.xlsx&action=upload&destination=cloud_storage&encryption_key=supersecretkey123&overwrite=true&notify_users=admin@example.com,user@example.com&timestamp=2023-08-15T14:32:18Z"
+    },
+    "XFF": {
+      "example": "203.0.113.45, 198.51.100.22, 192.0.2.123"
+    },
+    "hostName": {
+      "example": "WIN-PROD-SERVER01"
+    },
+    "exfiltrationChannel": {
+      "example": "cloudServices"
+    },
+    "md5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "fileType": {
+      "example": "Document"
+    },
+    "fileGuid": {
+      "example": "{9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d}"
+    },
+    "machineCode": {
+      "example": "WIN-PROD-SERVER01-7C2B9F01A3D4"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Microsoft Windows Security Event Log"
+    },
+    "deviceName": {
+      "example": "WIN-PROD-SERVER01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "6f8d4a2c-1e4b-4a7d-b3f9-5c6d7e8f9a0b"
+    },
+    "name": {
+      "example": "Unauthorized File Upload to Cloud Storage Detected"
+    },
+    "message": {
+      "example": "Unauthorized file upload attempt detected: User admin attempted to upload confidential file confidential_data.xlsx from path C:\\Users\\admin\\Documents\\confidential_data.xlsx to cloud storage via API endpoint https://api.example.com/v1/files/upload using process excel.exe. The file, containing sensitive financial data, was potentially exfiltrated via cloudServices channel. The request originated from host WIN-PROD-SERVER01 (192.168.1.100) and was flagged due to the inclusion of an encryption key in the request body and the file's confidential nature. Action required: Investigate user activity and secure the data."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:26"
+    },
+    "catOutcome": {
+      "example": "FAIL"
+    },
+    "logType": {
+      "example": "file"
+    },
+    "opType": {
+      "example": "send"
+    },
+    "srcMacAddress": {
+      "example": "00:50:56:3A:2B:1C"
+    },
+    "destMacAddress": {
+      "example": "00:1A:2B:3C:4D:5E"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Francisco"
+    },
+    "srcGeoAddress": {
+      "example": "1600 Pennsylvania Avenue NW, Washington, DC 20500, United States"
+    },
+    "destHostName": {
+      "example": "api.example.com"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    }
+  }
+}

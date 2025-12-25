@@ -1,0 +1,147 @@
+{
+  "group": "log",
+  "category": "authentication_and_access",
+  "title": "network_login_authentication",
+  "label": "Network Login Authentication",
+  "description": "Records network login attempts and authentication events, including success, failure, and related access control activities.",
+  "dataSource": [
+    "Firewall",
+    "Network Detection and Response",
+    "VPN System",
+    "Zero Trust"
+  ],
+  "tag": [
+    "Brute Force"
+  ],
+  "definitions": {
+    "srcUserName": {
+      "example": "admin"
+    },
+    "startTime": {
+      "example": "2023-08-15 14:32:10"
+    },
+    "endTime": {
+      "example": "2023-08-15 14:32:45"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-08-15 14:32:25"
+    },
+    "userName": {
+      "example": "John Doe"
+    },
+    "passwd": {
+      "example": "P@ssw0rd2023"
+    },
+    "destHostName": {
+      "example": "fileserver01.corp.local"
+    },
+    "requestMethod": {
+      "example": "POST"
+    },
+    "httpVersion": {
+      "example": "HTTP/1.1"
+    },
+    "requestUrlQuery": {
+      "example": "/login?username=John%20Doe&action=authenticate&domain=corp.local"
+    },
+    "requestUrl": {
+      "example": "/login"
+    },
+    "userAgent": {
+      "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+    },
+    "machineCode": {
+      "example": "DC-01-SRV-2023-08-15"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco ASA"
+    },
+    "deviceName": {
+      "example": "DC-01-SRV"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.10"
+    },
+    "eventId": {
+      "example": "A1B2C3D4-E5F6-7890-ABCD-EF1234567890"
+    },
+    "name": {
+      "example": "Successful Network Login for John Doe on fileserver01.corp.local"
+    },
+    "message": {
+      "example": "User John Doe successfully authenticated to fileserver01.corp.local via HTTPS POST request from device DC-01-SRV (192.168.1.10) using credentials for domain corp.local. Authentication completed at 14:32:45."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-08-15 14:32:47"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "account"
+    },
+    "opType": {
+      "example": "login"
+    },
+    "XFF": {
+      "example": "203.0.113.45, 198.51.100.123"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:0C:29:AB:CD:EF"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "123 Main Street, San Jose, CA 95113, United States"
+    },
+    "destGeoCountry": {
+      "example": "United States"
+    },
+    "destGeoRegion": {
+      "example": "California"
+    },
+    "destGeoCity": {
+      "example": "San Jose"
+    },
+    "destGeoAddress": {
+      "example": "456 Oak Avenue, San Jose, CA 95131, United States"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.10"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "deviceVersion": {
+      "example": "ASA 9.20.2.10"
+    },
+    "srcAddress": {
+      "example": "192.168.1.100"
+    },
+    "destAddress": {
+      "example": "10.0.0.10"
+    },
+    "relateAddress": {
+      "example": "192.168.1.150"
+    }
+  }
+}

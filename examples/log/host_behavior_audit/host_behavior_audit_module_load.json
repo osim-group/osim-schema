@@ -1,0 +1,129 @@
+{
+  "group": "log",
+  "category": "host_behavior_audit",
+  "title": "module_load",
+  "label": "Module Load",
+  "description": "Records the loading of modules or libraries into the host system's memory, which may indicate potential security risks or unauthorized activities.",
+  "dataSource": [
+    "Endpoint Detection And Response System"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "processUserName": {
+      "example": "SYSTEM"
+    },
+    "parentProcessUserName": {
+      "example": "SYSTEM"
+    },
+    "processStartTime": {
+      "example": "2023-10-26 14:32:15"
+    },
+    "parentProcessStartTime": {
+      "example": "2023-10-26 14:32:10"
+    },
+    "image": {
+      "example": "C:\\Windows\\System32\\cmd.exe"
+    },
+    "parentImage": {
+      "example": "C:\\Windows\\System32\\services.exe"
+    },
+    "imageLoaded": {
+      "example": "C:\\Windows\\System32\\kernel32.dll"
+    },
+    "processName": {
+      "example": "cmd.exe"
+    },
+    "parentProcessName": {
+      "example": "services.exe"
+    },
+    "originalFileName": {
+      "example": "cmd.exe"
+    },
+    "machineCode": {
+      "example": "WIN-SERVER-2023-001"
+    },
+    "productVendorName": {
+      "example": "Microsoft"
+    },
+    "deviceSendProductName": {
+      "example": "Microsoft Windows"
+    },
+    "deviceName": {
+      "example": "WIN-SERVER-2023-001"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.100"
+    },
+    "eventId": {
+      "example": "d3b983f2-5e1a-4c7d-8b2a-9f6c4e1a0b3d"
+    },
+    "name": {
+      "example": "Module Load Alert: kernel32.dll loaded by cmd.exe"
+    },
+    "message": {
+      "example": "Module kernel32.dll loaded into process cmd.exe (PID: 1234) by user SYSTEM from parent process services.exe on host WIN-SERVER-2023-001 (192.168.1.100). This is a common Windows system library load event."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:21"
+    },
+    "catOutcome": {
+      "example": "OK"
+    },
+    "logType": {
+      "example": "module"
+    },
+    "opType": {
+      "example": "load"
+    },
+    "dataSourceAddress": {
+      "example": "192.168.1.100"
+    },
+    "processMd5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "parentProcessMd5": {
+      "example": "a8c8c8c8c8c8c8c8c8c8c8c8c8c8c8c8c8"
+    },
+    "processGuid": {
+      "example": "{5A6F9B7D-8C4A-4E12-BF3C-1D2E3F4A5B6C}"
+    },
+    "parentProcessGuid": {
+      "example": "{2B3C4D5E-6F7A-8B9C-0D1E-2F3A4B5C6D7E}"
+    },
+    "commandLine": {
+      "example": "C:\\Windows\\System32\\cmd.exe /c echo test"
+    },
+    "signatureStatus": {
+      "example": "Valid"
+    },
+    "md5": {
+      "example": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "company": {
+      "example": "Microsoft"
+    },
+    "fileDescription": {
+      "example": "Windows Command Processor"
+    },
+    "fileVersion": {
+      "example": "10.0.19041.3324"
+    },
+    "product": {
+      "example": "Microsoft Windows"
+    },
+    "hostAddress": {
+      "example": "192.168.1.100"
+    },
+    "deviceVersion": {
+      "example": "10.0.19041.3324"
+    }
+  }
+}

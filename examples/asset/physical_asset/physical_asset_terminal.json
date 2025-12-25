@@ -1,0 +1,213 @@
+{
+  "group": "asset",
+  "category": "physical_asset",
+  "title": "terminal",
+  "label": "Terminal",
+  "description": "A physical endpoint device that connects to a network, such as a desktop computer, laptop, or mobile device.",
+  "definitions": {
+    "maintainStartTime": {
+      "example": "2023-10-15 09:00:00"
+    },
+    "maintainEndTime": {
+      "example": "2023-10-15 17:00:00"
+    },
+    "osType": {
+      "example": "Windows"
+    },
+    "osVersion": {
+      "example": "Windows 10 Enterprise 22H2"
+    },
+    "osName": {
+      "example": "Windows 10 Enterprise 22H2"
+    },
+    "kernelVersion": {
+      "example": "10.0.19045.3693"
+    },
+    "deviceVendor": {
+      "example": "Dell Inc."
+    },
+    "deviceModel": {
+      "example": "Latitude 5420"
+    },
+    "hostName": {
+      "example": "WIN-7G2A8B9C1D3"
+    },
+    "cpuModel": {
+      "example": "Intel(R) Core(TM) i7-1185G7 @ 3.00GHz"
+    },
+    "memorySize": {
+      "example": "16 GB"
+    },
+    "diskModel": {
+      "example": "WDC WD10EZEX-00WN4A0"
+    },
+    "gpuModel": {
+      "example": "NVIDIA GeForce RTX 3060 Laptop GPU"
+    },
+    "nicModel": {
+      "example": "Intel(R) Ethernet Connection (13) I219-LM"
+    },
+    "mainboard": {
+      "example": "Dell Inc. Latitude 5420 Motherboard"
+    },
+    "hostAddress": {
+      "example": "192.168.1.105"
+    },
+    "assetId": {
+      "example": "ASSET-2023-DELL-5420-7G2A8B9C1D3"
+    },
+    "relateId": {
+      "example": "ASSET-2023-DELL-5420-7G2A8B9C1D3-MAINT-001"
+    },
+    "assetName": {
+      "example": "Dell Latitude 5420 - WIN-7G2A8B9C1D3"
+    },
+    "assetCategory": {
+      "example": "terminal"
+    },
+    "unitId": {
+      "example": "UNIT-IT-2023-001"
+    },
+    "unitName": {
+      "example": "IT Department"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "Cybersecurity and Infrastructure Security Agency"
+    },
+    "industry": {
+      "example": "government"
+    },
+    "assetCriticality": {
+      "example": "core"
+    },
+    "assetAlias": {
+      "example": "IT-Laptop-DELL5420-105"
+    },
+    "assetSource": {
+      "example": "192.168.1.105"
+    },
+    "orgId": {
+      "example": "ORG-IT-2023-001"
+    },
+    "orgName": {
+      "example": "IT Department"
+    },
+    "netId": {
+      "example": "SEC-DOM-IT-2023-001"
+    },
+    "securityZone": {
+      "example": "Internal Trust Zone"
+    },
+    "assetUser": {
+      "example": "John Smith"
+    },
+    "assetUserPhone": {
+      "example": "+1-555-012-3456"
+    },
+    "assetUserMail": {
+      "example": "john.smith@itdepartment.gov"
+    },
+    "assetOwnerName": {
+      "example": "John Smith"
+    },
+    "assetOwnerPhone": {
+      "example": "+1-555-789-0123"
+    },
+    "assetOwnerMail": {
+      "example": "john.smith@itdepartment.gov"
+    },
+    "assetDepartmentName": {
+      "example": "Information Technology Asset Management Unit"
+    },
+    "departmentHeadName": {
+      "example": "David Chen"
+    },
+    "departmentHeadPhone": {
+      "example": "+1-555-456-7890"
+    },
+    "departmentHeadMail": {
+      "example": "david.chen@itdepartment.gov"
+    },
+    "assetDescription": {
+      "example": "Dell Latitude 5420 Laptop assigned to John Smith in the IT Department's Information Technology Asset Management Unit, used for secure government administrative work, running Windows 10 Enterprise."
+    },
+    "createTime": {
+      "example": "2022-07-15 14:30:00"
+    },
+    "updateTime": {
+      "example": "2023-10-16 09:15:00"
+    },
+    "assetGroup": {
+      "example": "IT Department - Information Technology Asset Management Unit"
+    },
+    "assetGeoCountry": {
+      "example": "United States"
+    },
+    "assetGeoProvince": {
+      "example": "California"
+    },
+    "assetGeoProvinceCode": {
+      "example": "CA"
+    },
+    "assetGeoCityCode": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCountyCode": {
+      "example": "US"
+    },
+    "assetGeoCity": {
+      "example": "Los Angeles"
+    },
+    "assetGeoCounty": {
+      "example": "Los Angeles County"
+    },
+    "assetGeoRegion": {
+      "example": "North America"
+    },
+    "assetGeoAddress": {
+      "example": "1234 Main Street, Suite 500, Los Angeles, CA 90012, United States"
+    },
+    "assetRegion": {
+      "example": "Internal Trust Zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "high"
+    },
+    "assetIntegrity": {
+      "example": "high"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Cabinet 3, Row A, Slot 5"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "provincial"
+    },
+    "otherInfo": {
+      "example": "BIOS Version: Dell Inc. 1.22.0, Last Disk Scan: 2023-10-14, Warranty Expiry: 2025-07-15, Installed Software: Microsoft Office 365, Adobe Acrobat Reader DC, VPN Client v2.5.1, Asset Tag: IT-ASSET-7890"
+    },
+    "assetAddress": {
+      "example": "192.168.1.105"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "deviceSerialNumber": {
+      "example": "CN-7G2A8B9C1D3"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}

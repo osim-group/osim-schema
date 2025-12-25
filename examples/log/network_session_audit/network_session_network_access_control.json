@@ -1,0 +1,108 @@
+{
+  "group": "log",
+  "category": "network_session_audit",
+  "title": "network_access_control",
+  "label": "Network Access Control",
+  "description": "Records events related to endpoint authentication, posture assessment, authorization decisions, and policy enforcement during network access attempts.",
+  "dataSource": [
+    "Firewall"
+  ],
+  "definitions": {
+    "startTime": {
+      "example": "2023-10-26 14:32:18"
+    },
+    "endTime": {
+      "example": "2023-10-26 14:32:48"
+    },
+    "deviceReceiptTime": {
+      "example": "2023-10-26 14:32:20"
+    },
+    "machineCode": {
+      "example": "DESKTOP-7A8B9F3C"
+    },
+    "productVendorName": {
+      "example": "Cisco Systems"
+    },
+    "deviceSendProductName": {
+      "example": "Cisco ASA"
+    },
+    "deviceName": {
+      "example": "FW-CORP-ASA-01"
+    },
+    "deviceAddress": {
+      "example": "192.168.1.254"
+    },
+    "eventId": {
+      "example": "e4c3a7b8-9f2c-4d1a-bb5d-8e7f9a1b2c3d"
+    },
+    "name": {
+      "example": "Traffic Anomaly Detected on FW-CORP-ASA-01"
+    },
+    "message": {
+      "example": "Detected anomalous network traffic pattern on firewall FW-CORP-ASA-01 (192.168.1.254). Source host DESKTOP-7A8B9F3C initiated a high volume of outbound connections to multiple external IPs over a 30-second period, exceeding the established baseline by 450%. The traffic pattern suggests potential scanning or data exfiltration activity. Event ID: e4c3a7b8-9f2c-4d1a-bb5d-8e7f9a1b2c3d."
+    },
+    "collectorReceiptTime": {
+      "example": "2023-10-26 14:32:22"
+    },
+    "catOutcome": {
+      "example": "Attempt"
+    },
+    "logType": {
+      "example": "traffic"
+    },
+    "opType": {
+      "example": "connect"
+    },
+    "dataSourceAddress": {
+      "example": "10.10.10.50"
+    },
+    "srcMacAddress": {
+      "example": "00:1B:44:11:3A:E7"
+    },
+    "destMacAddress": {
+      "example": "00:50:56:C0:00:08"
+    },
+    "srcGeoCountry": {
+      "example": "United States"
+    },
+    "srcGeoRegion": {
+      "example": "California"
+    },
+    "srcGeoCity": {
+      "example": "San Jose"
+    },
+    "srcGeoAddress": {
+      "example": "95113, United States, California, San Jose, 1234 Tech Way"
+    },
+    "destGeoCountry": {
+      "example": "United Kingdom"
+    },
+    "destGeoRegion": {
+      "example": "England"
+    },
+    "destGeoCity": {
+      "example": "London"
+    },
+    "destGeoAddress": {
+      "example": "SW1A 1AA, United Kingdom, England, London, 10 Downing Street"
+    },
+    "srcAddress": {
+      "example": "192.168.1.105"
+    },
+    "destAddress": {
+      "example": "172.217.14.206"
+    },
+    "direction": {
+      "example": "01"
+    },
+    "transProtocol": {
+      "example": "TCP"
+    },
+    "appProtocol": {
+      "example": "https"
+    },
+    "deviceVersion": {
+      "example": "9.18(2)"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "group": "asset",
+  "category": "business_asset",
+  "title": "public_account",
+  "label": "Public Account",
+  "description": "A public account asset representing an official business account on social media platforms, monitored for security and compliance.",
+  "definitions": {
+    "officialAccountName": {
+      "example": "腾讯科技"
+    },
+    "wechatSubjectName": {
+      "example": "腾讯科技官方公众号"
+    },
+    "wechatSubjectType": {
+      "example": "enterprise"
+    },
+    "icon": {
+      "example": "https://example.com/icon/tencent-tech.png"
+    },
+    "requestDomain": {
+      "example": "tech.qq.com"
+    },
+    "wechatId": {
+      "example": "gh_1234567890abcdef"
+    },
+    "assetId": {
+      "example": "asset_tencent_tech_123456"
+    },
+    "relateId": {
+      "example": "rel_asset_tencent_tech_123456_01"
+    },
+    "assetName": {
+      "example": "腾讯科技官方公众号"
+    },
+    "assetCategory": {
+      "example": "official_account"
+    },
+    "unitId": {
+      "example": "unit_tencent_tech_7890"
+    },
+    "unitName": {
+      "example": "腾讯科技"
+    },
+    "unitType": {
+      "example": "company"
+    },
+    "supervisoryUnitName": {
+      "example": "深圳市市场监督管理局"
+    },
+    "industry": {
+      "example": "commercial_internet"
+    },
+    "assetCriticality": {
+      "example": "important"
+    },
+    "assetAlias": {
+      "example": "腾讯科技官方公众号"
+    },
+    "assetSource": {
+      "example": "tencent-tech-ip-monitor-system"
+    },
+    "orgId": {
+      "example": "org_tencent_tech_4567"
+    },
+    "orgName": {
+      "example": "腾讯科技集团"
+    },
+    "netId": {
+      "example": "sec_domain_tencent_tech_01"
+    },
+    "securityZone": {
+      "example": "external_zone"
+    },
+    "assetUser": {
+      "example": "张三"
+    },
+    "assetUserPhone": {
+      "example": "+86 13800138000"
+    },
+    "assetUserMail": {
+      "example": "zhangsan@tencent.com"
+    },
+    "assetOwnerName": {
+      "example": "腾讯科技集团"
+    },
+    "assetOwnerPhone": {
+      "example": "+86 13800138001"
+    },
+    "assetOwnerMail": {
+      "example": "tencent-tech@tencent.com"
+    },
+    "assetDepartmentName": {
+      "example": "腾讯科技网络安全部"
+    },
+    "departmentHeadName": {
+      "example": "李四"
+    },
+    "departmentHeadPhone": {
+      "example": "+86 13800138002"
+    },
+    "departmentHeadMail": {
+      "example": "lisi@tencent.com"
+    },
+    "assetDescription": {
+      "example": "腾讯科技集团旗下的腾讯科技官方公众号，由腾讯科技网络安全部管理，主要用于品牌宣传、产品发布和客户服务，属于重要的商业互联网资产，资产负责人为张三，联系电话+86 13800138000，邮箱zhangsan@tencent.com。"
+    },
+    "createTime": {
+      "example": "2023-08-15 12:21:00"
+    },
+    "updateTime": {
+      "example": "2024-01-10 15:30:45"
+    },
+    "assetGroup": {
+      "example": "腾讯科技网络安全部"
+    },
+    "assetGeoCountry": {
+      "example": "中国"
+    },
+    "assetGeoProvince": {
+      "example": "广东省"
+    },
+    "assetGeoCity": {
+      "example": "深圳市"
+    },
+    "assetGeoCounty": {
+      "example": "南山区"
+    },
+    "assetGeoRegion": {
+      "example": "深圳市"
+    },
+    "assetGeoAddress": {
+      "example": "深圳市南山区科技园科技中一路腾讯大厦"
+    },
+    "assetRegion": {
+      "example": "external_zone"
+    },
+    "assetProtectStatus": {
+      "example": "under_protection"
+    },
+    "assetConfidentiality": {
+      "example": "medium"
+    },
+    "assetIntegrity": {
+      "example": "medium"
+    },
+    "assetUsability": {
+      "example": "high"
+    },
+    "cabinetPosition": {
+      "example": "Tencent Data Center A, Cabinet 42, Rack 03"
+    },
+    "unitRole": {
+      "example": "key_unit"
+    },
+    "unitAffiliation": {
+      "example": "provincial"
+    },
+    "otherInfo": {
+      "example": "微信公众号认证类型：企业认证，认证主体：腾讯科技集团，粉丝数：约120万，最近一次内容更新：2024-01-09 18:00:00，主要发布内容：科技新闻、产品更新、行业洞察，关联业务系统：腾讯内容管理系统(CMS) ID: cms_tech_001，外部监测工具集成ID：monitor_wechat_tech_789。"
+    },
+    "assetAddress": {
+      "example": "203.0.113.45"
+    },
+    "assetMacAddress": {
+      "example": "00:1a:2b:3c:4d:5e"
+    },
+    "ipVersion": {
+      "example": "IPv4"
+    }
+  }
+}
