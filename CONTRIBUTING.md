@@ -78,7 +78,7 @@ git checkout -b fix/问题描述
 
 **新增 Schema**
 1. 确定适当的 `group` 和 `category`（参考现有 Schema 的分类）
-2. 创建新的 JSON 文件，使用蛇形命名法（snake_case）
+2. 创建新的 JSON 文件
 3. 遵循以下结构格式：
 ```json
 {
@@ -92,29 +92,37 @@ git checkout -b fix/问题描述
   "definitions": {
     "fieldName": {
       "label": "Field Label",
-      "requirement": "REQUIRED/OPTIONAL/CONDITIONAL",
+      "requirement": "REQUIRED/OPTIONAL/RECOMMENDED",
       "description": "Detailed description of the field, including its purpose and usage.",
-      "type": "string/integer/boolean/array/object",
-      "valid_type": "string_t/int32_t/int64_t/uint32_t/uint64_t/boolean_t/array_t/object_t",
-      "dataSource": ["Optional data source information"]
+      "type": "string/integer/long/boolean/array/enum",
+      "valid_type": "string_t/integer_t/boolean_t/array_t",
+      "dataSource": ["Optional data source information"],
+      "enum": {
+          "enumValue": {
+              "label": "Enum Label",
+              "description": "Detailed description of the value"
+          }
+      }
     }
   }
 }
 ```
 
 **修改现有 Schema**
+
 1. 保持向后兼容性，避免删除或重命名现有字段
 2. 如果需要添加新字段，确保它们有清晰的描述
 3. 更新字段的 `requirement` 属性时要谨慎
 
 **字段定义规范**
-- `requirement`: 必须为 "REQUIRED"、"OPTIONAL" 或 "CONDITIONAL"
-- `type`: 基本的 JSON 数据类型
-- `valid_type`: 更具体的验证类型（参考现有 Schema 的用法）
+
+- `requirement`: 必须为 "REQUIRED"、"OPTIONAL" 或 "RECOMMENDED"
+- `type`: 基本的数据类型
+- `valid_type`: 更具体的验证类型（参考现有 Schema 的用法），详情可见[valid.json](https://github.com/osim-group/osim-schema/blob/main/valid.json)
 - `description`: 必须清晰说明字段的用途和预期值
 
 **分类指南**
-- **group**: 高层次分组（如 log, alert, event 等）
+- **group**: 高层次分组（如 log, alert, incident等）
 - **category**: 更具体的分类（如 authentication_and_access, network_security 等）
 - **tag**: 用于搜索和过滤的关键词
 - **dataSource**: 此 Schema 适用的数据源类型
@@ -143,6 +151,7 @@ git checkout -b fix/问题描述
 - `docs`: 文档更新
 - `enhance`: 现有 Schema 的优化
 - `refactor`: Schema 结构调整
+- `other`: 其他更新内容
 
 示例：
 ```bash
@@ -176,7 +185,6 @@ git push origin schema/您的功能名称
 #### PR 检查清单
 在创建 PR 前，请确认：
 - [ ] Schema 格式正确，符合 JSON 规范
-- [ ] 所有必需的字段都已包含
 - [ ] 字段描述清晰完整
 - [ ] 使用了正确的分类和标签
 - [ ] 更新了相关文档（如需要）
@@ -186,7 +194,7 @@ git push origin schema/您的功能名称
 ## 贡献领域
 
 ### Schema 设计贡献
-- 新增安全事件类型 Schema
+- 新增Schema类型
 - 添加新的字段定义
 - 优化现有字段描述
 - 扩展数据源支持
