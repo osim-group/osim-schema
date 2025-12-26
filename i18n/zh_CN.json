@@ -6047,55 +6047,52 @@
     }
   },
   "dataSource": {
-    "NDR": {
-      "label": "网络防御响应"
-    },
-    "database_audit_system": {
+    "Database Audit System": {
       "label": "数据库审计系统"
     },
-    "firewall": {
+    "Firewall": {
       "label": "防火墙"
     },
-    "web_application_firewall": {
+    "Web Application Firewall": {
       "label": "WAF"
     },
-    "antivirus": {
+    "Antivirus": {
       "label": "防病毒"
     },
-    "bastion_host": {
+    "Bastion Host": {
       "label": "堡垒机"
     },
-    "anti_spam_gateway": {
+    "Anti Spam Gateway": {
       "label": "反垃圾邮件网关"
     },
-    "anti_ddos_system": {
+    "Anti DDoS System": {
       "label": "抗DDOS系统"
     },
-    "ndr_system": {
+    "Network Detection and Response": {
       "label": "NDR系统"
     },
-    "edr_system": {
+    "Endpoint Detection And Response System": {
       "label": "EDR系统"
     },
-    "honeypot_system": {
+    "Honeypot System": {
       "label": "蜜罐系统"
     },
-    "vpn_system": {
+    "VPN System": {
       "label": "VPN系统"
     },
-    "network_dlp_system": {
+    "Network DLP System": {
       "label": "网络DLP系统"
     },
-    "endpoint_dlp_system": {
+    "Endpoint DLP System": {
       "label": "终端DLP系统"
     },
-    "api_risk_monitoring_system": {
+    "API Risk Monitoring System": {
       "label": "API风险监测系统"
     },
-    "vulnerability_scanner": {
+    "Vulnerability Scanner": {
       "label": "漏洞扫描器"
     },
-    "zero_trust": {
+    "Zero Trust": {
       "label": "零信任"
     }
   }
