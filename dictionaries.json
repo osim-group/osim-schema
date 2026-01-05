@@ -474,7 +474,7 @@
   "responseTime": {
     "label": "Response Time",
     "description": "The time interval recorded from when a network request is sent by the client to when the server response is fully received.",
-    "type": "double",
+    "type": "long",
     "valid_type": "long_t"
   },
   "dnsType": {
