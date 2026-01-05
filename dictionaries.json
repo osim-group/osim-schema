@@ -6185,8 +6185,8 @@
     "type": "string",
     "valid_type": "string_t"
   },
-  "assetCriticality": {
-    "label": "Asset Criticality",
+  "assetImportance": {
+    "label": "Asset Importance",
     "description": "Asset importance level (e.g., normal, important, core, confidential, other).",
     "type": "enum",
     "valid_type": "string_t",
