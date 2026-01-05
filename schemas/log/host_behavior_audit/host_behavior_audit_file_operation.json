@@ -11,7 +11,7 @@
   "dataSource": [
     "Antivirus",
     "Endpoint DLP System",
-    "Endpoint Detection And Response System"
+    "Endpoint Detection And Response"
   ],
   "definitions": {
     "image": {
@@ -21,7 +21,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentImage": {
@@ -31,7 +31,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processId": {
@@ -41,7 +41,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processUserName": {
@@ -51,7 +51,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processMd5": {
@@ -61,7 +61,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processName": {
@@ -71,7 +71,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessName": {
@@ -81,7 +81,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessId": {
@@ -91,7 +91,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessUserName": {
@@ -101,7 +101,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessMd5": {
@@ -111,7 +111,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processStartTime": {
@@ -121,7 +121,7 @@
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessStartTime": {
@@ -131,7 +131,7 @@
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processGuid": {
@@ -141,7 +141,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessGuid": {
@@ -151,7 +151,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileType": {
@@ -205,7 +205,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileSize": {
@@ -217,7 +217,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "md5": {
@@ -229,7 +229,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "targetFilename": {
@@ -241,7 +241,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileName": {
@@ -253,7 +253,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "filePath": {
@@ -265,7 +265,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "originalFileName": {
@@ -275,7 +275,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "hostAddress": {
@@ -287,7 +287,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "hostName": {
@@ -299,7 +299,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "machineCode": {
@@ -311,7 +311,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "productVendorName": {
@@ -323,7 +323,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceSendProductName": {
@@ -335,7 +335,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceName": {
@@ -347,7 +347,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceAssetSubTypeId": {
@@ -581,7 +581,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceAddress": {
@@ -593,7 +593,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceVersion": {
@@ -605,7 +605,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "eventId": {
@@ -617,7 +617,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "name": {
@@ -629,7 +629,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "message": {
@@ -641,7 +641,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "startTime": {
@@ -653,7 +653,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "endTime": {
@@ -665,7 +665,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceReceiptTime": {
@@ -677,7 +677,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "collectorReceiptTime": {
@@ -689,41 +689,19 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "severity": {
       "label": "Severity Level",
       "requirement": "REQUIRED",
-      "description": "Indicates the severity level of the security threat for logs or alerts.",
-      "type": "enum",
-      "valid_type": "string_t",
-      "enum": {
-        "0": {
-          "label": "informational",
-          "description": "Informational event with no immediate security risk"
-        },
-        "3": {
-          "label": "low",
-          "description": "Low-severity security threat. Indicates a potential vulnerability or suspicious activity with minimal impact"
-        },
-        "5": {
-          "label": "medium",
-          "description": "Medium-severity security threat. Represents a confirmed security event with moderate impact"
-        },
-        "7": {
-          "label": "high",
-          "description": "High-severity security threat. Signifies a serious security incident with significant impact"
-        },
-        "10": {
-          "label": "critical",
-          "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
-        }
-      },
+      "description": "Indicates the severity level of the security threat for logs or alerts. 0: No risk, 1-3: Low risk, 4-6: Medium risk, 7-9: High risk, 10: Critical.",
+      "type": "integer",
+      "valid_type": "integer_t",
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "catOutcome": {
@@ -749,7 +727,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "logType": {
@@ -851,7 +829,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "opType": {
@@ -981,7 +959,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "dataSourceAddress": {
@@ -993,7 +971,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "filePermissions": {
@@ -1003,7 +981,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileCreateTime": {
@@ -1013,7 +991,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileOwner": {
@@ -1023,7 +1001,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileGroup": {
@@ -1033,7 +1011,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "eventCount": {
@@ -1045,7 +1023,7 @@
       "dataSource": [
         "Antivirus",
         "Endpoint DLP System",
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileGuid": {

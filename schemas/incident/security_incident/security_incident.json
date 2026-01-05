@@ -3,7 +3,7 @@
   "category": "security_incident",
   "title": "security_incident",
   "label": "Security Incident",
-  "description": "Records unauthorized access, data breaches, or other malicious activities compromising system integrity.",
+  "description": "A security incident refers to any confirmed violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices.",
   "definitions": {
     "incidentId": {
       "label": "Incident ID",

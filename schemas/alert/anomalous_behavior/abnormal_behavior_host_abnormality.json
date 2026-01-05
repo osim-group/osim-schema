@@ -5,7 +5,7 @@
   "label": "Host Behavior Anomaly",
   "description": "Monitors and alerts on unusual or suspicious activities detected on a host, indicating potential security threats or policy violations.",
   "dataSource": [
-    "Endpoint Detection And Response System"
+    "Endpoint Detection And Response"
   ],
   "definitions": {
     "processName": {
@@ -15,7 +15,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processId": {
@@ -25,7 +25,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processUserName": {
@@ -35,7 +35,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "image": {
@@ -45,7 +45,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processMd5": {
@@ -55,7 +55,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processGuid": {
@@ -65,7 +65,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessGuid": {
@@ -75,7 +75,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessName": {
@@ -85,7 +85,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessId": {
@@ -95,7 +95,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessUserName": {
@@ -105,7 +105,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentImage": {
@@ -115,7 +115,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessMd5": {
@@ -125,7 +125,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processChain": {
@@ -135,7 +135,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "commandLine": {
@@ -145,7 +145,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentCommandLine": {
@@ -155,7 +155,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "md5": {
@@ -165,7 +165,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destProcessId": {
@@ -175,7 +175,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destImage": {
@@ -185,7 +185,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "grantedAccess": {
@@ -195,7 +195,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "newThreadId": {
@@ -205,7 +205,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "startAddress": {
@@ -215,7 +215,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "startFunction": {
@@ -225,7 +225,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "startModule": {
@@ -235,7 +235,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "pipeName": {
@@ -245,7 +245,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "imageLoaded": {
@@ -255,7 +255,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcThreadId": {
@@ -265,7 +265,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "callTrace": {
@@ -275,7 +275,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "machineCode": {
@@ -285,7 +285,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "productVendorName": {
@@ -295,7 +295,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceSendProductName": {
@@ -305,7 +305,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceName": {
@@ -315,7 +315,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceAssetSubTypeId": {
@@ -547,7 +547,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceAddress": {
@@ -557,7 +557,7 @@
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "eventId": {
@@ -567,7 +567,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "name": {
@@ -577,7 +577,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "message": {
@@ -587,7 +587,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "startTime": {
@@ -597,7 +597,7 @@
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "endTime": {
@@ -607,7 +607,7 @@
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceReceiptTime": {
@@ -617,7 +617,7 @@
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "collectorReceiptTime": {
@@ -627,39 +627,17 @@
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "severity": {
       "label": "Severity Level",
       "requirement": "REQUIRED",
-      "description": "Indicates the severity level of the security threat for logs or alerts.",
-      "type": "enum",
-      "valid_type": "string_t",
-      "enum": {
-        "0": {
-          "label": "informational",
-          "description": "Informational event with no immediate security risk"
-        },
-        "3": {
-          "label": "low",
-          "description": "Low-severity security threat. Indicates a potential vulnerability or suspicious activity with minimal impact"
-        },
-        "5": {
-          "label": "medium",
-          "description": "Medium-severity security threat. Represents a confirmed security event with moderate impact"
-        },
-        "7": {
-          "label": "high",
-          "description": "High-severity security threat. Signifies a serious security incident with significant impact"
-        },
-        "10": {
-          "label": "critical",
-          "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
-        }
-      },
+      "description": "Indicates the severity level of the security threat for logs or alerts. 0: No risk, 1-3: Low risk, 4-6: Medium risk, 7-9: High risk, 10: Critical.",
+      "type": "integer",
+      "valid_type": "integer_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "catOutcome": {
@@ -683,7 +661,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "logType": {
@@ -783,7 +761,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "opType": {
@@ -911,7 +889,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcPort": {
@@ -921,7 +899,7 @@
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destPort": {
@@ -931,7 +909,7 @@
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcMacAddress": {
@@ -941,7 +919,7 @@
       "type": "string",
       "valid_type": "mac_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destMacAddress": {
@@ -951,7 +929,7 @@
       "type": "string",
       "valid_type": "mac_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcGeoCountry": {
@@ -961,7 +939,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcGeoRegion": {
@@ -971,7 +949,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcGeoCity": {
@@ -981,7 +959,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcGeoAddress": {
@@ -991,7 +969,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcGeoLatitude": {
@@ -1001,7 +979,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcGeoLongitude": {
@@ -1011,7 +989,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destGeoCountry": {
@@ -1021,7 +999,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destGeoRegion": {
@@ -1031,7 +1009,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destGeoCity": {
@@ -1041,7 +1019,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destGeoAddress": {
@@ -1051,7 +1029,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destGeoLatitude": {
@@ -1061,7 +1039,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destGeoLongitude": {
@@ -1071,7 +1049,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "dataSourceAddress": {
@@ -1081,7 +1059,7 @@
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "transProtocol": {
@@ -1101,7 +1079,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "appProtocol": {
@@ -1369,7 +1347,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "dvcAction": {
@@ -1379,7 +1357,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "direction": {
@@ -1407,7 +1385,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "deviceVersion": {
@@ -1417,7 +1395,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "srcAddress": {
@@ -1427,7 +1405,7 @@
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "destAddress": {
@@ -1437,7 +1415,7 @@
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "subTechniqueId": {
@@ -1447,7 +1425,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "techniqueName": {
@@ -1457,7 +1435,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "techniqueId": {
@@ -1467,7 +1445,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "tacticName": {
@@ -1477,7 +1455,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "tacticId": {
@@ -1487,7 +1465,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "killChain": {
@@ -1531,7 +1509,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "confidence": {
@@ -1555,7 +1533,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "ruleId": {
@@ -1565,7 +1543,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "ruleType": {
@@ -2249,7 +2227,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "ruleName": {
@@ -2259,7 +2237,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "attackerAddress": {
@@ -2269,7 +2247,7 @@
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "victimAddress": {
@@ -2279,7 +2257,7 @@
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "subTechniqueName": {
@@ -2289,7 +2267,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "suggestion": {
@@ -2299,7 +2277,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "victimPort": {
@@ -2309,7 +2287,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "attackerPort": {
@@ -2319,7 +2297,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "initiated": {
@@ -2329,7 +2307,7 @@
       "type": "boolean",
       "valid_type": "boolean_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "processStartTime": {
@@ -2339,7 +2317,7 @@
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "parentProcessStartTime": {
@@ -2349,7 +2327,7 @@
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "targetObject": {
@@ -2359,7 +2337,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "regNewName": {
@@ -2369,7 +2347,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "objectType": {
@@ -2379,7 +2357,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "regValue": {
@@ -2389,7 +2367,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "requestDomain": {
@@ -2399,7 +2377,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "responseAddress": {
@@ -2409,7 +2387,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "queryStatus": {
@@ -2419,7 +2397,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "targetFilename": {
@@ -2429,7 +2407,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileType": {
@@ -2481,7 +2459,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileSize": {
@@ -2491,7 +2469,7 @@
       "type": "long",
       "valid_type": "long_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileName": {
@@ -2501,7 +2479,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "filePath": {
@@ -2511,7 +2489,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "filePermissions": {
@@ -2521,7 +2499,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileCreateTime": {
@@ -2531,7 +2509,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileOwner": {
@@ -2541,7 +2519,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "fileGroup": {
@@ -2551,7 +2529,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "eventCount": {
@@ -2561,7 +2539,7 @@
       "type": "long",
       "valid_type": "long_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "signed": {
@@ -2571,7 +2549,7 @@
       "type": "boolean",
       "valid_type": "boolean_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "signature": {
@@ -2581,7 +2559,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "signatureStatus": {
@@ -2609,7 +2587,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "hostAddress": {
@@ -2619,7 +2597,7 @@
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "hostName": {
@@ -2629,7 +2607,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "integrityLevel": {
@@ -2661,7 +2639,7 @@
         }
       },
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     },
     "originalFileName": {
@@ -2671,7 +2649,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Endpoint Detection And Response System"
+        "Endpoint Detection And Response"
       ]
     }
   }

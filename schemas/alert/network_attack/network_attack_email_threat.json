@@ -16,7 +16,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Network Detection and Response"
+        "Anti Spam Gateway"
       ]
     },
     "srcAddress": {
@@ -537,31 +537,9 @@
     "severity": {
       "label": "Severity Level",
       "requirement": "REQUIRED",
-      "description": "Indicates the severity level of the security threat for logs or alerts.",
-      "type": "enum",
-      "valid_type": "string_t",
-      "enum": {
-        "0": {
-          "label": "informational",
-          "description": "Informational event with no immediate security risk"
-        },
-        "3": {
-          "label": "low",
-          "description": "Low-severity security threat. Indicates a potential vulnerability or suspicious activity with minimal impact"
-        },
-        "5": {
-          "label": "medium",
-          "description": "Medium-severity security threat. Represents a confirmed security event with moderate impact"
-        },
-        "7": {
-          "label": "high",
-          "description": "High-severity security threat. Signifies a serious security incident with significant impact"
-        },
-        "10": {
-          "label": "critical",
-          "description": "Critical-severity security threat. Denotes an immediate and severe threat to business operations or security posture, requiring urgent response"
-        }
-      },
+      "description": "Indicates the severity level of the security threat for logs or alerts. 0: No risk, 1-3: Low risk, 4-6: Medium risk, 7-9: High risk, 10: Critical.",
+      "type": "integer",
+      "valid_type": "integer_t",
       "dataSource": [
         "Anti Spam Gateway",
         "Network Detection and Response"
@@ -829,7 +807,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Anti Spam Gateway"
+        "Network Detection and Response"
       ]
     },
     "srcMacAddress": {
@@ -1294,7 +1272,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Network Detection and Response"
+        "Anti Spam Gateway"
       ]
     },
     "direction": {
@@ -2253,7 +2231,7 @@
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
-        "Network Detection and Response"
+        "Anti Spam Gateway"
       ]
     }
   }
