@@ -1141,7 +1141,7 @@
     "srcTransAddress": {
       "label": "Source Translated Address",
       "requirement": "RECOMMENDED",
-      "description": "Records the mapped source IP address after Network Address Translation (NAT).",
+      "description": "After undergoing network address translation (NAT), proxy server, or VPN tunnel encapsulation processing, the source IP address presented by the data packet at the network layer. This field records the actual sending source address of the traffic after address translation by intermediate devices.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -1151,7 +1151,7 @@
     "srcTransPort": {
       "label": "Source Translated Port",
       "requirement": "RECOMMENDED",
-      "description": "Records the mapped source port number after Network Address Translation (NAT).",
+      "description": "In the process of Network Address Translation (NAT) or Port Address Translation (PAT), the source port number is modified to a new value.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -1161,7 +1161,7 @@
     "destTransAddress": {
       "label": "Destination Translated Address",
       "requirement": "OPTIONAL",
-      "description": "Records the destination IP address after Network Address Translation (NAT) mapping.",
+      "description": "After undergoing destination network address translation (DNAT), port forwarding, or load balancing processing, the data packet ultimately arrives at the destination IP address at the network layer. This field records the actual receiving address of the traffic after address redirection.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -1171,7 +1171,7 @@
     "destTransPort": {
       "label": "Destination Translated Port",
       "requirement": "OPTIONAL",
-      "description": "Records the destination port number after Network Address Translation (NAT) mapping.",
+      "description": "During the process of destination network address translation (DNAT) or port redirection, the destination port number is modified to a new value.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [

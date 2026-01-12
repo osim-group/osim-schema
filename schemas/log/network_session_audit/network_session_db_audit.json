@@ -1337,7 +1337,7 @@
     "srcTransAddress": {
       "label": "Source Translated Address",
       "requirement": "OPTIONAL",
-      "description": "Records the mapped source IP address after Network Address Translation (NAT).",
+      "description": "After undergoing network address translation (NAT), proxy server, or VPN tunnel encapsulation processing, the source IP address presented by the data packet at the network layer. This field records the actual sending source address of the traffic after address translation by intermediate devices.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [

@@ -1064,7 +1064,7 @@
 		},
 		"ruleType": {
 			"label": "规则类型",
-			"description": "安全规则在检测框架中的标准化分类",
+			"description": "安全设备（如防火墙、IDS、IPS、EDR等）产生告警时对应的安全检测规则类型。该字段标识告警事件所属的安全威胁类别，反映设备内置规则库对特定攻击模式或异常行为的分类",
 			"enum": {
 				"/WebAttack/XXE": {
 					"label": "XXE注入",
@@ -2116,15 +2116,15 @@
 		},
 		"srcTransPort": {
 			"label": "转换后源端口",
-			"description": "在经过网络地址转换（NAT）或ARP欺骗后，数据包中实际的源端口号"
+			"description": "在网络地址转换（NAT）或端口地址转换（PAT）过程中，源端口号被修改后的值"
 		},
 		"destTransAddress": {
 			"label": "转换后目的IP",
-			"description": "在经过网络地址转换（NAT）或ARP欺骗后，数据包中实际的目的IP地址"
+			"description": "经过目的网络地址转换（DNAT）、端口转发或负载均衡处理后，数据包在网络层最终到达的目的IP地址"
 		},
 		"destTransPort": {
 			"label": "转换后目的端口",
-			"description": "在经过网络地址转换（NAT）或ARP欺骗后，数据包中实际的目的端口号"
+			"description": "在目的网络地址转换（DNAT）或端口重定向过程中，目的端口号被修改后的值"
 		},
 		"IoC": {
 			"label": "失陷指标",
@@ -2778,7 +2778,7 @@
 		},
 		"srcTransAddress": {
 			"label": "转换后源IP",
-			"description": "在经过网络地址转换（NAT）或ARP欺骗后，数据包中实际的源IP地址"
+			"description": "经过网络地址转换（NAT）、代理服务器或VPN隧道封装处理后，数据包在网络层呈现的源IP地址"
 		},
 		"loginUser": {
 			"label": "登录用户",
@@ -5994,7 +5994,7 @@
 		},
 		"srcTransMacAddress": {
 			"label": "转换后的源MAC地址",
-			"description": "在经过网络地址转换（NAT）或ARP欺骗后，数据包中实际的目的MAC地址"
+			"description": "在二层网络传输过程中，经过MAC地址转换（如代理、隧道封装）或受网络攻击（如ARP欺骗）影响后，数据包中呈现的源MAC地址"
 		},
 		"responseBody": {
 			"label": "响应体",
