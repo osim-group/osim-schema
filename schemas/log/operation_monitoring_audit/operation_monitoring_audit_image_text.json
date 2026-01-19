@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "operation_monitoring_audit",
-  "title": "image_text",
+  "title": "operation_monitoring_audit_image_text",
   "label": "Image Text",
   "description": "Logs capturing OCR (Optical Character Recognition) operations and text extraction activities from images for audit and monitoring purposes.",
   "dataSource": [

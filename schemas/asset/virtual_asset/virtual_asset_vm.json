@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "virtual_asset",
-  "title": "virtual_machine",
+  "title": "virtual_asset_vm",
   "label": "Virtual Machine",
   "description": "A virtual machine asset that emulates a physical computer system, providing an isolated environment for running applications and services.",
   "definitions": {

@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "telnet_audit",
+  "title": "network_session_audit_telnet",
   "label": "Telnet Audit",
   "description": "Audit logs capturing TELNET session activities, including authentication attempts, command executions, and session termination events.",
   "dataSource": [

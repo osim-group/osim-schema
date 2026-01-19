@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "network_asset",
-  "title": "port",
+  "title": "network_asset_port",
   "label": "Port",
   "description": "Network asset port records the open ports and associated services on a network device, used for monitoring potential vulnerabilities and unauthorized access points.",
   "definitions": {

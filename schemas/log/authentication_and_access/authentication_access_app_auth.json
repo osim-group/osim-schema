@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "authentication_and_access",
-  "title": "application_access_authentication",
+  "title": "authentication_access_app_auth",
   "label": "Application Access Authentication",
   "description": "Logs recording application-level authentication events, including user login attempts, session management, and access control validations.",
   "tag": [
@@ -1187,10 +1187,7 @@
       "requirement": "OPTIONAL",
       "description": "Auxiliary IP address information associated with the primary operator user, used to record network address information in layer 3 association scenarios. For example, in database audit scenarios involving web-database separation, this field can be used to associate the network address when a user logs into the web server.",
       "type": "string",
-      "valid_type": "ip_t",
-      "dataSource": [
-        "VPN System"
-      ]
+      "valid_type": "ip_t"
     },
     "requestUrlQuery": {
       "label": "Request URI Query",
@@ -1382,6 +1379,16 @@
       "dataSource": [
         "VPN System",
         "Zero Trust"
+      ]
+    },
+    "srcTransAddress": {
+      "label": "Source Translated Address",
+      "requirement": "OPTIONAL",
+      "description": "After undergoing network address translation (NAT), proxy server, or VPN tunnel encapsulation processing, the source IP address presented by the data packet at the network layer. This field records the actual sending source address of the traffic after address translation by intermediate devices.",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "VPN System"
       ]
     }
   }

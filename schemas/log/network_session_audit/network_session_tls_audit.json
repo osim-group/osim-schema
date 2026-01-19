@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "tls_audit",
+  "title": "network_session_tls_audit",
   "label": "TLS Audit",
   "description": "Records and monitors TLS handshake details, cipher suite negotiations, and certificate validations for secure network sessions.",
   "dataSource": [

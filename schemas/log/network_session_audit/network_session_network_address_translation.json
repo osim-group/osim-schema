@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "network_address_translation",
+  "title": "network_session_network_address_translation",
   "label": "Network Address Translation",
   "description": "Records details of IP address and port translation sessions between private and public networks, including mapping creation and teardown events.",
   "dataSource": [

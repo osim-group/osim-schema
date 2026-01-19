@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "network_asset",
-  "title": "domain",
+  "title": "network_asset_domain",
   "label": "Domain",
   "description": "A network asset representing a domain name, which is a critical component for identifying and accessing network resources.",
   "definitions": {

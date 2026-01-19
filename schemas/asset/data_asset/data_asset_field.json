@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "data_asset",
-  "title": "data_field",
+  "title": "data_asset_field",
   "label": "Data Field",
   "description": "A specific attribute or element within a data asset that contains structured information, often used for analysis or processing in security contexts.",
   "definitions": {

@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "dns_audit",
+  "title": "network_session_dns_audit",
   "label": "DNS Audit",
   "description": "Records DNS query and response activities for auditing and monitoring network session integrity.",
   "dataSource": [

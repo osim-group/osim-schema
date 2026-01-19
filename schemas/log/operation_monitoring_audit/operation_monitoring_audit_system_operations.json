@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "operation_monitoring_audit",
-  "title": "system_operations",
+  "title": "operation_monitoring_audit_system_operations",
   "label": "System Operations",
   "description": "Logs system administrative and operational activities for monitoring and auditing purposes.",
   "dataSource": [

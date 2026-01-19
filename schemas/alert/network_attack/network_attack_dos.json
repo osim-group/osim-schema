@@ -1,7 +1,7 @@
 {
   "group": "alert",
   "category": "network_attack",
-  "title": "denial_of_service",
+  "title": "network_attack_dos",
   "label": "Denial of Service",
   "description": "Monitors and alerts on network traffic patterns indicative of Denial of Service (DoS) attacks, which aim to disrupt service availability by overwhelming target systems with excessive requests.",
   "dataSource": [
@@ -1636,7 +1636,7 @@
         },
         "/SuspTraffic/Tunnel": {
           "label": "Suspicious Traffic Tunnel",
-          "description": "An intranet host sends or receives tunneled communication packets. The tunneling protocol encapsulates data frames or packets from other protocols within new packet headers for transmission, which are then decapsulated at the destination and forwarded to the actual target. Examples include HTTP tunnels, DNS tunnels, and VPNs. For instance: 1. Detect tunnel communication traffic characteristics, such as DNS tunneling. 2. Identify common tunneling tool signatures, including proxy tunnels/covert tunnels. Intranet -> Extranet, source address may vary."
+          "description": "An intranet host sends or receives tunneled communication packets. The tunneling protocol encapsulates data frames or packets from other protocols within new packet headers for transmission, which are then decapsulated at the destination and forwarded to the actual target. Examples include HTTP tunnels, DNS tunnels, and VPNs. For instance: 1. Detect tunnel communication traffic characteristics, such as DNS tunneling. 2. Identify common tunneling tool signatures, including proxy tunnels/covert tunnels. Intranet <-> Extranet, source address may vary."
         },
         "/SuspTraffic/SuspContent": {
           "label": "Suspicious Content",

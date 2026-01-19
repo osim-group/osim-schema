@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "named_pipe",
+  "title": "host_behavior_audit_named_pipe",
   "label": "Named Pipe",
   "description": "Records activities related to named pipe operations on the host, including creation, access, and deletion events.",
   "dataSource": [

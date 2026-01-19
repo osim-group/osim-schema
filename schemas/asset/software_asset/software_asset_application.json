@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "software_asset",
-  "title": "application_software",
+  "title": "software_asset_application",
   "label": "Application Software",
   "description": "Records details of application software assets, including version, vendor, and installation details for security and compliance tracking.",
   "definitions": {

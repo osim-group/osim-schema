@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "domain_request",
+  "title": "host_behavior_audit_domain_request",
   "label": "Domain Request",
   "description": "Records DNS queries and domain resolution attempts made by the host, monitoring potential malicious or anomalous domain access patterns.",
   "tag": [

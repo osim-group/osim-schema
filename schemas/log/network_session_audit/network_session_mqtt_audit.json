@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "mqtt_audit",
+  "title": "network_session_mqtt_audit",
   "label": "MQTT Audit",
   "description": "Records MQTT protocol sessions, including connection establishment, message publishing/subscribing, and termination events for IoT security monitoring.",
   "dataSource": [

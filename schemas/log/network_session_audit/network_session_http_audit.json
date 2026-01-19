@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "http_audit",
+  "title": "network_session_http_audit",
   "label": "Http Audit",
   "description": "Records and monitors HTTP session activities, including requests, responses, and headers for security auditing purposes.",
   "tag": [

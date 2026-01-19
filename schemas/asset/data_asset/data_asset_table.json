@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "data_asset",
-  "title": "data_table",
+  "title": "data_asset_table",
   "label": "Data Table",
   "description": "A structured data asset representing a table with rows and columns, typically used for storing and organizing information in a database.",
   "definitions": {

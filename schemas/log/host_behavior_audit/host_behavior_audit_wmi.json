@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "wmi_behavior",
+  "title": "host_behavior_audit_wmi",
   "label": "Wmi Behavior",
   "description": "Records and monitors Windows Management Instrumentation (WMI) activities on the host, including script execution and system configuration changes.",
   "dataSource": [

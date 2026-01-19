@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "database_audit",
+  "title": "network_session_db_audit",
   "label": "Database Audit",
   "description": "Records and monitors database query and transaction activities within network sessions for security auditing and compliance purposes.",
   "dataSource": [

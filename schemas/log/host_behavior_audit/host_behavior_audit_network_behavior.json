@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "network_behavior",
+  "title": "host_behavior_audit_network_behavior",
   "label": "Network Behavior",
   "description": "Records and monitors network-related activities and behaviors performed by a host, including connections, data transfers, and protocol usage.",
   "tag": [

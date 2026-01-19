@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "dhcp_audit",
+  "title": "network_session_dhcp_audit",
   "label": "DHCP Audit",
   "description": "Records and monitors DHCP (Dynamic Host Configuration Protocol) lease assignments, renewals, and releases within the network for auditing purposes.",
   "dataSource": [

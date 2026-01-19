@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "data_asset",
-  "title": "database",
+  "title": "data_asset_database",
   "label": "Database",
   "description": "A data asset representing a structured collection of data stored in a database system, typically managed by a database management system (DBMS).",
   "definitions": {

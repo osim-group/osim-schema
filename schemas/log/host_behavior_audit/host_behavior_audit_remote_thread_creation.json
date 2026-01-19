@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "remote_thread_creation",
+  "title": "host_behavior_audit_remote_thread_creation",
   "label": "Remote Thread Creation",
   "description": "Records instances of remote thread creation activities on a host, which may indicate potential code injection or privilege escalation attempts.",
   "dataSource": [

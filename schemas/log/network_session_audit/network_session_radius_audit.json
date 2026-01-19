@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "radius_audit",
+  "title": "network_session_radius_audit",
   "label": "Radius Audit",
   "description": "Records RADIUS protocol authentication and accounting events for network access control and session monitoring.",
   "dataSource": [

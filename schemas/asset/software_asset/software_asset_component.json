@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "software_asset",
-  "title": "component",
+  "title": "software_asset_component",
   "label": "Component",
   "description": "A software component that is part of a larger software asset, typically monitored for vulnerabilities or compliance.",
   "definitions": {

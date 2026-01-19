@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "service_behavior",
+  "title": "host_behavior_service",
   "label": "Service Behavior",
   "description": "Logs capturing service-related activities and behaviors on a host, including service starts, stops, and configuration changes.",
   "dataSource": [

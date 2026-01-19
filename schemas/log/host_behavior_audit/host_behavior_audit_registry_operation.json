@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "registry_operation",
+  "title": "host_behavior_audit_registry_operation",
   "label": "Registry Operation",
   "description": "Records and monitors modifications, accesses, and deletions of registry keys and values on a host system.",
   "dataSource": [

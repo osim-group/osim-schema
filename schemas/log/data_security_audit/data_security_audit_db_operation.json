@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "data_security_audit",
-  "title": "database_operation_audit",
+  "title": "data_security_audit_db_operation",
   "label": "Database Operation Audit",
   "description": "Records and audits all database operations including queries, modifications, and access attempts for security compliance.",
   "tag": [

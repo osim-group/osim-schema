@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "software_asset",
-  "title": "middleware",
+  "title": "software_asset_middleware",
   "label": "Middleware",
   "description": "Middleware assets refer to software components that facilitate communication and data management between disparate applications or services.",
   "definitions": {

@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "ssh_audit",
+  "title": "network_session_audit_ssh",
   "label": "SSH Audit",
   "description": "Records and monitors SSH session activities, including authentication attempts, command execution, and session termination for security auditing purposes.",
   "tag": [

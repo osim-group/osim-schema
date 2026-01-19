@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "virtual_asset",
-  "title": "container",
+  "title": "virtual_asset_container",
   "label": "Container",
   "description": "A virtualized environment that encapsulates applications and their dependencies, enabling isolated and portable execution.",
   "definitions": {

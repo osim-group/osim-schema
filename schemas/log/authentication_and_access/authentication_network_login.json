@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "authentication_and_access",
-  "title": "network_login_authentication",
+  "title": "authentication_network_login",
   "label": "Network Login Authentication",
   "description": "Records network login attempts and authentication events, including success, failure, and related access control activities.",
   "tag": [
@@ -1388,11 +1388,7 @@
       "requirement": "OPTIONAL",
       "description": "Auxiliary IP address information associated with the primary operator user, used to record network address information in layer 3 association scenarios. For example, in database audit scenarios involving web-database separation, this field can be used to associate the network address when a user logs into the web server.",
       "type": "string",
-      "valid_type": "ip_t",
-      "dataSource": [
-        "Firewall",
-        "VPN System"
-      ]
+      "valid_type": "ip_t"
     },
     "userName": {
       "label": "User Name",
@@ -1402,6 +1398,17 @@
       "valid_type": "string_t",
       "dataSource": [
         "Zero Trust"
+      ]
+    },
+    "srcTransAddress": {
+      "label": "Source Translated Address",
+      "requirement": "OPTIONAL",
+      "description": "After undergoing network address translation (NAT), proxy server, or VPN tunnel encapsulation processing, the source IP address presented by the data packet at the network layer. This field records the actual sending source address of the traffic after address translation by intermediate devices.",
+      "type": "string",
+      "valid_type": "ip_t",
+      "dataSource": [
+        "Firewall",
+        "VPN System"
       ]
     }
   }

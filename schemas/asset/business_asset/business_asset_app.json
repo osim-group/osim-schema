@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "business_asset",
-  "title": "app",
+  "title": "business_asset_app",
   "label": "App",
   "description": "An application asset within the business infrastructure, monitored for security vulnerabilities and compliance.",
   "definitions": {

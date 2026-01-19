@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "email_protocol_audit",
+  "title": "network_session_email_protocol_audit",
   "label": "Email Protocol Audit",
   "description": "Records and audits network sessions involving email protocols such as SMTP, IMAP, and POP3 for security analysis and compliance monitoring.",
   "tag": [

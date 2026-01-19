@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "data_asset",
-  "title": "file",
+  "title": "data_asset_file",
   "label": "File",
   "description": "A data asset file represents a digital document or resource stored within an information system, subject to security controls and access management.",
   "definitions": {

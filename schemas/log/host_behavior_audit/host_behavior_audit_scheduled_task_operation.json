@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "scheduled_task_operation",
+  "title": "host_behavior_audit_scheduled_task_operation",
   "label": "Scheduled Task Operation",
   "description": "Records audit events related to the creation, modification, or deletion of scheduled tasks on a host system.",
   "dataSource": [

@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "modbus_audit",
+  "title": "network_session_modbus_audit",
   "label": "Modbus Audit",
   "description": "Records and audits MODBUS protocol network sessions for industrial control system security monitoring.",
   "dataSource": [

@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "cloud_asset",
-  "title": "cloud_server",
+  "title": "cloud_asset_ecs",
   "label": "Cloud Server",
   "description": "Monitors and records metadata and configuration details of Elastic Compute Service (ECS) instances within cloud environments.",
   "definitions": {

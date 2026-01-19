@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "tftp_audit",
+  "title": "network_session_tftp_audit",
   "label": "Tftp Audit",
   "description": "Records and monitors TFTP (Trivial File Transfer Protocol) sessions for auditing and security analysis purposes.",
   "dataSource": [

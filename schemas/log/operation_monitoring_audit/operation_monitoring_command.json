@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "operation_monitoring_audit",
-  "title": "command_operation",
+  "title": "operation_monitoring_command",
   "label": "Command Operation",
   "description": "Logs and monitors command execution activities for security auditing and compliance purposes.",
   "dataSource": [

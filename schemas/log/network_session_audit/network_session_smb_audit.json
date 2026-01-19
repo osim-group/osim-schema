@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "smb_audit",
+  "title": "network_session_smb_audit",
   "label": "SMB Audit",
   "description": "Records and monitors SMB protocol activities, including file sharing, authentication, and session management within a network.",
   "tag": [

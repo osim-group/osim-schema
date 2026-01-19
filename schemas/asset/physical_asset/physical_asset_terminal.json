@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "physical_asset",
-  "title": "terminal",
+  "title": "physical_asset_terminal",
   "label": "Terminal",
   "description": "A physical endpoint device that connects to a network, such as a desktop computer, laptop, or mobile device.",
   "definitions": {

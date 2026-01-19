@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "ftp_audit",
+  "title": "network_session_audit_ftp",
   "label": "FTP Audit",
   "description": "Logs FTP session activities including authentication, file transfers, and command executions for security auditing.",
   "dataSource": [

@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "script_execution",
+  "title": "host_behavior_audit_script_execution",
   "label": "Script Execution",
   "description": "Records and monitors script execution activities on a host, including details such as script name, execution time, and user context.",
   "dataSource": [

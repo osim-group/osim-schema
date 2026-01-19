@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "winrm_behavior",
+  "title": "host_behavior_audit_winrm",
   "label": "WinRM Behavior",
   "description": "Records Windows Remote Management (WinRM) activities, including authentication, command execution, and session management for remote system administration.",
   "dataSource": [

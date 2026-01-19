@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "dnp3_audit",
+  "title": "network_session_audit_dnp3",
   "label": "DNP3 Audit",
   "description": "Records DNP3 protocol sessions for auditing and monitoring SCADA network communications.",
   "dataSource": [

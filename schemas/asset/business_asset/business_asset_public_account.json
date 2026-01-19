@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "business_asset",
-  "title": "public_account",
+  "title": "business_asset_public_account",
   "label": "Public Account",
   "description": "A public account asset representing an official business account on social media platforms, monitored for security and compliance.",
   "definitions": {

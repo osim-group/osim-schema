@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "cloud_asset",
-  "title": "cloud_storage",
+  "title": "cloud_asset_storage",
   "label": "Cloud Storage",
   "description": "Records metadata and configuration details of cloud storage assets, including access controls and encryption settings.",
   "definitions": {

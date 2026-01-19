@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "network_asset",
-  "title": "ip_address",
+  "title": "network_asset_ip_address",
   "label": "IP Address",
   "description": "A network asset representing an IP address, which is a unique identifier assigned to devices on a network for communication purposes.",
   "definitions": {

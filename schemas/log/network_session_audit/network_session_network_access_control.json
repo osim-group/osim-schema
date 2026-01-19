@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "network_access_control",
+  "title": "network_session_network_access_control",
   "label": "Network Access Control",
   "description": "Records events related to endpoint authentication, posture assessment, authorization decisions, and policy enforcement during network access attempts.",
   "dataSource": [

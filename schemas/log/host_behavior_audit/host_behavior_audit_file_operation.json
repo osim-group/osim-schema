@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "file_operation",
+  "title": "host_behavior_audit_file_operation",
   "label": "File Operation",
   "description": "Records file operations such as creation, modification, deletion, and access activities on the host for security auditing purposes.",
   "tag": [

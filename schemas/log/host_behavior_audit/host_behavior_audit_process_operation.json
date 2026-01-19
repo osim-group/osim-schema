@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "process_operation",
+  "title": "host_behavior_audit_process_operation",
   "label": "Process Operation",
   "description": "Records detailed audit logs of process-related activities on a host, including creation, termination, and modification events.",
   "tag": [

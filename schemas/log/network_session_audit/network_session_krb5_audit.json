@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "krb5_audit",
+  "title": "network_session_krb5_audit",
   "label": "KRB5 Audit",
   "description": "Records authentication and authorization events within network sessions using the Kerberos 5 (KRB5) protocol, including ticket requests and validations.",
   "dataSource": [

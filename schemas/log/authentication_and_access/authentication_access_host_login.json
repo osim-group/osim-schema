@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "authentication_and_access",
-  "title": "host_login_authentication",
+  "title": "authentication_access_host_login",
   "label": "Host Login Authentication",
   "description": "Records authentication attempts and access events for host logins, including successful and failed login attempts.",
   "tag": [
@@ -1142,6 +1142,13 @@
       "dataSource": [
         "Endpoint Detection And Response"
       ]
+    },
+    "srcTransAddress": {
+      "label": "Source Translated Address",
+      "requirement": "OPTIONAL",
+      "description": "After undergoing network address translation (NAT), proxy server, or VPN tunnel encapsulation processing, the source IP address presented by the data packet at the network layer. This field records the actual sending source address of the traffic after address translation by intermediate devices.",
+      "type": "string",
+      "valid_type": "ip_t"
     }
   }
 }

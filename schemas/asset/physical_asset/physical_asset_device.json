@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "physical_asset",
-  "title": "device",
+  "title": "physical_asset_device",
   "label": "Device",
   "description": "A physical device asset that is monitored and managed within the network infrastructure.",
   "definitions": {

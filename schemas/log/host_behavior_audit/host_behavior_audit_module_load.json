@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "host_behavior_audit",
-  "title": "module_load",
+  "title": "host_behavior_audit_module_load",
   "label": "Module Load",
   "description": "Records the loading of modules or libraries into the host system's memory, which may indicate potential security risks or unauthorized activities.",
   "dataSource": [

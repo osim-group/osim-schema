@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "data_asset",
-  "title": "account",
+  "title": "data_asset_account",
   "label": "Account",
   "description": "This category records account-related data assets, including user credentials and authentication details for access control.",
   "definitions": {

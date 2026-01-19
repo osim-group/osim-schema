@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "business_asset",
-  "title": "business_system",
+  "title": "business_asset_system",
   "label": "Business System",
   "description": "A business asset system represents critical IT infrastructure or applications that support core organizational operations and processes.",
   "definitions": {

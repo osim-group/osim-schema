@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "data_security_audit",
-  "title": "file_communication_audit",
+  "title": "data_security_audit_file_communication",
   "label": "File Communication Audit",
   "description": "Logs and audits file transfer activities to monitor data security compliance and detect unauthorized communications.",
   "tag": [

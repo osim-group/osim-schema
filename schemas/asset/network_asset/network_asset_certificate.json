@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "network_asset",
-  "title": "certificate",
+  "title": "network_asset_certificate",
   "label": "Certificate",
   "description": "Network asset certificate records the digital certificates used for secure communication, including SSL/TLS certificates, their issuance details, and validity periods.",
   "definitions": {

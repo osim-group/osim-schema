@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "business_asset",
-  "title": "web_site",
+  "title": "business_asset_web_site",
   "label": "Web Site",
   "description": "A web-based business asset that represents an organization's online presence, including websites and web applications.",
   "definitions": {

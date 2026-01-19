@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "data_asset",
-  "title": "api",
+  "title": "data_asset_api",
   "label": "API",
   "description": "An API data asset represents programmable interfaces that enable secure data exchange between systems, often monitored for access patterns and vulnerabilities.",
   "definitions": {

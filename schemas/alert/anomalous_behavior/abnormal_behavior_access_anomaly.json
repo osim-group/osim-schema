@@ -1,7 +1,7 @@
 {
   "group": "alert",
   "category": "anomalous_behavior",
-  "title": "access_anomaly",
+  "title": "abnormal_behavior_access_anomaly",
   "label": "Access Anomaly",
   "description": "This alert records instances of anomalous access behavior, indicating potential unauthorized or suspicious activities within the network.",
   "dataSource": [
@@ -1447,7 +1447,7 @@
         },
         "/SuspTraffic/Tunnel": {
           "label": "Suspicious Traffic Tunnel",
-          "description": "An intranet host sends or receives tunneled communication packets. The tunneling protocol encapsulates data frames or packets from other protocols within new packet headers for transmission, which are then decapsulated at the destination and forwarded to the actual target. Examples include HTTP tunnels, DNS tunnels, and VPNs. For instance: 1. Detect tunnel communication traffic characteristics, such as DNS tunneling. 2. Identify common tunneling tool signatures, including proxy tunnels/covert tunnels. Intranet -> Extranet, source address may vary."
+          "description": "An intranet host sends or receives tunneled communication packets. The tunneling protocol encapsulates data frames or packets from other protocols within new packet headers for transmission, which are then decapsulated at the destination and forwarded to the actual target. Examples include HTTP tunnels, DNS tunnels, and VPNs. For instance: 1. Detect tunnel communication traffic characteristics, such as DNS tunneling. 2. Identify common tunneling tool signatures, including proxy tunnels/covert tunnels. Intranet <-> Extranet, source address may vary."
         },
         "/SuspTraffic/SuspContent": {
           "label": "Suspicious Content",

@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "traffic_session_audit",
+  "title": "network_session_audit_traffic",
   "label": "Traffic Session Audit",
   "description": "Records and audits network traffic sessions, including details of source, destination, protocols, and data volumes for security analysis.",
   "tag": [

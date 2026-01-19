@@ -1,7 +1,7 @@
 {
   "group": "asset",
   "category": "business_asset",
-  "title": "mini_program",
+  "title": "business_asset_mini_program",
   "label": "Mini Program",
   "description": "Monitors and records security-related activities and configurations of mini-programs within the business asset ecosystem.",
   "definitions": {

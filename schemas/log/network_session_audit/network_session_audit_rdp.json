@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "network_session_audit",
-  "title": "rdp_audit",
+  "title": "network_session_audit_rdp",
   "label": "Rdp Audit",
   "description": "Records and monitors Remote Desktop Protocol (RDP) sessions, including authentication attempts, session durations, and connection details for security auditing.",
   "tag": [

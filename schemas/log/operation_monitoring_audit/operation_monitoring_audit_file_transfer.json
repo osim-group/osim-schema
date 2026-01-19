@@ -1,7 +1,7 @@
 {
   "group": "log",
   "category": "operation_monitoring_audit",
-  "title": "file_transfer",
+  "title": "operation_monitoring_audit_file_transfer",
   "label": "File Transfer",
   "description": "Logs and monitors file transfer activities, including uploads, downloads, and data exchanges, for security auditing and compliance purposes.",
   "dataSource": [
