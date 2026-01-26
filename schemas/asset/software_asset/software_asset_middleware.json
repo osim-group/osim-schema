@@ -755,7 +755,7 @@
       "enum": {
         "veryHigh": {
           "label": "Very High",
-          "description": "非常高"
+          "description": "Very High"
         },
         "high": {
           "label": "High",
@@ -763,7 +763,7 @@
         },
         "medium": {
           "label": "Medium",
-          "description": "中"
+          "description": "Medium"
         },
         "low": {
           "label": "Low",
@@ -792,7 +792,7 @@
         },
         "medium": {
           "label": "Medium",
-          "description": "China"
+          "description": "Medium"
         },
         "low": {
           "label": "Low",
@@ -813,7 +813,7 @@
       "enum": {
         "veryHigh": {
           "label": "Very High",
-          "description": "非常高"
+          "description": "Very High"
         },
         "high": {
           "label": "High",
@@ -821,7 +821,7 @@
         },
         "medium": {
           "label": "Medium",
-          "description": "China"
+          "description": "Medium"
         },
         "low": {
           "label": "Low",

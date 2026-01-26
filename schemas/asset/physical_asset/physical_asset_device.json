@@ -922,7 +922,7 @@
       "enum": {
         "veryHigh": {
           "label": "Very High",
-          "description": "非常高"
+          "description": "Very High"
         },
         "high": {
           "label": "High",
@@ -930,7 +930,7 @@
         },
         "medium": {
           "label": "Medium",
-          "description": "中"
+          "description": "Medium"
         },
         "low": {
           "label": "Low",
@@ -959,7 +959,7 @@
         },
         "medium": {
           "label": "Medium",
-          "description": "China"
+          "description": "Medium"
         },
         "low": {
           "label": "Low",
@@ -980,7 +980,7 @@
       "enum": {
         "veryHigh": {
           "label": "Very High",
-          "description": "非常高"
+          "description": "Very High"
         },
         "high": {
           "label": "High",
@@ -988,7 +988,7 @@
         },
         "medium": {
           "label": "Medium",
-          "description": "China"
+          "description": "Medium"
         },
         "low": {
           "label": "Low",
@@ -1295,7 +1295,7 @@
         },
         "35": {
           "label": "35",
-          "description": "数据库服务器软件，如MySQL、Oracle、SQL Server等，存储和管理数据"
+          "description": "Database server software, such as MySQL, Oracle, SQL Server, etc., stores and manages data."
         },
         "36": {
           "label": "36",
