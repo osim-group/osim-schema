@@ -11,7 +11,7 @@
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
-      "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
+      "description": "The machine code serves as the unique identifier of the log source device (device ID), primarily used for device cascade tracing. The value of this field must maintain global uniqueness. If no existing device ID is available, hardware encoding or license-based information may be referenced for generation. In terms of format, it must be a string, with allowed characters including uppercase letters (A-Z), lowercase letters (a-z), and numbers (0-9). While there is no fixed length restriction, uniqueness and manageability should be ensured.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -21,7 +21,7 @@
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
-      "description": "Official name of the security product vendor.",
+      "description": "The product vendor name field is used to identify the official full name of the security product vendor. The format is a string with no specific character set restrictions, but the standard name used by the vendor in business registration or official promotions should be adopted to ensure consistency and accuracy.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -31,7 +31,7 @@
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
-      "description": "Official standard name of the software or hardware product that generated the log",
+      "description": "The device product name is used to identify the official standard name of the software or hardware product that generates logs. It is a string format and requires the use of clear, standardized official product names.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -41,7 +41,7 @@
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
-      "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
+      "description": "Device name, used to identify the name of the device that generates logs, and can add asset attributes (such as headquarters, subordinate, etc.)",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -51,7 +51,7 @@
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
       "requirement": "REQUIRED",
-      "description": "Unique numeric identifier for the device type subcategory.",
+      "description": "The device subtype ID is a unique numeric identifier for the sub-classification of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the system-defined enumeration range.",
       "type": "enum",
       "valid_type": "integer_t",
       "enum": {
@@ -283,7 +283,7 @@
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
-      "description": "IP address of the log production device",
+      "description": "The IP address of the device when generating logs, used to identify the log source device. Format requirements: must be a valid IPv4 or IPv6 address format.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -293,7 +293,7 @@
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
-      "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
+      "description": "The event ID is a globally unique identifier for log events, typically generated using non-repeating algorithms such as UUID or timestamp sequences. The format should be a standard UUID string, for example: 550e8400-e29b-41d4-a716-446655440000. It must be globally unique and non-repeating.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -303,7 +303,7 @@
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
-      "description": "Summary name of the log or alert",
+      "description": "The summary name is a brief title or identifier for logs or alerts, used for quick identification of event content. This field is of string type and should be kept concise and clear.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -313,7 +313,7 @@
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
-      "description": "Detailed description information of the log or alert",
+      "description": "Used to record detailed description information for logs or alerts, stored as text strings. The content typically includes explanations of security events, system activities, or abnormal conditions, along with context and key parameters.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -323,7 +323,7 @@
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp when the event activity began.",
+      "description": "This field records the precise time when the event activity began. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -333,7 +333,7 @@
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp marking the end of an event activity.",
+      "description": "The exact time when the event activity ends. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -343,7 +343,7 @@
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp when the device locally receives and generates a log event.",
+      "description": "This field records the precise time when the device collector locally receives and generates the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -353,7 +353,7 @@
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
-      "description": "The exact timestamp when the log collection system receives the log event.",
+      "description": "The exact time when the collector receives the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -363,7 +363,7 @@
     "severity": {
       "label": "Severity Level",
       "requirement": "RECOMMENDED",
-      "description": "Indicates the severity level of the security threat for logs or alerts. 0: No risk, 1-3: Low risk, 4-6: Medium risk, 7-9: High risk, 10: Critical.",
+      "description": "Indicates the severity level of a security threat for logs or alerts. This field is an integer value ranging from 0 to 10, with each value corresponding to a specific threat level: 0 indicates no risk, 1-3 indicate low severity, 4-6 indicate medium severity, 7-9 indicate high severity, and 10 indicates critical severity.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -373,7 +373,7 @@
     "catOutcome": {
       "label": "Category Outcome",
       "requirement": "RECOMMENDED",
-      "description": "Indicates the final result status of an event operation or attack.",
+      "description": "This field is used to indicate the final result status of an event operation or attack. Its value is a predefined enumeration type, with current main options including: OK (indicating successful operation), FAIL (indicating failed operation), and Attempt (indicating an attempted operation). The value must be strictly limited to the enumeration range defined by the system.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -397,7 +397,7 @@
     "logType": {
       "label": "Log Type",
       "requirement": "RECOMMENDED",
-      "description": "Identifies the functional or object entity classification of the log event.",
+      "description": "This field identifies the functional or object entity classification of the log event. Its value is a predefined enumeration string, such as: alert (alert logs), traffic (network communication logs), process (process operation logs), command (command execution logs), file (file operation logs), etc.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -497,7 +497,7 @@
     "opType": {
       "label": "Operation Type",
       "requirement": "RECOMMENDED",
-      "description": "Identifies the specific type of operation performed in the event.",
+      "description": "Operation type, indicating the specific action performed on the target object in the event. This field is an enumeration type, and its value must be a predefined operation type string, such as: read, write, create, delete, modify, etc.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -625,7 +625,7 @@
     "eventCount": {
       "label": "Event Count",
       "requirement": "OPTIONAL",
-      "description": "Count the occurrences of the same type or related events.",
+      "description": "The event count field is used to tally the occurrence of events of the same type or related events. It is typically a non-negative integer.",
       "type": "long",
       "valid_type": "long_t",
       "dataSource": [
@@ -635,7 +635,7 @@
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
-      "description": "Device address of the data source",
+      "description": "Data source address refers to the network address of the device providing the data. This field must be in a valid IP address format, supporting both IPv4 and IPv6 addresses. IPv4 addresses use dotted-decimal notation (e.g., 192.168.1.5), while IPv6 addresses use colon-separated hexadecimal format.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -645,7 +645,7 @@
     "srcPort": {
       "label": "Source Port",
       "requirement": "RECOMMENDED",
-      "description": "Source service port number identifying the network communication connection.",
+      "description": "The source port refers to the port number of the network connection initiator, used to identify the application or service initiating the communication. The port number must be an integer ranging from 0 to 65535, where 0 is typically reserved, 1 to 1023 are well-known ports, 1024 to 49151 are registered ports, and 49152 to 65535 are dynamic or private ports.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -655,7 +655,7 @@
     "destPort": {
       "label": "Destination Port",
       "requirement": "RECOMMENDED",
-      "description": "The network port number of the communication target, used to identify specific services or applications.",
+      "description": "The destination port is the port number of the receiving end in a network connection, used to identify the receiving application or service. This field is of integer type, with a valid range of 0-65535. Ports 0-1023 are well-known ports, 1024-49151 are registered ports, and 49152-65535 are dynamic or private ports.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -665,7 +665,7 @@
     "srcMacAddress": {
       "label": "Source MAC Address",
       "requirement": "OPTIONAL",
-      "description": "Media Access Control (MAC) address of the network data frame sender",
+      "description": "The source MAC address represents the media access control address of the sender in a network data frame. Format requirements: Must be in standard MAC address format, consisting of 6 groups of hexadecimal bytes separated by colons (xx:xx:xx:xx:xx:xx), with each group containing two characters and ranging from 00 to FF.",
       "type": "string",
       "valid_type": "mac_t",
       "dataSource": [
@@ -675,7 +675,7 @@
     "destMacAddress": {
       "label": "Destination MAC Address",
       "requirement": "OPTIONAL",
-      "description": "Media Access Control (MAC) address of the network data frame recipient",
+      "description": "The destination MAC address represents the media access control address of the recipient in a network data frame. Format requirements: Must be in standard MAC address format, consisting of 6 groups of hexadecimal bytes separated by colons (xx:xx:xx:xx:xx:xx), with each group containing two characters and ranging from 00 to FF.",
       "type": "string",
       "valid_type": "mac_t",
       "dataSource": [
@@ -685,7 +685,7 @@
     "srcGeoCountry": {
       "label": "Source Geographic Country",
       "requirement": "OPTIONAL",
-      "description": "Country of origin for the network event",
+      "description": "This field indicates the country or region information corresponding to the source IP address of the network connection.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -695,7 +695,7 @@
     "srcGeoRegion": {
       "label": "Source Geographic Region",
       "requirement": "OPTIONAL",
-      "description": "Name of the provincial administrative region where the network request originated",
+      "description": "This field represents the provincial-level administrative region name corresponding to the source IP address of the network connection, used to identify the geographical origin of the traffic. The value should be the name of a Chinese provincial-level administrative division, such as 'Beijing', 'Zhejiang Province', 'Xinjiang Uygur Autonomous Region', etc., or internationally recognized country and region names. The format is a string with no fixed length restriction. It is recommended to use standard, complete official names to ensure consistency and accuracy.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -705,7 +705,7 @@
     "srcGeoCity": {
       "label": "Source Geographic City",
       "requirement": "OPTIONAL",
-      "description": "The name of the city-level administrative region where the network request originated.",
+      "description": "This field represents the city-level administrative region name corresponding to the initiator's IP address of the network connection. The value is of string type. This information is typically provided by an IP geolocation query service, with no specific format or character set enforced, but maintaining name consistency is recommended.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -715,7 +715,7 @@
     "srcGeoAddress": {
       "label": "Source Geographic Address",
       "requirement": "OPTIONAL",
-      "description": "Detailed address description of the network request source",
+      "description": "This field represents the detailed address description corresponding to the initiator's IP address of the network connection, used to locate the specific physical or administrative position of the source. The value is of string type and typically includes hierarchical information such as country, province, city, district, street, and house number.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -725,7 +725,7 @@
     "srcGeoLatitude": {
       "label": "Source Geographic Latitude",
       "requirement": "OPTIONAL",
-      "description": "Geographic latitude coordinate of the network request source",
+      "description": "This field represents the geographic latitude coordinate corresponding to the initiator's IP address of the network connection, stored in string format. The latitude coordinate should follow decimal notation, with a valid range from -90.000000 to 90.000000, where positive values indicate north latitude and negative values indicate south latitude.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -735,7 +735,7 @@
     "srcGeoLongitude": {
       "label": "Source Geographic Longitude",
       "requirement": "OPTIONAL",
-      "description": "Geographic longitude coordinate of the network request source",
+      "description": "Source longitude represents the geographic longitude coordinate corresponding to the IP address of the network connection initiator. The format is a decimal floating-point string with a range from -180.000000 to 180.000000, retaining six decimal places. A period (.) is used as the decimal separator, where negative values indicate west longitude and positive values indicate east longitude.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -745,7 +745,7 @@
     "destGeoCountry": {
       "label": "Destination Geographic Country",
       "requirement": "OPTIONAL",
-      "description": "Country name of the network request destination",
+      "description": "Destination country, referring to the country name corresponding to the IP address of the network connection recipient. The field value should be the full name of the country or region in Chinese, such as 'China', 'United States', etc.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -755,7 +755,7 @@
     "destGeoRegion": {
       "label": "Destination Geographic Region",
       "requirement": "OPTIONAL",
-      "description": "The name of the provincial-level administrative region where the network request destination is located.",
+      "description": "This field represents the name of the Chinese provincial-level administrative region corresponding to the recipient IP address of the network connection, used to identify the geographic destination of network traffic. The value should be the standardized name of a Chinese provincial-level administrative division, such as 'Zhejiang Province', 'Beijing Municipality', or 'Xinjiang Uygur Autonomous Region'. Abbreviated forms without suffixes like 'Province', 'Municipality', or 'Autonomous Region' (e.g., 'Zhejiang', 'Beijing', 'Xinjiang') are also acceptable. The field is of string type with no specific character set or length restrictions, but accuracy and consistency of the names should be ensured.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -765,7 +765,7 @@
     "destGeoCity": {
       "label": "Destination Geographic City",
       "requirement": "OPTIONAL",
-      "description": "City-level administrative region name of the network request destination",
+      "description": "The destination city refers to the name of the city-level administrative region corresponding to the IP address of the network connection receiver. This field is of string type and requires the use of standard city names.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -775,7 +775,7 @@
     "destGeoAddress": {
       "label": "Destination Geographic Address",
       "requirement": "OPTIONAL",
-      "description": "Detailed address description of the network request destination",
+      "description": "Destination detailed address, describing the detailed address information corresponding to the recipient IP address of the network connection. The format is a string, which should include hierarchical details such as country, province/state, city, and street to form a complete physical location description.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -785,7 +785,7 @@
     "destGeoLatitude": {
       "label": "Destination Geographic Latitude",
       "requirement": "OPTIONAL",
-      "description": "Geographic latitude coordinate of the network request destination",
+      "description": "Destination latitude represents the geographic latitude coordinate corresponding to the recipient IP address of the network connection. This value is of string type, typically expressed in decimal format, with a valid range from -90.000000 to 90.000000.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -795,7 +795,7 @@
     "destGeoLongitude": {
       "label": "Destination Geographic Longitude",
       "requirement": "OPTIONAL",
-      "description": "Geographic longitude coordinate of the network request destination",
+      "description": "Destination longitude refers to the geographic longitude coordinate corresponding to the recipient IP address of the network connection. The format is a string in decimal form, with a valid range from -180.000000 to 180.000000.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -805,7 +805,7 @@
     "srcAddress": {
       "label": "Source IP Address",
       "requirement": "RECOMMENDED",
-      "description": "The IP address corresponding to the initiator of the network connection.",
+      "description": "Source IP address refers to the IP address used by the initiator of a network connection or security event. This field must comply with IP address format specifications and supports both IPv4 and IPv6 addresses. IPv4 addresses are in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses are in colon-separated hexadecimal format (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -815,7 +815,7 @@
     "destAddress": {
       "label": "Destination IP Address",
       "requirement": "RECOMMENDED",
-      "description": "The target IP address for identifying network communication connections.",
+      "description": "Destination IP address, identifying the target IP address of the network communication connection. Format requirements: must comply with IP address format specifications, supporting IPv4 (e.g., 192.168.1.1) or IPv6 (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334) address notation.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -825,7 +825,7 @@
     "direction": {
       "label": "Data Flow Direction",
       "requirement": "RECOMMENDED",
-      "description": "Network flow direction classification based on source and destination IP addresses.",
+      "description": "Classify data flow direction based on source and destination IP addresses. This field is an enumeration type indicating the direction of data flow between internal and external networks, with specific values and meanings as follows: 11 represents external network accessing external network; 10 represents external network accessing internal network; 01 represents internal network accessing external network; 00 represents internal network accessing internal network.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -853,7 +853,7 @@
     "transProtocol": {
       "label": "Transport Protocol",
       "requirement": "RECOMMENDED",
-      "description": "Protocol types used at the transport layer of the OSI model.",
+      "description": "Transport layer protocol type, indicating the protocol used at the transport layer of the OSI model. Optional values include standard transport layer protocols such as TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -873,7 +873,7 @@
     "appProtocol": {
       "label": "Application Protocol",
       "requirement": "RECOMMENDED",
-      "description": "Protocol types used at the application layer of the OSI model.",
+      "description": "The application protocol field indicates the protocol type used at the application layer of the OSI model. This field is of enumeration type, and its value range should be within a predefined list of protocol identifiers.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -1141,7 +1141,7 @@
     "srcTransAddress": {
       "label": "Source Translated Address",
       "requirement": "RECOMMENDED",
-      "description": "After undergoing network address translation (NAT), proxy server, or VPN tunnel encapsulation processing, the source IP address presented by the data packet at the network layer. This field records the actual sending source address of the traffic after address translation by intermediate devices.",
+      "description": "The translated source IP address refers to the source IP address presented at the network layer after processing through Network Address Translation (NAT), proxy servers, or VPN tunnel encapsulation. This field must comply with IP address format specifications, either as a dotted-decimal notation IPv4 address (e.g., 192.168.1.1) or an RFC-compliant IPv6 address.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -1151,7 +1151,7 @@
     "srcTransPort": {
       "label": "Source Translated Port",
       "requirement": "RECOMMENDED",
-      "description": "In the process of Network Address Translation (NAT) or Port Address Translation (PAT), the source port number is modified to a new value.",
+      "description": "The translated source port represents the modified value of the source port number during Network Address Translation (NAT) or Port Address Translation (PAT) processes. This field is of integer type, with a valid range from 0 to 65535, and must comply with TCP/UDP port number specifications.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -1161,7 +1161,7 @@
     "destTransAddress": {
       "label": "Destination Translated Address",
       "requirement": "OPTIONAL",
-      "description": "After undergoing destination network address translation (DNAT), port forwarding, or load balancing processing, the data packet ultimately arrives at the destination IP address at the network layer. This field records the actual receiving address of the traffic after address redirection.",
+      "description": "This field represents the destination IP address at the network layer that the packet ultimately reaches after undergoing Destination Network Address Translation (DNAT), port forwarding, or load balancing. The field value must comply with IP address format specifications, either in IPv4 dotted-decimal notation (e.g., 192.168.1.1) or IPv6 standard format.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -1171,7 +1171,7 @@
     "destTransPort": {
       "label": "Destination Translated Port",
       "requirement": "OPTIONAL",
-      "description": "During the process of destination network address translation (DNAT) or port redirection, the destination port number is modified to a new value.",
+      "description": "This field represents the final port value after modification during Destination Network Address Translation (DNAT) or port redirection. The format is an integer with a valid range from 0 to 65535.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -1181,7 +1181,7 @@
     "deviceVersion": {
       "label": "Device Version",
       "requirement": "RECOMMENDED",
-      "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
+      "description": "The device version identifies the complete version information of the device firmware, operating system, or embedded software. The version number typically follows a multi-segment numeric format, such as major version.minor version.revision number.build number, etc.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [

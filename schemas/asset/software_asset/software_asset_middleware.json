@@ -8,63 +8,63 @@
     "middlewareName": {
       "label": "Middleware Name",
       "requirement": "RECOMMENDED",
-      "description": "Product name of the middleware software",
+      "description": "Product name of the middleware software, such as Tomcat, Nginx, Apache, etc.",
       "type": "string",
       "valid_type": "string_t"
     },
     "middlewareVersion": {
       "label": "Middleware Version",
       "requirement": "RECOMMENDED",
-      "description": "The specific version number of the middleware software.",
+      "description": "This field indicates the specific version number of the middleware software. Version numbers typically follow the format of major.minor.patch (e.g., 8.0.1) or similar numerical sequences, and may also include letters and separators (e.g., 'v2.1-beta').",
       "type": "string",
       "valid_type": "string_t"
     },
     "deviceSerialNumber": {
       "label": "Device Serial Number",
       "requirement": "OPTIONAL",
-      "description": "Unique serial identifier assigned by the hardware device manufacturer.",
+      "description": "The device serial number is a unique serial identifier assigned by the hardware manufacturer, used to uniquely identify the device.",
       "type": "string",
       "valid_type": "string_t"
     },
     "hostAddress": {
       "label": "Host IP Address",
       "requirement": "RECOMMENDED",
-      "description": "The network IP address of the host",
+      "description": "Host IP address, used to identify the host's location in the network. It must comply with the IPv4 or IPv6 address format specifications. IPv4 addresses are in dotted-decimal notation, consisting of four decimal numbers ranging from 0 to 255, separated by dots. IPv6 addresses are in colon-separated hexadecimal notation.",
       "type": "string",
       "valid_type": "ip_t"
     },
     "hostName": {
       "label": "Host Name",
       "requirement": "OPTIONAL",
-      "description": "The identifier name of computing devices (servers, workstations, network devices, etc.) in the network. Typically refers to their NetBIOS name (within Windows LAN) or DNS hostname (fully qualified or short name).",
+      "description": "The identifying name of a host in the network, typically used to recognize a specific device in a local area network (LAN) or DNS system, such as a NetBIOS name or DNS hostname. Format requirements: must be a valid string, allowing letters, numbers, hyphens (-), and dots (.), but cannot start or end with a hyphen or dot.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetId": {
       "label": "Asset ID",
       "requirement": "REQUIRED",
-      "description": "Globally unique identifier of the asset in the system",
+      "description": "Asset ID is the globally unique identifier of an asset in the system, formatted as a string.",
       "type": "string",
       "valid_type": "string_t"
     },
     "relateId": {
       "label": "Related ID",
       "requirement": "OPTIONAL",
-      "description": "Unique identifier used for correlating related security events or asset information.",
+      "description": "Correlation ID is a unique identifier used to associate related security events or asset information, formatted as a string.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetName": {
       "label": "Asset Name",
       "requirement": "REQUIRED",
-      "description": "Human-readable name associated with the asset",
+      "description": "Asset name, used to identify the human-readable name of the asset.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetCategory": {
       "label": "Asset Category",
       "requirement": "REQUIRED",
-      "description": "Asset classification from an asset management perspective.",
+      "description": "Asset classification refers to the categorization of assets from an asset management perspective. This field is an enumeration type with predefined optional values including: database, data_table, data_field, account, api, etc.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -169,21 +169,21 @@
     "unitId": {
       "label": "Unit ID",
       "requirement": "OPTIONAL",
-      "description": "Unique identifier of the asset's owning organization (unit ID)",
+      "description": "Unique identifier of the asset's owning organization.",
       "type": "string",
       "valid_type": "string_t"
     },
     "unitName": {
       "label": "Unit Name",
       "requirement": "OPTIONAL",
-      "description": "The name of the organization to which the asset belongs.",
+      "description": "Unit name, indicating the name of the unit to which the asset belongs.",
       "type": "string",
       "valid_type": "string_t"
     },
     "unitType": {
       "label": "Unit Type",
       "requirement": "OPTIONAL",
-      "description": "Industry and nature classification of the organizational entity to which the asset belongs, used for asset ownership management, security policy formulation, and compliance auditing.",
+      "description": "The unit type indicates the industry and nature classification of the organization entity to which the asset belongs, used for asset ownership management, security policy formulation, and compliance auditing. This field is of enumeration type, and its value must be one of the predefined optional strings, such as: party_committee (Party committee organ), large_state_owned_enterprise (Large state-owned enterprise), company (Enterprise), public_institution (Public institution), individual (Individual), and other optional values.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -284,14 +284,14 @@
     "supervisoryUnitName": {
       "label": "Supervisory Unit Name",
       "requirement": "OPTIONAL",
-      "description": "The name of the organization with regulatory authority over the asset.",
+      "description": "This field indicates the name of the regulatory authority with oversight over the asset.",
       "type": "string",
       "valid_type": "string_t"
     },
     "industry": {
       "label": "Industry Classification",
       "requirement": "OPTIONAL",
-      "description": "The national economic industry classification to which the asset belongs, used to identify the business nature, regulatory environment, and security requirements of the asset's field, with reference to China's 'National Economic Industry Classification' standard.",
+      "description": "The national economic industry classification to which the asset belongs, used to identify the business nature, regulatory environment, and security requirements of the asset's domain.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -468,7 +468,7 @@
     "assetImportance": {
       "label": "Asset Importance",
       "requirement": "RECOMMENDED",
-      "description": "Asset importance level (e.g., normal, important, core, confidential, other).",
+      "description": "Asset criticality level, used to indicate the priority and value of the asset in cybersecurity protection.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -497,238 +497,238 @@
     "assetAlias": {
       "label": "Asset Alias",
       "requirement": "OPTIONAL",
-      "description": "Asset alias for easier viewing and identification.",
+      "description": "Asset alias, used for custom naming of assets to facilitate viewing and identification.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetSource": {
       "label": "Asset Source",
       "requirement": "OPTIONAL",
-      "description": "Source of the asset (e.g., IP address of the discovered device or name of the personnel who manually entered it).",
+      "description": "Asset source, indicating the acquisition method of the asset, such as the IP address of the device that discovered the asset or the name of the operator who manually entered it.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetTag": {
       "label": "Asset Tag",
       "requirement": "OPTIONAL",
-      "description": "Service identification label assigned to assets after port scanning.",
+      "description": "Asset tags, used to identify service identification labels assigned to assets after port scanning. The field type is a string array, and each tag should be a non-empty string.",
       "type": "array",
       "valid_type": "string_t"
     },
     "orgId": {
       "label": "Organization ID",
       "requirement": "OPTIONAL",
-      "description": "The organizational structure identifier to which the asset belongs.",
+      "description": "This field represents the organizational structure identifier to which the asset belongs. It is formatted as a string type, typically automatically generated or assigned by the system, and serves as a unique identifier for the organizational structure.",
       "type": "string",
       "valid_type": "string_t"
     },
     "orgName": {
       "label": "Organization Name",
       "requirement": "OPTIONAL",
-      "description": "The name of the organizational structure to which the asset belongs.",
+      "description": "The name of the organizational structure to which the asset belongs. It should be of string type, representing the full name of the organizational structure.",
       "type": "string",
       "valid_type": "string_t"
     },
     "netId": {
       "label": "Security Domain ID",
       "requirement": "OPTIONAL",
-      "description": "Unique identifier of the asset's security domain (primarily used to resolve security domain conflicts)",
+      "description": "Unique identifier of the asset's security domain, primarily used to resolve security domain conflicts.",
       "type": "string",
       "valid_type": "string_t"
     },
     "securityZone": {
       "label": "Security Zone",
       "requirement": "OPTIONAL",
-      "description": "A logically or physically segmented network zone divided for security purposes.",
+      "description": "This field represents the logical or physical network segment assigned for security purposes.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetUser": {
       "label": "Asset User",
       "requirement": "RECOMMENDED",
-      "description": "Name of the personnel using the asset",
+      "description": "Name of the personnel using the asset, in string format.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetUserPhone": {
       "label": "Asset User Phone Number",
       "requirement": "RECOMMENDED",
-      "description": "Contact mobile number of the asset user (for security communication purposes)",
+      "description": "Contact mobile number of the asset user, used for security communication. Must comply with mobile number format specifications.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetUserMail": {
       "label": "Asset User Contact Email",
       "requirement": "OPTIONAL",
-      "description": "Contact email of the asset user (for security communication purposes)",
+      "description": "Contact email of the asset user, used for security communication. Format requirements: must comply with standard email address format, including '@' symbol and valid domain name.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetOwnerName": {
       "label": "Asset Owner Name",
       "requirement": "RECOMMENDED",
-      "description": "Name of the asset owner",
+      "description": "Name of the asset owner.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetOwnerPhone": {
       "label": "Asset Owner Contact Information",
       "requirement": "RECOMMENDED",
-      "description": "Contact information of the asset owner",
+      "description": "Contact information of the asset owner, used to identify the contact phone number of the responsible party for the asset.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetOwnerMail": {
       "label": "Asset Owner Email",
       "requirement": "OPTIONAL",
-      "description": "Email address of the asset owner",
+      "description": "Responsible person's email address, used to identify the email address of the asset owner. The format must comply with standard email address specifications, including a valid username and domain name part.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetDepartmentName": {
       "label": "Asset Department Name",
       "requirement": "OPTIONAL",
-      "description": "The name of the department or unit responsible for asset management.",
+      "description": "Management department (unit) name, referring to the full name of the department or unit responsible for managing the asset.",
       "type": "string",
       "valid_type": "string_t"
     },
     "departmentHeadName": {
       "label": "Department Head Name",
       "requirement": "OPTIONAL",
-      "description": "Name of the department head",
+      "description": "This field indicates the name of the department head.",
       "type": "string",
       "valid_type": "string_t"
     },
     "departmentHeadPhone": {
       "label": "Department Head Phone Number",
       "requirement": "OPTIONAL",
-      "description": "Mobile phone number of the department head",
+      "description": "Mobile phone number of the department head. Format requirements: Must be in a valid mobile phone number format.",
       "type": "string",
       "valid_type": "string_t"
     },
     "departmentHeadMail": {
       "label": "Department Head Email",
       "requirement": "OPTIONAL",
-      "description": "Email address of the department head",
+      "description": "The email address of the department head, used for receiving relevant notifications and contact purposes. Format requirements: must comply with the standard email address format, including a valid username and domain name separated by the @ symbol.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetDescription": {
       "label": "Asset Description",
       "requirement": "OPTIONAL",
-      "description": "Detailed description of the asset, including type, purpose, department affiliation, and user information.",
+      "description": "Asset description provides detailed information about the asset, including but not limited to asset type, primary purpose, affiliated department, user, and other relevant information. This field is of string type, and the content should be concise and accurately reflect the characteristics and status of the asset.",
       "type": "string",
       "valid_type": "string_t"
     },
     "createTime": {
       "label": "Creation Time",
       "requirement": "OPTIONAL",
-      "description": "The initial creation time of a system object, file, or resource.",
+      "description": "This field records the initial creation time of a system object, file, or resource. The time format must be yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t"
     },
     "updateTime": {
       "label": "Update Time",
       "requirement": "OPTIONAL",
-      "description": "Timestamp of the last update for the data information.",
+      "description": "Timestamp of the last update for the data information, using standard time format in the pattern: yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t"
     },
     "assetGroup": {
       "label": "Asset Group",
       "requirement": "OPTIONAL",
-      "description": "The organizational group or department to which the asset belongs.",
+      "description": "This field indicates the organizational group or department name to which the asset belongs.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoLongitude": {
       "label": "Asset Geographic Longitude",
       "requirement": "OPTIONAL",
-      "description": "Longitude coordinate of the asset location (decimal, WGS84 standard).",
+      "description": "Longitude coordinate of the asset location, expressed in decimal degrees and compliant with the WGS84 geodetic coordinate system standard. The format requires a string type, representing a floating-point number within the range of -180.000000 to 180.000000.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoLatitude": {
       "label": "Asset Geographic Latitude",
       "requirement": "OPTIONAL",
-      "description": "Latitude coordinate of the asset location (in decimal degrees, WGS84 standard).",
+      "description": "Latitude coordinate of the asset location, expressed in decimal degrees according to the WGS84 geodetic coordinate system standard. The format requires a floating-point string representing degrees of north or south latitude, with a valid range from -90.000000 to 90.000000.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoCountry": {
       "label": "Asset Geographic Country",
       "requirement": "OPTIONAL",
-      "description": "The country name where the asset is currently located.",
+      "description": "The name of the country where the asset is currently located, using the country names from the ISO 3166-1 standard (e.g., China, United States). The value should be the full and standard country name, avoiding abbreviations or codes.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoProvince": {
       "label": "Asset Geographic Province",
       "requirement": "OPTIONAL",
-      "description": "The name of the province where the asset is currently located.",
+      "description": "The name of the province where the asset is currently located, which should comply with the national administrative division naming standards.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoProvinceCode": {
       "label": "Asset Geographic Province Code",
       "requirement": "OPTIONAL",
-      "description": "Administrative division code of the province where the asset is located",
+      "description": "The administrative division code of the province where the asset is located, using the national standard administrative division code format.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoCityCode": {
       "label": "Asset Geographic City Code",
       "requirement": "OPTIONAL",
-      "description": "Administrative division code of the city where the asset is located.",
+      "description": "Administrative division code of the city where the asset is located, using the national standard administrative division coding format.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoCountyCode": {
       "label": "Asset Geographic County Code",
       "requirement": "OPTIONAL",
-      "description": "Administrative division code of the county/district where the asset is located",
+      "description": "Administrative division code of the asset's physical location (county/district), compliant with the national administrative division coding standard.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoCity": {
       "label": "Asset Geo City",
       "requirement": "OPTIONAL",
-      "description": "The name of the city where the asset is currently located.",
+      "description": "The name of the city where the asset is currently located, represented in string format.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoCounty": {
       "label": "Asset Geographic County",
       "requirement": "OPTIONAL",
-      "description": "The current county/district location of the asset",
+      "description": "The full name of the district or county where the asset is physically located. Standard administrative division names should be used, avoiding abbreviations or colloquial terms.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoRegion": {
       "label": "Asset Geographic Region",
       "requirement": "OPTIONAL",
-      "description": "The physical geographic location region where the asset is actually located.",
+      "description": "This field indicates the actual physical geographic location region of the asset, used to record the specific geographic location information of the asset. The format is of string type, using a standard geographic location description format, such as a hierarchical structure of 'Province/City/District' or 'Country/Province/City'.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetGeoAddress": {
       "label": "Asset Geographic Address",
       "requirement": "OPTIONAL",
-      "description": "Detailed physical address of the asset's location.",
+      "description": "The detailed physical location of the asset, including street address, building, floor, and room number information.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetRegion": {
       "label": "Asset Region",
       "requirement": "OPTIONAL",
-      "description": "Logical deployment location of the asset (e.g., DMZ zone, internal network).",
+      "description": "The logical deployment location of the asset, such as DMZ zone, internal network, etc.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetProtectStatus": {
       "label": "Asset Protection Status",
       "requirement": "OPTIONAL",
-      "description": "Operational status of asset security protection mechanisms/services",
+      "description": "Operational status of asset security protection mechanisms or services.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -749,7 +749,7 @@
     "assetConfidentiality": {
       "label": "Asset Confidentiality",
       "requirement": "OPTIONAL",
-      "description": "The confidentiality level of an asset, indicating the potential impact of unauthorized disclosure.",
+      "description": "This field indicates the confidentiality level of the asset, used to assess the potential impact degree of unauthorized information disclosure.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -778,7 +778,7 @@
     "assetIntegrity": {
       "label": "Asset Integrity",
       "requirement": "OPTIONAL",
-      "description": "Asset integrity level, indicating the potential impact of unauthorized tampering.",
+      "description": "Integrity level, indicating the potential impact degree of unauthorized tampering with the asset.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -807,7 +807,7 @@
     "assetUsability": {
       "label": "Asset Usability",
       "requirement": "OPTIONAL",
-      "description": "The extent to which an asset can operate as expected and provide services.",
+      "description": "This field indicates the extent to which the asset can operate as expected and provide services.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -836,14 +836,14 @@
     "isCriticalProtection": {
       "label": "Critical Infrastructure Protection Status",
       "requirement": "OPTIONAL",
-      "description": "Indicates whether the asset is classified as critical infrastructure requiring special protection measures.",
+      "description": "Indicates whether the asset is classified as critical infrastructure requiring special protection measures. This field is of boolean type, with possible values of true or false.",
       "type": "boolean",
       "valid_type": "boolean_t"
     },
     "protectionLevel": {
       "label": "Protection Level",
       "requirement": "OPTIONAL",
-      "description": "Asset classification level determined according to the Critical Information Infrastructure Protection grading system.",
+      "description": "This field indicates the asset level determined in accordance with the Critical Information Infrastructure Protection classification system.",
       "type": "enum",
       "valid_type": "integer_t",
       "enum": {
@@ -876,35 +876,35 @@
     "isDomestic": {
       "label": "Is Domestic",
       "requirement": "OPTIONAL",
-      "description": "Indicates whether the asset is domestically produced or procured within the country.",
+      "description": "This field is used to identify whether the asset is domestically produced or procured within the country.",
       "type": "boolean",
       "valid_type": "boolean_t"
     },
     "isCriticalInfra": {
       "label": "Is Critical Infrastructure",
       "requirement": "OPTIONAL",
-      "description": "Indicates whether the asset belongs to critical infrastructure as defined by national standards.",
+      "description": "Indicates whether the asset belongs to critical infrastructure as defined by national standards. This field is of boolean type and only accepts true or false values.",
       "type": "boolean",
       "valid_type": "boolean_t"
     },
     "isClassified": {
       "label": "Is Classified",
       "requirement": "OPTIONAL",
-      "description": "Indicates whether the asset contains or processes classified information.",
+      "description": "Indicates whether the asset contains or processes classified information. This field is of boolean type, with values strictly limited to true or false, representing 'yes' and 'no' respectively.",
       "type": "boolean",
       "valid_type": "boolean_t"
     },
     "cabinetPosition": {
       "label": "Cabinet Position",
       "requirement": "OPTIONAL",
-      "description": "Physical location identifier of the cabinet where the asset is located.",
+      "description": "Cabinet location is used to identify the physical position of the asset within the rack.",
       "type": "string",
       "valid_type": "string_t"
     },
     "unitRole": {
       "label": "Unit Role",
       "requirement": "OPTIONAL",
-      "description": "Functional role classification of the asset's owning unit.",
+      "description": "Functional role classification of the asset's affiliated organization.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -929,7 +929,7 @@
     "unitAffiliation": {
       "label": "Unit Affiliation",
       "requirement": "OPTIONAL",
-      "description": "Classification of the direct regulatory relationship to which the asset belongs.",
+      "description": "This field indicates the direct regulatory relationship classification of the asset's affiliated organization, used to identify the organization's position within the administrative hierarchy.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -958,28 +958,28 @@
     "otherInfo": {
       "label": "Other Information",
       "requirement": "OPTIONAL",
-      "description": "Additional information related to assets or events.",
+      "description": "This field is used to record additional supplementary information related to assets or events.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetAddress": {
       "label": "Asset IP Address",
       "requirement": "RECOMMENDED",
-      "description": "IP address recorded in the asset management system",
+      "description": "The unique network identifier of an asset as recorded in the management system, used for locating and accessing the asset. Format requirements: must comply with standard IPv4 or IPv6 address formats, such as dotted-decimal notation (e.g., 192.168.1.1) or IPv6 colon-separated hexadecimal notation.",
       "type": "string",
       "valid_type": "ip_t"
     },
     "assetMacAddress": {
       "label": "Asset MAC Address",
       "requirement": "OPTIONAL",
-      "description": "Media Access Control (MAC) address of the asset, in lowercase colon-separated format (e.g., 00:1a:2b:3c:4d:5e).",
+      "description": "The Media Access Control (MAC) address of the asset, used to uniquely identify network devices. The format must be a lowercase alphanumeric MAC address, consisting of six colon-separated hexadecimal groups, with each group containing two digits in the format xx:xx:xx:xx:xx:xx.",
       "type": "string",
       "valid_type": "mac_t"
     },
     "ipVersion": {
       "label": "IP Version",
       "requirement": "RECOMMENDED",
-      "description": "Version identifier of the Internet Protocol (IP)",
+      "description": "This field indicates the version identifier of the Internet Protocol (IP). The format is a string, currently primarily including \"IPv4\" and \"IPv6\".",
       "type": "string",
       "valid_type": "string_t"
     }

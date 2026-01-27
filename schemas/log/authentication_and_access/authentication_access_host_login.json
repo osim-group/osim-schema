@@ -14,7 +14,7 @@
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
-      "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
+      "description": "The machine code serves as the unique identifier of the log source device (device ID), primarily used for device cascade tracing. The value of this field must maintain global uniqueness. If no existing device ID is available, hardware encoding or license-based information may be referenced for generation. In terms of format, it must be a string, with allowed characters including uppercase letters (A-Z), lowercase letters (a-z), and numbers (0-9). While there is no fixed length restriction, uniqueness and manageability should be ensured.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -24,7 +24,7 @@
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
-      "description": "Official name of the security product vendor.",
+      "description": "The product vendor name field is used to identify the official full name of the security product vendor. The format is a string with no specific character set restrictions, but the standard name used by the vendor in business registration or official promotions should be adopted to ensure consistency and accuracy.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -34,7 +34,7 @@
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
-      "description": "Official standard name of the software or hardware product that generated the log",
+      "description": "The device product name is used to identify the official standard name of the software or hardware product that generates logs. It is a string format and requires the use of clear, standardized official product names.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -44,7 +44,7 @@
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
-      "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
+      "description": "Device name, used to identify the name of the device that generates logs, and can add asset attributes (such as headquarters, subordinate, etc.)",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -54,7 +54,7 @@
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
       "requirement": "REQUIRED",
-      "description": "Unique numeric identifier for the device type subcategory.",
+      "description": "The device subtype ID is a unique numeric identifier for the sub-classification of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the system-defined enumeration range.",
       "type": "enum",
       "valid_type": "integer_t",
       "enum": {
@@ -286,7 +286,7 @@
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
-      "description": "IP address of the log production device",
+      "description": "The IP address of the device when generating logs, used to identify the log source device. Format requirements: must be a valid IPv4 or IPv6 address format.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -296,7 +296,7 @@
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
-      "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
+      "description": "The event ID is a globally unique identifier for log events, typically generated using non-repeating algorithms such as UUID or timestamp sequences. The format should be a standard UUID string, for example: 550e8400-e29b-41d4-a716-446655440000. It must be globally unique and non-repeating.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -306,7 +306,7 @@
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
-      "description": "Summary name of the log or alert",
+      "description": "The summary name is a brief title or identifier for logs or alerts, used for quick identification of event content. This field is of string type and should be kept concise and clear.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -316,7 +316,7 @@
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
-      "description": "Detailed description information of the log or alert",
+      "description": "Used to record detailed description information for logs or alerts, stored as text strings. The content typically includes explanations of security events, system activities, or abnormal conditions, along with context and key parameters.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -326,7 +326,7 @@
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp when the event activity began.",
+      "description": "This field records the precise time when the event activity began. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -336,7 +336,7 @@
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp marking the end of an event activity.",
+      "description": "The exact time when the event activity ends. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -346,7 +346,7 @@
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp when the device locally receives and generates a log event.",
+      "description": "This field records the precise time when the device collector locally receives and generates the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -356,7 +356,7 @@
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
-      "description": "The exact timestamp when the log collection system receives the log event.",
+      "description": "The exact time when the collector receives the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -366,7 +366,7 @@
     "severity": {
       "label": "Severity Level",
       "requirement": "RECOMMENDED",
-      "description": "Indicates the severity level of the security threat for logs or alerts. 0: No risk, 1-3: Low risk, 4-6: Medium risk, 7-9: High risk, 10: Critical.",
+      "description": "Indicates the severity level of a security threat for logs or alerts. This field is an integer value ranging from 0 to 10, with each value corresponding to a specific threat level: 0 indicates no risk, 1-3 indicate low severity, 4-6 indicate medium severity, 7-9 indicate high severity, and 10 indicates critical severity.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -376,7 +376,7 @@
     "catOutcome": {
       "label": "Category Outcome",
       "requirement": "RECOMMENDED",
-      "description": "Indicates the final result status of an event operation or attack.",
+      "description": "This field is used to indicate the final result status of an event operation or attack. Its value is a predefined enumeration type, with current main options including: OK (indicating successful operation), FAIL (indicating failed operation), and Attempt (indicating an attempted operation). The value must be strictly limited to the enumeration range defined by the system.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -400,7 +400,7 @@
     "logType": {
       "label": "Log Type",
       "requirement": "RECOMMENDED",
-      "description": "Identifies the functional or object entity classification of the log event.",
+      "description": "This field identifies the functional or object entity classification of the log event. Its value is a predefined enumeration string, such as: alert (alert logs), traffic (network communication logs), process (process operation logs), command (command execution logs), file (file operation logs), etc.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -500,7 +500,7 @@
     "opType": {
       "label": "Operation Type",
       "requirement": "RECOMMENDED",
-      "description": "Identifies the specific type of operation performed in the event.",
+      "description": "Operation type, indicating the specific action performed on the target object in the event. This field is an enumeration type, and its value must be a predefined operation type string, such as: read, write, create, delete, modify, etc.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -628,7 +628,7 @@
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
-      "description": "Count the occurrences of the same type or related events.",
+      "description": "The event count field is used to tally the occurrence of events of the same type or related events. It is typically a non-negative integer.",
       "type": "long",
       "valid_type": "long_t",
       "dataSource": [
@@ -638,7 +638,7 @@
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
-      "description": "Device address of the data source",
+      "description": "Data source address refers to the network address of the device providing the data. This field must be in a valid IP address format, supporting both IPv4 and IPv6 addresses. IPv4 addresses use dotted-decimal notation (e.g., 192.168.1.5), while IPv6 addresses use colon-separated hexadecimal format.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -648,7 +648,7 @@
     "srcAddress": {
       "label": "Source IP Address",
       "requirement": "RECOMMENDED",
-      "description": "The IP address corresponding to the initiator of the network connection.",
+      "description": "Source IP address refers to the IP address used by the initiator of a network connection or security event. This field must comply with IP address format specifications and supports both IPv4 and IPv6 addresses. IPv4 addresses are in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses are in colon-separated hexadecimal format (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -658,7 +658,7 @@
     "destPort": {
       "label": "Destination Port",
       "requirement": "RECOMMENDED",
-      "description": "The network port number of the communication target, used to identify specific services or applications.",
+      "description": "The destination port is the port number of the receiving end in a network connection, used to identify the receiving application or service. This field is of integer type, with a valid range of 0-65535. Ports 0-1023 are well-known ports, 1024-49151 are registered ports, and 49152-65535 are dynamic or private ports.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -668,7 +668,7 @@
     "destAddress": {
       "label": "Destination IP Address",
       "requirement": "RECOMMENDED",
-      "description": "The target IP address for identifying network communication connections.",
+      "description": "Destination IP address, identifying the target IP address of the network communication connection. Format requirements: must comply with IP address format specifications, supporting IPv4 (e.g., 192.168.1.1) or IPv6 (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334) address notation.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -678,7 +678,7 @@
     "srcPort": {
       "label": "Source Port",
       "requirement": "RECOMMENDED",
-      "description": "Source service port number identifying the network communication connection.",
+      "description": "The source port refers to the port number of the network connection initiator, used to identify the application or service initiating the communication. The port number must be an integer ranging from 0 to 65535, where 0 is typically reserved, 1 to 1023 are well-known ports, 1024 to 49151 are registered ports, and 49152 to 65535 are dynamic or private ports.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -688,7 +688,7 @@
     "loginId": {
       "label": "Login ID",
       "requirement": "OPTIONAL",
-      "description": "System-assigned login session identifier",
+      "description": "A system-assigned login session identifier used to uniquely identify a user's login session. This field is of string type, typically consisting of a numeric or alphanumeric sequence.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -698,7 +698,7 @@
     "srcHostName": {
       "label": "Source Host Name",
       "requirement": "OPTIONAL",
-      "description": "The hostname of the initiator in network connections or threat attacks. This could be a NetBIOS name, DNS hostname, or locally configured machine name.",
+      "description": "This field represents the hostname of the initiator in a network connection or threat attack. The hostname can be a NetBIOS name, DNS hostname, or locally configured machine name. The format is a string, typically following the general naming conventions for hostnames.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -708,7 +708,7 @@
     "processId": {
       "label": "Process ID",
       "requirement": "OPTIONAL",
-      "description": "A unique numeric identifier assigned to a process by the operating system.",
+      "description": "The Process ID (PID) is a unique numeric identifier assigned by the operating system to a process, used to uniquely identify a running process within the OS. This field is of string type, typically composed of numeric characters, with its length and specific value determined by the operating system and process state.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -718,7 +718,7 @@
     "image": {
       "label": "Process Image Path",
       "requirement": "OPTIONAL",
-      "description": "The full path of the process executable file in the file system.",
+      "description": "This field represents the full path of the process executable file in the file system. The path format should comply with the operating system specifications, typically in string form, such as an absolute path starting with a forward slash (/) for Linux/Unix systems or a path containing drive letters and backslashes for Windows systems.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -728,7 +728,7 @@
     "destUserName": {
       "label": "Destination User Name",
       "requirement": "OPTIONAL",
-      "description": "Target principal user identity name for network connections, system access, or security events.",
+      "description": "This field represents the target principal user identity name for network connections, system access, or security events. It is of string type, and the specific content should be a valid username defined in the operating system or application.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -738,7 +738,7 @@
     "destNtDomain": {
       "label": "Destination NT Domain",
       "requirement": "OPTIONAL",
-      "description": "The Windows NT domain name to which the destination device belongs.",
+      "description": "The Windows NT domain name to which the destination device belongs. The format is a string, typically used to identify domains in Windows network environments.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -748,7 +748,7 @@
     "destLoginId": {
       "label": "Destination Login ID",
       "requirement": "OPTIONAL",
-      "description": "Login identifier of the target system or service",
+      "description": "The login identifier of the target system or service, typically used to identify the user or entity's identity on the target system.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -758,7 +758,7 @@
     "destUserId": {
       "label": "Destination User ID",
       "requirement": "OPTIONAL",
-      "description": "Unique identifier of the target user for security operations",
+      "description": "Unique identifier of the target user, typically used to identify the recipient or target user of a network connection.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -768,7 +768,7 @@
     "failReason": {
       "label": "Failure Reason",
       "requirement": "OPTIONAL",
-      "description": "Detailed technical reasons and contextual information for the failed operation",
+      "description": "The specific technical reason and contextual information for the operation failure, typically in string format, used to explain the detailed technical details or environmental factors that caused the failure.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -778,7 +778,7 @@
     "srcUserId": {
       "label": "Source User ID",
       "requirement": "OPTIONAL",
-      "description": "Unique ID of the user who initiated the operation or request in network communication.",
+      "description": "The source user ID is the unique identifier of the user who initiated the network connection or operation, typically used to identify the subject of the action. This field is of string type, and its format varies depending on the system or protocol. Common formats include Windows Security Identifier (SID, e.g., 'S-1-5-18'), username, user Globally Unique Identifier (GUID), or numeric ID.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -788,7 +788,7 @@
     "srcUserName": {
       "label": "Source User Name",
       "requirement": "RECOMMENDED",
-      "description": "The principal user identity name that initiates network connections, system access, or security events.",
+      "description": "Source username refers to the identity name of the principal user who initiates network connections, system access, or security events.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -798,7 +798,7 @@
     "srcNtDomain": {
       "label": "Source NT Domain",
       "requirement": "OPTIONAL",
-      "description": "The Windows NT domain name to which the source device belongs.",
+      "description": "The Windows NT domain name of the source device, used to identify the domain membership of the source device in a Windows network. This field is of string type and typically consists of letters, numbers, hyphens (-), and periods (.).",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -808,7 +808,7 @@
     "srcLoginId": {
       "label": "Source Login ID",
       "requirement": "OPTIONAL",
-      "description": "User login identifier used to initiate operations or requests in network communications.",
+      "description": "The source login ID refers to the user login identifier used when initiating operations or requests in network communications, serving to uniquely identify the originating user.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -818,7 +818,7 @@
     "loginGuid": {
       "label": "Login GUID",
       "requirement": "OPTIONAL",
-      "description": "Globally unique identifier for the login session",
+      "description": "A globally unique identifier for the login session, used to uniquely identify a single login session. The format follows the standard GUID format, typically consisting of 32 hexadecimal digits separated by hyphens into 5 groups, in the form: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx, where each x represents a hexadecimal character (0-9 or a-f).",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -828,7 +828,7 @@
     "destLoginGuid": {
       "label": "Destination Login GUID",
       "requirement": "OPTIONAL",
-      "description": "Unique identifier for a specific login session or login request on the target system.",
+      "description": "Unique identifier for a specific login session or login request on the target system, typically in GUID (Globally Unique Identifier) format.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -838,7 +838,7 @@
     "destInfo": {
       "label": "Destination Information",
       "requirement": "OPTIONAL",
-      "description": "Specific information about the target computer or service attempting to log in",
+      "description": "Target information refers to the specific identifier of the computer or service being attempted to log in to, such as hostname, IP address, or service name. Format requirements: Typically in string format, which can be a valid domain name, IPv4 address, IPv6 address, or hostname.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -848,7 +848,7 @@
     "destServiceName": {
       "label": "Destination Service Name",
       "requirement": "OPTIONAL",
-      "description": "The name of the target service being accessed or referenced.",
+      "description": "This field indicates the name of the target service being accessed or referenced, such as a hostname, database instance name, or application service identifier.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -858,7 +858,7 @@
     "appProtocol": {
       "label": "Application Protocol",
       "requirement": "RECOMMENDED",
-      "description": "Protocol types used at the application layer of the OSI model.",
+      "description": "The application protocol field indicates the protocol type used at the application layer of the OSI model. This field is of enumeration type, and its value range should be within a predefined list of protocol identifiers.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -1126,7 +1126,7 @@
     "hostAddress": {
       "label": "Host IP Address",
       "requirement": "OPTIONAL",
-      "description": "The network IP address of the host",
+      "description": "Host IP address, used to identify the host's location in the network. It must comply with the IPv4 or IPv6 address format specifications. IPv4 addresses are in dotted-decimal notation, consisting of four decimal numbers ranging from 0 to 255, separated by dots. IPv6 addresses are in colon-separated hexadecimal notation.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -1136,7 +1136,7 @@
     "deviceVersion": {
       "label": "Device Version",
       "requirement": "OPTIONAL",
-      "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
+      "description": "The device version identifies the complete version information of the device firmware, operating system, or embedded software. The version number typically follows a multi-segment numeric format, such as major version.minor version.revision number.build number, etc.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -1146,7 +1146,7 @@
     "srcTransAddress": {
       "label": "Source Translated Address",
       "requirement": "OPTIONAL",
-      "description": "After undergoing network address translation (NAT), proxy server, or VPN tunnel encapsulation processing, the source IP address presented by the data packet at the network layer. This field records the actual sending source address of the traffic after address translation by intermediate devices.",
+      "description": "The translated source IP address refers to the source IP address presented at the network layer after processing through Network Address Translation (NAT), proxy servers, or VPN tunnel encapsulation. This field must comply with IP address format specifications, either as a dotted-decimal notation IPv4 address (e.g., 192.168.1.1) or an RFC-compliant IPv6 address.",
       "type": "string",
       "valid_type": "ip_t"
     }

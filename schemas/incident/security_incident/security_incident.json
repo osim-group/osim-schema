@@ -8,21 +8,21 @@
     "incidentId": {
       "label": "Incident ID",
       "requirement": "REQUIRED",
-      "description": "A globally unique identifier for security events, typically generated using non-repeating algorithms such as UUID or timestamp sequences.",
+      "description": "The Event ID is a globally unique identifier for security incidents, typically generated using non-repetitive algorithms such as UUID or timestamp sequences to ensure its uniqueness.",
       "type": "string",
       "valid_type": "string_t"
     },
     "incidentName": {
       "label": "Incident Name",
       "requirement": "REQUIRED",
-      "description": "Brief descriptive name for identifying security events",
+      "description": "This field is used to identify the brief summary name of the security event.",
       "type": "string",
       "valid_type": "string_t"
     },
     "incidentLevel": {
       "label": "Incident Level",
       "requirement": "REQUIRED",
-      "description": "Severity level of the security incident, used to assess the impact scope and urgency of the event.",
+      "description": "Severity level of a security event, used to assess the impact scope and urgency of the incident. The value range is an enumeration type with the following options: Critical, High, Medium, Low. Strictly use the provided enumeration values.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -47,7 +47,7 @@
     "incidentStatus": {
       "label": "Incident Status",
       "requirement": "REQUIRED",
-      "description": "Indicates the current processing status of the security event within the response lifecycle.",
+      "description": "Indicates the current processing status of the security event in the response lifecycle. This field is of enumeration type, and its value must be a predefined string. Optional values include: Analysising (Analyzing), Error (Error), Ignore (Ignored), Pending (Pending), Disposed (Disposed).",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -76,7 +76,7 @@
     "incidentType": {
       "label": "Incident Type",
       "requirement": "REQUIRED",
-      "description": "Identify the primary attack classification and technical category of the security incident.",
+      "description": "The security event type field is used to identify the primary attack classification and technical category of a security event, represented in a hierarchical path format. This field is of enumeration type and must be selected from predefined optional values, with each value being a string-formatted path.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -389,133 +389,133 @@
     "latestActivityTime": {
       "label": "Latest Activity Time",
       "requirement": "RECOMMENDED",
-      "description": "The timestamp of the last activity or alert trigger in the security event record.",
+      "description": "This field records the timestamp of the last activity or alert trigger in the security event. The format must be a standard datetime string, with specific requirements as follows: yyyy-mm-dd HH:mm:ss, for example, 2024-12-27 19:28:22.",
       "type": "string",
       "valid_type": "datetime_string_t"
     },
     "createTime": {
       "label": "Creation Time",
       "requirement": "OPTIONAL",
-      "description": "The initial creation time of a system object, file, or resource.",
+      "description": "This field records the initial creation time of a system object, file, or resource. The time format must be yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t"
     },
     "closeTime": {
       "label": "Close Time",
       "requirement": "OPTIONAL",
-      "description": "The timestamp when the incident was resolved and officially closed.",
+      "description": "The closeTime field indicates the timestamp when the incident handling is completed and officially closed. This field is of string type and must strictly adhere to the datetime format: yyyy-mm-dd HH:mm:ss, e.g., 2025-01-14 11:18:31.",
       "type": "string",
       "valid_type": "datetime_string_t"
     },
     "closeReason": {
       "label": "Close Reason",
       "requirement": "RECOMMENDED",
-      "description": "Record the specific reason for closing the security incident and its resolution status.",
+      "description": "This field is used to record the specific reason and resolution status for closing a security incident. The value should be of string type and concisely describe the reason for closing the event.",
       "type": "string",
       "valid_type": "string_t"
     },
     "closeUser": {
       "label": "Close User",
       "requirement": "OPTIONAL",
-      "description": "Identifies the user or system entity that performed the event closure operation.",
+      "description": "This field identifies the user or system entity that performed the event closure operation. Its value is of string type and is used to record the initiator of the closure operation.",
       "type": "string",
       "valid_type": "string_t"
     },
     "participants": {
       "label": "Participants",
       "requirement": "OPTIONAL",
-      "description": "A list of all personnel involved in security incident response and handling.",
+      "description": "This field records a list of all personnel involved in security incident response and handling, stored in string array format.",
       "type": "array",
       "valid_type": "string_t"
     },
     "alertDevices": {
       "label": "Alert Devices",
       "requirement": "RECOMMENDED",
-      "description": "A collection of security device and sensor information that generates alarm records.",
+      "description": "The alert source device field records a collection of security devices and sensor information that generated the alert, formatted as a string array. Each array element should be a string describing the device name and identification information, typically including key details such as device name and IP address.",
       "type": "array",
       "valid_type": "string_t"
     },
     "isInternetAttack": {
       "label": "Is Internet Attack",
       "requirement": "RECOMMENDED",
-      "description": "Identify whether the attack source originates from an external network on the internet.",
+      "description": "This field is used to identify whether the attack source originates from an external network on the internet. The field type is boolean, with possible values of true or false, where true indicates the attack source is from the internet, and false indicates the attack source is not from the internet.",
       "type": "boolean",
       "valid_type": "boolean_t"
     },
     "durationTime": {
       "label": "Duration Time",
       "requirement": "OPTIONAL",
-      "description": "The complete duration of the recorded event or operation from start to finish, unit: seconds",
+      "description": "Duration represents the complete time length from the start to the end of an event or operation, measured in seconds. This field is a long integer value and should be greater than or equal to 0.",
       "type": "long",
       "valid_type": "long_t"
     },
     "incidentDataSource": {
       "label": "Incident Data Source",
       "requirement": "OPTIONAL",
-      "description": "Identify the original source system and detection mechanism of security event data.",
+      "description": "The security event data source field is used to identify the original source system and detection mechanism of security event data, such as security devices, log systems, threat intelligence platforms, or manual reports.",
       "type": "string",
       "valid_type": "string_t"
     },
     "alertNames": {
       "label": "Alert Name List",
       "requirement": "OPTIONAL",
-      "description": "A collection of all associated alert rule names throughout the security event lifecycle.",
+      "description": "Alert name list, recording the collection of all alert rule names associated throughout the security event lifecycle. This field is a string array, where each element represents an alert name string.",
       "type": "array",
       "valid_type": "string_t"
     },
     "alertIds": {
       "label": "Alert ID List",
       "requirement": "RECOMMENDED",
-      "description": "A collection of unique identifiers for all alerts associated with the security incident.",
+      "description": "A collection of unique identifiers for all alerts associated with the security event. This field is a string array, where each element should be a string representing the unique identifier of an alert.",
       "type": "array",
       "valid_type": "string_t"
     },
     "alertTypes": {
       "label": "Alert Type List",
       "requirement": "RECOMMENDED",
-      "description": "A collection of all alert classification types associated with the recorded security event.",
+      "description": "A collection of all alert classification types associated with the recorded security event. The field value is a string array, where each array element represents an alert classification type string.",
       "type": "array",
       "valid_type": "string_t"
     },
     "alertCount": {
       "label": "Alert Count",
       "requirement": "OPTIONAL",
-      "description": "Total number of alerts associated with the security event statistics",
+      "description": "This field is used to count the total number of alerts associated with a security event. The value should be a non-negative integer representing the specific quantity of alerts.",
       "type": "integer",
       "valid_type": "integer_t"
     },
     "attacker": {
       "label": "Attacker",
       "requirement": "RECOMMENDED",
-      "description": "A collection of all unique source IP addresses used in the attack activity.",
+      "description": "Attackers refer to the collection of all unique source IP addresses used in attack activities, serving to identify the origin of the attack. This field is of array type, where each element must comply with IP address format requirements, i.e., a valid IPv4 or IPv6 address.",
       "type": "array",
       "valid_type": "ip_t"
     },
     "victim": {
       "label": "Victim IP Address Set",
       "requirement": "RECOMMENDED",
-      "description": "A collection of all unique target IP addresses affected by the attack.",
+      "description": "A set of all unique target IP addresses affected by the attack, stored in an array format. Each element in the array must be a valid IPv4 or IPv6 address. IPv4 addresses should be in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses must conform to standard representation (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334 or compressed format).",
       "type": "array",
       "valid_type": "ip_t"
     },
     "srcAddrList": {
       "label": "Source IP Address List",
       "requirement": "RECOMMENDED",
-      "description": "A collection of all unique source IP addresses recorded in security events.",
+      "description": "This field records the set of all unique source IP addresses in a security event. The field value is a string array, where each array element must be a valid IPv4 or IPv6 address.",
       "type": "array",
       "valid_type": "ip_t"
     },
     "destAddrList": {
       "label": "Destination IP Address List",
       "requirement": "RECOMMENDED",
-      "description": "A collection of all unique destination IP addresses recorded in the security event.",
+      "description": "The destination IP list records the collection of all unique destination IP addresses in a security event. This field is of array type, where each element must be in a valid IPv4 or IPv6 address format.",
       "type": "array",
       "valid_type": "ip_t"
     },
     "assignee": {
       "label": "Assignee",
       "requirement": "OPTIONAL",
-      "description": "Identify the primary responsible party for security incident investigation and response.",
+      "description": "The responsible person field is used to identify the primary individual accountable for security incident investigation and response. The value should be of string type, typically representing the responsible person's username, employee ID, or full name.",
       "type": "string",
       "valid_type": "string_t"
     }

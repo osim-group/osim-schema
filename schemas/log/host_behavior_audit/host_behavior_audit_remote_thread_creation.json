@@ -11,7 +11,7 @@
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
-      "description": "Unique identifier of the log source device (device ID), used for cascading. Allowed characters include uppercase and lowercase letters and numbers. If no device ID is available, hardware encoding or license-based unique identifier generation may be referenced.",
+      "description": "The machine code serves as the unique identifier of the log source device (device ID), primarily used for device cascade tracing. The value of this field must maintain global uniqueness. If no existing device ID is available, hardware encoding or license-based information may be referenced for generation. In terms of format, it must be a string, with allowed characters including uppercase letters (A-Z), lowercase letters (a-z), and numbers (0-9). While there is no fixed length restriction, uniqueness and manageability should be ensured.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -21,7 +21,7 @@
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
-      "description": "Official name of the security product vendor.",
+      "description": "The product vendor name field is used to identify the official full name of the security product vendor. The format is a string with no specific character set restrictions, but the standard name used by the vendor in business registration or official promotions should be adopted to ensure consistency and accuracy.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -31,7 +31,7 @@
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
-      "description": "Official standard name of the software or hardware product that generated the log",
+      "description": "The device product name is used to identify the official standard name of the software or hardware product that generates logs. It is a string format and requires the use of clear, standardized official product names.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -41,7 +41,7 @@
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
-      "description": "Unique name identifying the log source device, used for asset tracking, log correlation, and device management.",
+      "description": "Device name, used to identify the name of the device that generates logs, and can add asset attributes (such as headquarters, subordinate, etc.)",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -51,7 +51,7 @@
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
       "requirement": "REQUIRED",
-      "description": "Unique numeric identifier for the device type subcategory.",
+      "description": "The device subtype ID is a unique numeric identifier for the sub-classification of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the system-defined enumeration range.",
       "type": "enum",
       "valid_type": "integer_t",
       "enum": {
@@ -283,7 +283,7 @@
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
-      "description": "IP address of the log production device",
+      "description": "The IP address of the device when generating logs, used to identify the log source device. Format requirements: must be a valid IPv4 or IPv6 address format.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -293,7 +293,7 @@
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
-      "description": "Globally unique identifier for log events, typically generated using non-repetitive algorithms such as UUID or timestamp sequences.",
+      "description": "The event ID is a globally unique identifier for log events, typically generated using non-repeating algorithms such as UUID or timestamp sequences. The format should be a standard UUID string, for example: 550e8400-e29b-41d4-a716-446655440000. It must be globally unique and non-repeating.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -303,7 +303,7 @@
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
-      "description": "Summary name of the log or alert",
+      "description": "The summary name is a brief title or identifier for logs or alerts, used for quick identification of event content. This field is of string type and should be kept concise and clear.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -313,7 +313,7 @@
     "message": {
       "label": "Message Description",
       "requirement": "OPTIONAL",
-      "description": "Detailed description information of the log or alert",
+      "description": "Used to record detailed description information for logs or alerts, stored as text strings. The content typically includes explanations of security events, system activities, or abnormal conditions, along with context and key parameters.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -323,7 +323,7 @@
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp when the event activity began.",
+      "description": "This field records the precise time when the event activity began. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -333,7 +333,7 @@
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp marking the end of an event activity.",
+      "description": "The exact time when the event activity ends. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -343,7 +343,7 @@
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "REQUIRED",
-      "description": "The precise timestamp when the device locally receives and generates a log event.",
+      "description": "This field records the precise time when the device collector locally receives and generates the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -353,7 +353,7 @@
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
-      "description": "The exact timestamp when the log collection system receives the log event.",
+      "description": "The exact time when the collector receives the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -363,7 +363,7 @@
     "severity": {
       "label": "Severity Level",
       "requirement": "RECOMMENDED",
-      "description": "Indicates the severity level of the security threat for logs or alerts. 0: No risk, 1-3: Low risk, 4-6: Medium risk, 7-9: High risk, 10: Critical.",
+      "description": "Indicates the severity level of a security threat for logs or alerts. This field is an integer value ranging from 0 to 10, with each value corresponding to a specific threat level: 0 indicates no risk, 1-3 indicate low severity, 4-6 indicate medium severity, 7-9 indicate high severity, and 10 indicates critical severity.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -373,7 +373,7 @@
     "catOutcome": {
       "label": "Category Outcome",
       "requirement": "RECOMMENDED",
-      "description": "Indicates the final result status of an event operation or attack.",
+      "description": "This field is used to indicate the final result status of an event operation or attack. Its value is a predefined enumeration type, with current main options including: OK (indicating successful operation), FAIL (indicating failed operation), and Attempt (indicating an attempted operation). The value must be strictly limited to the enumeration range defined by the system.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -397,7 +397,7 @@
     "logType": {
       "label": "Log Type",
       "requirement": "RECOMMENDED",
-      "description": "Identifies the functional or object entity classification of the log event.",
+      "description": "This field identifies the functional or object entity classification of the log event. Its value is a predefined enumeration string, such as: alert (alert logs), traffic (network communication logs), process (process operation logs), command (command execution logs), file (file operation logs), etc.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -497,7 +497,7 @@
     "opType": {
       "label": "Operation Type",
       "requirement": "RECOMMENDED",
-      "description": "Identifies the specific type of operation performed in the event.",
+      "description": "Operation type, indicating the specific action performed on the target object in the event. This field is an enumeration type, and its value must be a predefined operation type string, such as: read, write, create, delete, modify, etc.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -625,7 +625,7 @@
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
-      "description": "Count the occurrences of the same type or related events.",
+      "description": "The event count field is used to tally the occurrence of events of the same type or related events. It is typically a non-negative integer.",
       "type": "long",
       "valid_type": "long_t",
       "dataSource": [
@@ -635,7 +635,7 @@
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
-      "description": "Device address of the data source",
+      "description": "Data source address refers to the network address of the device providing the data. This field must be in a valid IP address format, supporting both IPv4 and IPv6 addresses. IPv4 addresses use dotted-decimal notation (e.g., 192.168.1.5), while IPv6 addresses use colon-separated hexadecimal format.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -645,7 +645,7 @@
     "processId": {
       "label": "Process ID",
       "requirement": "RECOMMENDED",
-      "description": "A unique numeric identifier assigned to a process by the operating system.",
+      "description": "The Process ID (PID) is a unique numeric identifier assigned by the operating system to a process, used to uniquely identify a running process within the OS. This field is of string type, typically composed of numeric characters, with its length and specific value determined by the operating system and process state.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -655,7 +655,7 @@
     "processMd5": {
       "label": "Process MD5 Hash",
       "requirement": "RECOMMENDED",
-      "description": "MD5 hash value of the process executable file",
+      "description": "MD5 hash of the process executable file, used for uniquely identifying and verifying files. This value is a 32-character hexadecimal string composed of digits 0-9 and lowercase letters a-f, and its format must comply with the standard MD5 digest algorithm output format.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -665,7 +665,7 @@
     "processUserName": {
       "label": "Process User Name",
       "requirement": "RECOMMENDED",
-      "description": "Operating system user account of the executing process",
+      "description": "This field represents the operating system user account of the executing process. Format requirements: The username should be a valid operating system user identifier, typically composed of characters such as letters, numbers, and underscores.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -685,7 +685,7 @@
     "parentProcessName": {
       "label": "Parent Process Name",
       "requirement": "OPTIONAL",
-      "description": "The executable file name of the parent process that created the current process.",
+      "description": "This field represents the executable file name of the parent process that created the current process. The field should exclude path information and retain only the pure name.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -695,7 +695,7 @@
     "parentProcessId": {
       "label": "Parent Process ID",
       "requirement": "OPTIONAL",
-      "description": "A unique numeric identifier assigned by the operating system to the parent process.",
+      "description": "The parent process ID is a unique numeric identifier assigned by the operating system to the parent process, typically a non-negative integer.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -705,7 +705,7 @@
     "parentProcessUserName": {
       "label": "Parent Process User Name",
       "requirement": "OPTIONAL",
-      "description": "The name of the operating system user account that executed the parent process.",
+      "description": "The user account name of the parent process in the operating system, used to identify the user identity that initiated the process.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -715,7 +715,7 @@
     "parentProcessMd5": {
       "label": "Parent Process MD5 Hash",
       "requirement": "OPTIONAL",
-      "description": "MD5 hash value of the parent process executable file",
+      "description": "MD5 hash of the parent process executable file, used to uniquely identify the file. Format requirements: must be a 32-character hexadecimal string consisting of digits 0-9 and uppercase letters A-F, without hyphens or other separators.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -725,7 +725,7 @@
     "destProcessId": {
       "label": "Destination Process ID",
       "requirement": "RECOMMENDED",
-      "description": "The PID of the target process in cross-process operations or injection operations.",
+      "description": "Target process ID, referring to the PID of the target process in cross-process operations or injection operations. Its value is a process identifier, typically represented as a non-negative integer string.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -735,7 +735,7 @@
     "processStartTime": {
       "label": "Process Start Time",
       "requirement": "OPTIONAL",
-      "description": "The exact time when the operating system successfully created a process instance.",
+      "description": "Process start time, referring to the precise moment when the operating system successfully creates a process instance. The required format is a standard datetime string, specifically: yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -745,7 +745,7 @@
     "parentProcessStartTime": {
       "label": "Parent Process Start Time",
       "requirement": "OPTIONAL",
-      "description": "The precise timestamp of when the parent process instance was created.",
+      "description": "The precise creation time of the parent process instance, formatted as yyyy-mm-dd HH:mm:ss.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -755,7 +755,7 @@
     "processGuid": {
       "label": "Process GUID",
       "requirement": "OPTIONAL",
-      "description": "Globally unique identifier of the process instance",
+      "description": "A globally unique identifier for the process instance, typically in UUID format, compliant with the standard UUID v4 specification, which consists of 32 hexadecimal digits separated into 5 groups by hyphens.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -765,7 +765,7 @@
     "parentProcessGuid": {
       "label": "Parent Process GUID",
       "requirement": "OPTIONAL",
-      "description": "Globally unique identifier of the parent process instance",
+      "description": "A globally unique identifier for the parent process instance, used to uniquely identify the parent process instance in the operating system. This field is of string type, typically formatted as a standard GUID consisting of 32 hexadecimal digits separated into 5 groups by hyphens.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -775,7 +775,7 @@
     "image": {
       "label": "Process Image Path",
       "requirement": "RECOMMENDED",
-      "description": "The full path of the process executable file in the file system.",
+      "description": "This field represents the full path of the process executable file in the file system. The path format should comply with the operating system specifications, typically in string form, such as an absolute path starting with a forward slash (/) for Linux/Unix systems or a path containing drive letters and backslashes for Windows systems.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -785,7 +785,7 @@
     "parentImage": {
       "label": "Parent Process Image Path",
       "requirement": "OPTIONAL",
-      "description": "The full path of the parent process executable in the file system.",
+      "description": "This field represents the full path of the parent process executable in the file system. The value should be a string formatted according to the operating system specifications, typically an absolute path, such as a Unix/Linux path starting with a forward slash (/) or a Windows path starting with a drive letter (e.g., C:\\). The path should not contain illegal characters and its length should be within the system's allowed limits. Examples: /usr/bin/bash or C:\\Windows\\System32\\cmd.exe.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -795,7 +795,7 @@
     "destImage": {
       "label": "Destination Process Image Path",
       "requirement": "RECOMMENDED",
-      "description": "The complete executable file path of the target process in cross-process operations.",
+      "description": "The full path of the target process's executable file, used to record the path information of the target process in cross-process operations. This field is of string type and should provide the complete absolute path including the drive letter, directory, and filename, such as the executable file path format in Windows systems.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -805,7 +805,7 @@
     "startAddress": {
       "label": "Start Address",
       "requirement": "RECOMMENDED",
-      "description": "The virtual memory address where a new thread begins execution, pointing to the entry point of the thread's code.",
+      "description": "The starting address is the virtual memory address where a new thread begins execution, pointing to the entry point of the thread code. The format must be a hexadecimal string, typically prefixed with '0x' followed by hexadecimal digits (0-9, a-f).",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -815,7 +815,7 @@
     "startModule": {
       "label": "Start Module",
       "requirement": "RECOMMENDED",
-      "description": "The module name where the thread begins execution.",
+      "description": "This field indicates the module name where the thread begins execution, formatted as a string type. It typically records the name of an executable file or dynamic link library, with examples such as \"ntdll.dll\" or \"kernel32.dll\".",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -825,7 +825,7 @@
     "startFunction": {
       "label": "Start Function",
       "requirement": "RECOMMENDED",
-      "description": "Entry point function name where the new thread begins execution.",
+      "description": "The start function is the entry point function name where a new thread begins execution. It is of string type and only supports combinations of letters, numbers, and underscores.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -835,7 +835,7 @@
     "newThreadId": {
       "label": "New Thread ID",
       "requirement": "RECOMMENDED",
-      "description": "A system-assigned unique numeric identifier for newly created threads.",
+      "description": "A system-assigned unique numeric identifier for newly created threads. The content should be a valid numeric sequence, typically representing a non-negative integer value assigned by the operating system to the thread.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -845,7 +845,7 @@
     "commandLine": {
       "label": "Command Line",
       "requirement": "OPTIONAL",
-      "description": "The complete command-line string passed when starting the process.",
+      "description": "The process command line is the complete command line string passed when starting a process, used to record the specific commands and parameters of the executed process.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -855,7 +855,7 @@
     "hostAddress": {
       "label": "Host IP Address",
       "requirement": "RECOMMENDED",
-      "description": "The network IP address of the host",
+      "description": "Host IP address, used to identify the host's location in the network. It must comply with the IPv4 or IPv6 address format specifications. IPv4 addresses are in dotted-decimal notation, consisting of four decimal numbers ranging from 0 to 255, separated by dots. IPv6 addresses are in colon-separated hexadecimal notation.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -865,7 +865,7 @@
     "deviceVersion": {
       "label": "Device Version",
       "requirement": "OPTIONAL",
-      "description": "Identifies the complete version information of the device firmware, operating system, or embedded software.",
+      "description": "The device version identifies the complete version information of the device firmware, operating system, or embedded software. The version number typically follows a multi-segment numeric format, such as major version.minor version.revision number.build number, etc.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [

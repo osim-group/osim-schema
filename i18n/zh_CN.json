@@ -480,23 +480,23 @@
   "fields": {
     "machineCode": {
       "label": "机器码",
-      "description": "日志来源设备的唯一标识符（设备ID），用于级联，可用字符包括大小写字母和数字，若无设备ID，可参考硬件编码或基于license生成唯一标识"
+      "description": "机器码是日志来源设备的唯一标识符（设备ID），主要用于设备级联追踪。该字段值应保持全局唯一性，若无现成的设备ID，可参考硬件编码或基于许可证（license）信息生成。格式上，它必须为字符串，允许使用的字符包括大写字母（A-Z）、小写字母（a-z）和数字（0-9）。长度无固定限制，但应保证其唯一性和可管理性。"
     },
     "productVendorName": {
       "label": "产品厂商名称",
-      "description": "标识安全产品厂商的官方名称"
+      "description": "产品厂商名称字段用于标识安全产品厂商的官方全称。格式为字符串，无特定字符集限制，但应使用厂商在工商注册或官方宣传中使用的标准名称，以确保一致性和准确性。"
     },
     "deviceSendProductName": {
       "label": "设备产品名称",
-      "description": "标识生成日志的软件或硬件产品的官方标准名称"
+      "description": "设备产品名称用于标识生成日志的软件或硬件产品的官方标准名称。格式为字符串，需使用明确、规范的官方产品名称。"
     },
     "deviceName": {
       "label": "设备名称",
-      "description": "标识日志生成设备的名称，可添加资产属性，如总部、下级等"
+      "description": "设备名称，用于标识日志生成设备的名称，可添加资产属性（如总部、下级等）。"
     },
     "deviceAssetSubTypeId": {
       "label": "设备子类型ID",
-      "description": "设备类型子分类的唯一数字标识符",
+      "description": "设备子类型ID是设备类型子分类的唯一数字标识符，用于标识具体的设备子类型。该字段为枚举类型，取值应在系统定义的枚举值范围内。",
       "enum": {
         "1": {
           "label": "Windows",
@@ -722,43 +722,43 @@
     },
     "deviceAddress": {
       "label": "设备IP地址",
-      "description": "日志生产设备的IP地址"
+      "description": "设备产生日志时的IP地址，用于标识日志来源设备。格式要求：必须为有效的IPv4或IPv6地址格式。"
     },
     "eventId": {
       "label": "事件ID",
-      "description": "日志事件的全局唯一标识符，通常采用UUID或时间戳序列等不可重复算法生成"
+      "description": "事件ID是日志事件的全局唯一标识符，通常采用UUID或时间戳序列等不可重复算法生成。格式应为标准的UUID字符串，例如：550e8400-e29b-41d4-a716-446655440000。要求全局唯一，不可重复。"
     },
     "name": {
       "label": "概要名称",
-      "description": "日志或告警的概要名称"
+      "description": "概要名称是日志或告警的简要标题或标识，用于快速识别事件内容。该字段为字符串类型，需保持简洁明了。"
     },
     "message": {
       "label": "描述",
-      "description": "日志或告警的详细描述信息"
+      "description": "用于记录日志或告警的详细描述信息，以文本字符串形式存储。内容通常包含对安全事件、系统活动或异常情况的说明、上下文及关键参数。"
     },
     "startTime": {
       "label": "开始时间",
-      "description": "记录事件活动开始的精确时间"
+      "description": "该字段记录事件活动开始的精确时间。时间格式必须为标准的日期时间字符串，格式为yyyy-mm-dd HH:mm:ss。"
     },
     "endTime": {
       "label": "结束时间",
-      "description": "记录事件活动结束的精确时间"
+      "description": "记录事件活动结束的精确时间。时间格式必须为标准的日期时间字符串，格式为yyyy-mm-dd HH:mm:ss。"
     },
     "deviceReceiptTime": {
       "label": "设备接收时间",
-      "description": "记录设备采集器本地接收生成日志事件的精确时间"
+      "description": "该字段记录设备采集器本地接收并生成日志事件的精确时间。时间格式必须为标准的日期时间字符串，格式为yyyy-mm-dd HH:mm:ss。"
     },
     "collectorReceiptTime": {
       "label": "采集器接收时间",
-      "description": "记录日志采集系统接收日志事件的精确时间"
+      "description": "采集器接收日志事件的精确时间，时间格式必须为标准的日期时间字符串，格式要求为yyyy-mm-dd HH:mm:ss。"
     },
     "severity": {
       "label": "安全威胁等级",
-      "description": "标识日志或告警的安全威胁严重程度等级。0：无风险，1-3：低危，4-6：中危，7-9：高危，10：危急。"
+      "description": "标识日志或告警的安全威胁严重程度等级。该字段为整型数值，取值范围为0至10，每个数值对应特定的威胁级别：0表示无风险，1-3表示低危，4-6表示中危，7-9表示高危，10表示危急。"
     },
     "catOutcome": {
       "label": "结果分类",
-      "description": "标识事件操作或攻击的最终结果状态",
+      "description": "该字段用于标识事件操作或攻击的最终结果状态。其值为预定义的枚举类型，当前主要可选值包括：OK（表示操作成功）、FAIL（表示操作失败）、Attempt（表示尝试性操作）。取值应严格限定在系统定义的枚举值范围内。",
       "enum": {
         "OK": {
           "label": "成功",
@@ -776,7 +776,7 @@
     },
     "logType": {
       "label": "日志类型",
-      "description": "标识日志事件的功能或对象实体分类",
+      "description": "该字段标识日志事件的功能或对象实体分类。其值为预定义的枚举字符串，例如：alert（告警类日志）、traffic（网络通信类日志）、process（进程操作类日志）、command（命令执行类日志）、file（文件操作类日志）等。",
       "enum": {
         "alert": {
           "label": "告警类日志",
@@ -870,7 +870,7 @@
     },
     "opType": {
       "label": "操作类型",
-      "description": "标识事件中对目标对象执行的操作类型",
+      "description": "操作类型，标识事件中对目标对象执行的具体操作行为。本字段为枚举类型，其值必须为预定义的操作类型字符串，例如：read（读取）、write（写入）、create（创建）、delete（删除）、modify（修改）等。",
       "enum": {
         "read": {
           "label": "读取",
@@ -992,79 +992,79 @@
     },
     "XFF": {
       "label": "XFF头",
-      "description": "用来识别通过HTTP代理或负载均衡方式连接到Web服务器的客户端最原始的IP地址的HTTP请求头字段"
+      "description": "XFF头字段用于识别通过HTTP代理或负载均衡方式连接到Web服务器的客户端最原始的IP地址。"
     },
     "srcPort": {
       "label": "源端口",
-      "description": "网络连接发起方的端口号"
+      "description": "源端口是指网络连接发起方的端口号，用于标识发起通信的应用程序或服务。端口号必须是整数，取值范围为0到65535，其中0通常保留，1到1023为知名端口，1024到49151为注册端口，49152到65535为动态或私有端口。"
     },
     "destPort": {
       "label": "目的端口",
-      "description": "网络连接接收方的端口号"
+      "description": "目的端口是网络连接接收方的端口号，用于标识接收方应用程序或服务。该字段为整数类型，取值范围为0-65535，其中0-1023为知名端口，1024-49151为注册端口，49152-65535为动态或私有端口。"
     },
     "srcMacAddress": {
       "label": "源MAC地址",
-      "description": "网络数据帧发送方的媒体访问控制地址"
+      "description": "源MAC地址表示网络数据帧发送方的媒体访问控制地址。格式要求：必须为标准MAC地址格式，即6组由冒号分隔的十六进制字节（xx:xx:xx:xx:xx:xx），每组两个字符，取值范围为00-FF。"
     },
     "destMacAddress": {
       "label": "目的MAC地址",
-      "description": "网络数据帧接收方的媒体访问控制地址"
+      "description": "目的MAC地址表示网络数据帧接收方的媒体访问控制地址。格式要求：必须为标准MAC地址格式，即6组由冒号分隔的十六进制字节（xx:xx:xx:xx:xx:xx），每组两个字符，取值范围为00-FF。"
     },
     "srcGeoCountry": {
       "label": "来源国家",
-      "description": "网络连接发起方IP地址所对应的国家信息"
+      "description": "该字段表示网络连接发起方IP地址所对应的国家或地区信息。"
     },
     "srcGeoRegion": {
       "label": "来源地区",
-      "description": "网络连接发起方IP地址所对应的省级行政区域名称"
+      "description": "该字段表示网络连接发起方IP地址所对应的省级行政区域名称，用于标识流量的地理来源。其值应为中国省级行政区划的名称，例如“北京市”、“浙江省”、“新疆维吾尔自治区”等，或国际公认的国家及地区名称。格式为字符串，无固定长度限制，建议使用标准、完整的官方名称以确保一致性和准确性。"
     },
     "srcGeoCity": {
       "label": "来源城市",
-      "description": "网络连接发起方IP地址所对应的城市级别行政区域名称"
+      "description": "该字段表示网络连接发起方IP地址所对应的城市级别行政区域名称。其值为字符串类型，该信息通常由IP地址归属地查询服务提供，无特定的格式或字符集强制要求，但建议保持名称的一致性。"
     },
     "srcGeoAddress": {
       "label": "来源详细地址",
-      "description": "网络连接发起方IP地址所对应的详细地址描述"
+      "description": "该字段表示网络连接发起方IP地址所对应的详细地址描述，用于定位来源的具体物理或行政位置。其值为字符串类型，通常包含国家、省份、城市、区县、街道及门牌号等层级信息。"
     },
     "srcGeoLatitude": {
       "label": "来源纬度",
-      "description": "网络连接发起方IP地址所对应的地理纬度坐标"
+      "description": "该字段表示网络连接发起方IP地址所对应的地理纬度坐标，以字符串格式存储。纬度坐标应遵循十进制表示法，取值范围为-90.000000到90.000000，其中北纬为正，南纬为负。"
     },
     "srcGeoLongitude": {
       "label": "来源经度",
-      "description": "网络连接发起方IP地址所对应的地理经度坐标"
+      "description": "来源经度表示网络连接发起方IP地址所对应的地理经度坐标。格式为十进制浮点数字符串，取值范围为-180.000000到180.000000，保留小数点后六位，使用点号（.）作为小数点分隔符，负值表示西经，正值表示东经。"
     },
     "destGeoCountry": {
       "label": "目的国家",
-      "description": "网络连接接收方IP地址所对应的国家名称"
+      "description": "目的国家，指网络连接接收方IP地址所对应的国家名称。该字段值为国家或地区的完整中文名称，例如“中国”、“美国”等。"
     },
     "destGeoRegion": {
       "label": "目的地区",
-      "description": "网络连接接收方IP地址所对应的省级行政区域名称"
+      "description": "该字段表示网络连接接收方IP地址所对应的中国省级行政区域名称，用于标识网络流量的地理目的地。其值应为中国省级行政区划的规范名称，例如“浙江省”、“北京市”或“新疆维吾尔自治区”等，不包含“省”、“市”、“自治区”等后缀的简称（如“浙江”、“北京”、“新疆”）也可接受。该字段为字符串类型，无特定字符集或长度限制，但应确保名称的准确性和一致性。"
     },
     "destGeoCity": {
       "label": "目的城市",
-      "description": "网络连接接收方IP地址所对应的城市级别行政区域名称"
+      "description": "目的城市是指网络连接接收方IP地址所对应的城市级别行政区域名称。该字段为字符串类型，需使用标准城市名称。"
     },
     "destGeoAddress": {
       "label": "目的详细地址",
-      "description": "网络连接接收方IP地址所对应的详细地址描述"
+      "description": "目的详细地址，描述网络连接接收方IP地址所对应的详细地址信息。格式为字符串，应包含国家、省/州、城市、街道等层级的详细信息，以构成一个完整的物理位置描述。"
     },
     "destGeoLatitude": {
       "label": "目的纬度",
-      "description": "网络连接接收方IP地址所对应的地理纬度坐标"
+      "description": "目的纬度表示网络连接接收方IP地址所对应的地理纬度坐标。该值为字符串类型，通常以十进制小数形式表示，取值范围为-90.000000到90.000000。"
     },
     "destGeoLongitude": {
       "label": "目的经度",
-      "description": "网络连接接收方IP地址所对应的地理经度坐标"
+      "description": "目的经度是指网络连接接收方IP地址所对应的地理经度坐标。格式为十进制小数形式的字符串，取值范围为-180.000000至180.000000。"
     },
     "ruleId": {
       "label": "规则ID",
-      "description": "触发策略的安全规则唯一标识符"
+      "description": "规则ID是触发策略的安全规则唯一标识符。其值应为字符串类型，通常由字母、数字或特定符号组成，用于在系统中唯一标识一条安全规则。"
     },
     "ruleType": {
       "label": "规则类型",
-      "description": "安全设备（如防火墙、IDS、IPS、EDR等）产生告警时对应的安全检测规则类型。该字段标识告警事件所属的安全威胁类别，反映设备内置规则库对特定攻击模式或异常行为的分类",
+      "description": "规则类型标识安全设备（如防火墙、IDS、IPS、EDR等）产生告警时对应的安全检测规则类型，反映设备内置规则库对特定攻击模式或异常行为的分类。该字段为枚举类型，其值是一个表示威胁类别的层级路径字符串，格式通常为“/一级分类/二级分类”。",
       "enum": {
         "/WebAttack/XXE": {
           "label": "XXE注入",
@@ -1742,19 +1742,19 @@
     },
     "ruleName": {
       "label": "规则名称",
-      "description": "安全规则的描述性名称"
+      "description": "规则名称是安全规则的描述性标识。该字段为字符串类型，建议使用简洁、明确且能概括规则内容的名称。名称中可包含漏洞编号、攻击类型或防护对象等关键信息，以提高可读性和识别度。"
     },
     "attackerAddress": {
       "label": "攻击者",
-      "description": "发起威胁攻击的攻击者源IP地址"
+      "description": "发起威胁攻击的攻击者源IP地址，格式要求：必须是符合IPv4或IPv6标准的IP地址格式，例如IPv4的点分十进制表示法（如192.168.22.35）或IPv6的冒号分隔十六进制表示法。"
     },
     "victimAddress": {
       "label": "受害者",
-      "description": "遭受威胁攻击或风险影响的IP地址"
+      "description": "受害者IP地址，指遭受威胁攻击或风险影响的目标IP地址。格式要求：必须是符合IPv4或IPv6标准的IP地址格式，例如IPv4的点分十进制表示法（如192.168.22.35）或IPv6的冒号分隔十六进制表示法。"
     },
     "confidence": {
       "label": "告警置信度",
-      "description": "表示对威胁检测、归因或分析结果准确性的等级评估指标",
+      "description": "告警置信度表示对威胁检测、归因或分析结果准确性的等级评估指标。该字段为枚举类型，可选值包括：Low（低置信度）、Medium（中置信度）和High（高置信度）。",
       "enum": {
         "Low": {
           "label": "低置信度",
@@ -1772,7 +1772,7 @@
     },
     "killChain": {
       "label": "攻击链",
-      "description": "描述攻击行为在攻击生命周期中所处的阶段",
+      "description": "攻击链字段用于描述攻击行为在攻击生命周期中所处的具体阶段。该字段为枚举类型，其值必须为预定义的字符串常量，可选值包括但不限于：KC_Reconnaissance（侦查）、KC_Delivery（投递）、KC_Exploitation（利用）、KC_CommandControl（命令控制）、KC_InternalRecon（内部侦查）等。",
       "enum": {
         "KC_Reconnaissance": {
           "label": "侦查",
@@ -1810,99 +1810,99 @@
     },
     "tacticId": {
       "label": "ATT&CK战术ID",
-      "description": "攻击行为在MITRE ATT&CK框架中对应的战术阶段唯一标识符"
+      "description": "攻击行为在MITRE ATT&CK框架中对应的战术阶段唯一标识符。格式必须符合ATT&CK官方定义的战术ID规范，通常以“TA”为前缀，后跟四位或五位数字，例如“TA0001”。"
     },
     "tacticName": {
       "label": "ATT&CK战术名称",
-      "description": "攻击行为在MITRE ATT&CK框架中对应的战术阶段名称"
+      "description": "攻击行为在MITRE ATT&CK框架中对应的战术阶段名称，用于标识攻击在杀伤链中所处的阶段。此字段为字符串类型，取值应为MITRE ATT&CK框架中定义的官方战术名称，例如：Initial Access, Execution, Persistence, Privilege Escalation等。"
     },
     "techniqueId": {
       "label": "ATT&CK技术ID",
-      "description": "攻击行为在MITRE ATT&CK框架中对应的具体攻击技术的唯一标识符"
+      "description": "该字段表示攻击行为在MITRE ATT&CK框架中对应的具体攻击技术的唯一标识符。格式为ATT&CK技术ID标准格式，通常以字母“T”开头，后接4位数字，例如：T1566。"
     },
     "techniqueName": {
       "label": "ATT&CK技术名称",
-      "description": "攻击行为在MITRE ATT&CK框架中对应的具体攻击技术的名称"
+      "description": "ATT&CK技术名称，指攻击行为在MITRE ATT&CK框架中对应的具体攻击技术的名称。该字段为字符串类型，其值应符合MITRE ATT&CK官方技术命名规范，通常为英文短语或特定术语，例如“Phishing”。"
     },
     "subTechniqueId": {
       "label": "ATT&CK子技术ID",
-      "description": "攻击行为在MITRE ATT&CK框架中对应的具体攻击子技术的唯一标识符"
+      "description": "该字段表示攻击行为在MITRE ATT&CK框架中对应的具体攻击子技术的唯一标识符。其格式为ATT&CK技术ID后加小数点与三位数字编号，例如 `T1566.001`。该标识符应符合MITRE ATT&CK官方规范。"
     },
     "subTechniqueName": {
       "label": "ATT&CK子技术名称",
-      "description": "攻击行为在MITRE ATT&CK框架中对应的具体攻击子技术的名称"
+      "description": "该字段表示攻击行为在MITRE ATT&CK框架中对应的具体攻击子技术的官方名称。名称格式应符合MITRE ATT&CK官方定义，通常为英文短语，采用驼峰命名法或空格分隔的单词组合，例如“Spearphishing Attachment”。"
     },
     "suggestion": {
       "label": "处置建议",
-      "description": "针对威胁攻击提供的标准化响应和修复建议指导"
+      "description": "该字段用于提供针对威胁攻击的标准化响应和修复建议指导，其内容为字符串文本。建议内容应清晰、专业、具有可操作性，用于指导安全人员或系统进行后续处置。"
     },
     "virusName": {
       "label": "病毒名称",
-      "description": "病毒描述名称，用于识别病毒"
+      "description": "病毒的名称，用于唯一标识和识别特定的病毒或恶意软件。格式为字符串类型，通常包含病毒家族、类型、变种等层级信息。"
     },
     "status": {
       "label": "状态",
-      "description": "标识操作、请求或系统组件的当前执行状态"
+      "description": "标识操作、请求或系统组件的当前执行状态。该字段为字符串类型，通常用于表示事务或流程的结果。"
     },
     "dhcpAddress": {
       "label": "DHCP分配IP地址",
-      "description": "DHCP服务器动态分配的IP地址"
+      "description": "该字段记录DHCP服务器动态分配给客户端的IP地址。该值必须符合标准的IPv4或IPv6地址格式规范。"
     },
     "eventNum": {
       "label": "Windows事件编号",
-      "description": "标识Windows终端操作系统事件的唯一数字编号"
+      "description": "Windows事件编号，用于标识Windows终端操作系统事件的唯一数字编号，格式为字符串类型，通常由微软定义的事件ID组成，例如登录成功事件编号为4624。"
     },
     "failReason": {
       "label": "失败原因",
-      "description": "记录操作失败的具体技术原因和上下文信息"
+      "description": "记录操作失败的具体技术原因和上下文信息，通常为字符串文本，用于说明导致失败的详细技术细节或环境因素。"
     },
     "samAccountName": {
       "label": "安全帐户管理器帐户名",
-      "description": "安全账号管理器(SAM)中的用户登录名"
+      "description": "安全帐户管理器(SAM)中的用户登录名，用于在Windows域或本地系统中标识用户身份。该字段为字符串类型，通常遵循以下格式要求：长度一般不超过20个字符，允许使用的字符包括字母、数字以及部分特殊符号（如连字符、下划线、点号）。"
     },
     "processId": {
       "label": "进程ID",
-      "description": "操作系统分配给进程的唯一数字标识符"
+      "description": "进程ID是操作系统分配给进程的唯一数字标识符，用于在操作系统中唯一标识一个正在运行的进程。该字段为字符串类型，通常由数字组成，长度和具体值取决于操作系统和进程状态。"
     },
     "srcUserName": {
       "label": "源用户名",
-      "description": "发起网络连接、系统访问或安全事件的主体用户身份名称"
+      "description": "源用户名指发起网络连接、系统访问或安全事件的主体用户身份名称。"
     },
     "relateUserName": {
       "label": "关联用户名",
-      "description": "标识与主操作用户名存在关联关系的辅助用户名信息"
+      "description": "该字段用于标识与主操作用户名存在关联关系的辅助用户名信息。"
     },
     "relateAddress": {
       "label": "关联IP",
-      "description": "与主操作用户存在关联关系的辅助IP地址信息，用于记录三层关联情况下的网络地址信息。例如在数据库审计中的站库分离场景中，此字段可用于关联用户登录Web服务器时的网络地址"
+      "description": "关联IP是与主操作用户存在关联关系的辅助IP地址信息，用于记录三层关联情况下的网络地址信息。例如在数据库审计中的站库分离场景中，此字段可用于关联用户登录Web服务器时的网络地址。该字段值必须为有效的IPv4或IPv6地址格式。"
     },
     "relateInfo": {
       "label": "关联信息",
-      "description": "与主操作用户名存在关联关系的描述信息"
+      "description": "关联信息字段用于描述与主操作用户名存在关联关系的各类信息。其内容为由分号分隔的键值对列表，每个键值对使用冒号分隔。键通常为大写英文字母组成的标识符，值则为对应的具体信息。其中，若值为IP地址，应符合IPv4或IPv6格式；若值为URL，应符合通用URL格式规范；若值为端口，应在0-65535范围内。其他信息应使用明确的字符串表示。"
     },
     "dbType": {
       "label": "数据库类型",
-      "description": "标识使用的数据库管理系统(DBMS)的类型"
+      "description": "数据库管理系统(DBMS)的类型标识，用于指明所使用的具体数据库产品。常见取值包括但不限于：MYSQL, ORACLE, SQLSERVER, POSTGRESQL, MARIADB, DB2, MONGODB, REDIS等。"
     },
     "requestHeader": {
       "label": "请求头",
-      "description": "HTTP网络请求客户端向服务器发送请求时用于传递请求的附加信息、客户端特性及身份验证等元数据"
+      "description": "请求头是HTTP网络请求中客户端向服务器发送请求时用于传递附加信息、客户端特性及身份验证等元数据的部分，其内容应为符合HTTP协议规范的字符串。"
     },
     "srcHostName": {
       "label": "来源主机名",
-      "description": "网络连接或威胁攻击中发起方的主机名。这可能是NetBIOS名称、DNS主机名或本地配置的机器名"
+      "description": "该字段表示网络连接或威胁攻击中发起方的主机名。主机名可以是NetBIOS名称、DNS主机名或本地配置的机器名。格式为字符串，通常遵循主机名的通用命名规范。"
     },
     "srcAddress": {
       "label": "来源IP",
-      "description": "网络连接发起方IP地址所对应的IP地址"
+      "description": "来源IP地址，指网络连接或安全事件的发起方所使用的IP地址。该字段必须符合IP地址格式规范，支持IPv4和IPv6地址。IPv4地址为点分十进制格式（如：192.168.1.1），IPv6地址为冒号分隔的十六进制格式（如：2001:0db8:85a3:0000:0000:8a2e:0370:7334）。"
     },
     "shareName": {
       "label": "共享名称",
-      "description": "通过网络访问的共享资源（例如文件共享、打印机）的名称"
+      "description": "共享资源的名称，用于标识可通过网络访问的共享资源（例如文件共享、打印机）。该字段为字符串类型，其格式通常遵循Windows网络共享的通用命名约定（UNC）。"
     },
     "tiSubcategory": {
       "label": "威胁情报子分类",
-      "description": "威胁情报IOC的情报子分类",
+      "description": "该字段表示威胁情报IOC的情报子分类，用于标识具体的威胁类型或归属类别。格式为字符串枚举类型，必须从预定义的可选值中选择，例如：/WhiteList/Others 表示白名单，/C2/Sinkhole 表示安全机构接管的C2服务器，/C2/Trojan 表示木马类恶意文件回连，/C2/Virus 表示病毒类恶意文件回连，/C2/Worm 表示蠕虫类恶意文件回连。所有可选值均采用分层路径格式进行组织。",
       "enum": {
         "/WhiteList/Others": {
           "label": "白名单",
@@ -2112,55 +2112,55 @@
     },
     "responseMsg": {
       "label": "响应体",
-      "description": "记录网络请求、系统处理请求、回复请求或发起操作行为后返回的消息内容"
+      "description": "响应体记录网络请求、系统处理请求、回复请求或发起操作行为后返回的消息内容。"
     },
     "srcTransPort": {
       "label": "转换后源端口",
-      "description": "在网络地址转换（NAT）或端口地址转换（PAT）过程中，源端口号被修改后的值"
+      "description": "转换后源端口表示在网络地址转换（NAT）或端口地址转换（PAT）过程中，源端口号被修改后的值。该字段为整数类型，取值范围为0到65535，需符合TCP/UDP端口号规范。"
     },
     "destTransAddress": {
       "label": "转换后目的IP",
-      "description": "经过目的网络地址转换（DNAT）、端口转发或负载均衡处理后，数据包在网络层最终到达的目的IP地址"
+      "description": "该字段表示经过目的网络地址转换（DNAT）、端口转发或负载均衡处理后，数据包在网络层最终到达的目的IP地址。字段值必须符合IP地址格式规范，即IPv4点分十进制格式（如 192.168.1.1）或IPv6标准格式。"
     },
     "destTransPort": {
       "label": "转换后目的端口",
-      "description": "在目的网络地址转换（DNAT）或端口重定向过程中，目的端口号被修改后的值"
+      "description": "该字段表示在目的网络地址转换（DNAT）或端口重定向过程中，目的端口号被修改后的最终端口值。格式为整数，取值范围为0到65535。"
     },
     "IoC": {
       "label": "失陷指标",
-      "description": "用于识别和检测网络安全威胁的特定指标或标志，包括恶意文件的哈希值、可疑网络地址、可疑域名等"
+      "description": "失陷指标是用于识别和检测网络安全威胁的特定指标或标志，其具体内容可以是恶意文件的哈希值、可疑网络地址、可疑域名等。当该字段值为IP地址时，需符合IPv4或IPv6的标准格式；为域名时，需符合标准的域名格式；为文件哈希时，需为有效的MD5、SHA-1或SHA-256等哈希值字符串。"
     },
     "responseHeader": {
       "label": "响应头",
-      "description": "HTTP网络请求中服务器返回给客户端描述响应的元数据（如内容类型、长度）和服务器信息"
+      "description": "响应头字段包含HTTP网络请求中服务器返回给客户端的元数据和服务器信息，用于描述响应内容（如内容类型、长度等）和服务器状态。该字段为字符串类型，其内容需符合HTTP协议标准规范。"
     },
     "passwd": {
       "label": "密码",
-      "description": "用户用于验证身份或访问权限的一组秘密字符"
+      "description": "密码是用户用于验证身份或访问权限的一组秘密字符，通常为字符串类型。建议使用强密码策略，长度建议在8到128个字符之间，可包含大小写字母、数字及特殊字符。"
     },
     "requestBody": {
       "label": "HTTP请求体",
-      "description": "HTTP网络请求客户端向服务器发送请求时传递的数据内容，通常包含请求参数、表单数据或JSON体"
+      "description": "HTTP网络请求客户端向服务器发送请求时传递的数据内容，通常包含请求参数、表单数据或JSON体。"
     },
     "requestCookies": {
       "label": "请求Cookie",
-      "description": "网站服务器发送到浏览器并存储的小型文本文件，用于在后续请求中识别用户身份或记录状态"
+      "description": "请求Cookie是网站服务器发送到浏览器并存储的小型文本文件，用于在后续请求中识别用户身份或记录状态。其格式为标准的HTTP Cookie字符串，通常由多个以分号和空格分隔的键值对组成。"
     },
     "responseCode": {
       "label": "响应码",
-      "description": "网络请求后服务器返回的状态码，用于表示请求的处理结果"
+      "description": "响应码是网络请求后服务器返回的状态码，用于表示请求的处理结果。"
     },
     "responseAddress": {
       "label": "返回的IP地址",
-      "description": "DNS查询响应中返回的IP地址信息"
+      "description": "该字段记录DNS查询响应中返回的IP地址信息。其值必须符合IP地址的标准格式，即IPv4点分十进制格式（如：192.168.1.1）或IPv6格式（如：2001:0db8:85a3:0000:0000:8a2e:0370:7334）。"
     },
     "requestUrlQuery": {
       "label": "请求URI",
-      "description": "HTTP请求URL中从根‘/’开始到查询字符串末尾的部分"
+      "description": "该字段表示HTTP请求URL中从根路径符“/”开始到查询字符串末尾的部分，即包括路径和查询参数。格式要求：必须为有效的URI路径及查询字符串，以“/”开头，可以包含字母、数字、连字符、下划线、点号以及查询参数（以“?”开头，参数间以“&”分隔）。"
     },
     "IoCType": {
       "label": "情报分类",
-      "description": "威胁情报指标类型",
+      "description": "该字段表示威胁情报指标的类型，用于分类不同的威胁情报数据。格式要求：必须为预定义的枚举值之一，包括url（URL地址）、ip（IP地址）、file（文件哈希）、email（邮箱地址）和domain（域名）。",
       "enum": {
         "url": {
           "label": "URL地址",
@@ -2186,7 +2186,7 @@
     },
     "tiCategory": {
       "label": "威胁情报分类",
-      "description": "威胁情报IOC的情报分类",
+      "description": "威胁情报分类，表示威胁情报IOC的情报分类。该字段为枚举类型，必须从预定义的可选值中选择一个，例如：/WhiteList（白名单）、/C2（C&C地址）、/Malware（恶意通信地址）、/PUA（不受欢迎地址）、/Exploit（漏洞利用）等。",
       "enum": {
         "/WhiteList": {
           "label": "白名单",
@@ -2248,15 +2248,15 @@
     },
     "requestUrl": {
       "label": "请求URL",
-      "description": "HTTP请求URL中从根‘/’开始到查询字符串‘?’的部分"
+      "description": "该字段表示HTTP请求URL中从根路径'/'开始到查询字符串'?'之前的部分，用于标识请求的资源路径。其值必须是一个合法的URL路径字符串，通常以'/'开头，不应包含协议、域名、端口或查询参数（即'?'及之后的内容）。字符串内容应符合URL路径的通用规范，可以包含字母、数字以及特定的安全字符（如-._~!$&'()*+,;=:@%）。"
     },
     "requestMethod": {
       "label": "请求方法",
-      "description": "网络请求客户端向服务器发送请求时使用的请求类型，如GET、POST等标准方法，统一使用大写字母表示"
+      "description": "网络请求客户端向服务器发送请求时使用的HTTP请求方法类型，如GET、POST、PUT、DELETE等标准方法。该字段值必须统一使用大写英文字母表示"
     },
     "mailType": {
       "label": "邮件格式",
-      "description": "标识邮件内容的格式类型",
+      "description": "该字段标识邮件内容的格式类型，其值为枚举类型，必须在指定的枚举值范围内取值，包括：text（纯文本格式）、html（HTML格式）、multipart（多部分格式）以及others（其他格式）。",
       "enum": {
         "text": {
           "label": "纯文本",
@@ -2278,75 +2278,75 @@
     },
     "requestDomain": {
       "label": "请求域名",
-      "description": "标识网络请求目标的域名信息"
+      "description": "标识网络请求目标的域名信息，格式要求为有效的域名格式，如\"www.example.com\"，需符合RFC 1035标准，由字母、数字和连字符组成，以点号分隔各级标签。"
     },
     "requestContentType": {
       "label": "请求内容类型",
-      "description": "网络请求头中的内容类型标识，用于描述请求数据的格式和字符编码"
+      "description": "请求内容类型，对应网络请求头中的Content-Type字段，用于描述请求数据的格式和字符编码。其值通常为标准MIME类型字符串，格式规范为“主类型/子类型”，并可附加参数（如字符集）。常见示例包括“application/json”、“text/html; charset=utf-8”等。"
     },
     "regNewName": {
       "label": "注册表新键名",
-      "description": "注册表操作事件中修改后的注册表键名"
+      "description": "注册表操作事件中修改后的注册表键名，为字符串类型。该字段应遵循操作系统的注册表键名命名规范，通常可包含字母、数字、下划线、连字符、点以及反斜杠路径分隔符。"
     },
     "connectCount": {
       "label": "连接数量",
-      "description": "统计当前活跃的网络连接会话总数"
+      "description": "连接数量是指统计当前活跃的网络连接会话总数。该字段为整数类型，取值范围为0到4294967295，代表非负的连接数量统计值。"
     },
     "rstCount": {
       "label": "RST包数量",
-      "description": "统计TCP连接中接收或发送的复位(RST)数据包数量"
+      "description": "该字段用于统计TCP连接中接收或发送的复位(RST)数据包数量。其值为非负整数，表示RST包的具体个数。"
     },
     "finCount": {
       "label": "FIN包数量",
-      "description": "统计TCP连接正常终止过程中发送的结束(FIN)数据包数量"
+      "description": "统计TCP连接正常终止过程中发送的结束(FIN)数据包数量。该字段为非负整数，表示FIN包的数量。"
     },
     "synCount": {
       "label": "SYN包数量",
-      "description": "统计TCP三次握手过程中发送的同步(SYN)数据包数量"
+      "description": "该字段统计TCP三次握手过程中发送的同步(SYN)数据包数量。其值为非负整数，表示特定时间窗口或连接中观察到的SYN包总数。"
     },
     "peakPackagesRate": {
       "label": "峰值数据包速率",
-      "description": "记录网络接口或系统在特定时间段内处理的最大数据包速率，单位：pps"
+      "description": "峰值数据包速率，记录网络接口或系统在特定时间段内每秒处理的最大数据包数量，单位是包每秒（pps）。该字段为非负整数，用于衡量网络流量的瞬时峰值负载。"
     },
     "peakBytesRate": {
       "label": "峰值字节速率",
-      "description": "记录网络接口或系统在特定时间段内传输的最大字节速率，单位：Bps"
+      "description": "峰值字节速率，表示网络接口或系统在特定时间段内传输的最大字节速率，单位为Bps（字节每秒）。该字段为整型数值，其值应大于等于0，用于量化网络流量或数据传输的最高瞬时速度。"
     },
     "flowPackets": {
       "label": "数据包数量",
-      "description": "统计网络会话或时间窗口内传输的数据包累计数量"
+      "description": "统计网络会话或时间窗口内传输的数据包累计数量。该字段为整型数值，表示无符号的计数。"
     },
     "bytesCount": {
       "label": "字节数量",
-      "description": "统计网络会话或时间窗口内传输的字节累计数量"
+      "description": "该字段统计网络会话或时间窗口内传输的字节累计数量。其值为非负整数，表示传输的总字节数。"
     },
     "dropPackagesRate": {
       "label": "丢包速率",
-      "description": "统计网络传输过程中丢失的数据包速率"
+      "description": "丢包速率表示统计网络传输过程中丢失的数据包速率，单位为每秒数据包个数（pps）。该字段为整型数值，取值范围为非负整数。"
     },
     "responseContentType": {
       "label": "响应内容类型",
-      "description": "网络请求响应头中的内容类型标识，用于描述返回数据的格式和字符编码"
+      "description": "响应内容类型标识网络请求响应头中的内容类型，用于描述返回数据的媒体类型格式和字符编码。格式应符合HTTP标准的内容类型规范，通常由主类型和子类型组成，可选参数包括字符编码等，例如\"application/json; charset=utf-8\"。取值应为有效的MIME类型字符串。"
     },
     "processUserName": {
       "label": "进程用户名",
-      "description": "执行进程的操作系统用户账号"
+      "description": "该字段表示执行进程的操作系统用户账号。格式要求：用户名应为有效的操作系统用户标识，通常由字母、数字、下划线等字符组成。"
     },
     "pktsIn": {
       "label": "流进数据包数",
-      "description": "统计网络接口或会话接收的入方向数据包总数"
+      "description": "该字段统计网络接口或会话在入方向接收到的数据包总数。其值为非负长整型数字，表示数据包的绝对数量。"
     },
     "pktsOut": {
       "label": "流出数据包数",
-      "description": "统计网络接口或会话发送的出方向数据包总数"
+      "description": "流出数据包数，用于统计网络接口或会话发送的出方向数据包总数。该字段值为非负长整型数值。"
     },
     "processMd5": {
       "label": "进程MD5",
-      "description": "进程可执行文件的MD5哈希值"
+      "description": "进程可执行文件的MD5哈希值，用于唯一标识和校验文件。该值为32个字符的十六进制字符串，由数字0-9和小写字母a-f组成，格式必须符合标准的MD5摘要算法输出格式。"
     },
     "IoCLevel": {
       "label": "情报危害等级",
-      "description": "情报IOC的危害程度评估等级",
+      "description": "情报IOC的危害程度评估等级，采用枚举类型表示，可选值包括：Critical（严重）、High（高）、Medium（中）、Low（低）、Info（信息）。",
       "enum": {
         "Medium": {
           "label": "中",
@@ -2372,39 +2372,39 @@
     },
     "threatActorOrgId": {
       "label": "威胁组织ID",
-      "description": "威胁情报IOC所属组织或家族的唯一标识符"
+      "description": "威胁情报IOC所属组织或家族的唯一标识符，通常采用UUID格式的字符串，由32位十六进制数字组成。"
     },
     "pipeName": {
       "label": "管道名称",
-      "description": "标识Windows命名管道、SMB共享管道的完整路径名称"
+      "description": "字段用于标识Windows命名管道或SMB共享管道的完整路径名称。其格式为UNC路径，通常以双反斜杠`\\\\`开头，后跟主机名或IP地址以及共享资源路径，例如`\\\\server\\pipe\\pipename`或`\\\\192.168.56.20\\IPC$`。该字段为字符串类型，需符合Windows命名管道或SMB共享的标准命名规范。"
     },
     "payload": {
       "label": "载荷内容",
-      "description": "攻击活动中传输的恶意载荷内容"
+      "description": "该字段表示攻击活动中传输的恶意载荷内容，例如注入的代码或恶意数据。"
     },
     "responseTime": {
       "label": "响应时间",
-      "description": "记录网络请求从客户端发送到完整接收服务器响应的时间间隔，单位为毫秒"
+      "description": "该字段记录网络请求从客户端发送到完整接收服务器响应的时间间隔，单位为毫秒。其值为长整型数字，表示一个非负的时间长度。"
     },
     "virusFamily": {
       "label": "病毒家族",
-      "description": "具有共同代码基础、攻击手法或作者关联的病毒分组"
+      "description": "该字段表示病毒的家族分类，指具有共同代码基础、攻击手法或作者关联的病毒分组。"
     },
     "fileList": {
       "label": "文件列表",
-      "description": "记录邮件中所有附件的文件名集合"
+      "description": "记录邮件中所有附件的文件名集合，格式为以逗号分隔的字符串。文件名应仅包含合法字符，避免包含特殊字符如换行符、引号或路径分隔符。"
     },
     "osUser": {
       "label": "操作系统用户名",
-      "description": "在操作系统层面进行身份验证或执行操作的用户标识"
+      "description": "在操作系统层面进行身份验证或执行操作的用户标识。该字段为字符串类型，通常由字母、数字、下划线、点或连字符等字符组成。"
     },
     "mailSubject": {
       "label": "邮件主题",
-      "description": "邮件的主题行内容，概括邮件的主要目的和内容概要"
+      "description": "邮件主题行内容，用于概括邮件的主要目的和内容概要。"
     },
     "dnsType": {
       "label": "DNS操作类型",
-      "description": "标识DNS协议消息的操作方向类型",
+      "description": "DNS操作类型，标识DNS协议消息的操作方向类型。该字段为枚举类型，可选值包括：query (查询) 和 response (响应)。",
       "enum": {
         "query": {
           "label": "查询",
@@ -2418,7 +2418,7 @@
     },
     "queryType": {
       "label": "查询类型",
-      "description": "标识DNS查询请求的资源记录类型",
+      "description": "该字段标识DNS查询请求的资源记录类型。其值必须为预定义的枚举字符串，例如：A (IPv4地址记录)、AAAA (IPv6地址记录)、CNAME (规范名称记录)、MX (邮件交换记录)、TXT (文本记录)等。",
       "enum": {
         "A": {
           "label": "IPv4地址记录",
@@ -2464,51 +2464,51 @@
     },
     "mailContent": {
       "label": "邮件内容",
-      "description": "邮件的主要文本内容体，包含邮件的详细信息和通信内容"
+      "description": "邮件的主要文本内容体，包含邮件的详细信息和通信内容。"
     },
     "ntlmsspDomain": {
       "label": "NTLMSSP域名",
-      "description": "NTLM安全支持程序（NTLMSSP）协议中用于身份验证的域名"
+      "description": "该字段表示NTLM安全支持程序（NTLMSSP）协议中用于身份验证的域名。值为字符串类型，通常为NetBIOS名称或DNS域名，需符合操作系统及域环境的命名规范。"
     },
     "interfaceName": {
       "label": "网络接口名称",
-      "description": "标识网络流量经过的物理或逻辑接口名称"
+      "description": "该字段标识网络流量经过的物理或逻辑接口名称，用于在系统中唯一标识一个网络接口。格式为字符串，通常遵循操作系统或网络设备的命名规范，例如以太网接口可能命名为 “eth0”、“enp8s0”，无线接口可能命名为 “wlan0”。"
     },
     "image": {
       "label": "进程路径",
-      "description": "进程可执行文件在文件系统中的完整路径"
+      "description": "该字段表示进程可执行文件在文件系统中的完整路径。路径格式应符合操作系统规范，通常为字符串形式，例如以斜杠（/）开头的绝对路径（Linux/Unix系统）或包含盘符和反斜杠的路径（Windows系统）。"
     },
     "smbServerVersion": {
       "label": "SMB服务器版本",
-      "description": "服务器消息块(SMB)协议版本标识"
+      "description": "服务器消息块(SMB)协议版本标识，用于识别远程SMB服务器的具体协议版本。"
     },
     "smbClientVersion": {
       "label": "SMB客户端版本",
-      "description": "客户端使用的SMB协议版本标识"
+      "description": "该字段表示客户端使用的SMB协议版本标识。其值为字符串类型，通常由客户端在建立SMB会话时协商或声明，用于标识其支持的SMB协议版本。"
     },
     "requestOs": {
       "label": "请求操作系统",
-      "description": "标识网络请求中客户端使用的操作系统类型和版本信息"
+      "description": "标识网络请求中客户端使用的操作系统类型和版本信息。字段值为字符串类型，应包含操作系统名称及版本号，如“Windows 10”、“Mac OS X 10.13”、“Android 12”等。"
     },
     "responseOs": {
       "label": "响应操作系统",
-      "description": "标识服务器响应中透露的操作系统类型和版本信息"
+      "description": "该字段标识服务器在响应中透露的操作系统类型和版本信息。通常包含操作系统名称（如Linux、Windows）及其版本号（如Ubuntu 20.04、Windows Server 2019）。"
     },
     "httpReferer": {
       "label": "请求Referer",
-      "description": "HTTP请求的来源页面URL"
+      "description": "HTTP请求的来源页面URL，即浏览器在发送当前请求时所来自的页面的完整地址。格式必须符合URL规范，通常以协议（如http://或https://）开头，包含域名和可选的路径、查询参数等组成部分。"
     },
     "sshClientVersion": {
       "label": "SSH客户端版本",
-      "description": "SSH客户端使用的协议版本标识"
+      "description": "SSH客户端使用的协议版本标识，通常表示SSH协议的主版本号。"
     },
     "sshServerVersion": {
       "label": "SSH服务器版本",
-      "description": "SSH服务器声明的协议版本标识"
+      "description": "该字段表示SSH服务器在协议握手过程中声明的协议版本标识，用于标识服务器支持的SSH协议版本。"
     },
     "kerberosMsgType": {
       "label": "Kerberos消息类型",
-      "description": "Kerberos协议中的消息类型，用于标识认证过程中不同阶段的各种请求和响应",
+      "description": "Kerberos协议中的消息类型，用于标识认证过程中不同阶段的各种请求和响应。该字段为枚举类型，其值必须为预定义的可选值之一，例如：AS_REQ（认证服务请求）、AS_REP（认证服务响应）、TGS_REQ（票据授权服务请求）、TGS_REP（票据授权服务响应）、AP_REQ（应用请求）等。",
       "enum": {
         "AS_REQ": {
           "label": "认证服务请求",
@@ -2554,19 +2554,19 @@
     },
     "timesFrom": {
       "label": "票据生效时间",
-      "description": "票据的生效时间，在此之前票据不可用"
+      "description": "票据的生效时间，在此之前票据不可用。时间格式必须为 yyyy-mm-dd HH:mm:ss。"
     },
     "timesTill": {
       "label": "票据过期时间",
-      "description": "Kerberos票据的绝对过期时间，超过该时间点后票据将失效"
+      "description": "票据的绝对过期时间，表示Kerberos票据在该时间点后将失效。时间格式必须符合yyyy-mm-dd HH:mm:ss的规范。"
     },
     "ticketHash": {
       "label": "票据哈希",
-      "description": "Kerberos认证协议中经过哈希算法处理后的凭证特征值，用于唯一标识认证票据"
+      "description": "该字段存储Kerberos认证协议中经过哈希算法处理后的凭证特征值，用于唯一标识认证票据。其值为一个固定长度的字符串，通常由特定哈希算法（如SHA-256）生成，表现为一个十六进制编码的哈希值。"
     },
     "fileType": {
       "label": "文件类型",
-      "description": "基于文件格式和扩展名的分类",
+      "description": "文件类型，基于文件格式和扩展名进行分类。其值为预定义的枚举字符串，包括但不限于：Executable（可执行文件）、Script（脚本文件）、Document（文档文件）、Archive（压缩归档）、Configuration（配置文件）等共10个可选值。取值必须严格匹配预定义的枚举值。",
       "enum": {
         "Executable": {
           "label": "可执行文件",
@@ -2612,123 +2612,123 @@
     },
     "fileSize": {
       "label": "文件大小",
-      "description": "文件内容的字节大小"
+      "description": "文件内容的字节大小，表示文件的存储空间占用情况，单位是字节。"
     },
     "httpVersion": {
       "label": "HTTP协议版本",
-      "description": "HTTP网络请求中使用的协议版本标识"
+      "description": "该字段标识HTTP网络请求中使用的协议版本。格式为字符串，必须符合HTTP协议版本的标准表示格式，例如\"HTTP/1.0\"、\"HTTP/1.1\"或\"HTTP/2\"。"
     },
     "serviceName": {
       "label": "服务名称",
-      "description": "系统或应用程序中运行的服务的名称"
+      "description": "服务名称，指在系统或应用程序中运行的服务标识。"
     },
     "processName": {
       "label": "进程名称",
-      "description": "进程可执行文件的基本名称，不包含路径信息"
+      "description": "进程可执行文件的基本名称，不包含路径信息。"
     },
     "md5": {
       "label": "文件MD5",
-      "description": "使用MD5算法计算的文件内容哈希值"
+      "description": "文件MD5值，表示使用MD5算法计算的文件内容哈希值。该值必须为32位十六进制字符串，不区分大小写，用于唯一标识文件内容。"
     },
     "parentProcessName": {
       "label": "父进程名称",
-      "description": "创建当前进程的‌父进程的可执行文件名称"
+      "description": "该字段表示创建当前进程的父进程的可执行文件名称。此字段但应避免包含路径信息，仅保留纯名称。"
     },
     "parentProcessId": {
       "label": "父进程ID",
-      "description": "操作系统分配给父进程的唯一数字标识符"
+      "description": "父进程ID是操作系统分配给父进程的唯一数字标识符，通常为非负整数。"
     },
     "parentProcessUserName": {
       "label": "父进程用户名",
-      "description": "运行父进程的操作系统用户账号名称"
+      "description": "父进程在操作系统中的用户账号名称，用于标识启动该进程的用户身份。"
     },
     "parentImage": {
       "label": "父进程路径",
-      "description": "父进程可执行文件在文件系统中的完整路径"
+      "description": "该字段表示父进程可执行文件在文件系统中的完整路径。其值应为符合操作系统规范的字符串格式，通常为绝对路径，例如以斜杠（/）开头的Unix/Linux路径或以盘符（如C:\\）开头的Windows路径。路径中不应包含非法字符，且长度应在系统允许的范围内。示例：/usr/bin/bash 或 C:\\Windows\\System32\\cmd.exe。"
     },
     "parentProcessMd5": {
       "label": "父进程MD5",
-      "description": "父进程可执行文件的MD5哈希值"
+      "description": "父进程可执行文件的MD5哈希值，用于唯一标识该文件。格式要求：必须是一个32位的十六进制字符串，由数字0-9及大写字母A-F组成，不包含连字符或其他分隔符。"
     },
     "processChain": {
       "label": "进程链",
-      "description": "从系统初始化到当前进程的完整进程派生序列"
+      "description": "进程链表示从系统初始化到当前进程的完整进程派生序列，用于追溯进程的创建来源。格式为由箭头符号“→”连接的进程名称与进程ID对，每个进程对格式为“进程名称(进程ID)”，例如：systemd(1) → sshd(4326) → bash(14617)。"
     },
     "commandLine": {
       "label": "进程命令行",
-      "description": "启动进程时传入的完整命令行字符串"
+      "description": "进程命令行是启动进程时传入的完整命令行字符串，用于记录执行进程的具体命令和参数。"
     },
     "parentCommandLine": {
       "label": "父进程命令行",
-      "description": "父进程启动时传入的完整命令行字符串"
+      "description": "父进程启动时传入的完整命令行字符串。"
     },
     "eventCount": {
       "label": "事件数量",
-      "description": "统计相同类型或相关事件的发生次数"
+      "description": "事件数量字段用于统计相同类型或相关事件的发生次数。通常为非负整数。"
     },
     "grantedAccess": {
       "label": "访问标识",
-      "description": "进程或线程被授予的系统资源访问权限掩码"
+      "description": "访问标识表示进程或线程被授予的系统资源访问权限掩码，通常以十六进制数表示，通常以\"0x\"前缀开头，后跟十六进制数字（0-9， a-f）"
     },
     "newThreadId": {
       "label": "新线程ID",
-      "description": "新创建线程的系统分配的唯一数字标识符"
+      "description": "新创建线程的系统分配的唯一数字标识符。内容应为有效的数字序列，通常表示操作系统为线程分配的非负整数值。"
     },
     "startAddress": {
       "label": "起始地址",
-      "description": "新线程开始执行的内存虚拟地址，指向线程代码的入口点"
+      "description": "起始地址是新线程开始执行的内存虚拟地址，指向线程代码的入口点。格式要求为十六进制字符串，通常以\"0x\"前缀开头，后跟十六进制数字（0-9， a-f）。"
     },
     "startModule": {
       "label": "起始模块",
-      "description": "线程开始执行的模块名称"
+      "description": "该字段表示线程开始执行的模块名称，格式为字符串类型，通常记录可执行文件或动态链接库的名称，示例为\"ntdll.dll\"或\"kernel32.dll\"。"
     },
     "targetFilename": {
       "label": "目标文件",
-      "description": "系统操作或文件操作中涉及的文件完整路径"
+      "description": "目标文件是指系统操作或文件操作中涉及的文件的完整路径。格式要求：必须是有效的文件路径字符串，路径分隔符为正斜杠（/）或反斜杠（\\）。示例值：/data1/uacp/shell/uacpClient.sh。"
     },
     "dvcAction": {
       "label": "设备处置动作",
-      "description": "记录安全设备对检测到的威胁或异常行为采取的自动处置动作"
+      "description": "设备处置动作字段记录安全设备对检测到的威胁或异常行为采取的自动处置动作，例如阻断、放行、隔离或告警，取值应为描述处置动作的字符串。"
     },
     "durationTime": {
       "label": "持续时间",
-      "description": "记录事件或操作从开始到结束的完整时间长度，单位：秒"
+      "description": "持续时间表示事件或操作从开始到结束的完整时间长度，以秒为单位。该字段为长整型数值，应大于等于0。"
     },
     "targetObject": {
       "label": "操作对象",
-      "description": "标识事件操作直接作用的目标系统对象"
+      "description": "标识事件操作直接作用的目标系统对象，通常用于记录被操作的系统资源路径、注册表键值、文件路径等。内容应明确标识目标对象，如Windows注册表路径示例：HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\新项 #1。"
     },
     "objectType": {
       "label": "对象类型",
-      "description": "标识系统对象的分类类型"
+      "description": "标识系统对象的分类类型，例如Directory（目录）、File（文件）、User（用户）等。该字段为字符串类型，用于明确区分系统中不同种类的资源对象。"
     },
     "regValue": {
       "label": "注册表值名称",
-      "description": "Windows注册表键值中存储的实际配置数据"
+      "description": "该字段存储Windows注册表键值中存储的实际配置数据。其值为字符串类型，内容为注册表项的具体数值或配置信息。"
     },
     "imageLoaded": {
       "label": "加载项路径",
-      "description": "进程运行时加载的动态链接库或驱动模块的完整文件路径"
+      "description": "该字段记录进程运行时加载的动态链接库或驱动模块在文件系统中的完整路径。格式为字符串，应使用操作系统标准的文件路径格式表示，例如Windows系统采用盘符加反斜杠分隔的路径（如C:\\Program Files\\...），Linux/Unix系统采用正斜杠分隔的绝对路径（如/usr/lib/...）。路径中不应包含环境变量或相对路径符号（如.、..、~）。"
     },
     "taskName": {
       "label": "任务名称",
-      "description": "任务的名称或标题，用于标识和识别任务"
+      "description": "任务名称或标题，用于标识和识别特定任务。"
     },
     "taskContent": {
       "label": "任务内容",
-      "description": "计划任务的具体内容或描述"
+      "description": "任务内容字段用于描述计划任务的具体内容或配置信息，通常包含命令、脚本路径及参数。"
     },
     "userName": {
       "label": "用户名称",
-      "description": "用户的真实姓名"
+      "description": "用户名称，指用户的真实姓名。"
     },
     "pnpDeviceName": {
       "label": "即插即用设备名",
-      "description": "标识Windows系统中即插即用设备的完整名称和路径信息"
+      "description": "该字段用于标识Windows系统中即插即用设备的完整名称和路径信息。其值为字符串类型，通常包含设备在操作系统中的逻辑驱动器盘符、设备制造商名称、设备型号及序列号等详细信息，各组成部分之间以特定分隔符（如空格或反斜杠）连接。"
     },
     "direction": {
       "label": "数据流方向",
-      "description": "基于源和目标IP地址的网络位置分类数据流方向",
+      "description": "基于源和目标IP地址的网络位置分类数据流方向。该字段为枚举类型，表示数据流在内外网之间的流向，具体取值及含义如下：11 表示外网访问外网；10 表示外网访问内网；01 表示内网访问外网；00 表示内网访问内网。",
       "enum": {
         "11": {
           "label": "外访问外",
@@ -2750,59 +2750,59 @@
     },
     "destUserName": {
       "label": "目标用户名",
-      "description": "网络连接、系统访问或安全事件的目标主体用户身份名称"
+      "description": "该字段表示网络连接、系统访问或安全事件的目标主体用户身份名称。其值为字符串类型，具体内容应为操作系统或应用程序中定义的有效用户名。"
     },
     "initiated": {
       "label": "是否主动发起",
-      "description": "标识网络连接是由本地端点主动发起还是被动接受"
+      "description": "标识网络连接是由本地端点主动发起还是被动接受。格式必须为布尔值，只能取 true 或 false，其中 true 表示连接由本地端点主动发起，false 表示连接由本地端点被动接受。"
     },
     "sha256": {
       "label": "文件SHA-256哈希值",
-      "description": "使用SHA-256算法计算的文件内容密码学哈希值"
+      "description": "文件内容的SHA-256密码学哈希值，用于唯一标识和验证文件完整性。格式要求为64位十六进制字符串，字符集为0-9、a-f（大小写不敏感）。"
     },
     "destProcessId": {
       "label": "目标进程ID",
-      "description": "跨进程操作或注入操作中目标进程的PID"
+      "description": "目标进程ID，指跨进程操作或注入操作中目标进程的PID。其值为进程标识符，通常为非负整数形式的字符串。"
     },
     "destImage": {
       "label": "目标进程路径",
-      "description": "跨进程操作中目标进程的可执行文件完整路径"
+      "description": "目标进程的可执行文件完整路径，用于记录跨进程操作中目标进程的路径信息。该字段为字符串类型，应提供包含盘符、目录和文件名的完整绝对路径，例如Windows系统的可执行文件路径格式。"
     },
     "destHostName": {
       "label": "目标主机名",
-      "description": "网络连接或威胁攻击中目标设备的主机名。这可能是NetBIOS名称、DNS主机名或本地配置的机器名"
+      "description": "目标主机名（目标标识）指网络连接或安全事件中目标设备的网络标识，它可以是 DNS 主机名（含 FQDN）、NetBIOS 名称、本地主机名或 IP 地址；若访问时包含非标准端口，则通常应在标识后附加 :端口号（如 192.168.1.1:8080 或 host.example.com:8443）。"
     },
     "destAddress": {
       "label": "目的IP",
-      "description": "标识网络通信连接的目标IP地址"
+      "description": "目的IP地址，标识网络通信连接的目标IP地址。格式要求：必须符合IP地址格式规范，支持IPv4（如192.168.1.1）或IPv6（如2001:0db8:85a3:0000:0000:8a2e:0370:7334）地址表示法。"
     },
     "srcTransAddress": {
       "label": "转换后源IP地址",
-      "description": "经过网络地址转换（NAT）、代理服务器或VPN隧道封装处理后，数据包在网络层呈现的源IP地址"
+      "description": "转换后源IP地址是指经过网络地址转换（NAT）、代理服务器或VPN隧道封装处理后，数据包在网络层呈现的源IP地址。该字段必须符合IP地址格式规范，即点分十进制表示的IPv4地址（例如：192.168.1.1）或符合RFC标准的IPv6地址。"
     },
     "loginUser": {
       "label": "登录用户",
-      "description": "成功登录系统的用户账号标识"
+      "description": "该字段表示成功登录系统的用户账号标识。格式要求：用户账号应为字符串类型，通常由字母、数字、下划线等常见字符组成。"
     },
     "cve": {
       "label": "CVE编号",
-      "description": "通用漏洞披露(CVE)标准漏洞标识符"
+      "description": "该字段表示通用漏洞披露(CVE)标准漏洞标识符，用于唯一标识一个公开的网络安全漏洞。其格式必须严格遵循“CVE-YYYY-NNNN…”模式，其中YYYY为4位数字的年份，NNNN…为漏洞在该年份中的序列号（数字位数不固定）。例如：CVE-2012-3152。"
     },
     "cost": {
       "label": "耗时",
-      "description": "记录命令、脚本或程序执行的耗时，单位：毫秒"
+      "description": "该字段记录命令、脚本或程序执行的耗时，单位为毫秒。其值为长整型（long），表示从操作开始到结束所经过的时间长度，必须为非负整数。"
     },
     "cmdContent": {
       "label": "命令行内容",
-      "description": "在计算机系统或终端中执行的具体命令内容"
+      "description": "命令行内容，指在计算机系统或终端中执行的具体命令字符串。内容通常为ASCII或UTF-8编码的可读文本。"
     },
     "clientPrg": {
       "label": "客户端程序",
-      "description": "标识用于连接数据库或其他服务的客户端应用程序名称"
+      "description": "该字段用于标识连接数据库或其他服务的客户端应用程序名称，通常为客户端软件或驱动程序的名称。"
     },
     "transProtocol": {
       "label": "传输协议",
-      "description": "OSI模型中传输层使用的协议类型",
+      "description": "传输层协议类型，表示OSI模型中传输层使用的协议。可选值包括：TCP（传输控制协议）、UDP（用户数据报协议）等标准传输层协议。",
       "enum": {
         "TCP": {
           "label": "传输控制协议",
@@ -2816,23 +2816,23 @@
     },
     "tag": {
       "label": "标签",
-      "description": "用于标识告警的特征或分类标签集合"
+      "description": "该字段用于标识告警的特征或分类标签集合。格式要求：必须为字符串数组。每个标签应为非空字符串，内容通常为描述告警特征或分类的文本，如“端口扫描”、“非法外连”等。"
     },
     "ccUserName": {
       "label": "抄送人",
-      "description": "记录邮件抄送接收方的邮箱地址集合"
+      "description": "抄送人字段用于记录邮件抄送接收方的邮箱地址集合。该字段值为字符串类型，其内容应为一个或多个符合RFC 5322标准的有效邮箱地址。多个地址之间通常使用逗号分隔。"
     },
     "signed": {
       "label": "是否签名",
-      "description": "标识目标对象是否包含有效的数字签名证书"
+      "description": "标识目标对象是否包含有效的数字签名证书。该字段为布尔类型，取值为 true 或 false，表示“是”或“否”。"
     },
     "signature": {
       "label": "签名信息",
-      "description": "用于验证文件或数据完整性的数字签名或证书信息"
+      "description": "签名信息用于验证文件或数据完整性的数字签名或证书信息，其格式为字符串。该字段通常包含签名算法标识、签名值或证书颁发者与主题等文本信息。"
     },
     "signatureStatus": {
       "label": "签名状态",
-      "description": "数字签名验证结果状态",
+      "description": "该字段表示数字签名验证的结果状态。取值必须为以下枚举值之一：Valid（有效）、Invalid（无效）、Unsigned（未签名）或Unknown（未知）。",
       "enum": {
         "Valid": {
           "label": "有效",
@@ -2854,43 +2854,43 @@
     },
     "bytesOut": {
       "label": "响应字节数",
-      "description": "统计服务器响应消息的字节总量"
+      "description": "响应字节数，用于统计服务器响应消息的字节总量。该字段为长整型数值，其值必须为非负整数，表示字节数。"
     },
     "bytesIn": {
       "label": "请求字节数",
-      "description": "统计客户端请求消息的字节总量"
+      "description": "该字段用于统计客户端请求消息的字节总量，其值为非负长整型。"
     },
     "bccUserName": {
       "label": "密送人",
-      "description": "记录邮件密送接收方的邮箱地址集合"
+      "description": "该字段记录邮件密送接收方的邮箱地址集合，多个地址应以英文分号分隔。每个邮箱地址需符合标准的电子邮件地址格式，通常包含本地部分、@符号和域名部分。"
     },
     "startFunction": {
       "label": "起始函数",
-      "description": "新线程开始执行的入口点函数名称"
+      "description": "起始函数是新线程开始执行的入口点函数名称，格式为字符串类型，仅支持字母、数字和下划线的组合。"
     },
     "srcThreadId": {
       "label": "源线程ID",
-      "description": "创建新线程的父线程TID，用于分析线程间关系和检测线程注入"
+      "description": "源线程ID指创建新线程的父线程TID，用于分析线程间关系和检测线程注入等安全场景。其值为操作系统分配的数字标识符，通常为十进制数字字符串，需确保为有效非负整数格式。"
     },
     "callTrace": {
       "label": "函数调用栈",
-      "description": "线程创建时刻的函数调用序列，包含模块名和内存地址偏移"
+      "description": "函数调用栈记录了线程创建时刻的函数调用序列，包含模块名和内存地址偏移。格式为由竖线“|”分隔的多个调用帧，每个调用帧的格式为“模块文件完整路径+十六进制内存偏移量”。模块路径应使用标准文件系统路径格式，内存偏移量应为不带“0x”前缀的十六进制数字。"
     },
     "cvssVector": {
       "label": "CVSS向量",
-      "description": "通用漏洞评分系统(CVSS)向量字符串，以标准化格式描述漏洞的各个度量维度取值"
+      "description": "通用漏洞评分系统(CVSS)向量字符串，用于以标准化格式描述漏洞的各个度量维度的取值。该字符串必须遵循CVSS官方定义的向量格式规范，通常以版本标识符（如\"CVSS:3.0/\"或\"CVSS:3.1/\"）开头，后跟一系列由斜杠分隔的度量项/值对（例如\"AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N\"）。"
     },
     "cvssVersion": {
       "label": "CVSS版本",
-      "description": "通用漏洞评分系统(CVSS)版本号，如CVSSv3.1"
+      "description": "通用漏洞评分系统(CVSS)的版本标识符。此字段用于区分不同版本的CVSS评估标准，例如CVSSv2.0、CVSSv3.0或CVSSv3.1。格式通常为固定字符串“CVSSv”后跟主版本号和可选的次版本号（例如，CVSSv3.1）。"
     },
     "cncve": {
       "label": "CNCVE漏洞标识符",
-      "description": "国家信息安全漏洞共享平台(CNCVE)颁发的漏洞唯一标识符"
+      "description": "CNCVE漏洞标识符是国家信息安全漏洞共享平台颁发的漏洞唯一标识符，用于唯一标识一个漏洞。其格式必须严格遵循“CNCVE-YYYY-NNNNN”的规范，其中“CNCVE”为固定前缀，其后跟随一个连字符“-”；“YYYY”代表四位数字的年份；之后是另一个连字符“-”；“NNNNN”代表五位数字的序列号。整个标识符需保持大写字母格式。"
     },
     "appProtocol": {
       "label": "应用协议",
-      "description": "OSI模型中应用层使用的协议类型",
+      "description": "应用协议字段表示OSI模型中应用层使用的协议类型。该字段为枚举类型，取值范围应在预定义的协议标识符列表中。",
       "enum": {
         "http": {
           "label": "http",
@@ -3152,39 +3152,39 @@
     },
     "cnvd": {
       "label": "CNVD漏洞标识符",
-      "description": "国家信息安全漏洞共享平台(CNVD)颁发的漏洞唯一标识编号"
+      "description": "CNVD漏洞标识符是由国家信息安全漏洞共享平台(CNVD)颁发的漏洞唯一标识编号，用于唯一标识和追踪漏洞。其格式为固定字符串\"CNVD-\"后接年份、连字符和序列号，例如\"CNVD-2022-10627\"。该字段为字符串类型，需严格遵循\"CNVD-YYYY-NNNNN\"的格式规范，其中YYYY为四位数年份，NNNNN为漏洞序列号。"
     },
     "cnnvd": {
       "label": "CNNVD漏洞标识符",
-      "description": "中国国家信息安全漏洞库(CNNVD)颁发的漏洞唯一标识符"
+      "description": "中国国家信息安全漏洞库(CNNVD)颁发的漏洞唯一标识符。该标识符遵循特定的命名格式，通常以“CNNVD-”为前缀，后接年份和月份（格式为YYYYMM），最后是三位数字的序列号，各部分之间用连字符“-”连接。完整的标准格式为：CNNVD-YYYYMM-NNN，其中NNN代表从001开始的三位顺序编号。"
     },
     "cvssBaseScore": {
       "label": "cvss基础分值",
-      "description": "通用漏洞评分系统(CVSS)基础度量组计算的评分值，范围0.0-10.0"
+      "description": "该字段表示通用漏洞评分系统(CVSS)基础度量组计算的评分值，用于衡量漏洞的固有严重性。取值为字符串类型，格式为一个小数点后保留一位的浮点数，表示范围为0.0至10.0。"
     },
     "softwareName": {
       "label": "软件名称",
-      "description": "标识在系统或设备上安装的软件产品的官方名称"
+      "description": "该字段用于标识在系统或设备上安装的软件产品的官方名称。"
     },
     "hostName": {
       "label": "主机名称",
-      "description": "网络中计算设备（服务器、工作站、网络设备等）的标识名称。通常是其NetBIOS名称（Windows局域网内）或DNS主机名（全称或短名）"
+      "description": "主机在网络中的标识名称，通常用于在局域网或DNS系统中识别特定设备，例如NetBIOS名称或DNS主机名。格式要求：必须为有效的字符串，允许使用字母、数字、连字符（-）和点号（.），但不得以连字符或点号开头或结尾。"
     },
     "userAgent": {
       "label": "用户代理",
-      "description": "标识发起请求的客户端（用户代理）的信息。包含客户端的操作系统、浏览器、设备类型等匿名化信息"
+      "description": "用户代理字符串，用于标识发起请求的客户端（用户代理）的匿名化信息，通常包含客户端的操作系统、浏览器类型、版本、设备类型等。格式需符合HTTP标准的User-Agent字符串。"
     },
     "webServerSoftware": {
       "label": "Web服务器软件",
-      "description": "网站服务运行的服务器软件名称"
+      "description": "该字段表示网站服务运行的服务器软件名称，例如Nginx、Apache等。"
     },
     "loginGuid": {
       "label": "登录GUID",
-      "description": "登录会话的全局唯一标识符"
+      "description": "登录会话的全局唯一标识符，用于唯一标识一次登录会话。格式为标准的GUID格式，通常为32位十六进制数字，以连字符分隔为5组，形式如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx，其中每个x为0-9或a-f的十六进制字符。"
     },
     "passwordComplexity": {
       "label": "密码复杂度",
-      "description": "密码策略的复杂度等级",
+      "description": "密码策略的复杂度等级，用于定义密码必须满足的复杂性要求。取值必须为预定义的枚举值之一：Low (低复杂度)、Medium (中等复杂度) 或 High (高复杂度)。",
       "enum": {
         "Low": {
           "label": "低复杂度",
@@ -3202,31 +3202,31 @@
     },
     "minPasswordLength": {
       "label": "最小密码长度",
-      "description": "密码策略要求的最小密码字符长度"
+      "description": "最小密码长度，表示密码策略要求的最小密码字符数，非负整数。"
     },
     "passwordExpirationPolicy": {
       "label": "密码过期策略",
-      "description": "密码策略要求的密码有效期（天数）"
+      "description": "密码策略要求的密码有效期，单位为天，必须是正整数。"
     },
     "errorMessage": {
       "label": "错误信息",
-      "description": "记录系统、服务或应用程序返回的详细错误描述信息"
+      "description": "该字段用于记录系统、服务或应用程序在运行或交互过程中返回的详细错误描述信息，通常包含错误代码、错误原因、问题上下文或具体错误说明。"
     },
     "sql": {
       "label": "SQL语句",
-      "description": "提交给数据库执行的标准化查询语言(SQL)语句"
+      "description": "SQL语句是提交给数据库执行的标准化查询语言，通常用于数据查询、插入、更新或删除操作。格式上，它必须是一个符合SQL语法规范的字符串，可以包含字母、数字、运算符、空格及特定的SQL关键字和符号。"
     },
     "requestParameters": {
       "label": "请求参数",
-      "description": "网络请求中携带的参数内容"
+      "description": "请求参数是网络请求中携带的参数内容，用于传递客户端向服务器发送的具体数据。参数内容通常为字符串格式，可以是查询字符串、表单数据、JSON对象或其他序列化形式，具体格式取决于请求类型（如GET、POST等）和内容类型（Content-Type）。"
     },
     "ldapOpCode": {
       "label": "LDAP操作码",
-      "description": "轻量级目录访问协议(LDAP)请求的操作类型代码"
+      "description": "轻量级目录访问协议(LDAP)请求的操作类型代码，通常为十六进制字符串形式。"
     },
     "ldapOpType": {
       "label": "LDAP操作类型",
-      "description": "轻量级目录访问协议(LDAP)请求的操作类型",
+      "description": "该字段表示轻量级目录访问协议(LDAP)请求的具体操作类型。其值必须为预定义的枚举字符串，有效值包括但不限于：bind (绑定操作)、unbind (解绑操作)、search (搜索操作)、compare (比较操作)、add (添加操作)。",
       "enum": {
         "bind": {
           "label": "绑定操作",
@@ -3268,195 +3268,195 @@
     },
     "srcNtDomain": {
       "label": "来源NT域",
-      "description": "源设备所属的Windows NT域名"
+      "description": "来源设备所属的Windows NT域名，用于标识源设备在Windows网络中的域成员身份。该字段为字符串类型，通常由字母、数字、连字符(-)和点号(.)组成。"
     },
     "srcLoginId": {
       "label": "源登录ID",
-      "description": "网络通信中发起操作或请求使用的用户登录标识符"
+      "description": "源登录ID是指在网络通信中发起操作或请求时使用的用户登录标识符，用于唯一标识发起方用户。"
     },
     "srcUserId": {
       "label": "源用户ID",
-      "description": "发起网络连接或操作的用户唯一标识符"
+      "description": "源用户ID是发起网络连接或操作的用户唯一标识符，通常用于标识操作主体。该字段为字符串类型，格式因系统或协议而异，常见格式包括Windows安全标识符（SID，如示例“S-1-5-18”）、用户名、用户全局唯一标识符（GUID）或数字ID等。"
     },
     "privilegeList": {
       "label": "权限集合",
-      "description": "系统或文件所拥有的权限集合，用于描述访问控制权限"
+      "description": "权限集合字段用于描述系统或文件所拥有的访问控制权限。"
     },
     "minPasswordAge": {
       "label": "最小密码使用天数",
-      "description": "密码修改策略要求密码必须使用的最短天数"
+      "description": "该字段表示密码修改策略要求密码必须使用的最短天数。其值为非负整数，以天为单位。"
     },
     "maxPasswordAge": {
       "label": "最大密码使用天数",
-      "description": "密码策略要求的最大密码使用天数"
+      "description": "最大密码使用天数，表示密码策略要求的密码最长有效天数，超过此天数后密码必须修改。该字段值为整数，单位为天。"
     },
     "forceLogoff": {
       "label": "强制注销",
-      "description": "控制在用户登录时间到期后是否强制注销用户会话"
+      "description": "该字段用于控制在用户登录时间到期后是否强制注销用户会话。其值为布尔类型，仅允许使用 `true` 或 `false` 表示。`true` 表示启用强制注销，`false` 表示不启用。"
     },
     "lockoutThreshold": {
       "label": "锁定阈值",
-      "description": "账号被锁定前允许的无效登录尝试次数"
+      "description": "锁定阈值表示账号被锁定前允许的无效登录尝试次数。格式为字符串类型，应使用整数表示。取值应为大于或等于0的整数，其中0通常表示不启用锁定功能。"
     },
     "lockoutObservationWindow": {
       "label": "锁定观察窗口",
-      "description": "系统用于监控和记录失败登录尝试的时间范围"
+      "description": "锁定观察窗口是系统用于监控和记录失败登录尝试的时间范围。该字段为长整型数值，单位为分钟，表示一个持续的时间长度，必须为大于0的整数。"
     },
     "lockoutDuration": {
       "label": "锁定持续时间",
-      "description": "由于超出锁定阈值而锁定帐户的时间量（单位：分钟）"
+      "description": "锁定持续时间表示由于超出锁定阈值而锁定帐户的时间量，单位为分钟。该字段应为正整数，表示锁定时长（单位：分钟）。"
     },
     "passwordProperties": {
       "label": "密码属性",
-      "description": "Windows用户账户密码策略的密码属性配置"
+      "description": "Windows用户账户密码策略的密码属性配置。"
     },
     "machineAccountQuota": {
       "label": "机器帐户配额",
-      "description": "Active Directory中允许创建的最大计算机账号数量"
+      "description": "该字段表示Active Directory中允许创建的最大计算机账号数量，格式为字符串类型，通常为数字字符串，表示配额数值。"
     },
     "passwordHistoryLength": {
       "label": "密码历史记录大小",
-      "description": "密码策略保存的历史密码数量"
+      "description": "该字段指定密码策略中保存的历史密码数量，用于防止用户重复使用旧密码。取值应为非负整数，表示系统保留的最近密码记录条数。"
     },
     "domainBehaviorVersion": {
       "label": "域行为版本",
-      "description": "Active Directory域功能级别版本号"
+      "description": "域功能级别版本号，用于标识Active Directory域的功能级别，格式为整数形式的版本号。该字段为字符串类型，存储对应的版本数字。"
     },
     "mixedDomainMode": {
       "label": "混合域模式",
-      "description": "Active Directory是否启用混合身份验证模式"
+      "description": "该字段表示Active Directory是否启用混合身份验证模式。字段值为布尔类型，仅接受 true 或 false 两种取值，分别代表启用和未启用状态。"
     },
     "dbVersion": {
       "label": "数据库版本",
-      "description": "数据库管理系统(DBMS)的版本号"
+      "description": "数据库管理系统(DBMS)的版本号，通常由主版本号、次版本号等数字和点号组成，格式因具体数据库产品而异，如“15.1”、“5.7.38”。"
     },
     "confPath": {
       "label": "配置文件路径",
-      "description": "应用程序或系统服务的配置文件存储路径"
+      "description": "配置文件路径，表示应用程序或系统服务的配置文件在系统中的完整存储路径。该路径应为绝对路径，使用POSIX标准路径格式，例如以“/”开头的Unix/Linux路径或以盘符开头的Windows路径。"
     },
     "dataPath": {
       "label": "数据路径",
-      "description": "数据库或应用程序数据文件的存储路径"
+      "description": "数据路径是指数据库或应用程序数据文件的存储路径。其格式为字符串，内容应为有效的文件系统路径，支持绝对路径或相对路径表示。路径字符串通常由目录名和文件名组成，使用正斜杠（/）或反斜杠（\\）作为分隔符。"
     },
     "errPath": {
       "label": "错误日志路径",
-      "description": "应用程序错误日志文件的存储路径"
+      "description": "该字段表示应用程序错误日志文件的存储路径，用于记录错误日志的存储位置。路径格式应符合操作系统文件路径规范。"
     },
     "executablePath": {
       "label": "可执行文件路径",
-      "description": "可执行文件在文件系统中的存储路径"
+      "description": "可执行文件在文件系统中的完整存储路径，需为有效的文件系统路径字符串，通常采用绝对路径表示，如Unix/Linux系统下的路径格式。"
     },
     "logPath": {
       "label": "日志路径",
-      "description": "应用程序或系统服务的日志文件存储路径"
+      "description": "日志文件在文件系统中的存储路径，用于定位应用程序或系统服务的日志文件。路径格式应符合操作系统的文件路径规范，例如Unix/Linux系统使用正斜杠（/）作为目录分隔符，路径通常以根目录（/）或当前用户目录（~）开始。"
     },
     "pluginPath": {
       "label": "插件路径",
-      "description": "应用程序插件模块的安装路径"
+      "description": "插件路径字段表示应用程序插件模块的安装路径，其值为一个字符串，通常是一个操作系统文件系统的绝对路径。格式上，它应符合操作系统文件路径的规范，例如在Unix/Linux系统中以正斜杠（/）开头，在Windows系统中可能包含盘符和反斜杠（\\）。"
     },
     "listenPort": {
       "label": "监听端口",
-      "description": "标识服务进程监听的网络端口号"
+      "description": "监听端口是服务进程监听的网络端口号，用于接收和处理网络连接请求。端口号必须是整数类型，取值范围为0到65535。"
     },
     "accountType": {
       "label": "账号类型",
-      "description": "用户账号基于功能、权限和使用场景的分类"
+      "description": "账号类型，指用户账号基于功能、权限和使用场景的分类。本字段为字符串类型，通常取值为描述账号类型的文本，如“VPN账号”、“系统管理员账号”、“普通用户账号”等。根据实际业务场景填写具体类型名称。"
     },
     "fileName": {
       "label": "文件名称",
-      "description": "文件的基本名称，不包含路径信息"
+      "description": "文件的基本名称，不包含路径信息。格式要求：字符串类型，长度不超过255个字符，支持常见操作系统允许的文件名字符集（如字母、数字、下划线、点、连字符等），应避免使用系统保留字符和路径分隔符。"
     },
     "sensitiveFile": {
       "label": "是否敏感文件",
-      "description": "标识文件是否包含敏感数据（如密码、密钥、个人信息）"
+      "description": "该字段标识文件是否包含敏感数据，如密码、密钥、个人信息等。其值为布尔类型，仅允许取 `true` 或 `false`。"
     },
     "isCrossBorder": {
       "label": "是否涉及出境",
-      "description": "标识文件或数据是否涉及国家边境传输"
+      "description": "标识文件或数据是否涉及国家边境传输。字段类型为布尔值，取值为true或false，分别表示涉及出境和不涉及出境。"
     },
     "publicFile": {
       "label": "是否公开文件",
-      "description": "标识文件是否对外公开可访问"
+      "description": "该字段用于标识文件是否对外公开可访问。取值为布尔类型，仅接受 `true` 或 `false`。`true` 表示文件对外公开，`false` 表示文件不对外公开。"
     },
     "assetPort": {
       "label": "资产端口",
-      "description": "资产对外提供服务的网络端口号"
+      "description": "资产对外提供服务的网络端口号。端口号必须是整数，取值范围为0-65535。"
     },
     "icon": {
       "label": "icon",
-      "description": "对象的图形化表示，通过视觉符号指代特定事物或功能"
+      "description": "该字段用于表示对象的图形化图标，通过视觉符号指代特定事物或功能。其值为图标文件的名称或路径，通常为字符串格式，例如PNG、JPG、SVG或ICO等常见图像格式的文件名。"
     },
     "webFramework": {
       "label": "Web框架",
-      "description": "网站服务使用的后端开发框架"
+      "description": "该字段标识网站服务所使用的后端开发框架名称。格式为字符串，应使用框架的标准或通用名称，例如 Django, Flask, Spring Boot 等。"
     },
     "sslCertificate": {
       "label": "SSL证书信息",
-      "description": "SSL/TLS加密连接中使用的X.509数字证书的主体标识信息，通常包含颁发者、使用者通用名、组织及国家等字段"
+      "description": "SSL/TLS加密连接中使用的X.509数字证书的主体标识信息，通常包含颁发者、使用者通用名、组织及国家等字段。格式为符合X.509标准的证书主题专有名称（Subject Distinguished Name）字符串，例如“C=US, O=Let's Encrypt, CN=Let's Encrypt Authority X3”。其中常见属性键包括C（国家）、ST（州/省）、L（地区）、O（组织）、OU（组织单位）、CN（通用名称）等。"
     },
     "certIssuer": {
       "label": "证书颁发者",
-      "description": "颁发证书的机构或实体的名称"
+      "description": "证书颁发者的名称，即颁发证书的机构或实体的标识。该字段为字符串类型，通常包含证书颁发机构的可辨识名称（DN）或其通用名称（CN）。取值应符合X.509证书规范中对颁发者名称的格式约定。"
     },
     "sessionId": {
       "label": "会话ID",
-      "description": "标识网络连接或应用会话的唯一全局标识符"
+      "description": "会话ID用于标识网络连接或应用会话的唯一全局标识符。"
     },
     "softwareVersion": {
       "label": "软件版本",
-      "description": "软件的版本号，用于标识软件发布的版本信息"
+      "description": "软件版本号，用于标识软件发布的版本信息。通常遵循主版本号.次版本号.修订号（如：15.6.1）或包含字母前缀（如：v15.6.1）的格式。"
     },
     "webTitle": {
       "label": "网站标题",
-      "description": "网页的标题文本内容"
+      "description": "网站标题，指网页的标题文本内容。字段类型为字符串，内容通常来源于HTML文档的<title>标签。"
     },
     "isv": {
       "label": "独立软件开发商",
-      "description": "标识网站、应用程序或软件产品的独立开发服务提供商名称"
+      "description": "该字段用于标识网站、应用程序或软件产品的独立开发服务提供商名称。"
     },
     "icp": {
       "label": "ICP备案号",
-      "description": "工业和信息化部颁发的互联网内容提供商备案编号"
+      "description": "ICP备案号是工业和信息化部颁发的互联网内容提供商备案编号，用于标识在中国境内提供互联网信息服务的合法备案主体。该字段为字符串类型，格式通常为“省份简称+ICP备+数字序列+号”。"
     },
     "pubSecFilingNumber": {
       "label": "公安备案号",
-      "description": "公安机关颁发的网站备案编号"
+      "description": "公安备案号是由公安机关颁发的网站备案编号，用于标识网站的备案信息。格式通常包含行政区划代码、备案机关标识和序列号。"
     },
     "whois": {
       "label": "whios信息",
-      "description": "基于WHOIS协议查询的完整域名注册信息"
+      "description": "whois字段用于存储基于WHOIS协议查询得到的完整域名注册信息。该字段内容需包含域名注册人、注册商、创建日期、名称服务器等关键信息。"
     },
     "url": {
       "label": "URL地址",
-      "description": "记录统一资源定位符(URL)的完整地址信息"
+      "description": "URL地址用于记录统一资源定位符(URL)的完整地址信息。该字段为字符串类型，需符合标准的URL格式规范，通常包含协议（如http、https）、主机名、路径及可选的查询参数和片段标识符等组成部分。"
     },
     "copyright": {
       "label": "版权信息",
-      "description": "数字内容的版权归属声明"
+      "description": "该字段用于声明数字内容的版权归属信息，需使用字符串格式提供明确的版权所有者名称、机构或相关声明文本。"
     },
     "developer": {
       "label": "开发者",
-      "description": "标识移动应用、软件产品或系统组件等的开发实体名称"
+      "description": "该字段用于标识移动应用、软件产品或系统组件等的开发实体名称，通常指公司、组织或个人的正式名称。"
     },
     "compatibility": {
       "label": "兼容性",
-      "description": "描述软件或硬件与操作系统版本的兼容性范围"
+      "description": "该字段描述软件或硬件产品与操作系统版本的兼容性范围。通常以文本形式说明支持的操作系统名称、版本号及架构要求。"
     },
     "osName": {
       "label": "操作系统",
-      "description": "操作系统的具体发行版名称和版本标识"
+      "description": "该字段表示目标设备或系统所使用的操作系统具体发行版名称和版本标识信息。格式为字符串，通常包含操作系统名称和版本号。"
     },
     "officialAccountName": {
       "label": "公众号名称",
-      "description": "微信公众号的官方认证名称"
+      "description": "公众号的官方认证名称，表示在微信公众平台上经过认证的公众号名称。"
     },
     "wechatSubjectName": {
       "label": "微信主体名称",
-      "description": "微信公众平台认证主体的名称"
+      "description": "微信公众平台认证主体的名称，通常为企业、组织或机构的官方注册名称。"
     },
     "wechatSubjectType": {
       "label": "微信主体类型",
-      "description": "微信公众平台认证主体的类型分类",
+      "description": "微信公众平台认证主体的类型分类。枚举类型，可选值包括：individual（个人主体）、enterprise（企业主体）、government（政府主体）、media（媒体主体）、other（其他主体）。",
       "enum": {
         "individual": {
           "label": "个人主体",
@@ -3482,15 +3482,15 @@
     },
     "wechatId": {
       "label": "微信号",
-      "description": "微信公众号的唯一标识符，用于确认公众号的唯一性"
+      "description": "微信公众号的唯一标识符，用于确认公众号的唯一性。该字段为字符串类型，格式为英文字母、数字及部分特殊字符的组合，需符合微信官方对公众号ID的定义规则。"
     },
     "appletName": {
       "label": "小程序名称",
-      "description": "用于标识小程序产品的名称"
+      "description": "小程序产品的名称标识，用于区分不同的小程序产品。"
     },
     "osType": {
       "label": "操作系统类型",
-      "description": "操作系统所属的类别",
+      "description": "操作系统所属的类别。枚举字段，取值范围必须为以下预设值之一：Windows（表示Windows系统）、Linux（表示Linux系统）、Unix（表示Unix系统）、MacOS（表示macOS系统）、Android（表示Android系统）。",
       "enum": {
         "Windows": {
           "label": "Windows系统",
@@ -3520,43 +3520,43 @@
     },
     "osVersion": {
       "label": "操作系统版本",
-      "description": "操作系统的具体版本号"
+      "description": "操作系统版本号，描述设备运行的操作系统的具体版本信息。通常由主版本号、次版本号、修订号等部分组成。"
     },
     "kernelVersion": {
       "label": "内核版本",
-      "description": "操作系统内核的版本信息"
+      "description": "内核版本信息，表示操作系统内核的具体版本号。通常遵循主版本号.次版本号.修订号-发布版本的格式。"
     },
     "deviceModel": {
       "label": "设备型号",
-      "description": "标识设备制造商定义的产品型号代码，用于精确区分不同硬件规格、功能和配置"
+      "description": "设备型号用于标识设备制造商定义的产品型号代码，精确区分不同硬件规格、功能和配置。其值为字符串，通常由字母、数字及特定符号（如连字符、下划线）组成。"
     },
     "deviceVersion": {
       "label": "设备版本",
-      "description": "标识设备固件、操作系统或嵌入式软件的完整版本信息"
+      "description": "设备版本标识设备固件、操作系统或嵌入式软件的完整版本信息。版本号通常采用多段数字格式，如主版本号.次版本号.修订号.构建号等。"
     },
     "mainboard": {
       "label": "主板",
-      "description": "计算机主板的制造商和型号信息"
+      "description": "主板字段记录计算机主板的制造商和型号信息。该字段为字符串类型，用于描述主板硬件。通常包含主板制造商名称、产品系列或具体型号。"
     },
     "memorySize": {
       "label": "内存大小",
-      "description": "目标内存的总容量信息"
+      "description": "内存的总容量信息，表示目标系统或设备的内存大小。格式为数值加单位，单位通常为GB、MB等，例如：3.68GB。"
     },
     "diskModel": {
       "label": "硬盘型号",
-      "description": "存储设备的硬盘型号信息"
+      "description": "硬盘型号信息，用于标识存储设备的具体硬盘型号。该字段为字符串类型，通常由厂商定义的型号标识符组成。"
     },
     "managementAddress": {
       "label": "管理IP",
-      "description": "用于设备带外管理、远程访问和系统维护的网络层地址"
+      "description": "管理IP地址，用于设备带外管理、远程访问和系统维护。该字段必须是有效的IPv4或IPv6地址格式。"
     },
     "managementPort": {
       "label": "管理端口",
-      "description": "用于设备带外管理、远程访问和系统维护的网络端口号"
+      "description": "该字段表示用于设备带外管理、远程访问和系统维护的网络端口号。端口号必须是整数，取值范围为0到65535。其中，0到1023为公认端口，1024到49151为注册端口，49152到65535为动态或私有端口。"
     },
     "machineType": {
       "label": "机器类型",
-      "description": "标识设备的物理形态特征、部署架构和运行环境类型",
+      "description": "标识设备的物理形态特征、部署架构和运行环境类型。本字段为枚举类型，有效值包括但不限于：physicalServer（物理服务器）、virtualMachine（虚拟机）、container（容器）、cloudInstance（云实例）、workstation（工作站）等预定义选项，需从中选择其一。",
       "enum": {
         "physicalServer": {
           "label": "物理服务器",
@@ -3610,47 +3610,47 @@
     },
     "vmName": {
       "label": "虚拟机名称",
-      "description": "标识虚拟化环境中虚拟机实例的可读名称"
+      "description": "虚拟机在虚拟化环境中的可读标识名称，用于唯一区分不同的虚拟机实例。格式为字符串类型，通常由字母、数字、连字符（-）或下划线（_）组成。"
     },
     "hypervisor": {
       "label": "虚拟化管理程序",
-      "description": "标识虚拟化平台中管理和运行虚拟机实例的底层软件系统"
+      "description": "该字段用于标识虚拟化平台中管理和运行虚拟机实例的底层软件系统。其值为描述虚拟化管理程序名称及版本号的字符串，通常由厂商名称、产品名称和版本号组成。"
     },
     "storageInfo": {
       "label": "存储信息",
-      "description": "描述存储设备的配置、容量和状态信息"
+      "description": "存储设备配置、容量和状态信息的文本描述。内容应包含设备类型、总容量、已用容量、剩余容量及文件系统等关键信息。"
     },
     "networkInfo": {
       "label": "网络配置信息",
-      "description": "网络设备或虚拟机的网络配置信息"
+      "description": "网络设备或虚拟机的网络配置信息，包含IP地址和MAC地址等。IP地址格式为点分十进制，如192.168.1.1；MAC地址格式支持冒号分隔（xx:xx:xx:xx:xx:xx）或短横线分隔（xx-xx-xx-xx-xx-xx），如70-00-55-98-C7-00。多个配置项建议以逗号分隔。"
     },
     "containerName": {
       "label": "容器实例名称",
-      "description": "容器运行时实例的自定义标识名称"
+      "description": "容器运行时实例的自定义标识名称，用于唯一标识容器实例。命名应遵循容器运行时命名规范，通常支持字母、数字、连字符(-)和下划线(_)的组合。"
     },
     "env": {
       "label": "环境变量",
-      "description": "操作系统化或容器中设置的环境变量"
+      "description": "环境变量，指操作系统或容器中设置的环境变量，用于配置应用程序或系统的运行参数。格式为键值对，通常以字符串形式表示，多个键值对之间用逗号分隔，键和值之间用冒号分隔。"
     },
     "volumeMounts": {
       "label": "挂载卷",
-      "description": "容器与宿主机之间的持久化存储挂载配置列表"
+      "description": "挂载卷字段用于配置容器与宿主机之间的持久化存储挂载，其值为一个字符串，描述挂载的详细信息。通常格式为：主机路径：<宿主机路径>，容器路径：<容器内路径>。其中宿主机路径和容器内路径应为有效的文件系统绝对路径。"
     },
     "licenseKey": {
       "label": "许可密钥",
-      "description": "验证用户合法使用软件或硬件产品的唯一识别码"
+      "description": "许可密钥是用于验证用户合法使用软件或硬件产品的唯一识别码。其格式通常为一系列由连字符分隔的字母数字组合，示例格式如：XXXXX-XXXXX-XXXXX-XXXXX-XXXXX。"
     },
     "systemRequirement": {
       "label": "系统要求",
-      "description": "描述软件或硬件产品正常运行所需的最低或推荐系统配置要求"
+      "description": "描述软件或硬件产品正常运行所需的最低或推荐系统配置要求。"
     },
     "installedComponents": {
       "label": "已安装组件",
-      "description": "描述软件产品中已安装的功能组件、插件和依赖模块的完整清单"
+      "description": "已安装组件清单，描述软件产品中已安装的功能组件、插件和依赖模块的完整信息。每个数组元素应为字符串类型，建议包含组件名称和版本号等关键标识信息。"
     },
     "licenseType": {
       "label": "许可类型",
-      "description": "标识软件许可证的法律授权类型",
+      "description": "许可类型标识软件许可证的法律授权类型，该字段为枚举类型，必须从以下预定义值中选择其一：PublicDomain（公共领域许可）、Permissive（宽松许可）、LGPL（GNU宽通用公共许可）、Copyleft（著佐权许可）、Proprietary（专有许可），或其他（Other）。取值必须与示例值格式完全一致。",
       "enum": {
         "PublicDomain": {
           "label": "公共领域许可",
@@ -3680,47 +3680,47 @@
     },
     "installPath": {
       "label": "安装路径",
-      "description": "应用程序或软件在操作系统中的安装路径"
+      "description": "安装路径是指应用程序或软件在操作系统中的安装目录位置，其值应为有效的文件系统路径字符串。"
     },
     "dependencies": {
       "label": "依赖组件列表",
-      "description": "描述软件运行所依赖的外部组件、库和模块的完整清单"
+      "description": "该字段以数组形式记录软件运行所依赖的外部组件、库和模块的完整清单。每个元素应为字符串，建议采用“组件名称 版本号”的简洁格式进行描述。"
     },
     "registrationTime": {
       "label": "注册时间",
-      "description": "域名在注册商系统中成功注册的精确时间"
+      "description": "域名在注册商系统中成功注册的精确时间。格式要求：必须为符合ISO 8601扩展格式的日期时间字符串，具体格式为yyyy-mm-dd HH:mm:ss。"
     },
     "expirationTime": {
       "label": "过期时间",
-      "description": "域名注册有效期的截止时间"
+      "description": "域名注册有效期的截止时间，采用标准的日期时间格式表示。格式要求为 yyyy-mm-dd HH:mm:ss，例如 2024-01-15 12:00:00。"
     },
     "registrar": {
       "label": "注册商",
-      "description": "域名注册服务商的官方名称"
+      "description": "注册商的官方名称，即提供域名注册服务的机构或公司。该字段为字符串类型，应使用完整的机构名称，不包含特殊字符。"
     },
     "assetAddress": {
       "label": "资产IP地址",
-      "description": "资产管理系统中记录的IP地址"
+      "description": "资产在管理系统中所记录的唯一网络标识符，用于定位和访问该资产。格式要求：必须符合标准的IPv4或IPv6地址格式，例如点分十进制表示法（如192.168.1.1）或IPv6的冒号分隔十六进制表示法。"
     },
     "subnetMask": {
       "label": "子网掩码",
-      "description": "IP地址中用于划分网络部分和主机部分的掩码值"
+      "description": "子网掩码用于在IP地址中划分网络部分和主机部分。该字段为字符串类型，其值必须是有效的点分十进制格式的IPv4子网掩码，由四段0-255之间的十进制数组成，中间用点号分隔。"
     },
     "gateway": {
       "label": "默认网关",
-      "description": "默认网关IP地址"
+      "description": "默认网关IP地址，用于标识网络设备的出口网关。必须符合IP地址格式规范，即由四个0-255之间的十进制整数组成，以点号分隔，例如：192.168.1.1。"
     },
     "vlanId": {
       "label": "VLAN",
-      "description": "标识IEEE 802.1Q虚拟局域网的唯一数字标识"
+      "description": "VLAN标识符，用于唯一标识IEEE 802.1Q虚拟局域网。格式为字符串类型，表示一个数字ID。"
     },
     "serviceType": {
       "label": "服务类型",
-      "description": "用于标识在网络侧通过端口暴露或在终端侧操作系统内部运行的应用程序服务类型"
+      "description": "服务类型，用于标识在网络侧通过端口暴露或在终端侧操作系统内部运行的应用程序服务类型。"
     },
     "certType": {
       "label": "证书类型",
-      "description": "用于标识不同安全用途的数字证书的类别",
+      "description": "证书类型用于标识不同安全用途的数字证书的类别。本字段为枚举类型，其值必须为预设的可选值之一，具体包括：SSL（SSL/TLS证书）、CodeSigning（代码签名证书）、ClientAuth（客户端身份证书）、Email（电子邮件证书）、EVSSL（扩展验证SSL证书）及其他可能的指定类型。",
       "enum": {
         "SSL": {
           "label": "SSL/TLS证书",
@@ -3750,19 +3750,19 @@
     },
     "commonName": {
       "label": "通用名称",
-      "description": "证书主题中的通用名称(CN)字段，通常为证书绑定的完全限定域名"
+      "description": "该字段表示证书主题中的通用名称(CN)，通常为证书绑定的完全限定域名，其值应为符合DNS命名规范的字符串。"
     },
     "validTime": {
       "label": "有效时间",
-      "description": "证书的有效期时间范围"
+      "description": "有效时间表示证书的有效期时间范围，格式为yyyy-mm-dd至yyyy-mm-dd，其中起始日期和结束日期均需符合标准日期格式，且结束日期必须晚于起始日期。"
     },
     "publicKey": {
       "label": "公钥信息",
-      "description": "数字证书中包含的公钥技术参数"
+      "description": "公钥信息字段表示数字证书中包含的公钥技术参数，用于标识加密算法或密钥类型。"
     },
     "cloudInstanceType": {
       "label": "云实例类型",
-      "description": "云计算实例的标准化规格分类",
+      "description": "云实例类型表示云计算实例的标准化规格分类，用于标识实例的计算、内存、存储等资源配置特性。该字段为枚举类型，其取值必须为预定义的可选值之一，例如：generalPurpose (通用型)、computeOptimized (计算优化型)、memoryOptimized (内存优化型)、storageOptimized (存储优化型) 或 gpuAccelerated (GPU加速型) 等。",
       "enum": {
         "generalPurpose": {
           "label": "通用型",
@@ -3812,19 +3812,19 @@
     },
     "vpcId": {
       "label": "虚拟私有云ID",
-      "description": "云服务商分配的虚拟私有云(VPC)唯一标识符"
+      "description": "虚拟私有云(VPC)的唯一标识符，由云服务商分配。"
     },
     "subnetId": {
       "label": "子网ID",
-      "description": "云服务商分配的子网(Subnet)唯一标识符"
+      "description": "子网ID是云服务商分配的子网唯一标识符，用于标识特定的子网资源。"
     },
     "securityGroupIds": {
       "label": "安全组ID列表",
-      "description": "云服务商分配的网络安全组(Security Group)唯一标识符列表"
+      "description": "该字段表示云服务商分配的网络安全组（Security Group）的唯一标识符列表。"
     },
     "cloudStorageType": {
       "label": "云存储类型",
-      "description": "云计算存储服务的标准化分类",
+      "description": "云存储类型是指云计算存储服务的标准化分类，用于标识所使用的存储服务类别。该字段为枚举类型，必须从预定义的可选值列表中选取，常见值包括：objectStorage（对象存储）、blockStorage（块存储）、fileStorage（文件存储）、archiveStorage（归档存储）和databaseStorage（数据库存储）等选项。输入值需确保与指定的枚举值完全匹配。",
       "enum": {
         "objectStorage": {
           "label": "对象存储",
@@ -3870,75 +3870,75 @@
     },
     "accessControlPolicy": {
       "label": "访问控制策略",
-      "description": "存储的访问控制配置信息，用于定义资源的访问权限"
+      "description": "访问控制策略的配置信息，用于定义资源的访问权限规则。该字段存储具体的策略配置内容，通常包含访问控制规则、条件、动作等结构化信息。"
     },
     "dataRetentionPolicy": {
       "label": "数据保留策略",
-      "description": "数据在存储系统中的保留时长和处置方式"
+      "description": "数据保留策略，用于定义数据在存储系统中的保留时长和处置方式。该字段为字符串类型，用于描述具体的保留策略。常见的格式包括但不限于：以天、月、年为单位的时长描述。"
     },
     "backupPolicy": {
       "label": "备份策略",
-      "description": "数据备份和恢复的策略配置"
+      "description": "备份策略配置，用于定义数据备份和恢复的执行规则与计划。格式为字符串类型，通常包含策略的启用状态、备份频率、保留周期等具体配置信息。"
     },
     "scanPortList": {
       "label": "扫描端口列表",
-      "description": "记录网络扫描活动中被探测的目标端口号集合"
+      "description": "该字段记录网络扫描活动中被探测的目标端口号集合，每个端口号必须为整数类型，取值范围为0到65535，表示有效端口号。"
     },
     "scanIpList": {
       "label": "扫描IP列表",
-      "description": "记录网络扫描活动中被探测的目标IP地址集合"
+      "description": "记录网络扫描活动中被探测的目标IP地址集合。格式要求：数组中的每个元素必须是合法的IPv4或IPv6地址格式。"
     },
     "deviceSerialNumber": {
       "label": "设备序列号",
-      "description": "硬件设备制造商分配的唯一序列标识符"
+      "description": "设备序列号是硬件设备制造商分配的唯一序列标识符，用于唯一标识设备。"
     },
     "isp": {
       "label": "网络服务提供商",
-      "description": "标识互联网服务提供商(ISP)的组织名称"
+      "description": "该字段标识互联网服务提供商的名称，用于记录网络流量或事件来源的运营商信息。"
     },
     "tableName": {
       "label": "表名称",
-      "description": "关系型数据库中的数据表逻辑名称"
+      "description": "关系型数据库中的数据表逻辑名称，表名称应为字符串类型，遵循数据库命名规范，通常由字母、数字和下划线组成。"
     },
     "dataSize": {
       "label": "数据大小",
-      "description": "数据库表占用的物理存储空间大小"
+      "description": "该字段表示数据库表占用的物理存储空间大小。其值为一个字符串，通常由数字和单位组成，例如“41MB”。"
     },
     "length": {
       "label": "长度",
-      "description": "目标对象的长度大小，如数据库列定义中指定的最大长度限制"
+      "description": "长度表示目标对象的大小限制，例如数据库列定义中指定的最大字符数或数值精度。"
     },
     "isPrimary": {
       "label": "是否主键",
-      "description": "标识数据库列是否被定义为主键"
+      "description": "该字段用于标识数据库列是否被定义为主键。其值为布尔类型，只能取 true 或 false。"
     },
     "isNull": {
       "label": "是否为空",
-      "description": "标识数据库列是否允许存储NULL值"
+      "description": "标识数据库列是否允许存储NULL值。该字段为布尔类型，取值为true或false，其中true表示允许存储NULL值，false表示不允许存储NULL值。"
     },
     "columnName": {
       "label": "列名",
-      "description": "数据库表中数据列的逻辑名称"
+      "description": "列名是数据库表中数据列的逻辑名称，用于标识具体的数据字段。"
     },
     "defaultValue": {
       "label": "默认值",
-      "description": "数据库列在插入新记录时的默认赋值"
+      "description": "默认值指数据库列在插入新记录时，若未显式指定值，系统将自动赋予的初始值。"
     },
     "columnType": {
       "label": "列类型",
-      "description": "数据库列的数据类型分类"
+      "description": "列类型表示数据库列的数据类型分类，例如数值型、字符型、日期型等。"
     },
     "columnCount": {
       "label": "列数",
-      "description": "数据库表中定义的列总数"
+      "description": "该字段表示数据库表中定义的列总数，其值应为非负整数。"
     },
     "icmpCode": {
       "label": "ICMP响应码",
-      "description": "表示ICMP协议中返回的响应代码"
+      "description": "ICMP响应码表示ICMP协议中返回的响应代码。该字段为字符串类型，用于标识ICMP报文的具体类型或错误状态。"
     },
     "icmpType": {
       "label": "ICMP类型",
-      "description": "ICMP协议报文类型代码",
+      "description": "该字段表示ICMP协议报文类型代码，用于标识ICMP消息的具体类型。其值必须为预定义的枚举字符串，常见的可选值包括：EchoReply (回显应答)、DestinationUnreachable (目的不可达)、SourceQuench (源站抑制)、Redirect (重定向)、EchoRequest (回显请求)等。",
       "enum": {
         "EchoReply": {
           "label": "回显应答",
@@ -4008,147 +4008,147 @@
     },
     "operation": {
       "label": "操作",
-      "description": "标识系统或用户执行的具体操作行为"
+      "description": "该字段标识系统或用户执行的具体操作行为。其值为描述操作类型的字符串。"
     },
     "dataSourceAddress": {
       "label": "数据来源地址",
-      "description": "数据来源的设备地址"
+      "description": "数据来源地址，指提供数据的设备网络地址。该字段必须是合法的IP地址格式，支持IPv4和IPv6地址。IPv4地址为点分十进制格式（如192.168.1.5），IPv6地址为冒号分隔的十六进制格式。"
     },
     "pktsInAndOut": {
       "label": "总数据包数",
-      "description": "统计网络接口或会话中双向传输的数据包累计总数"
+      "description": "总数据包数是指统计网络接口或会话中双向传输的数据包累计总数。该字段值为非负长整数。"
     },
     "bytesInAndOut": {
       "label": "总字节数",
-      "description": "统计网络接口或会话中双向传输的字节累计总量"
+      "description": "该字段用于统计网络接口或会话中双向传输的字节累计总量，即入站与出站字节数之和。其值为长整型（long）数字，表示字节数量，必须为非负整数。"
     },
     "middlewareName": {
       "label": "中间件名",
-      "description": "中间件软件的产品名称"
+      "description": "中间件软件的产品名称，例如：Tomcat、Nginx、Apache等。"
     },
     "middlewareVersion": {
       "label": "中间件版本",
-      "description": "中间件软件的具体版本号"
+      "description": "该字段表示中间件软件的具体版本号。版本号通常遵循主版本号.次版本号.修订号（如 8.0.1）或类似的数字序列格式，也可能包含字母和分隔符（如 “v2.1-beta”）。"
     },
     "softwareSerialNumber": {
       "label": "软件序列号",
-      "description": "软件的序列号，用于标识软件授权的唯一序列号"
+      "description": "软件的序列号，用于标识软件授权的唯一序列号。通常由数字、字母及连字符（-）等字符组成。"
     },
     "softwarePort": {
       "label": "软件端口号",
-      "description": "应用软件运行时监听的网络端口号"
+      "description": "软件运行时监听的网络端口号。格式要求：端口号必须是有效的网络端口，取值范围为0到65535。通常0-1023为知名端口，1024-49151为注册端口，49152-65535为动态或私有端口。"
     },
     "busSystemName": {
       "label": "业务系统名称",
-      "description": "业务系统的名称标识"
+      "description": "业务系统的名称标识，用于唯一标识一个业务系统。格式要求：字符串类型，长度限制为1-128个字符，支持中英文、数字、下划线和短横线，且不能以特殊字符开头或结尾。"
     },
     "busSystemVersion": {
       "label": "业务系统版本",
-      "description": "业务系统的具体版本号"
+      "description": "业务系统的具体版本号，格式为字符串类型，通常采用主版本号.次版本号.修订号的格式。"
     },
     "busSystemId": {
       "label": "业务系统ID",
-      "description": "业务系统的唯一标识符"
+      "description": "业务系统的唯一标识符，用于唯一标识一个业务系统。"
     },
     "systemIncludeDevList": {
       "label": "设备清单",
-      "description": "设备资产清单，包含设备类型、型号、序列号等唯一标识信息，用于资产跟踪、库存管理和安全审计"
+      "description": "设备资产清单，包含设备类型、型号、序列号等唯一标识信息，用于资产跟踪、库存管理和安全审计。应包含设备品牌、型号、序列号等关键信息，多个设备信息可使用逗号或分号分隔。"
     },
     "softwareList": {
       "label": "软件列表",
-      "description": "系统或设备上安装的第三方应用程序和软件组件列表"
+      "description": "软件列表字段记录系统或设备上安装的第三方应用程序和软件组件的清单。该字段为字符串类型，其内容应为用逗号分隔的软件名称列表。"
     },
     "dbName": {
       "label": "数据库名称",
-      "description": "数据库管理系统(DBMS)中数据库实例的逻辑名称"
+      "description": "数据库管理系统(DBMS)中数据库实例的逻辑名称。字段类型为字符串，命名应清晰标识特定数据库实例。"
     },
     "sidHistory": {
       "label": "对象SIDHistory属性",
-      "description": "Active Directory对象的SID历史属性"
+      "description": "Active Directory对象的SID历史属性，用于记录用户或组对象先前使用的安全标识符。该字段为字符串类型，其值必须符合Windows安全标识符格式规范，具体格式为：以“S-1-”开头的字符串，后跟一系列由连字符分隔的数字标识符。例如：S-1-5-21-3623811015-3361044348-30300820-1013。"
     },
     "destNtDomain": {
       "label": "目的NT域",
-      "description": "目的设备所属的Windows NT域名称"
+      "description": "目的设备所属的Windows NT域名称。格式为字符串，通常用于标识Windows网络环境中的域。"
     },
     "authPackageName": {
       "label": "认证包名称",
-      "description": "Windows安全支持提供程序接口(SSPI)使用的身份验证包名称"
+      "description": "认证包名称是Windows安全支持提供程序接口(SSPI)使用的身份验证包名称，用于标识特定的认证机制。该字段为字符串类型，需符合Windows SSPI的规范定义。"
     },
     "loginId": {
       "label": "登录ID",
-      "description": "系统分配的登录会话标识符"
+      "description": "系统分配的登录会话标识符，用于唯一标识用户的登录会话。该字段为字符串类型，通常为数字或字母数字组合的序列。"
     },
     "destLoginId": {
       "label": "目标登录ID",
-      "description": "目标系统或服务的登录标识符"
+      "description": "目标系统或服务的登录标识符，通常用于标识用户或实体在目标系统上的身份。"
     },
     "filePath": {
       "label": "文件目录",
-      "description": "文件在文件系统中的存储目录路径"
+      "description": "该字段表示文件在文件系统中的存储目录路径。路径格式应符合操作系统规范，例如Windows系统使用反斜杠（\\）作为目录分隔符，而Linux/Unix系统使用正斜杠（/）。"
     },
     "attackerInfo": {
       "label": "攻击者信息",
-      "description": "溯源到攻击者的信息，包含攻击者账号、姓名、邮箱等匿名化信息"
+      "description": "攻击者信息字段包含溯源到的攻击者相关信息，如攻击者账号、姓名、邮箱等。字段值为字符串格式，内容应包含关键属性及其对应值。"
     },
     "fileEncrypted": {
       "label": "文件是否加密",
-      "description": "标识文件内容是否经过加密算法保护"
+      "description": "该字段标识文件内容是否经过加密算法保护。该字段为布尔类型，仅允许取值为 true 或 false，分别表示文件已加密和文件未加密。"
     },
     "fileGuid": {
       "label": "文件GUID",
-      "description": "文件的全局唯一标识符"
+      "description": "文件的全局唯一标识符，通常为32位十六进制字符串，不包含连字符，用于在系统中唯一标识一个文件。"
     },
     "isCdn": {
       "label": "是否CDN",
-      "description": "标识目标是否为内容分发网络(CDN)节点"
+      "description": "标识目标是否为内容分发网络(CDN)节点。该字段为布尔类型，取值为 true 或 false。"
     },
     "cdnVendor": {
       "label": "CDN厂商",
-      "description": "标识内容分发网络(CDN)服务提供商的官方名称"
+      "description": "该字段用于标识内容分发网络(CDN)服务提供商的官方名称。格式为字符串，通常为厂商的完整商业名称或公认的简称。"
     },
     "processCount": {
       "label": "进程数",
-      "description": "当前系统或资产上运行的关联进程总数"
+      "description": "该字段表示当前系统或资产上与特定事件或资产相关联的正在运行的进程总数。格式要求：必须为非负整数。"
     },
     "runUser": {
       "label": "执行用户",
-      "description": "执行系统进程或服务的用户账号"
+      "description": "执行系统进程或服务的用户账号名称，应为有效的系统用户名。"
     },
     "ipVersion": {
       "label": "IP版本",
-      "description": "互联网协议（IP）的版本标识"
+      "description": "该字段表示互联网协议（IP）的版本标识。格式为字符串，目前主要包括“IPv4”和“IPv6”。"
     },
     "componentVersion": {
       "label": "组件版本",
-      "description": "标识软件组件、插件或库的完整版本信息"
+      "description": "该字段用于标识软件组件、插件或库的完整版本信息，其值为字符串类型。通常遵循语义化版本控制规范（如主版本号.次版本号.修订号）。"
     },
     "publisher": {
       "label": "发布者",
-      "description": "标识软件、数字证书或内容发布方的官方实体名称"
+      "description": "该字段用于标识软件、数字证书或内容发布方的官方实体名称。字段值为字符串类型，应填写发布方的完整、正式名称，例如软件公司、开源基金会或组织机构的官方全称。"
     },
     "language": {
       "label": "语言",
-      "description": "标识软件开发或脚本执行使用的编程语言名称"
+      "description": "该字段标识软件开发或脚本执行使用的编程语言名称，应为常见的编程语言名称，例如Python、Java、JavaScript、C++等，不包含版本号或特定方言信息。"
     },
     "registrarEmail": {
       "label": "注册商邮箱",
-      "description": "域名注册商的官方联系邮箱地址"
+      "description": "注册商邮箱是域名注册商的官方联系邮箱地址。该字段应遵循标准邮箱地址格式，包含有效的用户名和域名部分，使用@符号分隔，且域名部分应包含有效的顶级域名。"
     },
     "attackerPort": {
       "label": "攻击者端口",
-      "description": "攻击者发起攻击时使用的网络端口号"
+      "description": "攻击者发起攻击时使用的网络端口号。格式为字符串，表示端口号数值，取值范围为0-65535，多个端口号使用英文逗号分隔。"
     },
     "victimPort": {
       "label": "受害者端口",
-      "description": "遭受威胁攻击或风险影响的受害者网络服务端口号"
+      "description": "受害者网络服务端口号，表示遭受威胁攻击或风险影响的受害者服务所使用的端口。格式为端口号，取值范围为0-65535，多个端口号使用英文逗号分隔。"
     },
     "timesPermin": {
       "label": "尝试频率",
-      "description": "统计每分钟内特定操作或认证尝试的次数"
+      "description": "统计每分钟内特定操作或认证尝试的次数。该字段为整数类型，表示事件发生的频率计数，取值应大于等于0。"
     },
     "phishingType": {
       "label": "钓鱼类型",
-      "description": "网络钓鱼攻击的具体传播渠道分类",
+      "description": "该字段表示网络钓鱼攻击的具体传播渠道分类，必须从预定义的枚举值中选择。可选值包括：emailPhishing (邮件钓鱼)、smsPhishing (短信钓鱼)、instantMessagingPhishing (即时通讯钓鱼)、socialMediaPhishing (社交媒体钓鱼)、qrCodePhishing (二维码钓鱼)等选项。",
       "enum": {
         "emailPhishing": {
           "label": "邮件钓鱼",
@@ -4198,11 +4198,11 @@
     },
     "sm3": {
       "label": "文件SM3哈希值",
-      "description": "使用SM3算法计算的文件内容密码学哈希值"
+      "description": "文件SM3哈希值，使用SM3算法计算的文件内容密码学哈希值。该值为固定长度的十六进制字符串，长度为64个字符，由数字0-9和小写字母a-f组成。"
     },
     "webTamperType": {
       "label": "网页篡改类型",
-      "description": "标识网页内容、结构或功能被恶意修改的具体类型",
+      "description": "网页篡改类型，用于标识网页内容、结构或功能被恶意修改的具体类型。该字段为枚举类型，其值必须为预定义的字符串，有效取值范围包括：contentReplacement（内容替换）、hiddenLinkInjection（暗链植入）、visibleLinkInjection（明链植入）、jsScriptHijacking（JS脚本劫持）、metaTampering（页面元数据篡改）、other（其他）等可选值。",
       "enum": {
         "contentReplacement": {
           "label": "内容替换",
@@ -4236,83 +4236,83 @@
     },
     "vulOrg": {
       "label": "漏洞系统研制厂商",
-      "description": "标识存在漏洞的软件或硬件产品的原始厂商名称"
+      "description": "该字段用于标识存在漏洞的软件或硬件产品的原始研发或生产厂商名称，例如操作系统、应用程序或硬件设备的供应商。值为字符串类型，建议使用厂商官方常用名称或简称，避免使用缩写或内部代号。"
     },
     "vulCode": {
       "label": "漏洞编号",
-      "description": "漏洞编号，支持CNVD、CNNVD等标准漏洞编号格式"
+      "description": "漏洞编号，指按照CNVD、CNNVD等国家标准漏洞库定义的格式进行标识的漏洞唯一标识符。格式需符合相应标准编号规范，通常为“标准前缀-年份-序列号”的结构，例如CNVD-YYYY-XXXXX或CNNVD-YYYY-XXX。"
     },
     "vulDescription": {
       "label": "漏洞描述",
-      "description": "漏洞的技术特性和潜在风险描述"
+      "description": "漏洞的技术特性和潜在风险描述。该字段内容为文本字符串，应清晰、准确地阐述漏洞的成因、技术细节、可能被利用的方式以及可能造成的安全影响。"
     },
     "vulDetector": {
       "label": "漏洞发现者",
-      "description": "首次发现并报告漏洞的个人、组织或研究团队名称"
+      "description": "漏洞发现者字段记录首次发现并报告该漏洞的个人、组织或研究团队的名称。"
     },
     "algorithm": {
       "label": "加密算法",
-      "description": "用于数据加密的安全算法类型"
+      "description": "该字段表示用于数据加密的安全算法类型，通常采用标准算法名称标识，如AES-256等。"
     },
     "srcGeoCountryCode": {
       "label": "来源国家代码",
-      "description": "网络请求来源的国家地理编码"
+      "description": "网络请求来源的国家地理编码，遵循ISO 3166-1 alpha-2标准的两字母国家代码格式，例如：US代表美国，CN代表中国。"
     },
     "srcGeoRegionCode": {
       "label": "来源地区代码",
-      "description": "网络请求来源的地区地理编码"
+      "description": "网络请求来源的地区地理编码，采用ISO 3166-1 alpha-2标准的两字母国家/地区代码，表示来源IP地址对应的国家或地区。该字段为字符串类型，必须由大写英文字母组成。"
     },
     "srcGeoCityCode": {
       "label": "来源城市代码",
-      "description": "表示网络请求来源的城市地理编码"
+      "description": "该字段表示网络请求来源的城市地理编码，用于标识来源城市。格式为字符串类型，通常使用城市名称或标准城市代码表示。"
     },
     "srcGeoCountyCode": {
       "label": "来源区县代码",
-      "description": "表示网络流量或事件来源的行政区划县/区级代码，采用国家行政区划编码标准"
+      "description": "表示网络流量或事件来源的行政区划县/区级代码，采用国家行政区划编码标准（例如GB/T 2260）。格式为字符串，通常为6位数字代码，其中前两位代表省级，中间两位代表地市级，后两位代表县/区级。"
     },
     "peakFlowsRate": {
       "label": "峰值流量速率",
-      "description": "网络流量的峰值传输速率，基于RFC 2215流量规范标准，单位：Mbps（兆比特每秒）"
+      "description": "峰值流量速率，指网络流量的峰值传输速率，基于RFC 2215流量规范标准，单位为Mbps（兆比特每秒）。该字段为整型数值，表示具体的速率值。"
     },
     "processStartTime": {
       "label": "进程启动时间",
-      "description": "操作系统成功创建进程实例的精确时间"
+      "description": "进程启动时间，指操作系统成功创建进程实例的精确时间。格式要求为标准的日期时间字符串，具体格式为：yyyy-mm-dd HH:mm:ss。"
     },
     "parentProcessStartTime": {
       "label": "父进程启动时间",
-      "description": "父进程实例的创建时刻的精确时间"
+      "description": "父进程实例的创建时刻的精确时间，格式为 yyyy-mm-dd HH:mm:ss。"
     },
     "vulPublicTime": {
       "label": "漏洞公开时间",
-      "description": "漏洞首次在公共渠道披露的精确时间"
+      "description": "漏洞首次在公共渠道披露的精确时间。格式要求为年-月-日 时:分:秒，即 yyyy-mm-dd HH:mm:ss。"
     },
     "vulName": {
       "label": "漏洞名称",
-      "description": "描述漏洞的标准化描述性名称"
+      "description": "漏洞的标准化描述性名称，用于唯一标识特定漏洞类型。通常遵循行业通用命名规范，如CVE编号、CNVD编号或厂商公开的漏洞公告名称。"
     },
     "createTime": {
       "label": "创建时间",
-      "description": "记录系统对象、文件或资源的初始创建时间"
+      "description": "该字段记录系统对象、文件或资源的初始创建时间。时间格式必须为yyyy-mm-dd HH:mm:ss。"
     },
     "hostAddress": {
       "label": "主机IP",
-      "description": "主机的网络IP地址"
+      "description": "主机IP地址，用于标识主机在网络中的位置。必须符合IPv4或IPv6地址格式规范。IPv4地址为点分十进制格式，由四个0-255的十进制数组成，以点分隔。IPv6地址为冒号分隔的十六进制数格式。"
     },
     "processGuid": {
       "label": "进程GUID",
-      "description": "进程实例的全局唯一标识符"
+      "description": "进程实例的全局唯一标识符，通常采用UUID格式，符合标准的UUID v4格式规范，即32位十六进制数字，以连字符分隔为5组。"
     },
     "parentProcessGuid": {
       "label": "父进程GUID",
-      "description": "父进程实例的全局唯一标识符"
+      "description": "父进程实例的全局唯一标识符，用于唯一标识操作系统中的父进程实例。该字段为字符串类型，通常采用标准的GUID格式，由32位十六进制数字组成，并以连字符分隔为5组。"
     },
     "originalFileName": {
       "label": "原始文件名",
-      "description": "文件在被处理、重命名或上传前的原始名称"
+      "description": "原始文件名，指文件在被处理、重命名或上传前的原始名称。"
     },
     "integrityLevel": {
       "label": "完整性级别",
-      "description": "Windows安全模型中进程的权限级别",
+      "description": "完整性级别表示Windows安全模型中进程的权限级别，用于标识进程的信任和权限等级。该字段为枚举类型，其取值必须为预定义的字符串常量，可选值包括：Untrusted（不信任）、Low（低级别）、Medium（中级别）、High（高级别）和System（系统级别）。",
       "enum": {
         "Untrusted": {
           "label": "不信任",
@@ -4338,7 +4338,7 @@
     },
     "exfiltrationChannel": {
       "label": "泄露渠道",
-      "description": "标识数据泄露中数据被传输到外部的具体渠道",
+      "description": "该字段标识数据泄露事件中数据被传输到外部的具体渠道。其值必须为预定义的枚举字符串，可选值包括但不限于：removableMedia（可移动介质）、networkProtocols（网络协议传输）、emailSystems（邮件系统）、messagingApps（即时通讯应用）、cloudServices（云服务）等。",
       "enum": {
         "removableMedia": {
           "label": "可移动介质",
@@ -4388,39 +4388,39 @@
     },
     "dataSetSize": {
       "label": "数据集大小",
-      "description": "SQL查询返回的结果数据集在内存或网络传输中的估算大小"
+      "description": "数据集大小，指SQL查询返回的结果数据集在内存或网络传输中的估算大小，通常以字节为单位。该字段值为长整型（long），表示一个非负整数。"
     },
     "phishingEmail": {
       "label": "钓鱼邮箱",
-      "description": "用于发起网络钓鱼攻击的恶意发件人邮箱地址"
+      "description": "钓鱼邮箱是指用于发起网络钓鱼攻击的恶意发件人邮箱地址。字段内容必须符合标准电子邮件地址格式，即包含本地部分、@符号和域名部分。"
     },
     "transMode": {
       "label": "传输模式",
-      "description": "数据传输采用的协议模式"
+      "description": "数据传输采用的协议模式，通常用于指定文件传输或数据交换的协议格式。本字段为字符串类型，常见取值为表示特定传输模式的标识符，例如 \"netascii\"（网络ASCII模式）、\"octet\"（二进制八位字节模式）或 \"mail\"（邮件模式）。"
     },
     "objectName": {
       "label": "对象名称",
-      "description": "访问或操作的目标对象名称"
+      "description": "对象名称，指访问或操作的目标对象名称，例如数据库名、应用名、文件名等。"
     },
     "modifyTime": {
       "label": "修改时间",
-      "description": "表示文件或对象的最后修改时间"
+      "description": "修改时间表示文件或对象的最后修改时间。该字段为字符串类型，必须遵循标准的日期时间格式，格式为：yyyy-mm-dd HH:mm:ss。"
     },
     "wmiEventNamespace": {
       "label": "WMI事件命名空间",
-      "description": "Windows Management Instrumentation (WMI) 事件筛选器所属的命名空间路径"
+      "description": "WMI事件筛选器所属的命名空间路径，用于标识WMI提供程序中的特定类别层次结构。格式为WMI命名空间的标准路径字符串，各层级之间使用反斜杠“\\\\”分隔。"
     },
     "wmiQuery": {
       "label": "WMI查询条件",
-      "description": "WMI查询语句，用于从Windows系统检索管理信息和事件数据"
+      "description": "WMI查询条件是指用于从Windows系统检索管理信息和事件数据的查询语句，通常采用WMI查询语言（WQL）格式。"
     },
     "wmiDestination": {
       "label": "WMI目标",
-      "description": "WMI事件消费者执行的目标路径"
+      "description": "WMI事件消费者执行的目标路径，通常为文件系统路径格式，应遵循Windows或Unix-like系统的路径规范，例如使用反斜杠（\\）或正斜杠（/）作为目录分隔符，且路径应指向有效的可执行文件或脚本。"
     },
     "wmiType": {
       "label": "WMI类型",
-      "description": "WMI事件消费者的具体类别分类",
+      "description": "WMI事件消费者的具体类别分类，枚举类型，可选值包括：CommandLineEventConsumer（命令行事件消费者）、ActiveScriptEventConsumer（活动脚本事件消费者）、NTEventLogEventConsumer（NT事件日志消费者）、SMTPEventConsumer（SMTP事件消费者）、LogFileEventConsumer（日志文件事件消费者）等。",
       "enum": {
         "CommandLineEventConsumer": {
           "label": "命令行事件消费者",
@@ -4450,87 +4450,87 @@
     },
     "wmiConsumer": {
       "label": "WMI消费者",
-      "description": "处理WMI事件的消费者名称"
+      "description": "该字段表示处理WMI事件的消费者名称。其值通常为包含消费者名称的字符串，格式应符合WMI事件消费者对象的命名规范。"
     },
     "wmiFilter": {
       "label": "WMI筛选器",
-      "description": "用于过滤和选择特定WMI事件的筛选器名称"
+      "description": "WMI筛选器用于过滤和选择特定WMI事件的筛选器名称，其值为字符串类型。该字段通常包含WMI事件筛选器的唯一标识符，格式应符合WMI查询语言（WQL）的命名规范或特定的筛选器路径格式。"
     },
     "isExecutable": {
       "label": "是否可执行",
-      "description": "标识文件是否具有可执行格式（如PE、ELF）或执行权限"
+      "description": "该字段用于标识文件是否具有可执行格式（如PE、ELF）或执行权限。其值为布尔类型，仅允许取 `true` 或 `false`。"
     },
     "affectAssetIp": {
       "label": "受影响资产IP",
-      "description": "攻击或风险的受影响资产IP地址"
+      "description": "受影响资产IP地址，指在安全事件中遭受攻击或面临风险的资产所对应的IP地址。该字段为字符串类型，必须符合标准的IPv4或IPv6地址格式。"
     },
     "affectAssetPort": {
       "label": "受影响资产端口",
-      "description": "攻击或风险的受影响资产的网络服务端口号"
+      "description": "该字段表示攻击或风险的受影响资产的网络服务端口号，用于标识网络服务。格式要求：端口号必须是整数类型，取值范围为0-65535。"
     },
     "destUserId": {
       "label": "目标用户ID",
-      "description": "网络连接的接收方或目标用户的唯一标识符"
+      "description": "目标用户的唯一标识符，通常用于标识网络连接的接收方或目标用户。"
     },
     "displayName": {
       "label": "显示名称",
-      "description": "用于‌用户友好展示‌的别名"
+      "description": "显示名称用于用户友好展示的别名。"
     },
     "userPrincipalName": {
       "label": "用户主体名称",
-      "description": "客户端进行身份验证的服务的用户主体名称"
+      "description": "用户主体名称是客户端进行身份验证的服务的唯一标识符，通常采用电子邮件地址格式。其格式要求为：由用户名、@符号和域名组成。"
     },
     "homeDir": {
       "label": "主目录",
-      "description": "用户账户配置的主目录路径"
+      "description": "该字段表示用户账户配置的主目录在文件系统中的绝对路径。路径格式应符合操作系统的规范，例如在Windows系统中通常为驱动器盘符加冒号后接反斜杠分隔的目录结构（如 `C:\\Users\\<username>`），在Linux/Unix系统中通常为正斜杠分隔的目录结构（如 `/home/<username>`）。"
     },
     "homePath": {
       "label": "主目录路径",
-      "description": "指向用户主目录的本地路径或环境变量解析路径"
+      "description": "该字段表示用户主目录的本地路径或环境变量解析路径。其值应为符合操作系统规范的文件系统路径字符串，可以包含盘符、目录分隔符（如反斜杠`\\`或正斜杠`/`）以及环境变量引用（例如`%USERPROFILE%`或`$HOME`）。"
     },
     "scriptPath": {
       "label": "脚本路径",
-      "description": "执行的脚本文件在文件系统中的完整路径"
+      "description": "脚本路径指被执行的脚本文件在文件系统中的完整路径，其值应为有效的文件系统路径字符串，格式应符合操作系统规范，例如在Unix/Linux系统中以正斜杠（/）分隔目录，在Windows系统中以反斜杠（\\）或正斜杠（/）分隔目录。"
     },
     "timePasswordLastSet": {
       "label": "密码最后设置时间",
-      "description": "记录用户最后一次修改密码的时间"
+      "description": "记录用户最后一次修改密码的时间，格式为yyyy-mm-dd HH:mm:ss。"
     },
     "primaryGroupId": {
       "label": "主要组ID",
-      "description": "用户所属主要组的唯一标识符"
+      "description": "主要组ID是用户所属主要组的唯一标识符，格式为字符串，通常由数字组成，用于唯一标识用户的主要组。"
     },
     "oldUacValue": {
       "label": "旧UAC值",
-      "description": "用户账号在更改前的用户账号控制 (UAC) 值"
+      "description": "旧UAC值，表示用户账号在更改前的用户账号控制 (UAC) 值。该值为十六进制字符串格式，通常以“0x”前缀开头，后跟一个或多个十六进制数字（0-9， A-F）。"
     },
     "newUacValue": {
       "label": "新UAC值",
-      "description": "用户账号在更改后的用户账号控制 (UAC) 值"
+      "description": "新UAC值表示用户账号在更改后的用户账号控制 (UAC) 值。该字段为字符串类型，通常以十六进制格式表示。"
     },
     "delegationList": {
       "label": "委派列表",
-      "description": "用户或服务主体被允许将其权限或委托授权的对象列表"
+      "description": "该字段表示允许用户或服务主体将其权限或委托授权给的对象列表。其值为一个字符串，内容需符合特定的服务主体名称（SPN）格式。格式通常为“服务类/主机名[:端口]”，其中服务类标识服务类型，主机名为完全限定域名（FQDN）或NetBIOS名称，端口为可选。"
     },
     "userAccountControl": {
       "label": "用户账号控制",
-      "description": "Windows Active Directory用户账户控制属性，是一个位掩码，用于表示账户的多种设置"
+      "description": "用户账号控制属性是Windows Active Directory中用于表示账户多种设置的位掩码。该字段值为字符串类型，通常以十六进制或十进制字符串形式表示。"
     },
     "userParameters": {
       "label": "用户参数",
-      "description": "Active Directory用户账号的自定义配置参数"
+      "description": "Active Directory用户账号的自定义配置参数。"
     },
     "incidentId": {
       "label": "事件ID",
-      "description": "安全事件的全局唯一标识符，通常采用UUID或时间戳序列等不可重复算法生成"
+      "description": "事件ID是安全事件的全局唯一标识符，通常采用UUID或时间戳序列等不可重复算法生成，以保证其唯一性。"
     },
     "incidentName": {
       "label": "事件名称",
-      "description": "标识安全事件的简要概括名称"
+      "description": "该字段用于标识安全事件的简要概括名称。"
     },
     "incidentLevel": {
       "label": "事件级别",
-      "description": "安全事件的严重程度等级，用于评估事件的影响范围和紧急程度",
+      "description": "安全事件的严重程度等级，用于评估事件的影响范围和紧急程度。取值范围为枚举类型，可选值包括：Critical（严重）、High（高）、Medium（中）、Low（低），需严格使用给定的枚举值。",
       "enum": {
         "Critical": {
           "label": "严重",
@@ -4552,7 +4552,7 @@
     },
     "incidentStatus": {
       "label": "事件状态",
-      "description": "标识安全事件在响应生命周期中的当前处理状态",
+      "description": "标识安全事件在响应生命周期中的当前处理状态。该字段为枚举类型，其值必须为预定义的字符串。可选值为：Analysising (分析中)、Error (错误)、Ignore (忽略)、Pending (待处置)、Disposed (已处置)。",
       "enum": {
         "Analysising": {
           "label": "分析中",
@@ -4578,75 +4578,75 @@
     },
     "latestActivityTime": {
       "label": "最近发生时间",
-      "description": "记录安全事件中最后一次活动或告警触发的时间"
+      "description": "该字段记录安全事件中最后一次活动或告警触发的时间。格式必须为标准的日期时间字符串，具体要求为：yyyy-mm-dd HH:mm:ss，例如 2024-12-27 19:28:22。"
     },
     "closeTime": {
       "label": "关闭时间",
-      "description": "表示事件处置完成并被正式关闭的时间"
+      "description": "closeTime字段表示事件处置完成并被正式关闭的时间。该字段为字符串类型，必须遵循严格的日期时间格式：yyyy-mm-dd HH:mm:ss，例如2025-01-14 11:18:31。"
     },
     "closeReason": {
       "label": "关闭原因",
-      "description": "记录安全事件关闭的具体原因和解决状态"
+      "description": "该字段用于记录安全事件关闭的具体原因和解决状态。值为字符串类型，应简洁明了地描述关闭事件的原因。"
     },
     "closeUser": {
       "label": "关闭操作者",
-      "description": "标识执行事件关闭操作的用户或系统实体"
+      "description": "该字段标识执行事件关闭操作的用户或系统实体。其值为字符串类型，用于记录关闭操作的发起者。"
     },
     "assignee": {
       "label": "负责人",
-      "description": "标识负责安全事件调查和响应的主要责任人"
+      "description": "负责人字段用于标识负责安全事件调查和响应的主要责任人。其值应为字符串类型，通常为责任人的用户名、工号或姓名。"
     },
     "participants": {
       "label": "参与人",
-      "description": "记录参与安全事件响应和处理的所有相关人员列表"
+      "description": "该字段记录参与安全事件响应和处理的所有相关人员列表，存储格式为字符串数组。"
     },
     "alertDevices": {
       "label": "告警来源设备",
-      "description": "记录生成告警的安全设备和传感器信息集合"
+      "description": "告警来源设备字段记录生成告警的安全设备和传感器信息集合，格式为字符串数组。每个数组元素应为描述设备名称及标识信息的字符串，通常包含设备名称和IP地址等关键信息。"
     },
     "isInternetAttack": {
       "label": "是否互联网攻击",
-      "description": "标识攻击源是否来自互联网外部网络"
+      "description": "该字段用于标识攻击源是否来自互联网外部网络。字段类型为布尔值，取值为 true 或 false，其中 true 表示攻击源来自互联网，false 表示攻击源非来自互联网。"
     },
     "incidentDataSource": {
       "label": "安全事件数据源",
-      "description": "标识安全事件数据的原始来源系统和检测机制"
+      "description": "安全事件数据源字段用于标识安全事件数据的原始来源系统和检测机制，例如安全设备、日志系统、威胁情报平台或人工报告等。"
     },
     "alertNames": {
       "label": "告警名称列表",
-      "description": "记录安全事件生命周期中关联的所有告警规则名称集合"
+      "description": "告警名称列表，记录安全事件生命周期中关联的所有告警规则名称集合。该字段为字符串数组，数组内每个元素为一个告警名称字符串。"
     },
     "alertIds": {
       "label": "告警ID列表",
-      "description": "记录安全事件关联的所有告警唯一标识符集合"
+      "description": "记录安全事件关联的所有告警唯一标识符集合。该字段为字符串数组，数组内每个元素应为表示告警唯一标识符的字符串。"
     },
     "alertTypes": {
       "label": "告警类型列表",
-      "description": "记录安全事件关联的所有告警分类类型集合"
+      "description": "记录安全事件关联的所有告警分类类型集合。字段值为字符串数组，每个数组元素为一个告警分类类型字符串。"
     },
     "alertCount": {
       "label": "告警数量",
-      "description": "统计安全事件关联的告警总数"
+      "description": "该字段用于统计安全事件关联的告警总数。其值应为非负整数，表示告警的具体数量。"
     },
     "attacker": {
       "label": "攻击者",
-      "description": "记录攻击活动中使用的所有唯一源IP地址集合"
+      "description": "攻击者是指在攻击活动中使用的所有唯一源IP地址集合，用于标识攻击来源。该字段为数组类型，每个元素必须符合IP地址格式要求，即有效的IPv4或IPv6地址。"
     },
     "victim": {
       "label": "受害者",
-      "description": "记录受攻击影响的所有唯一目标IP地址集合"
+      "description": "记录受攻击影响的所有唯一目标IP地址集合，以数组形式存储。数组中的每个元素必须是有效的IPv4或IPv6地址格式。IPv4地址格式为点分十进制（如：192.168.1.1），IPv6地址格式需符合标准表示法（如：2001:0db8:85a3:0000:0000:8a2e:0370:7334或压缩格式）。"
     },
     "srcAddrList": {
       "label": "来源IP列表",
-      "description": "记录安全事件中所有唯一源IP地址的集合"
+      "description": "该字段记录安全事件中所有唯一源IP地址的集合。字段值为字符串数组，每个数组元素必须是一个合法的IPv4或IPv6地址。"
     },
     "destAddrList": {
       "label": "目的IP列表",
-      "description": "记录安全事件中所有唯一目的IP地址的集合"
+      "description": "目的IP列表记录安全事件中所有唯一目的IP地址的集合。该字段为数组类型，每个元素必须是合法的IPv4或IPv6地址格式。"
     },
     "incidentType": {
       "label": "安全事件类型",
-      "description": "标识安全事件的主要攻击分类和技术类别",
+      "description": "安全事件类型字段用于标识安全事件的主要攻击分类和技术类别，采用层级路径格式表示。该字段为枚举类型，必须从预定义的可选值中选择，每个值均为一个字符串形式的路径。",
       "enum": {
         "/Malware/ComputerVirus": {
           "label": "计算机病毒事件",
@@ -4956,11 +4956,11 @@
     },
     "queryStatus": {
       "label": "查询状态",
-      "description": "DNS协议查询请求的响应状态，如DNS查询状态中0表示DNS查询成功"
+      "description": "DNS协议查询请求的响应状态码，用于表示DNS查询操作的结果。常见的状态码中，0通常表示DNS查询成功。该字段为字符串类型，具体取值遵循DNS协议标准定义的状态码。"
     },
     "queryClass": {
       "label": "查询类别",
-      "description": "DNS查询所适用的网络类别",
+      "description": "DNS查询所适用的网络类别。可选值包括：IN (Internet类别)、CH (Chaos类别)、HS (Hesiod类别)、NONE (无类别)、ANY (任意类别)。",
       "enum": {
         "IN": {
           "label": "Internet类别",
@@ -4986,67 +4986,67 @@
     },
     "filePermissions": {
       "label": "文件权限",
-      "description": "文件或目录的访问权限设置"
+      "description": "文件或目录的访问权限设置，采用类Unix系统的符号表示法，通常为9位字符，分别代表所有者、所属组和其他用户的读、写、执行权限。常见格式为类似`rw-r--r--`的字符串，其中`r`表示读，`w`表示写，`x`表示执行，`-`表示无对应权限。"
     },
     "fileCreateTime": {
       "label": "文件创建时间",
-      "description": "文件最初创建的时间"
+      "description": "文件最初创建的时间。格式必须为yyyy-mm-dd HH:mm:ss，例如：2023-10-15 14:30:00。"
     },
     "fileOwner": {
       "label": "文件所有者",
-      "description": "文件的所有者用户名称"
+      "description": "文件的所有者用户名称，格式为字符串类型，通常为操作系统中的有效用户名，支持字母、数字、下划线等常见字符。"
     },
     "fileGroup": {
       "label": "文件所属组",
-      "description": "文件或目录的所有权归属组"
+      "description": "文件或目录的所有权归属组，表示文件在系统中的组权限归属。"
     },
     "threatActorOrg": {
       "label": "威胁组织名称",
-      "description": "已知恶意组织/威胁行为者团体的名称"
+      "description": "该字段用于记录已知恶意组织或威胁行为者团体的名称。"
     },
     "cpuModel": {
       "label": "CPU型号",
-      "description": "中央处理器型号，包含厂商、架构和型号规格信息，基于CPUID指令集标准"
+      "description": "CPU型号，表示中央处理器的具体型号规格，包含厂商、架构和型号等信息。"
     },
     "gpuModel": {
       "label": "GPU型号",
-      "description": "图形处理器型号标识，包含厂商、架构和计算能力规格信息"
+      "description": "图形处理器型号标识，包含厂商、架构和计算能力规格信息。该字段为字符串类型，通常为制造商定义的特定型号名称。"
     },
     "nicModel": {
       "label": "网卡型号",
-      "description": "网络接口控制器型号标识，包含厂商、接口类型和速率规格信息"
+      "description": "网卡型号，指网络接口控制器（NIC）的硬件型号标识，用于唯一标识网卡设备，通常包含制造商、接口类型和速率规格等信息。"
     },
     "imageName": {
       "label": "镜像名称",
-      "description": "运行时使用的镜像完整名称，包含仓库地址、镜像名和标签"
+      "description": "镜像名称，指容器运行时使用的完整镜像标识，需包含仓库地址、镜像名称及标签三部分。格式要求为字符串，通常遵循`[仓库地址/]镜像名:标签`的规范。"
     },
     "privilegedRun": {
       "label": "特权模式运行",
-      "description": "是否以特权模式运行，具有对主机的访问权限，基于Docker运行时安全标准"
+      "description": "该字段表示容器是否以特权模式运行，具有对主机的访问权限，基于Docker运行时安全标准。其格式为布尔值，仅允许取 `true` 或 `false` 两种值。"
     },
     "namespace": {
       "label": "命名空间",
-      "description": "Kubernetes集群中的逻辑隔离单元，用于资源分组和访问控制"
+      "description": "命名空间是Kubernetes集群中的逻辑隔离单元，用于资源分组和访问控制。该字段为字符串类型，其值需遵循Kubernetes命名空间命名规范。"
     },
     "cpuLimit": {
       "label": "CPU限制",
-      "description": "可使用的CPU资源上限，支持mCPU单位或核数表示"
+      "description": "该字段表示容器可使用的CPU资源上限，支持使用mCPU单位或核数两种格式进行表示。格式要求：若以mCPU为单位，则数值后需加小写字母'm'，例如'500m'表示500毫核（即0.5核）；若以核数为单位，则可直接使用整数或小数，例如'0.5'或'1'。该值为字符串类型。"
     },
     "storageLimit": {
       "label": "存储限制",
-      "description": "可使用的存储资源上限，支持Gi、Ti等单位"
+      "description": "可使用的存储资源上限，需指定数值和单位，支持Gi、Ti等单位，例如10Gi表示10吉字节。格式要求为数字后接单位标识，单位需大写，如Gi、Ti，数值需为正数。"
     },
     "podName": {
       "label": "Pod名称",
-      "description": "Kubernetes集群中Pod资源的唯一名称标识"
+      "description": "Pod名称是Kubernetes集群中Pod资源的唯一标识符。该字段为字符串类型，其命名需遵循Kubernetes命名规范。"
     },
     "componentName": {
       "label": "组件名称",
-      "description": "系统内部组件的功能名称标识"
+      "description": "组件名称是系统内部组件的功能名称标识，用于唯一标识一个软件模块或功能单元。格式要求：必须为有效的字符串，通常采用小写字母、数字和连字符（-）的组合，遵循常见的命名约定（如Maven artifactId或软件包名称）。"
     },
     "portStatus": {
       "label": "端口状态",
-      "description": "网络端口的当前运行状态",
+      "description": "端口状态表示网络端口的当前运行状态。该字段为枚举类型，其值必须为预定义的字符串，可选范围包括：open (开放)、closed (关闭)、filtered (过滤)、unfiltered (未过滤)。",
       "enum": {
         "open": {
           "label": "开放",
@@ -5068,7 +5068,7 @@
     },
     "shareProperty": {
       "label": "共享属性",
-      "description": "各类资产的共享权限和范围分类",
+      "description": "共享属性用于定义各类资产的共享权限和范围分类。本字段为枚举类型，其值必须为预定义的选项之一，不可随意填写。可选值包括：no_sharing (禁止共享)、internal_share (内部共享)、department_share (部门共享)、partner_share (合作伙伴共享)、public_share (公开共享)。",
       "enum": {
         "no_sharing": {
           "label": "禁止共享",
@@ -5098,7 +5098,7 @@
     },
     "openLevel": {
       "label": "开放等级",
-      "description": "各类资产（数据、API、服务等）的开放程度",
+      "description": "该字段表示各类资产（数据、API、服务等）的开放程度，用于定义信息的访问和传播范围。其值为预定义的枚举类型，必须在指定范围内选取。可选值包括：confidential (机密等级)，表示高度敏感，仅限极少数授权人员访问；internal_use (内部使用)，表示仅限于组织内部人员使用；limited_disclosure (受限公开)，表示可在特定条件下向外部有限实体公开；public_disclosure (公开等级)，表示可向公众公开；open_standard (开放标准)，表示遵循开放标准，鼓励广泛使用和互操作。",
       "enum": {
         "confidential": {
           "label": "机密等级",
@@ -5124,43 +5124,43 @@
     },
     "userLoginHours": {
       "label": "用户登录时间",
-      "description": "用户账户的登录时间限制。它定义了用户可以登录系统的时间范围"
+      "description": "用户账户的登录时间限制，定义了用户可以登录系统的时间范围。"
     },
     "originalPageUrl": {
       "label": "原始网页URL",
-      "description": "篡改前合法网页的URL地址"
+      "description": "原始网页URL是指篡改前合法网页的URL地址，用于标识网页篡改事件发生前的原始访问路径。该字段格式必须符合标准的URL规范，通常包含协议（如http或https）、域名或IP地址、端口（可选）、路径及查询参数（可选）等部分。"
     },
     "tamperedPageUrl": {
       "label": "被篡改网页URL",
-      "description": "未经授权修改后的受损网页URL地址"
+      "description": "该字段记录未经授权修改后的受损网页URL地址，格式需符合标准URL规范，通常包含协议类型（如http、https）、域名和路径等组成部分。"
     },
     "assetId": {
       "label": "资产ID",
-      "description": "系统中资产的全局唯一标识符"
+      "description": "资产ID是系统中资产的全局唯一标识符，格式为字符串。"
     },
     "assetMacAddress": {
       "label": "资产MAC地址",
-      "description": "资产的媒体访问控制地址，小写冒号分隔格式(如00:1a:2b:3c:4d:5e)"
+      "description": "资产的媒体访问控制地址，用于唯一标识网络设备。格式必须为小写字母和数字组成的MAC地址，采用冒号分隔的六组十六进制数，每组两位，格式为xx:xx:xx:xx:xx:xx。"
     },
     "appName": {
       "label": "应用名称",
-      "description": "被访问或引用的应用名称"
+      "description": "该字段表示被访问或引用的应用名称，用于标识产生该日志的应用程序或服务。其值为字符串类型，通常为应用的自定义名称或标识符。"
     },
     "accountName": {
       "label": "账号名",
-      "description": "表示系统中用户账号的可读名称"
+      "description": "账号名是系统中用户账号的可读标识。格式为字符串，通常由字母、数字及部分特殊字符（如下划线、点号）组成。"
     },
     "assetName": {
       "label": "资产名称",
-      "description": "与资产关联的可读名称"
+      "description": "资产名称，用于标识资产的易读名称。"
     },
     "assetTag": {
       "label": "资产标签",
-      "description": "端口扫描后分配给资产的服务识别标签"
+      "description": "资产标签，用于标识端口扫描后分配给资产的服务识别标签。字段类型为字符串数组，每个标签应为非空字符串。"
     },
     "assetCategory": {
       "label": "资产分类",
-      "description": "从资产管理角度对资产进行的分类",
+      "description": "资产分类是指从资产管理角度对资产进行的分类。该字段为枚举类型，取值范围包括：database (数据库)、data_table (数据表)、data_field (数据字段)、account (账号)、api (API) 等预设可选值。",
       "enum": {
         "database": {
           "label": "数据库",
@@ -5262,15 +5262,15 @@
     },
     "unitId": {
       "label": "单位ID",
-      "description": "资产所属单位的唯一标识符"
+      "description": "资产所属单位的唯一标识符。"
     },
     "unitName": {
       "label": "单位名称",
-      "description": "资产所属单位的名称。"
+      "description": "单位名称，表示资产所属单位的名称。"
     },
     "unitType": {
       "label": "单位类型",
-      "description": "资产所属组织实体的行业与性质分类，用于资产归属管理、安全策略制定及合规性审计。",
+      "description": "单位类型表示资产所属组织实体的行业与性质分类，用于资产归属管理、安全策略制定及合规性审计。该字段为枚举类型，其值必须为预定义的可选字符串之一，例如：party_committee (党委机关), large_state_owned_enterprise (大型国企), company (企业), public_institution (事业单位), individual (个人) 等可选值。",
       "enum": {
         "party_committee": {
           "label": "党委机关",
@@ -5368,11 +5368,11 @@
     },
     "supervisoryUnitName": {
       "label": "所属监管单位",
-      "description": "对资产具有监管权限的单位名称。"
+      "description": "该字段表示对资产具有监管权限的单位名称。"
     },
     "industry": {
       "label": "所属行业",
-      "description": "资产所属的国民经济行业分类，用于标识资产所在领域的业务性质、监管环境和安全要求，参考中国《国民经济行业分类》标准。",
+      "description": "资产所属的国民经济行业分类，用于标识资产所在领域的业务性质、监管环境和安全要求。",
       "enum": {
         "education": {
           "label": "教育",
@@ -5546,7 +5546,7 @@
     },
     "assetImportance": {
       "label": "重要程度",
-      "description": "资产的重要程度等级（如普通、重要、核心、涉密、其它）。",
+      "description": "资产的重要程度等级，用于标识资产在网络安全防护中的优先级和价值。",
       "enum": {
         "common": {
           "label": "普通资产",
@@ -5572,71 +5572,71 @@
     },
     "assetAlias": {
       "label": "资产别名",
-      "description": "资产的别名，便于查看和识别。"
+      "description": "资产别名，用于对资产进行自定义命名，便于查看和识别。"
     },
     "assetSource": {
       "label": "资产来源",
-      "description": "资产的来源（如发现设备的IP地址或手工录入的人员名称）。"
+      "description": "资产来源，表示资产的获取途径，例如发现资产的设备IP地址或手工录入的操作人员名称。"
     },
     "orgId": {
       "label": "组织架构",
-      "description": "资产所属的组织架构标识。"
+      "description": "该字段表示资产所属的组织架构标识，格式为字符串类型，通常由系统自动生成或分配，用于唯一标识组织架构。"
     },
     "orgName": {
       "label": "组织架构名称",
-      "description": "资产所属组织架构的名称"
+      "description": "资产所属组织架构的名称，应为字符串类型，表示组织架构的完整名称。"
     },
     "netId": {
       "label": "安全域",
-      "description": "资产所属安全域的唯一标识（主要用于解决安全域冲突）"
+      "description": "资产所属安全域的唯一标识，主要用于解决安全域冲突。"
     },
     "assetUser": {
       "label": "使用人",
-      "description": "使用资产的人员姓名"
+      "description": "使用资产的人员姓名，格式为字符串类型。"
     },
     "departmentHeadName": {
       "label": "部门负责人名称",
-      "description": "部门负责人的姓名"
+      "description": "该字段表示部门负责人的姓名。"
     },
     "departmentHeadPhone": {
       "label": "部门负责人手机号",
-      "description": "部门负责人的手机号码"
+      "description": "部门负责人的手机号码。格式要求：必须是有效的手机号码格式。"
     },
     "departmentHeadMail": {
       "label": "部门负责人邮箱",
-      "description": "部门负责人的电子邮箱地址"
+      "description": "部门负责人的电子邮箱地址，用于接收相关通知和联系。格式要求：必须符合标准的电子邮件地址格式，包含有效的用户名和域名部分，使用@符号分隔。"
     },
     "maintainStartTime": {
       "label": "维保开始时间",
-      "description": "资产维护保养的开始时间"
+      "description": "维保开始时间是指资产维护保养的开始时间，采用标准的日期时间格式，格式要求为yyyy-mm-dd HH:mm:ss。"
     },
     "maintainEndTime": {
       "label": "维保结束时间",
-      "description": "资产维护保养的结束时间"
+      "description": "资产维护保养的结束时间，采用标准的日期时间格式，格式要求为yyyy-mm-dd HH:mm:ss。"
     },
     "updateTime": {
       "label": "更新时间",
-      "description": "数据信息最后更新的时间戳"
+      "description": "数据信息最后更新的时间戳，采用标准时间格式，格式要求为：yyyy-mm-dd HH:mm:ss。"
     },
     "assetGroup": {
       "label": "归属资产组",
-      "description": "资产所属的组织组或部门"
+      "description": "该字段表示资产所属的组织组或部门名称。"
     },
     "assetGeoRegion": {
       "label": "资产具体地理位置",
-      "description": "资产实际所在的物理地理位置区域"
+      "description": "该字段表示资产实际所在的物理地理位置区域，用于记录资产的具体地理位置信息。格式为字符串类型，使用标准的地理位置描述格式，如\"省/市/区\"或\"国家/省/市\"的层级结构。"
     },
     "assetGeoAddress": {
       "label": "资产物理地址",
-      "description": "资产所处的详细物理地址，例如街道、楼宇、楼层及房间号"
+      "description": "资产所处的详细物理地址，包括街道、楼宇、楼层及房间号等信息。"
     },
     "assetRegion": {
       "label": "资产区域",
-      "description": "资产的逻辑部署位置（如DMZ区、内网）。"
+      "description": "资产的逻辑部署位置，例如DMZ区、内网等。"
     },
     "assetConfidentiality": {
       "label": "机密性",
-      "description": "资产的机密性等级，表示未经授权披露的潜在影响程度。",
+      "description": "该字段表示资产的机密性等级，用于评估未经授权披露信息可能造成的潜在影响程度。",
       "enum": {
         "veryHigh": {
           "label": "非常高",
@@ -5662,7 +5662,7 @@
     },
     "assetIntegrity": {
       "label": "完整性",
-      "description": "资产的完整性等级，表示未经授权篡改的潜在影响程度。",
+      "description": "完整性等级，表示资产未经授权篡改的潜在影响程度。",
       "enum": {
         "veryHigh": {
           "label": "非常高",
@@ -5688,7 +5688,7 @@
     },
     "assetUsability": {
       "label": "可用性",
-      "description": "资产能够按预期运行并提供服务的程度。",
+      "description": "该字段表示资产能够按预期运行并提供服务的程度。",
       "enum": {
         "veryHigh": {
           "label": "非常高",
@@ -5714,11 +5714,11 @@
     },
     "isCriticalProtection": {
       "label": "是否等保资产",
-      "description": "表示资产是否被归类为需要特殊保护措施的关键基础设施。"
+      "description": "表示资产是否被归类为需要特殊保护措施的关键基础设施。该字段为布尔类型，取值为 true 或 false。"
     },
     "protectionLevel": {
       "label": "等保等级",
-      "description": "根据关键信息基础设施保护分级制度确定的资产等级。",
+      "description": "该字段表示根据关键信息基础设施保护分级制度确定的资产等级。",
       "enum": {
         "0": {
           "label": "非等保系统",
@@ -5748,23 +5748,23 @@
     },
     "isDomestic": {
       "label": "是否国产化",
-      "description": "表示资产是否为国产或国内采购。"
+      "description": "该字段用于标识资产是否属于国产化设备或在国内采购。"
     },
     "idc": {
       "label": "IDC服务商",
-      "description": "托管资产的互联网数据中心(IDC)的服务提供商。"
+      "description": "该字段表示托管资产的互联网数据中心(IDC)的服务提供商名称。字段值为字符串类型，需使用规范、完整的数据中心服务商名称。"
     },
     "isCriticalInfra": {
       "label": "是否关基资产",
-      "description": "表示资产是否属于国家标准定义的关键基础设施。"
+      "description": "表示资产是否属于国家标准定义的关键基础设施。该字段为布尔类型，仅接受 true 或 false 两种取值。"
     },
     "isClassified": {
       "label": "是否涉密",
-      "description": "表示资产是否包含或处理涉密信息。"
+      "description": "表示资产是否包含或处理涉密信息。该字段为布尔类型，取值必须为 true 或 false，分别代表“是”与“否”。"
     },
     "cabinetPosition": {
       "label": "机柜位置",
-      "description": "资产所在机柜的物理位置标识。"
+      "description": "机柜位置用于标识资产所在机柜的物理位置。"
     },
     "unitRole": {
       "label": "单位角色",
@@ -5790,7 +5790,7 @@
     },
     "unitAffiliation": {
       "label": "单位直属性质",
-      "description": "资产所属单位的直属监管关系分类。",
+      "description": "该字段表示资产所属单位的直属监管关系分类，用于标识单位在行政管理层级中的隶属关系。",
       "enum": {
         "central_government": {
           "label": "中央直属",
@@ -5816,139 +5816,139 @@
     },
     "scriptContent": {
       "label": "脚本内容",
-      "description": "脚本文件的实际内容，包括可执行代码或命令。"
+      "description": "脚本文件的实际内容，包括可执行代码或命令。内容为字符串格式，应包含有效的脚本语言语法或系统命令。"
     },
     "assetDepartmentName": {
       "label": "管理部门（单位）名称",
-      "description": "负责管理资产的部门或单位的名称。"
+      "description": "管理部门（单位）名称，指负责管理资产的部门或单位的全称。"
     },
     "otherInfo": {
       "label": "其他",
-      "description": "与资产或事件相关的其他信息。"
+      "description": "该字段用于记录与资产或事件相关的其他补充信息。"
     },
     "assetOwnerName": {
       "label": "负责人",
-      "description": "资产责任人的姓名"
+      "description": "资产责任人的姓名。"
     },
     "assetOwnerPhone": {
       "label": "负责人联系方式",
-      "description": "资产负责人的联系方式"
+      "description": "资产负责人的联系方式，用于标识资产责任人的联系电话号码。"
     },
     "assetOwnerMail": {
       "label": "负责人邮箱",
-      "description": "资产负责人邮箱"
+      "description": "负责人邮箱，用于标识资产负责人的电子邮箱地址。格式必须符合标准电子邮件地址规范，包含有效的用户名和域名部分。"
     },
     "assetDescription": {
       "label": "资产描述",
-      "description": "资产的详细描述，包括类型、用途、所属部门和使用人等信息"
+      "description": "资产描述是对资产的详细说明，包括但不限于资产类型、主要用途、所属部门、使用人及其他相关信息。此字段为字符串类型，内容应简明扼要，准确反映资产特征和状态。"
     },
     "assetGeoCountry": {
       "label": "资产所处国家",
-      "description": "资产当前所在的国家名称"
+      "description": "资产当前所在的国家名称，使用ISO 3166-1标准中的国家名称（例如：中国、美国）。取值应为完整且标准的国家名称，避免使用简称或代码。"
     },
     "assetGeoProvince": {
       "label": "资产所处省份",
-      "description": "资产当前所在的省份名称"
+      "description": "资产当前所在的省份名称，应遵循国家行政区划标准命名。"
     },
     "assetGeoProvinceCode": {
       "label": "资产所处省代码",
-      "description": "资产所在省份的行政区划代码"
+      "description": "资产所在省份的行政区划代码，采用国家标准的行政区划代码格式。"
     },
     "assetGeoCityCode": {
       "label": "资产所处市代码",
-      "description": "资产所在城市的行政区划代码"
+      "description": "资产所在城市的行政区划代码，采用国家标准的行政区划编码格式。"
     },
     "assetGeoDistrictCode": {
       "label": "资产所处区代码",
-      "description": "资产所在区县的行政区划代码"
+      "description": "资产所在区县的行政区划代码，采用国家统计局发布的行政区划代码标准。"
     },
     "assetGeoCity": {
       "label": "资产所处城市",
-      "description": "资产当前所在的城市名称"
+      "description": "资产当前所在的城市名称，使用字符串格式表示。"
     },
     "assetGeoDistrict": {
       "label": "资产所处区县",
-      "description": "资产当前所处的区县位置"
+      "description": "该字段表示资产当前所处的区县地理位置信息。值应为有效的区县级行政区划名称，例如区、县、县级市或自治县。"
     },
     "newFilename": {
       "label": "新文件名",
-      "description": "经过重命名操作后的文件名称（包含完整路径信息）"
+      "description": "新文件名指经过重命名操作后的文件名称，包含完整的文件路径信息。该字段为字符串类型，应遵循操作系统文件路径的格式规范，通常包含目录路径和文件名，例如以正斜杠（/）开头的Unix/Linux风格路径或包含盘符和反斜杠（\\）的Windows风格路径。"
     },
     "userWorkstations": {
       "label": "用户工作站",
-      "description": "用户可从中登录的计算机的NetBIOS或DNS名称列表，以逗号分隔"
+      "description": "用户可从中登录的计算机的NetBIOS或DNS名称列表，以逗号分隔。格式要求：多个计算机名称之间使用英文逗号分隔，每个名称应为有效的NetBIOS名称或DNS主机名。"
     },
     "company": {
       "label": "公司",
-      "description": "软件供应商或服务提供商的公司法定名称"
+      "description": "该字段记录软件供应商或服务提供商的法定注册公司全称。应采用标准的公司全名，避免使用简称或缩写。"
     },
     "fileDescription": {
       "label": "文件描述",
-      "description": "描述文件或进程功能或用途的文本信息"
+      "description": "文件描述字段用于记录文件或进程的功能或用途信息。"
     },
     "fileVersion": {
       "label": "文件版本",
-      "description": "文件的版本号，通常用于识别更新或补丁版本"
+      "description": "文件版本号，通常用于标识软件的更新或补丁版本。格式通常为由点分隔的数字序列，例如“主版本号.次版本号.修订号.构建号”。"
     },
     "product": {
       "label": "产品名称",
-      "description": "与进程或文件相关的产品名称，通常指示软件或应用程序的名称"
+      "description": "该字段表示与进程或文件相关联的软件或应用程序的产品名称。格式为字符串，通常包含软件供应商和产品名称，支持包含注册商标符号（如®）等特殊字符。"
     },
     "serviceImage": {
       "label": "服务路径",
-      "description": "服务所在的进程文件的完整路径及参数"
+      "description": "服务所在的进程文件的完整路径及参数，采用字符串格式表示，支持包含文件名和启动参数。"
     },
     "startType": {
       "label": "启动类型",
-      "description": "服务或程序的启动类型（如自动、手动、禁用）"
+      "description": "该字段表示服务或程序的启动类型，用于描述其启动方式，例如自动、手动或禁用。"
     },
     "destInfo": {
       "label": "目标信息",
-      "description": "尝试登录的目标计算机或服务的具体信息"
+      "description": "目标信息，指尝试登录的目标计算机或服务的具体标识，例如主机名、IP地址或服务名称。格式要求：通常为字符串格式，可以是有效的域名、IPv4地址、IPv6地址或主机名。"
     },
     "destLoginGuid": {
       "label": "目标登录GUID",
-      "description": "目标系统上特定登录会话或登录请求的唯一标识符"
+      "description": "目标系统上特定登录会话或登录请求的唯一标识符，通常为GUID（全局唯一标识符）格式。"
     },
     "destServiceName": {
       "label": "目标服务名称",
-      "description": "被访问或引用的目标服务名称"
+      "description": "该字段表示被访问或引用的目标服务名称，例如主机名、数据库实例名或应用服务标识。"
     },
     "resourceUri": {
       "label": "资源URI",
-      "description": "标识特定资源的统一资源标识符(URI)"
+      "description": "资源URI字段用于标识特定资源的统一资源标识符，其值应符合URI标准格式规范，通常以协议类型开头（如http、https、ftp等），后跟资源路径。"
     },
     "oldStartType": {
       "label": "原启动方式",
-      "description": "修改前的原始启动方式（如按需启动、禁用）"
+      "description": "该字段记录修改前的原始启动方式，用于标识系统或服务在变更前的启动配置状态。"
     },
     "newStartType": {
       "label": "新启动方式",
-      "description": "服务配置修改后的新启动方式"
+      "description": "新启动方式是指服务配置修改后的新启动方式。"
     },
     "executeType": {
       "label": "执行方式",
-      "description": "命令执行方式（如通过winrm的本地执行、远程执行）"
+      "description": "该字段表示命令的执行方式，用于标识命令是通过何种机制或协议执行的，例如通过WinRM（Windows远程管理）进行本地执行或远程执行。该字段为字符串类型，应使用有意义的描述性值，例如\"local\"表示本地执行，\"remote\"表示远程执行。"
     },
     "assetGeoLatitude": {
       "label": "资产地理纬度",
-      "description": "资产所在位置的纬度坐标（十进制，WGS84标准）"
+      "description": "资产所在位置的纬度坐标，采用十进制表示，符合WGS84地理坐标系标准。格式要求为浮点数字符串，表示北纬或南纬的度数，取值范围为-90.000000至90.000000。"
     },
     "assetGeoLongitude": {
       "label": "资产地理经度",
-      "description": "资产所在位置的经度坐标（十进制，WGS84标准）"
+      "description": "资产所在位置的经度坐标，采用十进制表示，遵循WGS84地理坐标系标准。格式要求为字符串类型，表示范围为-180.000000至180.000000之间的浮点数。"
     },
     "assetUserMail": {
       "label": "资产使用人联系邮箱",
-      "description": "资产使用人的联系邮箱（用于安全联络）"
+      "description": "资产使用人的联系邮箱，用于安全联络。格式要求：必须符合标准邮箱地址格式，包含@符号和有效域名。"
     },
     "assetUserPhone": {
       "label": "资产使用人联系手机号",
-      "description": "资产使用人的联系手机号（用于安全联络）"
+      "description": "资产使用人的联系手机号，用于安全联络，必须符合手机号码格式规范。"
     },
     "assetProtectStatus": {
       "label": "资产防护状态",
-      "description": "资产安全防护机制/服务的运行状态",
+      "description": "资产安全防护机制或服务的运行状态。",
       "enum": {
         "under_protection": {
           "label": "防护中",
@@ -5966,19 +5966,19 @@
     },
     "relateId": {
       "label": "关联ID",
-      "description": "用于关联相关安全事件或资产信息的唯一标识符"
+      "description": "关联ID用于关联相关安全事件或资产信息的唯一标识符，格式为字符串。"
     },
     "securityZone": {
       "label": "安全域",
-      "description": "基于安全目的划分到的逻辑或物理网络区段。"
+      "description": "该字段表示基于安全目的划分到的逻辑或物理网络区段。"
     },
     "appletId": {
       "label": "小程序ID",
-      "description": "用于唯一标识一个小程序的字符串标识符"
+      "description": "小程序ID是用于唯一标识一个小程序的字符串标识符。"
     },
     "wmiName": {
       "label": "WMI名称",
-      "description": "Windows Management Instrumentation的类名、属性名或命名空间路径"
+      "description": "WMI名称是Windows Management Instrumentation的类名、属性名或命名空间路径。其格式通常遵循WMI的命名规范，例如类名可能为Win32_Process、命名空间路径可能为root\\cimv2。"
     },
     "deviceVendor": {
       "label": "设备厂商",
@@ -5986,19 +5986,19 @@
     },
     "assetGeoCounty": {
       "label": "资产所在区县",
-      "description": "资产物理位置所处的区县全称"
+      "description": "资产物理位置所处的区县全称。应采用标准的行政区划名称，避免使用简称或俗称。"
     },
     "assetGeoCountyCode": {
       "label": "资产所在区县代码",
-      "description": "资产物理位置区县的行政区划代码"
+      "description": "资产物理位置区县的行政区划代码，遵循国家行政区划编码标准。"
     },
     "srcTransMacAddress": {
       "label": "转换后的源MAC地址",
-      "description": "在二层网络传输过程中，经过MAC地址转换（如代理、隧道封装）或受网络攻击（如ARP欺骗）影响后，数据包中呈现的源MAC地址"
+      "description": "转换后的源MAC地址，指在二层网络传输过程中，经过MAC地址转换（如代理、隧道封装）或受网络攻击（如ARP欺骗）影响后，数据包中呈现的源MAC地址。该字段必须符合标准的MAC地址格式，即六个两位十六进制数，以冒号分隔，格式为：xx:xx:xx:xx:xx:xx，其中x为0-9或a-f。"
     },
     "responseBody": {
       "label": "响应体",
-      "description": "HTTP网络请求响应客户端接收到的响应内容"
+      "description": "该字段表示HTTP网络请求响应客户端接收到的响应内容。格式为字符串，内容通常为文本、JSON、XML或HTML等。"
     }
   },
   "tag": {
