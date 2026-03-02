@@ -1066,677 +1066,813 @@
       "label": "规则类型",
       "description": "规则类型标识安全设备（如防火墙、IDS、IPS、EDR等）产生告警时对应的安全检测规则类型，反映设备内置规则库对特定攻击模式或异常行为的分类。该字段为枚举类型，其值是一个表示威胁类别的层级路径字符串，格式通常为“/一级分类/二级分类”。",
       "enum": {
-        "/WebAttack/XXE": {
-          "label": "XXE注入",
-          "description": "外网发起的xml外部实体注入漏洞攻击。当允许引用外部实体时，通过构造恶意内容，就造成导致任意文件读取、系统命令执行、内网端口探测、攻击内网网站等危害"
-        },
-        "/WebAttack/XSS": {
-          "label": "XSS攻击",
-          "description": "外网发起的跨站脚本注入攻击。通过利用网页开发时留下的漏洞，将恶意js代码注入到网页，用以攻击其他正常访问用户的浏览器"
-        },
-        "/WebAttack/WebshellRequest": {
-          "label": "Webshell请求",
-          "description": "外网攻击者尝试访问webshell进行命令控制、文件查看等操作的请求。注意与恶意程序/Webshell后门的区别；主要包括Webshell请求尝试、Webshell页面扫描等；对确认的webshell通信（如服务器响应了webshell命令、服务器返回了webshell一句话或webshell大马特征等）归类到恶意程序分类下。"
-        },
-        "/WebAttack/WebTempering": {
-          "label": "网页篡改",
-          "description": "外网攻击者利用漏洞或通过植入的webshell，尝试篡改正常网页内容，在页面中添加钓鱼链接、违规内容、暗链、欺诈内容等。"
-        },
-        "/WebAttack/SSRF": {
-          "label": "SSRF攻击",
-          "description": "外网发起的服务器端请求伪造攻击。攻击者伪造服务器请求，向与其通信的内网主机发送数据，一般用来从外网探测或攻击内网服务"
-        },
-        "/WebAttack/SQLInjection": {
-          "label": "SQL注入",
-          "description": "外网发起的针对Web应用或Web框架的SQL注入攻击行为"
-        },
-        "/WebAttack/RFI": {
-          "label": "远程文件包含",
-          "description": "外网发起的利用目标应用程序中实现的动态文件包含机制，在提交的参数中控制应用运行时指向远程服务器路径的恶意文件，可能实现远程代码执行、webshell植入等功能"
-        },
-        "/WebAttack/LFI": {
-          "label": "本地文件包含",
-          "description": "外网发起的利用目标应用程序中实现的动态文件包含机制，在提交的参数中控制应用运行时指向本地路径的敏感文件，可能实现敏感文件泄露、篡改、写入webshell等功能"
-        },
-        "/WebAttack/FileUpload": {
-          "label": "文件上传",
-          "description": "外网发起的利用文件上传功能未对用户输入做校验或校验不严格导致直接上传恶意文件的攻击行为"
-        },
-        "/WebAttack/DirTraversal": {
-          "label": "路径遍历",
-          "description": "由于web服务器配置错误，或者web应用程序对用户输入的文件名称的安全性验证不足而导致的一种安全漏洞，使得外网攻击者通过利用一些特殊字符就可以绕过服务器的安全限制，尝试访问任意的文件（可以是web根目录以外的文件），甚至读取敏感文件或执行系统命令。"
-        },
-        "/WebAttack/CommandExec": {
-          "label": "命令注入",
-          "description": "外网发起的利用具有调用系统命令功能的web应用，通过命令拼接、绕过黑名单等方式实现在服务端执行任意系统命令的攻击行为"
-        },
-        "/WebAttack/CodeInjection": {
-          "label": "远程代码执行",
-          "description": "外网发起的利用存在漏洞的中间件、框架或web组件，注入精心构造的可执行的java、php等代码，实现在服务器上远程执行命令的攻击行为"
-        },
-        "/WebAttack/CSRF": {
-          "label": "CSRF攻击",
-          "description": "外网发起的跨站请求伪造攻击，利用合法用户的cookie伪造身份请求访问网站"
-        },
-        "/WebAttack/CRLF": {
-          "label": "CRLF注入",
-          "description": "外网发起的http回车换行漏洞攻击。http协议用CRLF符号（回车和换行）进行分隔，攻击者在请求中注入恶意换行符，绕过网站检查"
-        },
-        "/SuspTraffic/Tunnel": {
-          "label": "隧道通信",
-          "description": "内网主机发送或接受隧道通信数据包。隧道协议将其他协议的数据帧或包重新封装在新的包头中发送，到达终点后解包并发往真正的目的地。包括http隧道、dns隧道、vpn等。例如：1、检测隧道通信流量特征，如dns隧道通信。2、检测常见隧道工具特征，包括代理隧道/隐蔽隧道等。内网<->外网，源地址不一定。"
-        },
-        "/SuspTraffic/SuspContent": {
-          "label": "可疑内容",
-          "description": "内网主机请求恶意服务(挂马、伪造、诈骗)，或发送、接收的数据包内容含有钓鱼、敏感信息等可疑内容。"
-        },
-        "/SuspTraffic/RemoteCtrl": {
-          "label": "远程控制",
-          "description": "内网主机与C2通信，检测通信流量中的远控特征、可疑响应等，例如：1、内网向外网发送cmd/powershell等命令行banner信息。2、内网向外网发送常见命令执行后的回显信息。3、检测到特定远控工具的通信特征等。常见远控是reverse方式，内网->外网；也存在bind方式，外网->内网；受害者为内网。"
-        },
-        "/SuspTraffic/MaliciousIP": {
-          "label": "恶意IP",
-          "description": "内网主机与恶意IP通讯。恶意IP包括挖矿IP、黑产IP等。"
-        },
-        "/SuspTraffic/MaliciousCert": {
-          "label": "恶意证书",
-          "description": "内网主机安装恶意证书、访问恶意证书的网址。例如：1、通过SSL/TLS证书信息检测访问恶意https网站。2、通过证书的sni信息检测可疑域名等。内网->外网"
-        },
-        "/SuspTraffic/Others": {
-          "label": "其他可疑通信行为",
-          "description": "由内网主机发起的可疑通信。包括：可疑会话连接、异常协议报文、与4444/2745等可疑端口通讯行为等"
-        },
-        "/SuspEndpoint/SuspThread": {
-          "label": "可疑线程",
-          "description": "内网主机远程线程注入等行为。"
-        },
-        "/SuspEndpoint/SuspRegistry": {
-          "label": "可疑注册表",
-          "description": "内网主机发现对注册表的添加、修改或删除等可疑操作。"
-        },
-        "/SuspEndpoint/SuspProcessAccess": {
-          "label": "进程访问异常",
-          "description": "当一个进程打开另一个进程时，该进程访问事件报告，该操作通常伴随着信息查询或读写目标进程的地址空间。这可以检测到读取本地安全机构 (Lsass.exe) 等进程的内存内容的黑客工具，以窃取用于传递哈希攻击的凭据。"
-        },
-        "/SuspEndpoint/SuspProcess": {
-          "label": "可疑进程",
-          "description": "内网主机发现可疑进程行为，包括：1、进程名异常、进程创建关系异常、进程命令行参数异常等2、其他进程行为异常，如权限异常、状态异常、启动方式或频率异常等。"
-        },
-        "/SuspEndpoint/SuspPipeEvents": {
-          "label": "管道创建异常",
-          "description": "在创建命名管道时生成，而恶意软件通常使用命名管道进行进程间通信。"
-        },
-        "/SuspEndpoint/SuspOpenPort": {
-          "label": "端口异常",
-          "description": "内网主机非常用端口开放。"
-        },
-        "/SuspEndpoint/SuspDriver": {
-          "label": "可疑驱动",
-          "description": "内网主机加载未知驱动或未签名驱动文件"
-        },
-        "/SuspEndpoint/SuspConnection": {
-          "label": "可疑连接",
-          "description": "网络连接事件记录机器上的TCP/UDP连接，如遭受攻击者扫描、恶意程序外连、隧道建立、横向渗透、反弹shell连接等。"
-        },
-        "/SuspEndpoint/OpAbnormaly": {
-          "label": "操作异常",
-          "description": "内网主机删除日志、授予root权限等异常操作。"
-        },
-        "/SuspEndpoint/ImageLoaded": {
-          "label": "进程加载异常",
-          "description": "记录在特定进程中加载的模块，包括加载模块的过程，哈希和签名信息。"
-        },
-        "/SuspEndpoint/FileTempering": {
-          "label": "敏感文件篡改",
-          "description": "内网主机文件被篡改。主机敏感文件包括：应用安全配置文件、防火墙配置、网络服务配置等。被篡改易导致安全防护失效、权限提升等危害。"
-        },
-        "/SuspEndpoint/ExternalScan": {
-          "label": "主机对外扫描",
-          "description": "内网主机对外网发起的扫描行为类，目的为外网"
-        },
-        "/SuspEndpoint/Attack": {
-          "label": "主机对外攻击",
-          "description": "内网主机对外网发起的漏洞攻击、暴力破解攻击、web类攻击等，目的为外网"
-        },
-        "/SuspEndpoint/Others": {
-          "label": "其他主机异常行为",
-          "description": "内网主机的其他异常行为"
-        },
-        "/Scan/WebScan": {
-          "label": "Web扫描",
-          "description": "外网发起针对web应用弱点的扫描行为，包括敏感目录扫描、网站后门探测、爬虫扫描、sql注入等各类web应用弱点扫描等，具有机器行为的特征。攻击目标：web业务系统"
-        },
-        "/Scan/VulScan": {
-          "label": "漏洞扫描",
-          "description": "外网发起针对非web应用的漏洞扫描，包括错误配置、系统漏洞、应用漏洞等，具有机器行为的特征。攻击目标：服务器"
-        },
-        "/Scan/ServScan": {
-          "label": "服务扫描",
-          "description": "外网发起针对服务器开放服务的扫描行为。包括批量探测常见服务端口存活性、发送特定报文探测服务端程序版本信息等。攻击目标：服务器"
-        },
-        "/Scan/Scanner": {
-          "label": "扫描器指纹",
-          "description": "外网使用扫描器扫描时检测到特定扫描器的指纹特征。攻击目标：服务器"
-        },
-        "/Scan/PortScan": {
-          "label": "端口扫描",
-          "description": "外网发起针对服务器开放端口的扫描，具有机器行为的特征。攻击目标：服务器"
-        },
-        "/Scan/HostScan": {
-          "label": "主机存活扫描",
-          "description": "外网发起针对IP网段内服务器存活性的探测行为；通过ping或者tcp连接尝试等方式确认目标IP是否在线并对探测包做出回应。攻击目标：服务器"
-        },
-        "/Malware/Webshell": {
-          "label": "Webshell后门",
-          "description": "内网主机存在webshell后门文件。文件内容具有webshell后门特征，或访问该文件时，会有执行系统命令、查看文件内容等行为。与web攻击/webshell请求区别如果是来自外网的后门扫描探测、请求尝试归为web攻击/webshell请求"
-        },
-        "/Malware/Ransomware": {
-          "label": "勒索软件",
-          "description": "内网主机被植入勒索软件。包括：1、勒索软件通信（内->外）2、勒索软件域名查询（无攻击者）3、终端检测到勒索软件（资产IP为受害者，无攻击者）4、勒索软件其他行为特征检测（如扩散传播、Tor网络访问等）"
-        },
-        "/Malware/PUP": {
-          "label": "流氓软件",
-          "description": "内网主机发现流氓软件、广告软件、灰色软件的通信行为或可疑程序。例如：1、流氓软件回传机器信息。2、广告软件回连C2。3、其他可疑软件通信特征等。一般为检测内->外流量。"
-        },
-        "/Malware/Miner": {
-          "label": "挖矿软件",
-          "description": "内网主机存在挖矿恶意文件、进程或者挖矿通信。例如：1、内网查询矿池域名（受害者：内网源地址，无攻击者）2、内网与矿池通信（内->外，受害者源地址，无攻击者）3、终端发现挖矿程序（资产IP为受害者，无攻击者）4、挖矿木马回连C2（内->外，外网目的地址为攻击者，少见）"
-        },
-        "/Malware/MaliciousMail": {
-          "label": "恶意邮件",
-          "description": "内网主机发现主机收到的邮件中带有恶意程序。程序中含有恶意程序特征，或者下载并执行后会感染病毒、被安装后门等。"
-        },
-        "/Malware/Others": {
-          "label": "其他恶意程序",
-          "description": "其他恶意程序告警"
-        },
-        "/Exploit/SystemVul": {
-          "label": "系统漏洞",
-          "description": "外网发起的针对linux、windows等操作系统中系统内核漏洞或原生应用漏洞的攻击行为"
-        },
-        "/Exploit/SoftVul": {
-          "label": "软件漏洞",
-          "description": "外网发起的针对浏览器、office程序、Adobe应用或服务器中间件redis、Apache、Nginx等常见第三方软件的漏洞攻击"
-        },
-        "/Exploit/Shellcode": {
-          "label": "shellcode",
-          "description": "检测到特定shellcode通信时的数据包特征或检测到恶意文件含有恶意shellcode特征。常见场景：反弹shell发送payload（内->外通信）；恶意文件包含payload（外->内发送邮件或内->外链接下载）等"
-        },
-        "/Exploit/DeviceVul": {
-          "label": "设备漏洞",
-          "description": "外网发起的针对特定设备的漏洞攻击行为，包括：网络设备漏洞、安全设备漏洞、IoT设备漏洞、专用设备漏洞等"
-        },
-        "/Exploit/DOS": {
-          "label": "拒绝服务漏洞",
-          "description": "拒绝服务漏洞攻击指外网发起的针对系统服务、应用服务或终端软件的dos漏洞攻击，会造成系统崩溃、服务崩溃、程序崩溃等影响"
-        },
-        "/DevOps/Others": {
-          "label": "其他故障",
-          "description": "其他运维监控类事件。风险资产为内网（目的地址）。"
-        },
-        "/DDOS/DDOS": {
-          "label": "DDOS",
-          "description": "外网发起的ddos攻击，攻击目标为服务器或应用。包括：流量型ddos、应用层ddos等；主要攻击特征：流量异常增大，带宽占满；接收到大量不同来源的syn包、udp包等；存在反射型ddos特征-源端口是常见反射服务，如ntp，dns，sstp，memcache等使用端口。主要危害：造成网络瘫痪、服务瘫痪、业务瘫痪影响。"
-        },
-        "/ConfigRisk/WeakPassword": {
-          "label": "弱口令风险",
-          "description": "审计弱口令登录成功事件；容易被攻击者猜测到或被破解工具破解的口令均为弱口令，例如“123”、“abc”等。该账号/系统存在弱口令风险。风险资产为内网（目的地址）"
-        },
-        "/ConfigRisk/Service": {
-          "label": "服务配置风险",
-          "description": "ssh、ftp等网络服务没有连接IP和方式、未设置最大登陆次数等不安全的配置。风险资产为内网（目的地址）。"
-        },
-        "/ConfigRisk/MidWare": {
-          "label": "中间件配置风险",
-          "description": "中间件未进行安全配置，容易造成数据泄露、服务器失陷等危害。风险资产为内网（目的地址）。"
-        },
-        "/ConfigRisk/DeviceConf": {
-          "label": "设备配置风险",
-          "description": "设备未进行安全配置，容易造成数据泄露、服务器失陷等危害。风险资产为内网（目的地址）。"
-        },
-        "/ConfigRisk/Database": {
-          "label": "数据库配置风险",
-          "description": "数据库未进行合理配置，容易造成数据泄露、服务器失陷等危害。风险资产为内网（目的地址）。"
-        },
-        "/ConfigRisk/ClearTextCredit": {
-          "label": "明文传输风险",
-          "description": "数据传输过程中敏感信息未加密，敏感信息包括口令、密钥、证书、会话标识、隐私数据(如消息内容)、授权凭据、个人数据等，也包括程序文件、配置文件、日志文件、备份文件等。风险资产为内网（目的地址）。"
-        },
-        "/ConfigRisk/Others": {
-          "label": "其他配置风险类事件告警",
-          "description": "其他配置风险类事件告警。"
-        },
-        "/Audit/IllegalOp": {
-          "label": "违规操作",
-          "description": "包括各类内网主机违规操作行为告警，例如：1、未知设备接入网络、非密计算机处理机密文件等2、绕过堡垒机访问生产环境3、其他违反法律法规和公司管理制度的操作行为。无攻击者和受害者。"
-        },
-        "/Audit/IllegalAccess": {
-          "label": "违规访问",
-          "description": "内网主机访问违规网站。包括：1、内容涉及恶意扣费、隐私窃取、赌博、暴力、色情、分裂国家等内容，详细规定可见：http://report.12377.cn:13225/mainNotice.html2、内容包括违反公司纪律的信息，如游戏网站、招聘网站、购物网站等。无攻击者和受害者。"
-        },
-        "/Audit/Exfiltration": {
-          "label": "数据外发",
-          "description": "监控内网主机向外传输、发送数据的行为，例如：1、向外网FTP上传文件。2、向外网邮箱发送大附件。3、向网盘同步文件。4、向外网http服务器post数据等。审计发送数据的行为，而不是内容。"
-        },
-        "/Audit/Others": {
-          "label": "其他行为审计类告警",
-          "description": "其他行为审计类事件告警"
-        },
-        "/AccountRisk/SuspModify": {
-          "label": "账号变更异常",
-          "description": "记录账号权限频繁变更、账号密码频繁变更等账号变更异常行为。告警目的地址为内网"
-        },
-        "/AccountRisk/SuspBehavior": {
-          "label": "账号行为异常",
-          "description": "记录账号异常行为告警。常见场景：发送垃圾邮件：账号对外发送垃圾邮件，内网->smtp服务器。窃取数据：大量下载敏感文件，内网->内网。可疑访问：试图登录重要服务器，内网->内网。攻击者未知，受害者：该账号。"
+        "/AccountRisk/BruteForce": {
+          "label": "账号暴力破解",
+          "description": "攻击者采用枚举方法系统地尝试用户名和密码组合进行登录尝试。攻击目标：用户账户。此类攻击的受害者必须是内部网络目标。常见的暴力破解和弱密码枚举尝试属于此类别。从内部网络发起的针对外部网络的暴力破解攻击归类为：主机异常/主机外部攻击。"
         },
         "/AccountRisk/Others": {
-          "label": "其他账号异常事件告警",
-          "description": "其他账号异常事件告警"
+          "label": "账号其他风险",
+          "description": "其他账户异常事件的告警"
         },
-        "/AccountRisk/BruteForce": {
-          "label": "暴力破解",
-          "description": "攻击者采用枚举的方法逐个尝试用户名和密码，尝试登陆。攻击目标：用户账号。该类型的被攻击者为目的地址：必须是内网。常见的爆破攻击、弱口令枚举尝试都归为这一类型；内网对外网发起爆破归类到：主机异常/主机对外攻击"
+        "/AccountRisk/SuspAccount": {
+          "label": "可疑账户",
+          "description": "可疑账户指可能被用于掩盖攻击者活动、实现持久访问或执行未授权操作的账户。包括：后门账户、隐藏账户、影子账户等。"
         },
-        "/WebAttack/Others": {
-          "label": "其他Web攻击行为",
-          "description": "外网IP发起的其他类型的Web攻击行为"
+        "/AccountRisk/SuspBehavior": {
+          "label": "账号可疑行为",
+          "description": "账户异常行为的告警。常见场景包括：垃圾邮件发送 - 账户发送垃圾邮件（内网 -> SMTP服务器）。数据窃取 - 下载大量敏感文件（内网 -> 内网）。可疑访问 - 尝试登录关键服务器（内网 -> 内网）。攻击者未知，受害者：涉事账户。"
         },
-        "/WebAttack/InfoLeak": {
-          "label": "敏感信息泄露",
-          "description": "由于web服务器配置错误，外网攻击者利用漏洞获得服务器敏感信息。敏感信息包括口令、密钥、证书、会话标识、License、隐私数据(如短消息的内容)、授权凭据、个人数据等，也包括程序文件、配置文件、日志文件、备份文件等。注意与横向渗透/敏感信息泄露类型的区别"
+        "/AccountRisk/SuspLogin": {
+          "label": "账号可疑登录",
+          "description": "此类主要包括异常行为审计，如：异常登录地点、异常登录时间、可疑登录账户和异常登录结果。告警的源地址不区分内外网，而目标地址为内部网络。默认情况下，从内部网络到外部网络的异常登录尝试不会触发告警。如果发生相关告警，应归类为：主机异常/其他。"
         },
-        "/WebAttack/BypassAccCtrl": {
-          "label": "越权访问",
-          "description": "外网发起的针对越权漏洞的攻击行为；包括水平越权尝试、认证绕过漏洞尝试等类型"
+        "/AccountRisk/SuspModify": {
+          "label": "账号可疑修改",
+          "description": "记录异常账户变更行为，如频繁权限修改和频繁密码更改。告警目标地址为内部网络。"
         },
-        "/SuspTraffic/MaliciousDomain": {
-          "label": "恶意域名",
-          "description": "内网主机请求恶意域名。恶意域名包括挖矿域名、C2域名、钓鱼网站域名以及：1、可疑动态网站域名，如：3322、org2、内网穿透代理域名，如：ngrok域名3、疑似DGA域名4、其他类型的可疑域名"
+        "/AgentSec/ConfigurationManipulation": {
+          "label": "配置操纵滥用",
+          "description": "攻击者篡改配置文件、偏好设置或加载机制，以持久操控AI系统行为或植入后门。"
         },
-        "/SuspEndpoint/SuspFile": {
-          "label": "可疑文件",
-          "description": "内网主机发现可疑文件"
+        "/AgentSec/IdentitySession": {
+          "label": "身份会话滥用",
+          "description": "攻击者利用认证、令牌管理和会话机制中的漏洞提升权限、冒充身份或越权访问数据。"
         },
-        "/Scan/Others": {
-          "label": "其他扫描行为",
-          "description": "外网发起的其他类型的探测扫描攻击事件"
+        "/AgentSec/ToolInvocation": {
+          "label": "工具调用滥用",
+          "description": "攻击者在工具调用过程中操纵输入参数和数据传递，以执行恶意命令或访问敏感数据。"
         },
-        "/Others/Others": {
-          "label": "其他类型威胁",
-          "description": "非攻击类行为、业务相关异常行为等。一般危害较低，难以定性"
+        "/AgentSec/ToolRegistration": {
+          "label": "工具注册滥用",
+          "description": "攻击者通过污染工具描述、模式定义或标识符，利用工具注册机制中的漏洞操控AI系统行为。"
         },
-        "/Exploit/Others": {
-          "label": "其他漏洞利用攻击",
-          "description": "外网发起的其他类型的漏洞利用攻击事件"
+        "/AgentSec/UpdateMechanism": {
+          "label": "更新机制滥用",
+          "description": "攻击者利用工具更新机制的信任模型和自动化特性推送恶意更新，以实现持久控制或突发攻击。"
         },
-        "/DevOps/WebError": {
-          "label": "web应用故障",
-          "description": "web应用故障有以下几种类型，其涉及的风险资产为内网环境（目的地址）：1、访问量突增，服务器负载过高导致的故障。2、程序源代码运行出错，代码逻辑出现错误引起的故障。3、部分服务时效，导致运行异常的故障"
+        "/Audit/ConfigChange": {
+          "label": "配置变更审计",
+          "description": "对配置修改行为的审计，包括：修改防火墙配置、修改路由表、修改DNS服务器地址、修改服务器配置参数等。审计类型，默认级别为低。不涉及攻击者或受害者。"
         },
-        "/DevOps/HostError": {
-          "label": "主机故障",
-          "description": "主机故障有以下几种类型，其涉及的风险资产为内网环境（目的地址）：检测到主机由各种原因而导致的不同故障，如以下：1、系统硬件问题，主要是由SCSI卡、主板、RAID卡、HBA卡、网卡、硬盘等硬件设备导致的。在这种情况下需要定位主机硬件故障细节，通过更换硬件来解决问题。2、外围硬件问题，主要是网络问题导致的。此时就需要从主机网络设备、网络参数等方面查找和解决问题。3、主机软件问题，主要是系统内核bug、应用软件bug、驱动程序bug等。在这种情况下就需要从升级内核、修复程序bug、更新驱动程序等方面来解决问题。4、主机系统设置问题，主要是系统参数设置不当导致的，可以通过恢复系统到默认状态，关闭防火墙等方面来解决问题"
+        "/Audit/Exfiltration": {
+          "label": "数据外泄审计",
+          "description": "监测内网主机对外传输或发送数据的行为，例如：1. 上传文件至外部FTP服务器；2. 发送大邮件附件至外部邮箱；3. 同步文件至云存储；4. 向外部HTTP服务器提交数据等。审计数据传输行为而非内容本身。"
         },
-        "/DevOps/DeviceError": {
-          "label": "设备故障",
-          "description": "设备故障有以下几种类型，其涉及的风险资产为内网环境（目的地址）：设备在其寿命周期内，由于磨损或操作使用等方面的原因，使设备暂时丧失其规定功能的状况。1、突发故障：突然发生的故障。发生时间随机，较难预料，设备使用功能丧失。2、劣化故障：由于设备性能的逐渐劣化所引起的故障。发生速度慢，有规律可循，局部功能丧失"
+        "/Audit/IllegalAccess": {
+          "label": "非法访问审计",
+          "description": "内网主机访问禁止访问的网站。包括：1. 涉及恶意扣费、隐私窃取、赌博、暴力、色情或分裂活动的内容。具体规定参见：http://report.12377.cn:13225/mainNotice.html；2. 违反公司政策的内容，如游戏网站、招聘网站或电商平台。不涉及攻击者或受害者。"
         },
-        "/DevOps/DatabaseError": {
-          "label": "数据库故障",
-          "description": "数据库发生故障有以下几种类型，其涉及的风险资产为内网环境（目的地址）：1、事务内部的故障。2、系统故障。3、介质故障。4、计算机病毒故障"
+        "/Audit/IllegalOp": {
+          "label": "非法操作审计",
+          "description": "包括内网中各类未授权操作的告警，例如：1. 未知设备接入网络、非安全计算机处理涉密文件等；2. 绕过堡垒机访问生产环境；3. 其他违反法律法规和公司政策的操作。不涉及攻击者或受害者。"
         },
-        "/ConfigRisk/HTTPServer": {
-          "label": "HTTP配置风险",
-          "description": "HTTP服务器开放了PUT，DELETE，OPTIONS，TRACE等类型的非常用方法，容易造成服务器信息泄漏、内容篡改等危害。风险资产为内网（目的地址）"
+        "/Audit/IllegalSoft": {
+          "label": "非法软件审计",
+          "description": "内网主机存在涉及不合规应用的进程或通信流量。包括：1. 违反国家规定的应用：涉及恶意扣费、隐私窃取、赌博、色情或破坏国家统一的内容。具体规定参见：http://report.12377.cn:13225/mainNotice.html；2. 违反组织或公司政策的应用，如禁止的游戏、即时通讯软件或股票交易应用。审计类型，默认严重级别为低。不涉及攻击者或受害者。"
         },
         "/Audit/OpAudit": {
           "label": "操作审计",
-          "description": "包括敏感操作、风险操作等需要审计记录的操作，如：敏感操作（权限修改、批量数据查询等），风险操作（数据删除、系统文件修改或删除、日志清空等）；审计类型，级别默认低。无攻击者和受害者"
+          "description": "包括需审计日志记录的操作，如敏感操作（如权限修改、批量数据查询）和高危操作（如数据删除、系统文件修改或删除、日志清除）。审计类型默认设置为低级别。不涉及攻击者或受害者。"
         },
-        "/Audit/IllegalSoft": {
-          "label": "违规应用",
-          "description": "内网主机存在违规应用的进程或者通信流量。包括：1、 违反国家规定的应用：涉及恶意扣费、隐私窃取、赌博、色情、分裂国家等内容的应用；详细规定可见：http://report.12377.cn:13225/mainNotice.html2、 违反单位或公司纪律的应用，如公司禁止运行游戏、即时通讯软件、炒股软件等。审计类型，级别默认低。无攻击者和受害者"
+        "/Audit/Others": {
+          "label": "其他审计",
+          "description": "其他行为审计事件的告警"
         },
-        "/Audit/ConfigChange": {
-          "label": "配置变更",
-          "description": "配置修改行为审计，包括：修改防火墙配置、修改路由表、修改dns服务器地址、修改服务器配置参数等。审计类型，级别默认低。无攻击者和受害者"
+        "/ConfigRisk/ClearTextCredit": {
+          "label": "明文凭据传输风险",
+          "description": "敏感信息在数据传输过程中未经加密传输。敏感信息包括密码、加密密钥、证书、会话标识符、私有数据（如消息内容）、授权凭证、个人数据，以及程序文件、配置文件、日志文件、备份文件等。风险资产位于内网（目的地址）。"
         },
-        "/AccountRisk/SuspLogin": {
-          "label": "登录异常",
-          "description": "该类型主要包括：登录地点异常、登录时间异常、登录账号异常、登录结果异常等异常行为审计。告警源地址不区分内外网，目的地址为内网。内网对外网的登录异常默认不告警，若有相关告警归类到：主机异常/其他"
+        "/ConfigRisk/Database": {
+          "label": "数据库配置风险",
+          "description": "数据库配置不当可能导致数据泄露、服务器被攻陷等危害。风险资产位于内网（目的地址）。"
         },
-        "/SuspEndpoint/FilelessAttack": {
-          "label": "无文件攻击",
-          "description": "内网主机发现系统上没有文件创建，但执行了代码或修改了系统设置，这可能是一种无文件攻击，攻击者直接在内存中执行恶意代码"
-        },
-        "/Malware/Worm": {
-          "label": "网络蠕虫",
-          "description": "检测到内网主机存在网络蠕虫通信等行为"
-        },
-        "/Malware/Trojan": {
-          "label": "特洛伊木马",
-          "description": "检测到内网主机存在特洛伊木马通信等行为"
-        },
-        "/Malware/Bot": {
-          "label": "僵尸网络",
-          "description": "发现内网主机存在僵尸病毒恶意文件、进程或通信"
-        },
-        "/Malware/Spyware": {
-          "label": "间谍软件",
-          "description": "检测到内网主机通信流量中存在间谍软件的通信特征"
-        },
-        "/Malware/Backdoor": {
-          "label": "后门程序",
-          "description": "检测到内网主机通信流量中存在疑似后门程序的通信特征"
-        },
-        "/Malware/Virus": {
-          "label": "感染型病毒",
-          "description": "内网主机存在感染性病毒。这种病毒能够感染可执行文件、文档文件等，使得每个被感染的文件都包含病毒代码"
-        },
-        "/Malware/MacroVirus": {
-          "label": "宏病毒",
-          "description": "内网主机存在宏病毒。这是一种利用文档编辑软件中的宏功能，如Microsoft  Office中的VBA宏，来传播的病毒"
-        },
-        "/Malware/VirusGenerator": {
-          "label": "病毒生成器",
-          "description": "内网主机存在病毒生成器。一种工具，用于生成或创建新的病毒，它可能包含生成自定义病毒代码的功能"
-        },
-        "/Malware/TrojanDropper": {
-          "label": "木马释放器",
-          "description": "内网主机存在木马释放器。这种程序本身不包含恶意代码，但其目的是释放和激活其他木马程序"
-        },
-        "/Malware/Fileless": {
-          "label": "无文件恶意程序",
-          "description": "内网主机存在无文件恶意程序"
-        },
-        "/Malware/RootkitBootkit": {
-          "label": "Rootkit/Bootkit程序",
-          "description": "Rootkit和Bootkit都属于恶意软件的一种，其目的是在系统中隐藏恶意活动的痕迹，使其难以被检测和清除。Rootkit通常会植入到操作系统内核或系统文件中，以隐藏恶意进程、文件和注册表项；而Bootkit则植入到系统的启动过程中，以在系统启动时加载并运行恶意代码"
-        },
-        "/Malware/Downloader": {
-          "label": "木马下载器",
-          "description": "内网主机存在木马下载器。这类程序会下载并安装其他恶意软件到受感染的系统上"
-        },
-        "/Malware/CheatProgram": {
-          "label": "外挂类程序",
-          "description": "内网主机存在外挂类程序。这是一种为游戏或其他软件设计的外挂工具，但可能被恶意利用来获取敏感信息或控制目标系统"
-        },
-        "/Malware/Prank": {
-          "label": "恶作剧程序",
-          "description": "内网主机存在恶作剧程序。这类程序不会对系统造成严重损害，但可能会进行一些恶作剧行为，如更改桌面背景、播放声音等"
-        },
-        "/Malware/Keylogger": {
-          "label": "键盘记录",
-          "description": "内网主机存在键盘记录程序。这是一种专门用于记录用户键盘输入的恶意软件，用于窃取密码和其他敏感信息"
-        },
-        "/Malware/BrowserHijacker": {
-          "label": "浏览器劫持",
-          "description": "内网主机存在浏览器劫持。用于更改用户的浏览器设置，如搜索页、主页等，通常用于定向广告或恶意流量"
-        },
-        "/Malware/PenetrationTool": {
-          "label": "渗透工具",
-          "description": "内网主机存在渗透工具被恶意利用。这是用于安全测试或渗透测试的工具，但可能被非法使用来攻击系统"
-        },
-        "/Malware/HackTool": {
-          "label": "黑客工具",
-          "description": "内网主机存在黑客工具。这是为黑客设计的工具，用于入侵系统、窃取信息或执行其他恶意活动"
-        },
-        "/Malware/Exploit": {
-          "label": "漏洞利用工具",
-          "description": "内网主机存在漏洞利用工具恶意利用。这是专门用于利用已知系统或软件漏洞的工具，以执行未经授权的操作"
-        },
-        "/Malware/VirTool": {
-          "label": "代码混淆工具",
-          "description": "内网主机存在代码混淆工具。这是一种用于混淆软件代码的工具，使得代码难以理解和逆向工程，通常用于隐藏恶意软件的真实意图"
-        },
-        "/Phishing/EmailPhishing": {
-          "label": "邮件钓鱼",
-          "description": "通过发送伪装成合法来源的电子邮件，诱导收件人点击恶意链接或提供个人信息，以窃取敏感数据或进行恶意攻击"
-        },
-        "/Phishing/SocialMediaPhishing": {
-          "label": "社交软件钓鱼",
-          "description": "利用社交媒体平台进行钓鱼攻击，通过伪装成信任的个人或组织，发送链接或文件，诱骗用户进行操作"
-        },
-        "/Phishing/WebPhishing": {
-          "label": "网站钓鱼",
-          "description": "创建与合法网站外观相似的欺骗性网站，诱导用户输入个人信息，如登录凭证、信用卡信息等"
-        },
-        "/Phishing/Others": {
-          "label": "其他钓鱼行为",
-          "description": "包括但不限于邮件钓鱼、社交软件钓鱼、网站钓鱼等，通过其他通信渠道进行的钓鱼攻击"
-        },
-        "/Exploit/RemoteService": {
-          "label": "远程服务漏洞",
-          "description": "针对网络上的远程服务（如远程桌面、数据库、文件共享等）进行的漏洞扫描和攻击尝试，目的是利用服务中的弱点来控制目标系统"
-        },
-        "/WebAttack/FileRead": {
-          "label": "文件读取",
-          "description": "攻击者访问服务器上的文件，从而可能获取敏感信息、执行任意命令或者破坏系统"
-        },
-        "/WebAttack/WebshellUpload": {
-          "label": "Webshell上传",
-          "description": "攻击者尝试上传webshell后门文件，进而获取目标服务器的权限"
-        },
-        "/Credential/PTH": {
-          "label": "哈希传递",
-          "description": "攻击者通过获取用户的NTLM或LM哈希值，而不需要明文密码，来在Windows网络中登录其他机器。这种方法利用了Windows域环境中哈希值的传递机制，允许攻击者在不需要用户密码的情况下访问受保护的资源"
-        },
-        "/Credential/PTK": {
-          "label": "密钥传递",
-          "description": "攻击者通过获取用户的加密密钥，并利用加密密钥来对数据进行加密发送给系统，利用此加密密钥来访问受限的资源，执行敏感操作等"
-        },
-        "/Credential/PTT": {
-          "label": "票据传递",
-          "description": "攻击者获取或窃取用于在Kerberos认证系统中进行身份验证的票据，然后使用这些票据代表合法用户访问网络资源"
-        },
-        "/Credential/TokenHijacking": {
-          "label": "令牌劫持",
-          "description": "攻击者截获或复制用于身份验证的网络令牌（如OAuth令牌、JWT令牌等），然后使用这些令牌来冒充合法用户执行操作"
-        },
-        "/Credential/Forgery": {
-          "label": "凭据伪造",
-          "description": "攻击者创建或修改凭据，如用户名和密码、数字证书、令牌等，以便在没有合法用户授权的情况下访问系统或网络资源"
-        },
-        "/Credential/Steal": {
-          "label": "凭据窃取",
-          "description": "攻击者通过各种手段（如键盘记录器、钓鱼攻击、社会工程学等）获取用户的登录凭据，然后使用这些凭据访问系统"
-        },
-        "/Credential/Others": {
-          "label": "其他凭据攻击",
-          "description": "其他凭据攻击告警"
-        },
-        "/MITM/WLANHijacking": {
-          "label": "WLAN劫持",
-          "description": "利用应用程序漏洞、协议漏洞、配置错误等安全隐患对WIFI流量进行劫持的网络行为。例如劫持WIFI后投放低俗广告和非法内容，也可造成该WIFI覆盖范围内的大面积断网"
-        },
-        "/MITM/TrafficHijacking": {
-          "label": "流量劫持",
-          "description": "攻击者非法拦截和篡改网络流量，以此来获取敏感信息或控制网络资源"
-        },
-        "/MITM/BGPHijackingAttack": {
-          "label": "BGP劫持攻击",
-          "description": "利用恶意通告BGP路由的方式来操纵因特网路由路径，从而达成某种目的，如误导和拦截流量、修改数据等，常用攻击方式为广播虚假前缀的通告，使受攻击的路由器进一步污染其他路由器的路由信息，甚至可能传播到主干因特网中"
-        },
-        "/MITM/Others": {
-          "label": "其他中间人攻击",
-          "description": "其他中间人攻击"
-        },
-        "/DataSteal/DatabaseDump": {
-          "label": "数据拖库",
-          "description": "将数据从一个数据库迁移或复制到另一个数据库，通常为使用数据库运维工具下载数据库文件"
-        },
-        "/DataSteal/DataDrip": {
-          "label": "点滴泄露",
-          "description": "在较长的一段时间周期内，少量多次获取指定类型数据，并且数据总量达到一定阈值"
-        },
-        "/DataSteal/APICrawling": {
-          "label": "API数据爬取",
-          "description": "单位主体在单位时间访问指定API超过阈值次数，且返回指定类型数据结果去重数量超过一定阈值"
-        },
-        "/DataSteal/Others": {
-          "label": "其他数据窃取行为",
-          "description": "其他数据窃取行为"
-        },
-        "/DataMisuse/Abroad": {
-          "label": "数据出境",
-          "description": "境外地址访问境内数据，或境内地址主动向境外发送数据"
-        },
-        "/DataMisuse/OutDomain": {
-          "label": "数据出域",
-          "description": "数据自内部可信域流向外部不可信域"
-        },
-        "/DataMisuse/IllegalDataCollect": {
-          "label": "数据违规收集",
-          "description": "违反个人信息监管政策或标准规范，存在违法违规收集个人信息行为的风险告警"
-        },
-        "/DataMisuse/GovAudit": {
-          "label": "统方审计",
-          "description": "针对医疗行业特定系统，单位主体未经允许私自获取特定数据的行为"
-        },
-        "/DataMisuse/IllegalDataUse": {
-          "label": "数据违规使用",
-          "description": "违反法律、行政法规等有关规定，非法或违规对数据进行处置操作"
-        },
-        "/DataMisuse/Others": {
-          "label": "其他数据滥用行为",
-          "description": "其他数据滥用行为"
+        "/ConfigRisk/DeviceConf": {
+          "label": "设备配置风险",
+          "description": "设备缺乏适当的安全配置，可能导致数据泄露、服务器被入侵等危害。风险资产位于内部网络（目标地址）。"
         },
         "/ConfigRisk/Exploit": {
           "label": "漏洞利用风险",
-          "description": "服务器未进行及时补丁升级或安全配置，导致存在被漏洞利用的风险"
+          "description": "服务器未及时进行补丁更新或安全配置，导致存在漏洞被利用的风险。"
         },
-        "/SuspTraffic/AccessAnomaly": {
-          "label": "访问异常",
-          "description": "内网主机发现用户访问异常行为告警：用户访问行为偏离正常基线、域名或服务访问异常"
+        "/ConfigRisk/HTTPServer": {
+          "label": "HTTP服务器配置风险",
+          "description": "HTTP服务器启用了PUT、DELETE、OPTIONS和TRACE等非常用方法，可能导致服务器信息泄露和内容篡改。风险资产位于内部网络（目标地址）。"
         },
-        "/SuspTraffic/TrafficAnomaly": {
-          "label": "流量异常",
-          "description": "内网主机发现流量异常告警：网络流量偏离正常基线"
+        "/ConfigRisk/MidWare": {
+          "label": "中间件配置风险",
+          "description": "中间件缺乏安全配置，可能导致数据泄露、服务器被入侵等危害。风险资产位于内部网络（目标地址）。"
         },
-        "/SuspEndpoint/SuspCommand": {
-          "label": "可疑命令",
-          "description": "内网主机发现可疑命令告警。包括：1、用户执行了非授权或异常的命令2、短时间内频繁执行特定命令，可能为自动化攻击"
+        "/ConfigRisk/Others": {
+          "label": "其他配置风险",
+          "description": "其他配置风险事件告警。"
         },
-        "/SuspEndpoint/SuspiciousSpread": {
-          "label": "可疑传播",
-          "description": "内网主机通过共享文件夹、移动媒介、远程拷贝等方式传播可疑代码"
+        "/ConfigRisk/Service": {
+          "label": "服务配置风险",
+          "description": "SSH、FTP等网络服务存在不安全配置，包括连接IP和方法不受限制、未设置最大登录尝试次数等。风险资产位于内部网络（目标地址）。"
         },
-        "/SuspEndpoint/WMI": {
-          "label": "WMI利用",
-          "description": "内网主机发现WMI利用告警。利用Windows Management Instrumentation（WMI）执行未授权操作，可能用于收集信息或远程控制"
+        "/ConfigRisk/WeakPassword": {
+          "label": "弱密码配置风险",
+          "description": "审计成功登录的弱密码事件；容易被攻击者猜测或暴力破解工具破解的密码被视为弱密码，如'123'、'abc'等。该账号/系统存在弱密码漏洞风险。受影响资产位于内部网络（目标地址）。"
         },
-        "/SuspEndpoint/ProcessInjection": {
-          "label": "进程注入",
-          "description": "内网主机发现进程异常注入告警。进程中注入恶意代码，使得恶意代码与合法进程共享地址空间"
+        "/Credential/Forgery": {
+          "label": "凭证伪造",
+          "description": "攻击者创建或修改凭证（如用户名和密码、数字证书、令牌等），在未经合法用户授权的情况下获取对系统或网络资源的未授权访问权限。"
         },
-        "/SuspEndpoint/InformationGathering": {
-          "label": "本地信息收集",
-          "description": "内网主机发现本地信息异常收集行为。可能为攻击者收集系统本地信息，如用户列表、系统配置等"
+        "/Credential/Others": {
+          "label": "其他凭证攻击",
+          "description": "其他凭证攻击告警。"
         },
-        "/SuspEndpoint/DefenseEvasion": {
-          "label": "防御绕过",
-          "description": "内网主机发现卸载/禁用安全软件或混淆/加密数据和脚本，或滥用受信任的进程来隐藏和伪装他们的恶意软件等尝试绕过检测行为"
+        "/Credential/PTH": {
+          "label": "哈希传递攻击",
+          "description": "攻击者通过获取用户的NTLM或LM哈希值（无需明文密码），访问Windows网络中的其他机器。该方法利用了Windows域环境中的哈希传递机制，使攻击者无需用户实际密码即可访问受保护资源。"
         },
-        "/SuspEndpoint/ReverseShell": {
-          "label": "反弹shell",
-          "description": "内网主机发现系统内部进程与外部IP进行异常通信，这可能是攻击者通过反弹shell技术远程控制受感染主机的迹象"
+        "/Credential/PTK": {
+          "label": "凭据PTK攻击",
+          "description": "攻击者获取用户的加密密钥，并利用该密钥加密发送至系统的数据，借此访问受限资源并执行敏感操作。"
         },
-        "/SuspEndpoint/Persistence": {
-          "label": "持久化后门",
-          "description": "内网主机发现持久化机制，如创建服务、注册表修改、文件系统修改等，这些行为可能用于确保攻击者在系统上的长期存在"
+        "/Credential/PTT": {
+          "label": "票据传递攻击",
+          "description": "攻击者获取或窃取Kerberos系统中用于身份验证的票据，随后利用这些票据代表合法用户访问网络资源。"
         },
-        "/SuspEndpoint/PrivilegeEscalation": {
-          "label": "权限提升",
-          "description": "内网主机发现用户账户尝试或成功提升权限，这可能表明攻击者正在尝试获得更高的系统访问权限以执行更广泛的攻击"
+        "/Credential/Steal": {
+          "label": "凭据窃取",
+          "description": "攻击者通过多种手段（如键盘记录、钓鱼攻击、社会工程等）获取用户登录凭据，随后利用这些凭据访问系统。"
         },
-        "/SuspEndpoint/RemoteService": {
-          "label": "远程服务利用",
-          "description": "内网主机发现系统上未知的远程服务正在运行，并且可能存在已知漏洞，这可能被攻击者用来执行远程代码执行"
+        "/Credential/TokenHijacking": {
+          "label": "令牌劫持",
+          "description": "攻击者拦截或复制用于身份验证的网络令牌（如OAuth令牌、JWT令牌等），随后利用这些令牌冒充合法用户执行操作。"
         },
-        "/SuspEndpoint/RemoteExec": {
-          "label": "远程执行",
-          "description": "内网主机发现系统上尝试使用远程执行工具或恶意利用远程服务执行了未授权的命令或脚本"
+        "/DDOS/DDOS": {
+          "label": "分布式拒绝服务攻击",
+          "description": "从外部网络发起的DDoS攻击，针对服务器或应用程序。包括：流量型DDoS、应用层DDoS等。主要攻击特征：流量异常激增、带宽饱和；接收来自不同来源的大量SYN包、UDP包等；存在反射型DDoS特征——源端口对应常见反射服务如NTP、DNS、SSDP、Memcached等。主要影响：网络瘫痪、服务中断及业务运营停摆。"
         },
-        "/SuspEndpoint/TraceEradication": {
-          "label": "痕迹清理",
-          "description": "内网主机发现系统上出现删除、修改或隐藏日志文件、系统文件或痕迹清理工具的迹象，这可能表明攻击者试图隐藏其活动"
+        "/DataLeakage/DataReconstruction": {
+          "label": "数据重构攻击",
+          "description": "基于对聚合数据的访问权限，通过逆向工程手段获取个人用户记录或敏感基础设施记录的私有信息的攻击行为。"
         },
-        "/AccountRisk/SuspAccount": {
-          "label": "可疑账号",
-          "description": "可疑账号指可能被用于隐藏攻击者活动、实现持久访问或进行未授权操作的账户。包括：后门账号、隐藏账号、影子账号等"
+        "/DataLeakage/Membership": {
+          "label": "成员推断攻击",
+          "description": "旨在判定特定记录是否包含在用于统计操作的数据集或机器学习模型训练数据中的攻击行为。"
         },
-        "/Malware/MaliciousScript": {
-          "label": "恶意脚本",
-          "description": "内网主机运行时带有恶意行为特征的脚本。如启用powershell、修改注册表等行为"
+        "/DataLeakage/ModelTheft": {
+          "label": "模型窃取",
+          "description": "恶意行为者未经授权访问或复制LLM模型，可能涉及对模型架构的逆向工程或专有算法与参数的提取，导致知识产权盗窃或未经授权的副本传播。"
         },
-        "/Malware/MaliciousAdware": {
-          "label": "恶意广告",
-          "description": "恶意广告是指以欺骗或诱导用户为目的，通过在线广告平台发布的恶意内容。这些广告可能会引导用户访问恶意网站、下载恶意软件或揭露个人敏感信息"
+        "/DataLeakage/Property": {
+          "label": "属性推断攻击",
+          "description": "旨在从训练数据集中提取全局信息（如部分训练样本是否包含某些敏感属性）的攻击行为。"
         },
-        "/WebAttack/FileWrite": {
-          "label": "文件写入",
-          "description": "攻击者利用系统或应用程序存在的漏洞，以非法方式向系统中写入恶意文件或植入恶意代码。攻击者可能通过文件写入行为来实现对系统的入侵、提权或执行恶意操作"
+        "/DataLeakage/Sensitive": {
+          "label": "敏感信息泄露",
+          "description": "涉及PII个人身份信息、财务数据、PHI医疗健康信息或企业机密等敏感信息的泄露事件。"
         },
-        "/WebAttack/FileDownload": {
-          "label": "文件下载",
-          "description": "攻击者利用系统或应用程序的漏洞，以非法方式从目标系统中下载敏感文件或恶意文件。攻击者可能通过文件下载行为获取系统信息、窃取用户数据或传播恶意软件"
+        "/DataLeakage/SystemPrompt": {
+          "label": "系统提示提取",
+          "description": "专门提取系统指令和提示信息。"
         },
-        "/WebAttack/FileParsingVul": {
-          "label": "文件解析漏洞利用",
-          "description": "中间件(IIS、Apache、Nginx等)在解析文件时出现了漏洞，从而攻击者可以利用该漏洞实现非法文件的解析"
+        "/DataLeakage/TrainingData": {
+          "label": "训练数据提取",
+          "description": "通过成员推理或模型逆向工程等方法提取训练数据。"
         },
-        "/WebAttack/Hotlinking": {
-          "label": "资源盗链",
-          "description": "攻击者通过在外部网站上引用目标网站的资源，实现对目标网站资源的盗用或消耗"
+        "/DataMisuse/Abroad": {
+          "label": "跨境数据传输",
+          "description": "从海外地址访问国内数据，或主动将数据从国内地址传输至海外目的地。"
+        },
+        "/DataMisuse/GovAudit": {
+          "label": "政府审计数据滥用",
+          "description": "针对医疗行业特定系统，组织实体未经许可获取特定数据的行为。"
+        },
+        "/DataMisuse/IllegalDataCollect": {
+          "label": "非法数据收集",
+          "description": "违反个人信息监管政策或标准的风险警示，表明可能存在非法或不合规的个人信息收集行为。"
+        },
+        "/DataMisuse/IllegalDataUse": {
+          "label": "非法数据使用",
+          "description": "违反法律法规或其他相关规定，非法或不当执行数据处理操作。"
+        },
+        "/DataMisuse/Others": {
+          "label": "其他数据滥用行为",
+          "description": "其他数据滥用行为。"
+        },
+        "/DataMisuse/OutDomain": {
+          "label": "跨域数据流动",
+          "description": "数据从内部可信域流向外部不可信域。"
+        },
+        "/DataSteal/APICrawling": {
+          "label": "API数据爬取",
+          "description": "当主体实体在单位时间内API访问次数超过阈值，且返回的指定类型数据结果去重计数超过一定阈值时触发。"
+        },
+        "/DataSteal/DataDrip": {
+          "label": "数据渗出",
+          "description": "在较长时间内小批量检索指定类型数据，总数据量达到一定阈值。"
+        },
+        "/DataSteal/DatabaseConnect": {
+          "label": "数据库连接窃取",
+          "description": "数据库连接窃取指攻击者获取数据库连接凭证以未经授权访问数据库的恶意行为，从而窃取敏感数据或执行未授权操作。"
+        },
+        "/DataSteal/DatabaseDump": {
+          "label": "数据库转储窃取",
+          "description": "通过数据库运维工具下载数据库文件，将数据从一个数据库迁移或复制到另一个数据库的行为。"
+        },
+        "/DataSteal/Others": {
+          "label": "其他数据窃取",
+          "description": "其他数据外泄活动。"
+        },
+        "/DataSteal/UnauthorizedAccess": {
+          "label": "未授权访问",
+          "description": "未授权访问指攻击者在未经适当授权的情况下非法访问系统或数据的行为，通常意图窃取或破坏数据。"
+        },
+        "/DataTampering/FileTampering": {
+          "label": "文件篡改",
+          "description": "文件篡改指攻击者未经授权修改、删除或破坏文件内容的行为。此类攻击可能导致数据损坏、信息泄露或系统不稳定。"
+        },
+        "/DataTampering/HiddenLinkInjection": {
+          "label": "暗链注入",
+          "description": "暗链注入指攻击者将恶意链接隐蔽插入网站页面的行为。这些链接通常对用户不可见，但会被搜索引擎爬虫索引，从而影响搜索结果、提升恶意网站排名或引导流量至恶意网站。暗链注入是一种数据篡改攻击，旨在利用网站可信度和流量为攻击者牟利，同时可能对被感染网站的搜索引擎优化（SEO）产生负面影响。"
         },
         "/DataTampering/Others": {
           "label": "其他数据篡改告警",
-          "description": "其他数据篡改告警"
+          "description": "其他数据篡改类告警。"
+        },
+        "/DataTampering/WebsiteDefacement": {
+          "label": "网站篡改",
+          "description": "网站篡改指攻击者未经授权修改或破坏网站内容的行为。通常涉及更改网站文本、图像或其他媒体内容以传播虚假信息、展示恶意消息、推广特定观点或品牌，甚至羞辱和损害网站声誉。网站篡改是常见的数据篡改攻击，旨在通过修改网页内容实现特定恶意目的。"
+        },
+        "/DevOps/DatabaseError": {
+          "label": "数据库故障",
+          "description": "数据库故障可分为以下类型，受影响的风险资产为内网环境（目的地址）：1. 事务内部故障 2. 系统故障 3. 介质故障 4. 计算机病毒故障。"
+        },
+        "/DevOps/DeviceError": {
+          "label": "设备故障",
+          "description": "设备故障可分为以下类型，受影响的风险资产为内网环境（目的地址）：设备在其生命周期内因磨损或操作使用暂时丧失规定功能。1. 突发性故障：突然发生的故障。发生时间随机且难以预测，导致设备功能完全丧失。2. 渐发性故障：因设备性能逐渐劣化引发的故障。进展缓慢且规律可循，导致功能部分丧失。"
+        },
+        "/DevOps/HostError": {
+          "label": "主机故障",
+          "description": "主机故障可分为以下类型，受影响的风险资产为内网环境（目的地址）：检测到的由各种原因导致的主机故障包括：1. 系统硬件问题，主要由SCSI卡、主板、RAID卡、HBA卡、网卡和硬盘等硬件设备引起。此类情况下需查明具体硬件故障细节并通过更换硬件解决。2. 外围硬件问题，主要由网络问题引起。此时应重点排查主机网络设备和网络参数。3. 主机软件问题，主要由系统内核漏洞、应用软件缺陷或驱动程序错误导致。解决方法包括升级内核、修复程序缺陷或更新驱动。4. 主机系统配置问题，主要由系统参数设置不当引起。可通过恢复系统默认设置或关闭防火墙解决。"
+        },
+        "/DevOps/Others": {
+          "label": "运维其他事件",
+          "description": "其他运维监控事件，风险资产为内网（目的地址）。"
+        },
+        "/DevOps/WebError": {
+          "label": "Web应用故障",
+          "description": "Web应用故障可分为以下类型，受影响风险资产位于内网环境（目的地址）：1. 因流量突增导致服务器负载过高引发的故障。2. 程序源代码运行时错误或代码逻辑缺陷导致的故障。3. 服务超时导致运行异常引发的故障。"
+        },
+        "/Exploit/DOS": {
+          "label": "拒绝服务漏洞利用",
+          "description": "拒绝服务(DoS)漏洞攻击指外部发起的针对系统服务、应用服务或终端软件的攻击，可导致系统崩溃、服务中断或应用故障。"
+        },
+        "/Exploit/DeviceVul": {
+          "label": "设备漏洞利用",
+          "description": "从外网发起的针对特定设备的漏洞攻击行为，包括：网络设备漏洞、安全设备漏洞、物联网设备漏洞、专用设备漏洞等。"
+        },
+        "/Exploit/Others": {
+          "label": "漏洞利用其他事件",
+          "description": "从外网发起的其他类型漏洞利用攻击事件。"
+        },
+        "/Exploit/RemoteService": {
+          "label": "远程服务漏洞利用",
+          "description": "针对网络远程服务（如远程桌面、数据库、文件共享等）的漏洞扫描和攻击尝试，旨在利用服务弱点获取目标系统控制权。"
+        },
+        "/Exploit/Shellcode": {
+          "label": "Shellcode利用",
+          "description": "检测到特定shellcode通信的数据包特征或识别出包含shellcode签名的恶意文件。常见场景包括：反向shell载荷传输（内->外通信）；包含载荷的恶意文件（通过邮件外->内或下载链接内->外）等。"
+        },
+        "/Exploit/SoftVul": {
+          "label": "软件漏洞利用",
+          "description": "从外网发起的针对常见第三方软件（如浏览器、Office程序、Adobe应用）或服务器中间件（如Redis、Apache、Nginx）的漏洞攻击。"
+        },
+        "/Exploit/SystemVul": {
+          "label": "系统漏洞利用",
+          "description": "从外网发起的针对Linux、Windows等操作系统内核漏洞或原生应用漏洞的攻击。"
+        },
+        "/IllegalData/CommercialViolations": {
+          "label": "商业违规",
+          "description": "违反商业法律法规的内容。"
+        },
+        "/IllegalData/DiscriminatoryContent": {
+          "label": "歧视性内容",
+          "description": "对个人或群体表现出歧视、偏见或仇恨的内容。"
+        },
+        "/IllegalData/InadequateSecurityRequirements": {
+          "label": "安全要求不足",
+          "description": "在高安全服务类型中使用的生成式AI可能产生不准确或不可靠的内容。"
+        },
+        "/IllegalData/RightsInfringement": {
+          "label": "权利侵犯",
+          "description": "侵犯他人合法权益的内容，包括隐私侵犯、诽谤和声誉损害。"
+        },
+        "/IllegalData/ViolatingSocialistCoreValues": {
+          "label": "违反社会主义核心价值观",
+          "description": "与社会主义核心价值观相矛盾或削弱的内容。"
+        },
+        "/InherentModelRisk/BehavioralConsistency": {
+          "label": "行为一致性缺陷",
+          "description": "模型表现出不稳定、不一致的行为或无法可靠遵循指令，显示出失调迹象。"
+        },
+        "/InherentModelRisk/KnowledgeDefects": {
+          "label": "知识缺陷",
+          "description": "模型知识的准确性、时效性或安全性不足，包括过时信息或敏感训练数据的记忆。"
+        },
+        "/InherentModelRisk/ReasoningLogic": {
+          "label": "推理逻辑缺陷",
+          "description": "模型缺乏可靠的逻辑推理和因果推断能力，经常产生'幻觉'或荒谬结论。"
+        },
+        "/InherentModelRisk/Robustness": {
+          "label": "鲁棒性缺陷",
+          "description": "由于深度神经网络的非线性和大规模特性，AI系统易受复杂操作环境或恶意干扰影响，导致性能下降或决策错误。"
+        },
+        "/InherentModelRisk/SocietalEthical": {
+          "label": "社会伦理缺陷",
+          "description": "模型输出或行为包含偏见、歧视、有害内容或与人类价值观和伦理标准不符。"
+        },
+        "/InherentModelRisk/UnsafeDesign": {
+          "label": "工具设计不安全",
+          "description": "由于设计和/或实现不安全导致的LLM连接工具被利用，可能因意外、模糊或被操控的输出引发破坏性操作。"
+        },
+        "/MITM/BGPHijackingAttack": {
+          "label": "BGP劫持攻击",
+          "description": "通过恶意宣告BGP路由来操纵互联网路径，实现误导拦截流量或篡改数据等目的。常见攻击手段包括广播虚假前缀宣告，使被攻陷路由器进一步污染其他路由器的路由信息，甚至可能传播至骨干网。"
+        },
+        "/MITM/Others": {
+          "label": "中间人攻击其他类型",
+          "description": "其他形式的中间人攻击"
+        },
+        "/MITM/TrafficHijacking": {
+          "label": "流量劫持",
+          "description": "攻击者非法截获并操纵网络流量，以获取敏感信息或控制网络资源。"
+        },
+        "/MITM/WLANHijacking": {
+          "label": "无线局域网劫持",
+          "description": "利用应用缺陷、协议漏洞及配置错误等安全隐患劫持WiFi流量的网络行为。例如劫持后可展示低俗广告和非法内容，或导致WiFi覆盖范围内大面积断网。"
+        },
+        "/Malware/Backdoor": {
+          "label": "后门程序",
+          "description": "在内网主机通信流量中检测到疑似后门程序通信特征。"
+        },
+        "/Malware/Bot": {
+          "label": "僵尸病毒",
+          "description": "在内网主机上检测到与僵尸病毒相关的恶意文件、进程或通信。"
+        },
+        "/Malware/BrowserHijacker": {
+          "label": "浏览器劫持",
+          "description": "内网主机存在浏览器劫持行为，通常用于篡改用户浏览器设置（如搜索页和主页），以实现定向广告投放或恶意流量重定向。"
+        },
+        "/Malware/CheatProgram": {
+          "label": "作弊程序",
+          "description": "内网主机正在运行作弊程序。这类工具虽为游戏或其他软件设计，但可能被恶意利用以获取敏感信息或控制系统。"
+        },
+        "/Malware/Downloader": {
+          "label": "木马下载器",
+          "description": "内网主机感染木马下载器，此类恶意软件会在受控系统下载并安装其他恶意程序。"
+        },
+        "/Malware/Exploit": {
+          "label": "恶意利用工具",
+          "description": "内部网络主机包含恶意利用工具。这些是专门设计用于利用已知系统或软件漏洞执行未授权操作的工具。"
+        },
+        "/Malware/Fileless": {
+          "label": "无文件恶意软件",
+          "description": "内部网络主机包含无文件恶意软件。"
+        },
+        "/Malware/HackTool": {
+          "label": "黑客工具",
+          "description": "内部网络主机包含黑客工具。这些是黑客用于渗透系统、窃取信息或执行其他恶意活动的工具。"
+        },
+        "/Malware/Keylogger": {
+          "label": "键盘记录器",
+          "description": "内部网络主机感染了键盘记录器。这是一种专门设计用于记录用户击键的恶意软件，用于窃取密码和其他敏感信息。"
+        },
+        "/Malware/MacroVirus": {
+          "label": "宏病毒",
+          "description": "内部网络主机感染了宏病毒。这类病毒通过利用文档编辑软件中的宏功能（如Microsoft Office中的VBA宏）进行传播。"
+        },
+        "/Malware/MaliciousAdware": {
+          "label": "恶意广告软件",
+          "description": "恶意广告是指通过在线广告平台发布的恶意内容，意图欺骗或诱骗用户。这些广告可能将用户重定向到恶意网站、下载恶意软件或泄露个人敏感信息。"
+        },
+        "/Malware/MaliciousMail": {
+          "label": "恶意邮件",
+          "description": "内部网络主机在收到的邮件中检测到恶意程序。这些程序具有恶意软件的特征，或在执行时可能下载并执行病毒、安装后门等。"
+        },
+        "/Malware/MaliciousScript": {
+          "label": "恶意脚本",
+          "description": "内部网络主机运行具有恶意行为特征的脚本，例如启用PowerShell或修改注册表项。"
+        },
+        "/Malware/Miner": {
+          "label": "挖矿恶意软件",
+          "description": "内部网络主机包含恶意挖矿文件、进程或挖矿通信。例如：1. 内部网络查询矿池域名（受害者：内部源地址，无攻击者）。2. 内部网络与矿池通信（内部 -> 外部，受害者源地址，无攻击者）。3. 终端检测到挖矿程序（资产IP为受害者，无攻击者）。4. 挖矿恶意软件回连C2（内部 -> 外部，外部目标地址为攻击者，罕见情况）。"
+        },
+        "/Malware/Others": {
+          "label": "其他恶意软件",
+          "description": "其他恶意软件告警。"
+        },
+        "/Malware/PUP": {
+          "label": "恶意PUP程序",
+          "description": "内网主机检测到流氓软件、广告软件、灰产软件或可疑程序的通信行为。例如：1. 流氓软件外泄机器信息；2. 广告软件回连C2服务器；3. 其他可疑软件通信模式。通常用于检测内到外的流量。"
+        },
+        "/Malware/PenetrationTool": {
+          "label": "渗透工具",
+          "description": "内网主机存在被恶意利用的渗透工具。这些工具本用于安全测试或渗透测试目的，但可能被非法用于攻击系统。"
+        },
+        "/Malware/Prank": {
+          "label": "恶作剧程序",
+          "description": "内网主机存在恶作剧程序。此类程序不会对系统造成严重损害，但可能执行如更改桌面背景或播放声音等恶作剧行为。"
+        },
+        "/Malware/Ransomware": {
+          "label": "勒索软件",
+          "description": "内网主机感染勒索软件。包括：1. 勒索软件通信（内→外）；2. 勒索软件域名查询（无攻击者参与）；3. 终端检测到勒索软件（资产IP为受害者，无攻击者参与）；4. 检测到其他勒索软件行为特征（如传播、访问Tor网络等）。"
+        },
+        "/Malware/RootkitBootkit": {
+          "label": "Rootkit/Bootkit病毒",
+          "description": "Rootkit和Bootkit均为旨在隐藏系统内恶意活动痕迹的恶意软件，使其难以检测和清除。Rootkit通常嵌入操作系统内核或系统文件以隐藏恶意进程、文件和注册表项；Bootkit则通过侵入系统启动过程，在系统启动时加载并执行恶意代码。"
+        },
+        "/Malware/Spyware": {
+          "label": "间谍软件",
+          "description": "内网主机流量中检测到间谍软件的通信特征。"
+        },
+        "/Malware/Trojan": {
+          "label": "木马程序",
+          "description": "检测到内网主机的木马通信活动。"
+        },
+        "/Malware/TrojanDropper": {
+          "label": "木马释放器",
+          "description": "内网主机存在木马释放器。此类程序本身不含恶意代码，但其用途是释放并激活其他木马程序。"
+        },
+        "/Malware/VirTool": {
+          "label": "代码混淆工具",
+          "description": "内网主机存在代码混淆工具。该工具用于混淆软件代码，使其难以理解和逆向工程，通常被用来隐藏恶意软件的真实意图。"
+        },
+        "/Malware/Virus": {
+          "label": "传染性病毒",
+          "description": "内网主机感染具有传染性的病毒。该病毒可感染可执行文件、文档文件等，使每个被感染文件均包含病毒代码。"
+        },
+        "/Malware/VirusGenerator": {
+          "label": "病毒生成器",
+          "description": "内网主机存在病毒生成器。该工具用于生成或创建新病毒，可能包含生成自定义病毒代码的功能。"
+        },
+        "/Malware/Webshell": {
+          "label": "网页后门",
+          "description": "内网主机存在网页后门文件。文件内容具有网页后门特征，或访问该文件可能导致执行系统命令、查看文件内容等操作。需区别于网络攻击/网页后门请求，若后门扫描探测或请求尝试来自外网，则应归类为网络攻击/网页后门请求。"
+        },
+        "/Malware/Worm": {
+          "label": "网络蠕虫",
+          "description": "检测到内网主机的网络蠕虫通信活动。"
+        },
+        "/Others/Others": {
+          "label": "其他威胁类型",
+          "description": "非攻击行为、业务相关异常活动等。通常风险较低且难以定性。"
+        },
+        "/Phishing/EmailPhishing": {
+          "label": "钓鱼邮件",
+          "description": "通过伪装成合法来源发送邮件，诱导收件人点击恶意链接或提供个人信息，以窃取敏感数据或实施恶意攻击。"
+        },
+        "/Phishing/Others": {
+          "label": "其他钓鱼攻击",
+          "description": "包括但不限于邮件钓鱼、社交媒体钓鱼、网站钓鱼等通过各类通信渠道实施的钓鱼攻击。"
+        },
+        "/Phishing/SocialMediaPhishing": {
+          "label": "社交媒体钓鱼",
+          "description": "通过社交媒体平台冒充可信个人或组织发送链接或文件，诱骗用户执行操作的钓鱼攻击。"
+        },
+        "/Phishing/WebPhishing": {
+          "label": "网页钓鱼",
+          "description": "创建模仿合法网站外观的欺骗性网页，诱骗用户输入登录凭证或信用卡信息等个人信息。"
+        },
+        "/PromptInjection/Direct": {
+          "label": "直接提示注入",
+          "description": "直接向模型发送覆盖指令的行为。"
+        },
+        "/PromptInjection/Indirect": {
+          "label": "间接提示注入",
+          "description": "通过污染模型检索的外部数据源（如网页、文档）实现的注入攻击。"
+        },
+        "/Scan/HostScan": {
+          "label": "主机扫描",
+          "description": "外部网络发起的针对IP段内服务器可用性的探测行为；通过ping或TCP连接尝试等方法确认目标IP是否在线并响应。攻击目标：服务器。"
         },
         "/Scan/NetworkScan": {
           "label": "网络扫描",
-          "description": "网络扫描是指通过扫描网络上的所有设备和系统，以获取网络结构、设备状态、开放端口等信息的过程。它通常用于安全检查、资产管理和漏洞检测，以识别潜在的安全风险和优化网络配置。"
+          "description": "网络扫描是指扫描网络上所有设备和系统的过程，以获取网络拓扑、设备状态和开放端口等信息。常用于安全审计、资产管理和漏洞检测，以识别潜在安全风险并优化网络配置。"
+        },
+        "/Scan/Others": {
+          "label": "其他扫描",
+          "description": "外部网络发起的其他类型的探测和扫描攻击事件。"
+        },
+        "/Scan/PortScan": {
+          "label": "端口扫描",
+          "description": "外部网络发起的针对服务器开放端口的扫描行为，表现出自动化行为特征。攻击目标：服务器。"
+        },
+        "/Scan/Scanner": {
+          "label": "扫描器指纹",
+          "description": "在外部网络扫描过程中检测到特定扫描器的指纹特征。攻击目标：服务器。"
+        },
+        "/Scan/ServScan": {
+          "label": "服务扫描",
+          "description": "外部网络发起的针对服务器开放服务的扫描行为。包括批量探测常见服务端口可用性，以及发送特定数据包检测服务端程序版本信息。攻击目标：服务器。"
         },
         "/Scan/SystemScan": {
           "label": "系统扫描",
-          "description": "系统扫描是指对计算机系统进行全面检查和分析的过程，以检测系统中的漏洞、恶意软件、配置错误以及其他潜在的安全问题。通过系统扫描，可以识别并修复系统中的安全隐患，确保系统的稳定性和安全性。"
+          "description": "系统扫描是指对计算机系统进行全面检查和分析的过程，以检测漏洞、恶意软件、配置错误和其他潜在安全问题。通过系统扫描，可以识别并修复安全风险，确保系统的稳定性和安全性。"
         },
-        "/WebAttack/MemoryShell": {
-          "label": "内存马",
-          "description": "内存马攻击是指攻击者通过注入恶意代码到目标系统的内存中，创建一种驻留在内存中的恶意程序（内存马），以实现对系统的长期控制。内存马攻击通常难以被传统的文件系统扫描和杀毒软件检测到，因为它们不在磁盘上留下痕迹。这种攻击方法常用于网络攻击，以窃取敏感信息、执行远程控制或破坏系统功能。"
+        "/Scan/VulScan": {
+          "label": "漏洞扫描",
+          "description": "外部网络发起的针对非Web应用的漏洞扫描，包括配置错误、系统漏洞和应用漏洞，表现出自动化行为特征。攻击目标：服务器。"
         },
-        "/DataTampering/WebsiteDefacement": {
-          "label": "网页涂鸦",
-          "description": "网站篡改是指攻击者未经授权对网站内容进行修改或破坏的行为。这通常涉及更改网站的文本、图像或其他媒体内容，以传播错误信息、显示恶意消息、宣传某种观点或品牌，甚至是为了羞辱和破坏网站的声誉。网站篡改是一种常见的数据篡改攻击，旨在通过篡改网页内容来达到特定的恶意目的。"
+        "/Scan/WebScan": {
+          "label": "Web扫描",
+          "description": "外部网络发起的针对Web应用漏洞的扫描活动，包括敏感目录扫描、网站后门检测、爬虫扫描、SQL注入以及其他各种Web应用漏洞扫描，表现出自动化行为特征。攻击目标：Web业务系统。"
         },
-        "/DataTampering/HiddenLinkInjection": {
-          "label": "暗链植入",
-          "description": "隐藏链接注入是指攻击者在网站的页面中隐蔽地插入恶意链接的行为。这些链接通常对用户不可见，但会被搜索引擎爬虫索引，从而影响搜索结果，提升恶意网站的排名，或者引导流量到恶意网站。隐藏链接注入是一种数据篡改攻击，旨在利用网站的信誉和流量为攻击者的利益服务，同时可能对受感染网站的搜索引擎优化（SEO）产生负面影响。"
+        "/SupplyChain/Artifacts": {
+          "label": "第三方插件风险",
+          "description": "由存在漏洞或被恶意篡改的第三方库、框架、插件或扩展引入的安全威胁。"
         },
-        "/DataTampering/FileTampering": {
-          "label": "文件改写",
-          "description": "文件篡改是指攻击者未经授权修改、删除或破坏文件内容的行为。此类攻击可能导致数据损坏、信息泄露或系统不稳定。"
+        "/SupplyChain/Hardware": {
+          "label": "硬件平台风险",
+          "description": "攻击者通过篡改、伪造或利用硬件设备和固件中的漏洞，破坏构建或运行在硬件上的AI系统的安全性。"
         },
-        "/DataSteal/DatabaseConnect": {
-          "label": "数据库外联",
-          "description": "数据库连接窃取是指攻击者通过获取数据库连接信息，未经授权访问数据库，以窃取敏感数据或执行未授权操作的行为。"
+        "/SupplyChain/Infrastructure": {
+          "label": "基础设施入侵",
+          "description": "针对支持AI开发和部署管道的基础设施（如云服务器、Kubernetes集群）的攻击。攻击者可能利用漏洞进行未经授权的访问，导致系统/网络被入侵或模型完整性被破坏。"
         },
-        "/DataSteal/UnauthorizedAccess": {
-          "label": "非授权访问",
-          "description": "未经授权访问是指攻击者在未获得适当权限的情况下，非法访问系统或数据的行为，通常以窃取或破坏数据为目的。"
+        "/SupplyChain/PoisonBackdoor": {
+          "label": "后门投毒",
+          "description": "需要在被投毒样本和测试样本之间创建后门模式，要求同时控制训练和测试数据。"
         },
-        "/SuspTraffic/RemoteService": {
-          "label": "远程服务通信异常",
-          "description": "远程服务异常流量是指在远程服务连接中检测到的异常或可疑网络流量，这可能表明存在未经授权的访问尝试、数据泄露、或其他恶意活动。"
+        "/SupplyChain/PoisonData": {
+          "label": "数据投毒",
+          "description": "操纵训练数据以破坏模型完整性。被污染的数据可能导致结果失真、输出偏颇、后门触发或用户信任丧失。"
         },
-        "/SuspTraffic/SuspProtocol": {
-          "label": "协议异常",
-          "description": "可疑协议流量是指检测到使用不常见或异常网络协议的流量，这可能表明存在潜在的安全威胁，如恶意活动或未授权的通信。"
+        "/SupplyChain/PoisonModel": {
+          "label": "模型投毒",
+          "description": "在模型部署前篡改或注入恶意代码。"
+        },
+        "/SupplyChain/PoisonTarget": {
+          "label": "定向投毒",
+          "description": "一种改变特定目标样本预测结果的攻击。控制训练标签的攻击者可通过标签翻转实现此目的。"
+        },
+        "/SupplyChain/Software": {
+          "label": "软件开发工具风险",
+          "description": "攻击者通过污染或利用AI项目开发的软件工具链依赖项，植入后门或漏洞。"
+        },
+        "/SupplyChain/VectorEmbedding": {
+          "label": "向量与嵌入漏洞",
+          "description": "使用LLM的RAG系统中存在的重大安全风险。向量/嵌入生成、存储或检索中的弱点可能导致恶意内容注入、输出操纵或敏感数据访问。"
+        },
+        "/SuspEndpoint/Attack": {
+          "label": "可疑端点攻击",
+          "description": "内部网络主机发起针对外部网络的漏洞利用、暴力破解、基于Web的攻击等行为。"
         },
         "/SuspEndpoint/CommandAndControl": {
-          "label": "命令控制执行",
-          "description": "指挥与控制是指攻击者通过受控设备进行远程指令和管理的行为，通常用于协调恶意活动，如数据窃取、网络攻击或传播恶意软件。"
+          "label": "可疑端点命令与控制",
+          "description": "命令与控制（C2）指攻击者远程发出指令并管理被入侵设备的行为，通常用于协调数据窃取、网络攻击或恶意软件传播等恶意活动。"
+        },
+        "/SuspEndpoint/DefenseEvasion": {
+          "label": "可疑终端防御规避",
+          "description": "内网主机发现尝试通过卸载/禁用安全软件、混淆/加密数据和脚本，或滥用可信进程来隐藏和伪装其恶意软件，以绕过检测的行为。"
+        },
+        "/SuspEndpoint/ExternalScan": {
+          "label": "可疑终端外部扫描",
+          "description": "由内网主机发起的一类针对外网的扫描行为，其目标为外部网络。"
+        },
+        "/SuspEndpoint/FileTempering": {
+          "label": "敏感文件篡改",
+          "description": "内网主机文件遭到篡改。敏感主机文件包括：应用安全配置文件、防火墙配置、网络服务配置等。篡改易导致安全防护失效、权限提升等危害。"
+        },
+        "/SuspEndpoint/FilelessAttack": {
+          "label": "可疑终端无文件攻击",
+          "description": "在内网主机发现系统上未创建文件，但执行了代码或修改了系统设置。这可能表明存在无文件攻击，攻击者直接在内存中执行恶意代码。"
+        },
+        "/SuspEndpoint/ImageLoaded": {
+          "label": "可疑终端镜像加载",
+          "description": "记录特定进程中加载的模块，包括加载进程、哈希值和签名信息。"
+        },
+        "/SuspEndpoint/InformationGathering": {
+          "label": "可疑终端信息收集",
+          "description": "内网主机检测到异常的本地信息收集行为。这可能表明攻击者正在收集本地系统信息，如用户列表和系统配置。"
+        },
+        "/SuspEndpoint/OpAbnormaly": {
+          "label": "可疑终端操作异常",
+          "description": "内网主机的异常操作，如日志删除、授予root权限等。"
+        },
+        "/SuspEndpoint/Others": {
+          "label": "可疑终端其他异常行为",
+          "description": "内网主机的其他异常行为。"
+        },
+        "/SuspEndpoint/Persistence": {
+          "label": "可疑终端持久化",
+          "description": "内网主机发现的持久化机制，如服务创建、注册表修改和文件系统变更，可能被用于确保攻击者在系统上的长期存在。"
+        },
+        "/SuspEndpoint/PrivilegeEscalation": {
+          "label": "可疑终端权限提升",
+          "description": "内网主机检测到用户账户尝试或成功提升权限，这可能表明攻击者正试图获取更高的系统访问权限以进行更广泛的攻击。"
+        },
+        "/SuspEndpoint/ProcessInjection": {
+          "label": "可疑进程注入",
+          "description": "内网主机检测到异常进程注入告警。恶意代码被注入到进程中，导致其与合法进程共享地址空间。"
+        },
+        "/SuspEndpoint/RemoteExec": {
+          "label": "可疑远程执行",
+          "description": "内网主机发现系统检测到尝试使用远程执行工具或恶意利用远程服务执行未授权命令或脚本的行为。"
+        },
+        "/SuspEndpoint/RemoteService": {
+          "label": "可疑远程服务利用",
+          "description": "检测到内网主机上运行未知远程服务，该服务可能包含已知漏洞，攻击者可利用其执行远程代码。"
+        },
+        "/SuspEndpoint/ReverseShell": {
+          "label": "疑似反向Shell",
+          "description": "内网主机发现系统检测到内部进程与外部IP的异常通信，可能表明攻击者通过反向Shell技术远程控制受控主机。"
+        },
+        "/SuspEndpoint/SuspCommand": {
+          "label": "可疑命令",
+          "description": "内网主机检测到可疑命令告警。包括：1. 用户执行未授权或异常命令；2. 短时间内频繁执行特定命令，可能表明存在自动化攻击。"
+        },
+        "/SuspEndpoint/SuspConnection": {
+          "label": "可疑连接",
+          "description": "网络连接事件记录主机上的TCP/UDP连接，如攻击者扫描、恶意程序外联、隧道建立、横向移动及反向Shell连接等。"
+        },
+        "/SuspEndpoint/SuspDriver": {
+          "label": "可疑驱动",
+          "description": "内网主机加载未知或未签名驱动程序文件。"
+        },
+        "/SuspEndpoint/SuspFile": {
+          "label": "可疑文件",
+          "description": "在内网主机上检测到可疑文件。"
+        },
+        "/SuspEndpoint/SuspOpenPort": {
+          "label": "可疑开放端口",
+          "description": "内网主机上开放了非常见端口。"
+        },
+        "/SuspEndpoint/SuspPipeEvents": {
+          "label": "可疑管道事件",
+          "description": "创建命名管道时生成，恶意软件常利用命名管道进行进程间通信。"
+        },
+        "/SuspEndpoint/SuspProcess": {
+          "label": "可疑进程",
+          "description": "检测到内网主机存在可疑进程行为，包括：1.异常进程名、异常进程创建关系、异常进程命令行参数等；2.其他异常进程行为，如权限异常、状态异常、启动方式或频率异常等。"
+        },
+        "/SuspEndpoint/SuspProcessAccess": {
+          "label": "可疑进程访问",
+          "description": "当进程打开另一个进程时，报告进程访问事件。此操作通常涉及对目标进程地址空间的信息查询或读写操作。可检测读取进程内存内容的黑客工具（如Lsass.exe）以窃取凭证进行哈希传递攻击。"
+        },
+        "/SuspEndpoint/SuspRegistry": {
+          "label": "可疑注册表",
+          "description": "检测内网主机对注册表进行增删改等可疑操作。"
+        },
+        "/SuspEndpoint/SuspThread": {
+          "label": "可疑线程",
+          "description": "内网主机存在远程线程注入等行为。"
+        },
+        "/SuspEndpoint/SuspiciousSpread": {
+          "label": "可疑终端传播",
+          "description": "内网主机通过共享文件夹、可移动介质、远程拷贝等方式传播可疑代码。"
+        },
+        "/SuspEndpoint/TraceEradication": {
+          "label": "可疑痕迹清除",
+          "description": "内网主机发现系统存在删除、修改或隐藏日志文件、系统文件或痕迹清理工具的迹象，可能表明攻击者试图隐藏其活动。"
+        },
+        "/SuspEndpoint/WMI": {
+          "label": "可疑WMI利用",
+          "description": "内网主机检测到WMI利用告警。使用Windows管理规范(WMI)执行了未授权操作，可能用于信息收集或远程控制目的。"
+        },
+        "/SuspTraffic/AccessAnomaly": {
+          "label": "可疑流量访问异常",
+          "description": "内网主机检测到用户访问行为异常告警：用户访问行为偏离正常基线，或检测到异常域/服务访问。"
+        },
+        "/SuspTraffic/MaliciousCert": {
+          "label": "可疑恶意证书",
+          "description": "内网主机安装恶意证书或访问携带恶意证书的URL。例如：1.通过SSL/TLS证书信息检测访问恶意HTTPS网站；2.通过证书的SNI信息检测可疑域名。内网->外网。"
+        },
+        "/SuspTraffic/MaliciousDomain": {
+          "label": "可疑恶意域名",
+          "description": "内网主机请求恶意域名。恶意域名包括挖矿域名、C2域名、钓鱼域名及：1.可疑动态域名，如3322、org；2.内网穿透代理域名，如ngrok域名；3.疑似DGA域名；4.其他类型可疑域名。"
+        },
+        "/SuspTraffic/MaliciousIP": {
+          "label": "恶意IP地址",
+          "description": "内网主机与恶意IP通信。恶意IP包括矿池IP、黑产IP等。"
+        },
+        "/SuspTraffic/Others": {
+          "label": "可疑流量其他",
+          "description": "内网主机发起的可疑通信。包括：可疑会话连接、异常协议数据包、与4444/2745等可疑端口的通信行为。"
+        },
+        "/SuspTraffic/RemoteCtrl": {
+          "label": "可疑远程控制流量",
+          "description": "内网主机与C2服务器通信，检测流量中的远程控制特征及可疑响应，例如：1. 内网向外网发送命令行标识信息（如cmd/powershell）；2. 内网执行常见命令后向外网传输回显信息；3. 检测特定远程控制工具的通信特征。常见远程控制采用反向连接（内->外网），也存在正向连接（外->内网），受害者为内网主机。"
+        },
+        "/SuspTraffic/RemoteService": {
+          "label": "可疑远程服务流量",
+          "description": "远程服务异常流量指在远程服务连接过程中检测到的异常或可疑网络流量，可能表明存在未经授权的访问尝试、数据泄露或其他恶意活动。"
+        },
+        "/SuspTraffic/SuspContent": {
+          "label": "可疑内容",
+          "description": "内网主机请求恶意服务（如挂马、仿冒、欺诈），或发送/接收的数据包内容包含钓鱼尝试、敏感信息等可疑元素。"
+        },
+        "/SuspTraffic/SuspProtocol": {
+          "label": "可疑协议异常流量",
+          "description": "可疑协议流量指检测到使用非常见或异常网络协议的流量，可能表明存在潜在安全威胁，如恶意活动或未经授权的通信。"
+        },
+        "/SuspTraffic/TrafficAnomaly": {
+          "label": "可疑流量异常",
+          "description": "内网主机检测流量异常告警：网络流量偏离正常基线。"
+        },
+        "/SuspTraffic/Tunnel": {
+          "label": "可疑隧道流量",
+          "description": "内网主机发送或接收隧道通信数据包。隧道协议将其他协议的数据帧或数据包封装在新的数据包头中进行传输，到达目的地后解封装并转发至实际目标。例如HTTP隧道、DNS隧道和VPN等。例如：1. 检测隧道通信流量特征，如DNS隧道；2. 识别常见隧道工具特征，包括代理隧道/隐蔽隧道。内网<->外网，源地址可能不同。"
+        },
+        "/WebAttack/BypassAccCtrl": {
+          "label": "Web攻击绕过访问控制",
+          "description": "外网发起的针对权限提升漏洞的攻击行为，包括水平权限提升尝试、认证绕过漏洞尝试及其他类似类型。"
+        },
+        "/WebAttack/CRLF": {
+          "label": "Web攻击CRLF注入",
+          "description": "外网发起的HTTP CRLF注入攻击。HTTP协议使用CRLF符号（回车换行）进行分隔。攻击者在请求中注入恶意换行符以绕过网站安全检查。"
+        },
+        "/WebAttack/CSRF": {
+          "label": "Web攻击-CSRF",
+          "description": "从外部网络发起的跨站请求伪造(CSRF)攻击，利用合法用户的cookie伪造身份请求访问网站。"
+        },
+        "/WebAttack/CodeInjection": {
+          "label": "Web攻击-代码注入",
+          "description": "从外部网络发起的攻击行为，利用中间件、框架或Web组件漏洞注入精心构造的可执行代码(如Java、PHP等)，实现服务器远程命令执行。"
+        },
+        "/WebAttack/CommandExec": {
+          "label": "Web攻击-命令执行",
+          "description": "从外部网络发起的攻击，利用具有系统命令执行功能的Web应用，通过命令拼接、黑名单绕过等技术实现服务器任意系统命令执行。"
+        },
+        "/WebAttack/DirTraversal": {
+          "label": "Web攻击-目录遍历",
+          "description": "由于Web服务器配置不当或Web应用对用户输入文件名安全性校验不足导致的安全漏洞，外部攻击者可通过特殊字符绕过服务器安全限制，尝试访问任意文件(包括Web根目录之外的文件)、读取敏感文件甚至执行系统命令。"
+        },
+        "/WebAttack/FileDownload": {
+          "label": "Web攻击-文件下载",
+          "description": "攻击者利用系统或应用漏洞从目标系统非法下载敏感或恶意文件。通过文件下载行为，攻击者可能获取系统信息、窃取用户数据或传播恶意软件。"
+        },
+        "/WebAttack/FileParsingVul": {
+          "label": "Web攻击-文件解析漏洞",
+          "description": "中间件(如IIS、Apache、Nginx等)在文件解析过程中存在漏洞，攻击者可利用该漏洞实现未授权文件解析。"
+        },
+        "/WebAttack/FileRead": {
+          "label": "Web攻击-文件读取",
+          "description": "攻击者访问服务器上的文件，可能获取敏感信息、执行任意命令或破坏系统。"
+        },
+        "/WebAttack/FileUpload": {
+          "label": "Web攻击-文件上传",
+          "description": "从外部网络发起的攻击行为，利用文件上传功能绕过或未充分校验用户输入，导致直接上传恶意文件。"
+        },
+        "/WebAttack/FileWrite": {
+          "label": "Web攻击-文件写入",
+          "description": "攻击者利用系统或应用漏洞非法写入恶意文件或植入恶意代码，可能通过文件写入行为实现系统入侵、权限提升或执行恶意操作。"
+        },
+        "/WebAttack/Hotlinking": {
+          "label": "Web攻击-盗链",
+          "description": "攻击者在外站引用目标网站资源，造成目标网站资源被非法使用或耗尽。"
+        },
+        "/WebAttack/InfoLeak": {
+          "label": "Web攻击-信息泄露",
+          "description": "由于Web服务器配置不当，外部攻击者利用漏洞获取服务器敏感信息。敏感信息包括密码、密钥、证书、会话标识符、许可证、私有数据（如短信内容）、授权凭证、个人数据，以及程序文件、配置文件、日志文件、备份文件等。注意与横向移动/敏感数据泄露类型的区分。"
+        },
+        "/WebAttack/LFI": {
+          "label": "Web攻击-本地文件包含",
+          "description": "外部网络发起的攻击利用目标应用中实现的动态文件包含机制，通过操控提交参数控制应用运行时路径指向本地敏感文件，可能实现敏感文件泄露、篡改或写入webshell等功能。"
+        },
+        "/WebAttack/MemoryShell": {
+          "label": "Web攻击-内存马",
+          "description": "内存驻留型恶意软件（内存马）攻击指攻击者将恶意代码注入目标系统内存，创建常驻内存的恶意程序以实现对系统的长期控制。内存马攻击通常难以通过传统文件系统扫描和杀毒软件检测，因其在磁盘上不留痕迹。该攻击方式常用于窃取敏感信息、执行远程控制或破坏系统功能的网络攻击中。"
+        },
+        "/WebAttack/Others": {
+          "label": "Web攻击-其他类型",
+          "description": "外部IP发起的其他类型Web攻击行为。"
+        },
+        "/WebAttack/RFI": {
+          "label": "Web攻击-远程文件包含",
+          "description": "外部发起的攻击利用目标应用中实现的动态文件包含机制，通过操控提交参数控制应用运行时引用远程服务器上的恶意文件路径，可能实现远程代码执行、植入webshell等恶意功能。"
+        },
+        "/WebAttack/SQLInjection": {
+          "label": "Web攻击-SQL注入",
+          "description": "外部网络针对Web应用或Web框架发起的SQL注入攻击。"
+        },
+        "/WebAttack/SSRF": {
+          "label": "Web攻击-SSRF",
+          "description": "外部网络发起的服务端请求伪造（SSRF）攻击。攻击者伪造服务端请求向与其通信的内网主机发送数据，通常用于从外网探测或攻击内网服务。"
+        },
+        "/WebAttack/WebTempering": {
+          "label": "Web攻击-网页篡改",
+          "description": "外部攻击者利用漏洞或植入的webshell，通过注入钓鱼链接、违禁内容、暗链、欺诈材料等方式尝试篡改合法网页。"
+        },
+        "/WebAttack/WebshellRequest": {
+          "label": "Web攻击-Webshell请求",
+          "description": "外部攻击者尝试访问webshell以进行命令控制、文件查看等操作。注意与恶意程序/webshell后门的区分；此处主要包括webshell请求尝试和webshell页面扫描。已确认的webshell通信（如服务端响应webshell命令、服务端返回webshell单行命令或webshell木马特征）应归类至恶意程序类别。"
+        },
+        "/WebAttack/WebshellUpload": {
+          "label": "Web攻击-Webshell上传",
+          "description": "攻击者尝试上传webshell后门文件以获取目标服务器控制权。"
+        },
+        "/WebAttack/XSS": {
+          "label": "跨站脚本攻击",
+          "description": "从外部网络发起的跨站脚本(XSS)攻击。通过利用Web开发过程中遗留的漏洞，将恶意JavaScript代码注入网页，攻击访问该站点的正常用户的浏览器。"
+        },
+        "/WebAttack/XXE": {
+          "label": "XML外部实体注入攻击",
+          "description": "从外部网络发起的XXE(XML外部实体)注入攻击。当允许外部实体引用时，构造恶意内容可导致任意文件读取、系统命令执行、内网端口扫描及对内网Web服务的攻击。"
         }
       }
     },
