@@ -3127,7 +3127,7 @@
     "label": "Device Asset Subtype ID",
     "description": "The device subtype ID is a unique numeric identifier for the sub-classification of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the system-defined enumeration range.",
     "type": "enum",
-    "valid_type": "integer_t",
+    "valid_type": "string_t",
     "enum": {
       "1": {
         "label": "Operating System",
@@ -6463,7 +6463,7 @@
     "label": "Protection Level",
     "description": "This field indicates the asset level determined in accordance with the Critical Information Infrastructure Protection classification system.",
     "type": "enum",
-    "valid_type": "integer_t",
+    "valid_type": "string_t",
     "enum": {
       "0": {
         "label": "Non Classified System",

@@ -1,0 +1,22 @@
+{
+  "machineCode": "f575e6271a14d8720c68319526abf982",
+  "productVendorName": "DLP System",
+  "deviceSendProductName": "Registry Audit Module",
+  "deviceName": "DESKTOP-V9VQFDU",
+  "deviceAssetSubTypeId": 1,
+  "deviceAddress": "192.168.*.*",
+  "hostAddress": "192.168.*.*",
+  "dataSourceAddress": "192.168.*.*",
+  "eventId": "07a0ecebad04489ead4973ad718bc4c1",
+  "name": "Registry Query: HKEY_LOCAL_MACHINE\\System",
+  "message": "Organization: org; Unit: 北*电*公司",
+  "startTime": "2023-10-23T22:19:04+0800",
+  "endTime": "2023-10-23T22:19:04+0800",
+  "deviceReceiptTime": null,
+  "collectorReceiptTime": "2023-10-23T22:19:02+0800",
+  "severity": 0,
+  "catOutcome": "OK",
+  "logType": "registry",
+  "opType": "read",
+  "targetObject": "HKEY_LOCAL_MACHINE\\System"
+}

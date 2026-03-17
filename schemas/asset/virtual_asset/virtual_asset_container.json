@@ -915,7 +915,7 @@
       "requirement": "OPTIONAL",
       "description": "This field indicates the asset level determined in accordance with the Critical Information Infrastructure Protection classification system.",
       "type": "enum",
-      "valid_type": "integer_t",
+      "valid_type": "string_t",
       "enum": {
         "0": {
           "label": "Non Classified System",

@@ -119,7 +119,7 @@
       "requirement": "REQUIRED",
       "description": "The device subtype ID is a unique numeric identifier for the sub-classification of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the system-defined enumeration range.",
       "type": "enum",
-      "valid_type": "integer_t",
+      "valid_type": "string_t",
       "enum": {
         "1": {
           "label": "Operating System",

@@ -1,0 +1,1 @@
+{"db":[{"tstamp":"2022-03-23 21:47:07","fullpath":"\\/第三方用户\\/MACBOOK-PRO-2","tool":"-","place":"-","client_ip":"172.24.*.*","server_ip":"10.252.*.*","src_port":59750,"dst_port":3306,"mac":"00:0E:C6:76:59:F1","db_type":"MySql","db_name":"n_log","user_name":"test","db_cmd":"SELECT DATABASE()","polic_name":"【镜像】数据库审计全记录","result":"允许"}]}

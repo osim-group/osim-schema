@@ -1,0 +1,1 @@
+<14>Mar 24 09:34:33 -: {"ftp":[{"tstamp":"2022-03-24 093432","link_flag":"2022-03-24 093432","fullpath":"ZZZ-XXBGQS","tool":"PCWindows","place":"-","client_ip":"172.24.*.*","server_ip":"172.24.*.*","src_port":62781,"dst_port":21,"mac":"4CCC6AE9D61F","user_nam":"eanonymous","cmd":"CWD BuildVV-Offline-Build","policy_name":"【镜像】FTP审计全记录","result":"允许"}]}
