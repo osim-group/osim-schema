@@ -17,7 +17,7 @@
     "image": {
       "label": "Process Image Path",
       "requirement": "RECOMMENDED",
-      "description": "This field represents the full path of the process executable file in the file system. The path format should comply with the operating system specifications, typically in string form, such as an absolute path starting with a forward slash (/) for Linux/Unix systems or a path containing drive letters and backslashes for Windows systems.",
+      "description": "This field represents the complete file system path of the process executable. The path format should comply with the operating system specifications, typically in string form, such as an absolute path starting with a forward slash (/) for Linux/Unix systems or a path containing drive letters and backslashes for Windows systems. Purpose: clarifies the full system path of the process executable, facilitating the identification of malicious programs launched from abnormal directories and process impersonation behaviors, supporting process behavior analysis and attack traceability.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -27,7 +27,7 @@
     "parentImage": {
       "label": "Parent Process Image Path",
       "requirement": "OPTIONAL",
-      "description": "This field represents the full path of the parent process executable in the file system. The value should be a string formatted according to the operating system specifications, typically an absolute path, such as a Unix/Linux path starting with a forward slash (/) or a Windows path starting with a drive letter (e.g., C:\\). The path should not contain illegal characters and its length should be within the system's allowed limits. Examples: /usr/bin/bash or C:\\Windows\\System32\\cmd.exe.",
+      "description": "This field represents the full path of the parent process executable in the file system. The value should be a string formatted according to the operating system specifications, typically an absolute path, such as a Unix/Linux path starting with a forward slash (/) or a Windows path starting with a drive letter (e.g., C:\\). The path should not contain illegal characters and its length should be within the system's allowed limits. Examples: /usr/bin/bash or C:\\Windows\\System32\\cmd.exe. Value：determine the complete path of the executable file of the parent process to facilitate the identification of suspicious programs launched from abnormal directories, and support the detection of white-box exploitation and the restoration of attack chain call relationships.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -37,7 +37,7 @@
     "processId": {
       "label": "Process ID",
       "requirement": "RECOMMENDED",
-      "description": "The Process ID (PID) is a unique numeric identifier assigned by the operating system to a process, used to uniquely identify a running process within the OS. This field is of string type, typically composed of numeric characters, with its length and specific value determined by the operating system and process state.",
+      "description": "Process ID (PID) is a unique numeric identifier assigned by the operating system to a running process, used to distinctly identify it within the OS. This field is of string type, typically composed of digits, with length and specific values determined by the OS and process state. Purpose: clarifies the unique numeric identifier assigned by the OS to a process, enabling precise correlation of all behavioral logs for that process, serving as the core relational field for constructing a comprehensive process behavior profile.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -47,7 +47,7 @@
     "processUserName": {
       "label": "Process User Name",
       "requirement": "RECOMMENDED",
-      "description": "This field represents the operating system user account of the executing process. Format requirements: The username should be a valid operating system user identifier, typically composed of characters such as letters, numbers, and underscores.",
+      "description": "This field represents the operating system user account of the executing process. Format requirements: the username should be a valid OS user identifier, typically composed of letters, numbers, underscores, etc. Purpose: clearly associates processes with executing user identities, facilitates identification of unauthorized users launching sensitive processes, privilege escalation, and other anomalous behaviors, supporting user behavior baselining and operational auditing.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -57,7 +57,7 @@
     "processMd5": {
       "label": "Process MD5 Hash",
       "requirement": "RECOMMENDED",
-      "description": "MD5 hash of the process executable file, used for uniquely identifying and verifying files. This value is a 32-character hexadecimal string composed of digits 0-9 and lowercase letters a-f, and its format must comply with the standard MD5 digest algorithm output format.",
+      "description": "The MD5 hash value of the process executable file, used for uniquely identifying and verifying files. This value is a 32-character hexadecimal string composed of digits 0-9 and lowercase letters a-f, and must conform to the standard MD5 digest algorithm output format. Purpose: uniquely identifies the hash of the process executable file, facilitating matching with known malicious files in threat intelligence and supporting file-level threat detection and behavior tracing.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -67,7 +67,7 @@
     "processName": {
       "label": "Process Name",
       "requirement": "RECOMMENDED",
-      "description": "The base name of the process executable file, excluding path information.",
+      "description": "The base name of the process executable file, excluding path information. Purpose: clarifies the base name of the process executable, facilitating the detection of malicious activities such as system process impersonation, and supports process behavior correlation analysis and attack chain tracing.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -77,7 +77,7 @@
     "parentProcessName": {
       "label": "Parent Process Name",
       "requirement": "OPTIONAL",
-      "description": "This field represents the executable file name of the parent process that created the current process. The field should exclude path information and retain only the pure name.",
+      "description": "This field represents the executable file name of the parent process that created the current process. It should exclude path information and retain only the pure name. Purpose: clarifies the parent process name that created the current process, facilitates identification of abnormal program call chains, and supports attack chain reconstruction and behavioral pattern analysis.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -87,7 +87,7 @@
     "parentProcessId": {
       "label": "Parent Process ID",
       "requirement": "OPTIONAL",
-      "description": "The parent process ID is a unique numeric identifier assigned by the operating system to the parent process, typically a non-negative integer.",
+      "description": "The parent process ID is a unique numeric identifier assigned by the operating system to the parent process, typically a non-negative integer. Purpose: clarifies the unique numeric identifier of the parent process, facilitates associating creation relationships between parent and child processes and identifying abnormal inheritance behaviors, supporting attack path reconstruction and process behavior chain analysis.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -97,7 +97,7 @@
     "parentProcessUserName": {
       "label": "Parent Process User Name",
       "requirement": "OPTIONAL",
-      "description": "The user account name of the parent process in the operating system, used to identify the user identity that initiated the process.",
+      "description": "The user account name of the parent process in the operating system, used to identify the user who initiated the process. Purpose: clarifies the user identity of the parent process, facilitates detection of privilege escalation and lateral movement behaviors, and supports reconstruction of user identity switching in the attack chain.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -107,7 +107,7 @@
     "parentProcessMd5": {
       "label": "Parent Process MD5 Hash",
       "requirement": "OPTIONAL",
-      "description": "MD5 hash of the parent process executable file, used to uniquely identify the file. Format requirements: must be a 32-character hexadecimal string consisting of digits 0-9 and uppercase letters A-F, without hyphens or other separators.",
+      "description": "The MD5 hash value of the parent process executable file, used to uniquely identify the file. Format requirements: must be a 32-character hexadecimal string consisting of digits 0-9 and uppercase letters A-F, without hyphens or other separators. Purpose: clarifies the MD5 hash of the parent process file, facilitates matching known malicious tools and correlating behaviors of the same parent process across multiple logs, supporting detection of living-off-the-land techniques and attack chain reconstruction.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -223,7 +223,7 @@
     "md5": {
       "label": "File MD5 Hash",
       "requirement": "RECOMMENDED",
-      "description": "File MD5 value, representing the hash value of file content calculated using the MD5 algorithm. This value must be a 32-character hexadecimal string, case-insensitive, used to uniquely identify file content.",
+      "description": "File MD5 value, representing the hash value of file content calculated using the MD5 algorithm. This value must be a 32-character hexadecimal string (case-insensitive) and serves as a unique identifier for file content. Purpose: clarifies the MD5 hash of file content, facilitating matching with known malicious files in threat intelligence to support precise detection and behavior tracing.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -235,7 +235,7 @@
     "targetFilename": {
       "label": "Target Filename",
       "requirement": "RECOMMENDED",
-      "description": "The target file refers to the complete path of the file involved in system operations or file operations. Format requirements: must be a valid file path string, with path separators being forward slashes (/) or backslashes (\\). Example value: /data1/uacp/shell/uacpClient.sh.",
+      "description": "The target file refers to the complete path of the file involved in system or file operations. Format requirements: must be a valid file path string with forward slashes (/) or backslashes (\\) as path separators. Example Purpose: /data1/uacp/shell/uacpClient.sh. Purpose: clarifies the full path of the target file, enabling precise identification of abnormal operations on sensitive files and data theft activities, supporting file operation tracking and attack attribution.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -247,7 +247,7 @@
     "fileName": {
       "label": "File Name",
       "requirement": "RECOMMENDED",
-      "description": "The base name of the file, excluding path information. Format requirements: string type, with a maximum length of 255 characters. Supports character sets allowed for filenames by common operating systems (such as letters, numbers, underscores, dots, hyphens, etc.). System reserved characters and path separators should be avoided.",
+      "description": "The base name of the file, excluding path information. Format requirements: string type, with a maximum length of 255 characters, supporting common operating system-allowed filename character sets (e.g., letters, numbers, underscores, dots, hyphens, etc.). System-reserved characters and path separators should be avoided. Purpose: clearly identifies the base name of the file (excluding the path), facilitating quick identification, search, and file location by administrators.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -259,7 +259,7 @@
     "filePath": {
       "label": "File Path",
       "requirement": "RECOMMENDED",
-      "description": "This field represents the storage directory path of the file in the file system. The path format should comply with the operating system specifications. For example, Windows systems use backslashes (\\) as directory separators, while Linux/Unix systems use forward slashes (/).",
+      "description": "This field indicates the storage directory path of the file in the file system. The path format should comply with the operating system specifications, e.g., Windows systems use backslashes (\\) as directory separators, while Linux/Unix systems use forward slashes (/). Purpose: clarifies the complete storage path of the file in the system, facilitating precise location of malicious files and identification of abnormal file placement behavior.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -281,7 +281,7 @@
     "hostAddress": {
       "label": "Host IP Address",
       "requirement": "RECOMMENDED",
-      "description": "Host IP address, used to identify the host's location in the network. It must comply with the IPv4 or IPv6 address format specifications. IPv4 addresses are in dotted-decimal notation, consisting of four decimal numbers ranging from 0 to 255, separated by dots. IPv6 addresses are in colon-separated hexadecimal notation.",
+      "description": "Host IP address, used to identify the host's location in the network. Must comply with IPv4 or IPv6 address format specifications. IPv4 addresses use dotted-decimal notation consisting of four decimal numbers (0-255) separated by dots. IPv6 addresses use colon-separated hexadecimal notation. Purpose: clearly identifies the host's network location, enabling administrators to quickly access and locate devices, supporting asset management and network topology analysis.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -305,7 +305,7 @@
     "machineCode": {
       "label": "Machine Code",
       "requirement": "REQUIRED",
-      "description": "The machine code serves as the unique identifier of the log source device (device ID), primarily used for device cascade tracing. The value of this field must maintain global uniqueness. If no existing device ID is available, hardware encoding or license-based information may be referenced for generation. In terms of format, it must be a string, with allowed characters including uppercase letters (A-Z), lowercase letters (a-z), and numbers (0-9). While there is no fixed length restriction, uniqueness and manageability should be ensured.",
+      "description": "The machine code serves as the unique identifier (device ID) of the log source device, primarily used for device cascading and tracking. This field value must maintain global uniqueness. If no existing device ID is available, it can be generated based on hardware encoding or license information. The format must be a string, allowing uppercase letters (A-Z), lowercase letters (a-z), and digits (0-9). While there is no fixed length restriction, uniqueness and manageability should be ensured. Purpose: clearly identifies the unique source device of logs, facilitating cross-node correlation and device-level traceability, while avoiding confusion caused by dynamic IP changes or duplicate hostnames.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -317,7 +317,7 @@
     "productVendorName": {
       "label": "Product Vendor Name",
       "requirement": "REQUIRED",
-      "description": "The product vendor name field is used to identify the official full name of the security product vendor. The format is a string with no specific character set restrictions, but the standard name used by the vendor in business registration or official promotions should be adopted to ensure consistency and accuracy.",
+      "description": "The product vendor name field is used to identify the official full name of the security product vendor. The format is a string with no specific character set restrictions, but the standard name used by the vendor in business registration or official promotion should be adopted to ensure consistency and accuracy. Purpose: clarifies the official full name of the security product vendor, facilitates data source attribution and product liability determination, and avoids identification ambiguity caused by vendor abbreviations or aliases.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -329,7 +329,7 @@
     "deviceSendProductName": {
       "label": "Device Product Name",
       "requirement": "REQUIRED",
-      "description": "The device product name is used to identify the official standard name of the software or hardware product that generates logs. It is a string format and requires the use of clear, standardized official product names.",
+      "description": "The device product name is used to identify the official standard name of the software or hardware product that generates the logs. The format is a string and must use a clear, standardized official product name. Purpose: clarifies the official standard name of the software or hardware product generating the logs, facilitating log source identification and avoiding misjudgment.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -341,7 +341,7 @@
     "deviceName": {
       "label": "Device Name",
       "requirement": "REQUIRED",
-      "description": "Device name, used to identify the name of the device that generates logs, and can add asset attributes (such as headquarters, subordinate, etc.)",
+      "description": "Device name, used to identify the name of the log-generating device, with optional asset attributes (e.g., headquarters, subordinate, etc.). Purpose: provides a readable identifier for the log-generating device, enabling operations and security personnel to quickly recognize the device.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -353,7 +353,7 @@
     "deviceAssetSubTypeId": {
       "label": "Device Asset Subtype ID",
       "requirement": "REQUIRED",
-      "description": "The device subtype ID is a unique numeric identifier for the sub-classification of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the system-defined enumeration range.",
+      "description": "The device subtype ID is a unique numeric identifier for the subcategory of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the predefined enumeration range. Purpose: clarifies the unique numeric identifier for device type subcategories, facilitating granular asset management and precise matching of security policies.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -587,7 +587,7 @@
     "deviceAddress": {
       "label": "Device IP Address",
       "requirement": "REQUIRED",
-      "description": "The IP address of the device when generating logs, used to identify the log source device. Format requirements: must be a valid IPv4 or IPv6 address format.",
+      "description": "The IP address of the device when generating logs, used to identify the source device. Format requirements: must be a valid IPv4 or IPv6 address format. Purpose: clarifies the network location of the log source device, facilitating precise identification of data sources and supporting traceability analysis.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -599,7 +599,7 @@
     "deviceVersion": {
       "label": "Device Version",
       "requirement": "OPTIONAL",
-      "description": "The device version identifies the complete version information of the device firmware, operating system, or embedded software. The version number typically follows a multi-segment numeric format, such as major version.minor version.revision number.build number, etc.",
+      "description": "The device version identifies the complete version information of the device firmware, operating system, or embedded software. Version numbers typically follow a multi-segment numeric format, such as major.minor.revision.build. Purpose: clearly identifies the specific version of device firmware or software, enabling administrators to track version status and supporting version tracing, security assessments, and upgrade maintenance.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -611,7 +611,7 @@
     "eventId": {
       "label": "Event ID",
       "requirement": "REQUIRED",
-      "description": "The event ID is a globally unique identifier for log events, typically generated using non-repeating algorithms such as UUID or timestamp sequences. The format should be a standard UUID string, for example: 550e8400-e29b-41d4-a716-446655440000. It must be globally unique and non-repeating.",
+      "description": "Event ID is a globally unique identifier for log events, typically generated using non-repeating algorithms such as UUID or timestamp sequences. The format should be a standard UUID string, for example: 550e8400-e29b-41d4-a716-446655440000. It must be globally unique and non-repeating. Purpose: ensures a globally unique identifier for each event, enabling unique referencing and traceability of every log entry.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -623,7 +623,7 @@
     "name": {
       "label": "Summary Name",
       "requirement": "REQUIRED",
-      "description": "The summary name is a brief title or identifier for logs or alerts, used for quick identification of event content. This field is of string type and should be kept concise and clear.",
+      "description": "The summary name is a brief title or identifier for logs or alerts, used for quick identification of event content. This field is of string type and should remain concise and clear. Purpose: clarifies the brief title of logs or alerts, facilitating quick identification of data content and improving classification efficiency.",
       "type": "string",
       "valid_type": "string_t",
       "dataSource": [
@@ -647,7 +647,7 @@
     "startTime": {
       "label": "Start Time",
       "requirement": "REQUIRED",
-      "description": "This field records the precise time when the event activity began. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
+      "description": "This field records the precise timestamp when the event activity began. The timestamp must follow the standard datetime string format: yyyy-mm-dd HH:mm:ss. Purpose: identifies the exact occurrence time of the event, facilitating timeline analysis and attack reconstruction.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -659,7 +659,7 @@
     "endTime": {
       "label": "End Time",
       "requirement": "REQUIRED",
-      "description": "The exact time when the event activity ends. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
+      "description": "The exact timestamp marking the end of an event activity. The time format must be a standard datetime string in yyyy-mm-dd HH:mm:ss format. Purpose: precisely identifies the event's end time, facilitating correlation with startTime to calculate event duration and activity windows.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -671,7 +671,7 @@
     "deviceReceiptTime": {
       "label": "Device Receipt Time",
       "requirement": "OPTIONAL",
-      "description": "This field records the precise time when the device collector locally receives and generates the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
+      "description": "This field records the precise timestamp when the device collector locally receives and generates the log event. The time format must be a standard datetime string in yyyy-mm-dd HH:mm:ss format. Purpose: clarifies the exact moment when the device collector receives and generates log events locally, facilitating analysis of transmission delays and timeliness from log generation to external delivery.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -683,7 +683,7 @@
     "collectorReceiptTime": {
       "label": "Collector Receipt Time",
       "requirement": "REQUIRED",
-      "description": "The exact time when the collector receives the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
+      "description": "The exact timestamp when the collector receives the log event, which must be in the standard datetime string format: yyyy-mm-dd HH:mm:ss. Purpose: provides precise timestamp for log event reception, enabling comparison with device transmission time to calculate network latency and system processing efficiency.",
       "type": "string",
       "valid_type": "datetime_string_t",
       "dataSource": [
@@ -695,7 +695,7 @@
     "severity": {
       "label": "Severity Level",
       "requirement": "REQUIRED",
-      "description": "Indicates the severity level of a security threat for logs or alerts. This field is an integer value ranging from 0 to 10, with each value corresponding to a specific threat level: 0 indicates no risk, 1-3 indicate low severity, 4-6 indicate medium severity, 7-9 indicate high severity, and 10 indicates critical severity.",
+      "description": "Indicates the severity level of security threats in logs or alerts. This field is an integer value ranging from 0 to 10, with each value corresponding to a specific threat level: 0 indicates no risk, 1-3 indicates low severity, 4-6 indicates medium severity, 7-9 indicates high severity, and 10 indicates critical severity. Purpose: provides a quantifiable measure of threat severity for security events, enabling rapid prioritization of alerts and response strategies based on numerical ranges.",
       "type": "integer",
       "valid_type": "integer_t",
       "dataSource": [
@@ -707,7 +707,7 @@
     "catOutcome": {
       "label": "Category Outcome",
       "requirement": "REQUIRED",
-      "description": "This field is used to indicate the final result status of an event operation or attack. Its value is a predefined enumeration type, with current main options including: OK (indicating successful operation), FAIL (indicating failed operation), and Attempt (indicating an attempted operation). The value must be strictly limited to the enumeration range defined by the system.",
+      "description": "This field identifies the final result status of an event operation or attack. Its value is a predefined enumeration type, with current primary options including: OK (indicating successful operation), FAIL (indicating failed operation), and Attempt (indicating tentative operation). The value must strictly adhere to the system-defined enumeration range. Purpose: clarifies the final result status of event operations or attacks (success/failure/attempt), facilitating threat assessment and response decision-making in conjunction with attack effectiveness.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -733,7 +733,7 @@
     "logType": {
       "label": "Log Type",
       "requirement": "REQUIRED",
-      "description": "This field identifies the functional or object entity classification of the log event. Its value is a predefined enumeration string, such as: alert (alert logs), traffic (network communication logs), process (process operation logs), command (command execution logs), file (file operation logs), etc.",
+      "description": "This field identifies the functional or entity classification of log events. Its value is a predefined enumeration string, such as: alert (alert logs), traffic (network communication logs), process (process operation logs), command (command execution logs), file (file operation logs), etc. Purpose: clarifies the functional or entity classification of log events (e.g., alerts, network traffic) and facilitates quick filtering and analysis of specific types of behavioral data by business scenarios.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -835,7 +835,7 @@
     "opType": {
       "label": "Operation Type",
       "requirement": "RECOMMENDED",
-      "description": "Operation type, indicating the specific action performed on the target object in the event. This field is an enumeration type, and its value must be a predefined operation type string, such as: read, write, create, delete, modify, etc.",
+      "description": "Operation type, indicating the specific action performed on the target object during an event. This field is an enumeration type, and its value must be a predefined operation type string, such as: read, write, create, delete, modify, etc. Purpose: clarifies the specific actions performed on the target object (e.g., read, write, delete), facilitating multi-dimensional log statistical analysis, behavior modeling, and abnormal operation monitoring, supporting compliance auditing and security policy optimization.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -965,7 +965,7 @@
     "dataSourceAddress": {
       "label": "Data Source Address",
       "requirement": "RECOMMENDED",
-      "description": "Data source address refers to the network address of the device providing the data. This field must be in a valid IP address format, supporting both IPv4 and IPv6 addresses. IPv4 addresses use dotted-decimal notation (e.g., 192.168.1.5), while IPv6 addresses use colon-separated hexadecimal format.",
+      "description": "Data source address refers to the network address of the device providing the data. This field must be in valid IP address format, supporting both IPv4 and IPv6 addresses. IPv4 addresses use dotted-decimal notation (e.g., 192.168.1.5), while IPv6 addresses use colon-separated hexadecimal format. Purpose: identifies the network address of the source device for logs or alerts, enabling analysts to quickly locate data senders and supporting security event tracing and correlation analysis.",
       "type": "string",
       "valid_type": "ip_t",
       "dataSource": [
@@ -1017,7 +1017,7 @@
     "eventCount": {
       "label": "Event Count",
       "requirement": "RECOMMENDED",
-      "description": "The event count field is used to tally the occurrence of events of the same type or related events. It is typically a non-negative integer.",
+      "description": "The event count field is used to tally the occurrence frequency of the same type or related events, typically as a non-negative integer. Purpose: clarifies the occurrence count of identical events, facilitates identification of high-frequency anomalies such as brute-force attacks and DDoS, and supports attack severity assessment and behavioral pattern analysis.",
       "type": "long",
       "valid_type": "long_t",
       "dataSource": [

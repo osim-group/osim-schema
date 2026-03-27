@@ -8,21 +8,21 @@
     "incidentId": {
       "label": "Incident ID",
       "requirement": "REQUIRED",
-      "description": "The Event ID is a globally unique identifier for security incidents, typically generated using non-repetitive algorithms such as UUID or timestamp sequences to ensure its uniqueness.",
+      "description": "Event ID is a globally unique identifier for security incidents, typically generated using non-repeating algorithms such as UUID or timestamp sequences to ensure uniqueness. Purpose: provides a globally unique identifier for security incidents, facilitating full lifecycle event tracking and correlation analysis.",
       "type": "string",
       "valid_type": "string_t"
     },
     "incidentName": {
       "label": "Incident Name",
       "requirement": "REQUIRED",
-      "description": "This field is used to identify the brief summary name of the security event.",
+      "description": "This field is used to identify the brief summary name of a security incident. Purpose: clarifies the brief summary name of security incidents, enabling security personnel to quickly understand the incident overview.",
       "type": "string",
       "valid_type": "string_t"
     },
     "incidentLevel": {
       "label": "Incident Level",
       "requirement": "REQUIRED",
-      "description": "Severity level of a security event, used to assess the impact scope and urgency of the incident. The value range is an enumeration type with the following options: Critical, High, Medium, Low. Strictly use the provided enumeration values.",
+      "description": "The severity level of a security event, used to assess the impact scope and urgency of the incident. The value range is an enumeration type with options including: Critical, High, Medium, Low (must strictly use the specified enum values). This classification clarifies the severity level of security events and directly influences response prioritization and resource allocation strategies.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -47,7 +47,7 @@
     "incidentStatus": {
       "label": "Incident Status",
       "requirement": "REQUIRED",
-      "description": "Indicates the current processing status of the security event in the response lifecycle. This field is of enumeration type, and its value must be a predefined string. Optional values include: Analysising (Analyzing), Error (Error), Ignore (Ignored), Pending (Pending), Disposed (Disposed).",
+      "description": "Indicates the current processing status of a security incident within the response lifecycle. This field is of enumeration type and must be one of the predefined string values. Valid options include: Analysising (Analyzing), Error (Error), Ignore (Ignored), Pending (Pending), Disposed (Disposed). Purpose: clarifies the processing stage of the security incident in the response lifecycle, facilitating tracking of incident resolution progress and status transitions.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -76,7 +76,7 @@
     "incidentType": {
       "label": "Incident Type",
       "requirement": "REQUIRED",
-      "description": "The security event type field is used to identify the primary attack classification and technical category of a security event, represented in a hierarchical path format. This field is of enumeration type and must be selected from predefined optional values, with each value being a string-formatted path.",
+      "description": "The security event type field is used to identify the primary attack classification and technical category of a security event, represented in a hierarchical path format. This field is of enumeration type and must be selected from predefined options, with each value being a string-formatted path. Purpose: clearly identifies the primary attack classification and technical category of security events, facilitating event categorization and priority assessment.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -389,7 +389,7 @@
     "latestActivityTime": {
       "label": "Latest Activity Time",
       "requirement": "RECOMMENDED",
-      "description": "This field records the timestamp of the last activity or alert trigger in the security event. The format must be a standard datetime string, with specific requirements as follows: yyyy-mm-dd HH:mm:ss, for example, 2024-12-27 19:28:22.",
+      "description": "This field records the timestamp of the last activity or alert trigger in a security event. The format must be a standard datetime string formatted as: yyyy-mm-dd HH:mm:ss (e.g., 2024-12-27 19:28:22). Purpose: precisely identifies the last activity time of an event, facilitating freshness assessment and dynamic adjustment of response priorities.",
       "type": "string",
       "valid_type": "datetime_string_t"
     },
@@ -410,7 +410,7 @@
     "closeReason": {
       "label": "Close Reason",
       "requirement": "RECOMMENDED",
-      "description": "This field is used to record the specific reason and resolution status for closing a security incident. The value should be of string type and concisely describe the reason for closing the event.",
+      "description": "This field records the specific reason and resolution status for closing a security incident. The value is of string type and should concisely describe the reason for closure. Purpose: provides clear documentation of incident closure reasons, facilitating retrospective analysis of resolution outcomes and optimization of response processes.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -431,14 +431,14 @@
     "alertDevices": {
       "label": "Alert Devices",
       "requirement": "RECOMMENDED",
-      "description": "The alert source device field records a collection of security devices and sensor information that generated the alert, formatted as a string array. Each array element should be a string describing the device name and identification information, typically including key details such as device name and IP address.",
+      "description": "The alert source device field records a collection of security devices and sensor information that generated the alert, formatted as a string array. Each array element should be a string describing the device name and identification information, typically including key details such as the device name and IP address. Purpose: clarifies the name and identification information of the alert-generating device, facilitating attack source localization and monitoring device coverage assessment.",
       "type": "array",
       "valid_type": "string_t"
     },
     "isInternetAttack": {
       "label": "Is Internet Attack",
       "requirement": "RECOMMENDED",
-      "description": "This field is used to identify whether the attack source originates from an external network on the internet. The field type is boolean, with possible values of true or false, where true indicates the attack source is from the internet, and false indicates the attack source is not from the internet.",
+      "description": "This field identifies whether the attack source originates from an external internet network. The field type is boolean, with possible values of true or false, where true indicates an internet-based attack source and false indicates a non-internet-based attack source. Purpose: clarifies the attack source's internet origin, facilitating rapid attack type classification and targeted defense strategy formulation.",
       "type": "boolean",
       "valid_type": "boolean_t"
     },
@@ -466,14 +466,14 @@
     "alertIds": {
       "label": "Alert ID List",
       "requirement": "RECOMMENDED",
-      "description": "A collection of unique identifiers for all alerts associated with the security event. This field is a string array, where each element should be a string representing the unique identifier of an alert.",
+      "description": "A collection of unique identifiers for all alerts associated with the security incident. This field is a string array, where each element should be a string representing the unique identifier of an alert. Purpose: clarifies the mapping between the security incident and the original alerts, facilitating quick correlation and traceback of specific alert details via unique identifiers.",
       "type": "array",
       "valid_type": "string_t"
     },
     "alertTypes": {
       "label": "Alert Type List",
       "requirement": "RECOMMENDED",
-      "description": "A collection of all alert classification types associated with the recorded security event. The field value is a string array, where each array element represents an alert classification type string.",
+      "description": "A collection of all alert classification types associated with the security event. The field value is a string array, with each element representing an alert classification type string. Purpose: clarifies the diversity and coverage of attack methods, facilitating rapid assessment of the event's comprehensive impact and handling priority through alert type aggregation.",
       "type": "array",
       "valid_type": "string_t"
     },
@@ -487,28 +487,28 @@
     "attacker": {
       "label": "Attacker",
       "requirement": "RECOMMENDED",
-      "description": "Attackers refer to the collection of all unique source IP addresses used in attack activities, serving to identify the origin of the attack. This field is of array type, where each element must comply with IP address format requirements, i.e., a valid IPv4 or IPv6 address.",
+      "description": "Attackers refer to the collection of all unique source IP addresses used in attack activities, serving to identify attack origins. This field is of array type, where each element must comply with IP address format requirements, i.e., valid IPv4 or IPv6 addresses. Purpose: clarifies all source IP addresses involved in attack activities, facilitating precise identification of attack sources and enabling threat blocking and traceability analysis.",
       "type": "array",
       "valid_type": "ip_t"
     },
     "victim": {
       "label": "Victim IP Address Set",
       "requirement": "RECOMMENDED",
-      "description": "A set of all unique target IP addresses affected by the attack, stored in an array format. Each element in the array must be a valid IPv4 or IPv6 address. IPv4 addresses should be in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses must conform to standard representation (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334 or compressed format).",
+      "description": "A collection of all unique target IP addresses affected by the attack, stored in array format. Each element in the array must be a valid IPv4 or IPv6 address. IPv4 addresses should be in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses must conform to standard representation (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334 or compressed format). This helps clearly identify the scope of affected target IP addresses, enabling accurate impact assessment and guiding the formulation of emergency response measures.",
       "type": "array",
       "valid_type": "ip_t"
     },
     "srcAddrList": {
       "label": "Source IP Address List",
       "requirement": "RECOMMENDED",
-      "description": "This field records the set of all unique source IP addresses in a security event. The field value is a string array, where each array element must be a valid IPv4 or IPv6 address.",
+      "description": "This field records the set of all unique source IP addresses involved in the security incident. The field value is a string array, where each element must be a valid IPv4 or IPv6 address. Purpose: clarifies the IP distribution of all attack entry points in the security incident, facilitating attack path analysis and optimization of access control policies.",
       "type": "array",
       "valid_type": "ip_t"
     },
     "destAddrList": {
       "label": "Destination IP Address List",
       "requirement": "RECOMMENDED",
-      "description": "The destination IP list records the collection of all unique destination IP addresses in a security event. This field is of array type, where each element must be in a valid IPv4 or IPv6 address format.",
+      "description": "The destination IP list records the collection of all unique destination IP addresses in a security incident. This field is of array type, where each element must be a valid IPv4 or IPv6 address format. Purpose: clearly documents all unique destination IPs involved in the security incident, facilitating comprehensive identification of attack targets and recognition of critical affected systems.",
       "type": "array",
       "valid_type": "ip_t"
     },

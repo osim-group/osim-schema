@@ -1,61 +1,61 @@
 {
   "machineCode": {
     "label": "Machine Code",
-    "description": "The machine code serves as the unique identifier of the log source device (device ID), primarily used for device cascade tracing. The value of this field must maintain global uniqueness. If no existing device ID is available, hardware encoding or license-based information may be referenced for generation. In terms of format, it must be a string, with allowed characters including uppercase letters (A-Z), lowercase letters (a-z), and numbers (0-9). While there is no fixed length restriction, uniqueness and manageability should be ensured.",
+    "description": "The machine code serves as the unique identifier (device ID) of the log source device, primarily used for device cascading and tracking. This field value must maintain global uniqueness. If no existing device ID is available, it can be generated based on hardware encoding or license information. The format must be a string, allowing uppercase letters (A-Z), lowercase letters (a-z), and digits (0-9). While there is no fixed length restriction, uniqueness and manageability should be ensured. Purpose: clearly identifies the unique source device of logs, facilitating cross-node correlation and device-level traceability, while avoiding confusion caused by dynamic IP changes or duplicate hostnames.",
     "type": "string",
     "valid_type": "string_t"
   },
   "deviceName": {
     "label": "Device Name",
-    "description": "Device name, used to identify the name of the device that generates logs, and can add asset attributes (such as headquarters, subordinate, etc.)",
+    "description": "Device name, used to identify the name of the log-generating device, with optional asset attributes (e.g., headquarters, subordinate, etc.). Purpose: provides a readable identifier for the log-generating device, enabling operations and security personnel to quickly recognize the device.",
     "type": "string",
     "valid_type": "string_t"
   },
   "eventId": {
     "label": "Event ID",
-    "description": "The event ID is a globally unique identifier for log events, typically generated using non-repeating algorithms such as UUID or timestamp sequences. The format should be a standard UUID string, for example: 550e8400-e29b-41d4-a716-446655440000. It must be globally unique and non-repeating.",
+    "description": "Event ID is a globally unique identifier for log events, typically generated using non-repeating algorithms such as UUID or timestamp sequences. The format should be a standard UUID string, for example: 550e8400-e29b-41d4-a716-446655440000. It must be globally unique and non-repeating. Purpose: ensures a globally unique identifier for each event, enabling unique referencing and traceability of every log entry.",
     "type": "string",
     "valid_type": "string_t"
   },
   "name": {
     "label": "Summary Name",
-    "description": "The summary name is a brief title or identifier for logs or alerts, used for quick identification of event content. This field is of string type and should be kept concise and clear.",
+    "description": "The summary name is a brief title or identifier for logs or alerts, used for quick identification of event content. This field is of string type and should remain concise and clear. Purpose: clarifies the brief title of logs or alerts, facilitating quick identification of data content and improving classification efficiency.",
     "type": "string",
     "valid_type": "string_t"
   },
   "startTime": {
     "label": "Start Time",
-    "description": "This field records the precise time when the event activity began. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
+    "description": "This field records the precise timestamp when the event activity began. The timestamp must follow the standard datetime string format: yyyy-mm-dd HH:mm:ss. Purpose: identifies the exact occurrence time of the event, facilitating timeline analysis and attack reconstruction.",
     "type": "string",
     "valid_type": "datetime_string_t"
   },
   "endTime": {
     "label": "End Time",
-    "description": "The exact time when the event activity ends. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
+    "description": "The exact timestamp marking the end of an event activity. The time format must be a standard datetime string in yyyy-mm-dd HH:mm:ss format. Purpose: precisely identifies the event's end time, facilitating correlation with startTime to calculate event duration and activity windows.",
     "type": "string",
     "valid_type": "datetime_string_t"
   },
   "deviceReceiptTime": {
     "label": "Device Receipt Time",
-    "description": "This field records the precise time when the device collector locally receives and generates the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
+    "description": "This field records the precise timestamp when the device collector locally receives and generates the log event. The time format must be a standard datetime string in yyyy-mm-dd HH:mm:ss format. Purpose: clarifies the exact moment when the device collector receives and generates log events locally, facilitating analysis of transmission delays and timeliness from log generation to external delivery.",
     "type": "string",
     "valid_type": "datetime_string_t"
   },
   "collectorReceiptTime": {
     "label": "Collector Receipt Time",
-    "description": "The exact time when the collector receives the log event. The time format must be a standard datetime string in the format of yyyy-mm-dd HH:mm:ss.",
+    "description": "The exact timestamp when the collector receives the log event, which must be in the standard datetime string format: yyyy-mm-dd HH:mm:ss. Purpose: provides precise timestamp for log event reception, enabling comparison with device transmission time to calculate network latency and system processing efficiency.",
     "type": "string",
     "valid_type": "datetime_string_t"
   },
   "severity": {
     "label": "Severity Level",
-    "description": "Indicates the severity level of a security threat for logs or alerts. This field is an integer value ranging from 0 to 10, with each value corresponding to a specific threat level: 0 indicates no risk, 1-3 indicate low severity, 4-6 indicate medium severity, 7-9 indicate high severity, and 10 indicates critical severity.",
+    "description": "Indicates the severity level of security threats in logs or alerts. This field is an integer value ranging from 0 to 10, with each value corresponding to a specific threat level: 0 indicates no risk, 1-3 indicates low severity, 4-6 indicates medium severity, 7-9 indicates high severity, and 10 indicates critical severity. Purpose: provides a quantifiable measure of threat severity for security events, enabling rapid prioritization of alerts and response strategies based on numerical ranges.",
     "type": "integer",
     "valid_type": "integer_t"
   },
   "logType": {
     "label": "Log Type",
-    "description": "This field identifies the functional or object entity classification of the log event. Its value is a predefined enumeration string, such as: alert (alert logs), traffic (network communication logs), process (process operation logs), command (command execution logs), file (file operation logs), etc.",
+    "description": "This field identifies the functional or entity classification of log events. Its value is a predefined enumeration string, such as: alert (alert logs), traffic (network communication logs), process (process operation logs), command (command execution logs), file (file operation logs), etc. Purpose: clarifies the functional or entity classification of log events (e.g., alerts, network traffic) and facilitates quick filtering and analysis of specific types of behavioral data by business scenarios.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -151,7 +151,7 @@
   },
   "opType": {
     "label": "Operation Type",
-    "description": "Operation type, indicating the specific action performed on the target object in the event. This field is an enumeration type, and its value must be a predefined operation type string, such as: read, write, create, delete, modify, etc.",
+    "description": "Operation type, indicating the specific action performed on the target object during an event. This field is an enumeration type, and its value must be a predefined operation type string, such as: read, write, create, delete, modify, etc. Purpose: clarifies the specific actions performed on the target object (e.g., read, write, delete), facilitating multi-dimensional log statistical analysis, behavior modeling, and abnormal operation monitoring, supporting compliance auditing and security policy optimization.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -275,13 +275,13 @@
   },
   "srcPort": {
     "label": "Source Port",
-    "description": "The source port refers to the port number of the network connection initiator, used to identify the application or service initiating the communication. The port number must be an integer ranging from 0 to 65535, where 0 is typically reserved, 1 to 1023 are well-known ports, 1024 to 49151 are registered ports, and 49152 to 65535 are dynamic or private ports.",
+    "description": "The source port refers to the port number of the network connection initiator, used to identify the application or service initiating the communication. The port number must be an integer ranging from 0 to 65535, where 0 is typically reserved, 1-1023 are well-known ports, 1024-49151 are registered ports, and 49152-65535 are dynamic or private ports. This clarifies the service port of the connection initiator, facilitating identification of communication source application types, tracking network sessions, and supporting attack path analysis and service anomaly detection.",
     "type": "integer",
     "valid_type": "integer_t"
   },
   "destPort": {
     "label": "Destination Port",
-    "description": "The destination port is the port number of the receiving end in a network connection, used to identify the receiving application or service. This field is of integer type, with a valid range of 0-65535. Ports 0-1023 are well-known ports, 1024-49151 are registered ports, and 49152-65535 are dynamic or private ports.",
+    "description": "The destination port is the port number of the receiving end in a network connection, used to identify the receiving application or service. This field is of integer type with a valid range of 0-65535, where 0-1023 are well-known ports, 1024-49151 are registered ports, and 49152-65535 are dynamic or private ports. Purpose: clarifies the service port number of the network connection receiver, facilitates identification of target application services and session flows, and supports threat analysis and access control policy validation.",
     "type": "integer",
     "valid_type": "integer_t"
   },
@@ -401,31 +401,31 @@
   },
   "processId": {
     "label": "Process ID",
-    "description": "The Process ID (PID) is a unique numeric identifier assigned by the operating system to a process, used to uniquely identify a running process within the OS. This field is of string type, typically composed of numeric characters, with its length and specific value determined by the operating system and process state.",
+    "description": "Process ID (PID) is a unique numeric identifier assigned by the operating system to a running process, used to distinctly identify it within the OS. This field is of string type, typically composed of digits, with length and specific values determined by the OS and process state. Purpose: clarifies the unique numeric identifier assigned by the OS to a process, enabling precise correlation of all behavioral logs for that process, serving as the core relational field for constructing a comprehensive process behavior profile.",
     "type": "string",
     "valid_type": "string_t"
   },
   "shareName": {
     "label": "Share Name",
-    "description": "The name of the shared resource, used to identify network-accessible shared resources (e.g., file shares, printers). This field is of string type and typically follows the Universal Naming Convention (UNC) for Windows network shares.",
+    "description": "The name of the shared resource, used to identify network-accessible shared resources (e.g., file shares, printers). This field is of string type and typically follows the Universal Naming Convention (UNC) for Windows network shares. Purpose: clarifies the specific name of the shared resource, facilitating the establishment of access baselines, monitoring sharing activities, and defending against attacks targeting shared resources.",
     "type": "string",
     "valid_type": "string_t"
   },
   "responseCode": {
     "label": "Response Code",
-    "description": "The response code is the status code returned by the server after a network request, indicating the processing result of the request.",
+    "description": "The response code is the status code returned by the server after a network request, indicating the processing result of the request. Purpose: clarifies the status result of server request processing, facilitates quick determination of request success or failure, and supports monitoring of abnormal requests and server status.",
     "type": "string",
     "valid_type": "string_t"
   },
   "requestUrl": {
     "label": "Request URL",
-    "description": "This field represents the portion of the HTTP request URL starting from the root path '/' up to the query string '?', used to identify the requested resource path. The value must be a valid URL path string, typically starting with '/', and should not include the protocol, domain name, port, or query parameters (i.e., content after '?'). The string content should comply with general URL path specifications and may include letters, numbers, and specific safe characters (such as -._~!$&'()*+,;=:@%).",
+    "description": "This field represents the portion of the HTTP request URL starting from the root path '/' up to the query string '?', used to identify the requested resource path. The value must be a valid URL path string, typically beginning with '/', and should not include protocol, domain, port, or query parameters (i.e., content after '?'). The string must comply with general URL path specifications and may contain letters, numbers, and specific safe characters (e.g., -._~!$&'()*+,;=:@%). Purpose: clarifies the requested resource path for quick interface/resource location, supporting access analysis, troubleshooting, and configuration management.",
     "type": "string",
     "valid_type": "string_t"
   },
   "requestDomain": {
     "label": "Request Domain",
-    "description": "Domain name information identifying the target of the network request. The format must be a valid domain name (e.g., \"www.example.com\") compliant with RFC 1035 standards, consisting of letters, numbers, and hyphens, with each level separated by dots.",
+    "description": "Domain name information identifying the target of network requests, required to be in valid domain name format (e.g., \"www.example.com\") compliant with RFC 1035 standards, consisting of letters, numbers, and hyphens, with dot-separated labels. This clearly identifies the target domain of network requests, enabling administrators to quickly recognize access targets and sources, supporting access management and security analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -455,19 +455,19 @@
   },
   "processMd5": {
     "label": "Process MD5 Hash",
-    "description": "MD5 hash of the process executable file, used for uniquely identifying and verifying files. This value is a 32-character hexadecimal string composed of digits 0-9 and lowercase letters a-f, and its format must comply with the standard MD5 digest algorithm output format.",
+    "description": "The MD5 hash value of the process executable file, used for uniquely identifying and verifying files. This value is a 32-character hexadecimal string composed of digits 0-9 and lowercase letters a-f, and must conform to the standard MD5 digest algorithm output format. Purpose: uniquely identifies the hash of the process executable file, facilitating matching with known malicious files in threat intelligence and supporting file-level threat detection and behavior tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "pipeName": {
     "label": "Pipe Name",
-    "description": "This field is used to identify the full path name of a Windows named pipe or SMB shared pipe. The format follows the UNC path convention, typically starting with double backslashes `\\\\`, followed by the hostname or IP address and the shared resource path, such as `\\\\server\\pipe\\pipename` or `\\\\192.168.56.20\\IPC$`. The field is of string type and must comply with the standard naming conventions for Windows named pipes or SMB shares.",
+    "description": "This field identifies the full path name of a Windows named pipe or SMB shared pipe. It follows the UNC path format, typically starting with double backslashes `\\\\`, followed by the hostname or IP address and the shared resource path, such as `\\\\server\\pipe\\pipename` or `\\\\192.168.56.20\\IPC$`. The field is of string type and must comply with the standard naming conventions for Windows named pipes or SMB shares. Purpose: clarifies the full path name of Windows named pipes or SMB shared pipes, facilitating the identification of anomalous inter-process communication and lateral movement attacks, and supporting lateral penetration tracking.",
     "type": "string",
     "valid_type": "string_t"
   },
   "payload": {
     "label": "Payload",
-    "description": "This field represents the malicious payload content transmitted during the attack activity, such as injected code or malicious data..",
+    "description": "This field represents the malicious payload content transmitted during attack activities, such as injected code or malicious data. Purpose: clarifies the malicious payload content transmitted during attacks, facilitates identification of malicious code and attack scripts implanted by attackers, and supports attack intent analysis and forensic investigation.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -479,7 +479,7 @@
   },
   "dnsType": {
     "label": "DNS Operation Type",
-    "description": "DNS operation type, indicating the operation direction type of DNS protocol messages. This field is an enumeration type with possible values including: query and response.",
+    "description": "DNS operation type, indicating the operational direction type of DNS protocol messages. This field is an enumeration type with possible values including: query and response. Purpose: clarifies the operational direction type of DNS protocol messages (query or response), facilitates accurate identification of DNS tunneling, malicious domain resolution, and data exfiltration activities, supporting network activity auditing and covert channel detection.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -519,7 +519,7 @@
   },
   "httpReferer": {
     "label": "HTTP Referer URL",
-    "description": "The source page URL of the HTTP request, which is the complete address of the page from which the browser sent the current request. The format must comply with URL specifications, typically starting with a protocol (such as http:// or https://) and including a domain name along with optional components such as path and query parameters.",
+    "description": "The source page URL of the HTTP request, which is the complete address of the page from which the browser sent the current request. The format must comply with URL specifications, typically starting with a protocol (e.g., http:// or https://) and including a domain name along with optional path and query parameters. Purpose: identifies the source page URL of HTTP requests to facilitate detection of cross-site request forgery (CSRF) attacks and abnormal access sources, supporting web attack traceability and user behavior analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -591,37 +591,37 @@
   },
   "serviceName": {
     "label": "Service Name",
-    "description": "Service name, referring to the identifier of a service running in a system or application.",
+    "description": "Service name, referring to the identifier of a running service within a system or application. Purpose: clarifies service identification in systems/applications, facilitates detection of abnormal service startups and malicious service installations, and supports service baseline construction and attack traceability.",
     "type": "string",
     "valid_type": "string_t"
   },
   "processName": {
     "label": "Process Name",
-    "description": "The base name of the process executable file, excluding path information.",
+    "description": "The base name of the process executable file, excluding path information. Purpose: clarifies the base name of the process executable, facilitating the detection of malicious activities such as system process impersonation, and supports process behavior correlation analysis and attack chain tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "md5": {
     "label": "File MD5 Hash",
-    "description": "File MD5 value, representing the hash value of file content calculated using the MD5 algorithm. This value must be a 32-character hexadecimal string, case-insensitive, used to uniquely identify file content.",
+    "description": "File MD5 value, representing the hash value of file content calculated using the MD5 algorithm. This value must be a 32-character hexadecimal string (case-insensitive) and serves as a unique identifier for file content. Purpose: clarifies the MD5 hash of file content, facilitating matching with known malicious files in threat intelligence to support precise detection and behavior tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "parentProcessName": {
     "label": "Parent Process Name",
-    "description": "This field represents the executable file name of the parent process that created the current process. The field should exclude path information and retain only the pure name.",
+    "description": "This field represents the executable file name of the parent process that created the current process. It should exclude path information and retain only the pure name. Purpose: clarifies the parent process name that created the current process, facilitates identification of abnormal program call chains, and supports attack chain reconstruction and behavioral pattern analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "parentProcessId": {
     "label": "Parent Process ID",
-    "description": "The parent process ID is a unique numeric identifier assigned by the operating system to the parent process, typically a non-negative integer.",
+    "description": "The parent process ID is a unique numeric identifier assigned by the operating system to the parent process, typically a non-negative integer. Purpose: clarifies the unique numeric identifier of the parent process, facilitates associating creation relationships between parent and child processes and identifying abnormal inheritance behaviors, supporting attack path reconstruction and process behavior chain analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "parentProcessMd5": {
     "label": "Parent Process MD5 Hash",
-    "description": "MD5 hash of the parent process executable file, used to uniquely identify the file. Format requirements: must be a 32-character hexadecimal string consisting of digits 0-9 and uppercase letters A-F, without hyphens or other separators.",
+    "description": "The MD5 hash value of the parent process executable file, used to uniquely identify the file. Format requirements: must be a 32-character hexadecimal string consisting of digits 0-9 and uppercase letters A-F, without hyphens or other separators. Purpose: clarifies the MD5 hash of the parent process file, facilitates matching known malicious tools and correlating behaviors of the same parent process across multiple logs, supporting detection of living-off-the-land techniques and attack chain reconstruction.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -633,7 +633,7 @@
   },
   "eventCount": {
     "label": "Event Count",
-    "description": "The event count field is used to tally the occurrence of events of the same type or related events. It is typically a non-negative integer.",
+    "description": "The event count field is used to tally the occurrence frequency of the same type or related events, typically as a non-negative integer. Purpose: clarifies the occurrence count of identical events, facilitates identification of high-frequency anomalies such as brute-force attacks and DDoS, and supports attack severity assessment and behavioral pattern analysis.",
     "type": "long",
     "valid_type": "long_t"
   },
@@ -645,31 +645,31 @@
   },
   "newThreadId": {
     "label": "New Thread ID",
-    "description": "A system-assigned unique numeric identifier for newly created threads. The content should be a valid numeric sequence, typically representing a non-negative integer value assigned by the operating system to the thread.",
+    "description": "A system-assigned unique numeric identifier for newly created threads. The content should be a valid numeric sequence, typically representing a non-negative integer value assigned by the operating system. Purpose: clarifies the unique numeric identifier of newly created threads, facilitates correlating thread execution behavior with detecting anomalous thread activities, and supports thread injection and Rootkit attack analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "targetObject": {
     "label": "Target Object",
-    "description": "Identifies the target system object directly acted upon by the event operation, typically used to record the path of system resources being operated on, registry key values, file paths, etc. The content should clearly identify the target object, such as a Windows registry path example: HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run\\New Item #1.",
+    "description": "Identifies the target system object directly affected by the event operation, typically used to record system resource paths, registry key values, file paths, etc. The content should clearly identify the target object, such as a Windows registry path example: HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run\\New Item #1. Purpose: clarifies the path of the operated system resource, facilitating the identification of attack behaviors like persistence backdoors, privilege maintenance, and configuration tampering, supporting the reconstruction of attack techniques and the identification of compromise points.",
     "type": "string",
     "valid_type": "string_t"
   },
   "objectType": {
     "label": "Object Type",
-    "description": "Classification type of the system object, such as Directory, File, User, etc. This field is of string type and is used to clearly distinguish between different types of resource objects in the system.",
+    "description": "Classification type of system objects, such as Directory, File, User, etc. This field is of string type and is used to clearly distinguish between different types of resource objects in the system. Purpose: clarifies the type classification of operation objects, facilitates focusing on abnormal behaviors targeting specific system resources, and supports cross-log event correlation and attack technique identification.",
     "type": "string",
     "valid_type": "string_t"
   },
   "taskName": {
     "label": "Task Name",
-    "description": "Task name or title, used to identify and distinguish specific tasks.",
+    "description": "Task name or title, used to identify and recognize specific tasks. Purpose: clarifies task identification and naming characteristics, facilitates recognition of persistence techniques like scheduled tasks and lateral movement methods, and supports subsequent behavior correlation and attack chain reconstruction.",
     "type": "string",
     "valid_type": "string_t"
   },
   "taskContent": {
     "label": "Task Content",
-    "description": "The task content field is used to describe the specific content or configuration information of the scheduled task, typically including commands, script paths, and parameters.",
+    "description": "The task content field describes the specific content or configuration information of scheduled tasks, typically including commands, script paths, and parameters. Purpose: clarifies command execution details, script paths, and parameters to facilitate identification of malicious persistence behaviors and abnormal command scheduling, supporting persistence mechanism tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -681,7 +681,7 @@
   },
   "direction": {
     "label": "Data Flow Direction",
-    "description": "Classify data flow direction based on source and destination IP addresses. This field is an enumeration type indicating the direction of data flow between internal and external networks, with specific values and meanings as follows: 11 represents external network accessing external network; 10 represents external network accessing internal network; 01 represents internal network accessing external network; 00 represents internal network accessing internal network.",
+    "description": "Network location classification data flow direction based on source and destination IP addresses. This field is an enumeration type indicating the flow direction between internal and external networks, with specific values and meanings as follows: 11 represents external-to-external network access; 10 represents external-to-internal network access; 01 represents internal-to-external network access; 00 represents internal-to-internal network access. Purpose: clarifies the internal/external network flow characteristics of network traffic, facilitates identification of abnormal external connections, attack scanning, and lateral movement behaviors, and supports access baseline modeling and attack path analysis.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -705,7 +705,7 @@
   },
   "destProcessId": {
     "label": "Destination Process ID",
-    "description": "Target process ID, referring to the PID of the target process in cross-process operations or injection operations. Its value is a process identifier, typically represented as a non-negative integer string.",
+    "description": "Target process ID, referring to the PID of the target process in cross-process operations or injection operations. Its value is a process identifier, typically represented as a non-negative integer string. Purpose: uniquely identifies the target process in cross-process operations, facilitating precise targeting of code injection, DLL hijacking, and other attack vectors, supporting fileless attack detection and attack chain reconstruction.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -717,7 +717,7 @@
   },
   "signatureStatus": {
     "label": "Signature Status",
-    "description": "This field indicates the result status of digital signature verification. The value must be one of the following enumerated values: Valid, Invalid, Unsigned, or Unknown.",
+    "description": "This field indicates the result status of digital signature verification. The value must be one of the following enumerated values: Valid, Invalid, Unsigned, or Unknown. Purpose: clarifies the result status of digital signature verification (Valid/Invalid/Unsigned/Unknown), facilitating quick differentiation between trusted and suspicious programs, and effectively identifying malicious exploitation of forged signatures, invalid certificates, and execution of unsigned malware.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -747,7 +747,7 @@
   },
   "appProtocol": {
     "label": "Application Protocol",
-    "description": "The application protocol field indicates the protocol type used at the application layer of the OSI model. This field is of enumeration type, and its value range should be within a predefined list of protocol identifiers.",
+    "description": "The application protocol field indicates the protocol type used at the application layer of the OSI model. This field is of enumeration type, and its value range should be within a predefined list of protocol identifiers. Purpose: clarifies the application layer protocol type in network communication, facilitating rapid detection of protocol usage on non-standard ports, protocol tunneling, and attacks targeting specific protocols.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -1011,7 +1011,7 @@
   },
   "softwareName": {
     "label": "Software Name",
-    "description": "This field is used to identify the official name of the software product installed on the system or device.",
+    "description": "This field is used to identify the official name of the software product installed on a system or device. Purpose: clearly identifies the official name of the software product installed on the device, enabling administrators to quickly grasp the software asset status.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1029,13 +1029,13 @@
   },
   "ldapOpCode": {
     "label": "LDAP Operation Code",
-    "description": "Operation type code for Lightweight Directory Access Protocol (LDAP) requests, typically represented as a hexadecimal string.",
+    "description": "Operation type code for Lightweight Directory Access Protocol (LDAP) requests, typically in hexadecimal string format. Purpose: identifies LDAP operation codes and sequences to precisely detect domain information enumeration, LDAP injection attacks, and abnormal directory modifications, supporting domain controller security monitoring and attack chain tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "ldapOpType": {
     "label": "LDAP Operation Type",
-    "description": "This field indicates the specific operation type of the Lightweight Directory Access Protocol (LDAP) request. The value must be a predefined enumerated string, with valid values including but not limited to: bind (bind operation), unbind (unbind operation), search (search operation), compare (compare operation), add (add operation).",
+    "description": "This field indicates the specific operation type of a Lightweight Directory Access Protocol (LDAP) request. The value must be a predefined enumerated string, with valid values including but not limited to: bind (binding operation), unbind (unbinding operation), search (search operation), compare (comparison operation), and add (addition operation). Purpose: clarifies LDAP operation types (e.g., search, add, modify) to facilitate precise identification of reconnaissance, privilege escalation, and persistence attacks in domain environments, supporting domain controller security monitoring and attack chain tracing.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -1139,19 +1139,19 @@
   },
   "listenPort": {
     "label": "Listen Port",
-    "description": "The listening port is the network port number monitored by the service process, used to receive and handle network connection requests. The port number must be an integer type, with a valid range from 0 to 65535.",
+    "description": "The listening port is the network port number monitored by the service process, used to receive and handle network connection requests. The port number must be an integer type, ranging from 0 to 65535. Purpose: clearly identifies the network port number used by the service process, facilitating administrators in monitoring port occupancy and supporting network configuration management and security risk investigation.",
     "type": "integer",
     "valid_type": "integer_t"
   },
   "accountType": {
     "label": "Account Type",
-    "description": "Account type refers to the classification of user accounts based on functionality, permissions, and usage scenarios. This field is of string type and typically contains descriptive text indicating the account type, such as 'VPN account', 'system administrator account', 'regular user account', etc. The specific type name should be filled in according to the actual business scenario.",
+    "description": "Account type refers to the classification of user accounts based on functionality, permissions, and usage scenarios. This field is of string type, typically containing descriptive text values such as 'VPN account', 'system administrator account', 'regular user account', etc. The specific type name should be filled according to actual business scenarios. Purpose: clearly identifies the classification of user accounts by functionality, permissions, and usage context, enabling administrators to quickly distinguish account purposes and privilege levels, thereby supporting permission management and security auditing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "fileName": {
     "label": "File Name",
-    "description": "The base name of the file, excluding path information. Format requirements: string type, with a maximum length of 255 characters. Supports character sets allowed for filenames by common operating systems (such as letters, numbers, underscores, dots, hyphens, etc.). System reserved characters and path separators should be avoided.",
+    "description": "The base name of the file, excluding path information. Format requirements: string type, with a maximum length of 255 characters, supporting common operating system-allowed filename character sets (e.g., letters, numbers, underscores, dots, hyphens, etc.). System-reserved characters and path separators should be avoided. Purpose: clearly identifies the base name of the file (excluding the path), facilitating quick identification, search, and file location by administrators.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1169,7 +1169,7 @@
   },
   "webTitle": {
     "label": "Web Title",
-    "description": "Website title, referring to the text content of a webpage's title. The field type is string, and the content is typically sourced from the <title> tag in the HTML document.",
+    "description": "Website title refers to the text content of a webpage's title, typically sourced from the <title> tag in HTML documents. Purpose: clearly identifies the title text content of webpages or sites, enabling administrators to quickly recognize business systems and access points.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1181,13 +1181,13 @@
   },
   "developer": {
     "label": "Developer Name",
-    "description": "This field is used to identify the development entity name of mobile applications, software products, or system components, typically referring to the official name of a company, organization, or individual.",
+    "description": "This field identifies the development entity name of mobile applications, software products, or system components, typically referring to the official name of a company, organization, or individual. Purpose: clearly identifies the development entity of software or applications, facilitating asset traceability and supply chain risk management.",
     "type": "string",
     "valid_type": "string_t"
   },
   "osName": {
     "label": "Operating System Name",
-    "description": "This field indicates the specific distribution name and version identification information of the operating system used by the target device or system. The format is a string, typically containing the operating system name and version number.",
+    "description": "This field indicates the specific distribution name and version identifier of the operating system used by the target device or system. The format is a string, typically containing the OS name and version number. Purpose: clearly records the device's operating system information, facilitating vulnerability assessment and patch management.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1199,7 +1199,7 @@
   },
   "appletName": {
     "label": "Applet Name",
-    "description": "The name identifier of the mini-program product, used to distinguish between different mini-program products.",
+    "description": "The name identifier of the mini-program product, used to distinguish between different mini-program products. Purpose: specifies the unique name identifier of the mini-program product, facilitating application-layer monitoring and asset management.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1211,7 +1211,7 @@
   },
   "osType": {
     "label": "Operating System Type",
-    "description": "The category to which the operating system belongs. This is an enumerated field, and the value must be one of the following predefined options: Windows (indicating Windows OS), Linux (indicating Linux OS), Unix (indicating Unix OS), MacOS (indicating macOS), Android (indicating Android OS).",
+    "description": "The category of the operating system. This is an enumerated field with allowed values restricted to the following predefined options: Windows (denoting Windows systems), Linux (denoting Linux systems), Unix (denoting Unix systems), MacOS (denoting macOS systems), Android (denoting Android systems). Purpose: clarifies the operating system category of assets, facilitates administrators' understanding of system distribution, and supports compatibility assessment and operational strategy formulation.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -1243,25 +1243,25 @@
   },
   "osVersion": {
     "label": "OS Version",
-    "description": "Operating system version number, describing the specific version information of the operating system running on the device. Typically composed of major version number, minor version number, revision number, and other components.",
+    "description": "Operating system version number, describing the specific version information of the OS running on the device. Typically composed of major version, minor version, and revision numbers. Purpose: clarifies the specific OS version details, enabling administrators to monitor system status accurately and supporting version management, security patches, and upgrade maintenance.",
     "type": "string",
     "valid_type": "string_t"
   },
   "kernelVersion": {
     "label": "Kernel Version",
-    "description": "Kernel version information, indicating the specific version number of the operating system kernel. It typically follows the format of major.minor.revision-release version.",
+    "description": "Kernel version information, indicating the specific version number of the operating system kernel. Typically follows the format of major.minor.revision-release. Purpose: clearly identifies the specific version of the OS kernel, enabling administrators to monitor the underlying system status and supporting security patch assessment and system stability management.",
     "type": "string",
     "valid_type": "string_t"
   },
   "deviceModel": {
     "label": "Device Model",
-    "description": "The device model is used to identify the product model code defined by the device manufacturer, precisely distinguishing between different hardware specifications, features, and configurations. Its value is a string, typically composed of letters, numbers, and specific symbols (such as hyphens or underscores).",
+    "description": "The device model is used to identify the product model code defined by the manufacturer, precisely distinguishing between different hardware specifications, features, and configurations. Its value is a string, typically composed of letters, numbers, and specific symbols (such as hyphens or underscores). Purpose: clearly identifies the manufacturer-defined product model code, enabling administrators to accurately track asset specifications and configurations, supporting operations management, asset verification, and procurement replacement.",
     "type": "string",
     "valid_type": "string_t"
   },
   "deviceVersion": {
     "label": "Device Version",
-    "description": "The device version identifies the complete version information of the device firmware, operating system, or embedded software. The version number typically follows a multi-segment numeric format, such as major version.minor version.revision number.build number, etc.",
+    "description": "The device version identifies the complete version information of the device firmware, operating system, or embedded software. Version numbers typically follow a multi-segment numeric format, such as major.minor.revision.build. Purpose: clearly identifies the specific version of device firmware or software, enabling administrators to track version status and supporting version tracing, security assessments, and upgrade maintenance.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1329,7 +1329,7 @@
   },
   "vmName": {
     "label": "Virtual Machine Name",
-    "description": "A human-readable identifier name for virtual machines in a virtualized environment, used to uniquely distinguish different VM instances. The format is string type, typically composed of letters, numbers, hyphens (-), or underscores (_).",
+    "description": "A human-readable identifier name for virtual machines in a virtualization environment, used to uniquely distinguish different VM instances. The format is string type, typically composed of letters, numbers, hyphens (-), or underscores (_). This clearly identifies the readable name of VMs in the virtualization environment, enabling administrators to quickly recognize and distinguish between different VM instances, supporting daily operations and resource management.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1341,13 +1341,13 @@
   },
   "storageInfo": {
     "label": "Storage Information",
-    "description": "Textual description of storage device configuration, capacity, and status information. The content should include key details such as device type, total capacity, used capacity, free capacity, and file system.",
+    "description": "Textual description of storage device configuration, capacity, and status information. The content should include key details such as device type, total capacity, used capacity, free capacity, and file system. Purpose: clarifies storage device configuration, capacity, and status information, facilitating monitoring of storage resource utilization and health status.",
     "type": "string",
     "valid_type": "string_t"
   },
   "containerName": {
     "label": "Container Name",
-    "description": "Custom identifier name for the container runtime instance, used to uniquely identify the container instance. Naming should comply with container runtime naming conventions, typically supporting combinations of letters, numbers, hyphens (-), and underscores (_).",
+    "description": "Custom identifier name for container runtime instances, used to uniquely identify container instances. Naming should comply with container runtime naming conventions, typically supporting combinations of letters, numbers, hyphens (-), and underscores (_). Purpose: provides clear, human-readable identification of containers, enabling administrators to quickly distinguish and locate specific container instances, supporting daily operations and resource management.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1433,7 +1433,7 @@
   },
   "commonName": {
     "label": "Common Name",
-    "description": "This field represents the Common Name (CN) in the certificate subject, typically the fully qualified domain name bound to the certificate. The value should be a string compliant with DNS naming conventions.",
+    "description": "This field represents the Common Name (CN) in the certificate subject, typically the fully qualified domain name bound to the certificate, whose value should be a string compliant with DNS naming conventions. Purpose: clarifies the fully qualified domain name bound to the certificate and facilitates verification of the SSL/TLS service identity and domain name matching relationship.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1445,7 +1445,7 @@
   },
   "cloudInstanceType": {
     "label": "Cloud Instance Type",
-    "description": "The cloud instance type represents the standardized specification classification of cloud computing instances, used to identify the resource allocation characteristics such as computing power, memory, and storage. This field is of enumeration type, and its value must be one of the predefined options, such as: generalPurpose (General Purpose), computeOptimized (Compute Optimized), memoryOptimized (Memory Optimized), storageOptimized (Storage Optimized), or gpuAccelerated (GPU Accelerated).",
+    "description": "The cloud instance type represents standardized specification classifications of cloud computing instances, used to identify resource allocation characteristics such as compute, memory, and storage. This field is of enumeration type, and its value must be one of the predefined options, such as: generalPurpose (general-purpose), computeOptimized (compute-optimized), memoryOptimized (memory-optimized), storageOptimized (storage-optimized), or gpuAccelerated (GPU-accelerated). Purpose: clarifies the compute, memory, and other resource allocation types of cloud instances, facilitating resource allocation optimization and cost management.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -1509,7 +1509,7 @@
   },
   "cloudStorageType": {
     "label": "Cloud Storage Type",
-    "description": "Cloud storage type refers to the standardized classification of cloud computing storage services, used to identify the category of storage service being utilized. This field is of enumeration type and must be selected from a predefined list of optional values. Common values include: objectStorage (object storage), blockStorage (block storage), fileStorage (file storage), archiveStorage (archive storage), and databaseStorage (database storage). The input value must exactly match one of the specified enumeration values.",
+    "description": "Cloud storage type refers to the standardized classification of cloud computing storage services, used to identify the category of storage service being utilized. This field is of enumeration type and must be selected from a predefined list of options, including common values such as: objectStorage (object storage), blockStorage (block storage), fileStorage (file storage), archiveStorage (archive storage), and databaseStorage (database storage). Input values must exactly match the specified enumeration values. Purpose: clarifies the standardized classification of cloud storage services, facilitating the formulation of data management policies and access control rules.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -1569,7 +1569,7 @@
   },
   "tableName": {
     "label": "Table Name",
-    "description": "Logical name of a data table in a relational database. The table name should be of string type, following database naming conventions, typically composed of letters, numbers, and underscores.",
+    "description": "The logical name of a data table in a relational database, where the table name should be of string type and follow database naming conventions, typically consisting of letters, numbers, and underscores. Purpose: clarifies the specific logical table name in the database, facilitating database table-level asset identification and management for asset administrators.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1605,13 +1605,13 @@
   },
   "middlewareName": {
     "label": "Middleware Name",
-    "description": "Product name of the middleware software, such as Tomcat, Nginx, Apache, etc.",
+    "description": "The product name of the middleware software, such as Tomcat, Nginx, Apache, etc. Purpose: clarifies the middleware product name, enabling administrators to better understand middleware deployment status and supporting configuration management, troubleshooting, and security maintenance.",
     "type": "string",
     "valid_type": "string_t"
   },
   "middlewareVersion": {
     "label": "Middleware Version",
-    "description": "This field indicates the specific version number of the middleware software. Version numbers typically follow the format of major.minor.patch (e.g., 8.0.1) or similar numerical sequences, and may also include letters and separators (e.g., 'v2.1-beta').",
+    "description": "This field indicates the specific version number of the middleware software. Version numbers typically follow the format of major.minor.patch (e.g., 8.0.1) or similar numerical sequences, and may also include letters and separators (e.g., \"v2.1-beta\"). Purpose: clearly identifies the specific version of the middleware software, enabling administrators to track version status and supporting version management, security patches, and vulnerability management.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1623,7 +1623,7 @@
   },
   "dbName": {
     "label": "Database Name",
-    "description": "The logical name of a database instance in a Database Management System (DBMS). The field type is string, and the naming should clearly identify the specific database instance.",
+    "description": "The logical name of a database instance in a Database Management System (DBMS). The field type is string, and the naming should clearly identify specific database instances. Purpose: explicitly identifies database instance names, enabling administrators to quickly recognize and distinguish between different databases, supporting data asset management, operation maintenance, and issue troubleshooting.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1671,7 +1671,7 @@
   },
   "componentVersion": {
     "label": "Component Version",
-    "description": "This field is used to identify the complete version information of a software component, plugin, or library. The value is of string type and typically follows semantic versioning specifications (e.g., major.minor.patch).",
+    "description": "This field identifies the complete version information of software components, plugins, or libraries, with a string-type value. It typically follows semantic versioning conventions (e.g., major.minor.patch). Purpose: clearly specifies the component version to help administrators track dependencies and version status, supporting vulnerability investigation and upgrade maintenance.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1707,7 +1707,7 @@
   },
   "phishingType": {
     "label": "Phishing Type",
-    "description": "This field indicates the specific propagation channel classification of the phishing attack and must be selected from predefined enumerated values. Optional values include: emailPhishing (email phishing), smsPhishing (SMS phishing), instantMessagingPhishing (instant messaging phishing), socialMediaPhishing (social media phishing), qrCodePhishing (QR code phishing), and other options.",
+    "description": "This field indicates the specific propagation channel classification of phishing attacks and must be selected from predefined enumerated values. Options include: emailPhishing (email phishing), smsPhishing (SMS phishing), instantMessagingPhishing (instant messaging phishing), socialMediaPhishing (social media phishing), qrCodePhishing (QR code phishing), etc. Purpose: clarifies the propagation channel type of phishing attacks, facilitating rapid identification of attack patterns from different entry points and enabling targeted defense strategies.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -1847,7 +1847,7 @@
   },
   "phishingEmail": {
     "label": "Phishing Email Address",
-    "description": "A phishing email refers to a malicious sender's email address used to initiate phishing attacks. The field content must comply with the standard email address format, which includes the local part, @ symbol, and domain part.",
+    "description": "A phishing email address refers to a malicious sender's email address used to initiate phishing attacks. The field content must comply with the standard email address format, including the local part, @ symbol, and domain part. Purpose: identifies the source email address of phishing attacks, facilitates attack blocking and user alerts, and supports anti-phishing strategy optimization and traceability analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1865,13 +1865,13 @@
   },
   "wmiQuery": {
     "label": "WMI Query",
-    "description": "WMI query conditions refer to query statements used to retrieve management information and event data from Windows systems, typically formatted in WMI Query Language (WQL).",
+    "description": "WMI query conditions refer to query statements used to retrieve management information and event data from Windows systems, typically formatted in WMI Query Language (WQL). Purpose: clarifies WQL statements in WMI query conditions, facilitates identification of lateral movement, information reconnaissance and other attack behaviors, and supports fileless attack detection and behavior tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "wmiDestination": {
     "label": "WMI Destination",
-    "description": "The target path for WMI event consumer execution, typically in filesystem path format, should comply with Windows or Unix-like system path conventions. For example, use backslashes (\\) or forward slashes (/) as directory separators, and the path should point to a valid executable file or script.",
+    "description": "The target path for WMI event consumer execution, typically in filesystem path format, should comply with Windows or Unix-like system path conventions. For example, use backslashes (\\) or forward slashes (/) as directory separators, and the path should point to a valid executable file or script. Value：clarify the target path of WMI event consumers to facilitate the identification of malicious script execution and persistent attacks, and support the reconstruction of attack techniques and the tracing of behavioral chains.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1919,7 +1919,7 @@
   },
   "scriptPath": {
     "label": "Script Path",
-    "description": "The script path refers to the full path of the executed script file in the file system. The value should be a valid file system path string, and the format must comply with the operating system specifications. For example, in Unix/Linux systems, directories are separated by forward slashes (/), while in Windows systems, directories can be separated by backslashes (\\) or forward slashes (/).",
+    "description": "The script path refers to the full file system path of the executed script file, which should be a valid file system path string formatted according to the operating system specifications. For example, in Unix/Linux systems, directories are separated by forward slashes (/), while in Windows systems, directories can be separated by either backslashes (\\) or forward slashes (/). Purpose: clarifies the full file system path of the script, aids in identifying malicious script execution from abnormal directories, and provides critical clues for correlating script execution chains and pinpointing attack techniques.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -1961,19 +1961,19 @@
   },
   "incidentId": {
     "label": "Incident ID",
-    "description": "The Event ID is a globally unique identifier for security incidents, typically generated using non-repetitive algorithms such as UUID or timestamp sequences to ensure its uniqueness.",
+    "description": "Event ID is a globally unique identifier for security incidents, typically generated using non-repeating algorithms such as UUID or timestamp sequences to ensure uniqueness. Purpose: provides a globally unique identifier for security incidents, facilitating full lifecycle event tracking and correlation analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "incidentName": {
     "label": "Incident Name",
-    "description": "This field is used to identify the brief summary name of the security event.",
+    "description": "This field is used to identify the brief summary name of a security incident. Purpose: clarifies the brief summary name of security incidents, enabling security personnel to quickly understand the incident overview.",
     "type": "string",
     "valid_type": "string_t"
   },
   "incidentLevel": {
     "label": "Incident Level",
-    "description": "Severity level of a security event, used to assess the impact scope and urgency of the incident. The value range is an enumeration type with the following options: Critical, High, Medium, Low. Strictly use the provided enumeration values.",
+    "description": "The severity level of a security event, used to assess the impact scope and urgency of the incident. The value range is an enumeration type with options including: Critical, High, Medium, Low (must strictly use the specified enum values). This classification clarifies the severity level of security events and directly influences response prioritization and resource allocation strategies.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -1997,7 +1997,7 @@
   },
   "incidentStatus": {
     "label": "Incident Status",
-    "description": "Indicates the current processing status of the security event in the response lifecycle. This field is of enumeration type, and its value must be a predefined string. Optional values include: Analysising (Analyzing), Error (Error), Ignore (Ignored), Pending (Pending), Disposed (Disposed).",
+    "description": "Indicates the current processing status of a security incident within the response lifecycle. This field is of enumeration type and must be one of the predefined string values. Valid options include: Analysising (Analyzing), Error (Error), Ignore (Ignored), Pending (Pending), Disposed (Disposed). Purpose: clarifies the processing stage of the security incident in the response lifecycle, facilitating tracking of incident resolution progress and status transitions.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -2043,7 +2043,7 @@
   },
   "isInternetAttack": {
     "label": "Is Internet Attack",
-    "description": "This field is used to identify whether the attack source originates from an external network on the internet. The field type is boolean, with possible values of true or false, where true indicates the attack source is from the internet, and false indicates the attack source is not from the internet.",
+    "description": "This field identifies whether the attack source originates from an external internet network. The field type is boolean, with possible values of true or false, where true indicates an internet-based attack source and false indicates a non-internet-based attack source. Purpose: clarifies the attack source's internet origin, facilitating rapid attack type classification and targeted defense strategy formulation.",
     "type": "boolean",
     "valid_type": "boolean_t"
   },
@@ -2055,7 +2055,7 @@
   },
   "incidentType": {
     "label": "Incident Type",
-    "description": "The security event type field is used to identify the primary attack classification and technical category of a security event, represented in a hierarchical path format. This field is of enumeration type and must be selected from predefined optional values, with each value being a string-formatted path.",
+    "description": "The security event type field is used to identify the primary attack classification and technical category of a security event, represented in a hierarchical path format. This field is of enumeration type and must be selected from predefined options, with each value being a string-formatted path. Purpose: clearly identifies the primary attack classification and technical category of security events, facilitating event categorization and priority assessment.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -2409,7 +2409,7 @@
   },
   "imageName": {
     "label": "Image Name",
-    "description": "Image name refers to the complete image identifier used during container runtime, which must include the repository address, image name, and tag. The format must be a string, typically following the `[repository-address/]image-name:tag` convention.",
+    "description": "Image name refers to the complete image identifier used during container runtime, which must include three components: repository address, image name, and tag. The format should be a string, typically following the `[repository-address/]image-name:tag` convention. Purpose: clearly identifies the source and specific version of the container image, enabling administrators to quickly grasp image information.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -2439,7 +2439,7 @@
   },
   "componentName": {
     "label": "Component Name",
-    "description": "The component name serves as the functional name identifier for internal system components, used to uniquely identify a software module or functional unit. Format requirements: must be a valid string, typically composed of lowercase letters, numbers, and hyphens (-), following common naming conventions (such as Maven artifactId or package names).",
+    "description": "The component name serves as a functional name identifier for internal system components, uniquely identifying a software module or functional unit. Format requirements: must be a valid string, typically composed of lowercase letters, numbers, and hyphens (-), following common naming conventions (such as Maven artifactId or package names). Purpose: clearly identifies the functional name of internal system components, facilitating asset management and dependency analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -2475,19 +2475,19 @@
   },
   "originalPageUrl": {
     "label": "Original Page URL",
-    "description": "The original webpage URL refers to the URL address of the legitimate webpage before tampering, used to identify the original access path prior to the webpage tampering incident. This field must comply with standard URL specifications, typically including the protocol (e.g., http or https), domain name or IP address, port (optional), path, and query parameters (optional).",
+    "description": "The original webpage URL refers to the legitimate URL address before tampering, used to identify the original access path prior to the webpage defacement incident. This field must comply with standard URL specifications, typically including protocol (e.g., http or https), domain name or IP address, port (optional), path, and query parameters (optional). Purpose: clarifies the original access path before the webpage defacement incident, facilitates precise identification of tampering behavior through URL comparison, and provides core evidence for attack path reconstruction and impact assessment.",
     "type": "string",
     "valid_type": "string_t"
   },
   "tamperedPageUrl": {
     "label": "Tampered Page URL",
-    "description": "This field records the URL address of the compromised webpage after unauthorized modification. The format must comply with standard URL specifications, typically including components such as the protocol type (e.g., http, https), domain name, and path.",
+    "description": "This field records the compromised webpage URL address after unauthorized modification, which must comply with the standard URL format, typically including protocol type (e.g., http, https), domain name, and path components. Purpose: identifies the specific URL of the tampered webpage, facilitating the location of compromised pages and the identification of attack targets and tampering types.",
     "type": "string",
     "valid_type": "string_t"
   },
   "assetId": {
     "label": "Asset ID",
-    "description": "Asset ID is the globally unique identifier of an asset in the system, formatted as a string.",
+    "description": "Asset ID is the globally unique identifier for assets in the system, formatted as a string. Purpose: provides a clear global unique identifier for assets, enabling precise tracking and management of various network assets.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -2505,7 +2505,7 @@
   },
   "assetName": {
     "label": "Asset Name",
-    "description": "Asset name, used to identify the human-readable name of the asset.",
+    "description": "Asset name, used to identify the human-readable name of the asset. Purpose: clearly identifies the human-readable name of the asset, facilitating quick recognition and retrieval by management personnel.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -2829,7 +2829,7 @@
   },
   "assetUser": {
     "label": "Asset User",
-    "description": "Name of the personnel using the asset, in string format.",
+    "description": "Name of the personnel using the asset, in string format. Purpose: clarifies the user's name information for precise security responsibility tracing and accountability.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -2889,7 +2889,7 @@
   },
   "scriptContent": {
     "label": "Script Content",
-    "description": "The actual content of the script file, including executable code or commands. The content is in string format and should contain valid script language syntax or system commands.",
+    "description": "The actual content of the script file, including executable code or commands. The content is in string format and should contain valid script language syntax or system commands. Purpose: clarifies the actual code or command content within script files, enabling security analysts to detect malicious script execution behaviors and supporting the identification of threats such as fileless attacks and macro viruses.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -2979,13 +2979,13 @@
   },
   "resourceUri": {
     "label": "Resource URI",
-    "description": "The resource URI field is used to identify the Uniform Resource Identifier of a specific resource. Its value should conform to the URI standard format specification, typically starting with a protocol type (e.g., http, https, ftp) followed by the resource path.",
+    "description": "The resource URI field is used to identify the uniform resource identifier of a specific resource, and its value should comply with the URI standard format specification. It typically starts with a protocol type (such as http, https, ftp, etc.), followed by the resource path. Purpose: clarifies the path structure and access mode of the resource URI, facilitating precise identification of unauthorized access and vulnerability exploitation targeting sensitive resources, thereby supporting web attack detection and attack path tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "assetCategory": {
     "label": "Asset Category",
-    "description": "Asset classification refers to the categorization of assets from an asset management perspective. This field is an enumeration type with predefined optional values including: database, data_table, data_field, account, api, etc.",
+    "description": "Asset classification refers to the categorization of assets from a management perspective. This field is of enumeration type with predefined values including: database, data_table, data_field, account, api, etc. Purpose: standardizes asset classification for management purposes, enabling granular asset management and precise security policy implementation.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -3101,7 +3101,7 @@
   },
   "assetUserPhone": {
     "label": "Asset User Phone Number",
-    "description": "Contact mobile number of the asset user, used for security communication. Must comply with mobile number format specifications.",
+    "description": "The contact mobile number of the asset user, used for security communication, must comply with mobile number format specifications. Purpose: clarifies the direct contact method of the asset owner, facilitates rapid communication during security incidents, and ensures the timeliness of emergency response.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -3113,19 +3113,19 @@
   },
   "productVendorName": {
     "label": "Product Vendor Name",
-    "description": "The product vendor name field is used to identify the official full name of the security product vendor. The format is a string with no specific character set restrictions, but the standard name used by the vendor in business registration or official promotions should be adopted to ensure consistency and accuracy.",
+    "description": "The product vendor name field is used to identify the official full name of the security product vendor. The format is a string with no specific character set restrictions, but the standard name used by the vendor in business registration or official promotion should be adopted to ensure consistency and accuracy. Purpose: clarifies the official full name of the security product vendor, facilitates data source attribution and product liability determination, and avoids identification ambiguity caused by vendor abbreviations or aliases.",
     "type": "string",
     "valid_type": "string_t"
   },
   "deviceSendProductName": {
     "label": "Device Product Name",
-    "description": "The device product name is used to identify the official standard name of the software or hardware product that generates logs. It is a string format and requires the use of clear, standardized official product names.",
+    "description": "The device product name is used to identify the official standard name of the software or hardware product that generates the logs. The format is a string and must use a clear, standardized official product name. Purpose: clarifies the official standard name of the software or hardware product generating the logs, facilitating log source identification and avoiding misjudgment.",
     "type": "string",
     "valid_type": "string_t"
   },
   "deviceAssetSubTypeId": {
     "label": "Device Asset Subtype ID",
-    "description": "The device subtype ID is a unique numeric identifier for the sub-classification of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the system-defined enumeration range.",
+    "description": "The device subtype ID is a unique numeric identifier for the subcategory of device types, used to identify specific device subtypes. This field is of enumeration type, and its value should fall within the predefined enumeration range. Purpose: clarifies the unique numeric identifier for device type subcategories, facilitating granular asset management and precise matching of security policies.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -3353,7 +3353,7 @@
   },
   "deviceAddress": {
     "label": "Device IP Address",
-    "description": "The IP address of the device when generating logs, used to identify the log source device. Format requirements: must be a valid IPv4 or IPv6 address format.",
+    "description": "The IP address of the device when generating logs, used to identify the source device. Format requirements: must be a valid IPv4 or IPv6 address format. Purpose: clarifies the network location of the log source device, facilitating precise identification of data sources and supporting traceability analysis.",
     "type": "string",
     "valid_type": "ip_t"
   },
@@ -3365,7 +3365,7 @@
   },
   "catOutcome": {
     "label": "Category Outcome",
-    "description": "This field is used to indicate the final result status of an event operation or attack. Its value is a predefined enumeration type, with current main options including: OK (indicating successful operation), FAIL (indicating failed operation), and Attempt (indicating an attempted operation). The value must be strictly limited to the enumeration range defined by the system.",
+    "description": "This field identifies the final result status of an event operation or attack. Its value is a predefined enumeration type, with current primary options including: OK (indicating successful operation), FAIL (indicating failed operation), and Attempt (indicating tentative operation). The value must strictly adhere to the system-defined enumeration range. Purpose: clarifies the final result status of event operations or attacks (success/failure/attempt), facilitating threat assessment and response decision-making in conjunction with attack effectiveness.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -3403,7 +3403,7 @@
   },
   "ruleType": {
     "label": "Rule Type",
-    "description": "The rule type identifies the security detection rule type corresponding to alerts generated by security devices (such as firewalls, IDS, IPS, EDR, etc.), reflecting the classification of specific attack patterns or anomalous behaviors in the device's built-in rule library. This field is an enumeration type, and its value is a hierarchical path string representing threat categories, typically formatted as '/primary classification/secondary classification'.",
+    "description": "Rule type identifier for security alerts generated by devices (e.g., firewalls, IDS, IPS, EDR), reflecting the classification of specific attack patterns or anomalous behaviors in the device's built-in rule library. This field is an enumeration type, with values represented as hierarchical path strings in the format \"/primary_category/secondary_category\". Purpose: clarifies the security device's detection logic classification (e.g., primary/secondary categories), facilitates alert priority determination and threat scenario correlation analysis, and supports optimization of security device rule libraries.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -4327,7 +4327,7 @@
   },
   "dhcpAddress": {
     "label": "DHCP Assigned IP Address",
-    "description": "This field records the IP address dynamically assigned by the DHCP server to the client. The value must comply with the standard IPv4 or IPv6 address format specifications.",
+    "description": "This field records the IP address dynamically assigned by the DHCP server to the client. The value must comply with standard IPv4 or IPv6 address format specifications. Purpose: clarifies the IP address dynamically allocated by the DHCP server, facilitates tracking of endpoint identity changes and identification of address spoofing activities, and supports unauthorized device access detection and IP resource management.",
     "type": "string",
     "valid_type": "ip_t"
   },
@@ -4339,7 +4339,7 @@
   },
   "srcUserName": {
     "label": "Source User Name",
-    "description": "Source username refers to the identity name of the principal user who initiates network connections, system access, or security events.",
+    "description": "Source username refers to the identity name of the principal user who initiates network connections, system access, or security events. Purpose: clearly identifies the account entity name of the operation initiator or asset owner, facilitating administrators in tracing operation sources and accountability.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -4363,13 +4363,13 @@
   },
   "dbType": {
     "label": "Database Type",
-    "description": "Type identifier of the Database Management System (DBMS), used to specify the particular database product in use. Common values include but are not limited to: MYSQL, ORACLE, SQLSERVER, POSTGRESQL, MARIADB, DB2, MONGODB, REDIS, etc.",
+    "description": "Type identifier of the Database Management System (DBMS), used to specify the particular database product in use. Common values include but are not limited to: MYSQL, ORACLE, SQLSERVER, POSTGRESQL, MARIADB, DB2, MONGODB, REDIS, etc. Purpose: clearly identifies the type of database product being used, enabling administrators to quickly ascertain database category information, supporting operations management and security analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "requestHeader": {
     "label": "Request Header",
-    "description": "The request header is a component of HTTP network requests used by clients to transmit additional information, client characteristics, authentication metadata, and other details to the server. Its content must comply with the HTTP protocol specification and be formatted as a valid string.",
+    "description": "The request header is a component of HTTP network requests where clients transmit additional information, client characteristics, authentication metadata, etc. to the server. Its content must comply with HTTP protocol specifications. Purpose: clarifies metadata in HTTP request headers, facilitates identification of malicious scanning, vulnerability probing, and abnormal client behavior, and supports HTTP traffic analysis and web attack detection.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -4381,13 +4381,13 @@
   },
   "srcAddress": {
     "label": "Source IP Address",
-    "description": "Source IP address refers to the IP address used by the initiator of a network connection or security event. This field must comply with IP address format specifications and supports both IPv4 and IPv6 addresses. IPv4 addresses are in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses are in colon-separated hexadecimal format (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).",
+    "description": "Source IP address, referring to the IP address used by the initiator of a network connection or security event. This field must comply with IP address format specifications, supporting both IPv4 and IPv6 addresses. IPv4 addresses are in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses are in colon-separated hexadecimal format (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334). Purpose: identifies the initiator's IP address of a network connection or security event, facilitating attack source localization, threat intelligence correlation, and supporting network access control and attack attribution.",
     "type": "string",
     "valid_type": "ip_t"
   },
   "tiSubcategory": {
     "label": "Threat Intelligence Subcategory",
-    "description": "This field represents the subcategory of threat intelligence IOC, used to identify specific threat types or attribution categories. It is formatted as a string enumeration type and must be selected from predefined optional values. Examples include: /WhiteList/Others indicating whitelist, /C2/Sinkhole indicating C2 servers taken over by security agencies, /C2/Trojan indicating trojan malware callback, /C2/Virus indicating virus malware callback, /C2/Worm indicating worm malware callback. All optional values are organized in a hierarchical path format.",
+    "description": "This field indicates the subcategory of threat intelligence IOC (Indicator of Compromise), used to identify specific threat types or attribution categories. It follows a string enumeration format and must be selected from predefined options, such as: /WhiteList/Others for whitelist entries, /C2/Sinkhole for C2 servers taken over by security agencies, /C2/Trojan for trojan callback connections, /C2/Virus for virus callback connections, and /C2/Worm for worm callback connections. All available options are organized in a hierarchical path format. Purpose: clarifies the specific subcategory of threat intelligence, facilitating precise threat analysis, policy matching, and family attribution determination.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -4605,7 +4605,7 @@
   },
   "srcTransPort": {
     "label": "Source Translated Port",
-    "description": "The translated source port represents the modified value of the source port number during Network Address Translation (NAT) or Port Address Translation (PAT) processes. This field is of integer type, with a valid range from 0 to 65535, and must comply with TCP/UDP port number specifications.",
+    "description": "The translated source port represents the modified value of the source port number during Network Address Translation (NAT) or Port Address Translation (PAT). This field is of integer type, with a valid range from 0 to 65535, and must comply with TCP/UDP port specifications. Purpose: clarifies the post-NAT/PAT source port, facilitating correlation of outbound behaviors from internal hosts after translation by border devices, and identifying abnormal port allocations or covert tunnel communications.",
     "type": "integer",
     "valid_type": "integer_t"
   },
@@ -4623,25 +4623,25 @@
   },
   "IoC": {
     "label": "Indicator of Compromise",
-    "description": "Indicators of Compromise (IOCs) are specific indicators or signatures used to identify and detect cybersecurity threats. Their content may include hash values of malicious files, suspicious network addresses, suspicious domain names, etc. When the field value is an IP address, it must conform to the standard IPv4 or IPv6 format; when it is a domain name, it must comply with the standard domain name format; when it is a file hash, it must be a valid hash string such as MD5, SHA-1, or SHA-256.",
+    "description": "Indicators of Compromise (IOCs) are specific indicators or signatures used to identify and detect cybersecurity threats. The content may include hash values of malicious files, suspicious network addresses, or suspicious domains. When the field value is an IP address, it must comply with IPv4 or IPv6 standard formats; for domains, it must adhere to standard domain name formats; for file hashes, it must be a valid MD5, SHA-1, or SHA-256 hash string. Purpose: clarifies known malicious hashes, domains, or IPs as threat indicators, facilitating rapid identification of whether a system is infected by known malware families or involved in C2 communication, supporting threat intelligence detection and rapid response.",
     "type": "string",
     "valid_type": "string_t"
   },
   "responseHeader": {
     "label": "Response Header",
-    "description": "The response header field contains metadata and server information returned by the server to the client in an HTTP network request, used to describe the response content (such as content type, length, etc.) and server status. This field is of string type, and its content must comply with the HTTP protocol standard specifications.",
+    "description": "The response header field contains metadata and server information returned by the server to the client in HTTP network requests, describing response content (e.g., content type, length) and server status. This field is of string type, and its content must comply with HTTP protocol standards. Purpose: clarifies server metadata and status information in HTTP response headers, facilitating accurate server fingerprinting, detection of response tampering and malicious injection behaviors, and supporting web security monitoring and attack traceability.",
     "type": "string",
     "valid_type": "string_t"
   },
   "passwd": {
     "label": "Password",
-    "description": "A password is a set of secret characters used by users for identity verification or access authorization, typically in string format. It is recommended to enforce a strong password policy with a length between 8 to 128 characters, which may include uppercase and lowercase letters, numbers, and special characters.",
+    "description": "A password is a set of secret characters used by users for identity verification or access authorization, typically in string format. It is recommended to enforce a strong password policy, with a length between 8 and 128 characters, including uppercase and lowercase letters, numbers, and special characters. Purpose: clarifies the characteristics of passwords for user authentication, facilitates the identification of weak credentials, brute-force attacks, and credential reuse, and supports account security protection and identity authentication strengthening.",
     "type": "string",
     "valid_type": "string_t"
   },
   "requestBody": {
     "label": "HTTP Request Body",
-    "description": "The data content transmitted by the HTTP network request client when sending requests to the server, typically including request parameters, form data, or JSON payload.",
+    "description": "The data content transmitted by the HTTP client when sending requests to the server, typically including request parameters, form data, or JSON payload. Purpose: clarifies user-submitted data in HTTP request bodies, facilitating detection of SQL injection, command injection, and other web attack payloads, supporting application-layer attack and data leakage analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -4653,19 +4653,19 @@
   },
   "responseAddress": {
     "label": "Response IP Address",
-    "description": "This field records the IP address information returned in the DNS query response. The value must conform to the standard IP address format, either IPv4 dotted-decimal notation (e.g., 192.168.1.1) or IPv6 format (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).",
+    "description": "This field records the IP address information returned in the DNS query response. The value must conform to the standard IP address format, either IPv4 dotted-decimal notation (e.g., 192.168.1.1) or IPv6 format (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334). Purpose: clarifies IP address information in DNS query responses, facilitates analysis of domain-to-IP mapping relationships, and supports potential threat detection and network behavior analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "requestUrlQuery": {
     "label": "Request URI Query",
-    "description": "This field represents the portion of the HTTP request URL starting from the root path character '/' to the end of the query string, including both the path and query parameters. Format requirements: must be a valid URI path and query string, starting with '/', and may contain letters, numbers, hyphens, underscores, dots, and query parameters (starting with '?' and separated by '&').",
+    "description": "This field represents the portion of the HTTP request URL starting from the root path character '/' to the end of the query string, including both the path and query parameters. Format requirements: must be a valid URI path and query string, starting with '/', and may contain letters, numbers, hyphens, underscores, dots, and query parameters (starting with '?', with parameters separated by '&'). Purpose: clarifies the complete path and query parameters of the HTTP request, facilitating precise identification of web attack signatures and abnormal parameter transmission, supporting web vulnerability exploitation detection and business logic abuse analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "IoCType": {
     "label": "Indicator Of Compromise Type",
-    "description": "This field indicates the type of threat intelligence indicator, used for categorizing different threat intelligence data. Format requirement: must be one of the predefined enumeration values, including url (URL address), ip (IP address), file (file hash), email (email address), and domain (domain name).",
+    "description": "This field indicates the type of threat intelligence indicator, used for categorizing different threat intelligence data. Format requirement: must be one of the predefined enumeration values, including url (URL address), ip (IP address), file (file hash), email (email address), and domain (domain name). Purpose: clarifies the specific type of threat intelligence indicator, facilitating rapid matching of detection strategies and automated response measures, thereby improving the accuracy and efficiency of threat response.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -4693,7 +4693,7 @@
   },
   "tiCategory": {
     "label": "Threat Intelligence Category",
-    "description": "Threat intelligence classification, indicating the category of the threat intelligence IOC. This field is an enumeration type and must be selected from predefined options, such as: /WhiteList (whitelist), /C2 (C&C address), /Malware (malicious communication address), /PUA (potentially unwanted address), /Exploit (exploit), etc.",
+    "description": "Threat intelligence classification, indicating the category of threat intelligence IOC (Indicator of Compromise). This field is an enumeration type and must be selected from predefined options, such as: /WhiteList, /C2 (C&C address), /Malware (malicious communication address), /PUA (potentially unwanted address), /Exploit (vulnerability exploitation), etc. Purpose: clarifies the specific nature and scenario classification of threat indicators, facilitates differentiated response strategies and alert noise reduction, and supports refined threat handling.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -4757,7 +4757,7 @@
   },
   "requestMethod": {
     "label": "Request Method",
-    "description": "The HTTP request method type used when the client sends a request to the server, such as standard methods like GET, POST, PUT, DELETE, etc. The field value must be uniformly represented in uppercase English letters.",
+    "description": "The HTTP request method type used when the client sends a request to the server, such as standard methods like GET, POST, PUT, DELETE, etc. This field value must be uniformly represented in uppercase English letters. Purpose: clarifies the HTTP operation type used during access, facilitates understanding of access behavior patterns, and supports security auditing and anomaly investigation.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -4841,25 +4841,25 @@
   },
   "processUserName": {
     "label": "Process User Name",
-    "description": "This field represents the operating system user account of the executing process. Format requirements: The username should be a valid operating system user identifier, typically composed of characters such as letters, numbers, and underscores.",
+    "description": "This field represents the operating system user account of the executing process. Format requirements: the username should be a valid OS user identifier, typically composed of letters, numbers, underscores, etc. Purpose: clearly associates processes with executing user identities, facilitates identification of unauthorized users launching sensitive processes, privilege escalation, and other anomalous behaviors, supporting user behavior baselining and operational auditing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "pktsIn": {
     "label": "Packets In",
-    "description": "This field counts the total number of packets received in the inbound direction by a network interface or session. The value is a non-negative long integer representing the absolute count of packets.",
+    "description": "This field counts the total number of packets received in the inbound direction by a network interface or session. The value is a non-negative long integer representing the absolute packet count. Purpose: clarifies inbound packet statistics, facilitates identification of network-layer attacks such as DDoS and port scanning, and supports network traffic baseline modeling and anomaly detection.",
     "type": "long",
     "valid_type": "long_t"
   },
   "pktsOut": {
     "label": "Packets Out",
-    "description": "Outbound packet count, used to calculate the total number of outbound packets sent by a network interface or session. The field value is a non-negative long integer.",
+    "description": "Number of outbound packets, used to count the total number of outbound packets sent by a network interface or session. The field value is a non-negative long integer. Purpose: clarifies the count of outbound packets, facilitates identification of malicious activities such as data exfiltration and abnormal external connections, and supports network communication behavior auditing and tracing.",
     "type": "long",
     "valid_type": "long_t"
   },
   "IoCLevel": {
     "label": "IoC Threat Level",
-    "description": "The severity assessment level of intelligence IOC, represented as an enumeration type. Optional values include: Critical (Critical), High (High), Medium (Medium), Low (Low), Info (Information).",
+    "description": "The threat level assessment rating of intelligence IOC, represented by enumeration type with optional values: Critical, High, Medium, Low, Info. Purpose: clarifies the threat level classification of intelligence IOCs, facilitates alert priority sorting and differentiated response strategies, and supports risk situation quantification and security decision-making.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -4899,7 +4899,7 @@
   },
   "fileList": {
     "label": "File List",
-    "description": "A comma-separated string collection of all attachment filenames in the email. Filenames should only contain valid characters and avoid special characters such as line breaks, quotes, or path separators.",
+    "description": "A comma-separated string collection of all attachment filenames in the email. Filenames should only contain valid characters, avoiding special characters such as line breaks, quotes, or path separators. Purpose: clarifies the set of all attachment filenames in the email, facilitating identification of malicious attachment characteristics and phishing email delivery detection, supporting email security monitoring and data leakage auditing.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -4911,13 +4911,13 @@
   },
   "mailSubject": {
     "label": "Mail Subject",
-    "description": "Email subject line content, used to summarize the main purpose and content overview of the email.",
+    "description": "The content of the email subject line, used to summarize the main purpose and content overview of the email. Purpose: identifies keywords and patterns in email subject lines to facilitate detection of phishing attacks and malware distribution, supporting email content auditing and attack attribution.",
     "type": "string",
     "valid_type": "string_t"
   },
   "queryType": {
     "label": "Query Type",
-    "description": "This field identifies the resource record type of the DNS query request. Its value must be a predefined enumerated string, such as: A (IPv4 address record), AAAA (IPv6 address record), CNAME (canonical name record), MX (mail exchange record), TXT (text record), etc.",
+    "description": "This field identifies the resource record type of the DNS query request. The value must be a predefined enumerated string, such as: A (IPv4 address record), AAAA (IPv6 address record), CNAME (canonical name record), MX (mail exchange record), TXT (text record), etc. Purpose: clarifies the resource record type of DNS queries (e.g., A, AAAA, CNAME) to facilitate detection of DNS tunneling, data exfiltration, and malicious domain resolution, supporting network anomaly detection and covert channel auditing.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -4965,13 +4965,13 @@
   },
   "mailContent": {
     "label": "Mail Content",
-    "description": "The main body of the email content, containing detailed information and communication content of the email.",
+    "description": "The main body content of the email, containing detailed information and communication content. Purpose: clarifies the detailed communication content of the email body, facilitates identification of phishing emails, social engineering attacks, and sensitive information leakage, supporting email security monitoring and data breach tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "image": {
     "label": "Process Image Path",
-    "description": "This field represents the full path of the process executable file in the file system. The path format should comply with the operating system specifications, typically in string form, such as an absolute path starting with a forward slash (/) for Linux/Unix systems or a path containing drive letters and backslashes for Windows systems.",
+    "description": "This field represents the complete file system path of the process executable. The path format should comply with the operating system specifications, typically in string form, such as an absolute path starting with a forward slash (/) for Linux/Unix systems or a path containing drive letters and backslashes for Windows systems. Purpose: clarifies the full system path of the process executable, facilitating the identification of malicious programs launched from abnormal directories and process impersonation behaviors, supporting process behavior analysis and attack traceability.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -4989,7 +4989,7 @@
   },
   "kerberosMsgType": {
     "label": "Kerberos Message Type",
-    "description": "Message types in the Kerberos protocol, used to identify various requests and responses at different stages of the authentication process. This field is of enumeration type, and its value must be one of the predefined options, such as: AS_REQ (Authentication Service Request), AS_REP (Authentication Service Response), TGS_REQ (Ticket Granting Service Request), TGS_REP (Ticket Granting Service Response), AP_REQ (Application Request), etc.",
+    "description": "Message types in the Kerberos protocol, used to identify various requests and responses at different stages of the authentication process. This field is of enumeration type, and its value must be one of the predefined options, such as: AS_REQ (Authentication Service Request), AS_REP (Authentication Service Response), TGS_REQ (Ticket Granting Service Request), TGS_REP (Ticket Granting Service Response), AP_REQ (Application Request), etc. Purpose: clarifies message types in the Kerberos authentication process, facilitating precise identification of golden/silver ticket attacks, Kerberoasting, and other abnormal authentication behaviors, supporting identity security auditing and attack chain tracing.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -5049,43 +5049,43 @@
   },
   "parentProcessUserName": {
     "label": "Parent Process User Name",
-    "description": "The user account name of the parent process in the operating system, used to identify the user identity that initiated the process.",
+    "description": "The user account name of the parent process in the operating system, used to identify the user who initiated the process. Purpose: clarifies the user identity of the parent process, facilitates detection of privilege escalation and lateral movement behaviors, and supports reconstruction of user identity switching in the attack chain.",
     "type": "string",
     "valid_type": "string_t"
   },
   "parentImage": {
     "label": "Parent Process Image Path",
-    "description": "This field represents the full path of the parent process executable in the file system. The value should be a string formatted according to the operating system specifications, typically an absolute path, such as a Unix/Linux path starting with a forward slash (/) or a Windows path starting with a drive letter (e.g., C:\\). The path should not contain illegal characters and its length should be within the system's allowed limits. Examples: /usr/bin/bash or C:\\Windows\\System32\\cmd.exe.",
+    "description": "This field represents the full path of the parent process executable in the file system. The value should be a string formatted according to the operating system specifications, typically an absolute path, such as a Unix/Linux path starting with a forward slash (/) or a Windows path starting with a drive letter (e.g., C:\\). The path should not contain illegal characters and its length should be within the system's allowed limits. Examples: /usr/bin/bash or C:\\Windows\\System32\\cmd.exe. Value：determine the complete path of the executable file of the parent process to facilitate the identification of suspicious programs launched from abnormal directories, and support the detection of white-box exploitation and the restoration of attack chain call relationships.",
     "type": "string",
     "valid_type": "string_t"
   },
   "commandLine": {
     "label": "Command Line",
-    "description": "The process command line is the complete command line string passed when starting a process, used to record the specific commands and parameters of the executed process.",
+    "description": "The process command line is the complete command line string passed when starting a process, used to record the specific commands and parameters of the executed process. Purpose: clarifies the full command line parameters of the process, facilitates identification of malicious script execution and lateral movement commands, and supports attack behavior analysis and traceability.",
     "type": "string",
     "valid_type": "string_t"
   },
   "parentCommandLine": {
     "label": "Parent Command Line",
-    "description": "The complete command-line string passed when the parent process was launched.",
+    "description": "The complete command-line string passed when the parent process was launched. Purpose: clarifies the full command-line parameters during parent process initiation, facilitates precise identification of malware execution methods and attack chain reconstruction, and supports detection of fileless attacks and living-off-the-land (LOL) behaviors.",
     "type": "string",
     "valid_type": "string_t"
   },
   "startAddress": {
     "label": "Start Address",
-    "description": "The starting address is the virtual memory address where a new thread begins execution, pointing to the entry point of the thread code. The format must be a hexadecimal string, typically prefixed with '0x' followed by hexadecimal digits (0-9, a-f).",
+    "description": "The start address is the virtual memory address where a new thread begins execution, pointing to the thread's code entry point. It must be formatted as a hexadecimal string, typically prefixed with '0x' followed by hexadecimal digits (0-9, a-f). Purpose: identifies the thread's execution start address in memory, facilitating detection of abnormal threads launched from non-executable memory regions, and supports detection of code injection and heap spraying attacks.",
     "type": "string",
     "valid_type": "string_t"
   },
   "startModule": {
     "label": "Start Module",
-    "description": "This field indicates the module name where the thread begins execution, formatted as a string type. It typically records the name of an executable file or dynamic link library, with examples such as \"ntdll.dll\" or \"kernel32.dll\".",
+    "description": "This field indicates the module name where thread execution begins, formatted as a string type. It typically records the name of an executable file or dynamic link library, with examples being \"ntdll.dll\" or \"kernel32.dll\". Purpose: clarifies the module name where thread execution starts, facilitates detection of abnormal code injection or covert module loading behaviors, and supports memory-resident malware and fileless attack detection.",
     "type": "string",
     "valid_type": "string_t"
   },
   "targetFilename": {
     "label": "Target Filename",
-    "description": "The target file refers to the complete path of the file involved in system operations or file operations. Format requirements: must be a valid file path string, with path separators being forward slashes (/) or backslashes (\\). Example value: /data1/uacp/shell/uacpClient.sh.",
+    "description": "The target file refers to the complete path of the file involved in system or file operations. Format requirements: must be a valid file path string with forward slashes (/) or backslashes (\\) as path separators. Example Purpose: /data1/uacp/shell/uacpClient.sh. Purpose: clarifies the full path of the target file, enabling precise identification of abnormal operations on sensitive files and data theft activities, supporting file operation tracking and attack attribution.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5103,25 +5103,25 @@
   },
   "regValue": {
     "label": "Registry Value",
-    "description": "This field stores the actual configuration data contained in Windows registry key values. The value is of string type, representing the specific numerical value or configuration information of the registry entry.",
+    "description": "This field stores the actual configuration data contained in Windows registry key values. The value is of string type, representing specific numerical values or configuration information of registry entries. Purpose: clarifies the actual configuration data of registry values, facilitates identification of persistence backdoors, system protection disabling, attack configuration writes, and supports attack technique attribution and persistence mechanism reconstruction.",
     "type": "string",
     "valid_type": "string_t"
   },
   "imageLoaded": {
     "label": "Image Loaded Path",
-    "description": "This field records the full file system path of dynamically linked libraries or driver modules loaded during process runtime. The format is a string and should use the operating system's standard file path format. For example, Windows systems use drive letters with backslash-separated paths (e.g., C:\\Program Files\\...), while Linux/Unix systems use forward-slash-separated absolute paths (e.g., /usr/lib/...). The path should not include environment variables or relative path symbols (e.g., ., .., ~).",
+    "description": "This field records the complete file system path of dynamically linked libraries or driver modules loaded during process runtime. The format should be a string using the operating system's standard file path convention (e.g., drive letter plus backslash-separated paths like C:\\Program Files\\... for Windows, or forward-slash-separated absolute paths like /usr/lib/... for Linux/Unix). The path must not contain environment variables or relative path symbols (e.g., ., .., ~). Purpose: Provides definitive module loading paths for processes, facilitating detection of DLL hijacking, sideloading attacks, malicious driver loading, and other anomalous behaviors, while supporting attack technique attribution and process behavior analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "userName": {
     "label": "User Name",
-    "description": "User name, referring to the user's real name.",
+    "description": "User name, referring to the user's real name. Purpose: identifies the actual user behind operations, facilitates detection of insider anomalies and account impersonation, and supports incident attribution and attack tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "destUserName": {
     "label": "Destination User Name",
-    "description": "This field represents the target principal user identity name for network connections, system access, or security events. It is of string type, and the specific content should be a valid username defined in the operating system or application.",
+    "description": "This field represents the target principal user identity name for network connections, system access, or security events. The value is of string type and should be a valid username defined in the operating system or application. Purpose: clarifies target user identity information, facilitates identification of lateral movement, privilege escalation, and brute-force attacks, and supports cross-event correlation and attack path reconstruction.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5139,25 +5139,25 @@
   },
   "destImage": {
     "label": "Destination Process Image Path",
-    "description": "The full path of the target process's executable file, used to record the path information of the target process in cross-process operations. This field is of string type and should provide the complete absolute path including the drive letter, directory, and filename, such as the executable file path format in Windows systems.",
+    "description": "The full path of the target process's executable file, used to record the path information of the target process in cross-process operations. This field is of string type and should provide the complete absolute path including the drive letter, directory, and filename, such as the executable file path format in Windows systems. Purpose: clarifies the full path of the target process in cross-process operations, facilitates identification of abnormal behaviors in critical system processes, and supports detection of code injection and lateral movement attacks.",
     "type": "string",
     "valid_type": "string_t"
   },
   "destHostName": {
     "label": "Destination Host Name",
-    "description": "Target hostname (target identifier) refers to the network identifier of the destination device in a network connection or security event. It can be a DNS hostname (including FQDN), NetBIOS name, local hostname, or IP address. If the access involves a non-standard port, the port number should typically be appended after the identifier (e.g., 192.168.1.1:8080 or host.example.com:8443).",
+    "description": "Target hostname (target identifier) refers to the network identifier of the destination device in a network connection or security event, which can be a DNS hostname (including FQDN), NetBIOS name, local hostname, or IP address. If a non-standard port is accessed, it should typically be appended with :port number (e.g., 192.168.1.1:8080 or host.example.com:8443). Purpose: clarifies the network identifier of the target device in network connections, facilitates identification of malicious domain access and lateral movement targets, and supports attack scope definition and behavior correlation.",
     "type": "string",
     "valid_type": "string_t"
   },
   "destAddress": {
     "label": "Destination IP Address",
-    "description": "Destination IP address, identifying the target IP address of the network communication connection. Format requirements: must comply with IP address format specifications, supporting IPv4 (e.g., 192.168.1.1) or IPv6 (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334) address notation.",
+    "description": "Destination IP address, identifying the target IP address of network communication connections. Format requirements: must comply with IP address format specifications, supporting both IPv4 (e.g., 192.168.1.1) and IPv6 (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334) notation. Purpose: clarifies the target IP address of network communications, facilitates identification of connections with malicious servers, and supports detection of anomalous outbound connections and attack path tracing.",
     "type": "string",
     "valid_type": "ip_t"
   },
   "srcTransAddress": {
     "label": "Source Translated Address",
-    "description": "The translated source IP address refers to the source IP address presented at the network layer after processing through Network Address Translation (NAT), proxy servers, or VPN tunnel encapsulation. This field must comply with IP address format specifications, either as a dotted-decimal notation IPv4 address (e.g., 192.168.1.1) or an RFC-compliant IPv6 address.",
+    "description": "The converted source IP address refers to the source IP address presented at the network layer after undergoing Network Address Translation (NAT), proxy server processing, or VPN tunnel encapsulation. This field must comply with IP address format specifications, i.e., a dotted-decimal notation IPv4 address (e.g., 192.168.1.1) or an RFC-compliant IPv6 address. Purpose: identifies the true source IP address before NAT or proxy conversion, facilitating penetration of network boundaries to locate attack origins and supporting cross-regional attack chain reconstruction and covert channel tracking.",
     "type": "string",
     "valid_type": "ip_t"
   },
@@ -5175,7 +5175,7 @@
   },
   "cmdContent": {
     "label": "Command Content",
-    "description": "Command line content refers to the specific command string executed in a computer system or terminal. The content is typically readable text encoded in ASCII or UTF-8.",
+    "description": "Command line content refers to the specific command string executed in a computer system or terminal, typically encoded in ASCII or UTF-8 as readable text. Purpose: precisely identifies executed command strings in terminals or systems, facilitating accurate detection of malicious command execution, lateral movement tool invocation, and other attack behaviors, while providing core evidence for real-time alerts and post-incident forensics.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5187,7 +5187,7 @@
   },
   "transProtocol": {
     "label": "Transport Protocol",
-    "description": "Transport layer protocol type, indicating the protocol used at the transport layer of the OSI model. Optional values include standard transport layer protocols such as TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).",
+    "description": "Transport layer protocol type, indicating the protocol used at the transport layer of the OSI model. Optional values include standard transport layer protocols such as TCP (Transmission Control Protocol) and UDP (User Datagram Protocol). Purpose: clarifies transport layer protocol types (TCP/UDP), facilitates differentiation of attack behaviors under different protocols, and provides core classification basis for network attack detection and communication behavior modeling.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -5209,43 +5209,43 @@
   },
   "ccUserName": {
     "label": "CC User Name",
-    "description": "The CC (Carbon Copy) field is used to record the collection of email addresses of recipients who receive a copy of the message. This field is of string type and should contain one or more valid email addresses compliant with RFC 5322 standards. Multiple addresses are typically separated by commas.",
+    "description": "The CC (carbon copy) field records the collection of email addresses for recipients copied on the message. This field is of string type and should contain one or more valid email addresses compliant with RFC 5322 standards. Multiple addresses are typically separated by commas. Purpose: clarifies the set of CC recipients' addresses, facilitates identification of bulk phishing email propagation and sensitive information leakage, and provides critical clues for attack scope assessment and email security traceability.",
     "type": "string",
     "valid_type": "string_t"
   },
   "signed": {
     "label": "Signed Status",
-    "description": "Indicates whether the target object contains a valid digital signature certificate. This field is of Boolean type, with values of true or false representing 'yes' or 'no' respectively.",
+    "description": "Indicates whether the target object contains a valid digital signature certificate. This boolean field takes values of true or false, representing 'yes' or 'no'. Purpose: clarifies the digital signature status of files or processes, facilitates distinguishing between trusted and suspicious programs, and effectively detects execution of unsigned or spoofed-signature malware.",
     "type": "boolean",
     "valid_type": "boolean_t"
   },
   "signature": {
     "label": "Digital Signature",
-    "description": "Signature information refers to digital signatures or certificate data used to verify the integrity of files or data, formatted as a string. This field typically contains textual information such as signature algorithm identifiers, signature values, or certificate issuer and subject details.",
+    "description": "Signature information refers to digital signatures or certificate data used for verifying file or data integrity, formatted as strings. This field typically contains text information such as signature algorithm identifiers, signature values, or certificate issuers and subjects. Purpose: clearly identifies certificate issuers, signature algorithms, and signature values within the signature information, facilitating detection of forged signatures and whiteout attacks, while providing core evidence for file authenticity verification and attack source tracing.",
     "type": "string",
     "valid_type": "string_t"
   },
   "bytesOut": {
     "label": "Response Bytes Out",
-    "description": "Response byte count, used to measure the total byte size of server response messages. This field is a long integer value that must be a non-negative integer representing the byte count.",
+    "description": "Response byte count, used to measure the total byte size of server response messages. This field is a long integer value that must be a non-negative integer representing the byte count. Purpose: clarifies the total byte size of server responses, facilitating the identification of data exfiltration, service anomalies, and exploit activities through abnormal fluctuation analysis (e.g., sudden response packet spikes during data breaches).",
     "type": "long",
     "valid_type": "long_t"
   },
   "bytesIn": {
     "label": "Bytes In",
-    "description": "This field is used to count the total number of bytes in client request messages, with its value being a non-negative long integer.",
+    "description": "This field is used to count the total byte size of client request messages, with a non-negative long integer value. Purpose: clarifies the total byte size of client requests, facilitating the identification of data leaks, vulnerability exploitation, and scanning/probing activities through abnormal distribution and variation analysis.",
     "type": "long",
     "valid_type": "long_t"
   },
   "bccUserName": {
     "label": "BCC User Name",
-    "description": "This field records the collection of email addresses for BCC (Blind Carbon Copy) recipients. Multiple addresses should be separated by semicolons. Each email address must conform to the standard email address format, typically consisting of a local part, an @ symbol, and a domain part.",
+    "description": "This field records the collection of email addresses for BCC (Blind Carbon Copy) recipients, with multiple addresses separated by semicolons. Each email address must conform to the standard email format, typically consisting of a local part, @ symbol, and domain part. Purpose: clarifies the set of BCC recipient email addresses, facilitating identification of covert phishing attacks, stealthy data exfiltration, and malicious email evasion tactics, while supporting precise assessment of attack scope and in-depth email security traceability.",
     "type": "string",
     "valid_type": "string_t"
   },
   "startFunction": {
     "label": "Start Function",
-    "description": "The start function is the entry point function name where a new thread begins execution. It is of string type and only supports combinations of letters, numbers, and underscores.",
+    "description": "The start function is the entry point function name where a new thread begins execution, formatted as a string type that only allows combinations of letters, numbers, and underscores. Purpose: clarifies the thread entry point function name, enabling precise identification of abnormal API call sequences and code execution entry points, effectively detecting malicious thread behaviors such as memory webshells, code injection, and Rootkits.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5299,7 +5299,7 @@
   },
   "userAgent": {
     "label": "User Agent",
-    "description": "User agent string, used to identify anonymized information of the requesting client (user agent), typically including the client's operating system, browser type, version, device type, etc. The format must comply with the HTTP standard User-Agent string.",
+    "description": "User-Agent string, used to identify anonymized information of the requesting client (user agent), typically including the client's operating system, browser type, version, and device type. The format must comply with the HTTP standard for User-Agent strings. Purpose: clearly identifies anonymized client request information, facilitating precise detection of automated scanning tools, malicious crawlers, and targeted vulnerability probing activities.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5343,13 +5343,13 @@
   },
   "sql": {
     "label": "SQL Statement",
-    "description": "SQL statements are standardized query languages submitted to databases for execution, typically used for data query, insertion, update, or deletion operations. In terms of format, it must be a string that complies with SQL syntax specifications and may include letters, numbers, operators, spaces, as well as specific SQL keywords and symbols.",
+    "description": "SQL statements are standardized query languages submitted to databases, typically used for data query, insertion, update, or deletion operations. In terms of format, they must be strings compliant with SQL syntax specifications and may contain letters, numbers, operators, spaces, and specific SQL keywords and symbols. Purpose: clarifies the syntax structure and operation patterns of SQL statements, facilitating precise identification of SQL injection attacks, privilege bypass, and abnormal data operations.",
     "type": "string",
     "valid_type": "string_t"
   },
   "requestParameters": {
     "label": "Request Parameters",
-    "description": "Request parameters are the parameter contents carried in network requests, used to transmit specific data sent from the client to the server. The parameter content is typically in string format and can be a query string, form data, JSON object, or other serialized forms. The specific format depends on the request type (e.g., GET, POST) and the content type (Content-Type).",
+    "description": "Request parameters are the parameter contents carried in network requests, used to transmit specific data from the client to the server. The parameter content is typically in string format and can be a query string, form data, JSON object, or other serialized forms, with the specific format depending on the request type (e.g., GET, POST) and content type (Content-Type). Purpose: clarifies the key-value pairs and data content within request parameters, facilitating precise identification of web attack payloads and abnormal parameter tampering behaviors.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5445,7 +5445,7 @@
   },
   "assetPort": {
     "label": "Asset Port",
-    "description": "The network port number through which the asset provides external services. The port number must be an integer within the range of 0-65535.",
+    "description": "The network port number through which the asset provides external services. The port number must be an integer within the range of 0-65535. Purpose: clearly identifies the network port number for external services, enabling administrators to track service entry points and supporting network configuration, access control, and troubleshooting.",
     "type": "integer",
     "valid_type": "integer_t"
   },
@@ -5475,13 +5475,13 @@
   },
   "url": {
     "label": "URL",
-    "description": "The URL field is used to record the complete address information of a Uniform Resource Locator (URL). This field is of string type and must comply with standard URL format specifications, typically including components such as the protocol (e.g., http, https), hostname, path, and optional query parameters and fragment identifiers.",
+    "description": "The URL field records the complete address information of a Uniform Resource Locator (URL). This string-type field must comply with standard URL format specifications, typically including components such as protocol (e.g., http, https), hostname, path, and optional query parameters and fragment identifiers. Purpose: clearly identifies the access entry point of assets or services, enabling administrators to quickly locate and access target systems.",
     "type": "string",
     "valid_type": "string_t"
   },
   "copyright": {
     "label": "Copyright",
-    "description": "This field is used to declare copyright ownership information of digital content. It requires a string format providing explicit copyright owner names, organizations, or relevant declaration texts.",
+    "description": "This field is used to declare copyright ownership information of digital content, requiring a string format to provide explicit copyright owner names, organizations, or relevant declaration texts. Purpose: clearly identifies the copyright holder of digital content, facilitating administrators in confirming asset ownership and usage scope.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5493,19 +5493,19 @@
   },
   "officialAccountName": {
     "label": "Official Account Name",
-    "description": "The official verified name of a public account, indicating the authenticated public account name on the WeChat Official Accounts Platform.",
+    "description": "The officially verified name of a WeChat public account, indicating the authenticated account name on the WeChat Official Accounts Platform. Purpose: clearly records the verified account name to facilitate social media asset management and brand protection.",
     "type": "string",
     "valid_type": "string_t"
   },
   "wechatSubjectName": {
     "label": "WeChat Subject Name",
-    "description": "The name of the authenticated entity on the WeChat Official Account Platform, typically the official registered name of a business, organization, or institution.",
+    "description": "The authenticated entity name on WeChat Official Account Platform, typically the official registered name of enterprises, organizations, or institutions. Purpose: clarifies the official registered name of authenticated entities for asset identification and ownership verification.",
     "type": "string",
     "valid_type": "string_t"
   },
   "wechatSubjectType": {
     "label": "WeChat Subject Type",
-    "description": "Classification of authentication entity types on the WeChat Official Account Platform. Enumeration type, with optional values including: individual (individual entity), enterprise (corporate entity), government (government entity), media (media entity), other (other entities).",
+    "description": "Classification of verified entity types on WeChat Official Accounts Platform. Enumeration type with optional values: individual (personal entity), enterprise (corporate entity), government (government entity), media (media entity), other (other entities). Purpose: clarifies the ownership classification of WeChat assets, enabling administrators to distinguish asset sources and attributes.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -5581,7 +5581,7 @@
   },
   "assetAddress": {
     "label": "Asset IP Address",
-    "description": "The unique network identifier of an asset as recorded in the management system, used for locating and accessing the asset. Format requirements: must comply with standard IPv4 or IPv6 address formats, such as dotted-decimal notation (e.g., 192.168.1.1) or IPv6 colon-separated hexadecimal notation.",
+    "description": "The unique network identifier of an asset as recorded in the management system, used for locating and accessing the asset. Format requirements: must comply with standard IPv4 or IPv6 address formats, such as dotted-decimal notation (e.g., 192.168.1.1) or IPv6 colon-separated hexadecimal notation. Purpose: clarifies the asset's unique network identifier, facilitating network communication and asset localization.",
     "type": "string",
     "valid_type": "ip_t"
   },
@@ -5599,13 +5599,13 @@
   },
   "serviceType": {
     "label": "Service Type",
-    "description": "Service type, used to identify the application service type exposed via network ports or running internally within the operating system on the endpoint side.",
+    "description": "Service type, used to identify the application service type exposed via network ports or running within the operating system on the terminal side. Purpose: clarifies service types on the network or terminal, facilitating precise detection of abnormal service exposure, unauthorized service operation, and service degradation attacks.",
     "type": "string",
     "valid_type": "string_t"
   },
   "certType": {
     "label": "Certificate Type",
-    "description": "Certificate type is used to identify the category of digital certificates for different security purposes. This field is an enumeration type, and its value must be one of the predefined options, including: SSL (SSL/TLS certificate), CodeSigning (code signing certificate), ClientAuth (client authentication certificate), Email (email certificate), EVSSL (extended validation SSL certificate), and other specified types if applicable.",
+    "description": "The certificate type field identifies the category of digital certificates for different security purposes. This is an enumerated field whose value must be one of the predefined options, including: SSL (SSL/TLS certificates), CodeSigning (code signing certificates), ClientAuth (client authentication certificates), Email (email certificates), EVSSL (extended validation SSL certificates), and other specified types. Purpose: Clearly identifies the security purpose category of digital certificates, enabling administrators to distinguish between usage scenarios and security levels of different certificates, thereby supporting certificate management and security configuration.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -5637,7 +5637,7 @@
   },
   "validTime": {
     "label": "Valid Time",
-    "description": "The validity period indicates the time range during which the certificate is valid, formatted as yyyy-mm-dd to yyyy-mm-dd. Both the start date and end date must comply with the standard date format, and the end date must be later than the start date.",
+    "description": "The validity period indicates the time range during which the certificate is valid, formatted as yyyy-mm-dd to yyyy-mm-dd. Both the start and end dates must comply with standard date formats, and the end date must be later than the start date. Purpose: clarifies the certificate's validity period, facilitating timely identification and replacement of expired certificates to ensure service continuity.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5655,19 +5655,19 @@
   },
   "scanPortList": {
     "label": "Scan Port List",
-    "description": "This field records the set of target port numbers detected during network scanning activities. Each port number must be an integer type, with a valid range from 0 to 65535, representing valid port numbers.",
+    "description": "This field records the set of target port numbers detected during network scanning activities. Each port number must be an integer type, ranging from 0 to 65535, representing valid port numbers. Purpose: clearly identifies the target port set in network scanning activities, facilitating the recognition of attacker reconnaissance patterns and tool signatures.",
     "type": "array",
     "valid_type": "integer_t"
   },
   "scanIpList": {
     "label": "Scan IP List",
-    "description": "Record the set of target IP addresses detected during network scanning activities. Format requirement: Each element in the array must be a valid IPv4 or IPv6 address format.",
+    "description": "Records the set of target IP addresses detected during network scanning activities. Format requirement: each element in the array must be a valid IPv4 or IPv6 address. Purpose: clarifies the set of target IP addresses detected in network scanning activities, enabling precise identification of internal reconnaissance, lateral movement targets, and scanning patterns (e.g., C-segment scanning, targeted IP probing).",
     "type": "array",
     "valid_type": "ip_t"
   },
   "deviceSerialNumber": {
     "label": "Device Serial Number",
-    "description": "The device serial number is a unique serial identifier assigned by the hardware manufacturer, used to uniquely identify the device.",
+    "description": "The device serial number is a unique serial identifier assigned by the hardware manufacturer to uniquely identify the device. Purpose: clarifies the unique serial identifier assigned by the hardware manufacturer, enabling administrators to precisely distinguish each individual device.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5685,7 +5685,7 @@
   },
   "columnName": {
     "label": "Column Name",
-    "description": "The column name is the logical identifier of a data column in a database table, used to specify individual data fields.",
+    "description": "The column name is the logical identifier of a data column in a database table, used to specify particular data fields. Purpose: clarifies the logical names of data columns in database tables, enabling security personnel to precisely locate and classify sensitive data fields.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5781,7 +5781,7 @@
   },
   "dataSourceAddress": {
     "label": "Data Source Address",
-    "description": "Data source address refers to the network address of the device providing the data. This field must be in a valid IP address format, supporting both IPv4 and IPv6 addresses. IPv4 addresses use dotted-decimal notation (e.g., 192.168.1.5), while IPv6 addresses use colon-separated hexadecimal format.",
+    "description": "Data source address refers to the network address of the device providing the data. This field must be in valid IP address format, supporting both IPv4 and IPv6 addresses. IPv4 addresses use dotted-decimal notation (e.g., 192.168.1.5), while IPv6 addresses use colon-separated hexadecimal format. Purpose: identifies the network address of the source device for logs or alerts, enabling analysts to quickly locate data senders and supporting security event tracing and correlation analysis.",
     "type": "string",
     "valid_type": "ip_t"
   },
@@ -5805,7 +5805,7 @@
   },
   "busSystemName": {
     "label": "Business System Name",
-    "description": "Name identifier of the business system, used to uniquely identify a business system. Format requirements: string type, length limited to 1-128 characters, supports Chinese and English letters, numbers, underscores, and hyphens, and cannot start or end with special characters.",
+    "description": "The name identifier of the business system, used to uniquely identify a business system. Format requirements: string type, length limited to 1-128 characters, supporting Chinese, English, numbers, underscores, and hyphens, and cannot start or end with special characters. Purpose: clearly identifies the name of the business system, facilitating quick recognition and differentiation of different systems by management personnel, and supporting system management and operation collaboration.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5835,7 +5835,7 @@
   },
   "filePath": {
     "label": "File Path",
-    "description": "This field represents the storage directory path of the file in the file system. The path format should comply with the operating system specifications. For example, Windows systems use backslashes (\\) as directory separators, while Linux/Unix systems use forward slashes (/).",
+    "description": "This field indicates the storage directory path of the file in the file system. The path format should comply with the operating system specifications, e.g., Windows systems use backslashes (\\) as directory separators, while Linux/Unix systems use forward slashes (/). Purpose: clarifies the complete storage path of the file in the system, facilitating precise location of malicious files and identification of abnormal file placement behavior.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5871,7 +5871,7 @@
   },
   "ipVersion": {
     "label": "IP Version",
-    "description": "This field indicates the version identifier of the Internet Protocol (IP). The format is a string, currently primarily including \"IPv4\" and \"IPv6\".",
+    "description": "This field indicates the version identifier of the Internet Protocol (IP). The format is a string, currently primarily including \"IPv4\" and \"IPv6\". Purpose: clearly identifies the network protocol version used by the asset, enabling administrators to understand network environment and configuration requirements.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5889,7 +5889,7 @@
   },
   "webTamperType": {
     "label": "Web Tamper Type",
-    "description": "Web page tampering type, used to identify the specific type of malicious modification to web page content, structure, or functionality. This field is an enumeration type, and its value must be a predefined string. Valid values include: contentReplacement (content replacement), hiddenLinkInjection (hidden link injection), visibleLinkInjection (visible link injection), jsScriptHijacking (JS script hijacking), metaTampering (page metadata tampering), other (other), etc.",
+    "description": "The webpage tampering type identifies the specific category of malicious modifications made to webpage content, structure, or functionality. This field is an enumeration type, requiring predefined string values. Valid options include: contentReplacement, hiddenLinkInjection, visibleLinkInjection, jsScriptHijacking, metaTampering, and other. This classification precisely identifies attack methodologies post-compromise, enabling effective differentiation between phishing/malware activities and black-hat SEO tactics.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -5961,7 +5961,7 @@
   },
   "vulName": {
     "label": "Vulnerability Name",
-    "description": "Standardized descriptive name of the vulnerability, used to uniquely identify a specific vulnerability type. Typically follows industry-standard naming conventions such as CVE IDs, CNVD IDs, or vendor-disclosed vulnerability advisory names.",
+    "description": "Standardized descriptive name for vulnerabilities, used to uniquely identify specific vulnerability types. Typically follows industry-standard naming conventions such as CVE IDs, CNVD IDs, or vendor-disclosed vulnerability advisory names. Purpose: provides standardized identification (e.g., CVE IDs) to facilitate rapid correlation with exploitation techniques in threat intelligence databases, supporting alert classification and vulnerability remediation prioritization decisions.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -5973,13 +5973,13 @@
   },
   "hostAddress": {
     "label": "Host IP Address",
-    "description": "Host IP address, used to identify the host's location in the network. It must comply with the IPv4 or IPv6 address format specifications. IPv4 addresses are in dotted-decimal notation, consisting of four decimal numbers ranging from 0 to 255, separated by dots. IPv6 addresses are in colon-separated hexadecimal notation.",
+    "description": "Host IP address, used to identify the host's location in the network. Must comply with IPv4 or IPv6 address format specifications. IPv4 addresses use dotted-decimal notation consisting of four decimal numbers (0-255) separated by dots. IPv6 addresses use colon-separated hexadecimal notation. Purpose: clearly identifies the host's network location, enabling administrators to quickly access and locate devices, supporting asset management and network topology analysis.",
     "type": "string",
     "valid_type": "ip_t"
   },
   "exfiltrationChannel": {
     "label": "Exfiltration Channel",
-    "description": "This field identifies the specific channel through which data was transmitted externally in a data breach incident. The value must be a predefined enumeration string, with optional values including but not limited to: removableMedia (removable media), networkProtocols (network protocol transmission), emailSystems (email systems), messagingApps (instant messaging applications), cloudServices (cloud services), etc.",
+    "description": "This field identifies the specific channel through which data was transmitted externally in a data breach incident. The value must be a predefined enumerated string, with optional values including but not limited to: removableMedia (removable media), networkProtocols (network protocol transmission), emailSystems (email systems), messagingApps (instant messaging applications), cloudServices (cloud services), etc. Purpose: clarifies the specific data exfiltration channel (e.g., email, cloud storage) to facilitate precise identification of the leakage path and support detection and blocking of unauthorized sensitive data transfers.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -6031,7 +6031,7 @@
   },
   "transMode": {
     "label": "Transmission Mode",
-    "description": "The protocol mode used for data transmission, typically employed to specify the protocol format for file transfer or data exchange. This field is of string type, with common values being identifiers representing specific transmission modes, such as \"netascii\" (Network ASCII mode), \"octet\" (binary octet mode), or \"mail\" (mail mode).",
+    "description": "The protocol mode used for data transmission, typically specifying the protocol format for file transfer or data exchange. This field is of string type, with common values being identifiers representing specific transmission modes, such as 'netascii' (network ASCII mode), 'octet' (binary octet mode), or 'mail' (mail mode). Purpose: clarifies protocol characteristics of data transmission modes (e.g., binary mode), facilitates detection of covert file transfers and protocol abuse, and supports traffic behavior analysis and attack intent assessment.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -6043,7 +6043,7 @@
   },
   "wmiType": {
     "label": "WMI Type",
-    "description": "Specific category classification of WMI event consumers, enumeration type. Optional values include: CommandLineEventConsumer (command-line event consumer), ActiveScriptEventConsumer (active script event consumer), NTEventLogEventConsumer (NT event log consumer), SMTPEventConsumer (SMTP event consumer), LogFileEventConsumer (log file event consumer), etc.",
+    "description": "Specific category classification of WMI event consumers, enumeration type, with optional values including: CommandLineEventConsumer (command-line event consumer), ActiveScriptEventConsumer (active script event consumer), NTEventLogEventConsumer (NT event log consumer), SMTPEventConsumer (SMTP event consumer), LogFileEventConsumer (log file event consumer), etc. Purpose: clarifies the specific types of WMI event consumers, facilitates the detection of persistence backdoors and malicious code execution behaviors, and supports attack technique tracking and persistence mechanism reconstruction.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -6075,13 +6075,13 @@
   },
   "affectAssetIp": {
     "label": "Affected Asset IP Address",
-    "description": "Affected asset IP address, referring to the IP address corresponding to the asset that was attacked or at risk in the security incident. This field is of string type and must comply with standard IPv4 or IPv6 address formats.",
+    "description": "Affected asset IP address refers to the IP address corresponding to assets that were attacked or at risk in a security incident. This field is of string type and must comply with standard IPv4 or IPv6 address formats. Purpose: identifies the victim asset IP address in security incidents, facilitating rapid attack target localization, impact assessment, and emergency response initiation.",
     "type": "string",
     "valid_type": "string_t"
   },
   "affectAssetPort": {
     "label": "Affected Asset Port",
-    "description": "This field represents the network service port number of the affected asset in an attack or risk scenario, used to identify network services. Format requirements: the port number must be an integer type with a valid range of 0-65535.",
+    "description": "This field represents the network service port number of the affected asset in an attack or risk scenario, used to identify network services. Format requirement: the port number must be an integer type with a valid range of 0-65535. Purpose: clarifies the service port of affected assets in attack events, facilitates precise identification of compromised network service types, recognition of port-level attack characteristics, and provides critical basis for impact assessment and emergency response.",
     "type": "integer",
     "valid_type": "integer_t"
   },
@@ -6099,13 +6099,13 @@
   },
   "latestActivityTime": {
     "label": "Latest Activity Time",
-    "description": "This field records the timestamp of the last activity or alert trigger in the security event. The format must be a standard datetime string, with specific requirements as follows: yyyy-mm-dd HH:mm:ss, for example, 2024-12-27 19:28:22.",
+    "description": "This field records the timestamp of the last activity or alert trigger in a security event. The format must be a standard datetime string formatted as: yyyy-mm-dd HH:mm:ss (e.g., 2024-12-27 19:28:22). Purpose: precisely identifies the last activity time of an event, facilitating freshness assessment and dynamic adjustment of response priorities.",
     "type": "string",
     "valid_type": "datetime_string_t"
   },
   "closeReason": {
     "label": "Close Reason",
-    "description": "This field is used to record the specific reason and resolution status for closing a security incident. The value should be of string type and concisely describe the reason for closing the event.",
+    "description": "This field records the specific reason and resolution status for closing a security incident. The value is of string type and should concisely describe the reason for closure. Purpose: provides clear documentation of incident closure reasons, facilitating retrospective analysis of resolution outcomes and optimization of response processes.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -6117,7 +6117,7 @@
   },
   "alertDevices": {
     "label": "Alert Devices",
-    "description": "The alert source device field records a collection of security devices and sensor information that generated the alert, formatted as a string array. Each array element should be a string describing the device name and identification information, typically including key details such as device name and IP address.",
+    "description": "The alert source device field records a collection of security devices and sensor information that generated the alert, formatted as a string array. Each array element should be a string describing the device name and identification information, typically including key details such as the device name and IP address. Purpose: clarifies the name and identification information of the alert-generating device, facilitating attack source localization and monitoring device coverage assessment.",
     "type": "array",
     "valid_type": "string_t"
   },
@@ -6129,13 +6129,13 @@
   },
   "alertIds": {
     "label": "Alert ID List",
-    "description": "A collection of unique identifiers for all alerts associated with the security event. This field is a string array, where each element should be a string representing the unique identifier of an alert.",
+    "description": "A collection of unique identifiers for all alerts associated with the security incident. This field is a string array, where each element should be a string representing the unique identifier of an alert. Purpose: clarifies the mapping between the security incident and the original alerts, facilitating quick correlation and traceback of specific alert details via unique identifiers.",
     "type": "array",
     "valid_type": "string_t"
   },
   "alertTypes": {
     "label": "Alert Type List",
-    "description": "A collection of all alert classification types associated with the recorded security event. The field value is a string array, where each array element represents an alert classification type string.",
+    "description": "A collection of all alert classification types associated with the security event. The field value is a string array, with each element representing an alert classification type string. Purpose: clarifies the diversity and coverage of attack methods, facilitating rapid assessment of the event's comprehensive impact and handling priority through alert type aggregation.",
     "type": "array",
     "valid_type": "string_t"
   },
@@ -6147,31 +6147,31 @@
   },
   "attacker": {
     "label": "Attacker",
-    "description": "Attackers refer to the collection of all unique source IP addresses used in attack activities, serving to identify the origin of the attack. This field is of array type, where each element must comply with IP address format requirements, i.e., a valid IPv4 or IPv6 address.",
+    "description": "Attackers refer to the collection of all unique source IP addresses used in attack activities, serving to identify attack origins. This field is of array type, where each element must comply with IP address format requirements, i.e., valid IPv4 or IPv6 addresses. Purpose: clarifies all source IP addresses involved in attack activities, facilitating precise identification of attack sources and enabling threat blocking and traceability analysis.",
     "type": "array",
     "valid_type": "ip_t"
   },
   "victim": {
     "label": "Victim IP Address Set",
-    "description": "A set of all unique target IP addresses affected by the attack, stored in an array format. Each element in the array must be a valid IPv4 or IPv6 address. IPv4 addresses should be in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses must conform to standard representation (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334 or compressed format).",
+    "description": "A collection of all unique target IP addresses affected by the attack, stored in array format. Each element in the array must be a valid IPv4 or IPv6 address. IPv4 addresses should be in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 addresses must conform to standard representation (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334 or compressed format). This helps clearly identify the scope of affected target IP addresses, enabling accurate impact assessment and guiding the formulation of emergency response measures.",
     "type": "array",
     "valid_type": "ip_t"
   },
   "srcAddrList": {
     "label": "Source IP Address List",
-    "description": "This field records the set of all unique source IP addresses in a security event. The field value is a string array, where each array element must be a valid IPv4 or IPv6 address.",
+    "description": "This field records the set of all unique source IP addresses involved in the security incident. The field value is a string array, where each element must be a valid IPv4 or IPv6 address. Purpose: clarifies the IP distribution of all attack entry points in the security incident, facilitating attack path analysis and optimization of access control policies.",
     "type": "array",
     "valid_type": "ip_t"
   },
   "destAddrList": {
     "label": "Destination IP Address List",
-    "description": "The destination IP list records the collection of all unique destination IP addresses in a security event. This field is of array type, where each element must be in a valid IPv4 or IPv6 address format.",
+    "description": "The destination IP list records the collection of all unique destination IP addresses in a security incident. This field is of array type, where each element must be a valid IPv4 or IPv6 address format. Purpose: clearly documents all unique destination IPs involved in the security incident, facilitating comprehensive identification of attack targets and recognition of critical affected systems.",
     "type": "array",
     "valid_type": "ip_t"
   },
   "queryStatus": {
     "label": "Query Status",
-    "description": "The response status code of a DNS protocol query request, used to indicate the result of the DNS query operation. Among common status codes, 0 typically indicates a successful DNS query. This field is of string type, with specific values adhering to the status codes defined by the DNS protocol standard.",
+    "description": "The response status code of a DNS protocol query request, indicating the result of the DNS query operation. Among common status codes, 0 typically indicates a successful DNS query. This field is of string type, with specific values adhering to the status codes defined by the DNS protocol standard. Purpose: clarifies the response status code of DNS query requests, facilitating the identification of malicious activities such as DNS tunneling and DGA domain probing through abnormal status code distribution, and supporting the distinction between normal resolution and malicious communication.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -6301,7 +6301,7 @@
   },
   "assetImportance": {
     "label": "Asset Importance",
-    "description": "Asset criticality level, used to indicate the priority and value of the asset in cybersecurity protection.",
+    "description": "The importance level of an asset, used to indicate its priority and value in cybersecurity protection. Purpose: clarifies the priority and value level of assets in cybersecurity protection, facilitating guidance on security resource allocation and emergency response sequence.",
     "type": "enum",
     "valid_type": "string_t",
     "enum": {
@@ -6545,13 +6545,13 @@
   },
   "assetOwnerName": {
     "label": "Asset Owner Name",
-    "description": "Name of the asset owner.",
+    "description": "Name of the asset owner. Purpose: clarifies the asset owner's name, facilitates assignment of security responsibilities to individuals, and supports accountability tracking and access management.",
     "type": "string",
     "valid_type": "string_t"
   },
   "assetOwnerPhone": {
     "label": "Asset Owner Contact Information",
-    "description": "Contact information of the asset owner, used to identify the contact phone number of the responsible party for the asset.",
+    "description": "Contact information of the asset owner, used to identify the responsible party's phone number. Purpose: clearly identifies the responsible party's contact number, enabling administrators to quickly reach the responsible person and supporting emergency communication as well as daily operational collaboration.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -6581,7 +6581,7 @@
   },
   "company": {
     "label": "Vendor Name",
-    "description": "This field records the full legal registered company name of the software vendor or service provider. The standard full company name should be used, avoiding abbreviations or acronyms.",
+    "description": "This field records the full legal registered company name of the software vendor or service provider. Standard full company names should be used, avoiding abbreviations or acronyms. Purpose: clarifies the full company name of the software/service provider, enabling administrators to verify asset origins and responsible entities.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -6593,7 +6593,7 @@
   },
   "serviceImage": {
     "label": "Service Image Path",
-    "description": "The full path and parameters of the process file where the service resides, represented in string format, supporting inclusion of the file name and startup parameters.",
+    "description": "The complete path and parameters of the process file where the service resides, represented in string format, including the filename and startup parameters. Purpose: clarifies the full path and startup parameters of the service process, facilitating precise identification of abnormal service installations, service hijacking, and privilege persistence behaviors.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -6617,7 +6617,7 @@
   },
   "executeType": {
     "label": "Execution Type",
-    "description": "This field indicates the execution method of the command, used to identify the mechanism or protocol through which the command is executed, such as local execution or remote execution via WinRM (Windows Remote Management). The field is of string type and should use meaningful descriptive values, such as 'local' for local execution and 'remote' for remote execution.",
+    "description": "This field indicates the execution method of the command, identifying the mechanism or protocol used for execution (e.g., local execution or remote execution via WinRM). It is a string-type field and should use meaningful descriptive values such as \"local\" for local execution and \"remote\" for remote execution. Purpose: clearly distinguishes command execution methods (local or remote), facilitating rapid identification of lateral movement, abuse of remote management tools, and anomalous command invocation.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -6655,13 +6655,13 @@
   },
   "wmiName": {
     "label": "WMI Name",
-    "description": "WMI name refers to the class name, property name, or namespace path in Windows Management Instrumentation. Its format typically follows WMI naming conventions, such as class names like Win32_Process or namespace paths like root\\cimv2.",
+    "description": "WMI name refers to the class name, property name, or namespace path in Windows Management Instrumentation. Its format typically follows WMI naming conventions, such as class names like Win32_Process or namespace paths like root\\cimv2. Purpose: clarifies the invocation path of WMI class names or namespaces, enabling precise identification of WMI abuse behaviors like lateral movement and persistence, and supporting attack technique reconstruction and behavior analysis.",
     "type": "string",
     "valid_type": "string_t"
   },
   "certIssuer": {
     "label": "Certificate Issuer",
-    "description": "The name of the certificate issuer, which identifies the authority or entity that issued the certificate. This field is of string type and typically contains the Distinguished Name (DN) or Common Name (CN) of the Certificate Authority (CA). The value must comply with the format conventions for issuer names as specified in the X.509 certificate standards.",
+    "description": "The name of the certificate issuer, which serves as the identifier of the authority or entity that issued the certificate. This field is of string type and typically contains the Distinguished Name (DN) or Common Name (CN) of the Certificate Authority (CA). The value must comply with the format requirements for issuer names specified in the X.509 certificate standard. Purpose: clarifies the issuing authority's name, enabling administrators to verify the certificate's origin and trustworthiness.",
     "type": "string",
     "valid_type": "string_t"
   },
@@ -6673,19 +6673,19 @@
   },
   "softwareVersion": {
     "label": "Software Version",
-    "description": "Software version number, used to identify the release version of the software. It typically follows the format of major version.minor version.revision number (e.g., 15.6.1) or may include an alphabetic prefix (e.g., v15.6.1).",
+    "description": "Software version number, used to identify the release version of the software. Typically follows the format of major.minor.patch (e.g., 15.6.1) or includes an alphabetic prefix (e.g., v15.6.1). Purpose: clearly identifies the specific release version of the software, enabling administrators to accurately track version status and supporting version tracing, upgrade maintenance, and vulnerability matching.",
     "type": "string",
     "valid_type": "string_t"
   },
   "deviceVendor": {
     "label": "Device Vendor",
-    "description": "Name of the manufacturer or vendor of the hardware device or software product, used for asset identification, vulnerability impact analysis, and supply chain security management.",
+    "description": "The manufacturer or vendor name of hardware devices or software products, used for asset identification, vulnerability impact scope analysis, and supply chain security management. Purpose: clearly identifies the manufacturer or vendor name of the device or software, facilitating administrators in confirming asset sources and responsible parties, and supporting supply chain security and risk impact assessment.",
     "type": "string",
     "valid_type": "string_t"
   },
   "responseMsg": {
     "label": "Response Message",
-    "description": "The response body records the message content returned after network requests, system processing of requests, reply requests, or initiation of operational behaviors.",
+    "description": "The response body records the message content returned after network requests, system request processing, reply requests, or operation initiation. Purpose: clarifies the specific content of response messages, facilitating detection of data leaks, abnormal command execution, and identification of sensitive information disclosure.",
     "type": "string",
     "valid_type": "string_t"
   },

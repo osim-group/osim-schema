@@ -8,14 +8,14 @@
     "softwareName": {
       "label": "Software Name",
       "requirement": "RECOMMENDED",
-      "description": "This field is used to identify the official name of the software product installed on the system or device.",
+      "description": "This field is used to identify the official name of the software product installed on a system or device. Purpose: clearly identifies the official name of the software product installed on the device, enabling administrators to quickly grasp the software asset status.",
       "type": "string",
       "valid_type": "string_t"
     },
     "softwareVersion": {
       "label": "Software Version",
       "requirement": "RECOMMENDED",
-      "description": "Software version number, used to identify the release version of the software. It typically follows the format of major version.minor version.revision number (e.g., 15.6.1) or may include an alphabetic prefix (e.g., v15.6.1).",
+      "description": "Software version number, used to identify the release version of the software. Typically follows the format of major.minor.patch (e.g., 15.6.1) or includes an alphabetic prefix (e.g., v15.6.1). Purpose: clearly identifies the specific release version of the software, enabling administrators to accurately track version status and supporting version tracing, upgrade maintenance, and vulnerability matching.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -36,7 +36,7 @@
     "appProtocol": {
       "label": "Application Protocol",
       "requirement": "OPTIONAL",
-      "description": "The application protocol field indicates the protocol type used at the application layer of the OSI model. This field is of enumeration type, and its value range should be within a predefined list of protocol identifiers.",
+      "description": "The application protocol field indicates the protocol type used at the application layer of the OSI model. This field is of enumeration type, and its value range should be within a predefined list of protocol identifiers. Purpose: clarifies the application layer protocol type in network communication, facilitating rapid detection of protocol usage on non-standard ports, protocol tunneling, and attacks targeting specific protocols.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -308,7 +308,7 @@
     "company": {
       "label": "Vendor Name",
       "requirement": "RECOMMENDED",
-      "description": "This field records the full legal registered company name of the software vendor or service provider. The standard full company name should be used, avoiding abbreviations or acronyms.",
+      "description": "This field records the full legal registered company name of the software vendor or service provider. Standard full company names should be used, avoiding abbreviations or acronyms. Purpose: clarifies the full company name of the software/service provider, enabling administrators to verify asset origins and responsible entities.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -404,14 +404,14 @@
     "processId": {
       "label": "Process ID",
       "requirement": "OPTIONAL",
-      "description": "The Process ID (PID) is a unique numeric identifier assigned by the operating system to a process, used to uniquely identify a running process within the OS. This field is of string type, typically composed of numeric characters, with its length and specific value determined by the operating system and process state.",
+      "description": "Process ID (PID) is a unique numeric identifier assigned by the operating system to a running process, used to distinctly identify it within the OS. This field is of string type, typically composed of digits, with length and specific values determined by the OS and process state. Purpose: clarifies the unique numeric identifier assigned by the OS to a process, enabling precise correlation of all behavioral logs for that process, serving as the core relational field for constructing a comprehensive process behavior profile.",
       "type": "string",
       "valid_type": "string_t"
     },
     "hostAddress": {
       "label": "Host IP Address",
       "requirement": "RECOMMENDED",
-      "description": "Host IP address, used to identify the host's location in the network. It must comply with the IPv4 or IPv6 address format specifications. IPv4 addresses are in dotted-decimal notation, consisting of four decimal numbers ranging from 0 to 255, separated by dots. IPv6 addresses are in colon-separated hexadecimal notation.",
+      "description": "Host IP address, used to identify the host's location in the network. Must comply with IPv4 or IPv6 address format specifications. IPv4 addresses use dotted-decimal notation consisting of four decimal numbers (0-255) separated by dots. IPv6 addresses use colon-separated hexadecimal notation. Purpose: clearly identifies the host's network location, enabling administrators to quickly access and locate devices, supporting asset management and network topology analysis.",
       "type": "string",
       "valid_type": "ip_t"
     },
@@ -425,7 +425,7 @@
     "assetId": {
       "label": "Asset ID",
       "requirement": "REQUIRED",
-      "description": "Asset ID is the globally unique identifier of an asset in the system, formatted as a string.",
+      "description": "Asset ID is the globally unique identifier for assets in the system, formatted as a string. Purpose: provides a clear global unique identifier for assets, enabling precise tracking and management of various network assets.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -439,14 +439,14 @@
     "assetName": {
       "label": "Asset Name",
       "requirement": "REQUIRED",
-      "description": "Asset name, used to identify the human-readable name of the asset.",
+      "description": "Asset name, used to identify the human-readable name of the asset. Purpose: clearly identifies the human-readable name of the asset, facilitating quick recognition and retrieval by management personnel.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetCategory": {
       "label": "Asset Category",
       "requirement": "REQUIRED",
-      "description": "Asset classification refers to the categorization of assets from an asset management perspective. This field is an enumeration type with predefined optional values including: database, data_table, data_field, account, api, etc.",
+      "description": "Asset classification refers to the categorization of assets from a management perspective. This field is of enumeration type with predefined values including: database, data_table, data_field, account, api, etc. Purpose: standardizes asset classification for management purposes, enabling granular asset management and precise security policy implementation.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -850,7 +850,7 @@
     "assetImportance": {
       "label": "Asset Importance",
       "requirement": "RECOMMENDED",
-      "description": "Asset criticality level, used to indicate the priority and value of the asset in cybersecurity protection.",
+      "description": "The importance level of an asset, used to indicate its priority and value in cybersecurity protection. Purpose: clarifies the priority and value level of assets in cybersecurity protection, facilitating guidance on security resource allocation and emergency response sequence.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -928,14 +928,14 @@
     "assetUser": {
       "label": "Asset User",
       "requirement": "RECOMMENDED",
-      "description": "Name of the personnel using the asset, in string format.",
+      "description": "Name of the personnel using the asset, in string format. Purpose: clarifies the user's name information for precise security responsibility tracing and accountability.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetUserPhone": {
       "label": "Asset User Phone Number",
       "requirement": "RECOMMENDED",
-      "description": "Contact mobile number of the asset user, used for security communication. Must comply with mobile number format specifications.",
+      "description": "The contact mobile number of the asset user, used for security communication, must comply with mobile number format specifications. Purpose: clarifies the direct contact method of the asset owner, facilitates rapid communication during security incidents, and ensures the timeliness of emergency response.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -949,14 +949,14 @@
     "assetOwnerName": {
       "label": "Asset Owner Name",
       "requirement": "RECOMMENDED",
-      "description": "Name of the asset owner.",
+      "description": "Name of the asset owner. Purpose: clarifies the asset owner's name, facilitates assignment of security responsibilities to individuals, and supports accountability tracking and access management.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetOwnerPhone": {
       "label": "Asset Owner Contact Information",
       "requirement": "RECOMMENDED",
-      "description": "Contact information of the asset owner, used to identify the contact phone number of the responsible party for the asset.",
+      "description": "Contact information of the asset owner, used to identify the responsible party's phone number. Purpose: clearly identifies the responsible party's contact number, enabling administrators to quickly reach the responsible person and supporting emergency communication as well as daily operational collaboration.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -1347,7 +1347,7 @@
     "assetAddress": {
       "label": "Asset IP Address",
       "requirement": "RECOMMENDED",
-      "description": "The unique network identifier of an asset as recorded in the management system, used for locating and accessing the asset. Format requirements: must comply with standard IPv4 or IPv6 address formats, such as dotted-decimal notation (e.g., 192.168.1.1) or IPv6 colon-separated hexadecimal notation.",
+      "description": "The unique network identifier of an asset as recorded in the management system, used for locating and accessing the asset. Format requirements: must comply with standard IPv4 or IPv6 address formats, such as dotted-decimal notation (e.g., 192.168.1.1) or IPv6 colon-separated hexadecimal notation. Purpose: clarifies the asset's unique network identifier, facilitating network communication and asset localization.",
       "type": "string",
       "valid_type": "ip_t"
     },
@@ -1361,7 +1361,7 @@
     "ipVersion": {
       "label": "IP Version",
       "requirement": "RECOMMENDED",
-      "description": "This field indicates the version identifier of the Internet Protocol (IP). The format is a string, currently primarily including \"IPv4\" and \"IPv6\".",
+      "description": "This field indicates the version identifier of the Internet Protocol (IP). The format is a string, currently primarily including \"IPv4\" and \"IPv6\". Purpose: clearly identifies the network protocol version used by the asset, enabling administrators to understand network environment and configuration requirements.",
       "type": "string",
       "valid_type": "string_t"
     }

@@ -8,7 +8,7 @@
     "certType": {
       "label": "Certificate Type",
       "requirement": "RECOMMENDED",
-      "description": "Certificate type is used to identify the category of digital certificates for different security purposes. This field is an enumeration type, and its value must be one of the predefined options, including: SSL (SSL/TLS certificate), CodeSigning (code signing certificate), ClientAuth (client authentication certificate), Email (email certificate), EVSSL (extended validation SSL certificate), and other specified types if applicable.",
+      "description": "The certificate type field identifies the category of digital certificates for different security purposes. This is an enumerated field whose value must be one of the predefined options, including: SSL (SSL/TLS certificates), CodeSigning (code signing certificates), ClientAuth (client authentication certificates), Email (email certificates), EVSSL (extended validation SSL certificates), and other specified types. Purpose: Clearly identifies the security purpose category of digital certificates, enabling administrators to distinguish between usage scenarios and security levels of different certificates, thereby supporting certificate management and security configuration.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -41,21 +41,21 @@
     "commonName": {
       "label": "Common Name",
       "requirement": "RECOMMENDED",
-      "description": "This field represents the Common Name (CN) in the certificate subject, typically the fully qualified domain name bound to the certificate. The value should be a string compliant with DNS naming conventions.",
+      "description": "This field represents the Common Name (CN) in the certificate subject, typically the fully qualified domain name bound to the certificate, whose value should be a string compliant with DNS naming conventions. Purpose: clarifies the fully qualified domain name bound to the certificate and facilitates verification of the SSL/TLS service identity and domain name matching relationship.",
       "type": "string",
       "valid_type": "string_t"
     },
     "certIssuer": {
       "label": "Certificate Issuer",
       "requirement": "RECOMMENDED",
-      "description": "The name of the certificate issuer, which identifies the authority or entity that issued the certificate. This field is of string type and typically contains the Distinguished Name (DN) or Common Name (CN) of the Certificate Authority (CA). The value must comply with the format conventions for issuer names as specified in the X.509 certificate standards.",
+      "description": "The name of the certificate issuer, which serves as the identifier of the authority or entity that issued the certificate. This field is of string type and typically contains the Distinguished Name (DN) or Common Name (CN) of the Certificate Authority (CA). The value must comply with the format requirements for issuer names specified in the X.509 certificate standard. Purpose: clarifies the issuing authority's name, enabling administrators to verify the certificate's origin and trustworthiness.",
       "type": "string",
       "valid_type": "string_t"
     },
     "validTime": {
       "label": "Valid Time",
       "requirement": "RECOMMENDED",
-      "description": "The validity period indicates the time range during which the certificate is valid, formatted as yyyy-mm-dd to yyyy-mm-dd. Both the start date and end date must comply with the standard date format, and the end date must be later than the start date.",
+      "description": "The validity period indicates the time range during which the certificate is valid, formatted as yyyy-mm-dd to yyyy-mm-dd. Both the start and end dates must comply with standard date formats, and the end date must be later than the start date. Purpose: clarifies the certificate's validity period, facilitating timely identification and replacement of expired certificates to ensure service continuity.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -69,14 +69,14 @@
     "signature": {
       "label": "Digital Signature",
       "requirement": "OPTIONAL",
-      "description": "Signature information refers to digital signatures or certificate data used to verify the integrity of files or data, formatted as a string. This field typically contains textual information such as signature algorithm identifiers, signature values, or certificate issuer and subject details.",
+      "description": "Signature information refers to digital signatures or certificate data used for verifying file or data integrity, formatted as strings. This field typically contains text information such as signature algorithm identifiers, signature values, or certificate issuers and subjects. Purpose: clearly identifies certificate issuers, signature algorithms, and signature values within the signature information, facilitating detection of forged signatures and whiteout attacks, while providing core evidence for file authenticity verification and attack source tracing.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetId": {
       "label": "Asset ID",
       "requirement": "REQUIRED",
-      "description": "Asset ID is the globally unique identifier of an asset in the system, formatted as a string.",
+      "description": "Asset ID is the globally unique identifier for assets in the system, formatted as a string. Purpose: provides a clear global unique identifier for assets, enabling precise tracking and management of various network assets.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -90,14 +90,14 @@
     "assetName": {
       "label": "Asset Name",
       "requirement": "REQUIRED",
-      "description": "Asset name, used to identify the human-readable name of the asset.",
+      "description": "Asset name, used to identify the human-readable name of the asset. Purpose: clearly identifies the human-readable name of the asset, facilitating quick recognition and retrieval by management personnel.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetCategory": {
       "label": "Asset Category",
       "requirement": "REQUIRED",
-      "description": "Asset classification refers to the categorization of assets from an asset management perspective. This field is an enumeration type with predefined optional values including: database, data_table, data_field, account, api, etc.",
+      "description": "Asset classification refers to the categorization of assets from a management perspective. This field is of enumeration type with predefined values including: database, data_table, data_field, account, api, etc. Purpose: standardizes asset classification for management purposes, enabling granular asset management and precise security policy implementation.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -501,7 +501,7 @@
     "assetImportance": {
       "label": "Asset Importance",
       "requirement": "RECOMMENDED",
-      "description": "Asset criticality level, used to indicate the priority and value of the asset in cybersecurity protection.",
+      "description": "The importance level of an asset, used to indicate its priority and value in cybersecurity protection. Purpose: clarifies the priority and value level of assets in cybersecurity protection, facilitating guidance on security resource allocation and emergency response sequence.",
       "type": "enum",
       "valid_type": "string_t",
       "enum": {
@@ -579,14 +579,14 @@
     "assetUser": {
       "label": "Asset User",
       "requirement": "RECOMMENDED",
-      "description": "Name of the personnel using the asset, in string format.",
+      "description": "Name of the personnel using the asset, in string format. Purpose: clarifies the user's name information for precise security responsibility tracing and accountability.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetUserPhone": {
       "label": "Asset User Phone Number",
       "requirement": "RECOMMENDED",
-      "description": "Contact mobile number of the asset user, used for security communication. Must comply with mobile number format specifications.",
+      "description": "The contact mobile number of the asset user, used for security communication, must comply with mobile number format specifications. Purpose: clarifies the direct contact method of the asset owner, facilitates rapid communication during security incidents, and ensures the timeliness of emergency response.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -600,14 +600,14 @@
     "assetOwnerName": {
       "label": "Asset Owner Name",
       "requirement": "RECOMMENDED",
-      "description": "Name of the asset owner.",
+      "description": "Name of the asset owner. Purpose: clarifies the asset owner's name, facilitates assignment of security responsibilities to individuals, and supports accountability tracking and access management.",
       "type": "string",
       "valid_type": "string_t"
     },
     "assetOwnerPhone": {
       "label": "Asset Owner Contact Information",
       "requirement": "RECOMMENDED",
-      "description": "Contact information of the asset owner, used to identify the contact phone number of the responsible party for the asset.",
+      "description": "Contact information of the asset owner, used to identify the responsible party's phone number. Purpose: clearly identifies the responsible party's contact number, enabling administrators to quickly reach the responsible person and supporting emergency communication as well as daily operational collaboration.",
       "type": "string",
       "valid_type": "string_t"
     },
@@ -998,7 +998,7 @@
     "assetAddress": {
       "label": "Asset IP Address",
       "requirement": "RECOMMENDED",
-      "description": "The unique network identifier of an asset as recorded in the management system, used for locating and accessing the asset. Format requirements: must comply with standard IPv4 or IPv6 address formats, such as dotted-decimal notation (e.g., 192.168.1.1) or IPv6 colon-separated hexadecimal notation.",
+      "description": "The unique network identifier of an asset as recorded in the management system, used for locating and accessing the asset. Format requirements: must comply with standard IPv4 or IPv6 address formats, such as dotted-decimal notation (e.g., 192.168.1.1) or IPv6 colon-separated hexadecimal notation. Purpose: clarifies the asset's unique network identifier, facilitating network communication and asset localization.",
       "type": "string",
       "valid_type": "ip_t"
     },
@@ -1012,7 +1012,7 @@
     "ipVersion": {
       "label": "IP Version",
       "requirement": "RECOMMENDED",
-      "description": "This field indicates the version identifier of the Internet Protocol (IP). The format is a string, currently primarily including \"IPv4\" and \"IPv6\".",
+      "description": "This field indicates the version identifier of the Internet Protocol (IP). The format is a string, currently primarily including \"IPv4\" and \"IPv6\". Purpose: clearly identifies the network protocol version used by the asset, enabling administrators to understand network environment and configuration requirements.",
       "type": "string",
       "valid_type": "string_t"
     }
